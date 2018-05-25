@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source">
+      <UniqueIdentifier>{1eb64ecc-5eca-4820-8ae7-4ee00baaf0d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\shared">
+      <UniqueIdentifier>{0d37d8cc-30a1-4b00-958c-b8787d278114}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\csx">
+      <UniqueIdentifier>{62143321-fdea-4a99-bd32-076f6b96b2dd}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="DllMain.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\Address.cpp">
+      <Filter>Source\shared</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\Schema.cpp">
+      <Filter>Source\shared</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\SchemaSystem.cpp">
+      <Filter>Source\shared</Filter>
+    </ClCompile>
+    <ClCompile Include="shared\SchemaUtil.cpp">
+      <Filter>Source\shared</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DllMain.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\!GlobalTypes_classes.hpp">
+      <Filter>Source\shared</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\!GlobalTypes_enums.hpp">
+      <Filter>Source\shared</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\Address.hpp">
+      <Filter>Source\shared</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\client.dll_classes.hpp">
+      <Filter>Source\shared</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\Interface.hpp">
+      <Filter>Source\shared</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\Schema.hpp">
+      <Filter>Source\shared</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\SchemaBase.hpp">
+      <Filter>Source\shared</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\SchemaList.hpp">
+      <Filter>Source\shared</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\SchemaSystem.hpp">
+      <Filter>Source\shared</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\SchemaUtil.hpp">
+      <Filter>Source\shared</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\server.dll_classes.hpp">
+      <Filter>Source\shared</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\UnknownType.hpp">
+      <Filter>Source\shared</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\Utility.hpp">
+      <Filter>Source\shared</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\worldrenderer.dll_classes.hpp">
+      <Filter>Source\shared</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
