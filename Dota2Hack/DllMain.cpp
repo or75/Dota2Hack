@@ -90,7 +90,7 @@ DWORD WINAPI CheatEntry( LPVOID lpThreadParameter )
 
 	DoIncludeScriptPtr DoIncludeScript = (DoIncludeScriptPtr)CSX::Memory::FindPattern(
 		XorStr( "client.dll" ) , 
-		XorStr( "40 57 48 ? ? ? ? ? ? 48 83 3D 07 0B 78 01 00 48 8B F9 0F 84" ) 
+		XorStr( "40 57 48 ? ? ? ? ? ? 48 83 3D ? ? ? 01 00 48 8B F9 0F 84" ) 
 		, 0 );
 
 	if ( dwGameEntitySystemPattern && dwIScriptManagerPattern )
