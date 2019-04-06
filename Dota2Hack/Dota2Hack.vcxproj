@@ -150,6 +150,14 @@
     <ClCompile Include="shared\SchemaUtil.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="csx\CSX_Engine.h" />
+    <ClInclude Include="csx\CSX_Log.h" />
+    <ClInclude Include="csx\CSX_Memory.h" />
+    <ClInclude Include="csx\CSX_Utils.h" />
+    <ClInclude Include="csx\XorString\Indexes.h" />
+    <ClInclude Include="csx\XorString\Inline.h" />
+    <ClInclude Include="csx\XorString\MetaRandom.h" />
+    <ClInclude Include="csx\XorString\MetaString4.h" />
     <ClInclude Include="DllMain.h" />
     <ClInclude Include="shared\!GlobalTypes_classes.hpp" />
     <ClInclude Include="shared\!GlobalTypes_enums.hpp" />

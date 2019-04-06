@@ -10,6 +10,9 @@
     <Filter Include="Source\csx">
       <UniqueIdentifier>{62143321-fdea-4a99-bd32-076f6b96b2dd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\csx\XorString">
+      <UniqueIdentifier>{c8b07e57-8d05-4cab-842b-0a126e269ce4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DllMain.cpp">
@@ -73,6 +76,30 @@
     </ClInclude>
     <ClInclude Include="shared\worldrenderer.dll_classes.hpp">
       <Filter>Source\shared</Filter>
+    </ClInclude>
+    <ClInclude Include="csx\XorString\Indexes.h">
+      <Filter>Source\csx\XorString</Filter>
+    </ClInclude>
+    <ClInclude Include="csx\XorString\Inline.h">
+      <Filter>Source\csx\XorString</Filter>
+    </ClInclude>
+    <ClInclude Include="csx\XorString\MetaRandom.h">
+      <Filter>Source\csx\XorString</Filter>
+    </ClInclude>
+    <ClInclude Include="csx\XorString\MetaString4.h">
+      <Filter>Source\csx\XorString</Filter>
+    </ClInclude>
+    <ClInclude Include="csx\CSX_Engine.h">
+      <Filter>Source\csx</Filter>
+    </ClInclude>
+    <ClInclude Include="csx\CSX_Log.h">
+      <Filter>Source\csx</Filter>
+    </ClInclude>
+    <ClInclude Include="csx\CSX_Memory.h">
+      <Filter>Source\csx</Filter>
+    </ClInclude>
+    <ClInclude Include="csx\CSX_Utils.h">
+      <Filter>Source\csx</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
