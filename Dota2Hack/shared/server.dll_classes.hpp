@@ -15,7 +15,6 @@ class CDOTAGamerules;
 class CDOTASpectatorGraphManager;
 class CDOTA_Buff;
 class CDOTA_Tree;
-class CEconItemView;
 class CEntityClass;
 class CEntityIdentity;
 class CFourWheelServerVehicle;
@@ -115,6 +114,7 @@ class CDOTA_Ability_Special_Bonus_Cooldown_Reduction_25;
 class CDOTA_Ability_Special_Bonus_HP_Regen_5;
 class CDOTA_Ability_SatyrTrickster_Purge;
 class CDOTA_Ability_Neutral_SpellImmunity;
+class CDOTABaseCustomHeroPickRules;
 class CTriggerPush;
 class CLogicalEntity;
 class CDOTA_Item_WindLace;
@@ -197,6 +197,7 @@ class CEnvSoundscape;
 class CDOTA_Item_Recipe_Kaya;
 class CDOTA_Item_Recipe_MeteorHammer;
 class CDOTA_Item_Recipe_Dagon4;
+class CDOTA_Ability_Special_Bonus_Unique_Grimstroke_3;
 class CDOTA_Ability_Viper_CorrosiveSkin;
 class CDOTA_Ability_Special_Bonus_Unique_Clockwerk_3;
 class CDOTA_Ability_Special_Bonus_Unique_Bloodseeker_2;
@@ -271,6 +272,7 @@ class CDOTA_Ability_Courier_GoToSideShop;
 class CDOTA_BossAttackableTrigger;
 class CDOTA_Ability_Special_Bonus_Unique_Leshrac_2;
 class CInfoSpawnGroupLoadUnload;
+class CDOTA_Ability_Special_Bonus_Unique_Grimstroke_2;
 class CDOTA_Ability_Lion_Impale;
 class CDOTA_Ability_WitchDoctor_VoodooRestoration;
 class CDOTA_Ability_Special_Bonus_Unique_Sand_King_3;
@@ -401,7 +403,6 @@ class CDOTA_Ability_Special_Bonus_Unique_Tinker_3;
 class CDOTA_Ability_Special_Bonus_Unique_Skywrath_2;
 class CDOTA_Ability_Special_Bonus_Unique_Wisp_6;
 class CDOTA_Ability_Special_Bonus_Cooldown_Reduction_65;
-class CDOTA_Ability_ControllerTest_SlarkSpinAttack;
 class CSoundEventEntity;
 class CVRHandModelOverride;
 class CRuleEntity;
@@ -413,6 +414,7 @@ class CDOTA_Ability_Special_Bonus_Unique_Lifestealer_2;
 class CDOTA_Ability_Special_Bonus_Unique_Gyrocopter_1;
 class CDOTA_Ability_Special_Bonus_Unique_Wisp_3;
 class CDOTA_Ability_Special_Bonus_Attack_Damage_45;
+class CDOTA_Ability_Courier_AutoDeliver;
 class CVGuiScreen;
 class CInfoParticleTarget;
 class CEnvVolumetricFogController;
@@ -555,6 +557,7 @@ class CDOTA_Ability_NagaSiren_MirrorImage;
 class CDOTA_Unit_Hero_ChaosKnight;
 class CDOTA_Unit_Brewmaster_PrimalFire;
 class CDOTA_Ability_QueenOfPain_SonicWave;
+class CDOTA_Ability_Special_Bonus_Unique_Kunkka_5;
 class CDOTA_Ability_Special_Bonus_Evasion_20;
 class CRagdollManager;
 class CPropDoorRotating;
@@ -620,6 +623,7 @@ class CMessageEntity;
 class CRuleBrushEntity;
 class CRulePointEntity;
 class CDOTA_Item_Ancient_Janggo;
+class CDOTA_Ability_Grimstroke_DarkArtistry;
 class CDOTA_DarkWillow_Creature;
 class CDOTA_Ability_Winter_Wyvern_Splinter_Blast;
 class CDOTA_Ability_Techies_StasisTrap;
@@ -639,6 +643,7 @@ class CPropVehicleDriveable;
 class CVGuiScreenTeam;
 class CDOTA_Item_EchoSabre;
 class CDOTA_Item_Recipe_Arcane_Ring;
+class CDOTA_Ability_Grimstroke_SpiritWalk;
 class CDOTA_Ability_ArcWarden_TempestDouble;
 class CDOTA_Ability_Dazzle_ShadowWave;
 class CDOTA_Ability_DragonKnight_DragonBlood;
@@ -765,6 +770,7 @@ class CDOTA_Ability_Venomancer_VenomousGale;
 class CDOTA_Ability_Firework_Mine;
 class CDOTA_Ability_Lion_ManaDrain;
 class CDOTA_Ability_Special_Bonus_Unique_Death_Prophet_2;
+class CDOTA_Ability_Special_Bonus_Unique_Invoker_9;
 class CDOTA_Ability_Special_Bonus_Attack_Range_50;
 class CDOTA_Ability_Special_Bonus_HP_Regen_35;
 class CDOTA_Ability_BlackDragon_Fireball;
@@ -776,7 +782,6 @@ class CDOTA_Ability_Special_Bonus_Unique_Morphling_3;
 class CDOTA_Ability_Special_Bonus_Unique_Shadow_Demon_5;
 class CDOTA_Ability_Special_Bonus_Unique_Lone_Druid_7;
 class CDOTA_Ability_Special_Bonus_Cleave_25;
-class CDOTA_Ability_ControllerTest_SvenThrustingAttack;
 class CTriggerVolume;
 class CDOTA_Item_Flask;
 class CDOTA_Unit_Hero_Enchantress;
@@ -929,6 +934,7 @@ class CDOTA_Ability_Special_Bonus_MP_125;
 class CAI_ChangeTarget;
 class CSceneListManager;
 class CDynamicPropAlias_prop_dynamic_override;
+class CDOTA_Ability_Special_Bonus_Unique_Grimstroke_4;
 class CDOTA_Ability_Special_Bonus_Unique_Morphling_1;
 class CEnvEffectsScript;
 class CDynamicPropAlias_dynamic_prop;
@@ -965,8 +971,6 @@ class CDOTA_Item_Bloodstone;
 class CDOTA_Ability_Lycan_SummonWolves_CriticalStrike;
 class CDOTA_Ability_Life_Stealer_Infest;
 class CInfoCourierSpawn;
-class CDOTA_Ability_ControllerTest_SvenSweepingAttack;
-class CDOTAHoldoutNetworker;
 class CDOTA_ItemSpawner;
 class CDOTA_Ability_Necronomicon_Warrior_LastWill;
 class CDOTA_Ability_Ogre_Magi_Fireblast;
@@ -1085,6 +1089,7 @@ class CDOTA_Ability_FacelessVoid_Chronosphere;
 class CDOTA_Ability_Nian_Whirlpool;
 class CDOTA_Unit_Hero_Zuus;
 class CDOTA_Ability_Morphling_Morph_Agi;
+class CDOTA_BaseNPC_RotatableBuilding;
 class CDOTA_Ability_Special_Bonus_Unique_Warlock_3;
 class CDOTA_Ability_Special_Bonus_Magic_Resistance_6;
 class CLogicPlayerProxy;
@@ -1198,7 +1203,6 @@ class CDOTA_Ability_Special_Bonus_Unique_Enchantress_4;
 class CDOTA_Ability_Special_Bonus_Unique_Arc_Warden_4;
 class CDOTA_Ability_Special_Bonus_Unique_Queen_Of_Pain;
 class CDOTA_Ability_Special_Bonus_Cooldown_Reduction_50;
-class CDOTA_Ability_ControllerTest_MeleeAttack;
 class CPhysicsSpring;
 class CEnvLightProbeVolume;
 class CDOTA_Item_Nullifier;
@@ -1241,6 +1245,7 @@ class CTriggerPlayerMovement;
 class CEnvSoundscapeProxyAlias_snd_soundscape_proxy;
 class CLightComponent;
 class CDOTA_Ability_Alchemist_UnstableConcoctionThrow;
+class CDOTA_Ability_Special_Bonus_Unique_Pudge_4;
 class CDOTA_Ability_Special_Bonus_Unique_Brewmaster_2;
 class CDOTA_Ability_Special_Bonus_Unique_Ogre_Magi;
 class CDOTA_Ability_Special_Bonus_Spell_Lifesteal_70;
@@ -1334,6 +1339,7 @@ class CDOTA_Ability_Special_Bonus_Agility_13;
 class CDOTA_Ability_Special_Bonus_Movement_Speed_50;
 class CDOTA_Ability_Special_Bonus_Mana_Break_25;
 class CSprite;
+class CSoundOpvarSetAABBEntity;
 class CFunc_DustCloud;
 class CDOTA_Item_Recipe_Yasha;
 class CDOTA_Ability_Shadow_Demon_Shadow_Poison_Release;
@@ -1345,6 +1351,7 @@ class CDOTA_Ability_Special_Bonus_Unique_Antimage_2;
 class CDOTA_Ability_Special_Bonus_Unique_Antimage;
 class CDOTA_Ability_Special_Bonus_Unique_Jakiro_3;
 class CDOTA_Ability_Special_Bonus_Unique_Dragon_Knight_2;
+class CDOTA_Ability_Special_Bonus_Unique_Huskar_4;
 class CDOTA_Ability_Special_Bonus_Unique_Pugna_1;
 class CDOTA_Ability_Special_Bonus_Exp_Boost_15;
 class CDOTA_Ability_Special_Bonus_Respawn_Reduction_30;
@@ -1382,6 +1389,7 @@ class CDOTA_Item_Recipe_Iron_Talon;
 class CDOTA_Item_DragonLance;
 class CDOTA_Item_Faerie_Fire;
 class CDOTA_Item_MagicStick;
+class CDOTA_Ability_Special_Bonus_Unique_Grimstroke_1;
 class CDOTA_Unit_Hero_Batrider;
 class CDOTA_Ability_WitchDoctor_Maledict;
 class CDOTA_Ability_Puck_EtherealJaunt;
@@ -1487,7 +1495,7 @@ class CDOTA_Ability_Special_Bonus_Magic_Resistance_50;
 class CDOTA_Ability_Special_Bonus_Cleave_100;
 class CFoWBlockerEntity;
 class CDOTA_Ability_BlueDragonspawnSorcerer_Evasion;
-class CDOTABaseCustomHeroPickRules;
+class CDOTATurboHeroPickRules;
 class CWorldItem;
 class CEnvBeam;
 class CPhysicsPropAlias_physics_prop;
@@ -1520,6 +1528,7 @@ class CDOTA_Ability_Skywrath_Mage_Concussive_Shot;
 class CDOTA_Ability_SpiritBreaker_NetherStrike;
 class CDOTA_Ability_StormSpirit_BallLightning;
 class CDOTA_Ability_Special_Bonus_Unique_Phoenix_1;
+class CDOTA_Ability_Special_Bonus_Unique_Gyrocopter_6;
 class CDOTA_Item_Physical;
 class CDamageComponent;
 class CFilterLOS;
@@ -1603,6 +1612,7 @@ class CDOTA_Ability_PhantomAssassin_PhantomStrike;
 class CDOTA_Ability_Slardar_Bash;
 class CDOTA_Ability_Special_Bonus_Unique_Viper_2;
 class CDOTA_Ability_Special_Bonus_Unique_Tiny_5;
+class CDOTA_Ability_Special_Bonus_HP_Regen_16;
 class CDOTA_Ability_Special_Bonus_MP_800;
 class CTriggerImpact;
 class CSun;
@@ -1688,6 +1698,7 @@ class CDOTA_Ability_Special_Bonus_Magic_Resistance_80;
 class CDOTA_Ability_Special_Bonus_All_Stats_6;
 class CDOTA_Ability_Special_Bonus_Attack_Speed_25;
 class CShower;
+class CEnvCubemapFog;
 class CDOTA_Item_Recipe_Assault_Cuirass;
 class CDOTA_Item_HandOfMidas;
 class CDOTA_Item_GlovesOfHaste;
@@ -1733,6 +1744,7 @@ class CDOTA_Ability_PhantomLancer_Doppelwalk;
 class CDOTA_Unit_Hero_Mirana;
 class CDOTA_NeutralSpawner;
 class CDOTA_Ability_Special_Bonus_Unique_Drow_Ranger_4;
+class CDOTA_Ability_Special_Bonus_Unique_Ursa_6;
 class CDOTA_Ability_Special_Bonus_Unique_Undying_2;
 class CDOTA_Ability_Special_Bonus_Unique_Sniper_1;
 class CIngameEvent_DotaPlus;
@@ -1754,6 +1766,7 @@ class CDOTA_Ability_Life_Stealer_Rage;
 class CDOTA_Ability_Juggernaut_BladeDance;
 class CDOTA_BaseNPC_Fort;
 class CDOTA_Ability_Special_Bonus_Unique_Warlock_2;
+class CDOTA_Ability_Special_Bonus_Unique_Alchemist_5;
 class CDOTA_Ability_Special_Bonus_Unique_Disruptor;
 class CDOTA_Ability_Special_Bonus_Unique_Invoker_4;
 class CDOTA_Ability_Special_Bonus_Lifesteal_30;
@@ -1824,6 +1837,7 @@ class CDOTA_Ability_Special_Bonus_Unique_Sven;
 class CDOTA_Ability_Special_Bonus_Attack_Speed_60;
 class CDOTA_Ability_Spawnlord_Master_Bash;
 class CFuncDistanceOccluder;
+class CSoundOpvarSetOBBEntity;
 class CInfoDynamicShadowHint;
 class CDOTA_Ability_EarthSpirit_StoneCaller;
 class CDOTA_Ability_Centaur_Stampede;
@@ -1882,6 +1896,7 @@ class CPhysBoxMultiplayer;
 class CPointSpotlight;
 class CDOTA_Item_Medallion_Of_Courage;
 class CDOTA_Item_Recipe_NullTalisman;
+class CDOTA_Ability_Grimstroke_SoulChain;
 class CDOTA_Ability_Shredder_Reactive_Armor;
 class CDOTA_Ability_Rubick_Empty2;
 class CDOTA_Ability_Lycan_Howl;
@@ -1921,6 +1936,7 @@ class CEnvFade;
 class CDOTA_Item_Assault_Cuirass;
 class CDOTA_Item_RefresherOrb;
 class CDOTA_Item_Recipe_TranquilBoots2;
+class CDOTA_Unit_Hero_Grimstroke;
 class CDOTA_Ability_Phoenix_Supernova;
 class CDOTA_RoshanSpawner;
 class CDOTA_Ability_Creature_Fire_Breath;
@@ -2118,6 +2134,7 @@ class CDOTA_Ability_MonkeyKing_Spring;
 class CDOTA_Ability_Silencer_CurseOfTheSilent;
 class CDOTA_Unit_Hero_Pugna;
 class CDOTA_Unit_Nian;
+class CDOTA_Ability_Special_Bonus_Unique_Huskar_5;
 class CDOTA_Ability_Special_Bonus_Unique_Silencer;
 class CDOTA_Ability_GraniteGolem_HPAura;
 class CDotaSubquestEntityDeath;
@@ -2145,6 +2162,7 @@ class CDOTA_Ability_Special_Bonus_Unique_Pugna_6;
 class CDOTA_Ability_Special_Bonus_Unique_Lone_Druid_2;
 class CDOTA_Ability_Special_Bonus_HP_Regen_6;
 class CMomentaryRotButton;
+class CDOTA_Item_PocketRoshan;
 class CDOTA_Item_Recipe_AbyssalBlade;
 class CDOTA_Ability_Shadow_Demon_Disruption;
 class CDOTA_Ability_Windrunner_Shackleshot;
@@ -2174,6 +2192,7 @@ class CDOTA_Ability_DoomBringer_Empty2;
 class CDOTA_BaseNPC_Venomancer_PlagueWard;
 class CDOTA_Item_JumpBoots;
 class CDOTA_Ability_ShadowShaman_MassSerpentWard;
+class CDOTA_Ability_Special_Bonus_Unique_Pangolier_6;
 class CDOTA_Ability_Special_Bonus_Unique_Vengeful_Spirit_2;
 class CDOTA_Ability_Special_Bonus_Unique_Templar_Assassin_4;
 class CDOTA_Ability_Special_Bonus_Unique_Phantom_Lancer_2;
@@ -2213,6 +2232,7 @@ class CDOTA_Ability_CrystalMaiden_FreezingField;
 class CDOTA_Ability_DrowRanger_Silence;
 class CDOTA_Ability_Special_Bonus_Unique_Ursa_3;
 class CHealthComponent;
+class CDOTA_Unit_Grimstroke_InkCreature;
 class CDOTA_Ability_Phoenix_FireSpirits;
 class CDOTA_Ability_Elder_Titan_EarthSplitter;
 class CDOTA_Ability_Lion_Voodoo;
@@ -2233,6 +2253,7 @@ class CDOTA_Ability_Special_Bonus_Unique_Naga_Siren_4;
 class CDOTA_Ability_Special_Bonus_Unique_Bloodseeker_3;
 class CDOTA_Ability_Special_Bonus_Lifesteal_20;
 class CGamePlayerEquip;
+class CDOTA_Item_PocketTower;
 class CDOTA_Item_Recipe_UltimateScepter;
 class CDOTA_Item_PlateMail;
 class CDOTA_Ability_Clinkz_WindWalk;
@@ -2241,6 +2262,7 @@ class CDOTA_Ability_Kunkka_Tidebringer;
 class CDOTA_Ability_Morphling_AdaptiveStrike_Agi;
 class CDOTA_Ability_Nevermore_Shadowraze2;
 class CDOTA_Ability_Special_Bonus_Unique_Axe_2;
+class CDOTA_Ability_Special_Bonus_Movement_Speed_65;
 class CEntityFlame;
 class CDOTA_Item_TeleportScroll;
 class CDOTA_Ability_Terrorblade_Sunder;
@@ -2294,6 +2316,7 @@ class CDOTA_Ability_Enigma_BlackHole;
 class CDOTA_Ability_Special_Bonus_Unique_Treant_6;
 class CDOTA_Ability_Special_Bonus_Unique_Earthshaker;
 class CTestEffect;
+class CDOTA_Ability_Grimstroke_InkCreature;
 class CDOTA_Ability_Kunkka_XMarksTheSpot;
 class CDOTA_Ability_Bloodseeker_Thirst;
 class CDOTA_Ability_Special_Bonus_Unique_Batrider_3;
@@ -2351,7 +2374,7 @@ class CDOTA_Ability_Special_Bonus_Unique_Brewmaster_3;
 class CDOTA_Ability_Special_Bonus_Intelligence_20;
 class CDOTA_Ability_Special_Bonus_Movement_Speed_20;
 class CDOTA_Unit_Hero_Terrorblade;
-class CDOTATurboHeroPickRules;
+class CDOTACustomGameHeroPickRules;
 class CPhysicsCannister;
 class CDOTA_Item_Recipe_Necronomicon_3;
 class CDOTA_Item_PlaneswalkersCloak;
@@ -2577,7 +2600,6 @@ class CDOTA_Ability_Juggernaut_HealingWard;
 class CDOTA_Ability_Special_Bonus_Unique_Weaver_5;
 class CDOTA_Ability_Special_Bonus_HP_350;
 class CDOTA_Ability_GnollAssassin_EnvenomedWeapon;
-class CDOTA_Ability_ControllerTest_SvenOverheadAttack;
 class CLightDirectional;
 class CEntityInstance : public IHandleEntity
 {
@@ -3108,25 +3130,29 @@ public:
 	// m_bSellable metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bForceUnsellable;// 0x40b, size 1 (0x1)
+	__declspec(align(1)) bool m_bInitiallySellable;// 0x40b, size 1 (0x1)
+	// m_bInitiallySellable metadata
+	 // MNetworkEnable
+	 // MNetworkEnable
+	__declspec(align(1)) bool m_bForceUnsellable;// 0x40c, size 1 (0x1)
 	// m_bForceUnsellable metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bRequiresCharges;// 0x40c, size 1 (0x1)
+	__declspec(align(1)) bool m_bRequiresCharges;// 0x40d, size 1 (0x1)
 	// m_bRequiresCharges metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bKillable;// 0x40d, size 1 (0x1)
+	__declspec(align(1)) bool m_bKillable;// 0x40e, size 1 (0x1)
 	// m_bKillable metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bDisassemblable;// 0x40e, size 1 (0x1)
+	__declspec(align(1)) bool m_bDisassemblable;// 0x40f, size 1 (0x1)
 	// m_bDisassemblable metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bNeverDisassemble;// 0x40f, size 1 (0x1)
-	__declspec(align(1)) bool m_bIsTempestDoubleClonable;// 0x410, size 1 (0x1)
-	__declspec(align(1)) bool m_bAlertable;// 0x411, size 1 (0x1)
+	__declspec(align(1)) bool m_bNeverDisassemble;// 0x410, size 1 (0x1)
+	__declspec(align(1)) bool m_bIsTempestDoubleClonable;// 0x411, size 1 (0x1)
+	__declspec(align(1)) bool m_bAlertable;// 0x412, size 1 (0x1)
 	// m_bAlertable metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
@@ -3398,8 +3424,8 @@ public:
 public:
 	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownAtomicType <0x4, CHandle, class CBaseEntity > > m_hHitHeroes;// 0x3f8, size 24 (0x18)
 	__declspec(align(1)) bool m_bGrantedGem;// 0x410, size 1 (0x1)
-char CDOTA_Ability_Jakiro_DualBreath_0418[0x7];
-}; // size: 1048 (0x418)
+char CDOTA_Ability_Jakiro_DualBreath_0420[0xF];
+}; // size: 1056 (0x420)
 
 class CBaseModelEntity : public CBaseEntity
 {
@@ -4053,6 +4079,10 @@ public:
 	// m_bLoseGoldOnDeath metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
+	__declspec(align(1)) bool m_bKillableTombstones;// 0x3c1, size 1 (0x1)
+	// m_bKillableTombstones metadata
+	 // MNetworkEnable
+	 // MNetworkEnable
 	__declspec(align(4)) uint32_t m_nHUDVisibilityBits;// 0x3c4, size 4 (0x4)
 	// m_nHUDVisibilityBits metadata
 	 // MNetworkEnable
@@ -4141,18 +4171,40 @@ public:
 	// m_flStrengthMagicResistancePercent metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bSelectionGoldPenaltyEnabled;// 0x410, size 1 (0x1)
-	__declspec(align(1)) bool m_bRemoveIllusionsOnDeath;// 0x411, size 1 (0x1)
-	__declspec(align(1)) bool m_bRuneTypeEnabled[7];// 0x412, size 7 (0x7)
-	__declspec(align(1)) bool m_bOverrideBotLateGame;// 0x419, size 1 (0x1)
-	__declspec(align(1)) bool m_bBotsAlwaysPushWithHuman;// 0x41a, size 1 (0x1)
-	__declspec(align(1)) bool m_bBotsInLateGame;// 0x41b, size 1 (0x1)
-	__declspec(align(4)) int32_t m_nBotMaxPushTier;// 0x41c, size 4 (0x4)
-	__declspec(align(4)) float m_flFountainPercentageHealthRegen;// 0x420, size 4 (0x4)
-	__declspec(align(4)) float m_flFountainPercentageManaRegen;// 0x424, size 4 (0x4)
-	__declspec(align(4)) float m_flFountainConstantManaRegen;// 0x428, size 4 (0x4)
-char CDOTABaseGameMode_04E0[0xB4];
-}; // size: 1248 (0x4e0)
+	__declspec(align(4)) float m_flDraftingHeroPickSelectTimeOverride;// 0x410, size 4 (0x4)
+	// m_flDraftingHeroPickSelectTimeOverride metadata
+	 // MNetworkEnable
+	 // MNetworkEnable
+	__declspec(align(4)) float m_flDraftingBanningTimeOverride;// 0x414, size 4 (0x4)
+	// m_flDraftingBanningTimeOverride metadata
+	 // MNetworkEnable
+	 // MNetworkEnable
+	__declspec(align(1)) bool m_bPauseEnabled;// 0x418, size 1 (0x1)
+	// m_bPauseEnabled metadata
+	 // MNetworkEnable
+	 // MNetworkEnable
+	__declspec(align(4)) float m_flCustomScanCooldown;// 0x41c, size 4 (0x4)
+	// m_flCustomScanCooldown metadata
+	 // MNetworkEnable
+	 // MNetworkEnable
+	__declspec(align(1)) bool m_bDefaultRuneSpawnLogic;// 0x420, size 1 (0x1)
+	// m_bDefaultRuneSpawnLogic metadata
+	 // MNetworkEnable
+	 // MNetworkEnable
+	__declspec(align(1)) bool m_bSelectionGoldPenaltyEnabled;// 0x421, size 1 (0x1)
+	__declspec(align(1)) bool m_bRemoveIllusionsOnDeath;// 0x422, size 1 (0x1)
+	__declspec(align(1)) bool m_bRuneTypeEnabled[7];// 0x423, size 7 (0x7)
+	__declspec(align(1)) bool m_bOverrideBotLateGame;// 0x42a, size 1 (0x1)
+	__declspec(align(1)) bool m_bBotsAlwaysPushWithHuman;// 0x42b, size 1 (0x1)
+	__declspec(align(1)) bool m_bBotsInLateGame;// 0x42c, size 1 (0x1)
+	__declspec(align(4)) int32_t m_nBotMaxPushTier;// 0x430, size 4 (0x4)
+	__declspec(align(4)) float m_flFountainPercentageHealthRegen;// 0x434, size 4 (0x4)
+	__declspec(align(4)) float m_flFountainPercentageManaRegen;// 0x438, size 4 (0x4)
+	__declspec(align(4)) float m_flFountainConstantManaRegen;// 0x43c, size 4 (0x4)
+	__declspec(align(4)) float m_flPowerRuneSpawnInterval;// 0x440, size 4 (0x4)
+	__declspec(align(4)) float m_flBountyRuneSpawnInterval;// 0x444, size 4 (0x4)
+char CDOTABaseGameMode_04F8[0xB0];
+}; // size: 1272 (0x4f8)
 
 class CFuncIllusionary : public CBaseModelEntity
 {
@@ -4313,7 +4365,11 @@ char CBaseAnimating_0549[0x1];
 	// m_bShouldAnimateDuringGameplayPause metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) uint8_t m_nMuzzleFlashParity;// 0x54a, size 1 (0x1)
+	__declspec(align(1)) bool m_bDontSimulateClientAnimGraph;// 0x54a, size 1 (0x1)
+	// m_bDontSimulateClientAnimGraph metadata
+	 // MNetworkEnable
+	 // MNetworkEnable
+	__declspec(align(1)) uint8_t m_nMuzzleFlashParity;// 0x54b, size 1 (0x1)
 	// m_nMuzzleFlashParity metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
@@ -4321,8 +4377,8 @@ char CBaseAnimating_0549[0x1];
 	 // MNetworkPriority
 	__declspec(align(4)) float m_flDissolveStartTime;// 0x54c, size 4 (0x4)
 	__declspec(align(8)) CEntityIOOutput m_OnIgnite;// 0x550, size 40 (0x28)
-char CBaseAnimating_05C8[0x50];
-}; // size: 1480 (0x5c8)
+char CBaseAnimating_0620[0xA8];
+}; // size: 1568 (0x620)
 
 class CDOTA_Ability_Legion_Commander_MomentOfCourage : public CDOTABaseAbility
 {
@@ -4744,7 +4800,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 1480 (0x5c8)
+}; // size: 1568 (0x620)
 
 class CDOTA_Ability_NightStalker_CripplingFear : public CDOTABaseAbility
 {
@@ -4948,7 +5004,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, float > m_flexWeight;// 0x5c8, size 24 (0x18)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, float > m_flexWeight;// 0x620, size 24 (0x18)
 	// m_flexWeight metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
@@ -4956,21 +5012,21 @@ public:
 	 // MNetworkMinValue
 	 // MNetworkMaxValue
 	 // MNetworkEncodeFlags
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_viewtarget;// 0x5e0, size 12 (0xc)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_viewtarget;// 0x638, size 12 (0xc)
 	// m_viewtarget metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkEncoder
-	__declspec(align(1)) bool m_blinktoggle;// 0x5ec, size 1 (0x1)
+	__declspec(align(1)) bool m_blinktoggle;// 0x644, size 1 (0x1)
 	// m_blinktoggle metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-char CBaseFlex_0648[0x58];
-	__declspec(align(4)) float m_flAllowResponsesEndTime;// 0x648, size 4 (0x4)
-	__declspec(align(4)) float m_flLastFlexAnimationTime;// 0x64c, size 4 (0x4)
-	__declspec(align(1)) bool m_bUpdateLayerPriorities;// 0x650, size 1 (0x1)
-char CBaseFlex_0660[0xF];
-}; // size: 1632 (0x660)
+char CBaseFlex_06A0[0x58];
+	__declspec(align(4)) float m_flAllowResponsesEndTime;// 0x6a0, size 4 (0x4)
+	__declspec(align(4)) float m_flLastFlexAnimationTime;// 0x6a4, size 4 (0x4)
+	__declspec(align(1)) bool m_bUpdateLayerPriorities;// 0x6a8, size 1 (0x1)
+char CBaseFlex_06B8[0xF];
+}; // size: 1720 (0x6b8)
 
 class CTriggerMultiple : public CBaseTrigger
 {
@@ -5087,58 +5143,58 @@ char DamageHistory_08[0x4];
 	#pragma pack(pop)
 
 public:
-	__declspec(align(1)) bool m_bForceServerRagdoll;// 0x660, size 1 (0x1)
-	__declspec(align(1)) bool m_bPreventWeaponPickup;// 0x661, size 1 (0x1)
-	__declspec(align(1)) bool m_bApplyStressDamage;// 0x662, size 1 (0x1)
-	__declspec(align(4)) float m_flNextAttack;// 0x664, size 4 (0x4)
+	__declspec(align(1)) bool m_bForceServerRagdoll;// 0x6b8, size 1 (0x1)
+	__declspec(align(1)) bool m_bPreventWeaponPickup;// 0x6b9, size 1 (0x1)
+	__declspec(align(1)) bool m_bApplyStressDamage;// 0x6ba, size 1 (0x1)
+	__declspec(align(4)) float m_flNextAttack;// 0x6bc, size 4 (0x4)
 	// m_flNextAttack metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkSendProxyRecipientsFilter
-	__declspec(align(4)) Hull_t m_eHull;// 0x668, size 4 (0x4)
-	__declspec(align(4)) uint32_t m_navHullCategory;// 0x66c, size 4 (0x4)
-	__declspec(align(4)) float m_flNavHullRadius;// 0x670, size 4 (0x4)
-	__declspec(align(4)) float m_flNavHullHeight;// 0x674, size 4 (0x4)
-	__declspec(align(4)) int32_t m_bloodColor;// 0x678, size 4 (0x4)
-	__declspec(align(4)) float m_flFieldOfView;// 0x67c, size 4 (0x4)
+	__declspec(align(4)) Hull_t m_eHull;// 0x6c0, size 4 (0x4)
+	__declspec(align(4)) uint32_t m_navHullCategory;// 0x6c4, size 4 (0x4)
+	__declspec(align(4)) float m_flNavHullRadius;// 0x6c8, size 4 (0x4)
+	__declspec(align(4)) float m_flNavHullHeight;// 0x6cc, size 4 (0x4)
+	__declspec(align(4)) int32_t m_bloodColor;// 0x6d0, size 4 (0x4)
+	__declspec(align(4)) float m_flFieldOfView;// 0x6d4, size 4 (0x4)
 	// m_flFieldOfView metadata
 	 // MNetworkEnable
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_HackedGunPos;// 0x680, size 12 (0xc)
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_RelationshipString;// 0x690, size 8 (0x8)
-	__declspec(align(4)) float m_impactEnergyScale;// 0x698, size 4 (0x4)
-	__declspec(align(4)) int32_t m_LastHitGroup;// 0x69c, size 4 (0x4)
-	__declspec(align(4)) float m_flDamageAccumulator;// 0x6a0, size 4 (0x4)
-	__declspec(align(4)) int32_t m_iDamageCount;// 0x6a4, size 4 (0x4)
-	__declspec(align(4)) WeaponProficiency_t m_CurrentWeaponProficiency;// 0x6a8, size 4 (0x4)
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class Relationship_t > m_Relationship;// 0x6b0, size 24 (0x18)
-	__declspec(align(4)) int32_t m_nFaction;// 0x6c8, size 4 (0x4)
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownAtomicType <0x4, CHandle, class CBaseEntity > > m_hTriggerFogList;// 0x6d0, size 24 (0x18)
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hLastFogTrigger;// 0x6e8, size 4 (0x4)
-	__declspec(align(4)) uint32_t m_iAmmo[32];// 0x6ec, size 128 (0x80)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_HackedGunPos;// 0x6d8, size 12 (0xc)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_RelationshipString;// 0x6e8, size 8 (0x8)
+	__declspec(align(4)) float m_impactEnergyScale;// 0x6f0, size 4 (0x4)
+	__declspec(align(4)) int32_t m_LastHitGroup;// 0x6f4, size 4 (0x4)
+	__declspec(align(4)) float m_flDamageAccumulator;// 0x6f8, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iDamageCount;// 0x6fc, size 4 (0x4)
+	__declspec(align(4)) WeaponProficiency_t m_CurrentWeaponProficiency;// 0x700, size 4 (0x4)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class Relationship_t > m_Relationship;// 0x708, size 24 (0x18)
+	__declspec(align(4)) int32_t m_nFaction;// 0x720, size 4 (0x4)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownAtomicType <0x4, CHandle, class CBaseEntity > > m_hTriggerFogList;// 0x728, size 24 (0x18)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hLastFogTrigger;// 0x740, size 4 (0x4)
+	__declspec(align(4)) uint32_t m_iAmmo[32];// 0x744, size 128 (0x80)
 	// m_iAmmo metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkBitCount
 	 // MNetworkUserGroup
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownAtomicType <0x4, CHandle, class CBaseCombatWeapon > > m_hMyWeapons;// 0x770, size 24 (0x18)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownAtomicType <0x4, CHandle, class CBaseCombatWeapon > > m_hMyWeapons;// 0x7c8, size 24 (0x18)
 	// m_hMyWeapons metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseCombatWeapon > m_hActiveWeapon;// 0x788, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseCombatWeapon > m_hActiveWeapon;// 0x7e0, size 4 (0x4)
 	// m_hActiveWeapon metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(8)) IntervalTimer m_aliveTimer;// 0x790, size 16 (0x10)
-	__declspec(align(4)) uint32_t m_hasBeenInjured;// 0x7a0, size 4 (0x4)
-	__declspec(align(8)) CBaseCombatCharacter::DamageHistory m_damageHistory[4];// 0x7a8, size 96 (0x60)
-char CBaseCombatCharacter_0828[0x20];
-	__declspec(align(4)) CAI_MoveMonitor m_NavAreaUpdateMonitor;// 0x828, size 16 (0x10)
-	__declspec(align(4)) int32_t m_registeredNavTeam;// 0x838, size 4 (0x4)
-	__declspec(align(4)) int32_t m_navMeshID;// 0x83c, size 4 (0x4)
-	__declspec(align(8)) CountdownTimer m_footstepTimer;// 0x840, size 24 (0x18)
-	__declspec(align(4)) int32_t m_spawnID;// 0x858, size 4 (0x4)
-char CBaseCombatCharacter_0860[0x4];
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownAtomicType <0x4, CHandle, class CEconWearable > > m_hMyWearables;// 0x860, size 24 (0x18)
+	__declspec(align(8)) IntervalTimer m_aliveTimer;// 0x7e8, size 16 (0x10)
+	__declspec(align(4)) uint32_t m_hasBeenInjured;// 0x7f8, size 4 (0x4)
+	__declspec(align(8)) CBaseCombatCharacter::DamageHistory m_damageHistory[4];// 0x800, size 96 (0x60)
+char CBaseCombatCharacter_0880[0x20];
+	__declspec(align(4)) CAI_MoveMonitor m_NavAreaUpdateMonitor;// 0x880, size 16 (0x10)
+	__declspec(align(4)) int32_t m_registeredNavTeam;// 0x890, size 4 (0x4)
+	__declspec(align(4)) int32_t m_navMeshID;// 0x894, size 4 (0x4)
+	__declspec(align(8)) CountdownTimer m_footstepTimer;// 0x898, size 24 (0x18)
+	__declspec(align(4)) int32_t m_spawnID;// 0x8b0, size 4 (0x4)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecSpawnOrigin;// 0x8b4, size 12 (0xc)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownAtomicType <0x4, CHandle, class CEconWearable > > m_hMyWearables;// 0x8c0, size 24 (0x18)
 	// m_hMyWearables metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
@@ -5148,7 +5204,7 @@ public:
 	static Relationship_t **&Get_m_FactionRelationship() {return *(Relationship_t ***)schema::SchemaSystem::Get()->FindTypeScopeForModule("server.dll")->FindDeclaredClass("CBaseCombatCharacter")->m_staticMembers.data[2].m_pInstance; }
 	static UnknownAtomicType <0x18, CUtlVector, UnknownAtomicType <0x18, CUtlVector, UnknownAtomicType <0x4, CHandle, class CBaseEntity > > > &Get_m_aFactions() {return *(UnknownAtomicType <0x18, CUtlVector, UnknownAtomicType <0x18, CUtlVector, UnknownAtomicType <0x4, CHandle, class CBaseEntity > > > *)schema::SchemaSystem::Get()->FindTypeScopeForModule("server.dll")->FindDeclaredClass("CBaseCombatCharacter")->m_staticMembers.data[3].m_pInstance; }
 	static int32_t &Get_m_nextSpawnID() {return *(int32_t *)schema::SchemaSystem::Get()->FindTypeScopeForModule("server.dll")->FindDeclaredClass("CBaseCombatCharacter")->m_staticMembers.data[4].m_pInstance; }
-}; // size: 2168 (0x878)
+}; // size: 2264 (0x8d8)
 
 class CDOTA_Ability_Weaver_Shukuchi : public CDOTABaseAbility
 {
@@ -5224,7 +5280,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 1480 (0x5c8)
+}; // size: 1568 (0x620)
 
 class NextBotCombatCharacter : public CBaseCombatCharacter
 {
@@ -5250,15 +5306,15 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-char NextBotCombatCharacter_0900[0x88];
-	__declspec(align(1)) uint8_t m_nLod;// 0x900, size 1 (0x1)
+char NextBotCombatCharacter_0960[0x88];
+	__declspec(align(1)) uint8_t m_nLod;// 0x960, size 1 (0x1)
 	// m_nLod metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_lastAttacker;// 0x904, size 4 (0x4)
-	__declspec(align(1)) bool m_didModelChange;// 0x908, size 1 (0x1)
-char NextBotCombatCharacter_0910[0x7];
-}; // size: 2320 (0x910)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_lastAttacker;// 0x964, size 4 (0x4)
+	__declspec(align(1)) bool m_didModelChange;// 0x968, size 1 (0x1)
+char NextBotCombatCharacter_0970[0x7];
+}; // size: 2416 (0x970)
 
 class CDOTA_Ability_Special_Bonus_Unique_Dazzle_3 : public CDOTABaseAbility
 {
@@ -5452,6 +5508,33 @@ public:
 public:
 }; // size: 1016 (0x3f8)
 
+class CDOTABaseCustomHeroPickRules : public CBaseEntity
+{
+// CDOTABaseCustomHeroPickRules additional information
+// server.dll, project server
+// Alignment: -1
+// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+// SCHEMA_CLASS_IS_ABSTRACT
+// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
+// SCHEMA_CLASS_TEMP_HACK_HAS_DESTRUCTOR_LIKE_METHODS
+// Abstract Class
+
+public: 
+	class CEntityInstanceEntityClass : public CBaseEntity::CEntityInstanceEntityClass
+	{
+	// CDOTABaseCustomHeroPickRules::CEntityInstanceEntityClass additional information
+	// Alignment: -1
+	// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+	// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
+	// SCHEMA_CLASS_TEMP_HACK_HAS_DESTRUCTOR_LIKE_METHODS
+	// Abstract Class
+
+	public:
+	}; // size: 296 (0x128)
+
+public:
+}; // size: 872 (0x368)
+
 class CTriggerPush : public CBaseTrigger
 {
 // CTriggerPush additional information
@@ -5610,9 +5693,10 @@ public:
 char CDOTA_ModifierManager_0100[0xF4];
 	__declspec(align(2)) uint16_t m_nHasTruesightForTeam;// 0x100, size 2 (0x2)
 	__declspec(align(2)) uint16_t m_nHasTruesightForTeamValid;// 0x102, size 2 (0x2)
-	__declspec(align(4)) int32_t m_iBuffIndex;// 0x104, size 4 (0x4)
-	__declspec(align(4)) int32_t m_iLockRefCount;// 0x108, size 4 (0x4)
-char CDOTA_ModifierManager_0110[0x4];
+	__declspec(align(2)) uint16_t m_nProvidesFOWPositionForTeam;// 0x104, size 2 (0x2)
+	__declspec(align(2)) uint16_t m_nProvidesFOWPositionForTeamValid;// 0x106, size 2 (0x2)
+	__declspec(align(4)) int32_t m_iBuffIndex;// 0x108, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iLockRefCount;// 0x10c, size 4 (0x4)
 }; // size: 272 (0x110)
 #pragma pack(pop)
 
@@ -5642,7 +5726,9 @@ public:
 	__declspec(align(4)) int32_t echo_slam_echo_search_range;// 0x3fc, size 4 (0x4)
 	__declspec(align(4)) int32_t echo_slam_echo_range;// 0x400, size 4 (0x4)
 	__declspec(align(4)) int32_t echo_slam_echo_damage;// 0x404, size 4 (0x4)
-}; // size: 1032 (0x408)
+	__declspec(align(4)) int32_t echo_slam_initial_damage;// 0x408, size 4 (0x4)
+char CDOTA_Ability_Earthshaker_EchoSlam_0410[0x4];
+}; // size: 1040 (0x410)
 
 class CDOTA_Ability_Holdout_GodsStrength : public CDOTA_Ability_Sven_GodsStrength
 {
@@ -6033,446 +6119,450 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-char CDOTA_BaseNPC_0930[0x20];
-	__declspec(align(4)) uint32_t m_iUnitType;// 0x930, size 4 (0x4)
-	__declspec(align(1)) UnknownType <0x4, class Color> m_colorGemColor;// 0x934, size 4 (0x4)
-	__declspec(align(1)) bool m_bSelectionRingVisible;// 0x938, size 1 (0x1)
+char CDOTA_BaseNPC_0990[0x20];
+	__declspec(align(4)) uint32_t m_iUnitType;// 0x990, size 4 (0x4)
+	__declspec(align(1)) UnknownType <0x4, class Color> m_colorGemColor;// 0x994, size 4 (0x4)
+	__declspec(align(1)) bool m_bHasColorGem;// 0x998, size 1 (0x1)
+	__declspec(align(1)) bool m_bSelectionRingVisible;// 0x999, size 1 (0x1)
 	// m_bSelectionRingVisible metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-char CDOTA_BaseNPC_0948[0x8];
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszBaseClass;// 0x948, size 8 (0x8)
-	__declspec(align(4)) int32_t m_iStartingMaxHealth;// 0x950, size 4 (0x4)
-	__declspec(align(4)) int32_t m_iStartingMaxMana;// 0x954, size 4 (0x4)
-	__declspec(align(4)) int32_t m_iStartingMana;// 0x958, size 4 (0x4)
-	__declspec(align(4)) int32_t m_iCurrentLevel;// 0x95c, size 4 (0x4)
+char CDOTA_BaseNPC_09A8[0x8];
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszBaseClass;// 0x9a8, size 8 (0x8)
+	__declspec(align(4)) int32_t m_iStartingMaxHealth;// 0x9b0, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iStartingMaxMana;// 0x9b4, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iStartingMana;// 0x9b8, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iCurrentLevel;// 0x9bc, size 4 (0x4)
 	// m_iCurrentLevel metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkBitCount
 	 // MNetworkPriority
-	__declspec(align(4)) float m_flMana;// 0x960, size 4 (0x4)
+	__declspec(align(4)) float m_flMana;// 0x9c0, size 4 (0x4)
 	// m_flMana metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkBitCount
 	 // MNetworkMinValue
 	 // MNetworkMaxValue
-	__declspec(align(4)) float m_flBaseMaxMana;// 0x964, size 4 (0x4)
-	__declspec(align(4)) float m_flMaxMana;// 0x968, size 4 (0x4)
+	__declspec(align(4)) float m_flBaseMaxMana;// 0x9c4, size 4 (0x4)
+	__declspec(align(4)) float m_flMaxMana;// 0x9c8, size 4 (0x4)
 	// m_flMaxMana metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkBitCount
 	 // MNetworkMinValue
 	 // MNetworkMaxValue
-	__declspec(align(4)) float m_flManaThinkRegen;// 0x96c, size 4 (0x4)
+	__declspec(align(4)) float m_flManaThinkRegen;// 0x9cc, size 4 (0x4)
 	// m_flManaThinkRegen metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkBitCount
 	 // MNetworkMinValue
 	 // MNetworkMaxValue
-	__declspec(align(4)) float m_flBaseMaxHealth;// 0x970, size 4 (0x4)
-	__declspec(align(4)) float m_flHealthThinkRegen;// 0x974, size 4 (0x4)
+	__declspec(align(4)) float m_flBaseMaxHealth;// 0x9d0, size 4 (0x4)
+	__declspec(align(4)) float m_flHealthThinkRegen;// 0x9d4, size 4 (0x4)
 	// m_flHealthThinkRegen metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkBitCount
 	 // MNetworkMinValue
 	 // MNetworkMaxValue
-	__declspec(align(4)) int32_t m_nHealthBarOffsetOverride;// 0x978, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nHealthBarOffsetOverride;// 0x9d8, size 4 (0x4)
 	// m_nHealthBarOffsetOverride metadata
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bIsPhantom;// 0x97c, size 1 (0x1)
+	__declspec(align(1)) bool m_bIsPhantom;// 0x9dc, size 1 (0x1)
 	// m_bIsPhantom metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bIsAncient;// 0x97d, size 1 (0x1)
+	__declspec(align(1)) bool m_bIsAncient;// 0x9dd, size 1 (0x1)
 	// m_bIsAncient metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bIsNeutralUnitType;// 0x97e, size 1 (0x1)
+	__declspec(align(1)) bool m_bIsNeutralUnitType;// 0x9de, size 1 (0x1)
 	// m_bIsNeutralUnitType metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bAutoAttacksByDefault;// 0x97f, size 1 (0x1)
-	__declspec(align(1)) bool m_bIsSummoned;// 0x980, size 1 (0x1)
+	__declspec(align(1)) bool m_bAutoAttacksByDefault;// 0x9df, size 1 (0x1)
+	__declspec(align(1)) bool m_bIsSummoned;// 0x9e0, size 1 (0x1)
 	// m_bIsSummoned metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bCanBeDominated;// 0x981, size 1 (0x1)
+	__declspec(align(1)) bool m_bCanBeDominated;// 0x9e1, size 1 (0x1)
 	// m_bCanBeDominated metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bConsideredHero;// 0x982, size 1 (0x1)
-	__declspec(align(1)) bool m_bUsesConstantGesture;// 0x983, size 1 (0x1)
-	__declspec(align(1)) bool m_bIsPlayingSingleForcedActivity;// 0x984, size 1 (0x1)
-	__declspec(align(1)) bool m_bHasUpgradeableAbilities;// 0x985, size 1 (0x1)
+	__declspec(align(1)) bool m_bCanRespawn;// 0x9e2, size 1 (0x1)
+	// m_bCanRespawn metadata
+	 // MNetworkEnable
+	 // MNetworkEnable
+	__declspec(align(1)) bool m_bConsideredHero;// 0x9e3, size 1 (0x1)
+	__declspec(align(1)) bool m_bUsesConstantGesture;// 0x9e4, size 1 (0x1)
+	__declspec(align(1)) bool m_bIsPlayingSingleForcedActivity;// 0x9e5, size 1 (0x1)
+	__declspec(align(1)) bool m_bHasUpgradeableAbilities;// 0x9e6, size 1 (0x1)
 	// m_bHasUpgradeableAbilities metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_iBKBChargesUsed;// 0x988, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iBKBChargesUsed;// 0x9e8, size 4 (0x4)
 	// m_iBKBChargesUsed metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkBitCount
-	__declspec(align(4)) int32_t m_iBotDebugData;// 0x98c, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iBotDebugData;// 0x9ec, size 4 (0x4)
 	// m_iBotDebugData metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bIsMoving;// 0x990, size 1 (0x1)
+	__declspec(align(1)) bool m_bIsMoving;// 0x9f0, size 1 (0x1)
 	// m_bIsMoving metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-char CDOTA_BaseNPC_0B20[0x18C];
-	__declspec(align(4)) int32_t m_iLastAbilityPlayer;// 0xb20, size 4 (0x4)
-	__declspec(align(1)) bool m_bIsPhantomBlocker;// 0xb24, size 1 (0x1)
-	__declspec(align(1)) bool m_bBlocksCreepSpawn;// 0xb25, size 1 (0x1)
-	__declspec(align(1)) bool m_bCanSellItems;// 0xb26, size 1 (0x1)
-	__declspec(align(1)) bool m_bCanRespawn;// 0xb27, size 1 (0x1)
-char CDOTA_BaseNPC_0B2C[0x4];
-	__declspec(align(1)) bool m_bTrackDamageTaken;// 0xb2c, size 1 (0x1)
-	__declspec(align(4)) int32_t m_nNextRegenThink;// 0xb30, size 4 (0x4)
-	__declspec(align(4)) int32_t m_nNextModifierThink;// 0xb34, size 4 (0x4)
-	__declspec(align(4)) int32_t m_nNextUnitThink;// 0xb38, size 4 (0x4)
-	__declspec(align(4)) float m_flManaRegen;// 0xb3c, size 4 (0x4)
+char CDOTA_BaseNPC_0B80[0x18C];
+	__declspec(align(4)) int32_t m_iLastAbilityPlayer;// 0xb80, size 4 (0x4)
+	__declspec(align(1)) bool m_bIsPhantomBlocker;// 0xb84, size 1 (0x1)
+	__declspec(align(1)) bool m_bBlocksCreepSpawn;// 0xb85, size 1 (0x1)
+	__declspec(align(1)) bool m_bCanSellItems;// 0xb86, size 1 (0x1)
+char CDOTA_BaseNPC_0B8C[0x5];
+	__declspec(align(1)) bool m_bTrackDamageTaken;// 0xb8c, size 1 (0x1)
+	__declspec(align(4)) int32_t m_nNextRegenThink;// 0xb90, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nNextModifierThink;// 0xb94, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nNextUnitThink;// 0xb98, size 4 (0x4)
+	__declspec(align(4)) float m_flManaRegen;// 0xb9c, size 4 (0x4)
 	// m_flManaRegen metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkBitCount
 	 // MNetworkMinValue
 	 // MNetworkMaxValue
-	__declspec(align(4)) float m_flHealthRegen;// 0xb40, size 4 (0x4)
+	__declspec(align(4)) float m_flHealthRegen;// 0xba0, size 4 (0x4)
 	// m_flHealthRegen metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkBitCount
 	 // MNetworkMinValue
 	 // MNetworkMaxValue
-	__declspec(align(8)) int64_t m_nTotalDamageTaken;// 0xb48, size 8 (0x8)
+	__declspec(align(8)) int64_t m_nTotalDamageTaken;// 0xba8, size 8 (0x8)
 	// m_nTotalDamageTaken metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkPriority
-	__declspec(align(4)) float m_flHealthRegenCounter;// 0xb50, size 4 (0x4)
-	__declspec(align(4)) float m_flManaRegenCounter;// 0xb54, size 4 (0x4)
-	__declspec(align(4)) float m_flAccumulatedHeal;// 0xb58, size 4 (0x4)
-	__declspec(align(4)) int32_t m_iBaseDamageMin;// 0xb5c, size 4 (0x4)
-	__declspec(align(4)) int32_t m_iBaseDamageMax;// 0xb60, size 4 (0x4)
-	__declspec(align(4)) int32_t m_iAttackRange;// 0xb64, size 4 (0x4)
-	__declspec(align(4)) int32_t m_iAttackRangeBuffer;// 0xb68, size 4 (0x4)
-	__declspec(align(4)) int32_t m_iMoveSpeed;// 0xb6c, size 4 (0x4)
+	__declspec(align(4)) float m_flHealthRegenCounter;// 0xbb0, size 4 (0x4)
+	__declspec(align(4)) float m_flManaRegenCounter;// 0xbb4, size 4 (0x4)
+	__declspec(align(4)) float m_flAccumulatedHeal;// 0xbb8, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iBaseDamageMin;// 0xbbc, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iBaseDamageMax;// 0xbc0, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iAttackRange;// 0xbc4, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iAttackRangeBuffer;// 0xbc8, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iMoveSpeed;// 0xbcc, size 4 (0x4)
 	// m_iMoveSpeed metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) float m_flTurnRate;// 0xb70, size 4 (0x4)
-	__declspec(align(4)) int32_t m_iHasAggressiveStance;// 0xb74, size 4 (0x4)
-	__declspec(align(1)) bool m_bInAggressiveStance;// 0xb78, size 1 (0x1)
-	__declspec(align(1)) bool m_bInInjuredAggressiveStance;// 0xb79, size 1 (0x1)
-	__declspec(align(4)) float m_flFollowRange;// 0xb7c, size 4 (0x4)
-	__declspec(align(4)) int32_t m_iAcquisitionRange;// 0xb80, size 4 (0x4)
-	__declspec(align(4)) float m_flAttackAnimationPoint;// 0xb84, size 4 (0x4)
-	__declspec(align(4)) float m_flHullRadius;// 0xb88, size 4 (0x4)
-	__declspec(align(4)) float m_flCollisionPadding;// 0xb8c, size 4 (0x4)
-	__declspec(align(4)) float m_flTauntCooldown;// 0xb90, size 4 (0x4)
+	__declspec(align(4)) float m_flTurnRate;// 0xbd0, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iHasAggressiveStance;// 0xbd4, size 4 (0x4)
+	__declspec(align(1)) bool m_bInAggressiveStance;// 0xbd8, size 1 (0x1)
+	__declspec(align(1)) bool m_bInInjuredAggressiveStance;// 0xbd9, size 1 (0x1)
+	__declspec(align(4)) float m_flFollowRange;// 0xbdc, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iAcquisitionRange;// 0xbe0, size 4 (0x4)
+	__declspec(align(4)) float m_flAttackAnimationPoint;// 0xbe4, size 4 (0x4)
+	__declspec(align(4)) float m_flHullRadius;// 0xbe8, size 4 (0x4)
+	__declspec(align(4)) float m_flCollisionPadding;// 0xbec, size 4 (0x4)
+	__declspec(align(4)) float m_flTauntCooldown;// 0xbf0, size 4 (0x4)
 	// m_flTauntCooldown metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) float m_fRevealRadius;// 0xb94, size 4 (0x4)
+	__declspec(align(4)) float m_fRevealRadius;// 0xbf4, size 4 (0x4)
 	// m_fRevealRadius metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) float m_flProjectileCollisionSize;// 0xb98, size 4 (0x4)
-	__declspec(align(4)) ObstructionRelationshipClass_t m_ObstructionRelationshipClass;// 0xb9c, size 4 (0x4)
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszParticleFolder;// 0xba0, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszGameSoundsFile;// 0xba8, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszVoiceFile;// 0xbb0, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszSoundSet;// 0xbb8, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszSelectionGroup;// 0xbc0, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszAnimationModifier;// 0xbc8, size 8 (0x8)
-char CDOTA_BaseNPC_0BD8[0x8];
-	__declspec(align(4)) float m_flBaseAttackTime;// 0xbd8, size 4 (0x4)
-	__declspec(align(4)) int32_t m_iDayTimeVisionRange;// 0xbdc, size 4 (0x4)
+	__declspec(align(4)) float m_flProjectileCollisionSize;// 0xbf8, size 4 (0x4)
+	__declspec(align(4)) ObstructionRelationshipClass_t m_ObstructionRelationshipClass;// 0xbfc, size 4 (0x4)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszParticleFolder;// 0xc00, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszGameSoundsFile;// 0xc08, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszVoiceFile;// 0xc10, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszSoundSet;// 0xc18, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszSelectionGroup;// 0xc20, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszAnimationModifier;// 0xc28, size 8 (0x8)
+char CDOTA_BaseNPC_0C38[0x8];
+	__declspec(align(4)) float m_flBaseAttackTime;// 0xc38, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iDayTimeVisionRange;// 0xc3c, size 4 (0x4)
 	// m_iDayTimeVisionRange metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkBitCount
-	__declspec(align(4)) int32_t m_iNightTimeVisionRange;// 0xbe0, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iNightTimeVisionRange;// 0xc40, size 4 (0x4)
 	// m_iNightTimeVisionRange metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkBitCount
-	__declspec(align(4)) float m_fBotAttackDesire;// 0xbe4, size 4 (0x4)
-	__declspec(align(4)) int32_t m_iCombatClass;// 0xbe8, size 4 (0x4)
-	__declspec(align(4)) int32_t m_iCombatClassAttack;// 0xbec, size 4 (0x4)
-	__declspec(align(4)) int32_t m_iCombatClassDefend;// 0xbf0, size 4 (0x4)
-	__declspec(align(4)) int32_t m_iUnitRelationshipClass;// 0xbf4, size 4 (0x4)
-	__declspec(align(4)) float m_flPhysicalArmorValue;// 0xbf8, size 4 (0x4)
+	__declspec(align(4)) float m_fBotAttackDesire;// 0xc44, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iCombatClass;// 0xc48, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iCombatClassAttack;// 0xc4c, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iCombatClassDefend;// 0xc50, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iUnitRelationshipClass;// 0xc54, size 4 (0x4)
+	__declspec(align(4)) float m_flPhysicalArmorValue;// 0xc58, size 4 (0x4)
 	// m_flPhysicalArmorValue metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) float m_flMagicalResistanceValue;// 0xbfc, size 4 (0x4)
+	__declspec(align(4)) float m_flMagicalResistanceValue;// 0xc5c, size 4 (0x4)
 	// m_flMagicalResistanceValue metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_iTeamName;// 0xc00, size 4 (0x4)
-	__declspec(align(4)) int32_t m_iAttackCapabilities;// 0xc04, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iTeamName;// 0xc60, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iAttackCapabilities;// 0xc64, size 4 (0x4)
 	// m_iAttackCapabilities metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkBitCount
 	 // MNetworkPriority
-	__declspec(align(4)) int32_t m_iSpecialAbility;// 0xc08, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iSpecialAbility;// 0xc68, size 4 (0x4)
 	// m_iSpecialAbility metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkBitCount
 	 // MNetworkPriority
-	__declspec(align(4)) int32_t m_iMoveCapabilities;// 0xc0c, size 4 (0x4)
-	__declspec(align(4)) int32_t m_iXPBounty;// 0xc10, size 4 (0x4)
-	__declspec(align(4)) int32_t m_iXPBountyExtra;// 0xc14, size 4 (0x4)
-	__declspec(align(4)) int32_t m_iGoldBountyMin;// 0xc18, size 4 (0x4)
-	__declspec(align(4)) int32_t m_iGoldBountyMax;// 0xc1c, size 4 (0x4)
-	__declspec(align(4)) int32_t m_nFarmClaimPlayerID;// 0xc20, size 4 (0x4)
-	__declspec(align(4)) int32_t m_nPlayerOwnerID;// 0xc24, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iMoveCapabilities;// 0xc6c, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iXPBounty;// 0xc70, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iXPBountyExtra;// 0xc74, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iGoldBountyMin;// 0xc78, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iGoldBountyMax;// 0xc7c, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nFarmClaimPlayerID;// 0xc80, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nPlayerOwnerID;// 0xc84, size 4 (0x4)
 	// m_nPlayerOwnerID metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszAbilityList[24];// 0xc28, size 192 (0xc0)
-	__declspec(align(4)) int32_t m_iAttackDamageType;// 0xce8, size 4 (0x4)
-	__declspec(align(1)) bool m_bIsIdle;// 0xcec, size 1 (0x1)
-	__declspec(align(1)) bool m_bHold;// 0xced, size 1 (0x1)
-	__declspec(align(1)) bool m_bWasKilledPassively;// 0xcee, size 1 (0x1)
-	__declspec(align(8)) CountdownTimer m_AngerTimer;// 0xcf0, size 24 (0x18)
-	__declspec(align(8)) CountdownTimer m_AlertTimer;// 0xd08, size 24 (0x18)
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hAngerTarget;// 0xd20, size 4 (0x4)
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hAlertTarget;// 0xd24, size 4 (0x4)
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hForceAttackTarget;// 0xd28, size 4 (0x4)
-	__declspec(align(1)) bool m_bAllowAllyForceAttack;// 0xd2c, size 1 (0x1)
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vTargetLastKnownPosition;// 0xd30, size 12 (0xc)
-char CDOTA_BaseNPC_0D58[0x1C];
-	__declspec(align(4)) float m_flLastDamageTime;// 0xd58, size 4 (0x4)
-	__declspec(align(4)) float m_flLastAttackTime;// 0xd5c, size 4 (0x4)
-	__declspec(align(4)) float m_flTimeSinceLastAbilityNag;// 0xd60, size 4 (0x4)
-	__declspec(align(4)) float m_flLastTeleportTime;// 0xd64, size 4 (0x4)
-	__declspec(align(8)) uint64_t m_nUnitState64;// 0xd68, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszAbilityList[24];// 0xc88, size 192 (0xc0)
+	__declspec(align(4)) int32_t m_iAttackDamageType;// 0xd48, size 4 (0x4)
+	__declspec(align(1)) bool m_bIsIdle;// 0xd4c, size 1 (0x1)
+	__declspec(align(1)) bool m_bHold;// 0xd4d, size 1 (0x1)
+	__declspec(align(1)) bool m_bWasKilledPassively;// 0xd4e, size 1 (0x1)
+	__declspec(align(8)) CountdownTimer m_AngerTimer;// 0xd50, size 24 (0x18)
+	__declspec(align(8)) CountdownTimer m_AlertTimer;// 0xd68, size 24 (0x18)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hAngerTarget;// 0xd80, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hAlertTarget;// 0xd84, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hForceAttackTarget;// 0xd88, size 4 (0x4)
+	__declspec(align(1)) bool m_bAllowAllyForceAttack;// 0xd8c, size 1 (0x1)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vTargetLastKnownPosition;// 0xd90, size 12 (0xc)
+char CDOTA_BaseNPC_0DB8[0x1C];
+	__declspec(align(4)) float m_flLastDamageTime;// 0xdb8, size 4 (0x4)
+	__declspec(align(4)) float m_flLastAttackTime;// 0xdbc, size 4 (0x4)
+	__declspec(align(4)) float m_flTimeSinceLastAbilityNag;// 0xdc0, size 4 (0x4)
+	__declspec(align(4)) float m_flLastTeleportTime;// 0xdc4, size 4 (0x4)
+	__declspec(align(8)) uint64_t m_nUnitState64;// 0xdc8, size 8 (0x8)
 	// m_nUnitState64 metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) float m_vLastVisibilityChange[14];// 0xd70, size 56 (0x38)
-char CDOTA_BaseNPC_0DC0[0x18];
-	__declspec(align(1)) bool m_bFirstSpawn;// 0xdc0, size 1 (0x1)
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hAttackTarget;// 0xdc4, size 4 (0x4)
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hAggroTarget;// 0xdc8, size 4 (0x4)
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hCommandAttackTarget;// 0xdcc, size 4 (0x4)
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszOriginalModel;// 0xdd0, size 8 (0x8)
-	__declspec(align(1)) bool m_bPseudoQueueOrders;// 0xdd8, size 1 (0x1)
-	__declspec(align(1)) bool m_bCastLocked;// 0xdd9, size 1 (0x1)
-char CDOTA_BaseNPC_0DF8[0x1C];
-	__declspec(align(4)) float m_flAttackRegulator;// 0xdf8, size 4 (0x4)
-	__declspec(align(4)) float m_fAttackPhaseEndTime;// 0xdfc, size 4 (0x4)
-	__declspec(align(4)) float m_flPositionUpdateTime;// 0xe00, size 4 (0x4)
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vLastPositionSent;// 0xe04, size 12 (0xc)
-	__declspec(align(4)) int32_t m_iTaggedAsVisibleByTeam;// 0xe10, size 4 (0x4)
+	__declspec(align(4)) float m_vLastVisibilityChange[14];// 0xdd0, size 56 (0x38)
+char CDOTA_BaseNPC_0E20[0x18];
+	__declspec(align(1)) bool m_bFirstSpawn;// 0xe20, size 1 (0x1)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hAttackTarget;// 0xe24, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hAggroTarget;// 0xe28, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hCommandAttackTarget;// 0xe2c, size 4 (0x4)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszOriginalModel;// 0xe30, size 8 (0x8)
+	__declspec(align(1)) bool m_bPseudoQueueOrders;// 0xe38, size 1 (0x1)
+	__declspec(align(1)) bool m_bCastLocked;// 0xe39, size 1 (0x1)
+char CDOTA_BaseNPC_0E58[0x1C];
+	__declspec(align(4)) float m_flAttackRegulator;// 0xe58, size 4 (0x4)
+	__declspec(align(4)) float m_fAttackPhaseEndTime;// 0xe5c, size 4 (0x4)
+	__declspec(align(4)) float m_flPositionUpdateTime;// 0xe60, size 4 (0x4)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vLastPositionSent;// 0xe64, size 12 (0xc)
+	__declspec(align(4)) int32_t m_iTaggedAsVisibleByTeam;// 0xe70, size 4 (0x4)
 	// m_iTaggedAsVisibleByTeam metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkBitCount
 	 // MNetworkPriority
-	__declspec(align(8)) uint64_t m_iIsControllableByPlayer64;// 0xe18, size 8 (0x8)
+	__declspec(align(8)) uint64_t m_iIsControllableByPlayer64;// 0xe78, size 8 (0x8)
 	// m_iIsControllableByPlayer64 metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_nControllingPlayerID;// 0xe20, size 4 (0x4)
-	__declspec(align(1)) bool m_bRunAIWhenControllableByPlayer;// 0xe24, size 1 (0x1)
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hAbilities[24];// 0xe28, size 96 (0x60)
+	__declspec(align(4)) int32_t m_nControllingPlayerID;// 0xe80, size 4 (0x4)
+	__declspec(align(1)) bool m_bRunAIWhenControllableByPlayer;// 0xe84, size 1 (0x1)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hAbilities[24];// 0xe88, size 96 (0x60)
 	// m_hAbilities metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkUserGroup
 	 // MNetworkPriority
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownAtomicType <0x4, CHandle, class CBaseEntity > > m_associatedEmptyAbilities;// 0xe88, size 24 (0x18)
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hActiveAbility;// 0xea0, size 4 (0x4)
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vCursorLocation;// 0xea4, size 12 (0xc)
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hCursorTarget;// 0xeb0, size 4 (0x4)
-	__declspec(align(1)) bool m_bCursorTargetingNothing;// 0xeb4, size 1 (0x1)
-	__declspec(align(8)) CDOTA_ModifierManager m_ModifierManager;// 0xeb8, size 272 (0x110)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownAtomicType <0x4, CHandle, class CBaseEntity > > m_associatedEmptyAbilities;// 0xee8, size 24 (0x18)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hActiveAbility;// 0xf00, size 4 (0x4)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vCursorLocation;// 0xf04, size 12 (0xc)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hCursorTarget;// 0xf10, size 4 (0x4)
+	__declspec(align(1)) bool m_bCursorTargetingNothing;// 0xf14, size 1 (0x1)
+	__declspec(align(8)) CDOTA_ModifierManager m_ModifierManager;// 0xf18, size 272 (0x110)
 	// m_ModifierManager metadata
 	 // MNetworkEnable
 	 // MNetworkVarEmbeddedUnderlyingType
 	 // MNetworkEnable
-char CDOTA_BaseNPC_0FD0[0x8];
-	__declspec(align(4)) float m_flInvisibilityLevel;// 0xfd0, size 4 (0x4)
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszMapUnitName;// 0xfd8, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszUnitName;// 0xfe0, size 8 (0x8)
+char CDOTA_BaseNPC_01030[0x8];
+	__declspec(align(4)) float m_flInvisibilityLevel;// 0x1030, size 4 (0x4)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszMapUnitName;// 0x1038, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszUnitName;// 0x1040, size 8 (0x8)
 	// m_iszUnitName metadata
 	 // MNetworkEnable
 	 // MNetworkDisable
-	__declspec(align(4)) int32_t m_iUnitNameIndex;// 0xfe8, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iUnitNameIndex;// 0x1048, size 4 (0x4)
 	// m_iUnitNameIndex metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkBitCount
-	__declspec(align(4)) int32_t m_iDamageMin;// 0xfec, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iDamageMin;// 0x104c, size 4 (0x4)
 	// m_iDamageMin metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkBitCount
-	__declspec(align(4)) int32_t m_iDamageMax;// 0xff0, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iDamageMax;// 0x1050, size 4 (0x4)
 	// m_iDamageMax metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkBitCount
-	__declspec(align(4)) int32_t m_iDamageBonus;// 0xff4, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iDamageBonus;// 0x1054, size 4 (0x4)
 	// m_iDamageBonus metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkBitCount
-	__declspec(align(1)) bool m_bIsWaitingToSpawn;// 0xff8, size 1 (0x1)
+	__declspec(align(1)) bool m_bIsWaitingToSpawn;// 0x1058, size 1 (0x1)
 	// m_bIsWaitingToSpawn metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_iLeashType;// 0xffc, size 4 (0x4)
-	__declspec(align(4)) int32_t m_iAggroType;// 0x1000, size 4 (0x4)
-	__declspec(align(1)) bool m_bCreepIgnoreAggro;// 0x1004, size 1 (0x1)
-	__declspec(align(1)) bool m_bIsIllusion;// 0x1005, size 1 (0x1)
+	__declspec(align(4)) int32_t m_iLeashType;// 0x105c, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iAggroType;// 0x1060, size 4 (0x4)
+	__declspec(align(1)) bool m_bCreepIgnoreAggro;// 0x1064, size 1 (0x1)
+	__declspec(align(1)) bool m_bIsIllusion;// 0x1065, size 1 (0x1)
 	// m_bIsIllusion metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) uint8_t m_nUnitLabelIndex;// 0x1006, size 1 (0x1)
+	__declspec(align(1)) uint8_t m_nUnitLabelIndex;// 0x1066, size 1 (0x1)
 	// m_nUnitLabelIndex metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_szUnitLabel;// 0x1008, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_szUnitLabel;// 0x1068, size 8 (0x8)
 	// m_szUnitLabel metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_strAnimationModifier;// 0x1010, size 8 (0x8)
-char CDOTA_BaseNPC_01040[0x28];
-	__declspec(align(8)) CLocomotionBase *m_locomotor;// 0x1040, size 8 (0x8)
-	__declspec(align(8)) IBody *m_body;// 0x1048, size 8 (0x8)
-	__declspec(align(1)) bool m_bNeverMoveToClearSpace;// 0x1050, size 1 (0x1)
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_initialGoalEntity;// 0x1054, size 4 (0x4)
-	__declspec(align(1)) bool m_bMustReachEachGoalEntity;// 0x1058, size 1 (0x1)
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vInitialGoalPosition;// 0x105c, size 12 (0xc)
-char CDOTA_BaseNPC_01080[0x18];
-	__declspec(align(8)) CUnitOrders m_CurrentQueuedOrder;// 0x1080, size 64 (0x40)
-char CDOTA_BaseNPC_010D8[0x18];
-	__declspec(align(8)) CDOTA_UnitInventory m_Inventory;// 0x10d8, size 200 (0xc8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_strAnimationModifier;// 0x1070, size 8 (0x8)
+char CDOTA_BaseNPC_010A0[0x28];
+	__declspec(align(8)) CLocomotionBase *m_locomotor;// 0x10a0, size 8 (0x8)
+	__declspec(align(8)) IBody *m_body;// 0x10a8, size 8 (0x8)
+	__declspec(align(1)) bool m_bNeverMoveToClearSpace;// 0x10b0, size 1 (0x1)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_initialGoalEntity;// 0x10b4, size 4 (0x4)
+	__declspec(align(1)) bool m_bMustReachEachGoalEntity;// 0x10b8, size 1 (0x1)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vInitialGoalPosition;// 0x10bc, size 12 (0xc)
+char CDOTA_BaseNPC_010E0[0x18];
+	__declspec(align(8)) CUnitOrders m_CurrentQueuedOrder;// 0x10e0, size 64 (0x40)
+char CDOTA_BaseNPC_01138[0x18];
+	__declspec(align(8)) CDOTA_UnitInventory m_Inventory;// 0x1138, size 200 (0xc8)
 	// m_Inventory metadata
 	 // MNetworkEnable
 	 // MNetworkVarEmbeddedUnderlyingType
 	 // MNetworkEnable
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hItemToDrop;// 0x11a0, size 4 (0x4)
-	__declspec(align(4)) DOTA_SHOP_TYPE m_iCurShop;// 0x11a4, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hItemToDrop;// 0x1200, size 4 (0x4)
+	__declspec(align(4)) DOTA_SHOP_TYPE m_iCurShop;// 0x1204, size 4 (0x4)
 	// m_iCurShop metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkBitCount
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hLastNearShop;// 0x11a8, size 4 (0x4)
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_szCurShopEntName;// 0x11b0, size 8 (0x8)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hLastNearShop;// 0x1208, size 4 (0x4)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_szCurShopEntName;// 0x1210, size 8 (0x8)
 	// m_szCurShopEntName metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bHasInventory;// 0x11b8, size 1 (0x1)
-	__declspec(align(4)) float m_flBaselineModelScale;// 0x11bc, size 4 (0x4)
-	__declspec(align(4)) float m_fModelScaleMultiplier;// 0x11c0, size 4 (0x4)
-	__declspec(align(4)) float m_flPreviousModelScale;// 0x11c4, size 4 (0x4)
-	__declspec(align(1)) bool m_bIsCamped;// 0x11c8, size 1 (0x1)
-	__declspec(align(1)) bool m_bIsReturningHome;// 0x11c9, size 1 (0x1)
-	__declspec(align(1)) bool m_bWantsToFlee;// 0x11ca, size 1 (0x1)
-	__declspec(align(1)) bool m_bWakesNeutrals;// 0x11cb, size 1 (0x1)
-	__declspec(align(1)) bool m_bIdleAcquire;// 0x11cc, size 1 (0x1)
-	__declspec(align(1)) bool m_bCanFollowUnseenUnits;// 0x11cd, size 1 (0x1)
-	__declspec(align(1)) bool m_bExpired;// 0x11ce, size 1 (0x1)
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vCurrentMovementOrderDestination;// 0x11d0, size 12 (0xc)
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vPreviousMovementOrderDestination;// 0x11dc, size 12 (0xc)
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vResumePreviousMovementRequestLocation;// 0x11e8, size 12 (0xc)
-	__declspec(align(1)) bool m_bCurrentOrderIsMovement;// 0x11f4, size 1 (0x1)
-	__declspec(align(1)) bool m_bPreviousOrderIsMovement;// 0x11f5, size 1 (0x1)
-	__declspec(align(1)) bool m_bResumePreviousMovement;// 0x11f6, size 1 (0x1)
-	__declspec(align(1)) bool m_bIsPatrolling;// 0x11f7, size 1 (0x1)
-	__declspec(align(4)) float m_flCreationTime;// 0x11f8, size 4 (0x4)
-	__declspec(align(1)) bool m_bTargetMovedOutOfRange;// 0x11fc, size 1 (0x1)
-	__declspec(align(1)) bool m_bChaseTargetMoves;// 0x11fd, size 1 (0x1)
-	__declspec(align(4)) float m_flChaseDistance;// 0x1200, size 4 (0x4)
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hChaseEntity;// 0x1204, size 4 (0x4)
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownType <0x2, class CUtlSymbol> > m_ActivityModifiers;// 0x1208, size 24 (0x18)
-	__declspec(align(1)) bool m_bActivityModifiersDirty;// 0x1220, size 1 (0x1)
-	__declspec(align(4)) float m_flBlinkDaggerTime;// 0x1224, size 4 (0x4)
-	__declspec(align(4)) float m_flAdditionalBattleMusicWeight;// 0x1228, size 4 (0x4)
-	__declspec(align(1)) bool m_bStolenScepter;// 0x122c, size 1 (0x1)
+	__declspec(align(1)) bool m_bHasInventory;// 0x1218, size 1 (0x1)
+	__declspec(align(4)) float m_flBaselineModelScale;// 0x121c, size 4 (0x4)
+	__declspec(align(4)) float m_fModelScaleMultiplier;// 0x1220, size 4 (0x4)
+	__declspec(align(4)) float m_flPreviousModelScale;// 0x1224, size 4 (0x4)
+	__declspec(align(1)) bool m_bIsCamped;// 0x1228, size 1 (0x1)
+	__declspec(align(1)) bool m_bIsReturningHome;// 0x1229, size 1 (0x1)
+	__declspec(align(1)) bool m_bWantsToFlee;// 0x122a, size 1 (0x1)
+	__declspec(align(1)) bool m_bWakesNeutrals;// 0x122b, size 1 (0x1)
+	__declspec(align(1)) bool m_bIdleAcquire;// 0x122c, size 1 (0x1)
+	__declspec(align(1)) bool m_bCanFollowUnseenUnits;// 0x122d, size 1 (0x1)
+	__declspec(align(1)) bool m_bExpired;// 0x122e, size 1 (0x1)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vCurrentMovementOrderDestination;// 0x1230, size 12 (0xc)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vPreviousMovementOrderDestination;// 0x123c, size 12 (0xc)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vResumePreviousMovementRequestLocation;// 0x1248, size 12 (0xc)
+	__declspec(align(1)) bool m_bCurrentOrderIsMovement;// 0x1254, size 1 (0x1)
+	__declspec(align(1)) bool m_bPreviousOrderIsMovement;// 0x1255, size 1 (0x1)
+	__declspec(align(1)) bool m_bResumePreviousMovement;// 0x1256, size 1 (0x1)
+	__declspec(align(1)) bool m_bIsPatrolling;// 0x1257, size 1 (0x1)
+	__declspec(align(4)) float m_flCreationTime;// 0x1258, size 4 (0x4)
+	__declspec(align(1)) bool m_bTargetMovedOutOfRange;// 0x125c, size 1 (0x1)
+	__declspec(align(1)) bool m_bChaseTargetMoves;// 0x125d, size 1 (0x1)
+	__declspec(align(4)) float m_flChaseDistance;// 0x1260, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hChaseEntity;// 0x1264, size 4 (0x4)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownType <0x2, class CUtlSymbol> > m_ActivityModifiers;// 0x1268, size 24 (0x18)
+	__declspec(align(1)) bool m_bActivityModifiersDirty;// 0x1280, size 1 (0x1)
+	__declspec(align(4)) float m_flBlinkDaggerTime;// 0x1284, size 4 (0x4)
+	__declspec(align(4)) float m_flAdditionalBattleMusicWeight;// 0x1288, size 4 (0x4)
+	__declspec(align(1)) bool m_bStolenScepter;// 0x128c, size 1 (0x1)
 	// m_bStolenScepter metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(8)) CLocalNPCObstructionsCache m_LocalNPCObstructionsCache;// 0x1230, size 32 (0x20)
-char CDOTA_BaseNPC_01270[0x20];
-	__declspec(align(4)) float m_flCritBashFailUntil;// 0x1270, size 4 (0x4)
-	__declspec(align(4)) float m_flCompanionDistance;// 0x1274, size 4 (0x4)
-	__declspec(align(1)) bool m_bIsPartyCompanion;// 0x1278, size 1 (0x1)
-	__declspec(align(1)) bool m_bCanPartyCompanionAttack;// 0x1279, size 1 (0x1)
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_CompanionEntity;// 0x127c, size 4 (0x4)
-	__declspec(align(1)) bool m_bFacePlayer;// 0x1280, size 1 (0x1)
-	__declspec(align(4)) float m_flLastIdleChangeTime;// 0x1284, size 4 (0x4)
-	__declspec(align(1)) bool m_bUseNeutralCreepBehavior;// 0x1288, size 1 (0x1)
-char CDOTA_BaseNPC_012B0[0x27];
-	__declspec(align(1)) bool m_bHasBuiltWearableSpawnList;// 0x12b0, size 1 (0x1)
-	__declspec(align(4)) int32_t m_nFoWFadeStartTime[14];// 0x12b4, size 56 (0x38)
-	__declspec(align(8)) CountdownTimer m_AngerCooldownTimer;// 0x12f0, size 24 (0x18)
-	__declspec(align(4)) int32_t m_iProjectileMoveSpeed;// 0x1308, size 4 (0x4)
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszAutoAttackRangedParticle;// 0x1310, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_strLastKillerAbility;// 0x1318, size 8 (0x8)
-	__declspec(align(4)) int32_t m_nPoseParameterTurn;// 0x1320, size 4 (0x4)
-	__declspec(align(4)) float m_flLean;// 0x1324, size 4 (0x4)
-	__declspec(align(4)) int32_t m_anglediff;// 0x1328, size 4 (0x4)
+	__declspec(align(8)) CLocalNPCObstructionsCache m_LocalNPCObstructionsCache;// 0x1290, size 32 (0x20)
+char CDOTA_BaseNPC_012D0[0x20];
+	__declspec(align(4)) float m_flCritBashFailUntil;// 0x12d0, size 4 (0x4)
+	__declspec(align(4)) float m_flCompanionDistance;// 0x12d4, size 4 (0x4)
+	__declspec(align(1)) bool m_bIsPartyCompanion;// 0x12d8, size 1 (0x1)
+	__declspec(align(1)) bool m_bCanPartyCompanionAttack;// 0x12d9, size 1 (0x1)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_CompanionEntity;// 0x12dc, size 4 (0x4)
+	__declspec(align(1)) bool m_bFacePlayer;// 0x12e0, size 1 (0x1)
+	__declspec(align(4)) float m_flLastIdleChangeTime;// 0x12e4, size 4 (0x4)
+	__declspec(align(1)) bool m_bUseNeutralCreepBehavior;// 0x12e8, size 1 (0x1)
+char CDOTA_BaseNPC_01310[0x27];
+	__declspec(align(1)) bool m_bHasBuiltWearableSpawnList;// 0x1310, size 1 (0x1)
+	__declspec(align(4)) int32_t m_nFoWFadeStartTime[14];// 0x1314, size 56 (0x38)
+	__declspec(align(8)) CountdownTimer m_AngerCooldownTimer;// 0x1350, size 24 (0x18)
+	__declspec(align(4)) int32_t m_iProjectileMoveSpeed;// 0x1368, size 4 (0x4)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszAutoAttackRangedParticle;// 0x1370, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_strLastKillerAbility;// 0x1378, size 8 (0x8)
+	__declspec(align(4)) int32_t m_nPoseParameterTurn;// 0x1380, size 4 (0x4)
+	__declspec(align(4)) float m_flLean;// 0x1384, size 4 (0x4)
+	__declspec(align(4)) int32_t m_anglediff;// 0x1388, size 4 (0x4)
 	// m_anglediff metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkBitCount
 	 // MNetworkPriority
-	__declspec(align(4)) int32_t m_NetworkActivity;// 0x132c, size 4 (0x4)
+	__declspec(align(4)) int32_t m_NetworkActivity;// 0x138c, size 4 (0x4)
 	// m_NetworkActivity metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkBitCount
 	 // MNetworkPriority
-	__declspec(align(4)) int32_t m_NetworkSequenceIndex;// 0x1330, size 4 (0x4)
+	__declspec(align(4)) int32_t m_NetworkSequenceIndex;// 0x1390, size 4 (0x4)
 	// m_NetworkSequenceIndex metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkBitCount
 	 // MNetworkPriority
-	__declspec(align(1)) bool m_bShouldDoFlyHeightVisual;// 0x1334, size 1 (0x1)
+	__declspec(align(1)) bool m_bShouldDoFlyHeightVisual;// 0x1394, size 1 (0x1)
 	// m_bShouldDoFlyHeightVisual metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) float m_flStartSequenceCycle;// 0x1338, size 4 (0x4)
+	__declspec(align(4)) float m_flStartSequenceCycle;// 0x1398, size 4 (0x4)
 	// m_flStartSequenceCycle metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bMidLoading;// 0x133c, size 1 (0x1)
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CDOTA_ScriptedSpawner > m_hTutorialSpawner;// 0x1340, size 4 (0x4)
-	__declspec(align(1)) char m_CustomHealthLabel[256];// 0x1344, size 256 (0x100)
+	__declspec(align(1)) bool m_bMidLoading;// 0x139c, size 1 (0x1)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CDOTA_ScriptedSpawner > m_hTutorialSpawner;// 0x13a0, size 4 (0x4)
+	__declspec(align(1)) char m_CustomHealthLabel[256];// 0x13a4, size 256 (0x100)
 	// m_CustomHealthLabel metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) UnknownType <0x4, class Color> m_CustomHealthLabelColor;// 0x1444, size 4 (0x4)
+	__declspec(align(1)) UnknownType <0x4, class Color> m_CustomHealthLabelColor;// 0x14a4, size 4 (0x4)
 	// m_CustomHealthLabelColor metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(2)) UnknownType <0x2, class item_definition_index_t> m_nWearableDefIndex;// 0x1448, size 2 (0x2)
-	__declspec(align(1)) int8_t m_nArcanaLevel;// 0x144a, size 1 (0x1)
-	__declspec(align(1)) int8_t m_nDefaultArcanaLevel;// 0x144b, size 1 (0x1)
-	__declspec(align(1)) UnknownType <0x4, class Color> m_defaultColorGemColor;// 0x144c, size 4 (0x4)
-	__declspec(align(1)) bool m_bDisableDamageDisplay;// 0x1450, size 1 (0x1)
-char CDOTA_BaseNPC_01452[0x1];
-	__declspec(align(1)) UnknownType <0x4, class Color> m_gibTintColor;// 0x1452, size 4 (0x4)
-	__declspec(align(4)) float m_flPathfindingSearchDepthScale;// 0x1458, size 4 (0x4)
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, int32_t > m_ActivitiesStarted;// 0x1460, size 24 (0x18)
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hIllusionOriginal;// 0x1478, size 4 (0x4)
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CDOTA_BaseNPC > m_hDirectionalRangedFakeTarget;// 0x147c, size 4 (0x4)
-}; // size: 5248 (0x1480)
+	__declspec(align(2)) UnknownType <0x2, class item_definition_index_t> m_nWearableDefIndex;// 0x14a8, size 2 (0x2)
+	__declspec(align(1)) int8_t m_nArcanaLevel;// 0x14aa, size 1 (0x1)
+	__declspec(align(1)) int8_t m_nDefaultArcanaLevel;// 0x14ab, size 1 (0x1)
+	__declspec(align(1)) UnknownType <0x4, class Color> m_defaultColorGemColor;// 0x14ac, size 4 (0x4)
+	__declspec(align(1)) bool m_bDisableDamageDisplay;// 0x14b0, size 1 (0x1)
+char CDOTA_BaseNPC_014B2[0x1];
+	__declspec(align(1)) UnknownType <0x4, class Color> m_gibTintColor;// 0x14b2, size 4 (0x4)
+	__declspec(align(4)) float m_flPathfindingSearchDepthScale;// 0x14b8, size 4 (0x4)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, int32_t > m_ActivitiesStarted;// 0x14c0, size 24 (0x18)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hIllusionOriginal;// 0x14d8, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CDOTA_BaseNPC > m_hDirectionalRangedFakeTarget;// 0x14dc, size 4 (0x4)
+}; // size: 5344 (0x14e0)
 
 class CDOTA_Ability_Enchantress_Untouchable : public CDOTABaseAbility
 {
@@ -6765,7 +6855,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 5248 (0x1480)
+}; // size: 5344 (0x14e0)
 
 class CEconEntity : public CBaseFlex, public IHasAttributes
 {
@@ -6806,13 +6896,13 @@ char AttachedParticleInfo_t_08[0x3];
 	#pragma pack(pop)
 
 public:
-	__declspec(align(8)) CAttributeContainer m_AttributeManager;// 0x668, size 320 (0x140)
+	__declspec(align(8)) CAttributeContainer m_AttributeManager;// 0x6c0, size 320 (0x140)
 	// m_AttributeManager metadata
 	 // MNetworkEnable
 	 // MNetworkVarEmbeddedUnderlyingType
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hOldProvidee;// 0x7a8, size 4 (0x4)
-	__declspec(align(4)) int32_t m_iOldOwnerClass;// 0x7ac, size 4 (0x4)
-}; // size: 1968 (0x7b0)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hOldProvidee;// 0x800, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iOldOwnerClass;// 0x804, size 4 (0x4)
+}; // size: 2056 (0x808)
 
 class CDOTA_Ability_Special_Bonus_Unique_Templar_Assassin : public CDOTABaseAbility
 {
@@ -7077,7 +7167,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 1968 (0x7b0)
+}; // size: 2056 (0x808)
 
 class CDOTA_Ability_VengefulSpirit_Nether_Swap : public CDOTABaseAbility
 {
@@ -7268,19 +7358,19 @@ class CBodyComponentSkeletonInstance : public CBodyComponent
 // Abstract Class
 
 public:
-	__declspec(align(1)) CSkeletonInstance m_skeletonInstance;// 0x40, size 1104 (0x450)
+	__declspec(align(1)) CSkeletonInstance m_skeletonInstance;// 0x40, size 1120 (0x460)
 	// m_skeletonInstance metadata
 	 // MNetworkEnable
 	 // MNetworkVarEmbeddedUnderlyingType
-	__declspec(align(8)) CNetworkVarChainer __m_pChainEntity;// 0x490, size 24 (0x18)
+	__declspec(align(8)) CNetworkVarChainer __m_pChainEntity;// 0x4a0, size 24 (0x18)
 	// __m_pChainEntity metadata
 	 // MNetworkDisable
 	 // MNetworkChangeAccessorFieldPathIndex
-char CBodyComponentSkeletonInstance_04B0[0x8];
+char CBodyComponentSkeletonInstance_04C0[0x8];
 public:
 	static EntComponentInfo_t &Get_s_EntComponentInfo() {return *(EntComponentInfo_t *)schema::SchemaSystem::Get()->FindTypeScopeForModule("server.dll")->FindDeclaredClass("CBodyComponentSkeletonInstance")->m_staticMembers.data[0].m_pInstance; }
 	static int32_t &Get_entity_component_error_class_decl_says_contained_but_impl_is_referenced() {return *(int32_t *)schema::SchemaSystem::Get()->FindTypeScopeForModule("server.dll")->FindDeclaredClass("CBodyComponentSkeletonInstance")->m_staticMembers.data[1].m_pInstance; }
-}; // size: 1200 (0x4b0)
+}; // size: 1216 (0x4c0)
 
 class CFogTrigger : public CBaseTrigger
 {
@@ -7380,142 +7470,141 @@ char KillInfo_t_020[0x4];
 	#pragma pack(pop)
 
 public:
-char CDOTA_BaseNPC_Hero_0150C[0x8C];
-	__declspec(align(4)) float m_flStrength;// 0x150c, size 4 (0x4)
+char CDOTA_BaseNPC_Hero_0156C[0x8C];
+	__declspec(align(4)) float m_flStrength;// 0x156c, size 4 (0x4)
 	// m_flStrength metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) float m_flAgility;// 0x1510, size 4 (0x4)
+	__declspec(align(4)) float m_flAgility;// 0x1570, size 4 (0x4)
 	// m_flAgility metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) float m_flIntellect;// 0x1514, size 4 (0x4)
+	__declspec(align(4)) float m_flIntellect;// 0x1574, size 4 (0x4)
 	// m_flIntellect metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) float m_flStrengthTotal;// 0x1518, size 4 (0x4)
+	__declspec(align(4)) float m_flStrengthTotal;// 0x1578, size 4 (0x4)
 	// m_flStrengthTotal metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) float m_flAgilityTotal;// 0x151c, size 4 (0x4)
+	__declspec(align(4)) float m_flAgilityTotal;// 0x157c, size 4 (0x4)
 	// m_flAgilityTotal metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) float m_flIntellectTotal;// 0x1520, size 4 (0x4)
+	__declspec(align(4)) float m_flIntellectTotal;// 0x1580, size 4 (0x4)
 	// m_flIntellectTotal metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_iRecentDamage;// 0x1524, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iRecentDamage;// 0x1584, size 4 (0x4)
 	// m_iRecentDamage metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkBitCount
-	__declspec(align(4)) int32_t m_iPrimaryAttribute;// 0x1528, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iPrimaryAttribute;// 0x1588, size 4 (0x4)
 	// m_iPrimaryAttribute metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) float m_flStrengthGain;// 0x152c, size 4 (0x4)
-	__declspec(align(4)) float m_flAgilityGain;// 0x1530, size 4 (0x4)
-	__declspec(align(4)) float m_flIntellectGain;// 0x1534, size 4 (0x4)
-	__declspec(align(4)) float m_flDeathTime;// 0x1538, size 4 (0x4)
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hNewARDMHero;// 0x153c, size 4 (0x4)
-	__declspec(align(4)) float m_fBuybackCooldown;// 0x1540, size 4 (0x4)
-	__declspec(align(4)) float m_fBuybackGoldLimit;// 0x1544, size 4 (0x4)
-	__declspec(align(4)) int32_t m_nLastHealedAmount;// 0x1548, size 4 (0x4)
-	__declspec(align(4)) float m_flLastHealedTime;// 0x154c, size 4 (0x4)
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hLastHealEntity;// 0x1550, size 4 (0x4)
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vRespawnPosition;// 0x1554, size 12 (0xc)
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class CDOTA_BaseNPC_Hero::sHeroDamageInfo > m_HeroDamageInfoArray;// 0x1560, size 24 (0x18)
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class CDOTA_BaseNPC_Hero::sHeroRecentModifierInfo > m_vecRecentModifiers;// 0x1578, size 24 (0x18)
-	__declspec(align(4)) float m_fMostRecentDamageTime;// 0x1590, size 4 (0x4)
-	__declspec(align(4)) int32_t m_iAbilityPoints;// 0x1594, size 4 (0x4)
+	__declspec(align(4)) float m_flStrengthGain;// 0x158c, size 4 (0x4)
+	__declspec(align(4)) float m_flAgilityGain;// 0x1590, size 4 (0x4)
+	__declspec(align(4)) float m_flIntellectGain;// 0x1594, size 4 (0x4)
+	__declspec(align(4)) float m_flDeathTime;// 0x1598, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hNewARDMHero;// 0x159c, size 4 (0x4)
+	__declspec(align(4)) float m_fBuybackCooldown;// 0x15a0, size 4 (0x4)
+	__declspec(align(4)) float m_fBuybackGoldLimit;// 0x15a4, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nLastHealedAmount;// 0x15a8, size 4 (0x4)
+	__declspec(align(4)) float m_flLastHealedTime;// 0x15ac, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hLastHealEntity;// 0x15b0, size 4 (0x4)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vRespawnPosition;// 0x15b4, size 12 (0xc)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class CDOTA_BaseNPC_Hero::sHeroDamageInfo > m_HeroDamageInfoArray;// 0x15c0, size 24 (0x18)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class CDOTA_BaseNPC_Hero::sHeroRecentModifierInfo > m_vecRecentModifiers;// 0x15d8, size 24 (0x18)
+	__declspec(align(4)) float m_fMostRecentDamageTime;// 0x15f0, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iAbilityPoints;// 0x15f4, size 4 (0x4)
 	// m_iAbilityPoints metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkBitCount
-	__declspec(align(4)) int32_t m_iCurrentXP;// 0x1598, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iCurrentXP;// 0x15f8, size 4 (0x4)
 	// m_iCurrentXP metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkBitCount
 	 // MNetworkPriority
-	__declspec(align(4)) float m_flRespawnTime;// 0x159c, size 4 (0x4)
+	__declspec(align(4)) float m_flRespawnTime;// 0x15fc, size 4 (0x4)
 	// m_flRespawnTime metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) float m_flRespawnTimePenalty;// 0x15a0, size 4 (0x4)
+	__declspec(align(4)) float m_flRespawnTimePenalty;// 0x1600, size 4 (0x4)
 	// m_flRespawnTimePenalty metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) float m_flTimeUntilRespawn;// 0x15a4, size 4 (0x4)
-	__declspec(align(4)) float m_flScriptRespawnTime;// 0x15a8, size 4 (0x4)
-	__declspec(align(1)) bool m_bScriptDisableRespawns;// 0x15ac, size 1 (0x1)
-	__declspec(align(4)) int32_t m_iPlayerID;// 0x15b0, size 4 (0x4)
+	__declspec(align(4)) float m_flTimeUntilRespawn;// 0x1604, size 4 (0x4)
+	__declspec(align(4)) float m_flScriptRespawnTime;// 0x1608, size 4 (0x4)
+	__declspec(align(1)) bool m_bScriptDisableRespawns;// 0x160c, size 1 (0x1)
+	__declspec(align(4)) int32_t m_iPlayerID;// 0x1610, size 4 (0x4)
 	// m_iPlayerID metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_iIllusionOriginalPlayerID;// 0x15b4, size 4 (0x4)
-	__declspec(align(4)) int32_t m_iHeroID;// 0x15b8, size 4 (0x4)
-char CDOTA_BaseNPC_Hero_015C8[0xC];
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CDOTA_BaseNPC_Hero > m_hReplicatingOtherHeroModel;// 0x15c8, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iIllusionOriginalPlayerID;// 0x1614, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iHeroID;// 0x1618, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CDOTA_BaseNPC_Hero > m_hReplicatingOtherHeroModel;// 0x161c, size 4 (0x4)
 	// m_hReplicatingOtherHeroModel metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-char CDOTA_BaseNPC_Hero_01610[0x40];
-	__declspec(align(8)) CountdownTimer m_RespawnMusicTimer;// 0x1610, size 24 (0x18)
-	__declspec(align(8)) CountdownTimer m_HeroKillTimer;// 0x1628, size 24 (0x18)
-	__declspec(align(8)) CountdownTimer m_MultipleHeroKillTimer;// 0x1640, size 24 (0x18)
-	__declspec(align(8)) CountdownTimer m_MultipleLastHitTimer;// 0x1658, size 24 (0x18)
-	__declspec(align(4)) int32_t m_iMultipleKillCount;// 0x1670, size 4 (0x4)
-	__declspec(align(1)) bool m_bDisableWearables;// 0x1674, size 1 (0x1)
-	__declspec(align(8)) CEconWearable *m_pTogglableWearable[47];// 0x1678, size 376 (0x178)
-	__declspec(align(8)) CDOTA_BaseNPC_Hero::KillInfo_t m_KillInfo;// 0x17f0, size 32 (0x20)
-	__declspec(align(8)) CountdownTimer m_DirectorAbilityActivity;// 0x1810, size 24 (0x18)
-	__declspec(align(1)) bool m_bReincarnating;// 0x1828, size 1 (0x1)
+char CDOTA_BaseNPC_Hero_01660[0x40];
+	__declspec(align(8)) CountdownTimer m_RespawnMusicTimer;// 0x1660, size 24 (0x18)
+	__declspec(align(8)) CountdownTimer m_HeroKillTimer;// 0x1678, size 24 (0x18)
+	__declspec(align(8)) CountdownTimer m_MultipleHeroKillTimer;// 0x1690, size 24 (0x18)
+	__declspec(align(8)) CountdownTimer m_MultipleLastHitTimer;// 0x16a8, size 24 (0x18)
+	__declspec(align(4)) int32_t m_iMultipleKillCount;// 0x16c0, size 4 (0x4)
+	__declspec(align(1)) bool m_bDisableWearables;// 0x16c4, size 1 (0x1)
+	__declspec(align(8)) CEconWearable *m_pTogglableWearable[47];// 0x16c8, size 376 (0x178)
+	__declspec(align(8)) CDOTA_BaseNPC_Hero::KillInfo_t m_KillInfo;// 0x1840, size 32 (0x20)
+	__declspec(align(8)) CountdownTimer m_DirectorAbilityActivity;// 0x1860, size 24 (0x18)
+	__declspec(align(1)) bool m_bReincarnating;// 0x1878, size 1 (0x1)
 	// m_bReincarnating metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bCustomKillEffect;// 0x1829, size 1 (0x1)
+	__declspec(align(1)) bool m_bCustomKillEffect;// 0x1879, size 1 (0x1)
 	// m_bCustomKillEffect metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) float m_flSpawnedAt;// 0x182c, size 4 (0x4)
+	__declspec(align(4)) float m_flSpawnedAt;// 0x187c, size 4 (0x4)
 	// m_flSpawnedAt metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(8)) CountdownTimer m_PurchaseItemTimer;// 0x1830, size 24 (0x18)
-	__declspec(align(8)) CountdownTimer m_RetrieveItemsFromStashTimer;// 0x1848, size 24 (0x18)
-	__declspec(align(8)) CountdownTimer m_RequestGoToSecretShopTimer;// 0x1860, size 24 (0x18)
-	__declspec(align(4)) int32_t m_iNextItemToPurchase;// 0x1878, size 4 (0x4)
-	__declspec(align(1)) bool m_bDoesNextItemCompleteRecipe;// 0x187c, size 1 (0x1)
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class sLoadoutItem > m_Loadout;// 0x1880, size 24 (0x18)
-	__declspec(align(8)) sLoadoutItem m_TPScroll;// 0x1898, size 16 (0x10)
-	__declspec(align(8)) sLoadoutItem m_Dust;// 0x18a8, size 16 (0x10)
-	__declspec(align(8)) sLoadoutItem m_Gem;// 0x18b8, size 16 (0x10)
-	__declspec(align(8)) sLoadoutItem m_SentryWard;// 0x18c8, size 16 (0x10)
-	__declspec(align(8)) sLoadoutItem m_ObserverWard;// 0x18d8, size 16 (0x10)
-	__declspec(align(8)) sLoadoutItem m_Courier;// 0x18e8, size 16 (0x10)
-	__declspec(align(8)) sLoadoutItem m_FlyingCourier;// 0x18f8, size 16 (0x10)
-	__declspec(align(1)) bool m_bAutoPurchaseItems;// 0x1908, size 1 (0x1)
-	__declspec(align(1)) bool m_bBuybackDisabled;// 0x1909, size 1 (0x1)
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownAtomicType <0x4, CHandle, class CDOTA_BaseNPC_Pet > > m_hPets;// 0x1910, size 24 (0x18)
-	__declspec(align(1)) bool m_bPreventPetSpawn;// 0x1928, size 1 (0x1)
-char CDOTA_BaseNPC_Hero_01930[0x7];
-	__declspec(align(1)) CDOTAMusicProbabilityEntry m_MusicProbabilityGank;// 0x1930, size 40 (0x28)
-char CDOTA_BaseNPC_Hero_01980[0x28];
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hEconConsumableAbility;// 0x1980, size 4 (0x4)
+	__declspec(align(8)) CountdownTimer m_PurchaseItemTimer;// 0x1880, size 24 (0x18)
+	__declspec(align(8)) CountdownTimer m_RetrieveItemsFromStashTimer;// 0x1898, size 24 (0x18)
+	__declspec(align(8)) CountdownTimer m_RequestGoToSecretShopTimer;// 0x18b0, size 24 (0x18)
+	__declspec(align(4)) int32_t m_iNextItemToPurchase;// 0x18c8, size 4 (0x4)
+	__declspec(align(1)) bool m_bDoesNextItemCompleteRecipe;// 0x18cc, size 1 (0x1)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class sLoadoutItem > m_Loadout;// 0x18d0, size 24 (0x18)
+	__declspec(align(8)) sLoadoutItem m_TPScroll;// 0x18e8, size 16 (0x10)
+	__declspec(align(8)) sLoadoutItem m_Dust;// 0x18f8, size 16 (0x10)
+	__declspec(align(8)) sLoadoutItem m_Gem;// 0x1908, size 16 (0x10)
+	__declspec(align(8)) sLoadoutItem m_SentryWard;// 0x1918, size 16 (0x10)
+	__declspec(align(8)) sLoadoutItem m_ObserverWard;// 0x1928, size 16 (0x10)
+	__declspec(align(8)) sLoadoutItem m_Courier;// 0x1938, size 16 (0x10)
+	__declspec(align(8)) sLoadoutItem m_FlyingCourier;// 0x1948, size 16 (0x10)
+	__declspec(align(1)) bool m_bAutoPurchaseItems;// 0x1958, size 1 (0x1)
+	__declspec(align(1)) bool m_bBuybackDisabled;// 0x1959, size 1 (0x1)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownAtomicType <0x4, CHandle, class CDOTA_BaseNPC_Pet > > m_hPets;// 0x1960, size 24 (0x18)
+	__declspec(align(1)) bool m_bPreventPetSpawn;// 0x1978, size 1 (0x1)
+char CDOTA_BaseNPC_Hero_01980[0x7];
+	__declspec(align(1)) CDOTAMusicProbabilityEntry m_MusicProbabilityGank;// 0x1980, size 40 (0x28)
+char CDOTA_BaseNPC_Hero_019D0[0x28];
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hEconConsumableAbility;// 0x19d0, size 4 (0x4)
 	// m_hEconConsumableAbility metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(2)) UnknownType <0x2, class item_definition_index_t> m_nEconConsumableItemIndex;// 0x1984, size 2 (0x2)
-	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_strCustomKillEffect;// 0x1988, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_strCustomHexModel;// 0x1990, size 8 (0x8)
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownAtomicType <0x4, CHandle, class CBaseEntity > > m_AbilitiesPendingDelete;// 0x1998, size 24 (0x18)
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class sAcquireHistory > m_vecItemPurchaseHistory;// 0x19b0, size 24 (0x18)
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class sAcquireHistory > m_vecAbilitySkillHistory;// 0x19c8, size 24 (0x18)
-char CDOTA_BaseNPC_Hero_019F4[0x14];
-	__declspec(align(4)) float m_flLastTimeLookedAtByDirector;// 0x19f4, size 4 (0x4)
-}; // size: 6648 (0x19f8)
+	__declspec(align(2)) UnknownType <0x2, class item_definition_index_t> m_nEconConsumableItemIndex;// 0x19d4, size 2 (0x2)
+	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_strCustomKillEffect;// 0x19d8, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_strCustomHexModel;// 0x19e0, size 8 (0x8)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownAtomicType <0x4, CHandle, class CBaseEntity > > m_AbilitiesPendingDelete;// 0x19e8, size 24 (0x18)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class sAcquireHistory > m_vecItemPurchaseHistory;// 0x1a00, size 24 (0x18)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class sAcquireHistory > m_vecAbilitySkillHistory;// 0x1a18, size 24 (0x18)
+char CDOTA_BaseNPC_Hero_01A44[0x14];
+	__declspec(align(4)) float m_flLastTimeLookedAtByDirector;// 0x1a44, size 4 (0x4)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Unit_Hero_Bloodseeker : public CDOTA_BaseNPC_Hero
 {
@@ -7539,7 +7628,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Ability_SandKing_CausticFinale : public CDOTABaseAbility
 {
@@ -7795,7 +7884,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Ability_Courier_TransferItems_ToOtherPlayer : public CDOTABaseAbility
 {
@@ -7940,18 +8029,18 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(8)) CEntityIOOutput m_OnAttachedToHand;// 0x5c8, size 40 (0x28)
-	__declspec(align(8)) CEntityIOOutput m_OnDetachedFromHand;// 0x5f0, size 40 (0x28)
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CPropVRHand > m_hAttachedHand;// 0x618, size 4 (0x4)
+	__declspec(align(8)) CEntityIOOutput m_OnAttachedToHand;// 0x620, size 40 (0x28)
+	__declspec(align(8)) CEntityIOOutput m_OnDetachedFromHand;// 0x648, size 40 (0x28)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CPropVRHand > m_hAttachedHand;// 0x670, size 4 (0x4)
 	// m_hAttachedHand metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bIsAttached;// 0x61c, size 1 (0x1)
+	__declspec(align(1)) bool m_bIsAttached;// 0x674, size 1 (0x1)
 	// m_bIsAttached metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-char CBaseVRHandAttachment_0620[0x3];
-}; // size: 1568 (0x620)
+char CBaseVRHandAttachment_0678[0x3];
+}; // size: 1656 (0x678)
 
 class CDOTA_Ability_Techies_RemoteMines : public CDOTABaseAbility
 {
@@ -8197,201 +8286,201 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(4)) int32_t m_StuckLast;// 0x878, size 4 (0x4)
-	__declspec(align(8)) CPlayerLocalData m_Local;// 0x880, size 504 (0x1f8)
+	__declspec(align(4)) int32_t m_StuckLast;// 0x8d8, size 4 (0x4)
+	__declspec(align(8)) CPlayerLocalData m_Local;// 0x8e0, size 504 (0x1f8)
 	// m_Local metadata
 	 // MNetworkEnable
 	 // MNetworkVarEmbeddedUnderlyingType
 	 // MNetworkEnable
 	 // MNetworkSendProxyRecipientsFilter
-	__declspec(align(8)) fogplayerparams_t m_PlayerFog;// 0xa78, size 64 (0x40)
+	__declspec(align(8)) fogplayerparams_t m_PlayerFog;// 0xad8, size 64 (0x40)
 	// m_PlayerFog metadata
 	 // MNetworkEnable
 	 // MNetworkVarEmbeddedUnderlyingType
 	 // MNetworkEnable
-char CBasePlayer_0AD0[0x18];
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CPostProcessController > m_hPostProcessCtrl;// 0xad0, size 4 (0x4)
+char CBasePlayer_0B30[0x18];
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CPostProcessController > m_hPostProcessCtrl;// 0xb30, size 4 (0x4)
 	// m_hPostProcessCtrl metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CColorCorrection > m_hColorCorrectionCtrl;// 0xad4, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CColorCorrection > m_hColorCorrectionCtrl;// 0xb34, size 4 (0x4)
 	// m_hColorCorrectionCtrl metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownAtomicType <0x4, CHandle, class CBaseEntity > > m_hTriggerSoundscapeList;// 0xad8, size 24 (0x18)
-	__declspec(align(8)) CPlayerState m_pl;// 0xaf0, size 56 (0x38)
-char CBasePlayer_0B38[0x10];
-	__declspec(align(8)) uint64_t m_nButtons;// 0xb38, size 8 (0x8)
-	__declspec(align(8)) uint64_t m_afButtonPressed;// 0xb40, size 8 (0x8)
-	__declspec(align(8)) uint64_t m_afButtonReleased;// 0xb48, size 8 (0x8)
-	__declspec(align(8)) uint64_t m_afButtonLast;// 0xb50, size 8 (0x8)
-	__declspec(align(8)) uint64_t m_afButtonDisabled;// 0xb58, size 8 (0x8)
-	__declspec(align(8)) uint64_t m_afButtonForced;// 0xb60, size 8 (0x8)
-	__declspec(align(1)) bool m_fOnTarget;// 0xb68, size 1 (0x1)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownAtomicType <0x4, CHandle, class CBaseEntity > > m_hTriggerSoundscapeList;// 0xb38, size 24 (0x18)
+	__declspec(align(8)) CPlayerState m_pl;// 0xb50, size 56 (0x38)
+char CBasePlayer_0B98[0x10];
+	__declspec(align(8)) uint64_t m_nButtons;// 0xb98, size 8 (0x8)
+	__declspec(align(8)) uint64_t m_afButtonPressed;// 0xba0, size 8 (0x8)
+	__declspec(align(8)) uint64_t m_afButtonReleased;// 0xba8, size 8 (0x8)
+	__declspec(align(8)) uint64_t m_afButtonLast;// 0xbb0, size 8 (0x8)
+	__declspec(align(8)) uint64_t m_afButtonDisabled;// 0xbb8, size 8 (0x8)
+	__declspec(align(8)) uint64_t m_afButtonForced;// 0xbc0, size 8 (0x8)
+	__declspec(align(1)) bool m_fOnTarget;// 0xbc8, size 1 (0x1)
 	// m_fOnTarget metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkUserGroup
-	__declspec(align(1)) char m_szAnimExtension[32];// 0xb69, size 32 (0x20)
-	__declspec(align(4)) int32_t m_nUpdateRate;// 0xb8c, size 4 (0x4)
-	__declspec(align(4)) float m_fLerpTime;// 0xb90, size 4 (0x4)
-	__declspec(align(1)) bool m_bLagCompensation;// 0xb94, size 1 (0x1)
-	__declspec(align(1)) bool m_bPredictWeapons;// 0xb95, size 1 (0x1)
-	__declspec(align(4)) int32_t m_Activity;// 0xb98, size 4 (0x4)
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecAdditionalPVSOrigin;// 0xb9c, size 12 (0xc)
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecCameraPVSOrigin;// 0xba8, size 12 (0xc)
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hUseEntity;// 0xbb4, size 4 (0x4)
+	__declspec(align(1)) char m_szAnimExtension[32];// 0xbc9, size 32 (0x20)
+	__declspec(align(4)) int32_t m_nUpdateRate;// 0xbec, size 4 (0x4)
+	__declspec(align(4)) float m_fLerpTime;// 0xbf0, size 4 (0x4)
+	__declspec(align(1)) bool m_bLagCompensation;// 0xbf4, size 1 (0x1)
+	__declspec(align(1)) bool m_bPredictWeapons;// 0xbf5, size 1 (0x1)
+	__declspec(align(4)) int32_t m_Activity;// 0xbf8, size 4 (0x4)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecAdditionalPVSOrigin;// 0xbfc, size 12 (0xc)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecCameraPVSOrigin;// 0xc08, size 12 (0xc)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hUseEntity;// 0xc14, size 4 (0x4)
 	// m_hUseEntity metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkUserGroup
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hHeldEntity;// 0xbb8, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hHeldEntity;// 0xc18, size 4 (0x4)
 	// m_hHeldEntity metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) float m_flPreventUseTime;// 0xbbc, size 4 (0x4)
-	__declspec(align(4)) int32_t m_iTrain;// 0xbc0, size 4 (0x4)
-	__declspec(align(4)) float m_iRespawnFrames;// 0xbc4, size 4 (0x4)
-	__declspec(align(4)) uint32_t m_afPhysicsFlags;// 0xbc8, size 4 (0x4)
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hVehicle;// 0xbcc, size 4 (0x4)
+	__declspec(align(4)) float m_flPreventUseTime;// 0xc1c, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iTrain;// 0xc20, size 4 (0x4)
+	__declspec(align(4)) float m_iRespawnFrames;// 0xc24, size 4 (0x4)
+	__declspec(align(4)) uint32_t m_afPhysicsFlags;// 0xc28, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hVehicle;// 0xc2c, size 4 (0x4)
 	// m_hVehicle metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkUserGroup
-	__declspec(align(4)) int32_t m_iVehicleAnalogBias;// 0xbd0, size 4 (0x4)
-	__declspec(align(1)) bool m_bPauseBonusProgress;// 0xbd4, size 1 (0x1)
-	__declspec(align(4)) int32_t m_iBonusProgress;// 0xbd8, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iVehicleAnalogBias;// 0xc30, size 4 (0x4)
+	__declspec(align(1)) bool m_bPauseBonusProgress;// 0xc34, size 1 (0x1)
+	__declspec(align(4)) int32_t m_iBonusProgress;// 0xc38, size 4 (0x4)
 	// m_iBonusProgress metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkBitCount
-	__declspec(align(4)) int32_t m_iBonusChallenge;// 0xbdc, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iBonusChallenge;// 0xc3c, size 4 (0x4)
 	// m_iBonusChallenge metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkBitCount
-	__declspec(align(4)) int32_t m_lastDamageAmount;// 0xbe0, size 4 (0x4)
-	__declspec(align(4)) float m_fTimeLastHurt;// 0xbe4, size 4 (0x4)
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_DmgOrigin;// 0xbe8, size 12 (0xc)
-	__declspec(align(4)) float m_DmgTake;// 0xbf4, size 4 (0x4)
-	__declspec(align(4)) float m_DmgSave;// 0xbf8, size 4 (0x4)
-	__declspec(align(4)) int32_t m_bitsDamageType;// 0xbfc, size 4 (0x4)
-	__declspec(align(4)) int32_t m_bitsHUDDamage;// 0xc00, size 4 (0x4)
-	__declspec(align(4)) float m_flDeathTime;// 0xc04, size 4 (0x4)
+	__declspec(align(4)) int32_t m_lastDamageAmount;// 0xc40, size 4 (0x4)
+	__declspec(align(4)) float m_fTimeLastHurt;// 0xc44, size 4 (0x4)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_DmgOrigin;// 0xc48, size 12 (0xc)
+	__declspec(align(4)) float m_DmgTake;// 0xc54, size 4 (0x4)
+	__declspec(align(4)) float m_DmgSave;// 0xc58, size 4 (0x4)
+	__declspec(align(4)) int32_t m_bitsDamageType;// 0xc5c, size 4 (0x4)
+	__declspec(align(4)) int32_t m_bitsHUDDamage;// 0xc60, size 4 (0x4)
+	__declspec(align(4)) float m_flDeathTime;// 0xc64, size 4 (0x4)
 	// m_flDeathTime metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkUserGroup
-	__declspec(align(4)) float m_flDeathAnimTime;// 0xc08, size 4 (0x4)
-	__declspec(align(1)) uint8_t m_iObserverMode;// 0xc0c, size 1 (0x1)
+	__declspec(align(4)) float m_flDeathAnimTime;// 0xc68, size 4 (0x4)
+	__declspec(align(1)) uint8_t m_iObserverMode;// 0xc6c, size 1 (0x1)
 	// m_iObserverMode metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkBitCount
-	__declspec(align(4)) uint32_t m_iFOV;// 0xc10, size 4 (0x4)
+	__declspec(align(4)) uint32_t m_iFOV;// 0xc70, size 4 (0x4)
 	// m_iFOV metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkBitCount
-	__declspec(align(4)) uint32_t m_iDefaultFOV;// 0xc14, size 4 (0x4)
+	__declspec(align(4)) uint32_t m_iDefaultFOV;// 0xc74, size 4 (0x4)
 	// m_iDefaultFOV metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkBitCount
-	__declspec(align(4)) uint32_t m_iFOVStart;// 0xc18, size 4 (0x4)
+	__declspec(align(4)) uint32_t m_iFOVStart;// 0xc78, size 4 (0x4)
 	// m_iFOVStart metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkBitCount
-	__declspec(align(4)) float m_flFOVTime;// 0xc1c, size 4 (0x4)
+	__declspec(align(4)) float m_flFOVTime;// 0xc7c, size 4 (0x4)
 	// m_flFOVTime metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_iObserverLastMode;// 0xc20, size 4 (0x4)
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hObserverTarget;// 0xc24, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iObserverLastMode;// 0xc80, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hObserverTarget;// 0xc84, size 4 (0x4)
 	// m_hObserverTarget metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bForcedObserverMode;// 0xc28, size 1 (0x1)
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hZoomOwner;// 0xc2c, size 4 (0x4)
+	__declspec(align(1)) bool m_bForcedObserverMode;// 0xc88, size 1 (0x1)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hZoomOwner;// 0xc8c, size 4 (0x4)
 	// m_hZoomOwner metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) float m_tbdPrev;// 0xc30, size 4 (0x4)
-	__declspec(align(4)) int32_t m_idrowndmg;// 0xc34, size 4 (0x4)
-	__declspec(align(4)) int32_t m_idrownrestored;// 0xc38, size 4 (0x4)
-	__declspec(align(4)) int32_t m_nPoisonDmg;// 0xc3c, size 4 (0x4)
-	__declspec(align(4)) int32_t m_nPoisonRestored;// 0xc40, size 4 (0x4)
-	__declspec(align(1)) uint8_t m_rgbTimeBasedDamage[8];// 0xc44, size 8 (0x8)
-	__declspec(align(4)) int32_t m_vphysicsCollisionState;// 0xc4c, size 4 (0x4)
-	__declspec(align(4)) float m_fNextSuicideTime;// 0xc50, size 4 (0x4)
-	__declspec(align(4)) int32_t m_iSuicideCustomKillFlags;// 0xc54, size 4 (0x4)
-	__declspec(align(4)) float m_fDelay;// 0xc58, size 4 (0x4)
-	__declspec(align(4)) float m_fReplayEnd;// 0xc5c, size 4 (0x4)
-	__declspec(align(4)) UnknownType <0x4, class CEntityIndex> m_iReplayEntity;// 0xc60, size 4 (0x4)
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hTonemapController;// 0xc64, size 4 (0x4)
+	__declspec(align(4)) float m_tbdPrev;// 0xc90, size 4 (0x4)
+	__declspec(align(4)) int32_t m_idrowndmg;// 0xc94, size 4 (0x4)
+	__declspec(align(4)) int32_t m_idrownrestored;// 0xc98, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nPoisonDmg;// 0xc9c, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nPoisonRestored;// 0xca0, size 4 (0x4)
+	__declspec(align(1)) uint8_t m_rgbTimeBasedDamage[8];// 0xca4, size 8 (0x8)
+	__declspec(align(4)) int32_t m_vphysicsCollisionState;// 0xcac, size 4 (0x4)
+	__declspec(align(4)) float m_fNextSuicideTime;// 0xcb0, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iSuicideCustomKillFlags;// 0xcb4, size 4 (0x4)
+	__declspec(align(4)) float m_fDelay;// 0xcb8, size 4 (0x4)
+	__declspec(align(4)) float m_fReplayEnd;// 0xcbc, size 4 (0x4)
+	__declspec(align(4)) UnknownType <0x4, class CEntityIndex> m_iReplayEntity;// 0xcc0, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hTonemapController;// 0xcc4, size 4 (0x4)
 	// m_hTonemapController metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkUserGroup
-char CBasePlayer_0C98[0x30];
-	__declspec(align(4)) int32_t m_nHighestCommandNumberReceived;// 0xc98, size 4 (0x4)
-	__declspec(align(8)) IPhysicsPlayerController *m_pPhysicsController;// 0xca0, size 8 (0x8)
-char CBasePlayer_0CB8[0x10];
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_oldOrigin;// 0xcb8, size 12 (0xc)
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecSmoothedVelocity;// 0xcc4, size 12 (0xc)
-	__declspec(align(1)) bool m_touchedPhysObject;// 0xcd0, size 1 (0x1)
-	__declspec(align(1)) bool m_bPhysicsWasFrozen;// 0xcd1, size 1 (0x1)
-	__declspec(align(4)) int32_t m_iPlayerSound;// 0xcd4, size 4 (0x4)
-	__declspec(align(4)) int32_t m_iTargetVolume;// 0xcd8, size 4 (0x4)
-	__declspec(align(4)) int32_t m_rgItems[5];// 0xcdc, size 20 (0x14)
-	__declspec(align(8)) IntervalTimer m_lastHeldVoteTimer;// 0xcf0, size 16 (0x10)
-	__declspec(align(4)) float m_flgeigerRange;// 0xd00, size 4 (0x4)
-	__declspec(align(4)) float m_flgeigerDelay;// 0xd04, size 4 (0x4)
-	__declspec(align(4)) int32_t m_igeigerRangePrev;// 0xd08, size 4 (0x4)
-	__declspec(align(1)) bool m_fInitHUD;// 0xd0c, size 1 (0x1)
-	__declspec(align(1)) bool m_fGameHUDInitialized;// 0xd0d, size 1 (0x1)
-	__declspec(align(1)) bool m_fWeapon;// 0xd0e, size 1 (0x1)
-	__declspec(align(4)) int32_t m_iUpdateTime;// 0xd10, size 4 (0x4)
-	__declspec(align(4)) int32_t m_iFrags;// 0xd14, size 4 (0x4)
-	__declspec(align(4)) int32_t m_iDeaths;// 0xd18, size 4 (0x4)
-	__declspec(align(4)) float m_flNextDecalTime;// 0xd1c, size 4 (0x4)
-	__declspec(align(4)) float m_flNextTauntTime;// 0xd20, size 4 (0x4)
-	__declspec(align(4)) PlayerConnectedState m_iConnected;// 0xd24, size 4 (0x4)
-	__declspec(align(1)) bool m_bIsLowViolence;// 0xd28, size 1 (0x1)
-	__declspec(align(4)) int32_t m_ArmorValue;// 0xd2c, size 4 (0x4)
+char CBasePlayer_0CF8[0x30];
+	__declspec(align(4)) int32_t m_nHighestCommandNumberReceived;// 0xcf8, size 4 (0x4)
+	__declspec(align(8)) IPhysicsPlayerController *m_pPhysicsController;// 0xd00, size 8 (0x8)
+char CBasePlayer_0D18[0x10];
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_oldOrigin;// 0xd18, size 12 (0xc)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecSmoothedVelocity;// 0xd24, size 12 (0xc)
+	__declspec(align(1)) bool m_touchedPhysObject;// 0xd30, size 1 (0x1)
+	__declspec(align(1)) bool m_bPhysicsWasFrozen;// 0xd31, size 1 (0x1)
+	__declspec(align(4)) int32_t m_iPlayerSound;// 0xd34, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iTargetVolume;// 0xd38, size 4 (0x4)
+	__declspec(align(4)) int32_t m_rgItems[5];// 0xd3c, size 20 (0x14)
+	__declspec(align(8)) IntervalTimer m_lastHeldVoteTimer;// 0xd50, size 16 (0x10)
+	__declspec(align(4)) float m_flgeigerRange;// 0xd60, size 4 (0x4)
+	__declspec(align(4)) float m_flgeigerDelay;// 0xd64, size 4 (0x4)
+	__declspec(align(4)) int32_t m_igeigerRangePrev;// 0xd68, size 4 (0x4)
+	__declspec(align(1)) bool m_fInitHUD;// 0xd6c, size 1 (0x1)
+	__declspec(align(1)) bool m_fGameHUDInitialized;// 0xd6d, size 1 (0x1)
+	__declspec(align(1)) bool m_fWeapon;// 0xd6e, size 1 (0x1)
+	__declspec(align(4)) int32_t m_iUpdateTime;// 0xd70, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iFrags;// 0xd74, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iDeaths;// 0xd78, size 4 (0x4)
+	__declspec(align(4)) float m_flNextDecalTime;// 0xd7c, size 4 (0x4)
+	__declspec(align(4)) float m_flNextTauntTime;// 0xd80, size 4 (0x4)
+	__declspec(align(4)) PlayerConnectedState m_iConnected;// 0xd84, size 4 (0x4)
+	__declspec(align(1)) bool m_bIsLowViolence;// 0xd88, size 1 (0x1)
+	__declspec(align(4)) int32_t m_ArmorValue;// 0xd8c, size 4 (0x4)
 	// m_ArmorValue metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) float m_AirFinished;// 0xd30, size 4 (0x4)
-	__declspec(align(4)) float m_PainFinished;// 0xd34, size 4 (0x4)
-	__declspec(align(4)) int32_t m_iPlayerLocked;// 0xd38, size 4 (0x4)
-	__declspec(align(4)) CSimpleSimTimer m_AutoaimTimer;// 0xd3c, size 4 (0x4)
-	__declspec(align(4)) UnknownType <0xc, class QAngle> m_vecAutoAim;// 0xd40, size 12 (0xc)
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseViewModel > m_hViewModel[2];// 0xd4c, size 8 (0x8)
+	__declspec(align(4)) float m_AirFinished;// 0xd90, size 4 (0x4)
+	__declspec(align(4)) float m_PainFinished;// 0xd94, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iPlayerLocked;// 0xd98, size 4 (0x4)
+	__declspec(align(4)) CSimpleSimTimer m_AutoaimTimer;// 0xd9c, size 4 (0x4)
+	__declspec(align(4)) UnknownType <0xc, class QAngle> m_vecAutoAim;// 0xda0, size 12 (0xc)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseViewModel > m_hViewModel[2];// 0xdac, size 8 (0x8)
 	// m_hViewModel metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CPropHMDAvatar > m_hPropHMDAvatar;// 0xd54, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CPropHMDAvatar > m_hPropHMDAvatar;// 0xdb4, size 4 (0x4)
 	// m_hPropHMDAvatar metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CPointHMDAnchor > m_hPointHMDAnchor;// 0xd58, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CPointHMDAnchor > m_hPointHMDAnchor;// 0xdb8, size 4 (0x4)
 	// m_hPointHMDAnchor metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-char CBasePlayer_0D60[0x4];
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecLastAnchorPosition;// 0xd60, size 12 (0xc)
-	__declspec(align(1)) bool m_bReceivedInitialAnchorPos;// 0xd6c, size 1 (0x1)
-	__declspec(align(4)) int32_t m_VRControllerType;// 0xd70, size 4 (0x4)
+char CBasePlayer_0DC0[0x4];
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecLastAnchorPosition;// 0xdc0, size 12 (0xc)
+	__declspec(align(1)) bool m_bReceivedInitialAnchorPos;// 0xdcc, size 1 (0x1)
+	__declspec(align(4)) int32_t m_VRControllerType;// 0xdd0, size 4 (0x4)
 	// m_VRControllerType metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-char CBasePlayer_01020[0x2A8];
-	__declspec(align(8)) IntervalTimer m_timeSinceCommandSimulated;// 0x1020, size 16 (0x10)
-	__declspec(align(4)) float m_flStepSoundTime;// 0x1030, size 4 (0x4)
-	__declspec(align(1)) bool m_bAllowInstantSpawn;// 0x1034, size 1 (0x1)
-	__declspec(align(4)) float m_flMaxspeed;// 0x1038, size 4 (0x4)
+char CBasePlayer_01060[0x288];
+	__declspec(align(8)) IntervalTimer m_timeSinceCommandSimulated;// 0x1060, size 16 (0x10)
+	__declspec(align(4)) float m_flStepSoundTime;// 0x1070, size 4 (0x4)
+	__declspec(align(1)) bool m_bAllowInstantSpawn;// 0x1074, size 1 (0x1)
+	__declspec(align(4)) float m_flMaxspeed;// 0x1078, size 4 (0x4)
 	// m_flMaxspeed metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
@@ -8399,127 +8488,127 @@ char CBasePlayer_01020[0x2A8];
 	 // MNetworkMinValue
 	 // MNetworkMaxValue
 	 // MNetworkEncodeFlags
-	__declspec(align(4)) UnknownType <0x4, class CUtlStringToken> m_ladderSurfaceProps;// 0x103c, size 4 (0x4)
+	__declspec(align(4)) UnknownType <0x4, class CUtlStringToken> m_ladderSurfaceProps;// 0x107c, size 4 (0x4)
 	// m_ladderSurfaceProps metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecLadderNormal;// 0x1040, size 12 (0xc)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecLadderNormal;// 0x1080, size 12 (0xc)
 	// m_vecLadderNormal metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkEncoder
-	__declspec(align(4)) float m_flWaterJumpTime;// 0x104c, size 4 (0x4)
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecWaterJumpVel;// 0x1050, size 12 (0xc)
-	__declspec(align(4)) int32_t m_nImpulse;// 0x105c, size 4 (0x4)
-	__declspec(align(4)) float m_flSwimSoundTime;// 0x1060, size 4 (0x4)
-	__declspec(align(4)) float m_flFlashTime;// 0x1064, size 4 (0x4)
-	__declspec(align(4)) int32_t m_nDrownDmgRate;// 0x1068, size 4 (0x4)
-	__declspec(align(4)) int32_t m_nNumCrouches;// 0x106c, size 4 (0x4)
-	__declspec(align(1)) bool m_bDuckToggled;// 0x1070, size 1 (0x1)
-	__declspec(align(4)) float m_flForwardMove;// 0x1074, size 4 (0x4)
-	__declspec(align(4)) float m_flSideMove;// 0x1078, size 4 (0x4)
-	__declspec(align(4)) int32_t m_nNumCrateHudHints;// 0x107c, size 4 (0x4)
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vForcedOrigin;// 0x1080, size 12 (0xc)
-	__declspec(align(1)) bool m_bForceOrigin;// 0x108c, size 1 (0x1)
-	__declspec(align(4)) uint32_t m_nTickBase;// 0x1090, size 4 (0x4)
+	__declspec(align(4)) float m_flWaterJumpTime;// 0x108c, size 4 (0x4)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecWaterJumpVel;// 0x1090, size 12 (0xc)
+	__declspec(align(4)) int32_t m_nImpulse;// 0x109c, size 4 (0x4)
+	__declspec(align(4)) float m_flSwimSoundTime;// 0x10a0, size 4 (0x4)
+	__declspec(align(4)) float m_flFlashTime;// 0x10a4, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nDrownDmgRate;// 0x10a8, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nNumCrouches;// 0x10ac, size 4 (0x4)
+	__declspec(align(1)) bool m_bDuckToggled;// 0x10b0, size 1 (0x1)
+	__declspec(align(4)) float m_flForwardMove;// 0x10b4, size 4 (0x4)
+	__declspec(align(4)) float m_flSideMove;// 0x10b8, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nNumCrateHudHints;// 0x10bc, size 4 (0x4)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vForcedOrigin;// 0x10c0, size 12 (0xc)
+	__declspec(align(1)) bool m_bForceOrigin;// 0x10cc, size 1 (0x1)
+	__declspec(align(4)) uint32_t m_nTickBase;// 0x10d0, size 4 (0x4)
 	// m_nTickBase metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkPriority
 	 // MNetworkUserGroup
-	__declspec(align(4)) int32_t m_nOldTickBase;// 0x1094, size 4 (0x4)
-	__declspec(align(1)) bool m_bGamePaused;// 0x1098, size 1 (0x1)
-	__declspec(align(4)) float m_fLastPlayerTalkTime;// 0x109c, size 4 (0x4)
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseCombatWeapon > m_hLastWeapon;// 0x10a0, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nOldTickBase;// 0x10d4, size 4 (0x4)
+	__declspec(align(1)) bool m_bGamePaused;// 0x10d8, size 1 (0x1)
+	__declspec(align(4)) float m_fLastPlayerTalkTime;// 0x10dc, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseCombatWeapon > m_hLastWeapon;// 0x10e0, size 4 (0x4)
 	// m_hLastWeapon metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkUserGroup
-	__declspec(align(4)) float m_flOldPlayerZ;// 0x10a4, size 4 (0x4)
-	__declspec(align(4)) float m_flOldPlayerViewOffsetZ;// 0x10a8, size 4 (0x4)
-	__declspec(align(1)) bool m_bPlayerUnderwater;// 0x10ac, size 1 (0x1)
-	__declspec(align(4)) float m_flLastAttackTime;// 0x10b0, size 4 (0x4)
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hViewEntity;// 0x10b4, size 4 (0x4)
+	__declspec(align(4)) float m_flOldPlayerZ;// 0x10e4, size 4 (0x4)
+	__declspec(align(4)) float m_flOldPlayerViewOffsetZ;// 0x10e8, size 4 (0x4)
+	__declspec(align(1)) bool m_bPlayerUnderwater;// 0x10ec, size 1 (0x1)
+	__declspec(align(4)) float m_flLastAttackTime;// 0x10f0, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hViewEntity;// 0x10f4, size 4 (0x4)
 	// m_hViewEntity metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkUserGroup
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hConstraintEntity;// 0x10b8, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hConstraintEntity;// 0x10f8, size 4 (0x4)
 	// m_hConstraintEntity metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkUserGroup
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecConstraintCenter;// 0x10bc, size 12 (0xc)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecConstraintCenter;// 0x10fc, size 12 (0xc)
 	// m_vecConstraintCenter metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkUserGroup
-	__declspec(align(4)) float m_flConstraintRadius;// 0x10c8, size 4 (0x4)
+	__declspec(align(4)) float m_flConstraintRadius;// 0x1108, size 4 (0x4)
 	// m_flConstraintRadius metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkUserGroup
-	__declspec(align(4)) float m_flConstraintWidth;// 0x10cc, size 4 (0x4)
+	__declspec(align(4)) float m_flConstraintWidth;// 0x110c, size 4 (0x4)
 	// m_flConstraintWidth metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkUserGroup
-	__declspec(align(4)) float m_flConstraintSpeedFactor;// 0x10d0, size 4 (0x4)
+	__declspec(align(4)) float m_flConstraintSpeedFactor;// 0x1110, size 4 (0x4)
 	// m_flConstraintSpeedFactor metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkUserGroup
-	__declspec(align(1)) bool m_bConstraintPastRadius;// 0x10d4, size 1 (0x1)
+	__declspec(align(1)) bool m_bConstraintPastRadius;// 0x1114, size 1 (0x1)
 	// m_bConstraintPastRadius metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkUserGroup
-	__declspec(align(1)) char m_szNetname[32];// 0x10d5, size 32 (0x20)
-	__declspec(align(4)) float m_flLaggedMovementValue;// 0x10f8, size 4 (0x4)
+	__declspec(align(1)) char m_szNetname[32];// 0x1115, size 32 (0x20)
+	__declspec(align(4)) float m_flLaggedMovementValue;// 0x1138, size 4 (0x4)
 	// m_flLaggedMovementValue metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkUserGroup
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vNewVPhysicsPosition;// 0x10fc, size 12 (0xc)
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vNewVPhysicsVelocity;// 0x1108, size 12 (0xc)
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecVehicleViewOrigin;// 0x1114, size 12 (0xc)
-	__declspec(align(4)) UnknownType <0xc, class QAngle> m_vecVehicleViewAngles;// 0x1120, size 12 (0xc)
-	__declspec(align(4)) float m_flVehicleViewFOV;// 0x112c, size 4 (0x4)
-	__declspec(align(4)) int32_t m_nVehicleViewSavedFrame;// 0x1130, size 4 (0x4)
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecPreviouslyPredictedOrigin;// 0x1134, size 12 (0xc)
-	__declspec(align(4)) int32_t m_nBodyPitchPoseParam;// 0x1140, size 4 (0x4)
-	__declspec(align(1)) char m_szLastPlaceName[18];// 0x1144, size 18 (0x12)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vNewVPhysicsPosition;// 0x113c, size 12 (0xc)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vNewVPhysicsVelocity;// 0x1148, size 12 (0xc)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecVehicleViewOrigin;// 0x1154, size 12 (0xc)
+	__declspec(align(4)) UnknownType <0xc, class QAngle> m_vecVehicleViewAngles;// 0x1160, size 12 (0xc)
+	__declspec(align(4)) float m_flVehicleViewFOV;// 0x116c, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nVehicleViewSavedFrame;// 0x1170, size 4 (0x4)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecPreviouslyPredictedOrigin;// 0x1174, size 12 (0xc)
+	__declspec(align(4)) int32_t m_nBodyPitchPoseParam;// 0x1180, size 4 (0x4)
+	__declspec(align(1)) char m_szLastPlaceName[18];// 0x1184, size 18 (0x12)
 	// m_szLastPlaceName metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) char m_szNetworkIDString[64];// 0x1156, size 64 (0x40)
-	__declspec(align(8)) CPlayerInfo m_PlayerInfo;// 0x1198, size 24 (0x18)
-	__declspec(align(4)) UnknownType <0x4, class CUtlStringToken> m_surfaceProps;// 0x11b0, size 4 (0x4)
-char CBasePlayer_011C0[0xC];
-	__declspec(align(4)) float m_surfaceFriction;// 0x11c0, size 4 (0x4)
-	__declspec(align(1)) char m_chTextureType;// 0x11c4, size 1 (0x1)
-	__declspec(align(1)) char m_chPreviousTextureType;// 0x11c5, size 1 (0x1)
-	__declspec(align(1)) bool m_bSinglePlayerGameEnding;// 0x11c6, size 1 (0x1)
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hPlayerProxy;// 0x11c8, size 4 (0x4)
-	__declspec(align(1)) bool m_bhasHaptics;// 0x11cc, size 1 (0x1)
-	__declspec(align(1)) bool m_autoKickDisabled;// 0x11cd, size 1 (0x1)
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_movementCollisionNormal;// 0x11d0, size 12 (0xc)
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_groundNormal;// 0x11dc, size 12 (0xc)
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseCombatCharacter > m_stuckCharacter;// 0x11e8, size 4 (0x4)
-	__declspec(align(4)) float m_lastEntitySteadyState;// 0x11ec, size 4 (0x4)
-	__declspec(align(4)) int32_t m_availableEntitySteadyState;// 0x11f0, size 4 (0x4)
-	__declspec(align(4)) char m_playerInPVS[8];// 0x11f4, size 8 (0x8)
-	__declspec(align(1)) bool m_hasAnySteadyStateEnts;// 0x11fc, size 1 (0x1)
-	__declspec(align(1)) bool m_bSplitScreenPlayer;// 0x11fd, size 1 (0x1)
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBasePlayer > m_hSplitOwner;// 0x1200, size 4 (0x4)
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownAtomicType <0x4, CHandle, class CBasePlayer > > m_hSplitScreenPlayers;// 0x1208, size 24 (0x18)
-	__declspec(align(4)) int32_t m_currentSCLPacked;// 0x1220, size 4 (0x4)
+	__declspec(align(1)) char m_szNetworkIDString[64];// 0x1196, size 64 (0x40)
+	__declspec(align(8)) CPlayerInfo m_PlayerInfo;// 0x11d8, size 24 (0x18)
+	__declspec(align(4)) UnknownType <0x4, class CUtlStringToken> m_surfaceProps;// 0x11f0, size 4 (0x4)
+char CBasePlayer_01200[0xC];
+	__declspec(align(4)) float m_surfaceFriction;// 0x1200, size 4 (0x4)
+	__declspec(align(1)) char m_chTextureType;// 0x1204, size 1 (0x1)
+	__declspec(align(1)) char m_chPreviousTextureType;// 0x1205, size 1 (0x1)
+	__declspec(align(1)) bool m_bSinglePlayerGameEnding;// 0x1206, size 1 (0x1)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hPlayerProxy;// 0x1208, size 4 (0x4)
+	__declspec(align(1)) bool m_bhasHaptics;// 0x120c, size 1 (0x1)
+	__declspec(align(1)) bool m_autoKickDisabled;// 0x120d, size 1 (0x1)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_movementCollisionNormal;// 0x1210, size 12 (0xc)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_groundNormal;// 0x121c, size 12 (0xc)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseCombatCharacter > m_stuckCharacter;// 0x1228, size 4 (0x4)
+	__declspec(align(4)) float m_lastEntitySteadyState;// 0x122c, size 4 (0x4)
+	__declspec(align(4)) int32_t m_availableEntitySteadyState;// 0x1230, size 4 (0x4)
+	__declspec(align(4)) char m_playerInPVS[8];// 0x1234, size 8 (0x8)
+	__declspec(align(1)) bool m_hasAnySteadyStateEnts;// 0x123c, size 1 (0x1)
+	__declspec(align(1)) bool m_bSplitScreenPlayer;// 0x123d, size 1 (0x1)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBasePlayer > m_hSplitOwner;// 0x1240, size 4 (0x4)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownAtomicType <0x4, CHandle, class CBasePlayer > > m_hSplitScreenPlayers;// 0x1248, size 24 (0x18)
+	__declspec(align(4)) int32_t m_currentSCLPacked;// 0x1260, size 4 (0x4)
 	// m_currentSCLPacked metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkBitCount
-char CBasePlayer_01228[0x4];
-	__declspec(align(8)) uint64_t m_nUnHoldableButtons;// 0x1228, size 8 (0x8)
+char CBasePlayer_01268[0x4];
+	__declspec(align(8)) uint64_t m_nUnHoldableButtons;// 0x1268, size 8 (0x8)
 	// m_nUnHoldableButtons metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
@@ -8528,7 +8617,7 @@ public:
 	static bool &Get_ms_bUseSessionPersisterPosAng() {return *(bool *)schema::SchemaSystem::Get()->FindTypeScopeForModule("server.dll")->FindDeclaredClass("CBasePlayer")->m_staticMembers.data[0].m_pInstance; }
 	static UnknownType <0xc, class Vector> &Get_ms_vSessionPersisterPosition() {return *(UnknownType <0xc, class Vector> *)schema::SchemaSystem::Get()->FindTypeScopeForModule("server.dll")->FindDeclaredClass("CBasePlayer")->m_staticMembers.data[1].m_pInstance; }
 	static UnknownType <0xc, class QAngle> &Get_ms_angSessionPersisterAngles() {return *(UnknownType <0xc, class QAngle> *)schema::SchemaSystem::Get()->FindTypeScopeForModule("server.dll")->FindDeclaredClass("CBasePlayer")->m_staticMembers.data[2].m_pInstance; }
-}; // size: 4656 (0x1230)
+}; // size: 4720 (0x1270)
 
 class CEnvSoundscape : public CServerOnlyEntity
 {
@@ -8636,6 +8725,30 @@ public:
 
 public:
 }; // size: 1136 (0x470)
+
+class CDOTA_Ability_Special_Bonus_Unique_Grimstroke_3 : public CDOTABaseAbility
+{
+// CDOTA_Ability_Special_Bonus_Unique_Grimstroke_3 additional information
+// server.dll, project server
+// Alignment: -1
+// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+// Abstract Class
+
+public: 
+	class CEntityInstanceEntityClass : public CDOTABaseAbility::CEntityInstanceEntityClass
+	{
+	// CDOTA_Ability_Special_Bonus_Unique_Grimstroke_3::CEntityInstanceEntityClass additional information
+	// Alignment: -1
+	// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+	// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
+	// SCHEMA_CLASS_TEMP_HACK_HAS_DESTRUCTOR_LIKE_METHODS
+	// Abstract Class
+
+	public:
+	}; // size: 296 (0x128)
+
+public:
+}; // size: 1016 (0x3f8)
 
 class CDOTA_Ability_Viper_CorrosiveSkin : public CDOTABaseAbility
 {
@@ -9220,19 +9333,19 @@ class CBodyComponentBaseAnimatingOverlay : public CBodyComponentSkeletonInstance
 // Abstract Class
 
 public:
-	__declspec(align(8)) CBaseAnimatingOverlayController m_animationController;// 0x4b0, size 1296 (0x510)
+	__declspec(align(8)) CBaseAnimatingOverlayController m_animationController;// 0x4c0, size 1296 (0x510)
 	// m_animationController metadata
 	 // MNetworkEnable
 	 // MNetworkVarEmbeddedUnderlyingType
-	__declspec(align(8)) CNetworkVarChainer __m_pChainEntity;// 0x9c0, size 24 (0x18)
+	__declspec(align(8)) CNetworkVarChainer __m_pChainEntity;// 0x9d0, size 24 (0x18)
 	// __m_pChainEntity metadata
 	 // MNetworkDisable
 	 // MNetworkChangeAccessorFieldPathIndex
-char CBodyComponentBaseAnimatingOverlay_09E0[0x8];
+char CBodyComponentBaseAnimatingOverlay_09F0[0x8];
 public:
 	static EntComponentInfo_t &Get_s_EntComponentInfo() {return *(EntComponentInfo_t *)schema::SchemaSystem::Get()->FindTypeScopeForModule("server.dll")->FindDeclaredClass("CBodyComponentBaseAnimatingOverlay")->m_staticMembers.data[0].m_pInstance; }
 	static int32_t &Get_entity_component_error_class_decl_says_contained_but_impl_is_referenced() {return *(int32_t *)schema::SchemaSystem::Get()->FindTypeScopeForModule("server.dll")->FindDeclaredClass("CBodyComponentBaseAnimatingOverlay")->m_staticMembers.data[1].m_pInstance; }
-}; // size: 2528 (0x9e0)
+}; // size: 2544 (0x9f0)
 
 class CFogController : public CBaseEntity
 {
@@ -9315,15 +9428,15 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(4)) CDOTA_CreepKillInfo m_KillInfo;// 0x1480, size 32 (0x20)
-	__declspec(align(4)) DOTA_LANE m_Lane;// 0x14a0, size 4 (0x4)
-	__declspec(align(1)) bool m_bPushback;// 0x14a4, size 1 (0x1)
-	__declspec(align(4)) float m_flAim;// 0x14a8, size 4 (0x4)
+	__declspec(align(4)) CDOTA_CreepKillInfo m_KillInfo;// 0x14e0, size 32 (0x20)
+	__declspec(align(4)) DOTA_LANE m_Lane;// 0x1500, size 4 (0x4)
+	__declspec(align(1)) bool m_bPushback;// 0x1504, size 1 (0x1)
+	__declspec(align(4)) float m_flAim;// 0x1508, size 4 (0x4)
 	// m_flAim metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-char CDOTA_BaseNPC_Creep_014B0[0x4];
-}; // size: 5296 (0x14b0)
+char CDOTA_BaseNPC_Creep_01510[0x4];
+}; // size: 5392 (0x1510)
 
 class CDOTA_Ability_Furion_Teleportation : public CDOTABaseAbility
 {
@@ -9571,9 +9684,9 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(4)) int32_t m_iDuration;// 0x1480, size 4 (0x4)
-char CDOTA_NPC_Observer_Ward_01488[0x4];
-}; // size: 5256 (0x1488)
+	__declspec(align(4)) int32_t m_iDuration;// 0x14e0, size 4 (0x4)
+char CDOTA_NPC_Observer_Ward_014E8[0x4];
+}; // size: 5352 (0x14e8)
 
 class CDOTA_Ability_Chen_Penitence : public CDOTABaseAbility
 {
@@ -10085,7 +10198,8 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 1480 (0x5c8)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class handposepair_t > m_HandPoses;// 0x620, size 24 (0x18)
+}; // size: 1592 (0x638)
 
 class CDOTA_Unit_Hero_Shadow_Demon : public CDOTA_BaseNPC_Hero
 {
@@ -10110,7 +10224,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Ability_Gyrocopter_Rocket_Barrage : public CDOTABaseAbility
 {
@@ -10491,6 +10605,30 @@ public:
 char CInfoSpawnGroupLoadUnload_0468[0x3A];
 }; // size: 1128 (0x468)
 
+class CDOTA_Ability_Special_Bonus_Unique_Grimstroke_2 : public CDOTABaseAbility
+{
+// CDOTA_Ability_Special_Bonus_Unique_Grimstroke_2 additional information
+// server.dll, project server
+// Alignment: -1
+// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+// Abstract Class
+
+public: 
+	class CEntityInstanceEntityClass : public CDOTABaseAbility::CEntityInstanceEntityClass
+	{
+	// CDOTA_Ability_Special_Bonus_Unique_Grimstroke_2::CEntityInstanceEntityClass additional information
+	// Alignment: -1
+	// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+	// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
+	// SCHEMA_CLASS_TEMP_HACK_HAS_DESTRUCTOR_LIKE_METHODS
+	// Abstract Class
+
+	public:
+	}; // size: 296 (0x128)
+
+public:
+}; // size: 1016 (0x3f8)
+
 class CDOTA_Ability_Lion_Impale : public CDOTABaseAbility
 {
 // CDOTA_Ability_Lion_Impale additional information
@@ -10651,19 +10789,19 @@ class CBodyComponentPoint : public CBodyComponent
 // Abstract Class
 
 public:
-	__declspec(align(1)) CGameSceneNode m_sceneNode;// 0x40, size 336 (0x150)
+	__declspec(align(1)) CGameSceneNode m_sceneNode;// 0x40, size 352 (0x160)
 	// m_sceneNode metadata
 	 // MNetworkEnable
 	 // MNetworkVarEmbeddedUnderlyingType
-	__declspec(align(8)) CNetworkVarChainer __m_pChainEntity;// 0x190, size 24 (0x18)
+	__declspec(align(8)) CNetworkVarChainer __m_pChainEntity;// 0x1a0, size 24 (0x18)
 	// __m_pChainEntity metadata
 	 // MNetworkDisable
 	 // MNetworkChangeAccessorFieldPathIndex
-char CBodyComponentPoint_01B0[0x8];
+char CBodyComponentPoint_01C0[0x8];
 public:
 	static EntComponentInfo_t &Get_s_EntComponentInfo() {return *(EntComponentInfo_t *)schema::SchemaSystem::Get()->FindTypeScopeForModule("server.dll")->FindDeclaredClass("CBodyComponentPoint")->m_staticMembers.data[0].m_pInstance; }
 	static int32_t &Get_entity_component_error_class_decl_says_contained_but_impl_is_referenced() {return *(int32_t *)schema::SchemaSystem::Get()->FindTypeScopeForModule("server.dll")->FindDeclaredClass("CBodyComponentPoint")->m_staticMembers.data[1].m_pInstance; }
-}; // size: 432 (0x1b0)
+}; // size: 448 (0x1c0)
 
 class CDOTA_Item_HeavensHalberd : public CDOTA_Item
 {
@@ -11134,7 +11272,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Unit_Hero_Lycan : public CDOTA_BaseNPC_Hero
 {
@@ -11158,7 +11296,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Ability_Nian_Roar : public CDOTABaseAbility
 {
@@ -11416,77 +11554,77 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(8)) UnknownAtomicType <0x8, CStrongHandle, class InfoForResourceTypeIParticleSystemDefinition > m_nFXIndex;// 0x1480, size 8 (0x8)
+	__declspec(align(8)) UnknownAtomicType <0x8, CStrongHandle, class InfoForResourceTypeIParticleSystemDefinition > m_nFXIndex;// 0x14e0, size 8 (0x8)
 	// m_nFXIndex metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(8)) UnknownAtomicType <0x8, CStrongHandle, class InfoForResourceTypeIParticleSystemDefinition > m_nFXIndexDestruction;// 0x1488, size 8 (0x8)
+	__declspec(align(8)) UnknownAtomicType <0x8, CStrongHandle, class InfoForResourceTypeIParticleSystemDefinition > m_nFXIndexDestruction;// 0x14e8, size 8 (0x8)
 	// m_nFXIndexDestruction metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) UnknownType <0xc, class QAngle> m_angInitialAngles;// 0x1490, size 12 (0xc)
+	__declspec(align(4)) UnknownType <0xc, class QAngle> m_angInitialAngles;// 0x14f0, size 12 (0xc)
 	// m_angInitialAngles metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) UnknownType <0x4, class HSequence> m_hHeroStatueSequence;// 0x149c, size 4 (0x4)
+	__declspec(align(4)) UnknownType <0x4, class HSequence> m_hHeroStatueSequence;// 0x14fc, size 4 (0x4)
 	// m_hHeroStatueSequence metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) UnknownType <0x4, class HSequence> m_hConstantLayerSequence;// 0x14a0, size 4 (0x4)
+	__declspec(align(4)) UnknownType <0x4, class HSequence> m_hConstantLayerSequence;// 0x1500, size 4 (0x4)
 	// m_hConstantLayerSequence metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) float m_fHeroStatueCycle;// 0x14a4, size 4 (0x4)
+	__declspec(align(4)) float m_fHeroStatueCycle;// 0x1504, size 4 (0x4)
 	// m_fHeroStatueCycle metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_iHeroStatueStatusEffectIndex;// 0x14a8, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iHeroStatueStatusEffectIndex;// 0x1508, size 4 (0x4)
 	// m_iHeroStatueStatusEffectIndex metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bHeroStatue;// 0x14ac, size 1 (0x1)
+	__declspec(align(1)) bool m_bHeroStatue;// 0x150c, size 1 (0x1)
 	// m_bHeroStatue metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bBattleCup;// 0x14ad, size 1 (0x1)
+	__declspec(align(1)) bool m_bBattleCup;// 0x150d, size 1 (0x1)
 	// m_bBattleCup metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) char m_HeroStatueInscription[32];// 0x14ae, size 32 (0x20)
+	__declspec(align(1)) char m_HeroStatueInscription[32];// 0x150e, size 32 (0x20)
 	// m_HeroStatueInscription metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_iHeroStatueOwnerPlayerID;// 0x14d0, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iHeroStatueOwnerPlayerID;// 0x1530, size 4 (0x4)
 	// m_iHeroStatueOwnerPlayerID metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) UnknownType <0x4, class Color> m_ParticleTintColor;// 0x14d4, size 4 (0x4)
+	__declspec(align(1)) UnknownType <0x4, class Color> m_ParticleTintColor;// 0x1534, size 4 (0x4)
 	// m_ParticleTintColor metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_sDestroySnd;// 0x14d8, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_sDmgLvl1Snd;// 0x14e0, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_sDmgLvl2Snd;// 0x14e8, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszLinkedUnit;// 0x14f0, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszAmbientEffectName;// 0x14f8, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszDestructionEffectName;// 0x1500, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszDamageModelLevel1;// 0x1508, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszDamageModelLevel2;// 0x1510, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszDamageEffectLevel1;// 0x1518, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszDamageEffectLevel2;// 0x1520, size 8 (0x8)
-	__declspec(align(4)) float m_flDamageThresholdLevel1;// 0x1528, size 4 (0x4)
-	__declspec(align(4)) float m_flDamageThresholdLevel2;// 0x152c, size 4 (0x4)
-	__declspec(align(1)) bool m_bVulnerableOnCreepSpawn;// 0x1530, size 1 (0x1)
-	__declspec(align(1)) bool m_bHasOverriddenDestructionEffect;// 0x1531, size 1 (0x1)
-	__declspec(align(4)) int32_t m_iUpgradeIdentifier;// 0x1534, size 4 (0x4)
-	__declspec(align(4)) int32_t m_iInvulnCount;// 0x1538, size 4 (0x4)
-	__declspec(align(4)) int32_t m_iPlayerOwner;// 0x153c, size 4 (0x4)
-	__declspec(align(4)) DOTA_LANE m_Lane;// 0x1540, size 4 (0x4)
-	__declspec(align(4)) float m_fAmountAlongLane[2];// 0x1544, size 8 (0x8)
-	__declspec(align(4)) int32_t m_iDamageLevel;// 0x154c, size 4 (0x4)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_sDestroySnd;// 0x1538, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_sDmgLvl1Snd;// 0x1540, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_sDmgLvl2Snd;// 0x1548, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszLinkedUnit;// 0x1550, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszAmbientEffectName;// 0x1558, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszDestructionEffectName;// 0x1560, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszDamageModelLevel1;// 0x1568, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszDamageModelLevel2;// 0x1570, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszDamageEffectLevel1;// 0x1578, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszDamageEffectLevel2;// 0x1580, size 8 (0x8)
+	__declspec(align(4)) float m_flDamageThresholdLevel1;// 0x1588, size 4 (0x4)
+	__declspec(align(4)) float m_flDamageThresholdLevel2;// 0x158c, size 4 (0x4)
+	__declspec(align(1)) bool m_bVulnerableOnCreepSpawn;// 0x1590, size 1 (0x1)
+	__declspec(align(1)) bool m_bHasOverriddenDestructionEffect;// 0x1591, size 1 (0x1)
+	__declspec(align(4)) int32_t m_iUpgradeIdentifier;// 0x1594, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iInvulnCount;// 0x1598, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iPlayerOwner;// 0x159c, size 4 (0x4)
+	__declspec(align(4)) DOTA_LANE m_Lane;// 0x15a0, size 4 (0x4)
+	__declspec(align(4)) float m_fAmountAlongLane[2];// 0x15a4, size 8 (0x8)
+	__declspec(align(4)) int32_t m_iDamageLevel;// 0x15ac, size 4 (0x4)
 public:
 	static /*Array, 14 elements*/float *&Get_m_fLastAttackWarnTimers() {return *(float **)schema::SchemaSystem::Get()->FindTypeScopeForModule("server.dll")->FindDeclaredClass("CDOTA_BaseNPC_Building")->m_staticMembers.data[0].m_pInstance; }
-}; // size: 5456 (0x1550)
+}; // size: 5552 (0x15b0)
 
 class CPointGamestatsCounter : public CPointEntity
 {
@@ -11768,7 +11906,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Unit_Hero_CrystalMaiden : public CDOTA_BaseNPC_Hero
 {
@@ -11793,9 +11931,9 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(4)) int32_t m_iParticleMouthIndex;// 0x19f8, size 4 (0x4)
-	__declspec(align(4)) int32_t m_iParticleHandRIndex;// 0x19fc, size 4 (0x4)
-}; // size: 6656 (0x1a00)
+	__declspec(align(4)) int32_t m_iParticleMouthIndex;// 0x1a48, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iParticleHandRIndex;// 0x1a4c, size 4 (0x4)
+}; // size: 6736 (0x1a50)
 
 class CDOTA_Ability_Special_Bonus_Unique_Omniknight_1 : public CDOTABaseAbility
 {
@@ -11939,7 +12077,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 1480 (0x5c8)
+}; // size: 1592 (0x638)
 
 class CPathKeyFrame : public CLogicalEntity
 {
@@ -12122,33 +12260,33 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-char CPropVRTrackedObject_05E8[0x20];
-	__declspec(align(1)) bool m_bShouldBePhysicallyConstrained;// 0x5e8, size 1 (0x1)
-	__declspec(align(1)) bool m_bFoundInitialSafeLocation;// 0x5e9, size 1 (0x1)
-char CPropVRTrackedObject_0608[0x1E];
-	__declspec(align(1)) bool m_bIsTracking;// 0x608, size 1 (0x1)
+char CPropVRTrackedObject_0640[0x20];
+	__declspec(align(1)) bool m_bShouldBePhysicallyConstrained;// 0x640, size 1 (0x1)
+	__declspec(align(1)) bool m_bFoundInitialSafeLocation;// 0x641, size 1 (0x1)
+char CPropVRTrackedObject_0660[0x1E];
+	__declspec(align(1)) bool m_bIsTracking;// 0x660, size 1 (0x1)
 	// m_bIsTracking metadata
 	 // MNetworkEnable
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vTrackedPosition;// 0x60c, size 12 (0xc)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vTrackedPosition;// 0x664, size 12 (0xc)
 	// m_vTrackedPosition metadata
 	 // MNetworkEnable
-	__declspec(align(4)) UnknownType <0xc, class QAngle> m_qTrackedAngles;// 0x618, size 12 (0xc)
+	__declspec(align(4)) UnknownType <0xc, class QAngle> m_qTrackedAngles;// 0x670, size 12 (0xc)
 	// m_qTrackedAngles metadata
 	 // MNetworkEnable
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vPhysicallyConstrainedPosition;// 0x624, size 12 (0xc)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vPhysicallyConstrainedPosition;// 0x67c, size 12 (0xc)
 	// m_vPhysicallyConstrainedPosition metadata
 	 // MNetworkEnable
-	__declspec(align(4)) UnknownType <0xc, class QAngle> m_qPhysicallyConstrainedAngles;// 0x630, size 12 (0xc)
+	__declspec(align(4)) UnknownType <0xc, class QAngle> m_qPhysicallyConstrainedAngles;// 0x688, size 12 (0xc)
 	// m_qPhysicallyConstrainedAngles metadata
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bClientIsAuthoritativeForTransform;// 0x63c, size 1 (0x1)
+	__declspec(align(1)) bool m_bClientIsAuthoritativeForTransform;// 0x694, size 1 (0x1)
 	// m_bClientIsAuthoritativeForTransform metadata
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bIsInContact;// 0x63d, size 1 (0x1)
+	__declspec(align(1)) bool m_bIsInContact;// 0x695, size 1 (0x1)
 	// m_bIsInContact metadata
 	 // MNetworkEnable
-char CPropVRTrackedObject_0640[0x2];
-}; // size: 1600 (0x640)
+char CPropVRTrackedObject_0698[0x2];
+}; // size: 1688 (0x698)
 
 class CEnvTilt : public CPointEntity
 {
@@ -12326,7 +12464,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 1480 (0x5c8)
+}; // size: 1568 (0x620)
 
 class CFuncAreaPortalBase : public CBaseModelEntity
 {
@@ -12770,20 +12908,20 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(4)) float m_flextime;// 0x660, size 4 (0x4)
-char CFlexCycler_0668[0x4];
-	__declspec(align(4)) float m_flextarget[2048];// 0x668, size 8192 (0x2000)
-	__declspec(align(4)) float m_blinktime;// 0x2668, size 4 (0x4)
-	__declspec(align(4)) float m_looktime;// 0x266c, size 4 (0x4)
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_lookTarget;// 0x2670, size 12 (0xc)
-	__declspec(align(4)) float m_speaktime;// 0x267c, size 4 (0x4)
-	__declspec(align(4)) int32_t m_istalking;// 0x2680, size 4 (0x4)
-	__declspec(align(4)) int32_t m_phoneme;// 0x2684, size 4 (0x4)
-	__declspec(align(4)) UnknownType <0x4, class HSequence> m_hCurrLayerSequence;// 0x2688, size 4 (0x4)
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszSentence;// 0x2690, size 8 (0x8)
-	__declspec(align(4)) int32_t m_sentence;// 0x2698, size 4 (0x4)
-char CFlexCycler_026A0[0x4];
-}; // size: 9888 (0x26a0)
+	__declspec(align(4)) float m_flextime;// 0x6b8, size 4 (0x4)
+char CFlexCycler_06C0[0x4];
+	__declspec(align(4)) float m_flextarget[2048];// 0x6c0, size 8192 (0x2000)
+	__declspec(align(4)) float m_blinktime;// 0x26c0, size 4 (0x4)
+	__declspec(align(4)) float m_looktime;// 0x26c4, size 4 (0x4)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_lookTarget;// 0x26c8, size 12 (0xc)
+	__declspec(align(4)) float m_speaktime;// 0x26d4, size 4 (0x4)
+	__declspec(align(4)) int32_t m_istalking;// 0x26d8, size 4 (0x4)
+	__declspec(align(4)) int32_t m_phoneme;// 0x26dc, size 4 (0x4)
+	__declspec(align(4)) UnknownType <0x4, class HSequence> m_hCurrLayerSequence;// 0x26e0, size 4 (0x4)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszSentence;// 0x26e8, size 8 (0x8)
+	__declspec(align(4)) int32_t m_sentence;// 0x26f0, size 4 (0x4)
+char CFlexCycler_026F8[0x4];
+}; // size: 9976 (0x26f8)
 
 class CMultiLightProxy : public CLogicalEntity
 {
@@ -13289,15 +13427,15 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-char CPropVehicle_05D0[0x8];
-	__declspec(align(1)) CFourWheelVehiclePhysics m_VehiclePhysics;// 0x5d0, size 344 (0x158)
-	__declspec(align(4)) uint32_t m_nVehicleType;// 0x728, size 4 (0x4)
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_vehicleScript;// 0x730, size 8 (0x8)
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecSmoothedVelocity;// 0x738, size 12 (0xc)
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBasePlayer > m_hPhysicsAttacker;// 0x744, size 4 (0x4)
-	__declspec(align(4)) float m_flLastPhysicsInfluenceTime;// 0x748, size 4 (0x4)
-char CPropVehicle_0750[0x4];
-}; // size: 1872 (0x750)
+char CPropVehicle_0640[0x8];
+	__declspec(align(1)) CFourWheelVehiclePhysics m_VehiclePhysics;// 0x640, size 344 (0x158)
+	__declspec(align(4)) uint32_t m_nVehicleType;// 0x798, size 4 (0x4)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_vehicleScript;// 0x7a0, size 8 (0x8)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecSmoothedVelocity;// 0x7a8, size 12 (0xc)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBasePlayer > m_hPhysicsAttacker;// 0x7b4, size 4 (0x4)
+	__declspec(align(4)) float m_flLastPhysicsInfluenceTime;// 0x7b8, size 4 (0x4)
+char CPropVehicle_07C0[0x4];
+}; // size: 1984 (0x7c0)
 
 class CEntityBlocker : public CBaseModelEntity
 {
@@ -13918,11 +14056,11 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(4)) int32_t m_nTalkFXIndex;// 0x19f8, size 4 (0x4)
-	__declspec(align(4)) int32_t m_nFXDeath;// 0x19fc, size 4 (0x4)
-	__declspec(align(4)) int32_t m_nTempestFX;// 0x1a00, size 4 (0x4)
-char CDOTA_Unit_Hero_ArcWarden_01A08[0x4];
-}; // size: 6664 (0x1a08)
+	__declspec(align(4)) int32_t m_nTalkFXIndex;// 0x1a48, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nFXDeath;// 0x1a4c, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nTempestFX;// 0x1a50, size 4 (0x4)
+char CDOTA_Unit_Hero_ArcWarden_01A58[0x4];
+}; // size: 6744 (0x1a58)
 
 class CDOTA_Ability_Special_Bonus_Unique_Tinker_3 : public CDOTABaseAbility
 {
@@ -14020,32 +14158,6 @@ public:
 public:
 }; // size: 1016 (0x3f8)
 
-class CDOTA_Ability_ControllerTest_SlarkSpinAttack : public CDOTABaseAbility
-{
-// CDOTA_Ability_ControllerTest_SlarkSpinAttack additional information
-// server.dll, project server
-// Alignment: -1
-// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
-// Abstract Class
-
-public: 
-	class CEntityInstanceEntityClass : public CDOTABaseAbility::CEntityInstanceEntityClass
-	{
-	// CDOTA_Ability_ControllerTest_SlarkSpinAttack::CEntityInstanceEntityClass additional information
-	// Alignment: -1
-	// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
-	// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
-	// SCHEMA_CLASS_TEMP_HACK_HAS_DESTRUCTOR_LIKE_METHODS
-	// Abstract Class
-
-	public:
-	}; // size: 296 (0x128)
-
-public:
-	__declspec(align(4)) float m_flPlaybackRate;// 0x3f8, size 4 (0x4)
-char CDOTA_Ability_ControllerTest_SlarkSpinAttack_0400[0x4];
-}; // size: 1024 (0x400)
-
 class CSoundEventEntity : public CBaseEntity
 {
 // CSoundEventEntity additional information
@@ -14103,7 +14215,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 1568 (0x620)
+}; // size: 1656 (0x678)
 
 class CRuleEntity : public CBaseModelEntity
 {
@@ -14209,7 +14321,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Ability_Special_Bonus_Unique_Shadow_Demon_3 : public CDOTABaseAbility
 {
@@ -14319,6 +14431,30 @@ public:
 	class CEntityInstanceEntityClass : public CDOTABaseAbility::CEntityInstanceEntityClass
 	{
 	// CDOTA_Ability_Special_Bonus_Attack_Damage_45::CEntityInstanceEntityClass additional information
+	// Alignment: -1
+	// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+	// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
+	// SCHEMA_CLASS_TEMP_HACK_HAS_DESTRUCTOR_LIKE_METHODS
+	// Abstract Class
+
+	public:
+	}; // size: 296 (0x128)
+
+public:
+}; // size: 1016 (0x3f8)
+
+class CDOTA_Ability_Courier_AutoDeliver : public CDOTABaseAbility
+{
+// CDOTA_Ability_Courier_AutoDeliver additional information
+// server.dll, project server
+// Alignment: -1
+// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+// Abstract Class
+
+public: 
+	class CEntityInstanceEntityClass : public CDOTABaseAbility::CEntityInstanceEntityClass
+	{
+	// CDOTA_Ability_Courier_AutoDeliver::CEntityInstanceEntityClass additional information
 	// Alignment: -1
 	// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
 	// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
@@ -14764,66 +14900,66 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-char CBreakableProp_05D8[0x10];
-	__declspec(align(8)) CEntityIOOutput m_OnBreak;// 0x5d8, size 40 (0x28)
-	__declspec(align(8)) UnknownAtomicType <0x28, CEntityOutputTemplate, float > m_OnHealthChanged;// 0x600, size 40 (0x28)
-	__declspec(align(8)) CEntityIOOutput m_OnTakeDamage;// 0x628, size 40 (0x28)
-	__declspec(align(4)) float m_impactEnergyScale;// 0x650, size 4 (0x4)
-	__declspec(align(4)) int32_t m_iMinHealthDmg;// 0x654, size 4 (0x4)
-	__declspec(align(4)) UnknownType <0xc, class QAngle> m_preferredCarryAngles;// 0x658, size 12 (0xc)
-	__declspec(align(4)) int32_t m_iPhysicsMode;// 0x664, size 4 (0x4)
+char CBreakableProp_0648[0x10];
+	__declspec(align(8)) CEntityIOOutput m_OnBreak;// 0x648, size 40 (0x28)
+	__declspec(align(8)) UnknownAtomicType <0x28, CEntityOutputTemplate, float > m_OnHealthChanged;// 0x670, size 40 (0x28)
+	__declspec(align(8)) CEntityIOOutput m_OnTakeDamage;// 0x698, size 40 (0x28)
+	__declspec(align(4)) float m_impactEnergyScale;// 0x6c0, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iMinHealthDmg;// 0x6c4, size 4 (0x4)
+	__declspec(align(4)) UnknownType <0xc, class QAngle> m_preferredCarryAngles;// 0x6c8, size 12 (0xc)
+	__declspec(align(4)) int32_t m_iPhysicsMode;// 0x6d4, size 4 (0x4)
 	// m_iPhysicsMode metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) float m_flPressureDelay;// 0x668, size 4 (0x4)
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hBreaker;// 0x66c, size 4 (0x4)
-	__declspec(align(4)) PerformanceMode_t m_PerformanceMode;// 0x670, size 4 (0x4)
-	__declspec(align(4)) float m_flDmgModBullet;// 0x674, size 4 (0x4)
-	__declspec(align(4)) float m_flDmgModClub;// 0x678, size 4 (0x4)
-	__declspec(align(4)) float m_flDmgModExplosive;// 0x67c, size 4 (0x4)
-	__declspec(align(4)) float m_flDmgModFire;// 0x680, size 4 (0x4)
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszPhysicsDamageTableName;// 0x688, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszBreakableModel;// 0x690, size 8 (0x8)
-	__declspec(align(4)) int32_t m_iBreakableSkin;// 0x698, size 4 (0x4)
-	__declspec(align(4)) int32_t m_iBreakableCount;// 0x69c, size 4 (0x4)
-	__declspec(align(4)) int32_t m_iMaxBreakableSize;// 0x6a0, size 4 (0x4)
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszBasePropData;// 0x6a8, size 8 (0x8)
-	__declspec(align(4)) int32_t m_iInteractions;// 0x6b0, size 4 (0x4)
-	__declspec(align(4)) float m_explodeDamage;// 0x6b4, size 4 (0x4)
-	__declspec(align(4)) float m_explodeRadius;// 0x6b8, size 4 (0x4)
-	__declspec(align(4)) int32_t m_nCarryTypeOverride;// 0x6bc, size 4 (0x4)
-	__declspec(align(4)) float m_flPreventDamageBeforeTime;// 0x6c0, size 4 (0x4)
-	__declspec(align(4)) int32_t m_iNumBreakableChunks;// 0x6c4, size 4 (0x4)
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBasePlayer > m_hPhysicsAttacker;// 0x6c8, size 4 (0x4)
-	__declspec(align(4)) float m_flLastPhysicsInfluenceTime;// 0x6cc, size 4 (0x4)
-	__declspec(align(1)) bool m_bBlockLOSSetByPropData;// 0x6d0, size 1 (0x1)
-	__declspec(align(1)) bool m_bIsWalkableSetByPropData;// 0x6d1, size 1 (0x1)
-	__declspec(align(1)) bool m_bOriginalBlockLOS;// 0x6d2, size 1 (0x1)
-	__declspec(align(1)) char m_nPhysgunState;// 0x6d3, size 1 (0x1)
-	__declspec(align(8)) CEntityIOOutput m_OnPhysCannonDetach;// 0x6d8, size 40 (0x28)
-	__declspec(align(8)) CEntityIOOutput m_OnPhysCannonAnimatePreStarted;// 0x700, size 40 (0x28)
-	__declspec(align(8)) CEntityIOOutput m_OnPhysCannonAnimatePullStarted;// 0x728, size 40 (0x28)
-	__declspec(align(8)) CEntityIOOutput m_OnPhysCannonAnimatePostStarted;// 0x750, size 40 (0x28)
-	__declspec(align(8)) CEntityIOOutput m_OnPhysCannonPullAnimFinished;// 0x778, size 40 (0x28)
-	__declspec(align(4)) float m_flDefaultFadeScale;// 0x7a0, size 4 (0x4)
-	__declspec(align(4)) explosion_t m_explosionType;// 0x7a4, size 4 (0x4)
-	__declspec(align(4)) float m_explosionDelay;// 0x7a8, size 4 (0x4)
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_explosionBuildupSound;// 0x7b0, size 8 (0x8)
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hLastAttacker;// 0x7b8, size 4 (0x4)
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hFlareEnt;// 0x7bc, size 4 (0x4)
-	__declspec(align(1)) bool m_bUsePuntSound;// 0x7c0, size 1 (0x1)
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszPuntSound;// 0x7c8, size 8 (0x8)
-	__declspec(align(1)) bool m_noGhostCollision;// 0x7d0, size 1 (0x1)
+	__declspec(align(4)) float m_flPressureDelay;// 0x6d8, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hBreaker;// 0x6dc, size 4 (0x4)
+	__declspec(align(4)) PerformanceMode_t m_PerformanceMode;// 0x6e0, size 4 (0x4)
+	__declspec(align(4)) float m_flDmgModBullet;// 0x6e4, size 4 (0x4)
+	__declspec(align(4)) float m_flDmgModClub;// 0x6e8, size 4 (0x4)
+	__declspec(align(4)) float m_flDmgModExplosive;// 0x6ec, size 4 (0x4)
+	__declspec(align(4)) float m_flDmgModFire;// 0x6f0, size 4 (0x4)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszPhysicsDamageTableName;// 0x6f8, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszBreakableModel;// 0x700, size 8 (0x8)
+	__declspec(align(4)) int32_t m_iBreakableSkin;// 0x708, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iBreakableCount;// 0x70c, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iMaxBreakableSize;// 0x710, size 4 (0x4)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszBasePropData;// 0x718, size 8 (0x8)
+	__declspec(align(4)) int32_t m_iInteractions;// 0x720, size 4 (0x4)
+	__declspec(align(4)) float m_explodeDamage;// 0x724, size 4 (0x4)
+	__declspec(align(4)) float m_explodeRadius;// 0x728, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nCarryTypeOverride;// 0x72c, size 4 (0x4)
+	__declspec(align(4)) float m_flPreventDamageBeforeTime;// 0x730, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iNumBreakableChunks;// 0x734, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBasePlayer > m_hPhysicsAttacker;// 0x738, size 4 (0x4)
+	__declspec(align(4)) float m_flLastPhysicsInfluenceTime;// 0x73c, size 4 (0x4)
+	__declspec(align(1)) bool m_bBlockLOSSetByPropData;// 0x740, size 1 (0x1)
+	__declspec(align(1)) bool m_bIsWalkableSetByPropData;// 0x741, size 1 (0x1)
+	__declspec(align(1)) bool m_bOriginalBlockLOS;// 0x742, size 1 (0x1)
+	__declspec(align(1)) char m_nPhysgunState;// 0x743, size 1 (0x1)
+	__declspec(align(8)) CEntityIOOutput m_OnPhysCannonDetach;// 0x748, size 40 (0x28)
+	__declspec(align(8)) CEntityIOOutput m_OnPhysCannonAnimatePreStarted;// 0x770, size 40 (0x28)
+	__declspec(align(8)) CEntityIOOutput m_OnPhysCannonAnimatePullStarted;// 0x798, size 40 (0x28)
+	__declspec(align(8)) CEntityIOOutput m_OnPhysCannonAnimatePostStarted;// 0x7c0, size 40 (0x28)
+	__declspec(align(8)) CEntityIOOutput m_OnPhysCannonPullAnimFinished;// 0x7e8, size 40 (0x28)
+	__declspec(align(4)) float m_flDefaultFadeScale;// 0x810, size 4 (0x4)
+	__declspec(align(4)) explosion_t m_explosionType;// 0x814, size 4 (0x4)
+	__declspec(align(4)) float m_explosionDelay;// 0x818, size 4 (0x4)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_explosionBuildupSound;// 0x820, size 8 (0x8)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hLastAttacker;// 0x828, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hFlareEnt;// 0x82c, size 4 (0x4)
+	__declspec(align(1)) bool m_bUsePuntSound;// 0x830, size 1 (0x1)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszPuntSound;// 0x838, size 8 (0x8)
+	__declspec(align(1)) bool m_noGhostCollision;// 0x840, size 1 (0x1)
 	// m_noGhostCollision metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-char CBreakableProp_07D4[0x3];
-	__declspec(align(4)) float m_flClothScale;// 0x7d4, size 4 (0x4)
+char CBreakableProp_0844[0x3];
+	__declspec(align(4)) float m_flClothScale;// 0x844, size 4 (0x4)
 	// m_flClothScale metadata
 	 // MNetworkEnable
 	 // MDefaultString
 	 // MNetworkEnable
-}; // size: 2008 (0x7d8)
+}; // size: 2120 (0x848)
 
 class CPhysConstraint : public CLogicalEntity
 {
@@ -14983,7 +15119,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Ability_Special_Bonus_Unique_Ember_Spirit_3 : public CDOTABaseAbility
 {
@@ -15400,40 +15536,41 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-char CRagdollProp_05D0[0x8];
-	__declspec(align(8)) ragdoll_t m_ragdoll;// 0x5d0, size 56 (0x38)
-	__declspec(align(1)) bool m_bStartDisabled;// 0x608, size 1 (0x1)
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownType <0xc, class Vector> > m_ragPos;// 0x610, size 24 (0x18)
+char CRagdollProp_0628[0x8];
+	__declspec(align(8)) ragdoll_t m_ragdoll;// 0x628, size 56 (0x38)
+	__declspec(align(1)) bool m_bStartDisabled;// 0x660, size 1 (0x1)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownType <0xc, class Vector> > m_ragPos;// 0x668, size 24 (0x18)
 	// m_ragPos metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkEncoder
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownType <0xc, class QAngle> > m_ragAngles;// 0x628, size 24 (0x18)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownType <0xc, class QAngle> > m_ragAngles;// 0x680, size 24 (0x18)
 	// m_ragAngles metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkEncoder
 	 // MNetworkBitCount
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hRagdollSource;// 0x640, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hRagdollSource;// 0x698, size 4 (0x4)
 	// m_hRagdollSource metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_anglesOverrideString;// 0x648, size 8 (0x8)
-	__declspec(align(4)) uint32_t m_lastUpdateTickCount;// 0x650, size 4 (0x4)
-	__declspec(align(1)) bool m_allAsleep;// 0x654, size 1 (0x1)
-	__declspec(align(1)) bool m_bFirstCollisionAfterLaunch;// 0x655, size 1 (0x1)
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hDamageEntity;// 0x658, size 4 (0x4)
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hKiller;// 0x65c, size 4 (0x4)
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBasePlayer > m_hPhysicsAttacker;// 0x660, size 4 (0x4)
-	__declspec(align(4)) float m_flLastPhysicsInfluenceTime;// 0x664, size 4 (0x4)
-	__declspec(align(4)) float m_flFadeOutStartTime;// 0x668, size 4 (0x4)
-	__declspec(align(4)) float m_flFadeTime;// 0x66c, size 4 (0x4)
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecLastOrigin;// 0x670, size 12 (0xc)
-	__declspec(align(4)) float m_flAwakeTime;// 0x67c, size 4 (0x4)
-	__declspec(align(4)) float m_flLastOriginChangeTime;// 0x680, size 4 (0x4)
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_strSourceClassName;// 0x688, size 8 (0x8)
-	__declspec(align(1)) bool m_bHasBeenPhysgunned;// 0x690, size 1 (0x1)
-	__declspec(align(4)) float m_flBlendWeight;// 0x694, size 4 (0x4)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_anglesOverrideString;// 0x6a0, size 8 (0x8)
+	__declspec(align(4)) uint32_t m_lastUpdateTickCount;// 0x6a8, size 4 (0x4)
+	__declspec(align(1)) bool m_allAsleep;// 0x6ac, size 1 (0x1)
+	__declspec(align(1)) bool m_bFirstCollisionAfterLaunch;// 0x6ad, size 1 (0x1)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hDamageEntity;// 0x6b0, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hKiller;// 0x6b4, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBasePlayer > m_hPhysicsAttacker;// 0x6b8, size 4 (0x4)
+	__declspec(align(4)) float m_flLastPhysicsInfluenceTime;// 0x6bc, size 4 (0x4)
+	__declspec(align(4)) float m_flFadeOutStartTime;// 0x6c0, size 4 (0x4)
+	__declspec(align(4)) float m_flFadeTime;// 0x6c4, size 4 (0x4)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecLastOrigin;// 0x6c8, size 12 (0xc)
+	__declspec(align(4)) float m_flAwakeTime;// 0x6d4, size 4 (0x4)
+	__declspec(align(4)) float m_flLastOriginChangeTime;// 0x6d8, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nBloodColor;// 0x6dc, size 4 (0x4)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_strSourceClassName;// 0x6e0, size 8 (0x8)
+	__declspec(align(1)) bool m_bHasBeenPhysgunned;// 0x6e8, size 1 (0x1)
+	__declspec(align(4)) float m_flBlendWeight;// 0x6ec, size 4 (0x4)
 	// m_flBlendWeight metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
@@ -15441,12 +15578,12 @@ char CRagdollProp_05D0[0x8];
 	 // MNetworkMinValue
 	 // MNetworkMaxValue
 	 // MNetworkEncodeFlags
-	__declspec(align(4)) float m_flDefaultFadeScale;// 0x698, size 4 (0x4)
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownType <0xc, class Vector> > m_ragdollMins;// 0x6a0, size 24 (0x18)
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownType <0xc, class Vector> > m_ragdollMaxs;// 0x6b8, size 24 (0x18)
-	__declspec(align(1)) bool m_bShouldDeleteActivationRecord;// 0x6d0, size 1 (0x1)
-char CRagdollProp_06E0[0xF];
-}; // size: 1760 (0x6e0)
+	__declspec(align(4)) float m_flDefaultFadeScale;// 0x6f0, size 4 (0x4)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownType <0xc, class Vector> > m_ragdollMins;// 0x6f8, size 24 (0x18)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownType <0xc, class Vector> > m_ragdollMaxs;// 0x710, size 24 (0x18)
+	__declspec(align(1)) bool m_bShouldDeleteActivationRecord;// 0x728, size 1 (0x1)
+char CRagdollProp_0738[0xF];
+}; // size: 1848 (0x738)
 
 class CDOTA_Ability_Disruptor_KineticField : public CDOTABaseAbility
 {
@@ -15761,15 +15898,15 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-char CItem_05D0[0x8];
-	__declspec(align(8)) CEntityIOOutput m_OnPlayerTouch;// 0x5d0, size 40 (0x28)
-	__declspec(align(1)) bool m_bActivateWhenAtRest;// 0x5f8, size 1 (0x1)
-	__declspec(align(8)) CEntityIOOutput m_OnCacheInteraction;// 0x600, size 40 (0x28)
-	__declspec(align(8)) CEntityIOOutput m_OnPlayerPickup;// 0x628, size 40 (0x28)
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vOriginalSpawnOrigin;// 0x650, size 12 (0xc)
-	__declspec(align(4)) UnknownType <0xc, class QAngle> m_vOriginalSpawnAngles;// 0x65c, size 12 (0xc)
-char CItem_0670[0x8];
-}; // size: 1648 (0x670)
+char CItem_0628[0x8];
+	__declspec(align(8)) CEntityIOOutput m_OnPlayerTouch;// 0x628, size 40 (0x28)
+	__declspec(align(1)) bool m_bActivateWhenAtRest;// 0x650, size 1 (0x1)
+	__declspec(align(8)) CEntityIOOutput m_OnCacheInteraction;// 0x658, size 40 (0x28)
+	__declspec(align(8)) CEntityIOOutput m_OnPlayerPickup;// 0x680, size 40 (0x28)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vOriginalSpawnOrigin;// 0x6a8, size 12 (0xc)
+	__declspec(align(4)) UnknownType <0xc, class QAngle> m_vOriginalSpawnAngles;// 0x6b4, size 12 (0xc)
+char CItem_06C8[0x8];
+}; // size: 1736 (0x6c8)
 
 class CDOTA_Item_Diffusal_Blade : public CDOTA_Item
 {
@@ -15865,7 +16002,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Ability_Meepo_Geostrike : public CDOTABaseAbility
 {
@@ -16331,16 +16468,16 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-char CGib_05D0[0x8];
-	__declspec(align(4)) int32_t m_cBloodDecals;// 0x5d0, size 4 (0x4)
-	__declspec(align(4)) int32_t m_material;// 0x5d4, size 4 (0x4)
-	__declspec(align(4)) float m_lifeTime;// 0x5d8, size 4 (0x4)
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBasePlayer > m_hPhysicsAttacker;// 0x5dc, size 4 (0x4)
-	__declspec(align(4)) float m_flLastPhysicsInfluenceTime;// 0x5e0, size 4 (0x4)
-	__declspec(align(4)) int32_t m_bloodColor;// 0x5e4, size 4 (0x4)
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hSprite;// 0x5e8, size 4 (0x4)
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hFlame;// 0x5ec, size 4 (0x4)
-}; // size: 1520 (0x5f0)
+char CGib_0628[0x8];
+	__declspec(align(4)) int32_t m_cBloodDecals;// 0x628, size 4 (0x4)
+	__declspec(align(4)) int32_t m_material;// 0x62c, size 4 (0x4)
+	__declspec(align(4)) float m_lifeTime;// 0x630, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBasePlayer > m_hPhysicsAttacker;// 0x634, size 4 (0x4)
+	__declspec(align(4)) float m_flLastPhysicsInfluenceTime;// 0x638, size 4 (0x4)
+	__declspec(align(4)) int32_t m_bloodColor;// 0x63c, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hSprite;// 0x640, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hFlame;// 0x644, size 4 (0x4)
+}; // size: 1608 (0x648)
 
 class CRopeKeyframe : public CBaseModelEntity
 {
@@ -16473,35 +16610,35 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(8)) CEntityIOOutput m_pOutputAnimBegun;// 0x7d8, size 40 (0x28)
-	__declspec(align(8)) CEntityIOOutput m_pOutputAnimOver;// 0x800, size 40 (0x28)
-	__declspec(align(8)) CEntityIOOutput m_pOutputAnimLoopCycleOver;// 0x828, size 40 (0x28)
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszDefaultAnim;// 0x850, size 8 (0x8)
-	__declspec(align(4)) UnknownType <0x4, class HSequence> m_hGoalSequence;// 0x858, size 4 (0x4)
-	__declspec(align(4)) int32_t m_iTransitionDirection;// 0x85c, size 4 (0x4)
-	__declspec(align(1)) bool m_bAnimateOnServer;// 0x860, size 1 (0x1)
-	__declspec(align(1)) bool m_bRandomizeCycle;// 0x861, size 1 (0x1)
-	__declspec(align(1)) bool m_bHoldAnimation;// 0x862, size 1 (0x1)
-	__declspec(align(1)) bool m_bRandomAnimator;// 0x863, size 1 (0x1)
-	__declspec(align(4)) float m_flNextRandAnim;// 0x864, size 4 (0x4)
-	__declspec(align(4)) float m_flMinRandAnimTime;// 0x868, size 4 (0x4)
-	__declspec(align(4)) float m_flMaxRandAnimTime;// 0x86c, size 4 (0x4)
-	__declspec(align(4)) UnknownType <0x4, class HSequence> m_hPendingSequence;// 0x870, size 4 (0x4)
-	__declspec(align(1)) bool m_bStartDisabled;// 0x874, size 1 (0x1)
-	__declspec(align(1)) bool m_bUpdateAttachedChildren;// 0x875, size 1 (0x1)
-	__declspec(align(1)) bool m_bScriptedMovement;// 0x876, size 1 (0x1)
-	__declspec(align(1)) bool m_bUseHitboxesForRenderBox;// 0x877, size 1 (0x1)
+	__declspec(align(8)) CEntityIOOutput m_pOutputAnimBegun;// 0x848, size 40 (0x28)
+	__declspec(align(8)) CEntityIOOutput m_pOutputAnimOver;// 0x870, size 40 (0x28)
+	__declspec(align(8)) CEntityIOOutput m_pOutputAnimLoopCycleOver;// 0x898, size 40 (0x28)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszDefaultAnim;// 0x8c0, size 8 (0x8)
+	__declspec(align(4)) UnknownType <0x4, class HSequence> m_hGoalSequence;// 0x8c8, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iTransitionDirection;// 0x8cc, size 4 (0x4)
+	__declspec(align(1)) bool m_bAnimateOnServer;// 0x8d0, size 1 (0x1)
+	__declspec(align(1)) bool m_bRandomizeCycle;// 0x8d1, size 1 (0x1)
+	__declspec(align(1)) bool m_bHoldAnimation;// 0x8d2, size 1 (0x1)
+	__declspec(align(1)) bool m_bRandomAnimator;// 0x8d3, size 1 (0x1)
+	__declspec(align(4)) float m_flNextRandAnim;// 0x8d4, size 4 (0x4)
+	__declspec(align(4)) float m_flMinRandAnimTime;// 0x8d8, size 4 (0x4)
+	__declspec(align(4)) float m_flMaxRandAnimTime;// 0x8dc, size 4 (0x4)
+	__declspec(align(4)) UnknownType <0x4, class HSequence> m_hPendingSequence;// 0x8e0, size 4 (0x4)
+	__declspec(align(1)) bool m_bStartDisabled;// 0x8e4, size 1 (0x1)
+	__declspec(align(1)) bool m_bUpdateAttachedChildren;// 0x8e5, size 1 (0x1)
+	__declspec(align(1)) bool m_bScriptedMovement;// 0x8e6, size 1 (0x1)
+	__declspec(align(1)) bool m_bUseHitboxesForRenderBox;// 0x8e7, size 1 (0x1)
 	// m_bUseHitboxesForRenderBox metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bCreateNonSolid;// 0x878, size 1 (0x1)
-	__declspec(align(1)) bool m_bIsOverrideProp;// 0x879, size 1 (0x1)
-	__declspec(align(4)) int32_t m_iInitialGlowState;// 0x87c, size 4 (0x4)
-	__declspec(align(4)) int32_t m_nGlowRange;// 0x880, size 4 (0x4)
-	__declspec(align(4)) int32_t m_nGlowRangeMin;// 0x884, size 4 (0x4)
-	__declspec(align(1)) UnknownType <0x4, class Color> m_glowColor;// 0x888, size 4 (0x4)
-char CDynamicProp_0890[0x4];
-}; // size: 2192 (0x890)
+	__declspec(align(1)) bool m_bCreateNonSolid;// 0x8e8, size 1 (0x1)
+	__declspec(align(1)) bool m_bIsOverrideProp;// 0x8e9, size 1 (0x1)
+	__declspec(align(4)) int32_t m_iInitialGlowState;// 0x8ec, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nGlowRange;// 0x8f0, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nGlowRangeMin;// 0x8f4, size 4 (0x4)
+	__declspec(align(1)) UnknownType <0x4, class Color> m_glowColor;// 0x8f8, size 4 (0x4)
+char CDynamicProp_0900[0x4];
+}; // size: 2304 (0x900)
 
 class CDOTA_Item_Mjollnir : public CDOTA_Item
 {
@@ -16826,7 +16963,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Unit_Hero_DoomBringer : public CDOTA_BaseNPC_Hero
 {
@@ -16850,7 +16987,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Ability_Special_Bonus_Unique_Bristleback_3 : public CDOTABaseAbility
 {
@@ -17567,7 +17704,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Unit_ZeusCloud : public CDOTA_BaseNPC_Additive
 {
@@ -17591,7 +17728,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 5248 (0x1480)
+}; // size: 5344 (0x14e0)
 
 class CDOTAFogOfWarTempViewers : public CBaseEntity
 {
@@ -17797,7 +17934,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Unit_Hero_Alchemist : public CDOTA_BaseNPC_Hero
 {
@@ -17821,7 +17958,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CInfoCourierSpawnRadiant : public CPointEntity
 {
@@ -18017,61 +18154,62 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-char CBasePropDoor_08A0[0x10];
-	__declspec(align(4)) float m_flAutoReturnDelay;// 0x8a0, size 4 (0x4)
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownAtomicType <0x4, CHandle, class CBasePropDoor > > m_hDoorList;// 0x8a8, size 24 (0x18)
-	__declspec(align(4)) int32_t m_nHardwareType;// 0x8c0, size 4 (0x4)
-	__declspec(align(4)) DoorState_t m_eDoorState;// 0x8c4, size 4 (0x4)
+char CBasePropDoor_0910[0x10];
+	__declspec(align(4)) float m_flAutoReturnDelay;// 0x910, size 4 (0x4)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownAtomicType <0x4, CHandle, class CBasePropDoor > > m_hDoorList;// 0x918, size 24 (0x18)
+	__declspec(align(4)) int32_t m_nHardwareType;// 0x930, size 4 (0x4)
+	__declspec(align(4)) DoorState_t m_eDoorState;// 0x934, size 4 (0x4)
 	// m_eDoorState metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bLocked;// 0x8c8, size 1 (0x1)
+	__declspec(align(1)) bool m_bLocked;// 0x938, size 1 (0x1)
 	// m_bLocked metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hBlocker;// 0x8cc, size 4 (0x4)
-	__declspec(align(1)) bool m_bFirstBlocked;// 0x8d0, size 1 (0x1)
-	__declspec(align(8)) locksound_t m_ls;// 0x8d8, size 64 (0x40)
-	__declspec(align(1)) bool m_bForceClosed;// 0x918, size 1 (0x1)
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecLatchWorldPosition;// 0x91c, size 12 (0xc)
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hActivator;// 0x928, size 4 (0x4)
-char CBasePropDoor_0934[0x8];
-	__declspec(align(4)) uint32_t m_sndParamOpenAmount;// 0x934, size 4 (0x4)
-char CBasePropDoor_09A0[0x68];
-	__declspec(align(1)) bool m_isRescueDoor;// 0x9a0, size 1 (0x1)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hBlocker;// 0x93c, size 4 (0x4)
+	__declspec(align(1)) bool m_bFirstBlocked;// 0x940, size 1 (0x1)
+	__declspec(align(8)) locksound_t m_ls;// 0x948, size 64 (0x40)
+	__declspec(align(1)) bool m_bForceClosed;// 0x988, size 1 (0x1)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecLatchWorldPosition;// 0x98c, size 12 (0xc)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hActivator;// 0x998, size 4 (0x4)
+char CBasePropDoor_09A4[0x8];
+	__declspec(align(4)) uint32_t m_sndParamOpenAmount;// 0x9a4, size 4 (0x4)
+char CBasePropDoor_0A18[0x70];
+	__declspec(align(1)) bool m_isRescueDoor;// 0xa18, size 1 (0x1)
 	// m_isRescueDoor metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_disabledByCheckpoint;// 0x9a1, size 1 (0x1)
-	__declspec(align(8)) CountdownTimer m_blockedRetryTimer;// 0x9a8, size 24 (0x18)
-	__declspec(align(8)) CountdownTimer m_closedTimer;// 0x9c0, size 24 (0x18)
-	__declspec(align(4)) float m_flOpenAmount;// 0x9d8, size 4 (0x4)
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_SoundMoving;// 0x9e0, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_SoundOpen;// 0x9e8, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_SoundClose;// 0x9f0, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_SoundLock;// 0x9f8, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_SoundUnlock;// 0xa00, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_SoundLatch;// 0xa08, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_SoundPound;// 0xa10, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_SoundJiggle;// 0xa18, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_SoundLockedAnim;// 0xa20, size 8 (0x8)
-	__declspec(align(4)) int32_t m_numCloseAttempts;// 0xa28, size 4 (0x4)
-	__declspec(align(4)) UnknownType <0x4, class CUtlStringToken> m_nPhysicsMaterial;// 0xa2c, size 4 (0x4)
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_SlaveName;// 0xa30, size 8 (0x8)
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBasePropDoor > m_hMaster;// 0xa38, size 4 (0x4)
+	__declspec(align(1)) bool m_disabledByCheckpoint;// 0xa19, size 1 (0x1)
+	__declspec(align(8)) CountdownTimer m_blockedRetryTimer;// 0xa20, size 24 (0x18)
+	__declspec(align(8)) CountdownTimer m_closedTimer;// 0xa38, size 24 (0x18)
+	__declspec(align(4)) float m_flOpenAmount;// 0xa50, size 4 (0x4)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_SoundMoving;// 0xa58, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_SoundOpen;// 0xa60, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_SoundClose;// 0xa68, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_SoundLock;// 0xa70, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_SoundUnlock;// 0xa78, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_SoundLatch;// 0xa80, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_SoundPound;// 0xa88, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_SoundJiggle;// 0xa90, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_SoundLockedAnim;// 0xa98, size 8 (0x8)
+	__declspec(align(4)) int32_t m_numCloseAttempts;// 0xaa0, size 4 (0x4)
+	__declspec(align(4)) UnknownType <0x4, class CUtlStringToken> m_nPhysicsMaterial;// 0xaa4, size 4 (0x4)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_SlaveName;// 0xaa8, size 8 (0x8)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBasePropDoor > m_hMaster;// 0xab0, size 4 (0x4)
 	// m_hMaster metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(8)) CEntityIOOutput m_OnBlockedClosing;// 0xa40, size 40 (0x28)
-	__declspec(align(8)) CEntityIOOutput m_OnBlockedOpening;// 0xa68, size 40 (0x28)
-	__declspec(align(8)) CEntityIOOutput m_OnUnblockedClosing;// 0xa90, size 40 (0x28)
-	__declspec(align(8)) CEntityIOOutput m_OnUnblockedOpening;// 0xab8, size 40 (0x28)
-	__declspec(align(8)) CEntityIOOutput m_OnFullyClosed;// 0xae0, size 40 (0x28)
-	__declspec(align(8)) CEntityIOOutput m_OnFullyOpen;// 0xb08, size 40 (0x28)
-	__declspec(align(8)) CEntityIOOutput m_OnClose;// 0xb30, size 40 (0x28)
-	__declspec(align(8)) CEntityIOOutput m_OnOpen;// 0xb58, size 40 (0x28)
-	__declspec(align(8)) CEntityIOOutput m_OnLockedUse;// 0xb80, size 40 (0x28)
-}; // size: 2984 (0xba8)
+	__declspec(align(8)) CEntityIOOutput m_OnBlockedClosing;// 0xab8, size 40 (0x28)
+	__declspec(align(8)) CEntityIOOutput m_OnBlockedOpening;// 0xae0, size 40 (0x28)
+	__declspec(align(8)) CEntityIOOutput m_OnUnblockedClosing;// 0xb08, size 40 (0x28)
+	__declspec(align(8)) CEntityIOOutput m_OnUnblockedOpening;// 0xb30, size 40 (0x28)
+	__declspec(align(8)) CEntityIOOutput m_OnFullyClosed;// 0xb58, size 40 (0x28)
+	__declspec(align(8)) CEntityIOOutput m_OnFullyOpen;// 0xb80, size 40 (0x28)
+	__declspec(align(8)) CEntityIOOutput m_OnClose;// 0xba8, size 40 (0x28)
+	__declspec(align(8)) CEntityIOOutput m_OnOpen;// 0xbd0, size 40 (0x28)
+	__declspec(align(8)) CEntityIOOutput m_OnLockedUse;// 0xbf8, size 40 (0x28)
+	__declspec(align(8)) CEntityIOOutput m_OnAjarOpen;// 0xc20, size 40 (0x28)
+}; // size: 3144 (0xc48)
 
 class CLight : public CPointEntity
 {
@@ -18204,7 +18342,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Ability_Alchemist_AcidSpray : public CDOTABaseAbility
 {
@@ -18252,14 +18390,14 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(4)) int32_t m_nTargetAngle;// 0x19f8, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nTargetAngle;// 0x1a48, size 4 (0x4)
 	// m_nTargetAngle metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkBitCount
 	 // MNetworkPriority
-char CDOTA_Unit_Hero_Windrunner_01A00[0x4];
-}; // size: 6656 (0x1a00)
+char CDOTA_Unit_Hero_Windrunner_01A50[0x4];
+}; // size: 6736 (0x1a50)
 
 class CDOTA_Ability_Special_Bonus_Unique_Morphling_6 : public CDOTABaseAbility
 {
@@ -18421,7 +18559,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Unit_Brewmaster_PrimalFire : public CDOTA_BaseNPC_Creep
 {
@@ -18445,9 +18583,9 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(4)) int32_t m_nFXAmbient;// 0x14b0, size 4 (0x4)
-char CDOTA_Unit_Brewmaster_PrimalFire_014B8[0x4];
-}; // size: 5304 (0x14b8)
+	__declspec(align(4)) int32_t m_nFXAmbient;// 0x1510, size 4 (0x4)
+char CDOTA_Unit_Brewmaster_PrimalFire_01518[0x4];
+}; // size: 5400 (0x1518)
 
 class CDOTA_Ability_QueenOfPain_SonicWave : public CDOTABaseAbility
 {
@@ -18476,6 +18614,30 @@ public:
 	__declspec(align(4)) int32_t starting_aoe;// 0x400, size 4 (0x4)
 	__declspec(align(4)) int32_t final_aoe;// 0x404, size 4 (0x4)
 }; // size: 1032 (0x408)
+
+class CDOTA_Ability_Special_Bonus_Unique_Kunkka_5 : public CDOTABaseAbility
+{
+// CDOTA_Ability_Special_Bonus_Unique_Kunkka_5 additional information
+// server.dll, project server
+// Alignment: -1
+// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+// Abstract Class
+
+public: 
+	class CEntityInstanceEntityClass : public CDOTABaseAbility::CEntityInstanceEntityClass
+	{
+	// CDOTA_Ability_Special_Bonus_Unique_Kunkka_5::CEntityInstanceEntityClass additional information
+	// Alignment: -1
+	// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+	// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
+	// SCHEMA_CLASS_TEMP_HACK_HAS_DESTRUCTOR_LIKE_METHODS
+	// Abstract Class
+
+	public:
+	}; // size: 296 (0x128)
+
+public:
+}; // size: 1016 (0x3f8)
 
 class CDOTA_Ability_Special_Bonus_Evasion_20 : public CDOTABaseAbility
 {
@@ -18557,23 +18719,23 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecAxis;// 0xba8, size 12 (0xc)
-	__declspec(align(4)) float m_flDistance;// 0xbb4, size 4 (0x4)
-	__declspec(align(4)) PropDoorRotatingSpawnPos_t m_eSpawnPosition;// 0xbb8, size 4 (0x4)
-	__declspec(align(4)) PropDoorRotatingOpenDirection_e m_eOpenDirection;// 0xbbc, size 4 (0x4)
-	__declspec(align(4)) PropDoorRotatingOpenDirection_e m_eCurrentOpenDirection;// 0xbc0, size 4 (0x4)
-	__declspec(align(4)) float m_flAjarAngle;// 0xbc4, size 4 (0x4)
-	__declspec(align(4)) UnknownType <0xc, class QAngle> m_angRotationAjarDeprecated;// 0xbc8, size 12 (0xc)
-	__declspec(align(4)) UnknownType <0xc, class QAngle> m_angRotationClosed;// 0xbd4, size 12 (0xc)
-	__declspec(align(4)) UnknownType <0xc, class QAngle> m_angRotationOpenForward;// 0xbe0, size 12 (0xc)
-	__declspec(align(4)) UnknownType <0xc, class QAngle> m_angRotationOpenBack;// 0xbec, size 12 (0xc)
-	__declspec(align(4)) UnknownType <0xc, class QAngle> m_angGoal;// 0xbf8, size 12 (0xc)
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecForwardBoundsMin;// 0xc04, size 12 (0xc)
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecForwardBoundsMax;// 0xc10, size 12 (0xc)
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecBackBoundsMin;// 0xc1c, size 12 (0xc)
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecBackBoundsMax;// 0xc28, size 12 (0xc)
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CEntityBlocker > m_hEntityBlocker;// 0xc34, size 4 (0x4)
-}; // size: 3128 (0xc38)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecAxis;// 0xc48, size 12 (0xc)
+	__declspec(align(4)) float m_flDistance;// 0xc54, size 4 (0x4)
+	__declspec(align(4)) PropDoorRotatingSpawnPos_t m_eSpawnPosition;// 0xc58, size 4 (0x4)
+	__declspec(align(4)) PropDoorRotatingOpenDirection_e m_eOpenDirection;// 0xc5c, size 4 (0x4)
+	__declspec(align(4)) PropDoorRotatingOpenDirection_e m_eCurrentOpenDirection;// 0xc60, size 4 (0x4)
+	__declspec(align(4)) float m_flAjarAngle;// 0xc64, size 4 (0x4)
+	__declspec(align(4)) UnknownType <0xc, class QAngle> m_angRotationAjarDeprecated;// 0xc68, size 12 (0xc)
+	__declspec(align(4)) UnknownType <0xc, class QAngle> m_angRotationClosed;// 0xc74, size 12 (0xc)
+	__declspec(align(4)) UnknownType <0xc, class QAngle> m_angRotationOpenForward;// 0xc80, size 12 (0xc)
+	__declspec(align(4)) UnknownType <0xc, class QAngle> m_angRotationOpenBack;// 0xc8c, size 12 (0xc)
+	__declspec(align(4)) UnknownType <0xc, class QAngle> m_angGoal;// 0xc98, size 12 (0xc)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecForwardBoundsMin;// 0xca4, size 12 (0xc)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecForwardBoundsMax;// 0xcb0, size 12 (0xc)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecBackBoundsMin;// 0xcbc, size 12 (0xc)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecBackBoundsMax;// 0xcc8, size 12 (0xc)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CEntityBlocker > m_hEntityBlocker;// 0xcd4, size 4 (0x4)
+}; // size: 3288 (0xcd8)
 
 class CDOTA_Item_Recipe_Blade_Mail : public CDOTA_Item
 {
@@ -18670,7 +18832,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Ability_Special_Bonus_Unique_Wraith_King_2 : public CDOTABaseAbility
 {
@@ -18819,7 +18981,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Ability_Lycan_Shapeshift : public CDOTABaseAbility
 {
@@ -18868,7 +19030,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Ability_Special_Bonus_Unique_Disruptor_5 : public CDOTABaseAbility
 {
@@ -18958,6 +19120,7 @@ class CSoundOpvarSetEntity : public CBaseEntity
 // server.dll, project server
 // Alignment: -1
 // SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+// SCHEMA_CLASS_TEMP_HACK_HAS_NOSCHEMA_MEMBERS
 // Abstract Class
 
 public: 
@@ -18974,15 +19137,17 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszStackName;// 0x368, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszOperatorName;// 0x370, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszOpvarName;// 0x378, size 8 (0x8)
-	__declspec(align(4)) int32_t m_nOpvarType;// 0x380, size 4 (0x4)
-	__declspec(align(4)) float m_flOpvarValue;// 0x384, size 4 (0x4)
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_OpvarValueString;// 0x388, size 8 (0x8)
-	__declspec(align(1)) bool m_bSetOnSpawn;// 0x390, size 1 (0x1)
-char CSoundOpvarSetEntity_0398[0x7];
-}; // size: 920 (0x398)
+char CSoundOpvarSetEntity_0370[0x8];
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszStackName;// 0x370, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszOperatorName;// 0x378, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszOpvarName;// 0x380, size 8 (0x8)
+	__declspec(align(4)) int32_t m_nOpvarType;// 0x388, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nOpvarIndex;// 0x38c, size 4 (0x4)
+	__declspec(align(4)) float m_flOpvarValue;// 0x390, size 4 (0x4)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_OpvarValueString;// 0x398, size 8 (0x8)
+	__declspec(align(1)) bool m_bSetOnSpawn;// 0x3a0, size 1 (0x1)
+char CSoundOpvarSetEntity_03B0[0xF];
+}; // size: 944 (0x3b0)
 
 class CPathCornerCrash : public CPathCorner
 {
@@ -19030,7 +19195,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Ability_Special_Bonus_Unique_Pangolier_4 : public CDOTABaseAbility
 {
@@ -19444,8 +19609,27 @@ char DataTeamPlayer_t_014[0xC];
 	// m_flSuggestedHeroesWeights metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-char DataTeamPlayer_t_0388[0x4];
-}; // size: 904 (0x388)
+	__declspec(align(4)) int32_t m_iCommandsIssued;// 0x384, size 4 (0x4)
+	// m_iCommandsIssued metadata
+	 // MNetworkEnable
+	 // MNetworkEnable
+	__declspec(align(4)) int32_t m_iGoldSpentOnConsumables;// 0x388, size 4 (0x4)
+	// m_iGoldSpentOnConsumables metadata
+	 // MNetworkEnable
+	 // MNetworkEnable
+	__declspec(align(4)) int32_t m_iGoldSpentOnItems;// 0x38c, size 4 (0x4)
+	// m_iGoldSpentOnItems metadata
+	 // MNetworkEnable
+	 // MNetworkEnable
+	__declspec(align(4)) int32_t m_iGoldSpentOnBuybacks;// 0x390, size 4 (0x4)
+	// m_iGoldSpentOnBuybacks metadata
+	 // MNetworkEnable
+	 // MNetworkEnable
+	__declspec(align(4)) int32_t m_iGoldLostToDeath;// 0x394, size 4 (0x4)
+	// m_iGoldLostToDeath metadata
+	 // MNetworkEnable
+	 // MNetworkEnable
+}; // size: 920 (0x398)
 #pragma pack(pop)
 
 class CDOTA_Ability_NagaSiren_SongOfTheSiren : public CDOTABaseAbility
@@ -19703,9 +19887,12 @@ char CIngameEvent_Base_0FA0[0x30];
 	 // MNetworkChangeCallback
 	__declspec(align(1)) bool m_bHasSpentWager[10];// 0x1310, size 10 (0xa)
 	__declspec(align(1)) bool m_bPendingWagerSpend[10];// 0x131a, size 10 (0xa)
-	__declspec(align(4)) int32_t m_event_lobby_updated;// 0x1324, size 4 (0x4)
-char CIngameEvent_Base_01358[0x30];
-}; // size: 4952 (0x1358)
+	__declspec(align(1)) bool m_bCavernChallengeActive[10];// 0x1324, size 10 (0xa)
+	__declspec(align(4)) uint32_t m_pCavernChallengeWinnings[10];// 0x1330, size 40 (0x28)
+	__declspec(align(4)) uint32_t m_pCompendiumTokenWagerAmountSpent[10];// 0x1358, size 40 (0x28)
+	__declspec(align(4)) int32_t m_event_lobby_updated;// 0x1380, size 4 (0x4)
+char CIngameEvent_Base_013B8[0x34];
+}; // size: 5048 (0x13b8)
 
 class CBaseClientUIEntity : public CBaseModelEntity
 {
@@ -19782,42 +19969,42 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-char CItemGeneric_0678[0x8];
-	__declspec(align(1)) bool m_bHasTriggerRadius;// 0x678, size 1 (0x1)
-	__declspec(align(1)) bool m_bHasPickupRadius;// 0x679, size 1 (0x1)
-	__declspec(align(4)) float m_flPickupRadiusSqr;// 0x67c, size 4 (0x4)
-	__declspec(align(4)) float m_flTriggerRadiusSqr;// 0x680, size 4 (0x4)
-	__declspec(align(4)) float m_flLastPickupCheck;// 0x684, size 4 (0x4)
-	__declspec(align(1)) bool m_bPlayerCounterListenerAdded;// 0x688, size 1 (0x1)
-	__declspec(align(1)) bool m_bPlayerInTriggerRadius;// 0x689, size 1 (0x1)
-	__declspec(align(8)) UnknownAtomicType <0x8, CStrongHandle, class InfoForResourceTypeIParticleSystemDefinition > m_hSpawnParticleEffect;// 0x690, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_pAmbientSoundEffect;// 0x698, size 8 (0x8)
-	__declspec(align(1)) bool m_bAutoStartAmbientSound;// 0x6a0, size 1 (0x1)
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_pSpawnScriptFunction;// 0x6a8, size 8 (0x8)
-	__declspec(align(8)) UnknownAtomicType <0x8, CStrongHandle, class InfoForResourceTypeIParticleSystemDefinition > m_hPickupParticleEffect;// 0x6b0, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_pPickupSoundEffect;// 0x6b8, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_pPickupScriptFunction;// 0x6c0, size 8 (0x8)
-	__declspec(align(8)) UnknownAtomicType <0x8, CStrongHandle, class InfoForResourceTypeIParticleSystemDefinition > m_hTimeoutParticleEffect;// 0x6c8, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_pTimeoutSoundEffect;// 0x6d0, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_pTimeoutScriptFunction;// 0x6d8, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_pPickupFilterName;// 0x6e0, size 8 (0x8)
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseFilter > m_hPickupFilter;// 0x6e8, size 4 (0x4)
-	__declspec(align(8)) CEntityIOOutput m_OnPickup;// 0x6f0, size 40 (0x28)
-	__declspec(align(8)) CEntityIOOutput m_OnTimeout;// 0x718, size 40 (0x28)
-	__declspec(align(8)) CEntityIOOutput m_OnTriggerStartTouch;// 0x740, size 40 (0x28)
-	__declspec(align(8)) CEntityIOOutput m_OnTriggerTouch;// 0x768, size 40 (0x28)
-	__declspec(align(8)) CEntityIOOutput m_OnTriggerEndTouch;// 0x790, size 40 (0x28)
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_pAllowPickupScriptFunction;// 0x7b8, size 8 (0x8)
-	__declspec(align(4)) float m_flPickupRadius;// 0x7c0, size 4 (0x4)
-	__declspec(align(4)) float m_flTriggerRadius;// 0x7c4, size 4 (0x4)
-	__declspec(align(1)) bool m_bPhysStartAsleep;// 0x7c8, size 1 (0x1)
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_pTriggerSoundEffect;// 0x7d0, size 8 (0x8)
-	__declspec(align(1)) bool m_bGlowWhenInTrigger;// 0x7d8, size 1 (0x1)
-	__declspec(align(1)) UnknownType <0x4, class Color> m_glowColor;// 0x7d9, size 4 (0x4)
-	__declspec(align(1)) bool m_bUseable;// 0x7dd, size 1 (0x1)
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CItemGenericTriggerHelper > m_hTriggerHelper;// 0x7e0, size 4 (0x4)
-char CItemGeneric_07E8[0x4];
-}; // size: 2024 (0x7e8)
+char CItemGeneric_06D0[0x8];
+	__declspec(align(1)) bool m_bHasTriggerRadius;// 0x6d0, size 1 (0x1)
+	__declspec(align(1)) bool m_bHasPickupRadius;// 0x6d1, size 1 (0x1)
+	__declspec(align(4)) float m_flPickupRadiusSqr;// 0x6d4, size 4 (0x4)
+	__declspec(align(4)) float m_flTriggerRadiusSqr;// 0x6d8, size 4 (0x4)
+	__declspec(align(4)) float m_flLastPickupCheck;// 0x6dc, size 4 (0x4)
+	__declspec(align(1)) bool m_bPlayerCounterListenerAdded;// 0x6e0, size 1 (0x1)
+	__declspec(align(1)) bool m_bPlayerInTriggerRadius;// 0x6e1, size 1 (0x1)
+	__declspec(align(8)) UnknownAtomicType <0x8, CStrongHandle, class InfoForResourceTypeIParticleSystemDefinition > m_hSpawnParticleEffect;// 0x6e8, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_pAmbientSoundEffect;// 0x6f0, size 8 (0x8)
+	__declspec(align(1)) bool m_bAutoStartAmbientSound;// 0x6f8, size 1 (0x1)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_pSpawnScriptFunction;// 0x700, size 8 (0x8)
+	__declspec(align(8)) UnknownAtomicType <0x8, CStrongHandle, class InfoForResourceTypeIParticleSystemDefinition > m_hPickupParticleEffect;// 0x708, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_pPickupSoundEffect;// 0x710, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_pPickupScriptFunction;// 0x718, size 8 (0x8)
+	__declspec(align(8)) UnknownAtomicType <0x8, CStrongHandle, class InfoForResourceTypeIParticleSystemDefinition > m_hTimeoutParticleEffect;// 0x720, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_pTimeoutSoundEffect;// 0x728, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_pTimeoutScriptFunction;// 0x730, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_pPickupFilterName;// 0x738, size 8 (0x8)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseFilter > m_hPickupFilter;// 0x740, size 4 (0x4)
+	__declspec(align(8)) CEntityIOOutput m_OnPickup;// 0x748, size 40 (0x28)
+	__declspec(align(8)) CEntityIOOutput m_OnTimeout;// 0x770, size 40 (0x28)
+	__declspec(align(8)) CEntityIOOutput m_OnTriggerStartTouch;// 0x798, size 40 (0x28)
+	__declspec(align(8)) CEntityIOOutput m_OnTriggerTouch;// 0x7c0, size 40 (0x28)
+	__declspec(align(8)) CEntityIOOutput m_OnTriggerEndTouch;// 0x7e8, size 40 (0x28)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_pAllowPickupScriptFunction;// 0x810, size 8 (0x8)
+	__declspec(align(4)) float m_flPickupRadius;// 0x818, size 4 (0x4)
+	__declspec(align(4)) float m_flTriggerRadius;// 0x81c, size 4 (0x4)
+	__declspec(align(1)) bool m_bPhysStartAsleep;// 0x820, size 1 (0x1)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_pTriggerSoundEffect;// 0x828, size 8 (0x8)
+	__declspec(align(1)) bool m_bGlowWhenInTrigger;// 0x830, size 1 (0x1)
+	__declspec(align(1)) UnknownType <0x4, class Color> m_glowColor;// 0x831, size 4 (0x4)
+	__declspec(align(1)) bool m_bUseable;// 0x835, size 1 (0x1)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CItemGenericTriggerHelper > m_hTriggerHelper;// 0x838, size 4 (0x4)
+char CItemGeneric_0840[0x4];
+}; // size: 2112 (0x840)
 
 class CBodyComponentBaseModelEntity : public CBodyComponentSkeletonInstance
 {
@@ -19828,15 +20015,15 @@ class CBodyComponentBaseModelEntity : public CBodyComponentSkeletonInstance
 // Abstract Class
 
 public:
-	__declspec(align(8)) CNetworkVarChainer __m_pChainEntity;// 0x4b0, size 24 (0x18)
+	__declspec(align(8)) CNetworkVarChainer __m_pChainEntity;// 0x4c0, size 24 (0x18)
 	// __m_pChainEntity metadata
 	 // MNetworkDisable
 	 // MNetworkChangeAccessorFieldPathIndex
-char CBodyComponentBaseModelEntity_04D0[0x8];
+char CBodyComponentBaseModelEntity_04E0[0x8];
 public:
 	static EntComponentInfo_t &Get_s_EntComponentInfo() {return *(EntComponentInfo_t *)schema::SchemaSystem::Get()->FindTypeScopeForModule("server.dll")->FindDeclaredClass("CBodyComponentBaseModelEntity")->m_staticMembers.data[0].m_pInstance; }
 	static int32_t &Get_entity_component_error_class_decl_says_contained_but_impl_is_referenced() {return *(int32_t *)schema::SchemaSystem::Get()->FindTypeScopeForModule("server.dll")->FindDeclaredClass("CBodyComponentBaseModelEntity")->m_staticMembers.data[1].m_pInstance; }
-}; // size: 1232 (0x4d0)
+}; // size: 1248 (0x4e0)
 
 class CDOTA_Item_Diffusal_Blade_Level2 : public CDOTA_Item_Diffusal_Blade
 {
@@ -19986,7 +20173,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 5456 (0x1550)
+}; // size: 5552 (0x15b0)
 
 class CDOTA_Ability_Special_Bonus_Unique_Lycan_4 : public CDOTABaseAbility
 {
@@ -20090,8 +20277,10 @@ public:
 	__declspec(align(8)) CEntityIOOutput m_OnBackgroundMap;// 0x430, size 40 (0x28)
 	__declspec(align(8)) CEntityIOOutput m_OnMultiNewMap;// 0x458, size 40 (0x28)
 	__declspec(align(8)) CEntityIOOutput m_OnMultiNewRound;// 0x480, size 40 (0x28)
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_globalstate;// 0x4a8, size 8 (0x8)
-}; // size: 1200 (0x4b0)
+	__declspec(align(8)) CEntityIOOutput m_OnVREnabled;// 0x4a8, size 40 (0x28)
+	__declspec(align(8)) CEntityIOOutput m_OnVRNotEnabled;// 0x4d0, size 40 (0x28)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_globalstate;// 0x4f8, size 8 (0x8)
+}; // size: 1280 (0x500)
 
 class CDOTA_Item_ChainMail : public CDOTA_Item
 {
@@ -20214,15 +20403,15 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-char CDOTATurboGameMode_04F8[0x18];
-	__declspec(align(4)) int32_t m_nHighestLevelInCurrentGame;// 0x4f8, size 4 (0x4)
-char CDOTATurboGameMode_0548[0x48];
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, float > m_ExtraMeleeCreepTimes;// 0x548, size 24 (0x18)
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, float > m_ExtraRangedCreepTimes;// 0x560, size 24 (0x18)
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, float > m_ExtraSiegeCreepTimes;// 0x578, size 24 (0x18)
-	__declspec(align(1)) bool m_bInOvertime;// 0x590, size 1 (0x1)
-char CDOTATurboGameMode_0598[0x7];
-}; // size: 1432 (0x598)
+char CDOTATurboGameMode_0510[0x18];
+	__declspec(align(4)) int32_t m_nHighestLevelInCurrentGame;// 0x510, size 4 (0x4)
+char CDOTATurboGameMode_0560[0x48];
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, float > m_ExtraMeleeCreepTimes;// 0x560, size 24 (0x18)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, float > m_ExtraRangedCreepTimes;// 0x578, size 24 (0x18)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, float > m_ExtraSiegeCreepTimes;// 0x590, size 24 (0x18)
+	__declspec(align(1)) bool m_bInOvertime;// 0x5a8, size 1 (0x1)
+char CDOTATurboGameMode_05B0[0x7];
+}; // size: 1456 (0x5b0)
 
 class CLightDirectionalEntity : public CLightEntity
 {
@@ -20499,6 +20688,49 @@ public:
 char CDOTA_Item_Ancient_Janggo_0478[0x4];
 }; // size: 1144 (0x478)
 
+class CDOTA_Ability_Grimstroke_DarkArtistry : public CDOTABaseAbility
+{
+// CDOTA_Ability_Grimstroke_DarkArtistry additional information
+// server.dll, project server
+// Alignment: -1
+// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+// Abstract Class
+
+public: 
+	class CEntityInstanceEntityClass : public CDOTABaseAbility::CEntityInstanceEntityClass
+	{
+	// CDOTA_Ability_Grimstroke_DarkArtistry::CEntityInstanceEntityClass additional information
+	// Alignment: -1
+	// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+	// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
+	// SCHEMA_CLASS_TEMP_HACK_HAS_DESTRUCTOR_LIKE_METHODS
+	// Abstract Class
+
+	public:
+	}; // size: 296 (0x128)
+
+public:
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vCastDir;// 0x3f8, size 12 (0xc)
+	__declspec(align(4)) float m_fStartTime;// 0x404, size 4 (0x4)
+	__declspec(align(4)) float m_fTotalTime;// 0x408, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nProjectileID;// 0x40c, size 4 (0x4)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vProjectileDir;// 0x410, size 12 (0xc)
+	__declspec(align(4)) int32_t m_nFXIndex;// 0x41c, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nFXIndexB;// 0x420, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nTargetsHit;// 0x424, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nHeroesHit;// 0x428, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nVisibleHeroesHit;// 0x42c, size 4 (0x4)
+	__declspec(align(4)) float m_fDmgMultiplierTalent;// 0x430, size 4 (0x4)
+char CDOTA_Ability_Grimstroke_DarkArtistry_043C[0x8];
+	__declspec(align(4)) float slow_duration;// 0x43c, size 4 (0x4)
+	__declspec(align(4)) int32_t start_radius;// 0x440, size 4 (0x4)
+	__declspec(align(4)) int32_t end_radius;// 0x444, size 4 (0x4)
+	__declspec(align(4)) int32_t damage;// 0x448, size 4 (0x4)
+	__declspec(align(4)) int32_t bonus_damage_per_target;// 0x44c, size 4 (0x4)
+	__declspec(align(4)) float vision_duration;// 0x450, size 4 (0x4)
+char CDOTA_Ability_Grimstroke_DarkArtistry_0458[0x4];
+}; // size: 1112 (0x458)
+
 class CDOTA_DarkWillow_Creature : public CDOTA_BaseNPC
 {
 // CDOTA_DarkWillow_Creature additional information
@@ -20521,7 +20753,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 5248 (0x1480)
+}; // size: 5344 (0x14e0)
 
 class CDOTA_Ability_Winter_Wyvern_Splinter_Blast : public CDOTABaseAbility
 {
@@ -20597,7 +20829,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Ability_Rubick_Empty1 : public CDOTABaseAbility
 {
@@ -20669,7 +20901,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 5296 (0x14b0)
+}; // size: 5392 (0x1510)
 
 class CDOTA_Ability_Nian_Leap : public CDOTABaseAbility
 {
@@ -20753,7 +20985,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_NPCSpawnerBadBot : public CDOTA_NPCSpawner
 {
@@ -20876,49 +21108,49 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-char CBaseViewModel_05D0[0x8];
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecLastFacing;// 0x5d0, size 12 (0xc)
-	__declspec(align(4)) uint32_t m_nViewModelIndex;// 0x5dc, size 4 (0x4)
+char CBaseViewModel_0628[0x8];
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecLastFacing;// 0x628, size 12 (0xc)
+	__declspec(align(4)) uint32_t m_nViewModelIndex;// 0x634, size 4 (0x4)
 	// m_nViewModelIndex metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkBitCount
-	__declspec(align(4)) uint32_t m_nAnimationParity;// 0x5e0, size 4 (0x4)
+	__declspec(align(4)) uint32_t m_nAnimationParity;// 0x638, size 4 (0x4)
 	// m_nAnimationParity metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkBitCount
-	__declspec(align(4)) UnknownType <0x4, class HSequence> m_hLayerSequence;// 0x5e4, size 4 (0x4)
+	__declspec(align(4)) UnknownType <0x4, class HSequence> m_hLayerSequence;// 0x63c, size 4 (0x4)
 	// m_hLayerSequence metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkBitCount
-	__declspec(align(4)) uint32_t m_nLayer;// 0x5e8, size 4 (0x4)
+	__declspec(align(4)) uint32_t m_nLayer;// 0x640, size 4 (0x4)
 	// m_nLayer metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkBitCount
-	__declspec(align(4)) float m_flAnimationStartTime;// 0x5ec, size 4 (0x4)
+	__declspec(align(4)) float m_flAnimationStartTime;// 0x644, size 4 (0x4)
 	// m_flAnimationStartTime metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseCombatWeapon > m_hWeapon;// 0x5f0, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseCombatWeapon > m_hWeapon;// 0x648, size 4 (0x4)
 	// m_hWeapon metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkChangeCallback
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hOwner;// 0x5f4, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hOwner;// 0x64c, size 4 (0x4)
 	// m_hOwner metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_Activity;// 0x5f8, size 4 (0x4)
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_sVMName;// 0x600, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_sAnimationPrefix;// 0x608, size 8 (0x8)
-	__declspec(align(4)) UnknownType <0x4, class HSequence> m_hOldLayerSequence;// 0x610, size 4 (0x4)
-	__declspec(align(4)) int32_t m_oldLayer;// 0x614, size 4 (0x4)
-	__declspec(align(4)) float m_oldLayerStartTime;// 0x618, size 4 (0x4)
-char CBaseViewModel_0638[0x1C];
-}; // size: 1592 (0x638)
+	__declspec(align(4)) int32_t m_Activity;// 0x650, size 4 (0x4)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_sVMName;// 0x658, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_sAnimationPrefix;// 0x660, size 8 (0x8)
+	__declspec(align(4)) UnknownType <0x4, class HSequence> m_hOldLayerSequence;// 0x668, size 4 (0x4)
+	__declspec(align(4)) int32_t m_oldLayer;// 0x66c, size 4 (0x4)
+	__declspec(align(4)) float m_oldLayerStartTime;// 0x670, size 4 (0x4)
+char CBaseViewModel_0690[0x1C];
+}; // size: 1680 (0x690)
 
 class CPropVehicleDriveable : public CPropVehicle
 {
@@ -20945,83 +21177,83 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-char CPropVehicleDriveable_0758[0x8];
-	__declspec(align(8)) CFourWheelServerVehicle *m_pServerVehicle;// 0x758, size 8 (0x8)
-	__declspec(align(8)) CEntityIOOutput m_playerOn;// 0x760, size 40 (0x28)
-	__declspec(align(8)) CEntityIOOutput m_playerOff;// 0x788, size 40 (0x28)
-	__declspec(align(8)) CEntityIOOutput m_pressedAttack;// 0x7b0, size 40 (0x28)
-	__declspec(align(8)) CEntityIOOutput m_pressedAttack2;// 0x7d8, size 40 (0x28)
-	__declspec(align(8)) UnknownAtomicType <0x28, CEntityOutputTemplate, float > m_attackaxis;// 0x800, size 40 (0x28)
-	__declspec(align(8)) UnknownAtomicType <0x28, CEntityOutputTemplate, float > m_attack2axis;// 0x828, size 40 (0x28)
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBasePlayer > m_hPlayer;// 0x850, size 4 (0x4)
+char CPropVehicleDriveable_07C8[0x8];
+	__declspec(align(8)) CFourWheelServerVehicle *m_pServerVehicle;// 0x7c8, size 8 (0x8)
+	__declspec(align(8)) CEntityIOOutput m_playerOn;// 0x7d0, size 40 (0x28)
+	__declspec(align(8)) CEntityIOOutput m_playerOff;// 0x7f8, size 40 (0x28)
+	__declspec(align(8)) CEntityIOOutput m_pressedAttack;// 0x820, size 40 (0x28)
+	__declspec(align(8)) CEntityIOOutput m_pressedAttack2;// 0x848, size 40 (0x28)
+	__declspec(align(8)) UnknownAtomicType <0x28, CEntityOutputTemplate, float > m_attackaxis;// 0x870, size 40 (0x28)
+	__declspec(align(8)) UnknownAtomicType <0x28, CEntityOutputTemplate, float > m_attack2axis;// 0x898, size 40 (0x28)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBasePlayer > m_hPlayer;// 0x8c0, size 4 (0x4)
 	// m_hPlayer metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_nSpeed;// 0x854, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nSpeed;// 0x8c4, size 4 (0x4)
 	// m_nSpeed metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkBitCount
-	__declspec(align(2)) int16_t m_nRPM;// 0x858, size 2 (0x2)
+	__declspec(align(2)) int16_t m_nRPM;// 0x8c8, size 2 (0x2)
 	// m_nRPM metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkBitCount
-	__declspec(align(4)) float m_flThrottle;// 0x85c, size 4 (0x4)
+	__declspec(align(4)) float m_flThrottle;// 0x8cc, size 4 (0x4)
 	// m_flThrottle metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_nBoostTimeLeft;// 0x860, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nBoostTimeLeft;// 0x8d0, size 4 (0x4)
 	// m_nBoostTimeLeft metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkBitCount
-	__declspec(align(1)) bool m_bHasBoost;// 0x864, size 1 (0x1)
+	__declspec(align(1)) bool m_bHasBoost;// 0x8d4, size 1 (0x1)
 	// m_bHasBoost metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecEyeExitEndpoint;// 0x868, size 12 (0xc)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecEyeExitEndpoint;// 0x8d8, size 12 (0xc)
 	// m_vecEyeExitEndpoint metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkEncoder
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecGunCrosshair;// 0x874, size 12 (0xc)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecGunCrosshair;// 0x8e4, size 12 (0xc)
 	// m_vecGunCrosshair metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkEncoder
-	__declspec(align(1)) bool m_bUnableToFire;// 0x880, size 1 (0x1)
+	__declspec(align(1)) bool m_bUnableToFire;// 0x8f0, size 1 (0x1)
 	// m_bUnableToFire metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bHasGun;// 0x881, size 1 (0x1)
+	__declspec(align(1)) bool m_bHasGun;// 0x8f1, size 1 (0x1)
 	// m_bHasGun metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_nScannerDisabledWeapons;// 0x882, size 1 (0x1)
+	__declspec(align(1)) bool m_nScannerDisabledWeapons;// 0x8f2, size 1 (0x1)
 	// m_nScannerDisabledWeapons metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_nScannerDisabledVehicle;// 0x883, size 1 (0x1)
+	__declspec(align(1)) bool m_nScannerDisabledVehicle;// 0x8f3, size 1 (0x1)
 	// m_nScannerDisabledVehicle metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-char CPropVehicleDriveable_0888[0x4];
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hKeepUpright;// 0x888, size 4 (0x4)
-	__declspec(align(1)) bool m_bEngineLocked;// 0x88c, size 1 (0x1)
-	__declspec(align(1)) bool m_bLocked;// 0x88d, size 1 (0x1)
-	__declspec(align(4)) float m_flMinimumSpeedToEnterExit;// 0x890, size 4 (0x4)
-	__declspec(align(1)) bool m_bEnterAnimOn;// 0x894, size 1 (0x1)
+char CPropVehicleDriveable_08F8[0x4];
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hKeepUpright;// 0x8f8, size 4 (0x4)
+	__declspec(align(1)) bool m_bEngineLocked;// 0x8fc, size 1 (0x1)
+	__declspec(align(1)) bool m_bLocked;// 0x8fd, size 1 (0x1)
+	__declspec(align(4)) float m_flMinimumSpeedToEnterExit;// 0x900, size 4 (0x4)
+	__declspec(align(1)) bool m_bEnterAnimOn;// 0x904, size 1 (0x1)
 	// m_bEnterAnimOn metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bExitAnimOn;// 0x895, size 1 (0x1)
+	__declspec(align(1)) bool m_bExitAnimOn;// 0x905, size 1 (0x1)
 	// m_bExitAnimOn metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) float m_flTurnOffKeepUpright;// 0x898, size 4 (0x4)
-	__declspec(align(4)) float m_flNoImpactDamageTime;// 0x89c, size 4 (0x4)
-}; // size: 2208 (0x8a0)
+	__declspec(align(4)) float m_flTurnOffKeepUpright;// 0x908, size 4 (0x4)
+	__declspec(align(4)) float m_flNoImpactDamageTime;// 0x90c, size 4 (0x4)
+}; // size: 2320 (0x910)
 
 class CVGuiScreenTeam : public CVGuiScreen
 {
@@ -21094,6 +21326,32 @@ public:
 
 public:
 }; // size: 1136 (0x470)
+
+class CDOTA_Ability_Grimstroke_SpiritWalk : public CDOTABaseAbility
+{
+// CDOTA_Ability_Grimstroke_SpiritWalk additional information
+// server.dll, project server
+// Alignment: -1
+// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+// Abstract Class
+
+public: 
+	class CEntityInstanceEntityClass : public CDOTABaseAbility::CEntityInstanceEntityClass
+	{
+	// CDOTA_Ability_Grimstroke_SpiritWalk::CEntityInstanceEntityClass additional information
+	// Alignment: -1
+	// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+	// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
+	// SCHEMA_CLASS_TEMP_HACK_HAS_DESTRUCTOR_LIKE_METHODS
+	// Abstract Class
+
+	public:
+	}; // size: 296 (0x128)
+
+public:
+	__declspec(align(4)) float buff_duration;// 0x3f8, size 4 (0x4)
+char CDOTA_Ability_Grimstroke_SpiritWalk_0400[0x4];
+}; // size: 1024 (0x400)
 
 class CDOTA_Ability_ArcWarden_TempestDouble : public CDOTABaseAbility
 {
@@ -21501,7 +21759,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_BaseNPC_Tower : public CDOTA_BaseNPC_Building
 {
@@ -21525,13 +21783,13 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(8)) CEntityIOOutput m_OnTowerKilled;// 0x1550, size 40 (0x28)
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hTowerAttackTarget;// 0x1578, size 4 (0x4)
+	__declspec(align(8)) CEntityIOOutput m_OnTowerKilled;// 0x15b0, size 40 (0x28)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hTowerAttackTarget;// 0x15d8, size 4 (0x4)
 	// m_hTowerAttackTarget metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-char CDOTA_BaseNPC_Tower_01580[0x4];
-}; // size: 5504 (0x1580)
+char CDOTA_BaseNPC_Tower_015E0[0x4];
+}; // size: 5600 (0x15e0)
 
 class CDOTA_Ability_Special_Bonus_Unique_Shadow_Shaman_4 : public CDOTABaseAbility
 {
@@ -21627,7 +21885,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 5248 (0x1480)
+}; // size: 5344 (0x14e0)
 
 class CDOTA_Ability_Wisp_Overcharge : public CDOTABaseAbility
 {
@@ -21676,16 +21934,16 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(4)) int32_t m_nAmbientFXIndex;// 0x19f8, size 4 (0x4)
-	__declspec(align(4)) int32_t m_nStunnedFXIndex;// 0x19fc, size 4 (0x4)
-	__declspec(align(4)) int32_t m_nTalkFXIndex;// 0x1a00, size 4 (0x4)
-	__declspec(align(4)) int32_t m_nIllusionFXIndex;// 0x1a04, size 4 (0x4)
-	__declspec(align(1)) bool m_bParticleHexed;// 0x1a08, size 1 (0x1)
-	__declspec(align(1)) bool m_bParticleStunned;// 0x1a09, size 1 (0x1)
-	__declspec(align(1)) bool m_bDetermineAmbientEffect;// 0x1a0a, size 1 (0x1)
-char CDOTA_Unit_Hero_Wisp_01A0C[0x1];
-	__declspec(align(4)) float m_flPrevHealth;// 0x1a0c, size 4 (0x4)
-}; // size: 6672 (0x1a10)
+	__declspec(align(4)) int32_t m_nAmbientFXIndex;// 0x1a48, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nStunnedFXIndex;// 0x1a4c, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nTalkFXIndex;// 0x1a50, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nIllusionFXIndex;// 0x1a54, size 4 (0x4)
+	__declspec(align(1)) bool m_bParticleHexed;// 0x1a58, size 1 (0x1)
+	__declspec(align(1)) bool m_bParticleStunned;// 0x1a59, size 1 (0x1)
+	__declspec(align(1)) bool m_bDetermineAmbientEffect;// 0x1a5a, size 1 (0x1)
+char CDOTA_Unit_Hero_Wisp_01A5C[0x1];
+	__declspec(align(4)) float m_flPrevHealth;// 0x1a5c, size 4 (0x4)
+}; // size: 6752 (0x1a60)
 
 class CDOTA_Unit_Hero_Chen : public CDOTA_BaseNPC_Hero
 {
@@ -21710,7 +21968,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Item_Vermillion_Robe : public CDOTA_Item
 {
@@ -21758,7 +22016,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 5456 (0x1550)
+}; // size: 5552 (0x15b0)
 
 class CDOTA_Unit_Hero_Sven : public CDOTA_BaseNPC_Hero
 {
@@ -21782,7 +22040,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Ability_Special_Bonus_Unique_Tidehunter_4 : public CDOTABaseAbility
 {
@@ -22335,7 +22593,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 4952 (0x1358)
+}; // size: 5048 (0x13b8)
 
 class CFogVolume : public CServerOnlyModelEntity
 {
@@ -22509,9 +22767,9 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(4)) int32_t m_nVictimPlayerID;// 0x1480, size 4 (0x4)
-char CDOTA_PhantomAssassin_Gravestone_01488[0x4];
-}; // size: 5256 (0x1488)
+	__declspec(align(4)) int32_t m_nVictimPlayerID;// 0x14e0, size 4 (0x4)
+char CDOTA_PhantomAssassin_Gravestone_014E8[0x4];
+}; // size: 5352 (0x14e8)
 
 class CDOTA_Unit_Hero_DeathProphet : public CDOTA_BaseNPC_Hero
 {
@@ -22536,7 +22794,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Ability_DrowRanger_WaveOfSilence : public CDOTABaseAbility
 {
@@ -22875,105 +23133,109 @@ char PlayerResourcePlayerTeamData_t_014[0xC];
 	// m_bCanRepick metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bHasRandomed;// 0x67, size 1 (0x1)
+	__declspec(align(1)) bool m_bCanEarnRewards;// 0x67, size 1 (0x1)
+	// m_bCanEarnRewards metadata
+	 // MNetworkEnable
+	 // MNetworkEnable
+	__declspec(align(1)) bool m_bHasRandomed;// 0x68, size 1 (0x1)
 	// m_bHasRandomed metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_nRandomedHeroID;// 0x68, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nRandomedHeroID;// 0x6c, size 4 (0x4)
 	// m_nRandomedHeroID metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bBattleBonusActive;// 0x6c, size 1 (0x1)
+	__declspec(align(1)) bool m_bBattleBonusActive;// 0x70, size 1 (0x1)
 	// m_bBattleBonusActive metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(2)) uint16_t m_iBattleBonusRate;// 0x6e, size 2 (0x2)
+	__declspec(align(2)) uint16_t m_iBattleBonusRate;// 0x72, size 2 (0x2)
 	// m_iBattleBonusRate metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_iCustomBuybackCost;// 0x70, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iCustomBuybackCost;// 0x74, size 4 (0x4)
 	// m_iCustomBuybackCost metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) UnknownType <0x4, class Color> m_CustomPlayerColor;// 0x74, size 4 (0x4)
+	__declspec(align(1)) UnknownType <0x4, class Color> m_CustomPlayerColor;// 0x78, size 4 (0x4)
 	// m_CustomPlayerColor metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bQualifiesForPAContractReward;// 0x78, size 1 (0x1)
+	__declspec(align(1)) bool m_bQualifiesForPAContractReward;// 0x7c, size 1 (0x1)
 	// m_bQualifiesForPAContractReward metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bHasPredictedVictory;// 0x79, size 1 (0x1)
+	__declspec(align(1)) bool m_bHasPredictedVictory;// 0x7d, size 1 (0x1)
 	// m_bHasPredictedVictory metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_UnitShareMasks;// 0x7c, size 4 (0x4)
+	__declspec(align(4)) int32_t m_UnitShareMasks;// 0x80, size 4 (0x4)
 	// m_UnitShareMasks metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_iTeamSlot;// 0x80, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iTeamSlot;// 0x84, size 4 (0x4)
 	// m_iTeamSlot metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) uint8_t m_iBattleCupWinStreak;// 0x84, size 1 (0x1)
+	__declspec(align(1)) uint8_t m_iBattleCupWinStreak;// 0x88, size 1 (0x1)
 	// m_iBattleCupWinStreak metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(8)) uint64_t m_iBattleCupWinDate;// 0x88, size 8 (0x8)
+	__declspec(align(8)) uint64_t m_iBattleCupWinDate;// 0x90, size 8 (0x8)
 	// m_iBattleCupWinDate metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(2)) uint16_t m_iBattleCupSkillLevel;// 0x90, size 2 (0x2)
+	__declspec(align(2)) uint16_t m_iBattleCupSkillLevel;// 0x98, size 2 (0x2)
 	// m_iBattleCupSkillLevel metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) uint32_t m_iBattleCupTeamID;// 0x94, size 4 (0x4)
+	__declspec(align(4)) uint32_t m_iBattleCupTeamID;// 0x9c, size 4 (0x4)
 	// m_iBattleCupTeamID metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) uint32_t m_iBattleCupTournamentID;// 0x98, size 4 (0x4)
+	__declspec(align(4)) uint32_t m_iBattleCupTournamentID;// 0xa0, size 4 (0x4)
 	// m_iBattleCupTournamentID metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) uint8_t m_iBattleCupDivision;// 0x9c, size 1 (0x1)
+	__declspec(align(1)) uint8_t m_iBattleCupDivision;// 0xa4, size 1 (0x1)
 	// m_iBattleCupDivision metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) float m_flTeamFightParticipation;// 0xa0, size 4 (0x4)
+	__declspec(align(4)) float m_flTeamFightParticipation;// 0xa8, size 4 (0x4)
 	// m_flTeamFightParticipation metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_iFirstBloodClaimed;// 0xa4, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iFirstBloodClaimed;// 0xac, size 4 (0x4)
 	// m_iFirstBloodClaimed metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_iFirstBloodGiven;// 0xa8, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iFirstBloodGiven;// 0xb0, size 4 (0x4)
 	// m_iFirstBloodGiven metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) uint32_t m_unPickOrder;// 0xac, size 4 (0x4)
+	__declspec(align(4)) uint32_t m_unPickOrder;// 0xb4, size 4 (0x4)
 	// m_unPickOrder metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) uint8_t m_iAvailableSalutes;// 0xb0, size 1 (0x1)
+	__declspec(align(1)) uint8_t m_iAvailableSalutes;// 0xb8, size 1 (0x1)
 	// m_iAvailableSalutes metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) float m_flTimeOfLastSaluteSent;// 0xb4, size 4 (0x4)
+	__declspec(align(4)) float m_flTimeOfLastSaluteSent;// 0xbc, size 4 (0x4)
 	// m_flTimeOfLastSaluteSent metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class PlayerResourcePlayerEventData_t > m_vecPlayerEventData;// 0xb8, size 24 (0x18)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class PlayerResourcePlayerEventData_t > m_vecPlayerEventData;// 0xc0, size 24 (0x18)
 	// m_vecPlayerEventData metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-char PlayerResourcePlayerTeamData_t_0100[0x30];
-	__declspec(align(4)) uint32_t m_unSelectedHeroBadgeXP;// 0x100, size 4 (0x4)
+char PlayerResourcePlayerTeamData_t_0108[0x30];
+	__declspec(align(4)) uint32_t m_unSelectedHeroBadgeXP;// 0x108, size 4 (0x4)
 	// m_unSelectedHeroBadgeXP metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-char PlayerResourcePlayerTeamData_t_0108[0x4];
-}; // size: 264 (0x108)
+char PlayerResourcePlayerTeamData_t_0110[0x4];
+}; // size: 272 (0x110)
 #pragma pack(pop)
 
 class CFuncPlatRot : public CFuncPlat
@@ -23026,46 +23288,48 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-char CPhysicsProp_07E0[0x8];
-	__declspec(align(8)) CEntityIOOutput m_MotionEnabled;// 0x7e0, size 40 (0x28)
-	__declspec(align(8)) CEntityIOOutput m_OnAwakened;// 0x808, size 40 (0x28)
-	__declspec(align(8)) CEntityIOOutput m_OnAwake;// 0x830, size 40 (0x28)
-	__declspec(align(8)) CEntityIOOutput m_OnAsleep;// 0x858, size 40 (0x28)
-	__declspec(align(8)) CEntityIOOutput m_OnPhysGunPickup;// 0x880, size 40 (0x28)
-	__declspec(align(8)) CEntityIOOutput m_OnPhysGunPunt;// 0x8a8, size 40 (0x28)
-	__declspec(align(8)) CEntityIOOutput m_OnPhysGunOnlyPickup;// 0x8d0, size 40 (0x28)
-	__declspec(align(8)) CEntityIOOutput m_OnPhysGunDrop;// 0x8f8, size 40 (0x28)
-	__declspec(align(8)) CEntityIOOutput m_OnPlayerUse;// 0x920, size 40 (0x28)
-	__declspec(align(8)) CEntityIOOutput m_OnPlayerPickup;// 0x948, size 40 (0x28)
-	__declspec(align(8)) CEntityIOOutput m_OnOutOfWorld;// 0x970, size 40 (0x28)
-	__declspec(align(4)) float m_massScale;// 0x998, size 4 (0x4)
-	__declspec(align(4)) float m_inertiaScale;// 0x99c, size 4 (0x4)
-	__declspec(align(4)) int32_t m_damageType;// 0x9a0, size 4 (0x4)
-	__declspec(align(4)) int32_t m_damageToEnableMotion;// 0x9a4, size 4 (0x4)
-	__declspec(align(4)) float m_flForceToEnableMotion;// 0x9a8, size 4 (0x4)
-	__declspec(align(4)) int32_t m_breakableType;// 0x9ac, size 4 (0x4)
-	__declspec(align(1)) bool m_bThrownByPlayer;// 0x9b0, size 1 (0x1)
-	__declspec(align(1)) bool m_bDroppedByPlayer;// 0x9b1, size 1 (0x1)
-	__declspec(align(1)) bool m_bTouchedByPlayer;// 0x9b2, size 1 (0x1)
-	__declspec(align(1)) bool m_bFirstCollisionAfterLaunch;// 0x9b3, size 1 (0x1)
-	__declspec(align(4)) int32_t m_iExploitableByPlayer;// 0x9b4, size 4 (0x4)
-	__declspec(align(1)) bool m_bHasBeenAwakened;// 0x9b8, size 1 (0x1)
-	__declspec(align(1)) bool m_bIsOverrideProp;// 0x9b9, size 1 (0x1)
-	__declspec(align(4)) float m_fNextCheckDisableMotionContactsTime;// 0x9bc, size 4 (0x4)
-	__declspec(align(4)) int32_t m_iInitialGlowState;// 0x9c0, size 4 (0x4)
-	__declspec(align(4)) int32_t m_nGlowRange;// 0x9c4, size 4 (0x4)
-	__declspec(align(4)) int32_t m_nGlowRangeMin;// 0x9c8, size 4 (0x4)
-	__declspec(align(1)) UnknownType <0x4, class Color> m_glowColor;// 0x9cc, size 4 (0x4)
-	__declspec(align(1)) bool m_bForceNavIgnore;// 0x9d0, size 1 (0x1)
-char CPhysicsProp_09D8[0x7];
-	__declspec(align(1)) bool m_bAcceptDamageFromHeldObjects;// 0x9d8, size 1 (0x1)
-	__declspec(align(1)) bool m_bAwake;// 0x9d9, size 1 (0x1)
+char CPhysicsProp_0850[0x8];
+	__declspec(align(8)) CEntityIOOutput m_MotionEnabled;// 0x850, size 40 (0x28)
+	__declspec(align(8)) CEntityIOOutput m_OnAwakened;// 0x878, size 40 (0x28)
+	__declspec(align(8)) CEntityIOOutput m_OnAwake;// 0x8a0, size 40 (0x28)
+	__declspec(align(8)) CEntityIOOutput m_OnAsleep;// 0x8c8, size 40 (0x28)
+	__declspec(align(8)) CEntityIOOutput m_OnPhysGunPickup;// 0x8f0, size 40 (0x28)
+	__declspec(align(8)) CEntityIOOutput m_OnPhysGunPunt;// 0x918, size 40 (0x28)
+	__declspec(align(8)) CEntityIOOutput m_OnPhysGunOnlyPickup;// 0x940, size 40 (0x28)
+	__declspec(align(8)) CEntityIOOutput m_OnPhysGunDrop;// 0x968, size 40 (0x28)
+	__declspec(align(8)) CEntityIOOutput m_OnPlayerUse;// 0x990, size 40 (0x28)
+	__declspec(align(8)) CEntityIOOutput m_OnPlayerPickup;// 0x9b8, size 40 (0x28)
+	__declspec(align(8)) CEntityIOOutput m_OnOutOfWorld;// 0x9e0, size 40 (0x28)
+	__declspec(align(4)) float m_massScale;// 0xa08, size 4 (0x4)
+	__declspec(align(4)) float m_inertiaScale;// 0xa0c, size 4 (0x4)
+	__declspec(align(4)) int32_t m_damageType;// 0xa10, size 4 (0x4)
+	__declspec(align(4)) int32_t m_damageToEnableMotion;// 0xa14, size 4 (0x4)
+	__declspec(align(4)) float m_flForceToEnableMotion;// 0xa18, size 4 (0x4)
+	__declspec(align(4)) int32_t m_breakableType;// 0xa1c, size 4 (0x4)
+	__declspec(align(1)) bool m_bThrownByPlayer;// 0xa20, size 1 (0x1)
+	__declspec(align(1)) bool m_bDroppedByPlayer;// 0xa21, size 1 (0x1)
+	__declspec(align(1)) bool m_bTouchedByPlayer;// 0xa22, size 1 (0x1)
+	__declspec(align(1)) bool m_bFirstCollisionAfterLaunch;// 0xa23, size 1 (0x1)
+	__declspec(align(4)) int32_t m_iExploitableByPlayer;// 0xa24, size 4 (0x4)
+	__declspec(align(1)) bool m_bHasBeenAwakened;// 0xa28, size 1 (0x1)
+	__declspec(align(1)) bool m_bIsOverrideProp;// 0xa29, size 1 (0x1)
+	__declspec(align(4)) float m_fNextCheckDisableMotionContactsTime;// 0xa2c, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iInitialGlowState;// 0xa30, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nGlowRange;// 0xa34, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nGlowRangeMin;// 0xa38, size 4 (0x4)
+	__declspec(align(1)) UnknownType <0x4, class Color> m_glowColor;// 0xa3c, size 4 (0x4)
+	__declspec(align(1)) bool m_bForceNavIgnore;// 0xa40, size 1 (0x1)
+	__declspec(align(1)) bool m_bShouldAutoConvertBackFromDebris;// 0xa41, size 1 (0x1)
+	__declspec(align(1)) bool m_bMuteImpactEffects;// 0xa42, size 1 (0x1)
+char CPhysicsProp_0A48[0x5];
+	__declspec(align(1)) bool m_bAcceptDamageFromHeldObjects;// 0xa48, size 1 (0x1)
+	__declspec(align(1)) bool m_bAwake;// 0xa49, size 1 (0x1)
 	// m_bAwake metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-char CPhysicsProp_09DC[0x2];
-	__declspec(align(4)) int32_t m_nCollisionGroupOverride;// 0x9dc, size 4 (0x4)
-}; // size: 2528 (0x9e0)
+char CPhysicsProp_0A4C[0x2];
+	__declspec(align(4)) int32_t m_nCollisionGroupOverride;// 0xa4c, size 4 (0x4)
+}; // size: 2640 (0xa50)
 
 class CGenericConstraint : public CPhysConstraint
 {
@@ -23716,31 +23980,31 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(4)) uint32_t m_boneIndexAttached;// 0x6e0, size 4 (0x4)
+	__declspec(align(4)) uint32_t m_boneIndexAttached;// 0x738, size 4 (0x4)
 	// m_boneIndexAttached metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkBitCount
-	__declspec(align(4)) uint32_t m_ragdollAttachedObjectIndex;// 0x6e4, size 4 (0x4)
+	__declspec(align(4)) uint32_t m_ragdollAttachedObjectIndex;// 0x73c, size 4 (0x4)
 	// m_ragdollAttachedObjectIndex metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkBitCount
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_attachmentPointBoneSpace;// 0x6e8, size 12 (0xc)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_attachmentPointBoneSpace;// 0x740, size 12 (0xc)
 	// m_attachmentPointBoneSpace metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkEncoder
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_attachmentPointRagdollSpace;// 0x6f4, size 12 (0xc)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_attachmentPointRagdollSpace;// 0x74c, size 12 (0xc)
 	// m_attachmentPointRagdollSpace metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkEncoder
-	__declspec(align(1)) bool m_bShouldDetach;// 0x700, size 1 (0x1)
-char CRagdollPropAttached_0710[0xF];
-	__declspec(align(1)) bool m_bShouldDeleteAttachedActivationRecord;// 0x710, size 1 (0x1)
-char CRagdollPropAttached_0720[0xF];
-}; // size: 1824 (0x720)
+	__declspec(align(1)) bool m_bShouldDetach;// 0x758, size 1 (0x1)
+char CRagdollPropAttached_0768[0xF];
+	__declspec(align(1)) bool m_bShouldDeleteAttachedActivationRecord;// 0x768, size 1 (0x1)
+char CRagdollPropAttached_0778[0xF];
+}; // size: 1912 (0x778)
 
 class CItemSoda : public CBaseAnimating
 {
@@ -23764,7 +24028,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 1480 (0x5c8)
+}; // size: 1568 (0x620)
 
 class CEnvCubemap : public CBaseEntity
 {
@@ -23955,9 +24219,9 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(4)) int32_t m_iAudienceTeam;// 0x1480, size 4 (0x4)
-char CDOTA_Unit_Announcer_01488[0x4];
-}; // size: 5256 (0x1488)
+	__declspec(align(4)) int32_t m_iAudienceTeam;// 0x14e0, size 4 (0x4)
+char CDOTA_Unit_Announcer_014E8[0x4];
+}; // size: 5352 (0x14e8)
 
 class CDOTA_Ability_Lich_FrostArmor : public CDOTABaseAbility
 {
@@ -24007,57 +24271,57 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(1)) bool m_bInitialized;// 0x14b0, size 1 (0x1)
-	__declspec(align(1)) bool m_bCanRespawn;// 0x14b1, size 1 (0x1)
-	__declspec(align(1)) bool m_bUsesGestureBasedAttackAnimation;// 0x14b2, size 1 (0x1)
-	__declspec(align(1)) bool m_bIsHybridFlyer;// 0x14b3, size 1 (0x1)
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class CreatureStateData_t > m_vCreatureStates;// 0x14b8, size 24 (0x18)
-	__declspec(align(8)) char* m_pszDefaultState;// 0x14d0, size 8 (0x8)
-	__declspec(align(8)) char* m_pszCurrentState;// 0x14d8, size 8 (0x8)
-	__declspec(align(4)) int32_t m_nHPGain;// 0x14e0, size 4 (0x4)
-	__declspec(align(4)) int32_t m_nManaGain;// 0x14e4, size 4 (0x4)
-	__declspec(align(4)) float m_flHPRegenGain;// 0x14e8, size 4 (0x4)
-	__declspec(align(4)) float m_flManaRegenGain;// 0x14ec, size 4 (0x4)
-	__declspec(align(4)) int32_t m_nDamageGain;// 0x14f0, size 4 (0x4)
-	__declspec(align(4)) float m_flArmorGain;// 0x14f4, size 4 (0x4)
-	__declspec(align(4)) float m_flMagicResistGain;// 0x14f8, size 4 (0x4)
-	__declspec(align(4)) float m_flDisableResistGain;// 0x14fc, size 4 (0x4)
-	__declspec(align(4)) float m_flAttackTimeGain;// 0x1500, size 4 (0x4)
-	__declspec(align(4)) int32_t m_nMoveSpeedGain;// 0x1504, size 4 (0x4)
-	__declspec(align(4)) int32_t m_nBountyGain;// 0x1508, size 4 (0x4)
-	__declspec(align(4)) int32_t m_nXPGain;// 0x150c, size 4 (0x4)
-	__declspec(align(4)) int32_t m_nPermanentDesire;// 0x1510, size 4 (0x4)
-	__declspec(align(4)) int32_t m_nCreatureDesire;// 0x1514, size 4 (0x4)
-	__declspec(align(4)) int32_t m_nCurrentCastBehavior;// 0x1518, size 4 (0x4)
-	__declspec(align(1)) bool m_bIsBuildingAggressive;// 0x151c, size 1 (0x1)
-	__declspec(align(1)) bool m_bIsHeroAggressive;// 0x151d, size 1 (0x1)
-	__declspec(align(1)) bool m_bDisableClumpingBehavior;// 0x151e, size 1 (0x1)
-	__declspec(align(4)) float m_flDisableResistance;// 0x1520, size 4 (0x4)
-	__declspec(align(4)) float m_flUltimateDisableResistance;// 0x1524, size 4 (0x4)
-	__declspec(align(1)) bool m_bHasOffensiveAbility;// 0x1528, size 1 (0x1)
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class CreatureAbilityData_t > m_vOffensiveAbilities;// 0x1530, size 24 (0x18)
-	__declspec(align(1)) bool m_bHasDefensiveAbility;// 0x1548, size 1 (0x1)
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class CreatureAbilityData_t > m_vDefensiveAbilities;// 0x1550, size 24 (0x18)
-	__declspec(align(1)) bool m_bHasEscapeAbility;// 0x1568, size 1 (0x1)
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class CreatureAbilityData_t > m_vEscapeAbilities;// 0x1570, size 24 (0x18)
-	__declspec(align(8)) CDOTABaseAbility *m_pLastUsedAbility;// 0x1588, size 8 (0x8)
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vDesiredCastLocation;// 0x1590, size 12 (0xc)
-	__declspec(align(8)) CDOTA_BaseNPC *m_pDesiredNPCTarget;// 0x15a0, size 8 (0x8)
-	__declspec(align(8)) CDOTA_BaseNPC *m_pEscortTarget;// 0x15a8, size 8 (0x8)
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vLastDamageSource;// 0x15b0, size 12 (0xc)
-	__declspec(align(1)) bool m_bIsChampion;// 0x15bc, size 1 (0x1)
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, ItemDropData_t *> m_vItemDropData;// 0x15c0, size 24 (0x18)
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownType <0x2, class item_definition_index_t> > m_vecAttachWearableItemDefs;// 0x15d8, size 24 (0x18)
-	__declspec(align(1)) bool m_bIsCurrentlyChanneling;// 0x15f0, size 1 (0x1)
+	__declspec(align(1)) bool m_bInitialized;// 0x1510, size 1 (0x1)
+	__declspec(align(1)) bool m_bCanRespawn;// 0x1511, size 1 (0x1)
+	__declspec(align(1)) bool m_bUsesGestureBasedAttackAnimation;// 0x1512, size 1 (0x1)
+	__declspec(align(1)) bool m_bIsHybridFlyer;// 0x1513, size 1 (0x1)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class CreatureStateData_t > m_vCreatureStates;// 0x1518, size 24 (0x18)
+	__declspec(align(8)) char* m_pszDefaultState;// 0x1530, size 8 (0x8)
+	__declspec(align(8)) char* m_pszCurrentState;// 0x1538, size 8 (0x8)
+	__declspec(align(4)) int32_t m_nHPGain;// 0x1540, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nManaGain;// 0x1544, size 4 (0x4)
+	__declspec(align(4)) float m_flHPRegenGain;// 0x1548, size 4 (0x4)
+	__declspec(align(4)) float m_flManaRegenGain;// 0x154c, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nDamageGain;// 0x1550, size 4 (0x4)
+	__declspec(align(4)) float m_flArmorGain;// 0x1554, size 4 (0x4)
+	__declspec(align(4)) float m_flMagicResistGain;// 0x1558, size 4 (0x4)
+	__declspec(align(4)) float m_flDisableResistGain;// 0x155c, size 4 (0x4)
+	__declspec(align(4)) float m_flAttackTimeGain;// 0x1560, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nMoveSpeedGain;// 0x1564, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nBountyGain;// 0x1568, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nXPGain;// 0x156c, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nPermanentDesire;// 0x1570, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nCreatureDesire;// 0x1574, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nCurrentCastBehavior;// 0x1578, size 4 (0x4)
+	__declspec(align(1)) bool m_bIsBuildingAggressive;// 0x157c, size 1 (0x1)
+	__declspec(align(1)) bool m_bIsHeroAggressive;// 0x157d, size 1 (0x1)
+	__declspec(align(1)) bool m_bDisableClumpingBehavior;// 0x157e, size 1 (0x1)
+	__declspec(align(4)) float m_flDisableResistance;// 0x1580, size 4 (0x4)
+	__declspec(align(4)) float m_flUltimateDisableResistance;// 0x1584, size 4 (0x4)
+	__declspec(align(1)) bool m_bHasOffensiveAbility;// 0x1588, size 1 (0x1)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class CreatureAbilityData_t > m_vOffensiveAbilities;// 0x1590, size 24 (0x18)
+	__declspec(align(1)) bool m_bHasDefensiveAbility;// 0x15a8, size 1 (0x1)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class CreatureAbilityData_t > m_vDefensiveAbilities;// 0x15b0, size 24 (0x18)
+	__declspec(align(1)) bool m_bHasEscapeAbility;// 0x15c8, size 1 (0x1)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class CreatureAbilityData_t > m_vEscapeAbilities;// 0x15d0, size 24 (0x18)
+	__declspec(align(8)) CDOTABaseAbility *m_pLastUsedAbility;// 0x15e8, size 8 (0x8)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vDesiredCastLocation;// 0x15f0, size 12 (0xc)
+	__declspec(align(8)) CDOTA_BaseNPC *m_pDesiredNPCTarget;// 0x1600, size 8 (0x8)
+	__declspec(align(8)) CDOTA_BaseNPC *m_pEscortTarget;// 0x1608, size 8 (0x8)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vLastDamageSource;// 0x1610, size 12 (0xc)
+	__declspec(align(1)) bool m_bIsChampion;// 0x161c, size 1 (0x1)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, ItemDropData_t *> m_vItemDropData;// 0x1620, size 24 (0x18)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownType <0x2, class item_definition_index_t> > m_vecAttachWearableItemDefs;// 0x1638, size 24 (0x18)
+	__declspec(align(1)) bool m_bIsCurrentlyChanneling;// 0x1650, size 1 (0x1)
 	// m_bIsCurrentlyChanneling metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-char CDOTA_BaseNPC_Creature_015F4[0x3];
-	__declspec(align(4)) float m_flChannelCycle;// 0x15f4, size 4 (0x4)
+char CDOTA_BaseNPC_Creature_01654[0x3];
+	__declspec(align(4)) float m_flChannelCycle;// 0x1654, size 4 (0x4)
 	// m_flChannelCycle metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-}; // size: 5624 (0x15f8)
+}; // size: 5720 (0x1658)
 
 class CDOTA_Ability_Special_Bonus_Unique_Dark_Seer : public CDOTABaseAbility
 {
@@ -24214,122 +24478,122 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-char CBaseCombatWeapon_05D0[0x8];
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseCombatCharacter > m_hOwner;// 0x5d0, size 4 (0x4)
+char CBaseCombatWeapon_0628[0x8];
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseCombatCharacter > m_hOwner;// 0x628, size 4 (0x4)
 	// m_hOwner metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) uint32_t m_nViewModelIndex;// 0x5d4, size 4 (0x4)
+	__declspec(align(4)) uint32_t m_nViewModelIndex;// 0x62c, size 4 (0x4)
 	// m_nViewModelIndex metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkBitCount
 	 // MNetworkUserGroup
-	__declspec(align(4)) float m_flNextPrimaryAttack;// 0x5d8, size 4 (0x4)
+	__declspec(align(4)) float m_flNextPrimaryAttack;// 0x630, size 4 (0x4)
 	// m_flNextPrimaryAttack metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkUserGroup
-	__declspec(align(4)) float m_flNextSecondaryAttack;// 0x5dc, size 4 (0x4)
+	__declspec(align(4)) float m_flNextSecondaryAttack;// 0x634, size 4 (0x4)
 	// m_flNextSecondaryAttack metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkUserGroup
-	__declspec(align(4)) int32_t m_nQueuedAttack;// 0x5e0, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nQueuedAttack;// 0x638, size 4 (0x4)
 	// m_nQueuedAttack metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkUserGroup
-	__declspec(align(4)) float m_flTimeAttackQueued;// 0x5e4, size 4 (0x4)
+	__declspec(align(4)) float m_flTimeAttackQueued;// 0x63c, size 4 (0x4)
 	// m_flTimeAttackQueued metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkUserGroup
-	__declspec(align(8)) UnknownAtomicType <0x8, CStrongHandle, class InfoForResourceTypeCModel > m_iViewModelIndex;// 0x5e8, size 8 (0x8)
+	__declspec(align(8)) UnknownAtomicType <0x8, CStrongHandle, class InfoForResourceTypeCModel > m_iViewModelIndex;// 0x640, size 8 (0x8)
 	// m_iViewModelIndex metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(8)) UnknownAtomicType <0x8, CStrongHandle, class InfoForResourceTypeCModel > m_iWorldModelIndex;// 0x5f0, size 8 (0x8)
+	__declspec(align(8)) UnknownAtomicType <0x8, CStrongHandle, class InfoForResourceTypeCModel > m_iWorldModelIndex;// 0x648, size 8 (0x8)
 	// m_iWorldModelIndex metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) WeaponState_t m_iState;// 0x5f8, size 4 (0x4)
+	__declspec(align(4)) WeaponState_t m_iState;// 0x650, size 4 (0x4)
 	// m_iState metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_iPrimaryAmmoType;// 0x5fc, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iPrimaryAmmoType;// 0x654, size 4 (0x4)
 	// m_iPrimaryAmmoType metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkBitCount
 	 // MNetworkUserGroup
-	__declspec(align(4)) int32_t m_iSecondaryAmmoType;// 0x600, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iSecondaryAmmoType;// 0x658, size 4 (0x4)
 	// m_iSecondaryAmmoType metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkBitCount
 	 // MNetworkUserGroup
-	__declspec(align(4)) int32_t m_iClip1;// 0x604, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iClip1;// 0x65c, size 4 (0x4)
 	// m_iClip1 metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkSerializer
 	 // MNetworkPriority
-	__declspec(align(4)) int32_t m_iClip2;// 0x608, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iClip2;// 0x660, size 4 (0x4)
 	// m_iClip2 metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkSerializer
 	 // MNetworkUserGroup
-	__declspec(align(1)) bool m_bOnlyPump;// 0x60c, size 1 (0x1)
+	__declspec(align(1)) bool m_bOnlyPump;// 0x664, size 1 (0x1)
 	// m_bOnlyPump metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkUserGroup
-	__declspec(align(4)) float m_flTimeWeaponIdle;// 0x610, size 4 (0x4)
+	__declspec(align(4)) float m_flTimeWeaponIdle;// 0x668, size 4 (0x4)
 	// m_flTimeWeaponIdle metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkUserGroup
 	 // MNetworkPriority
-	__declspec(align(4)) float m_flNextEmptySoundTime;// 0x614, size 4 (0x4)
-	__declspec(align(4)) float m_fMinRange1;// 0x618, size 4 (0x4)
-	__declspec(align(4)) float m_fMinRange2;// 0x61c, size 4 (0x4)
-	__declspec(align(4)) float m_fMaxRange1;// 0x620, size 4 (0x4)
-	__declspec(align(4)) float m_fMaxRange2;// 0x624, size 4 (0x4)
-	__declspec(align(4)) float m_fFireDuration;// 0x628, size 4 (0x4)
-	__declspec(align(4)) float m_fMinAdvanceToRange1;// 0x62c, size 4 (0x4)
-	__declspec(align(4)) int32_t m_Activity;// 0x630, size 4 (0x4)
-	__declspec(align(4)) int32_t m_iPrimaryAmmoCount;// 0x634, size 4 (0x4)
-	__declspec(align(4)) int32_t m_iSecondaryAmmoCount;// 0x638, size 4 (0x4)
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszName;// 0x640, size 8 (0x8)
-	__declspec(align(1)) bool m_bRemoveable;// 0x648, size 1 (0x1)
-	__declspec(align(1)) bool m_bInReload;// 0x649, size 1 (0x1)
+	__declspec(align(4)) float m_flNextEmptySoundTime;// 0x66c, size 4 (0x4)
+	__declspec(align(4)) float m_fMinRange1;// 0x670, size 4 (0x4)
+	__declspec(align(4)) float m_fMinRange2;// 0x674, size 4 (0x4)
+	__declspec(align(4)) float m_fMaxRange1;// 0x678, size 4 (0x4)
+	__declspec(align(4)) float m_fMaxRange2;// 0x67c, size 4 (0x4)
+	__declspec(align(4)) float m_fFireDuration;// 0x680, size 4 (0x4)
+	__declspec(align(4)) float m_fMinAdvanceToRange1;// 0x684, size 4 (0x4)
+	__declspec(align(4)) int32_t m_Activity;// 0x688, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iPrimaryAmmoCount;// 0x68c, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iSecondaryAmmoCount;// 0x690, size 4 (0x4)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszName;// 0x698, size 8 (0x8)
+	__declspec(align(1)) bool m_bRemoveable;// 0x6a0, size 1 (0x1)
+	__declspec(align(1)) bool m_bInReload;// 0x6a1, size 1 (0x1)
 	// m_bInReload metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bFireOnEmpty;// 0x64a, size 1 (0x1)
-	__declspec(align(1)) bool m_bFiresUnderwater;// 0x64b, size 1 (0x1)
-	__declspec(align(1)) bool m_bAltFiresUnderwater;// 0x64c, size 1 (0x1)
-	__declspec(align(1)) bool m_bReloadsSingly;// 0x64d, size 1 (0x1)
-	__declspec(align(4)) UnknownType <0x4, class HSequence> m_hIdealSequence;// 0x650, size 4 (0x4)
-	__declspec(align(4)) int32_t m_IdealActivity;// 0x654, size 4 (0x4)
-	__declspec(align(4)) int32_t m_iSubType;// 0x658, size 4 (0x4)
-	__declspec(align(4)) float m_flUnlockTime;// 0x65c, size 4 (0x4)
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hLocker;// 0x660, size 4 (0x4)
-char CBaseCombatWeapon_0678[0x14];
-	__declspec(align(4)) int32_t m_iAltFireHudHintCount;// 0x678, size 4 (0x4)
-	__declspec(align(4)) int32_t m_iReloadHudHintCount;// 0x67c, size 4 (0x4)
-	__declspec(align(1)) bool m_bAltFireHudHintDisplayed;// 0x680, size 1 (0x1)
-	__declspec(align(1)) bool m_bReloadHudHintDisplayed;// 0x681, size 1 (0x1)
-	__declspec(align(4)) float m_flHudHintPollTime;// 0x684, size 4 (0x4)
-	__declspec(align(4)) float m_flHudHintMinDisplayTime;// 0x688, size 4 (0x4)
-	__declspec(align(4)) int32_t m_nTracerAttachmentIndex;// 0x68c, size 4 (0x4)
-	__declspec(align(8)) CEntityIOOutput m_OnPlayerUse;// 0x690, size 40 (0x28)
-	__declspec(align(8)) CEntityIOOutput m_OnPlayerPickup;// 0x6b8, size 40 (0x28)
-	__declspec(align(8)) CEntityIOOutput m_OnNPCPickup;// 0x6e0, size 40 (0x28)
-	__declspec(align(8)) CEntityIOOutput m_OnCacheInteraction;// 0x708, size 40 (0x28)
-}; // size: 1840 (0x730)
+	__declspec(align(1)) bool m_bFireOnEmpty;// 0x6a2, size 1 (0x1)
+	__declspec(align(1)) bool m_bFiresUnderwater;// 0x6a3, size 1 (0x1)
+	__declspec(align(1)) bool m_bAltFiresUnderwater;// 0x6a4, size 1 (0x1)
+	__declspec(align(1)) bool m_bReloadsSingly;// 0x6a5, size 1 (0x1)
+	__declspec(align(4)) UnknownType <0x4, class HSequence> m_hIdealSequence;// 0x6a8, size 4 (0x4)
+	__declspec(align(4)) int32_t m_IdealActivity;// 0x6ac, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iSubType;// 0x6b0, size 4 (0x4)
+	__declspec(align(4)) float m_flUnlockTime;// 0x6b4, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hLocker;// 0x6b8, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nTracerAttachmentIndex;// 0x6bc, size 4 (0x4)
+char CBaseCombatWeapon_06D0[0x10];
+	__declspec(align(4)) int32_t m_iAltFireHudHintCount;// 0x6d0, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iReloadHudHintCount;// 0x6d4, size 4 (0x4)
+	__declspec(align(1)) bool m_bAltFireHudHintDisplayed;// 0x6d8, size 1 (0x1)
+	__declspec(align(1)) bool m_bReloadHudHintDisplayed;// 0x6d9, size 1 (0x1)
+	__declspec(align(4)) float m_flHudHintPollTime;// 0x6dc, size 4 (0x4)
+	__declspec(align(4)) float m_flHudHintMinDisplayTime;// 0x6e0, size 4 (0x4)
+	__declspec(align(8)) CEntityIOOutput m_OnPlayerUse;// 0x6e8, size 40 (0x28)
+	__declspec(align(8)) CEntityIOOutput m_OnPlayerPickup;// 0x710, size 40 (0x28)
+	__declspec(align(8)) CEntityIOOutput m_OnNPCPickup;// 0x738, size 40 (0x28)
+	__declspec(align(8)) CEntityIOOutput m_OnCacheInteraction;// 0x760, size 40 (0x28)
+}; // size: 1928 (0x788)
 
 class CPointPlayerMoveConstraint : public CBaseEntity
 {
@@ -24514,7 +24778,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Ability_Special_Bonus_MP_Regen_10 : public CDOTABaseAbility
 {
@@ -24673,7 +24937,9 @@ public:
 public:
 	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszName;// 0x368, size 8 (0x8)
 	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszHintTargetEntity;// 0x370, size 8 (0x8)
-}; // size: 888 (0x378)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBasePlayer > m_hTargetPlayer;// 0x378, size 4 (0x4)
+char CInstructorEventEntity_0380[0x4];
+}; // size: 896 (0x380)
 
 class CDOTA_Unit_LoopingSound : public CDOTA_BaseNPC_Additive
 {
@@ -24698,17 +24964,17 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(1)) char m_pszNetworkedSoundLoop[256];// 0x1480, size 256 (0x100)
+	__declspec(align(1)) char m_pszNetworkedSoundLoop[256];// 0x14e0, size 256 (0x100)
 	// m_pszNetworkedSoundLoop metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_nLoopingSoundParity;// 0x1580, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nLoopingSoundParity;// 0x15e0, size 4 (0x4)
 	// m_nLoopingSoundParity metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkBitCount
-char CDOTA_Unit_LoopingSound_01588[0x4];
-}; // size: 5512 (0x1588)
+char CDOTA_Unit_LoopingSound_015E8[0x4];
+}; // size: 5608 (0x15e8)
 
 class CDOTA_Ability_Necronomicon_Archer_ManaBurn : public CDOTABaseAbility
 {
@@ -24869,6 +25135,30 @@ public:
 	class CEntityInstanceEntityClass : public CDOTABaseAbility::CEntityInstanceEntityClass
 	{
 	// CDOTA_Ability_Special_Bonus_Unique_Death_Prophet_2::CEntityInstanceEntityClass additional information
+	// Alignment: -1
+	// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+	// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
+	// SCHEMA_CLASS_TEMP_HACK_HAS_DESTRUCTOR_LIKE_METHODS
+	// Abstract Class
+
+	public:
+	}; // size: 296 (0x128)
+
+public:
+}; // size: 1016 (0x3f8)
+
+class CDOTA_Ability_Special_Bonus_Unique_Invoker_9 : public CDOTABaseAbility
+{
+// CDOTA_Ability_Special_Bonus_Unique_Invoker_9 additional information
+// server.dll, project server
+// Alignment: -1
+// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+// Abstract Class
+
+public: 
+	class CEntityInstanceEntityClass : public CDOTABaseAbility::CEntityInstanceEntityClass
+	{
+	// CDOTA_Ability_Special_Bonus_Unique_Invoker_9::CEntityInstanceEntityClass additional information
 	// Alignment: -1
 	// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
 	// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
@@ -25153,32 +25443,6 @@ public:
 public:
 }; // size: 1016 (0x3f8)
 
-class CDOTA_Ability_ControllerTest_SvenThrustingAttack : public CDOTABaseAbility
-{
-// CDOTA_Ability_ControllerTest_SvenThrustingAttack additional information
-// server.dll, project server
-// Alignment: -1
-// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
-// Abstract Class
-
-public: 
-	class CEntityInstanceEntityClass : public CDOTABaseAbility::CEntityInstanceEntityClass
-	{
-	// CDOTA_Ability_ControllerTest_SvenThrustingAttack::CEntityInstanceEntityClass additional information
-	// Alignment: -1
-	// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
-	// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
-	// SCHEMA_CLASS_TEMP_HACK_HAS_DESTRUCTOR_LIKE_METHODS
-	// Abstract Class
-
-	public:
-	}; // size: 296 (0x128)
-
-public:
-	__declspec(align(4)) float m_flPlaybackRate;// 0x3f8, size 4 (0x4)
-char CDOTA_Ability_ControllerTest_SvenThrustingAttack_0400[0x4];
-}; // size: 1024 (0x400)
-
 class CTriggerVolume : public CBaseModelEntity
 {
 // CTriggerVolume additional information
@@ -25249,7 +25513,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Unit_Broodmother_Spiderling : public CDOTA_BaseNPC_Creep_Talking
 {
@@ -25273,7 +25537,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 5296 (0x14b0)
+}; // size: 5392 (0x1510)
 
 class CDOTA_Ability_Special_Bonus_Unique_Templar_Assassin_2 : public CDOTABaseAbility
 {
@@ -25702,7 +25966,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 1248 (0x4e0)
+}; // size: 1272 (0x4f8)
 
 class CSceneEntity : public CPointEntity
 {
@@ -25919,15 +26183,11 @@ public:
 	// m_hControlPointEnts metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) uint8_t m_iControlPointParents[64];// 0x770, size 64 (0x40)
-	// m_iControlPointParents metadata
-	 // MNetworkEnable
-	 // MNetworkEnable
-	__declspec(align(1)) bool m_bNoSave;// 0x7b0, size 1 (0x1)
-	__declspec(align(1)) bool m_bStartActive;// 0x7b1, size 1 (0x1)
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszEffectName;// 0x7b8, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszControlPointNames[64];// 0x7c0, size 512 (0x200)
-}; // size: 2496 (0x9c0)
+	__declspec(align(1)) bool m_bNoSave;// 0x770, size 1 (0x1)
+	__declspec(align(1)) bool m_bStartActive;// 0x771, size 1 (0x1)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszEffectName;// 0x778, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszControlPointNames[64];// 0x780, size 512 (0x200)
+}; // size: 2432 (0x980)
 
 class CDOTA_Item_HelmOfTheDominator : public CDOTA_Item
 {
@@ -26025,7 +26285,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Ability_StormSpirit_Overload : public CDOTABaseAbility
 {
@@ -26234,10 +26494,10 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(8)) CEntityIOOutput m_OnPlayerPickup;// 0x670, size 40 (0x28)
-	__declspec(align(1)) MoveType_t m_MoveTypeOverride;// 0x698, size 1 (0x1)
-char CScriptItem_06A0[0x7];
-}; // size: 1696 (0x6a0)
+	__declspec(align(8)) CEntityIOOutput m_OnPlayerPickup;// 0x6c8, size 40 (0x28)
+	__declspec(align(1)) MoveType_t m_MoveTypeOverride;// 0x6f0, size 1 (0x1)
+char CScriptItem_06F8[0x7];
+}; // size: 1784 (0x6f8)
 
 class CDOTA_Item_Headdress : public CDOTA_Item
 {
@@ -26285,7 +26545,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Ability_Dazzle_Poison_Touch : public CDOTABaseAbility
 {
@@ -26575,9 +26835,9 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(4)) int32_t m_nFXIndex;// 0x19f8, size 4 (0x4)
-char CDOTA_Unit_Hero_Kunkka_01A00[0x4];
-}; // size: 6656 (0x1a00)
+	__declspec(align(4)) int32_t m_nFXIndex;// 0x1a48, size 4 (0x4)
+char CDOTA_Unit_Hero_Kunkka_01A50[0x4];
+}; // size: 6736 (0x1a50)
 
 class CDOTA_BaseNPC_HoldoutTower : public CDOTA_BaseNPC_Tower
 {
@@ -26601,9 +26861,9 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(4)) DOTA_HOLDOUT_TOWER_TYPE m_iTowerType;// 0x1580, size 4 (0x4)
-char CDOTA_BaseNPC_HoldoutTower_01588[0x4];
-}; // size: 5512 (0x1588)
+	__declspec(align(4)) DOTA_HOLDOUT_TOWER_TYPE m_iTowerType;// 0x15e0, size 4 (0x4)
+char CDOTA_BaseNPC_HoldoutTower_015E8[0x4];
+}; // size: 5608 (0x15e8)
 
 class CDOTA_BaseNPC_HoldoutTower_HeavySlow : public CDOTA_BaseNPC_HoldoutTower
 {
@@ -26627,7 +26887,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 5512 (0x1588)
+}; // size: 5608 (0x15e8)
 
 class CDOTA_Ability_Special_Bonus_Unique_Elder_Titan_2 : public CDOTABaseAbility
 {
@@ -26936,13 +27196,13 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vOriginalSpawnOrigin;// 0x9e0, size 12 (0xc)
-	__declspec(align(4)) UnknownType <0xc, class QAngle> m_vOriginalSpawnAngles;// 0x9ec, size 12 (0xc)
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vOriginalMins;// 0x9f8, size 12 (0xc)
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vOriginalMaxs;// 0xa04, size 12 (0xc)
-	__declspec(align(4)) float m_flRespawnTime;// 0xa10, size 4 (0x4)
-char CPhysicsPropRespawnable_0A18[0x4];
-}; // size: 2584 (0xa18)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vOriginalSpawnOrigin;// 0xa50, size 12 (0xc)
+	__declspec(align(4)) UnknownType <0xc, class QAngle> m_vOriginalSpawnAngles;// 0xa5c, size 12 (0xc)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vOriginalMins;// 0xa68, size 12 (0xc)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vOriginalMaxs;// 0xa74, size 12 (0xc)
+	__declspec(align(4)) float m_flRespawnTime;// 0xa80, size 4 (0x4)
+char CPhysicsPropRespawnable_0A88[0x4];
+}; // size: 2696 (0xa88)
 
 class CFuncWall : public CBaseModelEntity
 {
@@ -27208,7 +27468,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 4952 (0x1358)
+}; // size: 5048 (0x13b8)
 
 class CPostProcessController : public CBaseEntity
 {
@@ -27376,9 +27636,9 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(4)) int32_t m_nFXEarthAmbient1;// 0x14b0, size 4 (0x4)
-	__declspec(align(4)) int32_t m_nFXEarthAmbient2;// 0x14b4, size 4 (0x4)
-}; // size: 5304 (0x14b8)
+	__declspec(align(4)) int32_t m_nFXEarthAmbient1;// 0x1510, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nFXEarthAmbient2;// 0x1514, size 4 (0x4)
+}; // size: 5400 (0x1518)
 
 class CDOTA_Ability_Bloodseeker_Bloodrage : public CDOTABaseAbility
 {
@@ -27600,7 +27860,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Ability_Silencer_GlaivesOfWisdom : public CDOTABaseAbility
 {
@@ -27841,7 +28101,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Unit_Hero_PhantomAssassin : public CDOTA_BaseNPC_Hero
 {
@@ -27866,12 +28126,12 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(4)) int32_t m_nFXDeath;// 0x19f8, size 4 (0x4)
-	__declspec(align(4)) uint32_t m_nArcanaLevel;// 0x19fc, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nFXDeath;// 0x1a48, size 4 (0x4)
+	__declspec(align(4)) uint32_t m_nArcanaLevel;// 0x1a4c, size 4 (0x4)
 	// m_nArcanaLevel metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-}; // size: 6656 (0x1a00)
+}; // size: 6736 (0x1a50)
 
 class CDOTA_Ability_Special_Bonus_Unique_Wisp : public CDOTABaseAbility
 {
@@ -28040,7 +28300,9 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+	__declspec(align(4)) int32_t m_nFXDeath;// 0x1a48, size 4 (0x4)
+char CDOTA_Unit_Hero_Obsidian_Destroyer_01A50[0x4];
+}; // size: 6736 (0x1a50)
 
 class CDOTA_Ability_Puck_DreamCoil : public CDOTABaseAbility
 {
@@ -28517,8 +28779,8 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-char CPropDart_09E8[0x8];
-}; // size: 2536 (0x9e8)
+char CPropDart_0A58[0x8];
+}; // size: 2648 (0xa58)
 
 class CFuncLadder : public CBaseModelEntity
 {
@@ -28672,7 +28934,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 5512 (0x1588)
+}; // size: 5608 (0x15e8)
 
 class CDOTA_Ability_Special_Bonus_Unique_Spectre_5 : public CDOTABaseAbility
 {
@@ -29398,7 +29660,31 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 2192 (0x890)
+}; // size: 2304 (0x900)
+
+class CDOTA_Ability_Special_Bonus_Unique_Grimstroke_4 : public CDOTABaseAbility
+{
+// CDOTA_Ability_Special_Bonus_Unique_Grimstroke_4 additional information
+// server.dll, project server
+// Alignment: -1
+// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+// Abstract Class
+
+public: 
+	class CEntityInstanceEntityClass : public CDOTABaseAbility::CEntityInstanceEntityClass
+	{
+	// CDOTA_Ability_Special_Bonus_Unique_Grimstroke_4::CEntityInstanceEntityClass additional information
+	// Alignment: -1
+	// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+	// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
+	// SCHEMA_CLASS_TEMP_HACK_HAS_DESTRUCTOR_LIKE_METHODS
+	// Abstract Class
+
+	public:
+	}; // size: 296 (0x128)
+
+public:
+}; // size: 1016 (0x3f8)
 
 class CDOTA_Ability_Special_Bonus_Unique_Morphling_1 : public CDOTABaseAbility
 {
@@ -29446,9 +29732,9 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszScriptName;// 0x5c8, size 8 (0x8)
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class CEffectScriptElement > m_ScriptElements;// 0x5d0, size 24 (0x18)
-}; // size: 1512 (0x5e8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszScriptName;// 0x620, size 8 (0x8)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class CEffectScriptElement > m_ScriptElements;// 0x628, size 24 (0x18)
+}; // size: 1600 (0x640)
 
 class CDynamicPropAlias_dynamic_prop : public CDynamicProp
 {
@@ -29472,7 +29758,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 2192 (0x890)
+}; // size: 2304 (0x900)
 
 class CDOTA_Unit_Hero_Nevermore : public CDOTA_BaseNPC_Hero
 {
@@ -29497,9 +29783,9 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(4)) int32_t m_nFXDeath;// 0x19f8, size 4 (0x4)
-char CDOTA_Unit_Hero_Nevermore_01A00[0x4];
-}; // size: 6656 (0x1a00)
+	__declspec(align(4)) int32_t m_nFXDeath;// 0x1a48, size 4 (0x4)
+char CDOTA_Unit_Hero_Nevermore_01A50[0x4];
+}; // size: 6736 (0x1a50)
 
 class CDOTA_Ability_Special_Bonus_Unique_Winter_Wyvern_4 : public CDOTABaseAbility
 {
@@ -29653,7 +29939,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 2528 (0x9e0)
+}; // size: 2640 (0xa50)
 
 class CDOTA_Ability_DoomBringer_InfernalBlade : public CDOTABaseAbility
 {
@@ -29804,7 +30090,7 @@ char CPhysHinge_03C8[0x8];
 	__declspec(align(1)) bool m_bIsAxisLocal;// 0x410, size 1 (0x1)
 	__declspec(align(4)) float m_flMinRotation;// 0x414, size 4 (0x4)
 	__declspec(align(4)) float m_flMaxRotation;// 0x418, size 4 (0x4)
-char CPhysHinge_0420[0x4];
+	__declspec(align(4)) float m_flInitialRotation;// 0x41c, size 4 (0x4)
 }; // size: 1056 (0x420)
 
 class CDOTA_Ability_AbyssalUnderlord_Firestorm : public CDOTABaseAbility
@@ -29857,7 +30143,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Unit_Hero_Axe : public CDOTA_BaseNPC_Hero
 {
@@ -29881,7 +30167,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Ability_Special_Bonus_Unique_Doom_2 : public CDOTABaseAbility
 {
@@ -30059,7 +30345,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 5296 (0x14b0)
+}; // size: 5392 (0x1510)
 
 class CDOTA_Unit_Hero_ShadowShaman : public CDOTA_BaseNPC_Hero
 {
@@ -30083,7 +30369,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_NPCSpawnerBadTop : public CDOTA_NPCSpawner
 {
@@ -30310,83 +30596,6 @@ public:
 public:
 }; // size: 872 (0x368)
 
-class CDOTA_Ability_ControllerTest_SvenSweepingAttack : public CDOTABaseAbility
-{
-// CDOTA_Ability_ControllerTest_SvenSweepingAttack additional information
-// server.dll, project server
-// Alignment: -1
-// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
-// Abstract Class
-
-public: 
-	class CEntityInstanceEntityClass : public CDOTABaseAbility::CEntityInstanceEntityClass
-	{
-	// CDOTA_Ability_ControllerTest_SvenSweepingAttack::CEntityInstanceEntityClass additional information
-	// Alignment: -1
-	// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
-	// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
-	// SCHEMA_CLASS_TEMP_HACK_HAS_DESTRUCTOR_LIKE_METHODS
-	// Abstract Class
-
-	public:
-	}; // size: 296 (0x128)
-
-public:
-}; // size: 1016 (0x3f8)
-
-class CDOTAHoldoutNetworker : public CBaseEntity
-{
-// CDOTAHoldoutNetworker additional information
-// server.dll, project server
-// Alignment: -1
-// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
-// Abstract Class
-
-public: 
-	class CEntityInstanceEntityClass : public CBaseEntity::CEntityInstanceEntityClass
-	{
-	// CDOTAHoldoutNetworker::CEntityInstanceEntityClass additional information
-	// Alignment: -1
-	// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
-	// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
-	// SCHEMA_CLASS_TEMP_HACK_HAS_DESTRUCTOR_LIKE_METHODS
-	// Abstract Class
-
-	public:
-	}; // size: 296 (0x128)
-
-public:
-	__declspec(align(4)) float m_flPrepTimeLeft;// 0x368, size 4 (0x4)
-	// m_flPrepTimeLeft metadata
-	 // MNetworkEnable
-	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_nWaveEnemyCount;// 0x36c, size 4 (0x4)
-	// m_nWaveEnemyCount metadata
-	 // MNetworkEnable
-	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_nCurrentEnemyCount;// 0x370, size 4 (0x4)
-	// m_nCurrentEnemyCount metadata
-	 // MNetworkEnable
-	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_nNumberOfRounds;// 0x374, size 4 (0x4)
-	// m_nNumberOfRounds metadata
-	 // MNetworkEnable
-	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_nRoundNumber;// 0x378, size 4 (0x4)
-	// m_nRoundNumber metadata
-	 // MNetworkEnable
-	 // MNetworkEnable
-	__declspec(align(1)) bool m_bIsHeroRespawnEnabled;// 0x37c, size 1 (0x1)
-	// m_bIsHeroRespawnEnabled metadata
-	 // MNetworkEnable
-	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_nGoldBagsExpired;// 0x380, size 4 (0x4)
-	// m_nGoldBagsExpired metadata
-	 // MNetworkEnable
-	 // MNetworkEnable
-char CDOTAHoldoutNetworker_0388[0x4];
-}; // size: 904 (0x388)
-
 class CDOTA_ItemSpawner : public CPointEntity
 {
 // CDOTA_ItemSpawner additional information
@@ -30537,7 +30746,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Ability_Mirana_Arrow : public CDOTABaseAbility
 {
@@ -30588,7 +30797,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Ability_Special_Bonus_Unique_Ursa : public CDOTABaseAbility
 {
@@ -31025,13 +31234,13 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(4)) float m_flNextStateTime;// 0x5c8, size 4 (0x4)
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_strModelGroup;// 0x5d0, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_strSequenceName1;// 0x5d8, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_strSequenceName2;// 0x5e0, size 8 (0x8)
-	__declspec(align(4)) int32_t m_nMode;// 0x5e8, size 4 (0x4)
-char CEnvAirStrikeOutdoorEffect_05F0[0x4];
-}; // size: 1520 (0x5f0)
+	__declspec(align(4)) float m_flNextStateTime;// 0x620, size 4 (0x4)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_strModelGroup;// 0x628, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_strSequenceName1;// 0x630, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_strSequenceName2;// 0x638, size 8 (0x8)
+	__declspec(align(4)) int32_t m_nMode;// 0x640, size 4 (0x4)
+char CEnvAirStrikeOutdoorEffect_0648[0x4];
+}; // size: 1608 (0x648)
 
 class CBaseDoor : public CBaseToggle
 {
@@ -31524,8 +31733,16 @@ public:
 	// m_flAccelerateExposureDown metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-char CTonemapController2_0388[0x4];
-}; // size: 904 (0x388)
+	__declspec(align(4)) float m_flBloomStrength;// 0x384, size 4 (0x4)
+	// m_flBloomStrength metadata
+	 // MNetworkEnable
+	 // MNetworkEnable
+	__declspec(align(4)) float m_flBloomStartValue;// 0x388, size 4 (0x4)
+	// m_flBloomStartValue metadata
+	 // MNetworkEnable
+	 // MNetworkEnable
+char CTonemapController2_0390[0x4];
+}; // size: 912 (0x390)
 
 class CDOTA_Item_Recipe_Solar_Crest : public CDOTA_Item
 {
@@ -31744,7 +31961,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Unit_Hero_PhantomLancer : public CDOTA_BaseNPC_Hero
 {
@@ -31768,7 +31985,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Item_BagOfGold : public CDOTA_Item
 {
@@ -32289,7 +32506,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Ability_Warlock_Upheaval : public CDOTABaseAbility
 {
@@ -32705,7 +32922,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Ability_Special_Bonus_Unique_Phoenix_2 : public CDOTABaseAbility
 {
@@ -33050,10 +33267,10 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(1)) bool m_bShouldRespawn;// 0x1480, size 1 (0x1)
-	__declspec(align(1)) bool m_bStolen;// 0x1481, size 1 (0x1)
-char CDOTA_Unit_SpiritBear_01488[0x6];
-}; // size: 5256 (0x1488)
+	__declspec(align(1)) bool m_bShouldRespawn;// 0x14e0, size 1 (0x1)
+	__declspec(align(1)) bool m_bStolen;// 0x14e1, size 1 (0x1)
+char CDOTA_Unit_SpiritBear_014E8[0x6];
+}; // size: 5352 (0x14e8)
 
 class CDOTA_Ability_Gyrocopter_Flak_Cannon : public CDOTABaseAbility
 {
@@ -33085,6 +33302,7 @@ class CDOTA_Unit_Hero_Lion : public CDOTA_BaseNPC_Hero
 // server.dll, project server
 // Alignment: -1
 // SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
 // Abstract Class
 
 public: 
@@ -33101,7 +33319,9 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+	__declspec(align(4)) uint32_t m_unFingerPrestigeKills;// 0x1a48, size 4 (0x4)
+char CDOTA_Unit_Hero_Lion_01A50[0x4];
+}; // size: 6736 (0x1a50)
 
 class CDOTA_Ability_Special_Bonus_Unique_Razor_3 : public CDOTABaseAbility
 {
@@ -33325,7 +33545,9 @@ class CSoundOpvarSetPointEntity : public CBaseEntity
 // server.dll, project server
 // Alignment: -1
 // SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+// SCHEMA_CLASS_TEMP_HACK_HAS_NOSCHEMA_MEMBERS
 // SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
+// SCHEMA_CLASS_TEMP_HACK_HAS_DESTRUCTOR_LIKE_METHODS
 // Abstract Class
 
 public: 
@@ -33342,22 +33564,27 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszStackName;// 0x368, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszOperatorName;// 0x370, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszOpvarName;// 0x378, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszSourceEntityName;// 0x380, size 8 (0x8)
-	__declspec(align(4)) int32_t m_iOpvarIndex;// 0x388, size 4 (0x4)
-	__declspec(align(4)) float m_flDistanceMin;// 0x38c, size 4 (0x4)
-	__declspec(align(4)) float m_flDistanceMax;// 0x390, size 4 (0x4)
-	__declspec(align(4)) float m_flDistanceMapMin;// 0x394, size 4 (0x4)
-	__declspec(align(4)) float m_flDistanceMapMax;// 0x398, size 4 (0x4)
-	__declspec(align(4)) float m_flOcclusionRadius;// 0x39c, size 4 (0x4)
-	__declspec(align(4)) float m_flOcclusionMin;// 0x3a0, size 4 (0x4)
-	__declspec(align(4)) float m_flOcclusionMax;// 0x3a4, size 4 (0x4)
-	__declspec(align(1)) bool m_bDisabled;// 0x3a8, size 1 (0x1)
-char CSoundOpvarSetPointEntity_03AC[0x3];
-	__declspec(align(4)) UnknownType <0x4, class CEntityHandle> m_hSource;// 0x3ac, size 4 (0x4)
-}; // size: 944 (0x3b0)
+	__declspec(align(8)) CEntityIOOutput m_OnEnter;// 0x368, size 40 (0x28)
+	__declspec(align(8)) CEntityIOOutput m_OnExit;// 0x390, size 40 (0x28)
+	__declspec(align(4)) float m_flDistanceMin;// 0x3b8, size 4 (0x4)
+	__declspec(align(4)) float m_flDistanceMax;// 0x3bc, size 4 (0x4)
+	__declspec(align(4)) float m_flValSetOnDisable;// 0x3c0, size 4 (0x4)
+	__declspec(align(1)) bool m_bSetValueOnDisable;// 0x3c4, size 1 (0x1)
+	__declspec(align(1)) bool m_bDisabled;// 0x3c5, size 1 (0x1)
+	__declspec(align(1)) bool m_bAutoDisable;// 0x3c6, size 1 (0x1)
+char CSoundOpvarSetPointEntity_03E0[0x18];
+	__declspec(align(4)) UnknownType <0x4, class CEntityHandle> m_hSource;// 0x3e0, size 4 (0x4)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszStackName;// 0x3e8, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszOperatorName;// 0x3f0, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszOpvarName;// 0x3f8, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszSourceEntityName;// 0x400, size 8 (0x8)
+	__declspec(align(4)) int32_t m_iOpvarIndex;// 0x408, size 4 (0x4)
+	__declspec(align(4)) float m_flDistanceMapMin;// 0x40c, size 4 (0x4)
+	__declspec(align(4)) float m_flDistanceMapMax;// 0x410, size 4 (0x4)
+	__declspec(align(4)) float m_flOcclusionRadius;// 0x414, size 4 (0x4)
+	__declspec(align(4)) float m_flOcclusionMin;// 0x418, size 4 (0x4)
+	__declspec(align(4)) float m_flOcclusionMax;// 0x41c, size 4 (0x4)
+}; // size: 1056 (0x420)
 
 class CLightOrthoEntity : public CLightEntity
 {
@@ -33528,7 +33755,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 5248 (0x1480)
+}; // size: 5344 (0x14e0)
 
 class CDOTA_Ability_FacelessVoid_Chronosphere : public CDOTABaseAbility
 {
@@ -33609,7 +33836,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Ability_Morphling_Morph_Agi : public CDOTABaseAbility
 {
@@ -33634,6 +33861,98 @@ public:
 
 public:
 }; // size: 1016 (0x3f8)
+
+class CDOTA_BaseNPC_RotatableBuilding : public CDOTA_BaseNPC
+{
+// CDOTA_BaseNPC_RotatableBuilding additional information
+// server.dll, project server
+// Alignment: -1
+// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+// Abstract Class
+
+public: 
+	class CEntityInstanceEntityClass : public CDOTA_BaseNPC::CEntityInstanceEntityClass
+	{
+	// CDOTA_BaseNPC_RotatableBuilding::CEntityInstanceEntityClass additional information
+	// Alignment: -1
+	// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+	// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
+	// SCHEMA_CLASS_TEMP_HACK_HAS_DESTRUCTOR_LIKE_METHODS
+	// Abstract Class
+
+	public:
+	}; // size: 296 (0x128)
+
+public:
+	__declspec(align(8)) UnknownAtomicType <0x8, CStrongHandle, class InfoForResourceTypeIParticleSystemDefinition > m_nFXIndex;// 0x14e0, size 8 (0x8)
+	// m_nFXIndex metadata
+	 // MNetworkEnable
+	 // MNetworkEnable
+	__declspec(align(8)) UnknownAtomicType <0x8, CStrongHandle, class InfoForResourceTypeIParticleSystemDefinition > m_nFXIndexDestruction;// 0x14e8, size 8 (0x8)
+	// m_nFXIndexDestruction metadata
+	 // MNetworkEnable
+	 // MNetworkEnable
+	__declspec(align(4)) UnknownType <0xc, class QAngle> m_angInitialAngles;// 0x14f0, size 12 (0xc)
+	// m_angInitialAngles metadata
+	 // MNetworkEnable
+	 // MNetworkEnable
+	__declspec(align(4)) UnknownType <0x4, class HSequence> m_hHeroStatueSequence;// 0x14fc, size 4 (0x4)
+	// m_hHeroStatueSequence metadata
+	 // MNetworkEnable
+	 // MNetworkEnable
+	__declspec(align(4)) UnknownType <0x4, class HSequence> m_hConstantLayerSequence;// 0x1500, size 4 (0x4)
+	// m_hConstantLayerSequence metadata
+	 // MNetworkEnable
+	 // MNetworkEnable
+	__declspec(align(4)) float m_fHeroStatueCycle;// 0x1504, size 4 (0x4)
+	// m_fHeroStatueCycle metadata
+	 // MNetworkEnable
+	 // MNetworkEnable
+	__declspec(align(4)) int32_t m_iHeroStatueStatusEffectIndex;// 0x1508, size 4 (0x4)
+	// m_iHeroStatueStatusEffectIndex metadata
+	 // MNetworkEnable
+	 // MNetworkEnable
+	__declspec(align(1)) bool m_bHeroStatue;// 0x150c, size 1 (0x1)
+	// m_bHeroStatue metadata
+	 // MNetworkEnable
+	 // MNetworkEnable
+	__declspec(align(1)) bool m_bBattleCup;// 0x150d, size 1 (0x1)
+	// m_bBattleCup metadata
+	 // MNetworkEnable
+	 // MNetworkEnable
+	__declspec(align(1)) char m_HeroStatueInscription[32];// 0x150e, size 32 (0x20)
+	// m_HeroStatueInscription metadata
+	 // MNetworkEnable
+	 // MNetworkEnable
+	__declspec(align(4)) int32_t m_iHeroStatueOwnerPlayerID;// 0x1530, size 4 (0x4)
+	// m_iHeroStatueOwnerPlayerID metadata
+	 // MNetworkEnable
+	 // MNetworkEnable
+	__declspec(align(1)) UnknownType <0x4, class Color> m_ParticleTintColor;// 0x1534, size 4 (0x4)
+	// m_ParticleTintColor metadata
+	 // MNetworkEnable
+	 // MNetworkEnable
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_sDestroySnd;// 0x1538, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_sDmgLvl1Snd;// 0x1540, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_sDmgLvl2Snd;// 0x1548, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszLinkedUnit;// 0x1550, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszAmbientEffectName;// 0x1558, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszDestructionEffectName;// 0x1560, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszDamageModelLevel1;// 0x1568, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszDamageModelLevel2;// 0x1570, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszDamageEffectLevel1;// 0x1578, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszDamageEffectLevel2;// 0x1580, size 8 (0x8)
+	__declspec(align(4)) float m_flDamageThresholdLevel1;// 0x1588, size 4 (0x4)
+	__declspec(align(4)) float m_flDamageThresholdLevel2;// 0x158c, size 4 (0x4)
+	__declspec(align(1)) bool m_bVulnerableOnCreepSpawn;// 0x1590, size 1 (0x1)
+	__declspec(align(1)) bool m_bHasOverriddenDestructionEffect;// 0x1591, size 1 (0x1)
+	__declspec(align(4)) int32_t m_iUpgradeIdentifier;// 0x1594, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iPlayerOwner;// 0x1598, size 4 (0x4)
+	__declspec(align(4)) DOTA_LANE m_Lane;// 0x159c, size 4 (0x4)
+	__declspec(align(4)) float m_fAmountAlongLane[2];// 0x15a0, size 8 (0x8)
+	__declspec(align(4)) int32_t m_iDamageLevel;// 0x15a8, size 4 (0x4)
+char CDOTA_BaseNPC_RotatableBuilding_015B0[0x4];
+}; // size: 5552 (0x15b0)
 
 class CDOTA_Ability_Special_Bonus_Unique_Warlock_3 : public CDOTABaseAbility
 {
@@ -33997,58 +34316,58 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-char CEnvCombinedLightProbeVolume_0438[0xD0];
-	__declspec(align(1)) UnknownType <0x4, class Color> m_Color;// 0x438, size 4 (0x4)
+char CEnvCombinedLightProbeVolume_01390[0x1028];
+	__declspec(align(1)) UnknownType <0x4, class Color> m_Color;// 0x1390, size 4 (0x4)
 	// m_Color metadata
 	 // MNetworkEnable
 	 // MNetworkChangeCallback
-	__declspec(align(4)) float m_flBrightness;// 0x43c, size 4 (0x4)
+	__declspec(align(4)) float m_flBrightness;// 0x1394, size 4 (0x4)
 	// m_flBrightness metadata
 	 // MNetworkEnable
 	 // MNetworkChangeCallback
-	__declspec(align(8)) UnknownAtomicType <0x8, CStrongHandle, class InfoForResourceTypeCTextureBase > m_hCubemapTexture;// 0x440, size 8 (0x8)
+	__declspec(align(8)) UnknownAtomicType <0x8, CStrongHandle, class InfoForResourceTypeCTextureBase > m_hCubemapTexture;// 0x1398, size 8 (0x8)
 	// m_hCubemapTexture metadata
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bCustomCubemapTexture;// 0x448, size 1 (0x1)
+	__declspec(align(1)) bool m_bCustomCubemapTexture;// 0x13a0, size 1 (0x1)
 	// m_bCustomCubemapTexture metadata
 	 // MNetworkEnable
-	__declspec(align(8)) UnknownAtomicType <0x8, CStrongHandle, class InfoForResourceTypeCTextureBase > m_hLightProbeTexture;// 0x450, size 8 (0x8)
+	__declspec(align(8)) UnknownAtomicType <0x8, CStrongHandle, class InfoForResourceTypeCTextureBase > m_hLightProbeTexture;// 0x13a8, size 8 (0x8)
 	// m_hLightProbeTexture metadata
 	 // MNetworkEnable
-	__declspec(align(8)) UnknownAtomicType <0x8, CStrongHandle, class InfoForResourceTypeCTextureBase > m_hLightProbeDirectLightIndicesTexture;// 0x458, size 8 (0x8)
+	__declspec(align(8)) UnknownAtomicType <0x8, CStrongHandle, class InfoForResourceTypeCTextureBase > m_hLightProbeDirectLightIndicesTexture;// 0x13b0, size 8 (0x8)
 	// m_hLightProbeDirectLightIndicesTexture metadata
 	 // MNetworkEnable
-	__declspec(align(8)) UnknownAtomicType <0x8, CStrongHandle, class InfoForResourceTypeCTextureBase > m_hLightProbeDirectLightScalarsTexture;// 0x460, size 8 (0x8)
+	__declspec(align(8)) UnknownAtomicType <0x8, CStrongHandle, class InfoForResourceTypeCTextureBase > m_hLightProbeDirectLightScalarsTexture;// 0x13b8, size 8 (0x8)
 	// m_hLightProbeDirectLightScalarsTexture metadata
 	 // MNetworkEnable
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vBoxMins;// 0x468, size 12 (0xc)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vBoxMins;// 0x13c0, size 12 (0xc)
 	// m_vBoxMins metadata
 	 // MNetworkEnable
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vBoxMaxs;// 0x474, size 12 (0xc)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vBoxMaxs;// 0x13cc, size 12 (0xc)
 	// m_vBoxMaxs metadata
 	 // MNetworkEnable
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_LightGroups;// 0x480, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_LightGroups;// 0x13d8, size 8 (0x8)
 	// m_LightGroups metadata
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bStatic;// 0x488, size 1 (0x1)
+	__declspec(align(1)) bool m_bStatic;// 0x13e0, size 1 (0x1)
 	// m_bStatic metadata
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_nHandshake;// 0x48c, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nHandshake;// 0x13e4, size 4 (0x4)
 	// m_nHandshake metadata
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_nIndoorOutdoorLevel;// 0x490, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nIndoorOutdoorLevel;// 0x13e8, size 4 (0x4)
 	// m_nIndoorOutdoorLevel metadata
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bStartDisabled;// 0x494, size 1 (0x1)
+	__declspec(align(1)) bool m_bStartDisabled;// 0x13ec, size 1 (0x1)
 	// m_bStartDisabled metadata
 	 // MNetworkEnable
-char CEnvCombinedLightProbeVolume_04A9[0x14];
-	__declspec(align(1)) bool m_bEnabled;// 0x4a9, size 1 (0x1)
+char CEnvCombinedLightProbeVolume_01401[0x14];
+	__declspec(align(1)) bool m_bEnabled;// 0x1401, size 1 (0x1)
 	// m_bEnabled metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-char CEnvCombinedLightProbeVolume_04B0[0x6];
-}; // size: 1200 (0x4b0)
+char CEnvCombinedLightProbeVolume_01408[0x6];
+}; // size: 5128 (0x1408)
 
 class CDOTA_Item_Necronomicon_Level3 : public CDOTA_Item_Necronomicon
 {
@@ -34550,16 +34869,16 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-char CDOTA_TempTree_05E8[0x20];
-	__declspec(align(4)) float m_fExpireTime;// 0x5e8, size 4 (0x4)
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecTreeCircleCenter;// 0x5ec, size 12 (0xc)
+char CDOTA_TempTree_0640[0x20];
+	__declspec(align(4)) float m_fExpireTime;// 0x640, size 4 (0x4)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecTreeCircleCenter;// 0x644, size 12 (0xc)
 	// m_vecTreeCircleCenter metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bForceVisible[14];// 0x5f8, size 14 (0xe)
-char CDOTA_TempTree_0608[0x2];
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, int32_t > m_Particles;// 0x608, size 24 (0x18)
-}; // size: 1568 (0x620)
+	__declspec(align(1)) bool m_bForceVisible[14];// 0x650, size 14 (0xe)
+char CDOTA_TempTree_0660[0x2];
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, int32_t > m_Particles;// 0x660, size 24 (0x18)
+}; // size: 1656 (0x678)
 
 class CDOTA_Item_Recipe_Sange : public CDOTA_Item
 {
@@ -34632,9 +34951,9 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(4)) int32_t m_nFXDeath;// 0x19f8, size 4 (0x4)
-char CDOTA_Unit_Hero_Winter_Wyvern_01A00[0x4];
-}; // size: 6656 (0x1a00)
+	__declspec(align(4)) int32_t m_nFXDeath;// 0x1a48, size 4 (0x4)
+char CDOTA_Unit_Hero_Winter_Wyvern_01A50[0x4];
+}; // size: 6736 (0x1a50)
 
 class CDOTA_Ability_Abaddon_BorrowedTime : public CDOTABaseAbility
 {
@@ -34757,19 +35076,19 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CDOTA_BaseNPC_Hero > m_hHeroHandle;// 0x1480, size 4 (0x4)
-	__declspec(align(4)) float m_flPetThreatLevel;// 0x1484, size 4 (0x4)
-	__declspec(align(1)) bool m_bReadyToPerformCoopTeleport;// 0x1488, size 1 (0x1)
-	__declspec(align(1)) bool m_bSupportsCoopTeleport;// 0x1489, size 1 (0x1)
-	__declspec(align(4)) PetCoopStates_t m_nCoopState;// 0x148c, size 4 (0x4)
-	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_strPickupItemModel;// 0x1490, size 8 (0x8)
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CDOTA_Pet_CarriedItem > m_hCarriedItem;// 0x1498, size 4 (0x4)
-	__declspec(align(4)) int32_t m_nPetLevel;// 0x149c, size 4 (0x4)
-	__declspec(align(1)) UnknownType <0x1, class PetLevelup_Rule_t> m_nLevelupRule;// 0x14a0, size 1 (0x1)
-char CDOTA_BaseNPC_Pet_014A8[0x4];
-	__declspec(align(4)) int32_t m_nXPCompendiumEventID;// 0x14a8, size 4 (0x4)
-char CDOTA_BaseNPC_Pet_014B0[0x4];
-}; // size: 5296 (0x14b0)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CDOTA_BaseNPC_Hero > m_hHeroHandle;// 0x14e0, size 4 (0x4)
+	__declspec(align(4)) float m_flPetThreatLevel;// 0x14e4, size 4 (0x4)
+	__declspec(align(1)) bool m_bReadyToPerformCoopTeleport;// 0x14e8, size 1 (0x1)
+	__declspec(align(1)) bool m_bSupportsCoopTeleport;// 0x14e9, size 1 (0x1)
+	__declspec(align(4)) PetCoopStates_t m_nCoopState;// 0x14ec, size 4 (0x4)
+	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_strPickupItemModel;// 0x14f0, size 8 (0x8)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CDOTA_Pet_CarriedItem > m_hCarriedItem;// 0x14f8, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nPetLevel;// 0x14fc, size 4 (0x4)
+	__declspec(align(1)) UnknownType <0x1, class PetLevelup_Rule_t> m_nLevelupRule;// 0x1500, size 1 (0x1)
+char CDOTA_BaseNPC_Pet_01508[0x4];
+	__declspec(align(4)) int32_t m_nXPCompendiumEventID;// 0x1508, size 4 (0x4)
+char CDOTA_BaseNPC_Pet_01510[0x4];
+}; // size: 5392 (0x1510)
 
 class CDOTA_Ability_Special_Bonus_Unique_Underlord_4 : public CDOTABaseAbility
 {
@@ -35465,7 +35784,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Ability_Throw_Coal : public CDOTABaseAbility
 {
@@ -36436,13 +36755,13 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hRuneSpawner;// 0x5c8, size 4 (0x4)
-	__declspec(align(4)) int32_t m_iRuneType;// 0x5cc, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hRuneSpawner;// 0x620, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iRuneType;// 0x624, size 4 (0x4)
 	// m_iRuneType metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkBitCount
-}; // size: 1488 (0x5d0)
+}; // size: 1576 (0x628)
 
 class COrnamentProp : public CDynamicProp
 {
@@ -36466,8 +36785,8 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_initialOwner;// 0x890, size 8 (0x8)
-}; // size: 2200 (0x898)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_initialOwner;// 0x900, size 8 (0x8)
+}; // size: 2312 (0x908)
 
 class CLogicGameEvent : public CLogicalEntity
 {
@@ -36713,30 +37032,6 @@ public:
 public:
 }; // size: 1016 (0x3f8)
 
-class CDOTA_Ability_ControllerTest_MeleeAttack : public CDOTABaseAbility
-{
-// CDOTA_Ability_ControllerTest_MeleeAttack additional information
-// server.dll, project server
-// Alignment: -1
-// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
-// Abstract Class
-
-public: 
-	class CEntityInstanceEntityClass : public CDOTABaseAbility::CEntityInstanceEntityClass
-	{
-	// CDOTA_Ability_ControllerTest_MeleeAttack::CEntityInstanceEntityClass additional information
-	// Alignment: -1
-	// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
-	// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
-	// SCHEMA_CLASS_TEMP_HACK_HAS_DESTRUCTOR_LIKE_METHODS
-	// Abstract Class
-
-	public:
-	}; // size: 296 (0x128)
-
-public:
-}; // size: 1016 (0x3f8)
-
 class CPhysicsSpring : public CBaseEntity
 {
 // CPhysicsSpring additional information
@@ -36800,44 +37095,44 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-char CEnvLightProbeVolume_03D0[0x68];
-	__declspec(align(8)) UnknownAtomicType <0x8, CStrongHandle, class InfoForResourceTypeCTextureBase > m_hLightProbeTexture;// 0x3d0, size 8 (0x8)
+char CEnvLightProbeVolume_01328[0xFC0];
+	__declspec(align(8)) UnknownAtomicType <0x8, CStrongHandle, class InfoForResourceTypeCTextureBase > m_hLightProbeTexture;// 0x1328, size 8 (0x8)
 	// m_hLightProbeTexture metadata
 	 // MNetworkEnable
-	__declspec(align(8)) UnknownAtomicType <0x8, CStrongHandle, class InfoForResourceTypeCTextureBase > m_hLightProbeDirectLightIndicesTexture;// 0x3d8, size 8 (0x8)
+	__declspec(align(8)) UnknownAtomicType <0x8, CStrongHandle, class InfoForResourceTypeCTextureBase > m_hLightProbeDirectLightIndicesTexture;// 0x1330, size 8 (0x8)
 	// m_hLightProbeDirectLightIndicesTexture metadata
 	 // MNetworkEnable
-	__declspec(align(8)) UnknownAtomicType <0x8, CStrongHandle, class InfoForResourceTypeCTextureBase > m_hLightProbeDirectLightScalarsTexture;// 0x3e0, size 8 (0x8)
+	__declspec(align(8)) UnknownAtomicType <0x8, CStrongHandle, class InfoForResourceTypeCTextureBase > m_hLightProbeDirectLightScalarsTexture;// 0x1338, size 8 (0x8)
 	// m_hLightProbeDirectLightScalarsTexture metadata
 	 // MNetworkEnable
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vBoxMins;// 0x3e8, size 12 (0xc)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vBoxMins;// 0x1340, size 12 (0xc)
 	// m_vBoxMins metadata
 	 // MNetworkEnable
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vBoxMaxs;// 0x3f4, size 12 (0xc)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vBoxMaxs;// 0x134c, size 12 (0xc)
 	// m_vBoxMaxs metadata
 	 // MNetworkEnable
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_LightGroups;// 0x400, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_LightGroups;// 0x1358, size 8 (0x8)
 	// m_LightGroups metadata
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bStatic;// 0x408, size 1 (0x1)
+	__declspec(align(1)) bool m_bStatic;// 0x1360, size 1 (0x1)
 	// m_bStatic metadata
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_nHandshake;// 0x40c, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nHandshake;// 0x1364, size 4 (0x4)
 	// m_nHandshake metadata
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_nIndoorOutdoorLevel;// 0x410, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nIndoorOutdoorLevel;// 0x1368, size 4 (0x4)
 	// m_nIndoorOutdoorLevel metadata
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bStartDisabled;// 0x414, size 1 (0x1)
+	__declspec(align(1)) bool m_bStartDisabled;// 0x136c, size 1 (0x1)
 	// m_bStartDisabled metadata
 	 // MNetworkEnable
-char CEnvLightProbeVolume_0421[0xC];
-	__declspec(align(1)) bool m_bEnabled;// 0x421, size 1 (0x1)
+char CEnvLightProbeVolume_01379[0xC];
+	__declspec(align(1)) bool m_bEnabled;// 0x1379, size 1 (0x1)
 	// m_bEnabled metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-char CEnvLightProbeVolume_0428[0x6];
-}; // size: 1064 (0x428)
+char CEnvLightProbeVolume_01380[0x6];
+}; // size: 4992 (0x1380)
 
 class CDOTA_Item_Nullifier : public CDOTA_Item
 {
@@ -37167,9 +37462,9 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(4)) int32_t m_nFXStormAmbient1;// 0x14b0, size 4 (0x4)
-	__declspec(align(4)) int32_t m_nFXStormAmbient2;// 0x14b4, size 4 (0x4)
-}; // size: 5304 (0x14b8)
+	__declspec(align(4)) int32_t m_nFXStormAmbient1;// 0x1510, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nFXStormAmbient2;// 0x1514, size 4 (0x4)
+}; // size: 5400 (0x1518)
 
 class CScriptTriggerPush : public CTriggerPush
 {
@@ -37293,7 +37588,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Item_Crimson_Guard : public CDOTA_Item
 {
@@ -37684,7 +37979,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Ability_Greevil_Miniboss_Sight : public CDOTABaseAbility
 {
@@ -37823,210 +38118,214 @@ char CLightComponent_038[0x30];
 	// __m_pChainEntity metadata
 	 // MNetworkDisable
 	 // MNetworkChangeAccessorFieldPathIndex
-char CLightComponent_06D[0x1D];
-	__declspec(align(1)) UnknownType <0x4, class Color> m_Color;// 0x6d, size 4 (0x4)
+char CLightComponent_065[0x15];
+	__declspec(align(1)) UnknownType <0x4, class Color> m_Color;// 0x65, size 4 (0x4)
 	// m_Color metadata
 	 // MNetworkEnable
 	 // MNetworkChangeCallback
-	__declspec(align(4)) float m_flBrightness;// 0x74, size 4 (0x4)
+	__declspec(align(4)) float m_flBrightness;// 0x6c, size 4 (0x4)
 	// m_flBrightness metadata
 	 // MNetworkEnable
 	 // MNetworkChangeCallback
-	__declspec(align(4)) float m_flBrightnessMult;// 0x78, size 4 (0x4)
+	__declspec(align(4)) float m_flBrightnessMult;// 0x70, size 4 (0x4)
 	// m_flBrightnessMult metadata
 	 // MNetworkEnable
 	 // MNetworkChangeCallback
-	__declspec(align(4)) float m_flRange;// 0x7c, size 4 (0x4)
+	__declspec(align(4)) float m_flRange;// 0x74, size 4 (0x4)
 	// m_flRange metadata
 	 // MNetworkEnable
 	 // MNetworkChangeCallback
-	__declspec(align(4)) float m_flFalloff;// 0x80, size 4 (0x4)
+	__declspec(align(4)) float m_flFalloff;// 0x78, size 4 (0x4)
 	// m_flFalloff metadata
 	 // MNetworkEnable
 	 // MNetworkChangeCallback
-	__declspec(align(4)) float m_flAttenuation0;// 0x84, size 4 (0x4)
+	__declspec(align(4)) float m_flAttenuation0;// 0x7c, size 4 (0x4)
 	// m_flAttenuation0 metadata
 	 // MNetworkEnable
 	 // MNetworkChangeCallback
-	__declspec(align(4)) float m_flAttenuation1;// 0x88, size 4 (0x4)
+	__declspec(align(4)) float m_flAttenuation1;// 0x80, size 4 (0x4)
 	// m_flAttenuation1 metadata
 	 // MNetworkEnable
 	 // MNetworkChangeCallback
-	__declspec(align(4)) float m_flAttenuation2;// 0x8c, size 4 (0x4)
+	__declspec(align(4)) float m_flAttenuation2;// 0x84, size 4 (0x4)
 	// m_flAttenuation2 metadata
 	 // MNetworkEnable
 	 // MNetworkChangeCallback
-	__declspec(align(4)) float m_flTheta;// 0x90, size 4 (0x4)
+	__declspec(align(4)) float m_flTheta;// 0x88, size 4 (0x4)
 	// m_flTheta metadata
 	 // MNetworkEnable
 	 // MNetworkChangeCallback
-	__declspec(align(4)) float m_flPhi;// 0x94, size 4 (0x4)
+	__declspec(align(4)) float m_flPhi;// 0x8c, size 4 (0x4)
 	// m_flPhi metadata
 	 // MNetworkEnable
 	 // MNetworkChangeCallback
-	__declspec(align(4)) UnknownType <0x4, class CUtlStringToken> m_lightCookie;// 0x98, size 4 (0x4)
+	__declspec(align(4)) UnknownType <0x4, class CUtlStringToken> m_lightCookie;// 0x90, size 4 (0x4)
 	// m_lightCookie metadata
 	 // MNetworkEnable
 	 // MNetworkChangeCallback
-	__declspec(align(4)) int32_t m_nCascades;// 0x9c, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nCascades;// 0x94, size 4 (0x4)
 	// m_nCascades metadata
 	 // MNetworkEnable
 	 // MNetworkChangeCallback
-	__declspec(align(1)) bool m_bCastShadows;// 0xa0, size 1 (0x1)
+	__declspec(align(1)) bool m_bCastShadows;// 0x98, size 1 (0x1)
 	// m_bCastShadows metadata
 	 // MNetworkEnable
 	 // MNetworkChangeCallback
-	__declspec(align(4)) int32_t m_nShadowWidth;// 0xa4, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nShadowWidth;// 0x9c, size 4 (0x4)
 	// m_nShadowWidth metadata
 	 // MNetworkEnable
 	 // MNetworkChangeCallback
-	__declspec(align(4)) int32_t m_nShadowHeight;// 0xa8, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nShadowHeight;// 0xa0, size 4 (0x4)
 	// m_nShadowHeight metadata
 	 // MNetworkEnable
 	 // MNetworkChangeCallback
-	__declspec(align(1)) bool m_bRenderDiffuse;// 0xac, size 1 (0x1)
+	__declspec(align(1)) bool m_bRenderDiffuse;// 0xa4, size 1 (0x1)
 	// m_bRenderDiffuse metadata
 	 // MNetworkEnable
 	 // MNetworkChangeCallback
-	__declspec(align(4)) int32_t m_nRenderSpecular;// 0xb0, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nRenderSpecular;// 0xa8, size 4 (0x4)
 	// m_nRenderSpecular metadata
 	 // MNetworkEnable
 	 // MNetworkChangeCallback
-	__declspec(align(4)) float m_flOrthoLightWidth;// 0xb4, size 4 (0x4)
+	__declspec(align(4)) float m_flOrthoLightWidth;// 0xac, size 4 (0x4)
 	// m_flOrthoLightWidth metadata
 	 // MNetworkEnable
 	 // MNetworkChangeCallback
-	__declspec(align(4)) float m_flOrthoLightHeight;// 0xb8, size 4 (0x4)
+	__declspec(align(4)) float m_flOrthoLightHeight;// 0xb0, size 4 (0x4)
 	// m_flOrthoLightHeight metadata
 	 // MNetworkEnable
 	 // MNetworkChangeCallback
-	__declspec(align(4)) int32_t m_nStyle;// 0xbc, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nStyle;// 0xb4, size 4 (0x4)
 	// m_nStyle metadata
 	 // MNetworkEnable
 	 // MNetworkChangeCallback
-	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_Pattern;// 0xc0, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_Pattern;// 0xb8, size 8 (0x8)
 	// m_Pattern metadata
 	 // MNetworkEnable
 	 // MNetworkChangeCallback
-	__declspec(align(4)) float m_flShadowCascadeDistance0;// 0xc8, size 4 (0x4)
+	__declspec(align(4)) float m_flShadowCascadeDistance0;// 0xc0, size 4 (0x4)
 	// m_flShadowCascadeDistance0 metadata
 	 // MNetworkEnable
 	 // MNetworkChangeCallback
-	__declspec(align(4)) float m_flShadowCascadeDistance1;// 0xcc, size 4 (0x4)
+	__declspec(align(4)) float m_flShadowCascadeDistance1;// 0xc4, size 4 (0x4)
 	// m_flShadowCascadeDistance1 metadata
 	 // MNetworkEnable
 	 // MNetworkChangeCallback
-	__declspec(align(4)) float m_flShadowCascadeDistance2;// 0xd0, size 4 (0x4)
+	__declspec(align(4)) float m_flShadowCascadeDistance2;// 0xc8, size 4 (0x4)
 	// m_flShadowCascadeDistance2 metadata
 	 // MNetworkEnable
 	 // MNetworkChangeCallback
-	__declspec(align(4)) float m_flShadowCascadeDistance3;// 0xd4, size 4 (0x4)
+	__declspec(align(4)) float m_flShadowCascadeDistance3;// 0xcc, size 4 (0x4)
 	// m_flShadowCascadeDistance3 metadata
 	 // MNetworkEnable
 	 // MNetworkChangeCallback
-	__declspec(align(4)) int32_t m_nShadowCascadeResolution0;// 0xd8, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nShadowCascadeResolution0;// 0xd0, size 4 (0x4)
 	// m_nShadowCascadeResolution0 metadata
 	 // MNetworkEnable
 	 // MNetworkChangeCallback
-	__declspec(align(4)) int32_t m_nShadowCascadeResolution1;// 0xdc, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nShadowCascadeResolution1;// 0xd4, size 4 (0x4)
 	// m_nShadowCascadeResolution1 metadata
 	 // MNetworkEnable
 	 // MNetworkChangeCallback
-	__declspec(align(4)) int32_t m_nShadowCascadeResolution2;// 0xe0, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nShadowCascadeResolution2;// 0xd8, size 4 (0x4)
 	// m_nShadowCascadeResolution2 metadata
 	 // MNetworkEnable
 	 // MNetworkChangeCallback
-	__declspec(align(4)) int32_t m_nShadowCascadeResolution3;// 0xe4, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nShadowCascadeResolution3;// 0xdc, size 4 (0x4)
 	// m_nShadowCascadeResolution3 metadata
 	 // MNetworkEnable
 	 // MNetworkChangeCallback
-	__declspec(align(4)) int32_t m_nBakeLightIndex;// 0xe8, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nBakeLightIndex;// 0xe0, size 4 (0x4)
 	// m_nBakeLightIndex metadata
 	 // MNetworkEnable
 	 // MNetworkChangeCallback
-	__declspec(align(4)) float m_flBakeLightIndexScale;// 0xec, size 4 (0x4)
+	__declspec(align(4)) float m_flBakeLightIndexScale;// 0xe4, size 4 (0x4)
 	// m_flBakeLightIndexScale metadata
 	 // MNetworkEnable
 	 // MNetworkChangeCallback
-	__declspec(align(1)) bool m_bUsesIndexedBakedLighting;// 0xf0, size 1 (0x1)
+	__declspec(align(1)) bool m_bUsesIndexedBakedLighting;// 0xe8, size 1 (0x1)
 	// m_bUsesIndexedBakedLighting metadata
 	 // MNetworkEnable
 	 // MNetworkChangeCallback
-	__declspec(align(4)) int32_t m_nDirectLight;// 0xf4, size 4 (0x4)
+	__declspec(align(1)) bool m_bRenderToCubemaps;// 0xe9, size 1 (0x1)
+	// m_bRenderToCubemaps metadata
+	 // MNetworkEnable
+	 // MNetworkChangeCallback
+	__declspec(align(4)) int32_t m_nDirectLight;// 0xec, size 4 (0x4)
 	// m_nDirectLight metadata
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_nIndirectLight;// 0xf8, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nIndirectLight;// 0xf0, size 4 (0x4)
 	// m_nIndirectLight metadata
 	 // MNetworkEnable
-	__declspec(align(4)) float m_flFadeMinDist;// 0xfc, size 4 (0x4)
+	__declspec(align(4)) float m_flFadeMinDist;// 0xf4, size 4 (0x4)
 	// m_flFadeMinDist metadata
 	 // MNetworkEnable
 	 // MNetworkChangeCallback
-	__declspec(align(4)) float m_flFadeMaxDist;// 0x100, size 4 (0x4)
+	__declspec(align(4)) float m_flFadeMaxDist;// 0xf8, size 4 (0x4)
 	// m_flFadeMaxDist metadata
 	 // MNetworkEnable
 	 // MNetworkChangeCallback
-	__declspec(align(4)) float m_flShadowFadeMinDist;// 0x104, size 4 (0x4)
+	__declspec(align(4)) float m_flShadowFadeMinDist;// 0xfc, size 4 (0x4)
 	// m_flShadowFadeMinDist metadata
 	 // MNetworkEnable
 	 // MNetworkChangeCallback
-	__declspec(align(4)) float m_flShadowFadeMaxDist;// 0x108, size 4 (0x4)
+	__declspec(align(4)) float m_flShadowFadeMaxDist;// 0x100, size 4 (0x4)
 	// m_flShadowFadeMaxDist metadata
 	 // MNetworkEnable
 	 // MNetworkChangeCallback
-	__declspec(align(1)) bool m_bEnabled;// 0x10c, size 1 (0x1)
+	__declspec(align(1)) bool m_bEnabled;// 0x104, size 1 (0x1)
 	// m_bEnabled metadata
 	 // MNetworkEnable
 	 // MNetworkChangeCallback
-	__declspec(align(1)) bool m_bFlicker;// 0x10d, size 1 (0x1)
+	__declspec(align(1)) bool m_bFlicker;// 0x105, size 1 (0x1)
 	// m_bFlicker metadata
 	 // MNetworkEnable
 	 // MNetworkChangeCallback
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vPrecomputedBoundsMins;// 0x110, size 12 (0xc)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vPrecomputedBoundsMins;// 0x108, size 12 (0xc)
 	// m_vPrecomputedBoundsMins metadata
 	 // MNetworkEnable
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vPrecomputedBoundsMaxs;// 0x11c, size 12 (0xc)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vPrecomputedBoundsMaxs;// 0x114, size 12 (0xc)
 	// m_vPrecomputedBoundsMaxs metadata
 	 // MNetworkEnable
-	__declspec(align(4)) float m_flPrecomputedMaxRange;// 0x128, size 4 (0x4)
+	__declspec(align(4)) float m_flPrecomputedMaxRange;// 0x120, size 4 (0x4)
 	// m_flPrecomputedMaxRange metadata
 	 // MNetworkEnable
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vPrecomputePosition;// 0x12c, size 12 (0xc)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vPrecomputePosition;// 0x124, size 12 (0xc)
 	// m_vPrecomputePosition metadata
 	 // MNetworkEnable
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vPrecomputeDirection;// 0x138, size 12 (0xc)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vPrecomputeDirection;// 0x130, size 12 (0xc)
 	// m_vPrecomputeDirection metadata
 	 // MNetworkEnable
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vPrecomputeUp;// 0x144, size 12 (0xc)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vPrecomputeUp;// 0x13c, size 12 (0xc)
 	// m_vPrecomputeUp metadata
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_nFogLightingMode;// 0x150, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nFogLightingMode;// 0x148, size 4 (0x4)
 	// m_nFogLightingMode metadata
 	 // MNetworkEnable
-	__declspec(align(4)) float m_flFogContributionStength;// 0x154, size 4 (0x4)
+	__declspec(align(4)) float m_flFogContributionStength;// 0x14c, size 4 (0x4)
 	// m_flFogContributionStength metadata
 	 // MNetworkEnable
-	__declspec(align(1)) UnknownType <0x4, class Color> m_SkyColor;// 0x158, size 4 (0x4)
+	__declspec(align(1)) UnknownType <0x4, class Color> m_SkyColor;// 0x150, size 4 (0x4)
 	// m_SkyColor metadata
 	 // MNetworkEnable
-	__declspec(align(4)) float m_flSkyIntensity;// 0x15c, size 4 (0x4)
+	__declspec(align(4)) float m_flSkyIntensity;// 0x154, size 4 (0x4)
 	// m_flSkyIntensity metadata
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bLowerHemisphereIsBlack;// 0x160, size 1 (0x1)
+	__declspec(align(1)) bool m_bLowerHemisphereIsBlack;// 0x158, size 1 (0x1)
 	// m_bLowerHemisphereIsBlack metadata
 	 // MNetworkEnable
-	__declspec(align(1)) UnknownType <0x4, class Color> m_SkyAmbientBounce;// 0x161, size 4 (0x4)
+	__declspec(align(1)) UnknownType <0x4, class Color> m_SkyAmbientBounce;// 0x159, size 4 (0x4)
 	// m_SkyAmbientBounce metadata
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bUnlitShadows;// 0x165, size 1 (0x1)
+	__declspec(align(1)) bool m_bUnlitShadows;// 0x15d, size 1 (0x1)
 	// m_bUnlitShadows metadata
 	 // MNetworkEnable
 	 // MNetworkChangeCallback
-char CLightComponent_0168[0x2];
+char CLightComponent_0160[0x2];
 public:
 	static EntComponentInfo_t &Get_s_EntComponentInfo() {return *(EntComponentInfo_t *)schema::SchemaSystem::Get()->FindTypeScopeForModule("server.dll")->FindDeclaredClass("CLightComponent")->m_staticMembers.data[0].m_pInstance; }
 	static int32_t &Get_entity_component_error_class_decl_says_contained_but_impl_is_referenced() {return *(int32_t *)schema::SchemaSystem::Get()->FindTypeScopeForModule("server.dll")->FindDeclaredClass("CLightComponent")->m_staticMembers.data[1].m_pInstance; }
-}; // size: 360 (0x168)
+}; // size: 352 (0x160)
 
 class CDOTA_Ability_Alchemist_UnstableConcoctionThrow : public CDOTABaseAbility
 {
@@ -38053,6 +38352,30 @@ public:
 	__declspec(align(4)) float m_fCookTime;// 0x3f8, size 4 (0x4)
 	__declspec(align(4)) UnknownType <0xc, class Vector> m_vProjectileLoc;// 0x3fc, size 12 (0xc)
 }; // size: 1032 (0x408)
+
+class CDOTA_Ability_Special_Bonus_Unique_Pudge_4 : public CDOTABaseAbility
+{
+// CDOTA_Ability_Special_Bonus_Unique_Pudge_4 additional information
+// server.dll, project server
+// Alignment: -1
+// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+// Abstract Class
+
+public: 
+	class CEntityInstanceEntityClass : public CDOTABaseAbility::CEntityInstanceEntityClass
+	{
+	// CDOTA_Ability_Special_Bonus_Unique_Pudge_4::CEntityInstanceEntityClass additional information
+	// Alignment: -1
+	// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+	// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
+	// SCHEMA_CLASS_TEMP_HACK_HAS_DESTRUCTOR_LIKE_METHODS
+	// Abstract Class
+
+	public:
+	}; // size: 296 (0x128)
+
+public:
+}; // size: 1016 (0x3f8)
 
 class CDOTA_Ability_Special_Bonus_Unique_Brewmaster_2 : public CDOTABaseAbility
 {
@@ -38421,8 +38744,8 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(8)) CAI_Expresser *m_pExpresser;// 0x26a0, size 8 (0x8)
-}; // size: 9896 (0x26a8)
+	__declspec(align(8)) CAI_Expresser *m_pExpresser;// 0x26f8, size 8 (0x8)
+}; // size: 9984 (0x2700)
 
 class CDOTA_Ability_BountyHunter_ShurikenToss : public CDOTABaseAbility
 {
@@ -38870,17 +39193,17 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CPropZipline > m_hPrevZipline;// 0x5c8, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CPropZipline > m_hPrevZipline;// 0x620, size 4 (0x4)
 	// m_hPrevZipline metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CPropZipline > m_hNextZipline;// 0x5cc, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CPropZipline > m_hNextZipline;// 0x624, size 4 (0x4)
 	// m_hNextZipline metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CFuncLadder > m_hZiplineLadder;// 0x5d0, size 4 (0x4)
-	__declspec(align(4)) float m_flMaxSpeed;// 0x5d4, size 4 (0x4)
-}; // size: 1496 (0x5d8)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CFuncLadder > m_hZiplineLadder;// 0x628, size 4 (0x4)
+	__declspec(align(4)) float m_flMaxSpeed;// 0x62c, size 4 (0x4)
+}; // size: 1584 (0x630)
 
 class CPhysMotor : public CLogicalEntity
 {
@@ -39234,7 +39557,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Unit_Hero_EmberSpirit : public CDOTA_BaseNPC_Hero
 {
@@ -39258,7 +39581,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Ability_Special_Bonus_Unique_Shadow_Demon_2 : public CDOTABaseAbility
 {
@@ -39457,7 +39780,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Ability_TrollWarlord_BerserkersRage : public CDOTABaseAbility
 {
@@ -39534,7 +39857,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 5248 (0x1480)
+}; // size: 5344 (0x14e0)
 
 class CDOTA_Ability_Special_Bonus_Unique_Earthshaker_3 : public CDOTABaseAbility
 {
@@ -40454,6 +40777,40 @@ char CSprite_0548[0xC];
 char CSprite_0590[0x4];
 }; // size: 1424 (0x590)
 
+class CSoundOpvarSetAABBEntity : public CSoundOpvarSetPointEntity
+{
+// CSoundOpvarSetAABBEntity additional information
+// server.dll, project server
+// Alignment: -1
+// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+// Abstract Class
+
+public: 
+	class CEntityInstanceEntityClass : public CSoundOpvarSetPointEntity::CEntityInstanceEntityClass
+	{
+	// CSoundOpvarSetAABBEntity::CEntityInstanceEntityClass additional information
+	// Alignment: -1
+	// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+	// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
+	// SCHEMA_CLASS_TEMP_HACK_HAS_DESTRUCTOR_LIKE_METHODS
+	// Abstract Class
+
+	public:
+	}; // size: 296 (0x128)
+
+public:
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vDistanceInnerMins;// 0x420, size 12 (0xc)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vDistanceInnerMaxs;// 0x42c, size 12 (0xc)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vDistanceOuterMins;// 0x438, size 12 (0xc)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vDistanceOuterMaxs;// 0x444, size 12 (0xc)
+	__declspec(align(4)) int32_t m_nAABBDirection;// 0x450, size 4 (0x4)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vInnerMins;// 0x454, size 12 (0xc)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vInnerMaxs;// 0x460, size 12 (0xc)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vOuterMins;// 0x46c, size 12 (0xc)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vOuterMaxs;// 0x478, size 12 (0xc)
+char CSoundOpvarSetAABBEntity_0488[0x4];
+}; // size: 1160 (0x488)
+
 class CFunc_DustCloud : public CFunc_Dust
 {
 // CFunc_DustCloud additional information
@@ -40548,7 +40905,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Ability_AncientApparition_IceVortex : public CDOTABaseAbility
 {
@@ -40599,11 +40956,11 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(4)) uint32_t m_unTeamID;// 0x890, size 4 (0x4)
+	__declspec(align(4)) uint32_t m_unTeamID;// 0x900, size 4 (0x4)
 	// m_unTeamID metadata
 	 // MNetworkEnable
-char CDOTAPropCustomTexture_0898[0x4];
-}; // size: 2200 (0x898)
+char CDOTAPropCustomTexture_0908[0x4];
+}; // size: 2312 (0x908)
 
 class CDOTA_Ability_Special_Bonus_Unique_Underlord_3 : public CDOTABaseAbility
 {
@@ -40713,6 +41070,30 @@ public:
 	class CEntityInstanceEntityClass : public CDOTABaseAbility::CEntityInstanceEntityClass
 	{
 	// CDOTA_Ability_Special_Bonus_Unique_Dragon_Knight_2::CEntityInstanceEntityClass additional information
+	// Alignment: -1
+	// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+	// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
+	// SCHEMA_CLASS_TEMP_HACK_HAS_DESTRUCTOR_LIKE_METHODS
+	// Abstract Class
+
+	public:
+	}; // size: 296 (0x128)
+
+public:
+}; // size: 1016 (0x3f8)
+
+class CDOTA_Ability_Special_Bonus_Unique_Huskar_4 : public CDOTABaseAbility
+{
+// CDOTA_Ability_Special_Bonus_Unique_Huskar_4 additional information
+// server.dll, project server
+// Alignment: -1
+// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+// Abstract Class
+
+public: 
+	class CEntityInstanceEntityClass : public CDOTABaseAbility::CEntityInstanceEntityClass
+	{
+	// CDOTA_Ability_Special_Bonus_Unique_Huskar_4::CEntityInstanceEntityClass additional information
 	// Alignment: -1
 	// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
 	// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
@@ -41089,7 +41470,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Unit_Hero_Morphling : public CDOTA_BaseNPC_Hero
 {
@@ -41114,7 +41495,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Ability_Special_Bonus_Unique_Weaver_4 : public CDOTABaseAbility
 {
@@ -41187,12 +41568,12 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(4)) float m_flLastSpawnTime;// 0x5c8, size 4 (0x4)
+	__declspec(align(4)) float m_flLastSpawnTime;// 0x620, size 4 (0x4)
 	// m_flLastSpawnTime metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-char CDOTA_Item_RuneSpawner_Bounty_05D0[0x4];
-}; // size: 1488 (0x5d0)
+char CDOTA_Item_RuneSpawner_Bounty_0628[0x4];
+}; // size: 1576 (0x628)
 
 class CMarkupVolumeTagged_Group : public CMarkupVolumeTagged
 {
@@ -41240,7 +41621,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 904 (0x388)
+}; // size: 912 (0x390)
 
 class CDOTA_Ability_Undying_Tombstone_Zombie_DeathStrike : public CDOTABaseAbility
 {
@@ -41289,7 +41670,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Ability_Riki_TricksOfTheTrade : public CDOTABaseAbility
 {
@@ -41641,6 +42022,30 @@ public:
 public:
 }; // size: 1136 (0x470)
 
+class CDOTA_Ability_Special_Bonus_Unique_Grimstroke_1 : public CDOTABaseAbility
+{
+// CDOTA_Ability_Special_Bonus_Unique_Grimstroke_1 additional information
+// server.dll, project server
+// Alignment: -1
+// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+// Abstract Class
+
+public: 
+	class CEntityInstanceEntityClass : public CDOTABaseAbility::CEntityInstanceEntityClass
+	{
+	// CDOTA_Ability_Special_Bonus_Unique_Grimstroke_1::CEntityInstanceEntityClass additional information
+	// Alignment: -1
+	// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+	// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
+	// SCHEMA_CLASS_TEMP_HACK_HAS_DESTRUCTOR_LIKE_METHODS
+	// Abstract Class
+
+	public:
+	}; // size: 296 (0x128)
+
+public:
+}; // size: 1016 (0x3f8)
+
 class CDOTA_Unit_Hero_Batrider : public CDOTA_BaseNPC_Hero
 {
 // CDOTA_Unit_Hero_Batrider additional information
@@ -41663,7 +42068,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Ability_WitchDoctor_Maledict : public CDOTABaseAbility
 {
@@ -41885,7 +42290,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Item_Tome_Of_Knowledge : public CDOTA_Item
 {
@@ -42058,7 +42463,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 5456 (0x1550)
+}; // size: 5552 (0x15b0)
 
 class CDOTA_Ability_Special_Bonus_Unique_Dark_Seer_4 : public CDOTABaseAbility
 {
@@ -42252,24 +42657,24 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CFishPool > m_pool;// 0x5c8, size 4 (0x4)
-	__declspec(align(4)) uint32_t m_id;// 0x5cc, size 4 (0x4)
-	__declspec(align(4)) float m_x;// 0x5d0, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CFishPool > m_pool;// 0x620, size 4 (0x4)
+	__declspec(align(4)) uint32_t m_id;// 0x624, size 4 (0x4)
+	__declspec(align(4)) float m_x;// 0x628, size 4 (0x4)
 	// m_x metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkSerializer
-	__declspec(align(4)) float m_y;// 0x5d4, size 4 (0x4)
+	__declspec(align(4)) float m_y;// 0x62c, size 4 (0x4)
 	// m_y metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkSerializer
-	__declspec(align(4)) float m_z;// 0x5d8, size 4 (0x4)
+	__declspec(align(4)) float m_z;// 0x630, size 4 (0x4)
 	// m_z metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkSerializer
-	__declspec(align(4)) float m_angle;// 0x5dc, size 4 (0x4)
+	__declspec(align(4)) float m_angle;// 0x634, size 4 (0x4)
 	// m_angle metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
@@ -42278,32 +42683,32 @@ public:
 	 // MNetworkMinValue
 	 // MNetworkMaxValue
 	 // MNetworkEncodeFlags
-	__declspec(align(4)) float m_angleChange;// 0x5e0, size 4 (0x4)
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_forward;// 0x5e4, size 12 (0xc)
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_perp;// 0x5f0, size 12 (0xc)
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_poolOrigin;// 0x5fc, size 12 (0xc)
+	__declspec(align(4)) float m_angleChange;// 0x638, size 4 (0x4)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_forward;// 0x63c, size 12 (0xc)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_perp;// 0x648, size 12 (0xc)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_poolOrigin;// 0x654, size 12 (0xc)
 	// m_poolOrigin metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkEncoder
-	__declspec(align(4)) float m_waterLevel;// 0x608, size 4 (0x4)
+	__declspec(align(4)) float m_waterLevel;// 0x660, size 4 (0x4)
 	// m_waterLevel metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) float m_speed;// 0x60c, size 4 (0x4)
-	__declspec(align(4)) float m_desiredSpeed;// 0x610, size 4 (0x4)
-	__declspec(align(4)) float m_calmSpeed;// 0x614, size 4 (0x4)
-	__declspec(align(4)) float m_panicSpeed;// 0x618, size 4 (0x4)
-	__declspec(align(4)) float m_avoidRange;// 0x61c, size 4 (0x4)
-	__declspec(align(8)) CountdownTimer m_turnTimer;// 0x620, size 24 (0x18)
-	__declspec(align(1)) bool m_turnClockwise;// 0x638, size 1 (0x1)
-	__declspec(align(8)) CountdownTimer m_goTimer;// 0x640, size 24 (0x18)
-	__declspec(align(8)) CountdownTimer m_moveTimer;// 0x658, size 24 (0x18)
-	__declspec(align(8)) CountdownTimer m_panicTimer;// 0x670, size 24 (0x18)
-	__declspec(align(8)) CountdownTimer m_disperseTimer;// 0x688, size 24 (0x18)
-	__declspec(align(8)) CountdownTimer m_proximityTimer;// 0x6a0, size 24 (0x18)
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, CFish *> m_visible;// 0x6b8, size 24 (0x18)
-}; // size: 1744 (0x6d0)
+	__declspec(align(4)) float m_speed;// 0x664, size 4 (0x4)
+	__declspec(align(4)) float m_desiredSpeed;// 0x668, size 4 (0x4)
+	__declspec(align(4)) float m_calmSpeed;// 0x66c, size 4 (0x4)
+	__declspec(align(4)) float m_panicSpeed;// 0x670, size 4 (0x4)
+	__declspec(align(4)) float m_avoidRange;// 0x674, size 4 (0x4)
+	__declspec(align(8)) CountdownTimer m_turnTimer;// 0x678, size 24 (0x18)
+	__declspec(align(1)) bool m_turnClockwise;// 0x690, size 1 (0x1)
+	__declspec(align(8)) CountdownTimer m_goTimer;// 0x698, size 24 (0x18)
+	__declspec(align(8)) CountdownTimer m_moveTimer;// 0x6b0, size 24 (0x18)
+	__declspec(align(8)) CountdownTimer m_panicTimer;// 0x6c8, size 24 (0x18)
+	__declspec(align(8)) CountdownTimer m_disperseTimer;// 0x6e0, size 24 (0x18)
+	__declspec(align(8)) CountdownTimer m_proximityTimer;// 0x6f8, size 24 (0x18)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, CFish *> m_visible;// 0x710, size 24 (0x18)
+}; // size: 1832 (0x728)
 
 class CEnvFireSource : public CBaseEntity
 {
@@ -42355,7 +42760,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 1632 (0x660)
+}; // size: 1720 (0x6b8)
 
 class CDOTA_Ability_BountyHunter_Track : public CDOTABaseAbility
 {
@@ -42403,7 +42808,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Ability_Special_Bonus_Cooldown_Reduction_8 : public CDOTABaseAbility
 {
@@ -42476,12 +42881,12 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(4)) float m_flLastSpawnTime;// 0x5c8, size 4 (0x4)
+	__declspec(align(4)) float m_flLastSpawnTime;// 0x620, size 4 (0x4)
 	// m_flLastSpawnTime metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-char CDOTA_Item_RuneSpawner_05D0[0x4];
-}; // size: 1488 (0x5d0)
+char CDOTA_Item_RuneSpawner_0628[0x4];
+}; // size: 1576 (0x628)
 
 class CInfoData : public CServerOnlyEntity
 {
@@ -42535,7 +42940,7 @@ char CPhysSlideConstraint_03C8[0x8];
 	__declspec(align(4)) UnknownType <0xc, class Vector> m_axisEnd;// 0x3c8, size 12 (0xc)
 	__declspec(align(4)) float m_slideFriction;// 0x3d4, size 4 (0x4)
 	__declspec(align(4)) float m_systemLoadScale;// 0x3d8, size 4 (0x4)
-char CPhysSlideConstraint_03E0[0x4];
+	__declspec(align(4)) float m_initialOffset;// 0x3dc, size 4 (0x4)
 }; // size: 992 (0x3e0)
 
 class CDebugHistory : public CBaseEntity
@@ -42564,7 +42969,9 @@ public:
 
 public:
 char CDebugHistory_0138B90[0x138828];
-}; // size: 1280912 (0x138b90)
+	__declspec(align(4)) int32_t m_nNpcEvents;// 0x138b90, size 4 (0x4)
+char CDebugHistory_0139B38[0xFA4];
+}; // size: 1284920 (0x139b38)
 
 class CDOTA_Item_Recipe_OrchidMalevolence : public CDOTA_Item
 {
@@ -42661,9 +43068,9 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(1)) bool m_bIsBlind;// 0x1480, size 1 (0x1)
-char CDOTA_NPC_Treant_EyesInTheForest_01488[0x7];
-}; // size: 5256 (0x1488)
+	__declspec(align(1)) bool m_bIsBlind;// 0x14e0, size 1 (0x1)
+char CDOTA_NPC_Treant_EyesInTheForest_014E8[0x7];
+}; // size: 5352 (0x14e8)
 
 class CDOTA_Ability_ForgedSpirit_MeltingStrike : public CDOTABaseAbility
 {
@@ -42712,10 +43119,10 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(1)) bool m_bAttachmentBroken;// 0x1480, size 1 (0x1)
-	__declspec(align(4)) int32_t m_nfxIndex_tailgrow;// 0x1484, size 4 (0x4)
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class NianDamageTaken_t > m_vecRecentDamage;// 0x1488, size 24 (0x18)
-}; // size: 5280 (0x14a0)
+	__declspec(align(1)) bool m_bAttachmentBroken;// 0x14e0, size 1 (0x1)
+	__declspec(align(4)) int32_t m_nfxIndex_tailgrow;// 0x14e4, size 4 (0x4)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class NianDamageTaken_t > m_vecRecentDamage;// 0x14e8, size 24 (0x18)
+}; // size: 5376 (0x1500)
 
 class CDOTA_Ability_Special_Bonus_Unique_Pangolier_2 : public CDOTABaseAbility
 {
@@ -42885,18 +43292,18 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-char CBaseMultiplayerPlayer_01238[0x8];
-	__declspec(align(4)) int32_t m_iIgnoreGlobalChat;// 0x1238, size 4 (0x4)
-	__declspec(align(4)) float m_flAreaCaptureScoreAccumulator;// 0x123c, size 4 (0x4)
-	__declspec(align(4)) float m_flCapPointScoreRate;// 0x1240, size 4 (0x4)
-	__declspec(align(4)) int32_t m_iCurrentConcept;// 0x1244, size 4 (0x4)
-	__declspec(align(8)) CMultiplayer_Expresser *m_pExpresser;// 0x1248, size 8 (0x8)
-	__declspec(align(4)) float m_flConnectionTime;// 0x1250, size 4 (0x4)
-	__declspec(align(4)) float m_flLastForcedChangeTeamTime;// 0x1254, size 4 (0x4)
-	__declspec(align(4)) int32_t m_iBalanceScore;// 0x1258, size 4 (0x4)
-char CBaseMultiplayerPlayer_01260[0x4];
-	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pAchievementKV;// 0x1260, size 8 (0x8)
-}; // size: 4712 (0x1268)
+char CBaseMultiplayerPlayer_01278[0x8];
+	__declspec(align(4)) int32_t m_iIgnoreGlobalChat;// 0x1278, size 4 (0x4)
+	__declspec(align(4)) float m_flAreaCaptureScoreAccumulator;// 0x127c, size 4 (0x4)
+	__declspec(align(4)) float m_flCapPointScoreRate;// 0x1280, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iCurrentConcept;// 0x1284, size 4 (0x4)
+	__declspec(align(8)) CMultiplayer_Expresser *m_pExpresser;// 0x1288, size 8 (0x8)
+	__declspec(align(4)) float m_flConnectionTime;// 0x1290, size 4 (0x4)
+	__declspec(align(4)) float m_flLastForcedChangeTeamTime;// 0x1294, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iBalanceScore;// 0x1298, size 4 (0x4)
+char CBaseMultiplayerPlayer_012A0[0x4];
+	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pAchievementKV;// 0x12a0, size 8 (0x8)
+}; // size: 4776 (0x12a8)
 
 class CFlexExpresser : public CFlexExpresserShim
 {
@@ -42922,10 +43329,10 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-char CFlexExpresser_026B0[0x8];
-	__declspec(align(4)) float m_flThenAnyMaxDist;// 0x26b0, size 4 (0x4)
-char CFlexExpresser_026B8[0x4];
-}; // size: 9912 (0x26b8)
+char CFlexExpresser_02708[0x8];
+	__declspec(align(4)) float m_flThenAnyMaxDist;// 0x2708, size 4 (0x4)
+char CFlexExpresser_02710[0x4];
+}; // size: 10000 (0x2710)
 
 class CLightSpotEntity : public CLightEntity
 {
@@ -43316,7 +43723,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Ability_Batrider_Flamebreak : public CDOTABaseAbility
 {
@@ -43368,9 +43775,9 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(1)) bool m_bHadScepter;// 0x19f8, size 1 (0x1)
-char CDOTA_Unit_Hero_Life_Stealer_01A00[0x7];
-}; // size: 6656 (0x1a00)
+	__declspec(align(1)) bool m_bHadScepter;// 0x1a48, size 1 (0x1)
+char CDOTA_Unit_Hero_Life_Stealer_01A50[0x7];
+}; // size: 6736 (0x1a50)
 
 class CDOTA_Ability_Special_Bonus_Unique_Razor : public CDOTABaseAbility
 {
@@ -43538,7 +43945,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Ability_Viper_PoisonAttack : public CDOTABaseAbility
 {
@@ -43763,10 +44170,10 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(1)) bool m_bSendToAllPlayers;// 0x1480, size 1 (0x1)
-	__declspec(align(1)) bool m_bSendToClients;// 0x1481, size 1 (0x1)
-char CDOTA_BaseNPC_Thinker_01488[0x6];
-}; // size: 5256 (0x1488)
+	__declspec(align(1)) bool m_bSendToAllPlayers;// 0x14e0, size 1 (0x1)
+	__declspec(align(1)) bool m_bSendToClients;// 0x14e1, size 1 (0x1)
+char CDOTA_BaseNPC_Thinker_014E8[0x6];
+}; // size: 5352 (0x14e8)
 
 class CEntityDissolve : public CBaseModelEntity
 {
@@ -44039,7 +44446,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Ability_Life_Stealer_Empty2 : public CDOTABaseAbility
 {
@@ -44377,21 +44784,19 @@ public:
 public:
 }; // size: 1016 (0x3f8)
 
-class CDOTABaseCustomHeroPickRules : public CBaseEntity
+class CDOTATurboHeroPickRules : public CDOTABaseCustomHeroPickRules
 {
-// CDOTABaseCustomHeroPickRules additional information
+// CDOTATurboHeroPickRules additional information
 // server.dll, project server
 // Alignment: -1
 // SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
-// SCHEMA_CLASS_IS_ABSTRACT
 // SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
-// SCHEMA_CLASS_TEMP_HACK_HAS_DESTRUCTOR_LIKE_METHODS
 // Abstract Class
 
 public: 
-	class CEntityInstanceEntityClass : public CBaseEntity::CEntityInstanceEntityClass
+	class CEntityInstanceEntityClass : public CDOTABaseCustomHeroPickRules::CEntityInstanceEntityClass
 	{
-	// CDOTABaseCustomHeroPickRules::CEntityInstanceEntityClass additional information
+	// CDOTATurboHeroPickRules::CEntityInstanceEntityClass additional information
 	// Alignment: -1
 	// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
 	// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
@@ -44402,7 +44807,12 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 872 (0x368)
+	__declspec(align(4)) DOTACustomHeroPickRulesPhase_t m_Phase;// 0x368, size 4 (0x4)
+	// m_Phase metadata
+	 // MNetworkEnable
+	 // MNetworkEnable
+char CDOTATurboHeroPickRules_0370[0x4];
+}; // size: 880 (0x370)
 
 class CWorldItem : public CBaseAnimating
 {
@@ -44426,9 +44836,9 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(4)) int32_t m_iType;// 0x5c8, size 4 (0x4)
-char CWorldItem_05D0[0x4];
-}; // size: 1488 (0x5d0)
+	__declspec(align(4)) int32_t m_iType;// 0x620, size 4 (0x4)
+char CWorldItem_0628[0x4];
+}; // size: 1576 (0x628)
 
 class CEnvBeam : public CBeam
 {
@@ -44495,7 +44905,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 2528 (0x9e0)
+}; // size: 2640 (0xa50)
 
 class CDOTA_Item_Circlet : public CDOTA_Item
 {
@@ -44593,13 +45003,13 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(4)) DOTA_SHOP_TYPE m_ShopType;// 0x1550, size 4 (0x4)
+	__declspec(align(4)) DOTA_SHOP_TYPE m_ShopType;// 0x15b0, size 4 (0x4)
 	// m_ShopType metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkBitCount
-char CDOTA_BaseNPC_Shop_01558[0x4];
-}; // size: 5464 (0x1558)
+char CDOTA_BaseNPC_Shop_015B8[0x4];
+}; // size: 5560 (0x15b8)
 
 class CDOTA_Ability_Special_Bonus_Unique_Antimage_5 : public CDOTABaseAbility
 {
@@ -44769,20 +45179,20 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(8)) CEntityIOOutput m_OnMagnetAttach;// 0x5c8, size 40 (0x28)
-	__declspec(align(8)) CEntityIOOutput m_OnMagnetDetach;// 0x5f0, size 40 (0x28)
-	__declspec(align(4)) float m_massScale;// 0x618, size 4 (0x4)
-	__declspec(align(4)) float m_forceLimit;// 0x61c, size 4 (0x4)
-	__declspec(align(4)) float m_torqueLimit;// 0x620, size 4 (0x4)
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class magnetted_objects_t > m_MagnettedEntities;// 0x628, size 24 (0x18)
-	__declspec(align(1)) bool m_bActive;// 0x640, size 1 (0x1)
-	__declspec(align(1)) bool m_bHasHitSomething;// 0x641, size 1 (0x1)
-	__declspec(align(4)) float m_flTotalMass;// 0x644, size 4 (0x4)
-	__declspec(align(4)) float m_flRadius;// 0x648, size 4 (0x4)
-	__declspec(align(4)) float m_flNextSuckTime;// 0x64c, size 4 (0x4)
-	__declspec(align(4)) int32_t m_iMaxObjectsAttached;// 0x650, size 4 (0x4)
-char CPhysMagnet_0658[0x4];
-}; // size: 1624 (0x658)
+	__declspec(align(8)) CEntityIOOutput m_OnMagnetAttach;// 0x620, size 40 (0x28)
+	__declspec(align(8)) CEntityIOOutput m_OnMagnetDetach;// 0x648, size 40 (0x28)
+	__declspec(align(4)) float m_massScale;// 0x670, size 4 (0x4)
+	__declspec(align(4)) float m_forceLimit;// 0x674, size 4 (0x4)
+	__declspec(align(4)) float m_torqueLimit;// 0x678, size 4 (0x4)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class magnetted_objects_t > m_MagnettedEntities;// 0x680, size 24 (0x18)
+	__declspec(align(1)) bool m_bActive;// 0x698, size 1 (0x1)
+	__declspec(align(1)) bool m_bHasHitSomething;// 0x699, size 1 (0x1)
+	__declspec(align(4)) float m_flTotalMass;// 0x69c, size 4 (0x4)
+	__declspec(align(4)) float m_flRadius;// 0x6a0, size 4 (0x4)
+	__declspec(align(4)) float m_flNextSuckTime;// 0x6a4, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iMaxObjectsAttached;// 0x6a8, size 4 (0x4)
+char CPhysMagnet_06B0[0x4];
+}; // size: 1712 (0x6b0)
 
 class CRagdollMagnet : public CPointEntity
 {
@@ -45313,6 +45723,30 @@ public:
 public:
 }; // size: 1016 (0x3f8)
 
+class CDOTA_Ability_Special_Bonus_Unique_Gyrocopter_6 : public CDOTABaseAbility
+{
+// CDOTA_Ability_Special_Bonus_Unique_Gyrocopter_6 additional information
+// server.dll, project server
+// Alignment: -1
+// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+// Abstract Class
+
+public: 
+	class CEntityInstanceEntityClass : public CDOTABaseAbility::CEntityInstanceEntityClass
+	{
+	// CDOTA_Ability_Special_Bonus_Unique_Gyrocopter_6::CEntityInstanceEntityClass additional information
+	// Alignment: -1
+	// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+	// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
+	// SCHEMA_CLASS_TEMP_HACK_HAS_DESTRUCTOR_LIKE_METHODS
+	// Abstract Class
+
+	public:
+	}; // size: 296 (0x128)
+
+public:
+}; // size: 1016 (0x3f8)
+
 class CDOTA_Item_Physical : public CBaseAnimating
 {
 // CDOTA_Item_Physical additional information
@@ -45335,15 +45769,15 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-char CDOTA_Item_Physical_05D0[0x8];
-	__declspec(align(4)) int32_t m_nFlags;// 0x5d0, size 4 (0x4)
-	__declspec(align(4)) float m_fCreationTime;// 0x5d4, size 4 (0x4)
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CDOTA_Item > m_hItem;// 0x5d8, size 4 (0x4)
+char CDOTA_Item_Physical_0628[0x8];
+	__declspec(align(4)) int32_t m_nFlags;// 0x628, size 4 (0x4)
+	__declspec(align(4)) float m_fCreationTime;// 0x62c, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CDOTA_Item > m_hItem;// 0x630, size 4 (0x4)
 	// m_hItem metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-char CDOTA_Item_Physical_05E0[0x4];
-}; // size: 1504 (0x5e0)
+char CDOTA_Item_Physical_0638[0x4];
+}; // size: 1592 (0x638)
 
 #pragma pack(push, 8)
 class CDamageComponent : public CEntityComponent
@@ -45934,108 +46368,112 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-char CPropVRHand_066C[0x2C];
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseVRHandAttachment > m_hActiveHandAttachment;// 0x66c, size 4 (0x4)
+char CPropVRHand_06D0[0x38];
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseVRHandAttachment > m_hActiveHandAttachment;// 0x6d0, size 4 (0x4)
 	// m_hActiveHandAttachment metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CPropHMDAvatar > m_hHMDAvatar;// 0x670, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CPropHMDAvatar > m_hHMDAvatar;// 0x6d4, size 4 (0x4)
 	// m_hHMDAvatar metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownAtomicType <0x4, CHandle, class CBaseVRHandAttachment > > m_hAttachments;// 0x678, size 24 (0x18)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownAtomicType <0x4, CHandle, class CBaseVRHandAttachment > > m_hAttachments;// 0x6d8, size 24 (0x18)
 	// m_hAttachments metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkTypeAlias
-	__declspec(align(1)) bool m_bInitialized;// 0x690, size 1 (0x1)
+	__declspec(align(1)) bool m_bInitialized;// 0x6f0, size 1 (0x1)
 	// m_bInitialized metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bIsInView;// 0x691, size 1 (0x1)
+	__declspec(align(1)) bool m_bIsInView;// 0x6f1, size 1 (0x1)
 	// m_bIsInView metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_nHandID;// 0x694, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nHandID;// 0x6f4, size 4 (0x4)
 	// m_nHandID metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) float m_flTriggerAnalogValue;// 0x698, size 4 (0x4)
+	__declspec(align(4)) float m_flTriggerAnalogValue;// 0x6f8, size 4 (0x4)
 	// m_flTriggerAnalogValue metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) float m_flGripAnalogValue;// 0x69c, size 4 (0x4)
+	__declspec(align(4)) float m_flGripAnalogValue;// 0x6fc, size 4 (0x4)
 	// m_flGripAnalogValue metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) float m_flFinger0;// 0x6a0, size 4 (0x4)
+	__declspec(align(4)) float m_flFinger0;// 0x700, size 4 (0x4)
 	// m_flFinger0 metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) float m_flFinger1;// 0x6a4, size 4 (0x4)
+	__declspec(align(4)) float m_flFinger1;// 0x704, size 4 (0x4)
 	// m_flFinger1 metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) float m_flFinger2;// 0x6a8, size 4 (0x4)
+	__declspec(align(4)) float m_flFinger2;// 0x708, size 4 (0x4)
 	// m_flFinger2 metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) float m_flFinger3;// 0x6ac, size 4 (0x4)
+	__declspec(align(4)) float m_flFinger3;// 0x70c, size 4 (0x4)
 	// m_flFinger3 metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) float m_flFinger4;// 0x6b0, size 4 (0x4)
+	__declspec(align(4)) float m_flFinger4;// 0x710, size 4 (0x4)
 	// m_flFinger4 metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) float m_flTrackpadAnalogValueX;// 0x6b4, size 4 (0x4)
+	__declspec(align(4)) float m_flTrackpadAnalogValueX;// 0x714, size 4 (0x4)
 	// m_flTrackpadAnalogValueX metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) float m_flTrackpadAnalogValueY;// 0x6b8, size 4 (0x4)
+	__declspec(align(4)) float m_flTrackpadAnalogValueY;// 0x718, size 4 (0x4)
 	// m_flTrackpadAnalogValueY metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) float m_flJoystickAnalogValueX;// 0x6bc, size 4 (0x4)
+	__declspec(align(4)) float m_flJoystickAnalogValueX;// 0x71c, size 4 (0x4)
 	// m_flJoystickAnalogValueX metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) float m_flJoystickAnalogValueY;// 0x6c0, size 4 (0x4)
+	__declspec(align(4)) float m_flJoystickAnalogValueY;// 0x720, size 4 (0x4)
 	// m_flJoystickAnalogValueY metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bCanPerformUse;// 0x6c4, size 1 (0x1)
+	__declspec(align(1)) bool m_bCanPerformUse;// 0x724, size 1 (0x1)
 	// m_bCanPerformUse metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bTipTransformInitialized;// 0x6c5, size 1 (0x1)
+	__declspec(align(1)) bool m_bTipTransformInitialized;// 0x725, size 1 (0x1)
 	// m_bTipTransformInitialized metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_localTipOrigin;// 0x6c8, size 12 (0xc)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_localTipOrigin;// 0x728, size 12 (0xc)
 	// m_localTipOrigin metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) UnknownType <0xc, class QAngle> m_localTipAngles;// 0x6d4, size 12 (0xc)
+	__declspec(align(4)) UnknownType <0xc, class QAngle> m_localTipAngles;// 0x734, size 12 (0xc)
 	// m_localTipAngles metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) float m_flHapticPulseTime;// 0x6e0, size 4 (0x4)
+	__declspec(align(4)) float m_flHapticPulseTime;// 0x740, size 4 (0x4)
 	// m_flHapticPulseTime metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-char CPropVRHand_06E8[0x4];
-	__declspec(align(1)) CInteractionManager m_InteractionMgr;// 0x6e8, size 216 (0xd8)
-	__declspec(align(4)) UnknownType <0x30, class matrix3x4_t> m_matUseTransform;// 0x7c0, size 48 (0x30)
-	__declspec(align(1)) uint8_t m_nAttachUseIndex;// 0x7f0, size 1 (0x1)
-	__declspec(align(4)) UnknownType <0x30, class matrix3x4_t> m_matHoldTransform;// 0x7f4, size 48 (0x30)
-	__declspec(align(1)) uint8_t m_nAttachHoldIndex;// 0x824, size 1 (0x1)
-	__declspec(align(4)) eLiteralHandType m_LiteralHandType;// 0x828, size 4 (0x4)
+	__declspec(align(2)) int16_t m_nHapticPulseInterval;// 0x744, size 2 (0x2)
+	// m_nHapticPulseInterval metadata
+	 // MNetworkEnable
+	 // MNetworkEnable
+char CPropVRHand_0748[0x2];
+	__declspec(align(1)) CInteractionManager m_InteractionMgr;// 0x748, size 216 (0xd8)
+	__declspec(align(4)) UnknownType <0x30, class matrix3x4_t> m_matUseTransform;// 0x820, size 48 (0x30)
+	__declspec(align(1)) uint8_t m_nAttachUseIndex;// 0x850, size 1 (0x1)
+	__declspec(align(4)) UnknownType <0x30, class matrix3x4_t> m_matHoldTransform;// 0x854, size 48 (0x30)
+	__declspec(align(1)) uint8_t m_nAttachHoldIndex;// 0x884, size 1 (0x1)
+	__declspec(align(4)) eLiteralHandType m_LiteralHandType;// 0x888, size 4 (0x4)
 	// m_LiteralHandType metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-char CPropVRHand_0830[0x4];
-}; // size: 2096 (0x830)
+char CPropVRHand_0890[0x4];
+}; // size: 2192 (0x890)
 
 class CTimerEntity : public CLogicalEntity
 {
@@ -46516,7 +46954,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CInfoPlayerStartGoodGuys : public CInfoPlayerStartDota
 {
@@ -47152,7 +47590,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Ability_Special_Bonus_Unique_DarkWillow_2 : public CDOTABaseAbility
 {
@@ -47392,7 +47830,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Ability_Roshan_SpellBlock : public CDOTABaseAbility
 {
@@ -47488,7 +47926,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 5248 (0x1480)
+}; // size: 5344 (0x14e0)
 
 class CDOTA_Ability_Viper_Nethertoxin : public CDOTABaseAbility
 {
@@ -47598,6 +48036,30 @@ public:
 	class CEntityInstanceEntityClass : public CDOTABaseAbility::CEntityInstanceEntityClass
 	{
 	// CDOTA_Ability_Special_Bonus_Unique_Tiny_5::CEntityInstanceEntityClass additional information
+	// Alignment: -1
+	// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+	// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
+	// SCHEMA_CLASS_TEMP_HACK_HAS_DESTRUCTOR_LIKE_METHODS
+	// Abstract Class
+
+	public:
+	}; // size: 296 (0x128)
+
+public:
+}; // size: 1016 (0x3f8)
+
+class CDOTA_Ability_Special_Bonus_HP_Regen_16 : public CDOTABaseAbility
+{
+// CDOTA_Ability_Special_Bonus_HP_Regen_16 additional information
+// server.dll, project server
+// Alignment: -1
+// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+// Abstract Class
+
+public: 
+	class CEntityInstanceEntityClass : public CDOTABaseAbility::CEntityInstanceEntityClass
+	{
+	// CDOTA_Ability_Special_Bonus_HP_Regen_16::CEntityInstanceEntityClass additional information
 	// Alignment: -1
 	// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
 	// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
@@ -47750,9 +48212,9 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(1)) bool m_bLastDeathFromSuicide;// 0x19f8, size 1 (0x1)
-char CDOTA_Unit_Hero_Techies_01A00[0x7];
-}; // size: 6656 (0x1a00)
+	__declspec(align(1)) bool m_bLastDeathFromSuicide;// 0x1a48, size 1 (0x1)
+char CDOTA_Unit_Hero_Techies_01A50[0x7];
+}; // size: 6736 (0x1a50)
 
 class CDOTA_Ability_Venomancer_PoisonSting : public CDOTABaseAbility
 {
@@ -48047,7 +48509,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Ability_Luna_MoonGlaive : public CDOTABaseAbility
 {
@@ -48515,7 +48977,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 1968 (0x7b0)
+}; // size: 2056 (0x808)
 
 class CTriggerTeleport : public CBaseTrigger
 {
@@ -48564,7 +49026,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 2192 (0x890)
+}; // size: 2304 (0x900)
 
 class CDOTA_Item_UltimateOrb : public CDOTA_Item
 {
@@ -48877,14 +49339,14 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hTreeWearable;// 0x19f8, size 4 (0x4)
-	__declspec(align(4)) int32_t m_nFXIndexScepterAmbient;// 0x19fc, size 4 (0x4)
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CDOTA_BaseNPC > m_hIllusionOwner;// 0x1a00, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hTreeWearable;// 0x1a48, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nFXIndexScepterAmbient;// 0x1a4c, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CDOTA_BaseNPC > m_hIllusionOwner;// 0x1a50, size 4 (0x4)
 	// m_hIllusionOwner metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-char CDOTA_Unit_Hero_Tiny_01A08[0x4];
-}; // size: 6664 (0x1a08)
+char CDOTA_Unit_Hero_Tiny_01A58[0x4];
+}; // size: 6744 (0x1a58)
 
 class CDOTA_Ability_Special_Bonus_Unique_Oracle_4 : public CDOTABaseAbility
 {
@@ -49277,7 +49739,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 4952 (0x1358)
+}; // size: 5048 (0x13b8)
 
 class CAI_ChangeHintGroup : public CBaseEntity
 {
@@ -49331,7 +49793,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 2528 (0x9e0)
+}; // size: 2640 (0xa50)
 
 class CDOTA_Item_Recipe_Pipe : public CDOTA_Item
 {
@@ -49851,6 +50313,60 @@ public:
 public:
 }; // size: 872 (0x368)
 
+class CEnvCubemapFog : public CBaseEntity
+{
+// CEnvCubemapFog additional information
+// server.dll, project server
+// Alignment: -1
+// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
+// Abstract Class
+
+public: 
+	class CEntityInstanceEntityClass : public CBaseEntity::CEntityInstanceEntityClass
+	{
+	// CEnvCubemapFog::CEntityInstanceEntityClass additional information
+	// Alignment: -1
+	// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+	// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
+	// SCHEMA_CLASS_TEMP_HACK_HAS_DESTRUCTOR_LIKE_METHODS
+	// Abstract Class
+
+	public:
+	}; // size: 296 (0x128)
+
+public:
+	__declspec(align(4)) float m_flEndDistance;// 0x368, size 4 (0x4)
+	// m_flEndDistance metadata
+	 // MNetworkEnable
+	 // MNetworkEnable
+	__declspec(align(4)) float m_flStartDistance;// 0x36c, size 4 (0x4)
+	// m_flStartDistance metadata
+	 // MNetworkEnable
+	 // MNetworkEnable
+	__declspec(align(4)) float m_flFogFalloffExponent;// 0x370, size 4 (0x4)
+	// m_flFogFalloffExponent metadata
+	 // MNetworkEnable
+	 // MNetworkEnable
+	__declspec(align(4)) float m_flLODBias;// 0x374, size 4 (0x4)
+	// m_flLODBias metadata
+	 // MNetworkEnable
+	 // MNetworkEnable
+	__declspec(align(1)) bool m_bActive;// 0x378, size 1 (0x1)
+	// m_bActive metadata
+	 // MNetworkEnable
+	 // MNetworkEnable
+	__declspec(align(1)) bool m_bStartDisabled;// 0x379, size 1 (0x1)
+	// m_bStartDisabled metadata
+	 // MNetworkEnable
+	 // MNetworkEnable
+	__declspec(align(8)) UnknownAtomicType <0x8, CStrongHandle, class InfoForResourceTypeCTextureBase > m_hFogCubemapTexture;// 0x380, size 8 (0x8)
+	// m_hFogCubemapTexture metadata
+	 // MNetworkEnable
+	__declspec(align(1)) bool m_bFirstTime;// 0x388, size 1 (0x1)
+char CEnvCubemapFog_0390[0x7];
+}; // size: 912 (0x390)
+
 class CDOTA_Item_Recipe_Assault_Cuirass : public CDOTA_Item
 {
 // CDOTA_Item_Recipe_Assault_Cuirass additional information
@@ -49978,9 +50494,9 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(4)) uint32_t m_unOmniKills;// 0x19f8, size 4 (0x4)
-char CDOTA_Unit_Hero_Juggernaut_01A00[0x4];
-}; // size: 6656 (0x1a00)
+	__declspec(align(4)) uint32_t m_unOmniKills;// 0x1a48, size 4 (0x4)
+char CDOTA_Unit_Hero_Juggernaut_01A50[0x4];
+}; // size: 6736 (0x1a50)
 
 class CDOTA_Ability_Special_Bonus_Unique_Pugna_3 : public CDOTABaseAbility
 {
@@ -50183,7 +50699,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Ability_Invoker_Empty1 : public CDOTABaseAbility
 {
@@ -50468,6 +50984,7 @@ public:
 	__declspec(align(1)) bool m_bTestOcclusion;// 0x710, size 1 (0x1)
 	// m_bTestOcclusion metadata
 	 // MNetworkEnable
+	 // MNetworkEnable
 	__declspec(align(8)) CEntityIOOutput m_OnTimeout;// 0x718, size 40 (0x28)
 	__declspec(align(8)) CEntityIOOutput m_OnStartLook;// 0x740, size 40 (0x28)
 	__declspec(align(8)) CEntityIOOutput m_OnEndLook;// 0x768, size 40 (0x28)
@@ -50732,56 +51249,56 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszPreCommands;// 0x5c8, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszPostCommands;// 0x5d0, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszCommentaryFile;// 0x5d8, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszPreCommands;// 0x620, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszPostCommands;// 0x628, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszCommentaryFile;// 0x630, size 8 (0x8)
 	// m_iszCommentaryFile metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszViewTarget;// 0x5e0, size 8 (0x8)
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hViewTarget;// 0x5e8, size 4 (0x4)
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hViewTargetAngles;// 0x5ec, size 4 (0x4)
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszViewPosition;// 0x5f0, size 8 (0x8)
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hViewPosition;// 0x5f8, size 4 (0x4)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszViewTarget;// 0x638, size 8 (0x8)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hViewTarget;// 0x640, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hViewTargetAngles;// 0x644, size 4 (0x4)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszViewPosition;// 0x648, size 8 (0x8)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hViewPosition;// 0x650, size 4 (0x4)
 	// m_hViewPosition metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hViewPositionMover;// 0x5fc, size 4 (0x4)
-	__declspec(align(1)) bool m_bPreventMovement;// 0x600, size 1 (0x1)
-	__declspec(align(1)) bool m_bUnderCrosshair;// 0x601, size 1 (0x1)
-	__declspec(align(1)) bool m_bUnstoppable;// 0x602, size 1 (0x1)
-	__declspec(align(4)) float m_flFinishedTime;// 0x604, size 4 (0x4)
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecFinishOrigin;// 0x608, size 12 (0xc)
-	__declspec(align(4)) UnknownType <0xc, class QAngle> m_vecOriginalAngles;// 0x614, size 12 (0xc)
-	__declspec(align(4)) UnknownType <0xc, class QAngle> m_vecFinishAngles;// 0x620, size 12 (0xc)
-	__declspec(align(1)) bool m_bPreventChangesWhileMoving;// 0x62c, size 1 (0x1)
-	__declspec(align(1)) bool m_bDisabled;// 0x62d, size 1 (0x1)
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecTeleportOrigin;// 0x630, size 12 (0xc)
-	__declspec(align(8)) CEntityIOOutput m_pOnCommentaryStarted;// 0x640, size 40 (0x28)
-	__declspec(align(8)) CEntityIOOutput m_pOnCommentaryStopped;// 0x668, size 40 (0x28)
-	__declspec(align(1)) bool m_bActive;// 0x690, size 1 (0x1)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hViewPositionMover;// 0x654, size 4 (0x4)
+	__declspec(align(1)) bool m_bPreventMovement;// 0x658, size 1 (0x1)
+	__declspec(align(1)) bool m_bUnderCrosshair;// 0x659, size 1 (0x1)
+	__declspec(align(1)) bool m_bUnstoppable;// 0x65a, size 1 (0x1)
+	__declspec(align(4)) float m_flFinishedTime;// 0x65c, size 4 (0x4)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecFinishOrigin;// 0x660, size 12 (0xc)
+	__declspec(align(4)) UnknownType <0xc, class QAngle> m_vecOriginalAngles;// 0x66c, size 12 (0xc)
+	__declspec(align(4)) UnknownType <0xc, class QAngle> m_vecFinishAngles;// 0x678, size 12 (0xc)
+	__declspec(align(1)) bool m_bPreventChangesWhileMoving;// 0x684, size 1 (0x1)
+	__declspec(align(1)) bool m_bDisabled;// 0x685, size 1 (0x1)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecTeleportOrigin;// 0x688, size 12 (0xc)
+	__declspec(align(8)) CEntityIOOutput m_pOnCommentaryStarted;// 0x698, size 40 (0x28)
+	__declspec(align(8)) CEntityIOOutput m_pOnCommentaryStopped;// 0x6c0, size 40 (0x28)
+	__declspec(align(1)) bool m_bActive;// 0x6e8, size 1 (0x1)
 	// m_bActive metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) float m_flStartTime;// 0x694, size 4 (0x4)
+	__declspec(align(4)) float m_flStartTime;// 0x6ec, size 4 (0x4)
 	// m_flStartTime metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszSpeakers;// 0x698, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszSpeakers;// 0x6f0, size 8 (0x8)
 	// m_iszSpeakers metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) uint32_t m_iNodeNumber;// 0x6a0, size 4 (0x4)
+	__declspec(align(4)) uint32_t m_iNodeNumber;// 0x6f8, size 4 (0x4)
 	// m_iNodeNumber metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkBitCount
-	__declspec(align(4)) int32_t m_iNodeNumberMax;// 0x6a4, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iNodeNumberMax;// 0x6fc, size 4 (0x4)
 	// m_iNodeNumberMax metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkBitCount
-}; // size: 1704 (0x6a8)
+}; // size: 1792 (0x700)
 
 class CDOTA_Item_RiverPainter7 : public CDOTA_Item_RiverPainter
 {
@@ -50949,7 +51466,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Ability_PhantomLancer_Doppelwalk : public CDOTABaseAbility
 {
@@ -50997,7 +51514,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_NeutralSpawner : public CPointEntity
 {
@@ -51063,6 +51580,30 @@ public:
 	class CEntityInstanceEntityClass : public CDOTABaseAbility::CEntityInstanceEntityClass
 	{
 	// CDOTA_Ability_Special_Bonus_Unique_Drow_Ranger_4::CEntityInstanceEntityClass additional information
+	// Alignment: -1
+	// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+	// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
+	// SCHEMA_CLASS_TEMP_HACK_HAS_DESTRUCTOR_LIKE_METHODS
+	// Abstract Class
+
+	public:
+	}; // size: 296 (0x128)
+
+public:
+}; // size: 1016 (0x3f8)
+
+class CDOTA_Ability_Special_Bonus_Unique_Ursa_6 : public CDOTABaseAbility
+{
+// CDOTA_Ability_Special_Bonus_Unique_Ursa_6 additional information
+// server.dll, project server
+// Alignment: -1
+// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+// Abstract Class
+
+public: 
+	class CEntityInstanceEntityClass : public CDOTABaseAbility::CEntityInstanceEntityClass
+	{
+	// CDOTA_Ability_Special_Bonus_Unique_Ursa_6::CEntityInstanceEntityClass additional information
 	// Alignment: -1
 	// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
 	// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
@@ -51145,7 +51686,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 4952 (0x1358)
+}; // size: 5048 (0x13b8)
 
 class CPointClientUIWorldPanel : public CBaseClientUIEntity
 {
@@ -51473,9 +52014,9 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(4)) uint32_t m_unDuelsWon;// 0x19f8, size 4 (0x4)
-char CDOTA_Unit_Hero_Legion_Commander_01A00[0x4];
-}; // size: 6656 (0x1a00)
+	__declspec(align(4)) uint32_t m_unDuelsWon;// 0x1a48, size 4 (0x4)
+char CDOTA_Unit_Hero_Legion_Commander_01A50[0x4];
+}; // size: 6736 (0x1a50)
 
 class CDOTA_Ability_Nyx_Assassin_ManaBurn : public CDOTABaseAbility
 {
@@ -51523,7 +52064,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Ability_LoneDruid_Rabid : public CDOTABaseAbility
 {
@@ -51645,7 +52186,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 5456 (0x1550)
+}; // size: 5552 (0x15b0)
 
 class CDOTA_Ability_Special_Bonus_Unique_Warlock_2 : public CDOTABaseAbility
 {
@@ -51659,6 +52200,30 @@ public:
 	class CEntityInstanceEntityClass : public CDOTABaseAbility::CEntityInstanceEntityClass
 	{
 	// CDOTA_Ability_Special_Bonus_Unique_Warlock_2::CEntityInstanceEntityClass additional information
+	// Alignment: -1
+	// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+	// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
+	// SCHEMA_CLASS_TEMP_HACK_HAS_DESTRUCTOR_LIKE_METHODS
+	// Abstract Class
+
+	public:
+	}; // size: 296 (0x128)
+
+public:
+}; // size: 1016 (0x3f8)
+
+class CDOTA_Ability_Special_Bonus_Unique_Alchemist_5 : public CDOTABaseAbility
+{
+// CDOTA_Ability_Special_Bonus_Unique_Alchemist_5 additional information
+// server.dll, project server
+// Alignment: -1
+// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+// Abstract Class
+
+public: 
+	class CEntityInstanceEntityClass : public CDOTABaseAbility::CEntityInstanceEntityClass
+	{
+	// CDOTA_Ability_Special_Bonus_Unique_Alchemist_5::CEntityInstanceEntityClass additional information
 	// Alignment: -1
 	// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
 	// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
@@ -52182,7 +52747,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 1504 (0x5e0)
+}; // size: 1592 (0x638)
 
 class CGameScore : public CRulePointEntity
 {
@@ -52230,11 +52795,11 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(1)) bool m_bBreakable;// 0xc38, size 1 (0x1)
-	__declspec(align(1)) bool m_isAbleToCloseAreaPortals;// 0xc39, size 1 (0x1)
-	__declspec(align(4)) int32_t m_currentDamageState;// 0xc3c, size 4 (0x4)
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownType <0x8, class CUtlSymbolLarge> > m_damageStates;// 0xc40, size 24 (0x18)
-}; // size: 3160 (0xc58)
+	__declspec(align(1)) bool m_bBreakable;// 0xcd8, size 1 (0x1)
+	__declspec(align(1)) bool m_isAbleToCloseAreaPortals;// 0xcd9, size 1 (0x1)
+	__declspec(align(4)) int32_t m_currentDamageState;// 0xcdc, size 4 (0x4)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownType <0x8, class CUtlSymbolLarge> > m_damageStates;// 0xce0, size 24 (0x18)
+}; // size: 3320 (0xcf8)
 
 class CDOTA_Ability_EarthSpirit_RollingBoulder : public CDOTABaseAbility, public CHorizontalMotionController
 {
@@ -52789,7 +53354,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 5512 (0x1588)
+}; // size: 5608 (0x15e8)
 
 class CDOTA_Ability_Special_Bonus_Unique_Terrorblade_2 : public CDOTABaseAbility
 {
@@ -53382,9 +53947,9 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(4)) int32_t m_nFXIndex;// 0x1480, size 4 (0x4)
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecOrigin;// 0x1484, size 12 (0xc)
-}; // size: 5264 (0x1490)
+	__declspec(align(4)) int32_t m_nFXIndex;// 0x14e0, size 4 (0x4)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecOrigin;// 0x14e4, size 12 (0xc)
+}; // size: 5360 (0x14f0)
 
 class CDOTA_Ability_PhantomAssassin_Stifling_Dagger : public CDOTABaseAbility
 {
@@ -53546,6 +54111,30 @@ public:
 	 // MNetworkEnable
 	 // MNetworkEnable
 }; // size: 1336 (0x538)
+
+class CSoundOpvarSetOBBEntity : public CSoundOpvarSetAABBEntity
+{
+// CSoundOpvarSetOBBEntity additional information
+// server.dll, project server
+// Alignment: -1
+// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+// Abstract Class
+
+public: 
+	class CEntityInstanceEntityClass : public CSoundOpvarSetAABBEntity::CEntityInstanceEntityClass
+	{
+	// CSoundOpvarSetOBBEntity::CEntityInstanceEntityClass additional information
+	// Alignment: -1
+	// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+	// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
+	// SCHEMA_CLASS_TEMP_HACK_HAS_DESTRUCTOR_LIKE_METHODS
+	// Abstract Class
+
+	public:
+	}; // size: 296 (0x128)
+
+public:
+}; // size: 1160 (0x488)
 
 class CInfoDynamicShadowHint : public CPointEntity
 {
@@ -54381,7 +54970,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Ability_Enchantress_Enchant : public CDOTABaseAbility
 {
@@ -55096,6 +55685,34 @@ public:
 public:
 }; // size: 1136 (0x470)
 
+class CDOTA_Ability_Grimstroke_SoulChain : public CDOTABaseAbility
+{
+// CDOTA_Ability_Grimstroke_SoulChain additional information
+// server.dll, project server
+// Alignment: -1
+// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+// Abstract Class
+
+public: 
+	class CEntityInstanceEntityClass : public CDOTABaseAbility::CEntityInstanceEntityClass
+	{
+	// CDOTA_Ability_Grimstroke_SoulChain::CEntityInstanceEntityClass additional information
+	// Alignment: -1
+	// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+	// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
+	// SCHEMA_CLASS_TEMP_HACK_HAS_DESTRUCTOR_LIKE_METHODS
+	// Abstract Class
+
+	public:
+	}; // size: 296 (0x128)
+
+public:
+	__declspec(align(4)) float chain_duration;// 0x3f8, size 4 (0x4)
+	__declspec(align(4)) int32_t chain_latch_radius;// 0x3fc, size 4 (0x4)
+	__declspec(align(4)) float creep_duration_pct;// 0x400, size 4 (0x4)
+char CDOTA_Ability_Grimstroke_SoulChain_0408[0x4];
+}; // size: 1032 (0x408)
+
 class CDOTA_Ability_Shredder_Reactive_Armor : public CDOTABaseAbility
 {
 // CDOTA_Ability_Shredder_Reactive_Armor additional information
@@ -55193,7 +55810,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Ability_Tinker_MarchOfTheMachines : public CDOTABaseAbility
 {
@@ -55472,7 +56089,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Unit_TargetDummy : public CDOTA_BaseNPC_Hero
 {
@@ -55497,21 +56114,21 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(4)) float m_flDamageTaken;// 0x19f8, size 4 (0x4)
+	__declspec(align(4)) float m_flDamageTaken;// 0x1a48, size 4 (0x4)
 	// m_flDamageTaken metadata
 	 // MNetworkEnable
-	__declspec(align(4)) float m_flLastHit;// 0x19fc, size 4 (0x4)
+	__declspec(align(4)) float m_flLastHit;// 0x1a4c, size 4 (0x4)
 	// m_flLastHit metadata
 	 // MNetworkEnable
-	__declspec(align(4)) float m_flStartDamageTime;// 0x1a00, size 4 (0x4)
+	__declspec(align(4)) float m_flStartDamageTime;// 0x1a50, size 4 (0x4)
 	// m_flStartDamageTime metadata
 	 // MNetworkEnable
-	__declspec(align(4)) float m_flLastDamageTime;// 0x1a04, size 4 (0x4)
+	__declspec(align(4)) float m_flLastDamageTime;// 0x1a54, size 4 (0x4)
 	// m_flLastDamageTime metadata
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bIsMoving;// 0x1a08, size 1 (0x1)
-char CDOTA_Unit_TargetDummy_01A10[0x7];
-}; // size: 6672 (0x1a10)
+	__declspec(align(1)) bool m_bIsMoving;// 0x1a58, size 1 (0x1)
+char CDOTA_Unit_TargetDummy_01A60[0x7];
+}; // size: 6752 (0x1a60)
 
 class CDOTA_Unit_Hero_Beastmaster_Beasts : public CDOTA_BaseNPC_Creep_Talking
 {
@@ -55535,7 +56152,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 5296 (0x14b0)
+}; // size: 5392 (0x1510)
 
 class CDOTA_Ability_Warlock_RainOfChaos : public CDOTABaseAbility
 {
@@ -55607,7 +56224,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 5504 (0x1580)
+}; // size: 5600 (0x15e0)
 
 class CDOTA_Ability_Special_Bonus_Unique_Silencer_5 : public CDOTABaseAbility
 {
@@ -55833,34 +56450,32 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(1)) bool m_bUnitRespawned;// 0x1480, size 1 (0x1)
-	__declspec(align(1)) bool m_bPreUpdateFlyingCourier;// 0x1481, size 1 (0x1)
-	__declspec(align(4)) int32_t m_nSoleControllingPlayer;// 0x1484, size 4 (0x4)
+	__declspec(align(1)) bool m_bUnitRespawned;// 0x14e0, size 1 (0x1)
+	__declspec(align(1)) bool m_bPreUpdateFlyingCourier;// 0x14e1, size 1 (0x1)
+	__declspec(align(4)) int32_t m_nSoleControllingPlayer;// 0x14e4, size 4 (0x4)
 	// m_nSoleControllingPlayer metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bFlyingCourier;// 0x1488, size 1 (0x1)
+	__declspec(align(1)) bool m_bFlyingCourier;// 0x14e8, size 1 (0x1)
 	// m_bFlyingCourier metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) float m_flRespawnTime;// 0x148c, size 4 (0x4)
+	__declspec(align(4)) float m_flRespawnTime;// 0x14ec, size 4 (0x4)
 	// m_flRespawnTime metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) CourierState_t m_nCourierState;// 0x1490, size 4 (0x4)
+	__declspec(align(4)) CourierState_t m_nCourierState;// 0x14f0, size 4 (0x4)
 	// m_nCourierState metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkBitCount
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hCourierStateEntity;// 0x1494, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hCourierStateEntity;// 0x14f4, size 4 (0x4)
 	// m_hCourierStateEntity metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_strCourierModel;// 0x1498, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_strFlyingCourierModel;// 0x14a0, size 8 (0x8)
-public:
-	static CEconItemView *&Get_sm_pForceEconItemHack() {return *(CEconItemView **)schema::SchemaSystem::Get()->FindTypeScopeForModule("server.dll")->FindDeclaredClass("CDOTA_Unit_Courier")->m_staticMembers.data[0].m_pInstance; }
-}; // size: 5288 (0x14a8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_strCourierModel;// 0x14f8, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_strFlyingCourierModel;// 0x1500, size 8 (0x8)
+}; // size: 5384 (0x1508)
 
 class CDOTA_Ability_Nevermore_Shadowraze1 : public CDOTA_Ability_Nevermore_Shadowraze
 {
@@ -56119,6 +56734,33 @@ public:
 public:
 }; // size: 1136 (0x470)
 
+class CDOTA_Unit_Hero_Grimstroke : public CDOTA_BaseNPC_Hero
+{
+// CDOTA_Unit_Hero_Grimstroke additional information
+// server.dll, project server
+// Alignment: -1
+// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
+// Abstract Class
+
+public: 
+	class CEntityInstanceEntityClass : public CDOTA_BaseNPC_Hero::CEntityInstanceEntityClass
+	{
+	// CDOTA_Unit_Hero_Grimstroke::CEntityInstanceEntityClass additional information
+	// Alignment: -1
+	// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+	// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
+	// SCHEMA_CLASS_TEMP_HACK_HAS_DESTRUCTOR_LIKE_METHODS
+	// Abstract Class
+
+	public:
+	}; // size: 296 (0x128)
+
+public:
+	__declspec(align(4)) int32_t m_nFXDeath;// 0x1a48, size 4 (0x4)
+char CDOTA_Unit_Hero_Grimstroke_01A50[0x4];
+}; // size: 6736 (0x1a50)
+
 class CDOTA_Ability_Phoenix_Supernova : public CDOTABaseAbility
 {
 // CDOTA_Ability_Phoenix_Supernova additional information
@@ -56231,7 +56873,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 5248 (0x1480)
+}; // size: 5344 (0x14e0)
 
 class CDOTA_Ability_Special_Bonus_Spell_Amplify_10 : public CDOTABaseAbility
 {
@@ -56291,19 +56933,19 @@ class CBodyComponentBaseAnimating : public CBodyComponentSkeletonInstance
 // Abstract Class
 
 public:
-	__declspec(align(8)) CBaseAnimatingController m_animationController;// 0x4b0, size 1216 (0x4c0)
+	__declspec(align(8)) CBaseAnimatingController m_animationController;// 0x4c0, size 1216 (0x4c0)
 	// m_animationController metadata
 	 // MNetworkEnable
 	 // MNetworkVarEmbeddedUnderlyingType
-	__declspec(align(8)) CNetworkVarChainer __m_pChainEntity;// 0x970, size 24 (0x18)
+	__declspec(align(8)) CNetworkVarChainer __m_pChainEntity;// 0x980, size 24 (0x18)
 	// __m_pChainEntity metadata
 	 // MNetworkDisable
 	 // MNetworkChangeAccessorFieldPathIndex
-char CBodyComponentBaseAnimating_0990[0x8];
+char CBodyComponentBaseAnimating_09A0[0x8];
 public:
 	static EntComponentInfo_t &Get_s_EntComponentInfo() {return *(EntComponentInfo_t *)schema::SchemaSystem::Get()->FindTypeScopeForModule("server.dll")->FindDeclaredClass("CBodyComponentBaseAnimating")->m_staticMembers.data[0].m_pInstance; }
 	static int32_t &Get_entity_component_error_class_decl_says_contained_but_impl_is_referenced() {return *(int32_t *)schema::SchemaSystem::Get()->FindTypeScopeForModule("server.dll")->FindDeclaredClass("CBodyComponentBaseAnimating")->m_staticMembers.data[1].m_pInstance; }
-}; // size: 2448 (0x990)
+}; // size: 2464 (0x9a0)
 
 class CDevtestHierarchy : public CDynamicProp
 {
@@ -56328,53 +56970,53 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vRotationAxis;// 0x890, size 12 (0xc)
-	__declspec(align(4)) float m_flRotationSpeed;// 0x89c, size 4 (0x4)
-	__declspec(align(4)) int32_t m_nTestMode;// 0x8a0, size 4 (0x4)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vRotationAxis;// 0x900, size 12 (0xc)
+	__declspec(align(4)) float m_flRotationSpeed;// 0x90c, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nTestMode;// 0x910, size 4 (0x4)
 	// m_nTestMode metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hChild;// 0x8a4, size 4 (0x4)
-	__declspec(align(4)) UnknownType <0x4, class CUtlStringToken> m_attachName;// 0x8a8, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hChild;// 0x914, size 4 (0x4)
+	__declspec(align(4)) UnknownType <0x4, class CUtlStringToken> m_attachName;// 0x918, size 4 (0x4)
 	// m_attachName metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vDynamicAttachOffset;// 0x8ac, size 12 (0xc)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vDynamicAttachOffset;// 0x91c, size 12 (0xc)
 	// m_vDynamicAttachOffset metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_nDynamicResetCount;// 0x8b8, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nDynamicResetCount;// 0x928, size 4 (0x4)
 	// m_nDynamicResetCount metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_nDynamicDetachCount;// 0x8bc, size 4 (0x4)
-	__declspec(align(1)) bool m_bChildIsDynamic;// 0x8c0, size 1 (0x1)
+	__declspec(align(4)) int32_t m_nDynamicDetachCount;// 0x92c, size 4 (0x4)
+	__declspec(align(1)) bool m_bChildIsDynamic;// 0x930, size 1 (0x1)
 	// m_bChildIsDynamic metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bCreateChildSideChild;// 0x8c1, size 1 (0x1)
+	__declspec(align(1)) bool m_bCreateChildSideChild;// 0x931, size 1 (0x1)
 	// m_bCreateChildSideChild metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) UnknownType <0x4, class CUtlStringToken> m_alternateAttachName;// 0x8c4, size 4 (0x4)
+	__declspec(align(4)) UnknownType <0x4, class CUtlStringToken> m_alternateAttachName;// 0x934, size 4 (0x4)
 	// m_alternateAttachName metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hAlternateParent;// 0x8c8, size 4 (0x4)
-	__declspec(align(8)) UnknownAtomicType <0x8, CStrongHandle, class InfoForResourceTypeCModel > m_hAlternateModel;// 0x8d0, size 8 (0x8)
-	__declspec(align(8)) UnknownAtomicType <0x8, CStrongHandle, class InfoForResourceTypeCModel > m_hOriginalModel;// 0x8d8, size 8 (0x8)
-	__declspec(align(8)) UnknownAtomicType <0x8, CStrongHandle, class InfoForResourceTypeCModel > m_hClientSideChildModel;// 0x8e0, size 8 (0x8)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hAlternateParent;// 0x938, size 4 (0x4)
+	__declspec(align(8)) UnknownAtomicType <0x8, CStrongHandle, class InfoForResourceTypeCModel > m_hAlternateModel;// 0x940, size 8 (0x8)
+	__declspec(align(8)) UnknownAtomicType <0x8, CStrongHandle, class InfoForResourceTypeCModel > m_hOriginalModel;// 0x948, size 8 (0x8)
+	__declspec(align(8)) UnknownAtomicType <0x8, CStrongHandle, class InfoForResourceTypeCModel > m_hClientSideChildModel;// 0x950, size 8 (0x8)
 	// m_hClientSideChildModel metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) float m_flEntityStartTime;// 0x8e8, size 4 (0x4)
+	__declspec(align(4)) float m_flEntityStartTime;// 0x958, size 4 (0x4)
 	// m_flEntityStartTime metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_nTestIndex;// 0x8ec, size 4 (0x4)
-	__declspec(align(4)) HierarchyType_t m_nCurrType;// 0x8f0, size 4 (0x4)
-	__declspec(align(4)) int32_t m_nCurrentModel;// 0x8f4, size 4 (0x4)
-}; // size: 2296 (0x8f8)
+	__declspec(align(4)) int32_t m_nTestIndex;// 0x95c, size 4 (0x4)
+	__declspec(align(4)) HierarchyType_t m_nCurrType;// 0x960, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nCurrentModel;// 0x964, size 4 (0x4)
+}; // size: 2408 (0x968)
 
 class CDOTA_Unit_Hero_Brewmaster : public CDOTA_BaseNPC_Hero
 {
@@ -56398,7 +57040,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Ability_ShadowShamanVoodoo : public CDOTABaseAbility
 {
@@ -56566,10 +57208,10 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(8)) CountdownTimer m_ThinkTimer;// 0x14b0, size 24 (0x18)
-	__declspec(align(1)) bool m_bInEnemyBase;// 0x14c8, size 1 (0x1)
-char CDOTA_BaseNPC_Creep_Lane_014D0[0x7];
-}; // size: 5328 (0x14d0)
+	__declspec(align(8)) CountdownTimer m_ThinkTimer;// 0x1510, size 24 (0x18)
+	__declspec(align(1)) bool m_bInEnemyBase;// 0x1528, size 1 (0x1)
+char CDOTA_BaseNPC_Creep_Lane_01530[0x7];
+}; // size: 5424 (0x1530)
 
 class CEnvGlobal : public CLogicalEntity
 {
@@ -57332,12 +57974,12 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(4)) int32_t m_nWhichMeepo;// 0x19f8, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nWhichMeepo;// 0x1a48, size 4 (0x4)
 	// m_nWhichMeepo metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-char CDOTA_Unit_Hero_Meepo_01A00[0x4];
-}; // size: 6656 (0x1a00)
+char CDOTA_Unit_Hero_Meepo_01A50[0x4];
+}; // size: 6736 (0x1a50)
 
 class CDOTA_Ability_Animation_TailSpin : public CDOTABaseAbility
 {
@@ -57628,7 +58270,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 5248 (0x1480)
+}; // size: 5344 (0x14e0)
 
 class CDOTA_Ability_Lycan_SummonWolves_PermanentInvisibility : public CDOTABaseAbility
 {
@@ -57820,7 +58462,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 2192 (0x890)
+}; // size: 2304 (0x900)
 
 class CDOTA_Item_Aether_Lens : public CDOTA_Item
 {
@@ -57892,15 +58534,15 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(4)) int32_t m_iLastHealthPercent;// 0x1480, size 4 (0x4)
-	__declspec(align(4)) int32_t m_nFXIndex;// 0x1484, size 4 (0x4)
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownAtomicType <0x4, CHandle, class CBaseEntity > > m_hAttackingHeroes;// 0x1488, size 24 (0x18)
-	__declspec(align(1)) bool m_bGoldenRoshan;// 0x14a0, size 1 (0x1)
+	__declspec(align(4)) int32_t m_iLastHealthPercent;// 0x14e0, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nFXIndex;// 0x14e4, size 4 (0x4)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownAtomicType <0x4, CHandle, class CBaseEntity > > m_hAttackingHeroes;// 0x14e8, size 24 (0x18)
+	__declspec(align(1)) bool m_bGoldenRoshan;// 0x1500, size 1 (0x1)
 	// m_bGoldenRoshan metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-char CDOTA_Unit_Roshan_014A8[0x7];
-}; // size: 5288 (0x14a8)
+char CDOTA_Unit_Roshan_01508[0x7];
+}; // size: 5384 (0x1508)
 
 class CDOTA_Unit_Hero_DrowRanger : public CDOTA_BaseNPC_Hero
 {
@@ -57924,7 +58566,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_BaseNPC_Creep_Neutral : public CDOTA_BaseNPC_Creep
 {
@@ -57949,8 +58591,8 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(8)) CountdownTimer m_ThinkTimer;// 0x14b0, size 24 (0x18)
-}; // size: 5320 (0x14c8)
+	__declspec(align(8)) CountdownTimer m_ThinkTimer;// 0x1510, size 24 (0x18)
+}; // size: 5416 (0x1528)
 
 class CDOTA_Ability_Special_Bonus_Unique_Brewmaster_4 : public CDOTABaseAbility
 {
@@ -58234,8 +58876,8 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-char CIngameEvent_TI8_01360[0x8];
-}; // size: 4960 (0x1360)
+char CIngameEvent_TI8_013C0[0x8];
+}; // size: 5056 (0x13c0)
 
 class CChangeLevel : public CBaseTrigger
 {
@@ -58243,7 +58885,6 @@ class CChangeLevel : public CBaseTrigger
 // server.dll, project server
 // Alignment: -1
 // SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
-// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
 // Abstract Class
 
 public: 
@@ -58343,11 +58984,11 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(4)) int32_t m_iTrueSight;// 0x1488, size 4 (0x4)
-	__declspec(align(4)) UnknownType <0x4, class CEntityHandle> m_hCasterEntity;// 0x148c, size 4 (0x4)
-	__declspec(align(4)) UnknownType <0x4, class CEntityHandle> m_hAbilityEntity;// 0x1490, size 4 (0x4)
-char CDOTA_NPC_Observer_Ward_TrueSight_01498[0x4];
-}; // size: 5272 (0x1498)
+	__declspec(align(4)) int32_t m_iTrueSight;// 0x14e8, size 4 (0x4)
+	__declspec(align(4)) UnknownType <0x4, class CEntityHandle> m_hCasterEntity;// 0x14ec, size 4 (0x4)
+	__declspec(align(4)) UnknownType <0x4, class CEntityHandle> m_hAbilityEntity;// 0x14f0, size 4 (0x4)
+char CDOTA_NPC_Observer_Ward_TrueSight_014F8[0x4];
+}; // size: 5368 (0x14f8)
 
 class CDOTA_Ability_Huskar_Life_Break : public CDOTABaseAbility, public CHorizontalMotionController
 {
@@ -58425,11 +59066,11 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-char CDOTA_BaseNPC_HallofFame_01560[0x10];
-	__declspec(align(4)) int32_t m_event_dota_player_team_changed;// 0x1560, size 4 (0x4)
-char CDOTA_BaseNPC_HallofFame_01568[0x4];
-	__declspec(align(8)) CountdownTimer m_glowThinkTimer;// 0x1568, size 24 (0x18)
-}; // size: 5504 (0x1580)
+char CDOTA_BaseNPC_HallofFame_015C0[0x10];
+	__declspec(align(4)) int32_t m_event_dota_player_team_changed;// 0x15c0, size 4 (0x4)
+char CDOTA_BaseNPC_HallofFame_015C8[0x4];
+	__declspec(align(8)) CountdownTimer m_glowThinkTimer;// 0x15c8, size 24 (0x18)
+}; // size: 5600 (0x15e0)
 
 class CDOTA_Ability_Special_Bonus_Unique_Crystal_Maiden_1 : public CDOTABaseAbility
 {
@@ -58550,7 +59191,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 1968 (0x7b0)
+}; // size: 2056 (0x808)
 
 class CFilterMultiple : public CBaseFilter
 {
@@ -58676,7 +59317,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Ability_Clinkz_Strafe : public CDOTABaseAbility
 {
@@ -58802,7 +59443,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 5456 (0x1550)
+}; // size: 5552 (0x15b0)
 
 class CDOTA_Ability_Special_Bonus_Unique_Centaur_1 : public CDOTABaseAbility
 {
@@ -59157,7 +59798,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 5328 (0x14d0)
+}; // size: 5424 (0x1530)
 
 class CDOTA_Ability_Special_Bonus_Unique_Slark_4 : public CDOTABaseAbility
 {
@@ -59539,17 +60180,15 @@ public:
 public:
 char CTriggerPhysics_06D8[0x10];
 	__declspec(align(4)) float m_gravityScale;// 0x6d8, size 4 (0x4)
-	__declspec(align(4)) float m_addAirDensity;// 0x6dc, size 4 (0x4)
-	__declspec(align(4)) float m_linearLimit;// 0x6e0, size 4 (0x4)
-	__declspec(align(4)) float m_linearLimitDelta;// 0x6e4, size 4 (0x4)
-	__declspec(align(4)) float m_linearLimitTime;// 0x6e8, size 4 (0x4)
-	__declspec(align(4)) float m_linearLimitStart;// 0x6ec, size 4 (0x4)
-	__declspec(align(4)) float m_linearLimitStartTime;// 0x6f0, size 4 (0x4)
-	__declspec(align(4)) float m_linearScale;// 0x6f4, size 4 (0x4)
-	__declspec(align(4)) float m_angularLimit;// 0x6f8, size 4 (0x4)
-	__declspec(align(4)) float m_angularScale;// 0x6fc, size 4 (0x4)
-	__declspec(align(4)) float m_linearForce;// 0x700, size 4 (0x4)
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecLinearForcePointAt;// 0x704, size 12 (0xc)
+	__declspec(align(4)) float m_linearLimit;// 0x6dc, size 4 (0x4)
+	__declspec(align(4)) float m_linearDamping;// 0x6e0, size 4 (0x4)
+	__declspec(align(4)) float m_angularLimit;// 0x6e4, size 4 (0x4)
+	__declspec(align(4)) float m_angularDamping;// 0x6e8, size 4 (0x4)
+	__declspec(align(4)) float m_linearForce;// 0x6ec, size 4 (0x4)
+	__declspec(align(4)) float m_flFrequency;// 0x6f0, size 4 (0x4)
+	__declspec(align(4)) float m_flDampingRatio;// 0x6f4, size 4 (0x4)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecLinearForcePointAt;// 0x6f8, size 12 (0xc)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecLinearForcePointAtWorld;// 0x704, size 12 (0xc)
 }; // size: 1808 (0x710)
 
 class CDOTA_Ability_EarthSpirit_BoulderSmash : public CDOTABaseAbility
@@ -59611,7 +60250,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_BaseNPC_ShadowShaman_SerpentWard : public CDOTA_BaseNPC_Additive
 {
@@ -59635,9 +60274,9 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(4)) UnknownType <0xc, class QAngle> m_angle;// 0x1480, size 12 (0xc)
-	__declspec(align(4)) int32_t m_iPoseParameterAim;// 0x148c, size 4 (0x4)
-}; // size: 5264 (0x1490)
+	__declspec(align(4)) UnknownType <0xc, class QAngle> m_angle;// 0x14e0, size 12 (0xc)
+	__declspec(align(4)) int32_t m_iPoseParameterAim;// 0x14ec, size 4 (0x4)
+}; // size: 5360 (0x14f0)
 
 class CDOTA_Ability_Zuus_Cloud : public CDOTABaseAbility
 {
@@ -59815,7 +60454,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Ability_Shredder_TimberChain : public CDOTABaseAbility
 {
@@ -60160,168 +60799,170 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-char CDOTAPlayer_01270[0x8];
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecStartingPosition;// 0x1270, size 12 (0xc)
+char CDOTAPlayer_012B0[0x8];
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecStartingPosition;// 0x12b0, size 12 (0xc)
 	// m_vecStartingPosition metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_iMinimapMove;// 0x127c, size 4 (0x4)
-	__declspec(align(4)) int32_t m_iCursor[2];// 0x1280, size 8 (0x8)
+	__declspec(align(4)) int32_t m_iMinimapMove;// 0x12bc, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iCursor[2];// 0x12c0, size 8 (0x8)
 	// m_iCursor metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkUserGroup
 	 // MNetworkPriority
-	__declspec(align(4)) int32_t m_iSpectatorClickBehavior;// 0x1288, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iSpectatorClickBehavior;// 0x12c8, size 4 (0x4)
 	// m_iSpectatorClickBehavior metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkUserGroup
-	__declspec(align(4)) float m_flAspectRatio;// 0x128c, size 4 (0x4)
+	__declspec(align(4)) float m_flAspectRatio;// 0x12cc, size 4 (0x4)
 	// m_flAspectRatio metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkUserGroup
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hSpectatorQueryUnit;// 0x1290, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hSpectatorQueryUnit;// 0x12d0, size 4 (0x4)
 	// m_hSpectatorQueryUnit metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkUserGroup
-	__declspec(align(4)) int32_t m_iStatsPanel;// 0x1294, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iStatsPanel;// 0x12d4, size 4 (0x4)
 	// m_iStatsPanel metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkUserGroup
-	__declspec(align(4)) int32_t m_iShopPanel;// 0x1298, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iShopPanel;// 0x12d8, size 4 (0x4)
 	// m_iShopPanel metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkUserGroup
-	__declspec(align(4)) ShopItemViewMode_t m_iShopViewMode;// 0x129c, size 4 (0x4)
+	__declspec(align(4)) ShopItemViewMode_t m_iShopViewMode;// 0x12dc, size 4 (0x4)
 	// m_iShopViewMode metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkUserGroup
-	__declspec(align(4)) int32_t m_iStatsDropdownCategory;// 0x12a0, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iStatsDropdownCategory;// 0x12e0, size 4 (0x4)
 	// m_iStatsDropdownCategory metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkUserGroup
-	__declspec(align(4)) int32_t m_iStatsDropdownSort;// 0x12a4, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iStatsDropdownSort;// 0x12e4, size 4 (0x4)
 	// m_iStatsDropdownSort metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkUserGroup
-	__declspec(align(1)) char m_szShopString[64];// 0x12a8, size 64 (0x40)
+	__declspec(align(1)) char m_szShopString[64];// 0x12e8, size 64 (0x40)
 	// m_szShopString metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkUserGroup
-	__declspec(align(1)) bool m_bInShowCaseMode;// 0x12e8, size 1 (0x1)
+	__declspec(align(1)) bool m_bInShowCaseMode;// 0x1328, size 1 (0x1)
 	// m_bInShowCaseMode metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkUserGroup
-	__declspec(align(4)) float m_flCameraZoomAmount;// 0x12ec, size 4 (0x4)
+	__declspec(align(4)) float m_flCameraZoomAmount;// 0x132c, size 4 (0x4)
 	// m_flCameraZoomAmount metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkUserGroup
-	__declspec(align(4)) int32_t m_iHighPriorityScore;// 0x12f0, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iHighPriorityScore;// 0x1330, size 4 (0x4)
 	// m_iHighPriorityScore metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkUserGroup
-	__declspec(align(4)) int32_t m_quickBuyItems[9];// 0x12f4, size 36 (0x24)
+	__declspec(align(4)) int32_t m_quickBuyItems[9];// 0x1334, size 36 (0x24)
 	// m_quickBuyItems metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkUserGroup
-	__declspec(align(1)) bool m_quickBuyIsPurchasable[9];// 0x1318, size 9 (0x9)
+	__declspec(align(1)) bool m_quickBuyIsPurchasable[9];// 0x1358, size 9 (0x9)
 	// m_quickBuyIsPurchasable metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkUserGroup
-	__declspec(align(1)) bool m_bUsingAssistedCameraOperator;// 0x1321, size 1 (0x1)
+	__declspec(align(1)) bool m_bUsingAssistedCameraOperator;// 0x1361, size 1 (0x1)
 	// m_bUsingAssistedCameraOperator metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bUsingCameraMan;// 0x1322, size 1 (0x1)
+	__declspec(align(1)) bool m_bUsingCameraMan;// 0x1362, size 1 (0x1)
 	// m_bUsingCameraMan metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_nPlayerAssistFlags;// 0x1324, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nPlayerAssistFlags;// 0x1364, size 4 (0x4)
 	// m_nPlayerAssistFlags metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) float m_flHighPriorityScoreTimeStamp;// 0x1328, size 4 (0x4)
-	__declspec(align(4)) int32_t m_iMusicStatus;// 0x132c, size 4 (0x4)
+	__declspec(align(4)) float m_flHighPriorityScoreTimeStamp;// 0x1368, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iMusicStatus;// 0x136c, size 4 (0x4)
 	// m_iMusicStatus metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) float m_flMusicOperatorVals[3];// 0x1330, size 12 (0xc)
+	__declspec(align(4)) float m_flMusicOperatorVals[3];// 0x1370, size 12 (0xc)
 	// m_flMusicOperatorVals metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_iMusicOperatorVals[4];// 0x133c, size 16 (0x10)
+	__declspec(align(4)) int32_t m_iMusicOperatorVals[4];// 0x137c, size 16 (0x10)
 	// m_iMusicOperatorVals metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(8)) CountdownTimer m_MusicRestTime;// 0x1350, size 24 (0x18)
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hKillCamUnit;// 0x1368, size 4 (0x4)
+	__declspec(align(8)) CountdownTimer m_MusicRestTime;// 0x1390, size 24 (0x18)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hKillCamUnit;// 0x13a8, size 4 (0x4)
 	// m_hKillCamUnit metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecCrosshairTracePos;// 0x136c, size 12 (0xc)
-	__declspec(align(4)) int32_t m_iCrosshairEntity;// 0x1378, size 4 (0x4)
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hAssignedHero;// 0x137c, size 4 (0x4)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecCrosshairTracePos;// 0x13ac, size 12 (0xc)
+	__declspec(align(4)) int32_t m_iCrosshairEntity;// 0x13b8, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hAssignedHero;// 0x13bc, size 4 (0x4)
 	// m_hAssignedHero metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_iPlayerID;// 0x1380, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iPlayerID;// 0x13c0, size 4 (0x4)
 	// m_iPlayerID metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-char CDOTAPlayer_01390[0xC];
-	__declspec(align(1)) bool m_bTeleportRequiresHalt;// 0x1390, size 1 (0x1)
-	__declspec(align(1)) bool m_bChannelRequiresHalt;// 0x1391, size 1 (0x1)
-char CDOTAPlayer_013A0[0xC];
-	__declspec(align(4)) int32_t m_nServerOrderSequenceNumber;// 0x13a0, size 4 (0x4)
+char CDOTAPlayer_013D0[0xC];
+	__declspec(align(1)) bool m_bTeleportRequiresHalt;// 0x13d0, size 1 (0x1)
+	__declspec(align(1)) bool m_bChannelRequiresHalt;// 0x13d1, size 1 (0x1)
+char CDOTAPlayer_013E0[0xC];
+	__declspec(align(4)) int32_t m_nServerOrderSequenceNumber;// 0x13e0, size 4 (0x4)
 	// m_nServerOrderSequenceNumber metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkUserGroup
-	__declspec(align(4)) float m_flLastOrderTime;// 0x13a4, size 4 (0x4)
-	__declspec(align(4)) float m_flLastKnownActiveTime;// 0x13a8, size 4 (0x4)
-	__declspec(align(4)) float m_flLastReconnectTime;// 0x13ac, size 4 (0x4)
-	__declspec(align(4)) float m_fLastSuggestionTime;// 0x13b0, size 4 (0x4)
-char CDOTAPlayer_013E0[0x2C];
-	__declspec(align(1)) bool m_bWantsRandomHero;// 0x13e0, size 1 (0x1)
-	__declspec(align(1)) bool m_bFullyJoinedServer;// 0x13e1, size 1 (0x1)
-	__declspec(align(4)) int32_t m_nCheatDetectOrderReferenceCommandNumber;// 0x13e4, size 4 (0x4)
-	__declspec(align(4)) int32_t m_nSuspiciousOrderCheatingCount;// 0x13e8, size 4 (0x4)
-	__declspec(align(4)) int32_t m_iSwapPreferencePlayerID;// 0x13ec, size 4 (0x4)
-	__declspec(align(4)) uint32_t m_nCoachListenMask;// 0x13f0, size 4 (0x4)
-	__declspec(align(4)) int32_t m_nCachedCoachedTeam;// 0x13f4, size 4 (0x4)
+	__declspec(align(4)) float m_flLastOrderTime;// 0x13e4, size 4 (0x4)
+	__declspec(align(4)) float m_flLastKnownActiveTime;// 0x13e8, size 4 (0x4)
+	__declspec(align(4)) float m_flLastReconnectTime;// 0x13ec, size 4 (0x4)
+	__declspec(align(4)) float m_fLastSuggestionTime;// 0x13f0, size 4 (0x4)
+char CDOTAPlayer_01420[0x2C];
+	__declspec(align(1)) bool m_bWantsRandomHero;// 0x1420, size 1 (0x1)
+	__declspec(align(1)) bool m_bFullyJoinedServer;// 0x1421, size 1 (0x1)
+	__declspec(align(4)) int32_t m_nCheatDetectOrderReferenceCommandNumber;// 0x1424, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nSuspiciousOrderCheatingCount;// 0x1428, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iSwapPreferencePlayerID;// 0x142c, size 4 (0x4)
+	__declspec(align(4)) uint32_t m_nCoachListenMask;// 0x1430, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nCachedCoachedTeam;// 0x1434, size 4 (0x4)
 	// m_nCachedCoachedTeam metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) float m_flLastChatWheelTime[2];// 0x13f8, size 8 (0x8)
-	__declspec(align(4)) float m_flLastChatWheelAudioTime[2];// 0x1400, size 8 (0x8)
-	__declspec(align(4)) float m_flLastChatWheelAllChatAudioTime[2];// 0x1408, size 8 (0x8)
-	__declspec(align(4)) float m_flLastChatWheelSprayTime;// 0x1410, size 4 (0x4)
-	__declspec(align(4)) int32_t m_iTotalEarnedGold;// 0x1414, size 4 (0x4)
+	__declspec(align(4)) float m_flLastChatWheelTime[2];// 0x1438, size 8 (0x8)
+	__declspec(align(4)) float m_flLastChatWheelAudioTime[2];// 0x1440, size 8 (0x8)
+	__declspec(align(4)) float m_flLastChatWheelAllChatAudioTime[2];// 0x1448, size 8 (0x8)
+	__declspec(align(4)) float m_flLastChatWheelSprayTime;// 0x1450, size 4 (0x4)
+	__declspec(align(4)) float m_flLastPingTime;// 0x1454, size 4 (0x4)
+	__declspec(align(4)) float m_flPingAllowance;// 0x1458, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iTotalEarnedGold;// 0x145c, size 4 (0x4)
 	// m_iTotalEarnedGold metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkUserGroup
-	__declspec(align(4)) int32_t m_iTotalEarnedXP;// 0x1418, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iTotalEarnedXP;// 0x1460, size 4 (0x4)
 	// m_iTotalEarnedXP metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkUserGroup
-char CDOTAPlayer_01420[0x4];
-}; // size: 5152 (0x1420)
+char CDOTAPlayer_01468[0x4];
+}; // size: 5224 (0x1468)
 
 class CDOTA_Unit_Hero_Oracle : public CDOTA_BaseNPC_Hero
 {
@@ -60346,9 +60987,9 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(4)) int32_t m_nFXDeath;// 0x19f8, size 4 (0x4)
-char CDOTA_Unit_Hero_Oracle_01A00[0x4];
-}; // size: 6656 (0x1a00)
+	__declspec(align(4)) int32_t m_nFXDeath;// 0x1a48, size 4 (0x4)
+char CDOTA_Unit_Hero_Oracle_01A50[0x4];
+}; // size: 6736 (0x1a50)
 
 class CDOTA_Ability_Techies_FocusedDetonate : public CDOTABaseAbility
 {
@@ -60444,7 +61085,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 5504 (0x1580)
+}; // size: 5600 (0x15e0)
 
 class CDOTA_Ability_Special_Bonus_Unique_Terrorblade_3 : public CDOTABaseAbility
 {
@@ -60541,21 +61182,21 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hAdditionalWearable;// 0x7b0, size 4 (0x4)
-	__declspec(align(1)) bool m_bOwnerModelChanged;// 0x7b4, size 1 (0x1)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hAdditionalWearable;// 0x808, size 4 (0x4)
+	__declspec(align(1)) bool m_bOwnerModelChanged;// 0x80c, size 1 (0x1)
 	// m_bOwnerModelChanged metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bIsGeneratingEconItem;// 0x7b5, size 1 (0x1)
+	__declspec(align(1)) bool m_bIsGeneratingEconItem;// 0x80d, size 1 (0x1)
 	// m_bIsGeneratingEconItem metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bIsItemVisibleOnGeneratedEntity;// 0x7b6, size 1 (0x1)
+	__declspec(align(1)) bool m_bIsItemVisibleOnGeneratedEntity;// 0x80e, size 1 (0x1)
 	// m_bIsItemVisibleOnGeneratedEntity metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-char CDOTAWearableItem_07B8[0x1];
-}; // size: 1976 (0x7b8)
+char CDOTAWearableItem_0810[0x1];
+}; // size: 2064 (0x810)
 
 class CPointClientUIDialog : public CBaseClientUIEntity
 {
@@ -60907,9 +61548,9 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CDOTA_BaseNPC_Hero > m_hHeroHandle;// 0x5c8, size 4 (0x4)
-char CDOTA_Pet_CarriedItem_05D0[0x4];
-}; // size: 1488 (0x5d0)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CDOTA_BaseNPC_Hero > m_hHeroHandle;// 0x620, size 4 (0x4)
+char CDOTA_Pet_CarriedItem_0628[0x4];
+}; // size: 1576 (0x628)
 
 class CDOTA_Ability_Special_Bonus_Unique_Silencer_2 : public CDOTABaseAbility
 {
@@ -61029,7 +61670,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 1480 (0x5c8)
+}; // size: 1568 (0x620)
 
 class CMessage : public CPointEntity
 {
@@ -61091,6 +61732,7 @@ class CLogicGameEventListener : public CLogicalEntity
 // server.dll, project server
 // Alignment: -1
 // SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
 // Abstract Class
 
 public: 
@@ -61111,7 +61753,13 @@ char CLogicGameEventListener_0378[0x10];
 	__declspec(align(8)) CEntityIOOutput m_OnEventFired;// 0x378, size 40 (0x28)
 	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszGameEventName;// 0x3a0, size 8 (0x8)
 	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszGameEventItem;// 0x3a8, size 8 (0x8)
-}; // size: 944 (0x3b0)
+	__declspec(align(1)) bool m_bEnabled;// 0x3b0, size 1 (0x1)
+	// m_bEnabled metadata
+	 // MNetworkEnable
+	 // MNetworkEnable
+	__declspec(align(1)) bool m_bStartEnabled;// 0x3b1, size 1 (0x1)
+char CLogicGameEventListener_03B8[0x6];
+}; // size: 952 (0x3b8)
 
 class CDOTA_Ability_EmberSpirit_Activate_FireRemnant : public CDOTABaseAbility, public CHorizontalMotionController
 {
@@ -61216,7 +61864,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 1480 (0x5c8)
+}; // size: 1568 (0x620)
 
 class CDOTA_Unit_Hero_SkeletonKing : public CDOTA_BaseNPC_Hero
 {
@@ -61240,9 +61888,9 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(4)) int32_t m_nSkeletonWarriors;// 0x19f8, size 4 (0x4)
-char CDOTA_Unit_Hero_SkeletonKing_01A00[0x4];
-}; // size: 6656 (0x1a00)
+	__declspec(align(4)) int32_t m_nSkeletonWarriors;// 0x1a48, size 4 (0x4)
+char CDOTA_Unit_Hero_SkeletonKing_01A50[0x4];
+}; // size: 6736 (0x1a50)
 
 class CDOTA_Ability_Special_Bonus_Unique_Lich_2 : public CDOTABaseAbility
 {
@@ -61490,7 +62138,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Unit_Nian : public CDOTA_BaseNPC_Creature
 {
@@ -61516,10 +62164,34 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class NianDamageTaken_t > m_vecRecentDamage;// 0x15f8, size 24 (0x18)
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hTail;// 0x1610, size 4 (0x4)
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hHorn;// 0x1614, size 4 (0x4)
-}; // size: 5656 (0x1618)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class NianDamageTaken_t > m_vecRecentDamage;// 0x1658, size 24 (0x18)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hTail;// 0x1670, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hHorn;// 0x1674, size 4 (0x4)
+}; // size: 5752 (0x1678)
+
+class CDOTA_Ability_Special_Bonus_Unique_Huskar_5 : public CDOTABaseAbility
+{
+// CDOTA_Ability_Special_Bonus_Unique_Huskar_5 additional information
+// server.dll, project server
+// Alignment: -1
+// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+// Abstract Class
+
+public: 
+	class CEntityInstanceEntityClass : public CDOTABaseAbility::CEntityInstanceEntityClass
+	{
+	// CDOTA_Ability_Special_Bonus_Unique_Huskar_5::CEntityInstanceEntityClass additional information
+	// Alignment: -1
+	// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+	// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
+	// SCHEMA_CLASS_TEMP_HACK_HAS_DESTRUCTOR_LIKE_METHODS
+	// Abstract Class
+
+	public:
+	}; // size: 296 (0x128)
+
+public:
+}; // size: 1016 (0x3f8)
 
 class CDOTA_Ability_Special_Bonus_Unique_Silencer : public CDOTABaseAbility
 {
@@ -61616,7 +62288,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 4952 (0x1358)
+}; // size: 5048 (0x13b8)
 
 class CDOTA_BinaryObject : public CBaseEntity
 {
@@ -62051,7 +62723,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Ability_Windrunner_Powershot : public CDOTABaseAbility
 {
@@ -62222,6 +62894,30 @@ public:
 	__declspec(align(4)) float m_returnSpeed;// 0x800, size 4 (0x4)
 	__declspec(align(4)) float m_flStartPosition;// 0x804, size 4 (0x4)
 }; // size: 2056 (0x808)
+
+class CDOTA_Item_PocketRoshan : public CDOTA_Item
+{
+// CDOTA_Item_PocketRoshan additional information
+// server.dll, project server
+// Alignment: -1
+// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+// Abstract Class
+
+public: 
+	class CEntityInstanceEntityClass : public CDOTA_Item::CEntityInstanceEntityClass
+	{
+	// CDOTA_Item_PocketRoshan::CEntityInstanceEntityClass additional information
+	// Alignment: -1
+	// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+	// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
+	// SCHEMA_CLASS_TEMP_HACK_HAS_DESTRUCTOR_LIKE_METHODS
+	// Abstract Class
+
+	public:
+	}; // size: 296 (0x128)
+
+public:
+}; // size: 1136 (0x470)
 
 class CDOTA_Item_Recipe_AbyssalBlade : public CDOTA_Item
 {
@@ -62601,7 +63297,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 5456 (0x1550)
+}; // size: 5552 (0x15b0)
 
 class CDOTA_Ability_Special_Bonus_Cast_Range_125 : public CDOTABaseAbility
 {
@@ -62932,9 +63628,9 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(4)) UnknownType <0xc, class QAngle> m_angle;// 0x1480, size 12 (0xc)
-	__declspec(align(4)) int32_t m_iPoseParameterAim;// 0x148c, size 4 (0x4)
-}; // size: 5264 (0x1490)
+	__declspec(align(4)) UnknownType <0xc, class QAngle> m_angle;// 0x14e0, size 12 (0xc)
+	__declspec(align(4)) int32_t m_iPoseParameterAim;// 0x14ec, size 4 (0x4)
+}; // size: 5360 (0x14f0)
 
 class CDOTA_Item_JumpBoots : public CDOTA_Item
 {
@@ -62972,6 +63668,30 @@ public:
 	class CEntityInstanceEntityClass : public CDOTABaseAbility::CEntityInstanceEntityClass
 	{
 	// CDOTA_Ability_ShadowShaman_MassSerpentWard::CEntityInstanceEntityClass additional information
+	// Alignment: -1
+	// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+	// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
+	// SCHEMA_CLASS_TEMP_HACK_HAS_DESTRUCTOR_LIKE_METHODS
+	// Abstract Class
+
+	public:
+	}; // size: 296 (0x128)
+
+public:
+}; // size: 1016 (0x3f8)
+
+class CDOTA_Ability_Special_Bonus_Unique_Pangolier_6 : public CDOTABaseAbility
+{
+// CDOTA_Ability_Special_Bonus_Unique_Pangolier_6 additional information
+// server.dll, project server
+// Alignment: -1
+// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+// Abstract Class
+
+public: 
+	class CEntityInstanceEntityClass : public CDOTABaseAbility::CEntityInstanceEntityClass
+	{
+	// CDOTA_Ability_Special_Bonus_Unique_Pangolier_6::CEntityInstanceEntityClass additional information
 	// Alignment: -1
 	// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
 	// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
@@ -63131,7 +63851,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Ability_Bear_Empty2 : public CDOTABaseAbility
 {
@@ -63376,9 +64096,9 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(1)) bool m_bDebris;// 0x9e0, size 1 (0x1)
-char CShatterGlassShardPhysics_09F0[0xF];
-}; // size: 2544 (0x9f0)
+	__declspec(align(1)) bool m_bDebris;// 0xa50, size 1 (0x1)
+char CShatterGlassShardPhysics_0A60[0xF];
+}; // size: 2656 (0xa60)
 
 class CFilterModel : public CBaseFilter
 {
@@ -63949,6 +64669,30 @@ public:
 }; // size: 24 (0x18)
 #pragma pack(pop)
 
+class CDOTA_Unit_Grimstroke_InkCreature : public CDOTA_BaseNPC_Hero
+{
+// CDOTA_Unit_Grimstroke_InkCreature additional information
+// server.dll, project server
+// Alignment: -1
+// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+// Abstract Class
+
+public: 
+	class CEntityInstanceEntityClass : public CDOTA_BaseNPC::CEntityInstanceEntityClass
+	{
+	// CDOTA_Unit_Grimstroke_InkCreature::CEntityInstanceEntityClass additional information
+	// Alignment: -1
+	// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+	// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
+	// SCHEMA_CLASS_TEMP_HACK_HAS_DESTRUCTOR_LIKE_METHODS
+	// Abstract Class
+
+	public:
+	}; // size: 296 (0x128)
+
+public:
+}; // size: 6728 (0x1a48)
+
 class CDOTA_Ability_Phoenix_FireSpirits : public CDOTABaseAbility
 {
 // CDOTA_Ability_Phoenix_FireSpirits additional information
@@ -64099,7 +64843,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 5456 (0x1550)
+}; // size: 5552 (0x15b0)
 
 class CDOTA_Ability_Special_Bonus_Unique_Treant_2 : public CDOTABaseAbility
 {
@@ -64243,7 +64987,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 4952 (0x1358)
+}; // size: 5048 (0x13b8)
 
 class CShadowControl : public CBaseEntity
 {
@@ -64361,7 +65105,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Ability_Special_Bonus_Unique_Naga_Siren_4 : public CDOTABaseAbility
 {
@@ -64460,6 +65204,30 @@ public:
 	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_weaponNames[32];// 0x530, size 256 (0x100)
 	__declspec(align(4)) int32_t m_weaponCount[32];// 0x630, size 128 (0x80)
 }; // size: 1712 (0x6b0)
+
+class CDOTA_Item_PocketTower : public CDOTA_Item
+{
+// CDOTA_Item_PocketTower additional information
+// server.dll, project server
+// Alignment: -1
+// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+// Abstract Class
+
+public: 
+	class CEntityInstanceEntityClass : public CDOTA_Item::CEntityInstanceEntityClass
+	{
+	// CDOTA_Item_PocketTower::CEntityInstanceEntityClass additional information
+	// Alignment: -1
+	// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+	// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
+	// SCHEMA_CLASS_TEMP_HACK_HAS_DESTRUCTOR_LIKE_METHODS
+	// Abstract Class
+
+	public:
+	}; // size: 296 (0x128)
+
+public:
+}; // size: 1136 (0x470)
 
 class CDOTA_Item_Recipe_UltimateScepter : public CDOTA_Item
 {
@@ -64658,6 +65426,30 @@ public:
 public:
 }; // size: 1016 (0x3f8)
 
+class CDOTA_Ability_Special_Bonus_Movement_Speed_65 : public CDOTABaseAbility
+{
+// CDOTA_Ability_Special_Bonus_Movement_Speed_65 additional information
+// server.dll, project server
+// Alignment: -1
+// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+// Abstract Class
+
+public: 
+	class CEntityInstanceEntityClass : public CDOTABaseAbility::CEntityInstanceEntityClass
+	{
+	// CDOTA_Ability_Special_Bonus_Movement_Speed_65::CEntityInstanceEntityClass additional information
+	// Alignment: -1
+	// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+	// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
+	// SCHEMA_CLASS_TEMP_HACK_HAS_DESTRUCTOR_LIKE_METHODS
+	// Abstract Class
+
+	public:
+	}; // size: 296 (0x128)
+
+public:
+}; // size: 1016 (0x3f8)
+
 class CEntityFlame : public CBaseEntity
 {
 // CEntityFlame additional information
@@ -64803,7 +65595,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 5296 (0x14b0)
+}; // size: 5392 (0x1510)
 
 class CDOTA_Ability_Chen_TestOfFaithTeleport : public CDOTABaseAbility
 {
@@ -64852,7 +65644,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Ability_Roshan_Devotion : public CDOTABaseAbility
 {
@@ -64900,15 +65692,15 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(4)) int32_t m_nTargetType;// 0x1480, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nTargetType;// 0x14e0, size 4 (0x4)
 	// m_nTargetType metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_nTargetFlags;// 0x1484, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nTargetFlags;// 0x14e4, size 4 (0x4)
 	// m_nTargetFlags metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-}; // size: 5256 (0x1488)
+}; // size: 5352 (0x14e8)
 
 class CDOTA_Ability_Special_Bonus_Unique_Visage_2 : public CDOTABaseAbility
 {
@@ -65053,20 +65845,20 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-char CGenericFlexCycler_026A8[0x8];
-	__declspec(align(4)) int32_t m_nTestMode;// 0x26a8, size 4 (0x4)
+char CGenericFlexCycler_02700[0x8];
+	__declspec(align(4)) int32_t m_nTestMode;// 0x2700, size 4 (0x4)
 	// m_nTestMode metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_nTestIndex;// 0x26ac, size 4 (0x4)
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_poseParameterName;// 0x26b0, size 8 (0x8)
-	__declspec(align(1)) bool m_bDoClientSideAnimation;// 0x26b8, size 1 (0x1)
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_layerSequence[2];// 0x26c0, size 16 (0x10)
-	__declspec(align(4)) int32_t m_nLayerIndex[2];// 0x26d0, size 8 (0x8)
-	__declspec(align(4)) UnknownType <0x4, class HSequence> m_hBaseSequence[2];// 0x26d8, size 8 (0x8)
-	__declspec(align(4)) int32_t m_nBoneOverrideIndex;// 0x26e0, size 4 (0x4)
-	__declspec(align(4)) float m_flLastSimTime;// 0x26e4, size 4 (0x4)
-}; // size: 9960 (0x26e8)
+	__declspec(align(4)) int32_t m_nTestIndex;// 0x2704, size 4 (0x4)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_poseParameterName;// 0x2708, size 8 (0x8)
+	__declspec(align(1)) bool m_bDoClientSideAnimation;// 0x2710, size 1 (0x1)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_layerSequence[2];// 0x2718, size 16 (0x10)
+	__declspec(align(4)) int32_t m_nLayerIndex[2];// 0x2728, size 8 (0x8)
+	__declspec(align(4)) UnknownType <0x4, class HSequence> m_hBaseSequence[2];// 0x2730, size 8 (0x8)
+	__declspec(align(4)) int32_t m_nBoneOverrideIndex;// 0x2738, size 4 (0x4)
+	__declspec(align(4)) float m_flLastSimTime;// 0x273c, size 4 (0x4)
+}; // size: 10048 (0x2740)
 
 class CDOTA_Item_Recipe_Cyclone : public CDOTA_Item
 {
@@ -65138,7 +65930,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Ability_Nyx_Assassin_SpikedCarapace : public CDOTABaseAbility
 {
@@ -65780,7 +66572,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 4952 (0x1358)
+}; // size: 5048 (0x13b8)
 
 class CDOTA_Item_RuneSpawner_Powerup : public CBaseAnimating
 {
@@ -65805,12 +66597,12 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(4)) float m_flLastSpawnTime;// 0x5c8, size 4 (0x4)
+	__declspec(align(4)) float m_flLastSpawnTime;// 0x620, size 4 (0x4)
 	// m_flLastSpawnTime metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-char CDOTA_Item_RuneSpawner_Powerup_05D0[0x4];
-}; // size: 1488 (0x5d0)
+char CDOTA_Item_RuneSpawner_Powerup_0628[0x4];
+}; // size: 1576 (0x628)
 
 class CMarkupVolumeTagged_NavHLVR : public CMarkupVolumeTagged
 {
@@ -65916,7 +66708,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 5248 (0x1480)
+}; // size: 5344 (0x14e0)
 
 class CDOTA_Ability_Beastmaster_InnerBeast : public CDOTABaseAbility
 {
@@ -66045,6 +66837,32 @@ public:
 	__declspec(align(4)) float m_flStartTime;// 0x490, size 4 (0x4)
 char CTestEffect_0498[0x4];
 }; // size: 1176 (0x498)
+
+class CDOTA_Ability_Grimstroke_InkCreature : public CDOTABaseAbility
+{
+// CDOTA_Ability_Grimstroke_InkCreature additional information
+// server.dll, project server
+// Alignment: -1
+// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+// Abstract Class
+
+public: 
+	class CEntityInstanceEntityClass : public CDOTABaseAbility::CEntityInstanceEntityClass
+	{
+	// CDOTA_Ability_Grimstroke_InkCreature::CEntityInstanceEntityClass additional information
+	// Alignment: -1
+	// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+	// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
+	// SCHEMA_CLASS_TEMP_HACK_HAS_DESTRUCTOR_LIKE_METHODS
+	// Abstract Class
+
+	public:
+	}; // size: 296 (0x128)
+
+public:
+	__declspec(align(4)) float spawn_time;// 0x3f8, size 4 (0x4)
+char CDOTA_Ability_Grimstroke_InkCreature_0400[0x4];
+}; // size: 1024 (0x400)
 
 class CDOTA_Ability_Kunkka_XMarksTheSpot : public CDOTABaseAbility
 {
@@ -66194,7 +67012,7 @@ public:
 char CScriptNavBlocker_0560[0x4];
 }; // size: 1376 (0x560)
 
-class CConstraintAnchor : public CPointEntity
+class CConstraintAnchor : public CBaseAnimating
 {
 // CConstraintAnchor additional information
 // server.dll, project server
@@ -66204,7 +67022,7 @@ class CConstraintAnchor : public CPointEntity
 // Abstract Class
 
 public: 
-	class CEntityInstanceEntityClass : public CPointEntity::CEntityInstanceEntityClass
+	class CEntityInstanceEntityClass : public CBaseAnimating::CEntityInstanceEntityClass
 	{
 	// CConstraintAnchor::CEntityInstanceEntityClass additional information
 	// Alignment: -1
@@ -66217,9 +67035,9 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(4)) float m_massScale;// 0x368, size 4 (0x4)
-char CConstraintAnchor_0370[0x4];
-}; // size: 880 (0x370)
+	__declspec(align(4)) float m_massScale;// 0x620, size 4 (0x4)
+char CConstraintAnchor_0628[0x4];
+}; // size: 1576 (0x628)
 
 class CDOTA_Item_Cheese : public CDOTA_Item
 {
@@ -66315,7 +67133,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Ability_Brewmaster_ThunderClap : public CDOTABaseAbility
 {
@@ -66498,7 +67316,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 9960 (0x26e8)
+}; // size: 10048 (0x2740)
 
 class CDOTA_Item_Enchanted_Mango : public CDOTA_Item
 {
@@ -66847,21 +67665,21 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(1)) bool mb_MonkeyHasArcana;// 0x19f8, size 1 (0x1)
-	__declspec(align(4)) uint32_t m_nTreeDisguise;// 0x19fc, size 4 (0x4)
+	__declspec(align(1)) bool mb_MonkeyHasArcana;// 0x1a48, size 1 (0x1)
+	__declspec(align(4)) uint32_t m_nTreeDisguise;// 0x1a4c, size 4 (0x4)
 	// m_nTreeDisguise metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) uint32_t m_nPerchedTree;// 0x1a00, size 4 (0x4)
+	__declspec(align(4)) uint32_t m_nPerchedTree;// 0x1a50, size 4 (0x4)
 	// m_nPerchedTree metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vLastPos;// 0x1a04, size 12 (0xc)
-	__declspec(align(1)) bool m_bIsOnCloud;// 0x1a10, size 1 (0x1)
-	__declspec(align(4)) float m_fTotalDistOnCloud;// 0x1a14, size 4 (0x4)
-	__declspec(align(4)) float m_fTotalDistoffCloud;// 0x1a18, size 4 (0x4)
-	__declspec(align(4)) float m_fBackOnCloudThresh;// 0x1a1c, size 4 (0x4)
-}; // size: 6688 (0x1a20)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vLastPos;// 0x1a54, size 12 (0xc)
+	__declspec(align(1)) bool m_bIsOnCloud;// 0x1a60, size 1 (0x1)
+	__declspec(align(4)) float m_fTotalDistOnCloud;// 0x1a64, size 4 (0x4)
+	__declspec(align(4)) float m_fTotalDistoffCloud;// 0x1a68, size 4 (0x4)
+	__declspec(align(4)) float m_fBackOnCloudThresh;// 0x1a6c, size 4 (0x4)
+}; // size: 6768 (0x1a70)
 
 class CDOTA_Unit_VisageFamiliar : public CDOTA_BaseNPC_Creep
 {
@@ -66885,10 +67703,10 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(8)) CountdownTimer ctTimer;// 0x14b0, size 24 (0x18)
-	__declspec(align(4)) int32_t m_nFXAmbient;// 0x14c8, size 4 (0x4)
-char CDOTA_Unit_VisageFamiliar_014D0[0x4];
-}; // size: 5328 (0x14d0)
+	__declspec(align(8)) CountdownTimer ctTimer;// 0x1510, size 24 (0x18)
+	__declspec(align(4)) int32_t m_nFXAmbient;// 0x1528, size 4 (0x4)
+char CDOTA_Unit_VisageFamiliar_01530[0x4];
+}; // size: 5424 (0x1530)
 
 class CDOTA_Ability_Rubick_SpellSteal : public CDOTABaseAbility
 {
@@ -66948,7 +67766,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Ability_TemplarAssassin_Refraction : public CDOTABaseAbility
 {
@@ -66997,8 +67815,8 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-char CDOTA_Unit_Hero_Necrolyte_01A00[0x8];
-}; // size: 6656 (0x1a00)
+char CDOTA_Unit_Hero_Necrolyte_01A50[0x8];
+}; // size: 6736 (0x1a50)
 
 class CDOTA_Ability_Tidehunter_Gush : public CDOTABaseAbility
 {
@@ -67304,7 +68122,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 5296 (0x14b0)
+}; // size: 5392 (0x1510)
 
 class CDOTA_Item_Iron_Talon : public CDOTA_Item
 {
@@ -67352,7 +68170,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 5248 (0x1480)
+}; // size: 5344 (0x14e0)
 
 class CDOTA_Ability_ShadowShaman_Shackles : public CDOTABaseAbility
 {
@@ -67534,18 +68352,18 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(4)) int32_t m_nFXDeath;// 0x19f8, size 4 (0x4)
-	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_szResponseCriteria;// 0x1a00, size 8 (0x8)
-	__declspec(align(4)) uint32_t m_nArcanaColor;// 0x1a08, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nFXDeath;// 0x1a48, size 4 (0x4)
+	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_szResponseCriteria;// 0x1a50, size 8 (0x8)
+	__declspec(align(4)) uint32_t m_nArcanaColor;// 0x1a58, size 4 (0x4)
 	// m_nArcanaColor metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-char CDOTA_Unit_Hero_Terrorblade_01A10[0x4];
-}; // size: 6672 (0x1a10)
+char CDOTA_Unit_Hero_Terrorblade_01A60[0x4];
+}; // size: 6752 (0x1a60)
 
-class CDOTATurboHeroPickRules : public CDOTABaseCustomHeroPickRules
+class CDOTACustomGameHeroPickRules : public CDOTABaseCustomHeroPickRules
 {
-// CDOTATurboHeroPickRules additional information
+// CDOTACustomGameHeroPickRules additional information
 // server.dll, project server
 // Alignment: -1
 // SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
@@ -67555,7 +68373,7 @@ class CDOTATurboHeroPickRules : public CDOTABaseCustomHeroPickRules
 public: 
 	class CEntityInstanceEntityClass : public CDOTABaseCustomHeroPickRules::CEntityInstanceEntityClass
 	{
-	// CDOTATurboHeroPickRules::CEntityInstanceEntityClass additional information
+	// CDOTACustomGameHeroPickRules::CEntityInstanceEntityClass additional information
 	// Alignment: -1
 	// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
 	// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
@@ -67566,12 +68384,20 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(4)) DOTATurboHeroPickRulesPhase_t m_Phase;// 0x368, size 4 (0x4)
+	__declspec(align(4)) DOTACustomHeroPickRulesPhase_t m_Phase;// 0x368, size 4 (0x4)
 	// m_Phase metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-char CDOTATurboHeroPickRules_0370[0x4];
-}; // size: 880 (0x370)
+	__declspec(align(4)) int32_t m_nNumBansPerTeam;// 0x36c, size 4 (0x4)
+	// m_nNumBansPerTeam metadata
+	 // MNetworkEnable
+	 // MNetworkEnable
+	__declspec(align(4)) float m_flEnterTime;// 0x370, size 4 (0x4)
+	// m_flEnterTime metadata
+	 // MNetworkEnable
+	 // MNetworkEnable
+	__declspec(align(4)) int32_t m_nNumHeroesPicked;// 0x374, size 4 (0x4)
+}; // size: 888 (0x378)
 
 class CPhysicsCannister : public CBaseCombatCharacter
 {
@@ -67596,24 +68422,24 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-char CPhysicsCannister_0880[0x8];
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_thrustOrigin;// 0x880, size 12 (0xc)
-	__declspec(align(8)) CThrustController m_thruster;// 0x890, size 40 (0x28)
-char CPhysicsCannister_08C0[0x8];
-	__declspec(align(1)) bool m_active;// 0x8c0, size 1 (0x1)
-	__declspec(align(4)) float m_thrustTime;// 0x8c4, size 4 (0x4)
-	__declspec(align(4)) float m_damage;// 0x8c8, size 4 (0x4)
-	__declspec(align(4)) float m_damageRadius;// 0x8cc, size 4 (0x4)
-	__declspec(align(4)) float m_activateTime;// 0x8d0, size 4 (0x4)
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_gasSound;// 0x8d8, size 8 (0x8)
-	__declspec(align(1)) bool m_bFired;// 0x8e0, size 1 (0x1)
-	__declspec(align(8)) CEntityIOOutput m_onActivate;// 0x8e8, size 40 (0x28)
-	__declspec(align(8)) CEntityIOOutput m_OnAwakened;// 0x910, size 40 (0x28)
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBasePlayer > m_hPhysicsAttacker;// 0x938, size 4 (0x4)
-	__declspec(align(4)) float m_flLastPhysicsInfluenceTime;// 0x93c, size 4 (0x4)
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hLauncher;// 0x940, size 4 (0x4)
-char CPhysicsCannister_0948[0x4];
-}; // size: 2376 (0x948)
+char CPhysicsCannister_08E0[0x8];
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_thrustOrigin;// 0x8e0, size 12 (0xc)
+	__declspec(align(8)) CThrustController m_thruster;// 0x8f0, size 40 (0x28)
+char CPhysicsCannister_0920[0x8];
+	__declspec(align(1)) bool m_active;// 0x920, size 1 (0x1)
+	__declspec(align(4)) float m_thrustTime;// 0x924, size 4 (0x4)
+	__declspec(align(4)) float m_damage;// 0x928, size 4 (0x4)
+	__declspec(align(4)) float m_damageRadius;// 0x92c, size 4 (0x4)
+	__declspec(align(4)) float m_activateTime;// 0x930, size 4 (0x4)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_gasSound;// 0x938, size 8 (0x8)
+	__declspec(align(1)) bool m_bFired;// 0x940, size 1 (0x1)
+	__declspec(align(8)) CEntityIOOutput m_onActivate;// 0x948, size 40 (0x28)
+	__declspec(align(8)) CEntityIOOutput m_OnAwakened;// 0x970, size 40 (0x28)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBasePlayer > m_hPhysicsAttacker;// 0x998, size 4 (0x4)
+	__declspec(align(4)) float m_flLastPhysicsInfluenceTime;// 0x99c, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hLauncher;// 0x9a0, size 4 (0x4)
+char CPhysicsCannister_09A8[0x4];
+}; // size: 2472 (0x9a8)
 
 class CDOTA_Item_Recipe_Necronomicon_3 : public CDOTA_Item_Recipe_Necronomicon
 {
@@ -67709,7 +68535,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Ability_Courier_GoToEnemySecretShop : public CDOTABaseAbility
 {
@@ -68675,9 +69501,9 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(8)) CountdownTimer m_ctRespawn;// 0x14b0, size 24 (0x18)
-	__declspec(align(8)) CDOTA_BaseNPC *m_pTombstone;// 0x14c8, size 8 (0x8)
-}; // size: 5328 (0x14d0)
+	__declspec(align(8)) CountdownTimer m_ctRespawn;// 0x1510, size 24 (0x18)
+	__declspec(align(8)) CDOTA_BaseNPC *m_pTombstone;// 0x1528, size 8 (0x8)
+}; // size: 5424 (0x1530)
 
 class CDOTA_Ability_Special_Bonus_Unique_Zeus_2 : public CDOTABaseAbility
 {
@@ -69238,7 +70064,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 1976 (0x7b8)
+}; // size: 2064 (0x810)
 
 class CDOTA_Item_Recipe_Dagon2 : public CDOTA_Item_Recipe_Dagon
 {
@@ -69335,8 +70161,8 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-char CDOTA_Item_DeathGoldDropped_05D0[0x8];
-}; // size: 1488 (0x5d0)
+char CDOTA_Item_DeathGoldDropped_0628[0x8];
+}; // size: 1576 (0x628)
 
 class CDotaQuestBase : public CBaseEntity
 {
@@ -69414,7 +70240,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 5248 (0x1480)
+}; // size: 5344 (0x14e0)
 
 class CDOTA_Ability_Elder_Titan_ReturnSpirit : public CDOTABaseAbility
 {
@@ -69665,7 +70491,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 1480 (0x5c8)
+}; // size: 1568 (0x620)
 
 class CInfoWorldLayer : public CBaseEntity
 {
@@ -69786,7 +70612,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Unit_Hero_DragonKnight : public CDOTA_BaseNPC_Hero
 {
@@ -69810,7 +70636,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Ability_Courier_ReturnStashItems : public CDOTABaseAbility
 {
@@ -69884,7 +70710,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Item_Recipe_Urn_Of_Shadows : public CDOTA_Item
 {
@@ -69956,7 +70782,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Unit_Hero_Elder_Titan : public CDOTA_BaseNPC_Hero
 {
@@ -69980,7 +70806,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Ability_Beastmaster_WildAxes : public CDOTABaseAbility
 {
@@ -70054,7 +70880,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 4952 (0x1358)
+}; // size: 5048 (0x13b8)
 
 class CDOTA_PlayerResource : public CBaseEntity
 {
@@ -70124,111 +70950,112 @@ char CDOTA_PlayerResource_0830[0x240];
 	__declspec(align(4)) int32_t m_iRawPlayerDamage[24];// 0xa88, size 96 (0x60)
 	__declspec(align(4)) int32_t m_iRawTowerDamage[24];// 0xae8, size 96 (0x60)
 	__declspec(align(4)) int32_t m_iRawHealing[24];// 0xb48, size 96 (0x60)
-	__declspec(align(4)) int32_t m_iTotalPlayerDamageMatrix[24][24];// 0xba8, size 2304 (0x900)
-	__declspec(align(4)) int32_t m_iRawPlayerDamageMatrix[24][24];// 0x14a8, size 2304 (0x900)
-	__declspec(align(4)) int32_t m_iAssistsMatrix[24][24];// 0x1da8, size 2304 (0x900)
-	__declspec(align(4)) int32_t m_iTimeLastSeen[24];// 0x26a8, size 96 (0x60)
-	__declspec(align(4)) int32_t m_iTotalDisconnectedTime[24];// 0x2708, size 96 (0x60)
-	__declspec(align(8)) double m_dTimeLastRecieved[24];// 0x2768, size 192 (0xc0)
-	__declspec(align(4)) int32_t m_iGoldSpentOnSupport[24];// 0x2828, size 96 (0x60)
-	__declspec(align(4)) int32_t m_iGoldSpentOnConsumables[24];// 0x2888, size 96 (0x60)
-	__declspec(align(4)) int32_t m_iGoldSpentOnItems[24];// 0x28e8, size 96 (0x60)
-	__declspec(align(4)) int32_t m_iGoldSpentOnBuybacks[24];// 0x2948, size 96 (0x60)
-	__declspec(align(4)) int32_t m_iGoldLostToDeath[24];// 0x29a8, size 96 (0x60)
-	__declspec(align(4)) int32_t m_iGoldBonusEarned[24];// 0x2a08, size 96 (0x60)
-	__declspec(align(4)) int32_t m_iAegisPickups[24];// 0x2a68, size 96 (0x60)
-	__declspec(align(4)) int32_t m_iTeleportsUsed[24];// 0x2ac8, size 96 (0x60)
-	__declspec(align(4)) int32_t m_iNumConsumablesPurchased[24];// 0x2b28, size 96 (0x60)
-	__declspec(align(4)) int32_t m_iNumItemsPurchased[24];// 0x2b88, size 96 (0x60)
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class PurchasedItem_t > m_vecItemsPurchased[24];// 0x2be8, size 576 (0x240)
-	__declspec(align(4)) float m_flTimeOfLastItemPurchase[24];// 0x2e28, size 96 (0x60)
-	__declspec(align(4)) float m_flTimeOfLastConsumablePurchase[24];// 0x2e88, size 96 (0x60)
-	__declspec(align(4)) float m_flTimeOfLastDeath[24];// 0x2ee8, size 96 (0x60)
-	__declspec(align(4)) int32_t m_iTowerDamageTaken[24];// 0x2f48, size 96 (0x60)
-	__declspec(align(4)) int32_t m_iCreepDamageTaken[24];// 0x2fa8, size 96 (0x60)
-	__declspec(align(4)) int32_t m_iHeroDamageTaken[24];// 0x3008, size 96 (0x60)
-	__declspec(align(4)) int32_t m_iTotalTowerDamageTaken[24];// 0x3068, size 96 (0x60)
-	__declspec(align(4)) int32_t m_iTotalCreepDamageTaken[24];// 0x30c8, size 96 (0x60)
-	__declspec(align(4)) int32_t m_iTotalHeroDamageTaken[24];// 0x3128, size 96 (0x60)
-	__declspec(align(4)) int32_t m_iRank[24];// 0x3188, size 96 (0x60)
-	__declspec(align(1)) bool m_bRankCalibrated[24];// 0x31e8, size 24 (0x18)
-	__declspec(align(1)) bool m_bTextChatBanned[24];// 0x3200, size 24 (0x18)
-	__declspec(align(1)) bool m_bLowPriority[24];// 0x3218, size 24 (0x18)
-	__declspec(align(1)) bool m_bIdleInFountain[24];// 0x3230, size 24 (0x18)
-	__declspec(align(1)) bool m_bLoggedInElsewhere[24];// 0x3248, size 24 (0x18)
-	__declspec(align(1)) bool m_bPlayerLoadedCompletely[64];// 0x3260, size 64 (0x40)
-	__declspec(align(4)) int32_t m_iDisconnectionReason[64];// 0x32a0, size 256 (0x100)
-	__declspec(align(8)) uint64_t m_SelectedGuide[64];// 0x33a0, size 512 (0x200)
-	__declspec(align(1)) bool m_bIsUsingPlusGuide[64];// 0x35a0, size 64 (0x40)
-	__declspec(align(4)) int32_t m_iCustomTeamAssignments[24];// 0x35e0, size 96 (0x60)
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, float > m_vecPlayerLevelUpTimes[24];// 0x3640, size 576 (0x240)
-	__declspec(align(4)) int32_t m_iManaSpent[6][64];// 0x3880, size 1536 (0x600)
-	__declspec(align(1)) bool m_bLeaverAlreadyDetected;// 0x3e80, size 1 (0x1)
-char CDOTA_PlayerResource_042A8[0x427];
-	__declspec(align(1)) bool m_bScaledKillsCalculated;// 0x42a8, size 1 (0x1)
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class TimedBalanceRecord_t > m_GameBalanceFactorList;// 0x42b0, size 24 (0x18)
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class TimedKillEvent_t > m_TimedKillList;// 0x42c8, size 24 (0x18)
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class TimedKillEvent_t > m_TimedAssistList;// 0x42e0, size 24 (0x18)
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class TimedKillEvent_t > m_TimedDeathList;// 0x42f8, size 24 (0x18)
-	__declspec(align(4)) float m_flGameBalance;// 0x4310, size 4 (0x4)
-	__declspec(align(4)) int32_t m_nAverageNetworthDelta;// 0x4314, size 4 (0x4)
-	__declspec(align(4)) int32_t m_nAverageExperienceDelta;// 0x4318, size 4 (0x4)
-	__declspec(align(4)) int32_t m_nMaxLosingTeamNetworthLead;// 0x431c, size 4 (0x4)
-	__declspec(align(4)) uint32_t m_unLastHeroPickOrder;// 0x4320, size 4 (0x4)
-	__declspec(align(4)) float m_flScaledKills[24];// 0x4324, size 96 (0x60)
-	__declspec(align(4)) float m_flScaledDeaths[24];// 0x4384, size 96 (0x60)
-	__declspec(align(4)) float m_flScaledAssists[24];// 0x43e4, size 96 (0x60)
-char CDOTA_PlayerResource_04460[0x18];
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownAtomicType <0x4, CHandle, class CDOTA_Unit_Courier > > m_hTeamCouriers[14];// 0x4460, size 336 (0x150)
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownAtomicType <0x4, CHandle, class CDOTA_Unit_Courier > > m_hPlayerCouriers[64];// 0x45b0, size 1536 (0x600)
-	__declspec(align(4)) float m_flAvailableLaneGold[14];// 0x4bb0, size 56 (0x38)
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class DamageShareEvent_t > m_DamageShareList[24];// 0x4be8, size 576 (0x240)
-	__declspec(align(4)) DamageShareEvent_t m_AbsorbedDamageRollup[25][24];// 0x4e28, size 7200 (0x1c20)
-	__declspec(align(4)) int32_t m_playerAbilityUpgradeOrder[25][24];// 0x6a48, size 2400 (0x960)
-	__declspec(align(4)) int32_t m_playerAbilityUpgradeTimes[25][24];// 0x73a8, size 2400 (0x960)
-	__declspec(align(4)) int32_t m_playerAbilityUpgradeCount[24];// 0x7d08, size 96 (0x60)
-char CDOTA_PlayerResource_07E68[0x100];
-	__declspec(align(4)) int32_t m_fullUpdateCount[64];// 0x7e68, size 256 (0x100)
-char CDOTA_PlayerResource_08328[0x3C0];
-	__declspec(align(4)) int32_t m_iCouriersDeployed[24];// 0x8328, size 96 (0x60)
-	__declspec(align(4)) int32_t m_iCouriersPotentiallyKilled[24];// 0x8388, size 96 (0x60)
-	__declspec(align(4)) int32_t m_iCommandsIssued[24];// 0x83e8, size 96 (0x60)
-	__declspec(align(4)) uint32_t m_hHeroSpawnGroup[24];// 0x8448, size 96 (0x60)
-char CDOTA_PlayerResource_08928[0x480];
-	__declspec(align(4)) float m_fNextLaneDetectionUpdate;// 0x8928, size 4 (0x4)
-	__declspec(align(4)) float m_fNextTimedHeroStatsUpdate;// 0x892c, size 4 (0x4)
-char CDOTA_PlayerResource_08BD0[0x2A0];
-	__declspec(align(1)) bool m_bInitializedLaneWaypoints;// 0x8bd0, size 1 (0x1)
-char CDOTA_PlayerResource_093B8[0x7E4];
-	__declspec(align(4)) uint32_t m_nLastWardSuggestionBuildingState;// 0x93b8, size 4 (0x4)
-	__declspec(align(4)) uint32_t m_nLastWardSuggestionUpdateNum;// 0x93bc, size 4 (0x4)
-	__declspec(align(1)) bool m_bLastWardSuggestionRoshanAlive;// 0x93c0, size 1 (0x1)
-	__declspec(align(1)) bool bDoFinalPregameSuggestion[10];// 0x93c1, size 10 (0xa)
-	__declspec(align(4)) int32_t m_hAbilitiesSuggestion[10];// 0x93cc, size 40 (0x28)
-	__declspec(align(4)) int32_t m_hPregameItemsSuggestion[10];// 0x93f4, size 40 (0x28)
-	__declspec(align(4)) int32_t m_hItemsSuggestion[10];// 0x941c, size 40 (0x28)
-	__declspec(align(4)) int32_t m_hLanesSuggestion[14];// 0x9444, size 56 (0x38)
-	__declspec(align(4)) int32_t m_hWinProbabilitySuggestion;// 0x947c, size 4 (0x4)
-	__declspec(align(4)) int32_t m_hHeroSuggestion[10];// 0x9480, size 40 (0x28)
-	__declspec(align(4)) float m_fNextCreepDistanceUpdate;// 0x94a8, size 4 (0x4)
-	__declspec(align(4)) float m_fCreepDistanceSafe[14];// 0x94ac, size 56 (0x38)
-	__declspec(align(4)) float m_fCreepDistanceMid[14];// 0x94e4, size 56 (0x38)
-	__declspec(align(4)) float m_fCreepDistanceOff[14];// 0x951c, size 56 (0x38)
-char CDOTA_PlayerResource_095B4[0x60];
-	__declspec(align(4)) int32_t m_iRequestedBotSlot;// 0x95b4, size 4 (0x4)
-	__declspec(align(4)) float m_fNextCombatLogLocationUpdateTime;// 0x95b8, size 4 (0x4)
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, uint32_t > m_vecPendingPlayerResourceRequests;// 0x95c0, size 24 (0x18)
-	__declspec(align(4)) int32_t m_iRampages[24];// 0x95d8, size 96 (0x60)
-	__declspec(align(4)) int32_t m_iTripleKills[24];// 0x9638, size 96 (0x60)
-	__declspec(align(4)) int32_t m_iCouriersKilled[24];// 0x9698, size 96 (0x60)
-	__declspec(align(4)) int32_t m_iAegisesSnatched[24];// 0x96f8, size 96 (0x60)
-	__declspec(align(4)) int32_t m_iCheesesEaten[24];// 0x9758, size 96 (0x60)
-	__declspec(align(4)) int32_t m_iRapiersPurchased[24];// 0x97b8, size 96 (0x60)
-	__declspec(align(4)) float m_flPushingDamage[24];// 0x9818, size 96 (0x60)
+	__declspec(align(4)) int32_t m_iRawPlayerDamageReceivedPreReduction[24];// 0xba8, size 96 (0x60)
+	__declspec(align(4)) int32_t m_iRawPlayerDamageReceivedPostReduction[24];// 0xc08, size 96 (0x60)
+	__declspec(align(4)) int32_t m_iTotalPlayerDamageMatrix[24][24];// 0xc68, size 2304 (0x900)
+	__declspec(align(4)) int32_t m_iRawPlayerDamageMatrix[24][24];// 0x1568, size 2304 (0x900)
+	__declspec(align(4)) int32_t m_iAssistsMatrix[24][24];// 0x1e68, size 2304 (0x900)
+	__declspec(align(4)) int32_t m_iTimeLastSeen[24];// 0x2768, size 96 (0x60)
+	__declspec(align(4)) int32_t m_iTotalDisconnectedTime[24];// 0x27c8, size 96 (0x60)
+	__declspec(align(8)) double m_dTimeLastRecieved[24];// 0x2828, size 192 (0xc0)
+	__declspec(align(4)) int32_t m_iGoldBonusEarned[24];// 0x28e8, size 96 (0x60)
+	__declspec(align(4)) int32_t m_iAegisPickups[24];// 0x2948, size 96 (0x60)
+	__declspec(align(4)) int32_t m_iTeleportsUsed[24];// 0x29a8, size 96 (0x60)
+	__declspec(align(4)) int32_t m_iNumConsumablesPurchased[24];// 0x2a08, size 96 (0x60)
+	__declspec(align(4)) int32_t m_iNumItemsPurchased[24];// 0x2a68, size 96 (0x60)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class PurchasedItem_t > m_vecItemsPurchased[24];// 0x2ac8, size 576 (0x240)
+	__declspec(align(4)) float m_flTimeOfLastItemPurchase[24];// 0x2d08, size 96 (0x60)
+	__declspec(align(4)) float m_flTimeOfLastConsumablePurchase[24];// 0x2d68, size 96 (0x60)
+	__declspec(align(4)) float m_flTimeOfLastDeath[24];// 0x2dc8, size 96 (0x60)
+	__declspec(align(4)) int32_t m_iTowerDamageTaken[24];// 0x2e28, size 96 (0x60)
+	__declspec(align(4)) int32_t m_iCreepDamageTaken[24];// 0x2e88, size 96 (0x60)
+	__declspec(align(4)) int32_t m_iHeroDamageTaken[24];// 0x2ee8, size 96 (0x60)
+	__declspec(align(4)) int32_t m_iTotalTowerDamageTaken[24];// 0x2f48, size 96 (0x60)
+	__declspec(align(4)) int32_t m_iTotalCreepDamageTaken[24];// 0x2fa8, size 96 (0x60)
+	__declspec(align(4)) int32_t m_iTotalHeroDamageTaken[24];// 0x3008, size 96 (0x60)
+	__declspec(align(4)) int32_t m_iRank[24];// 0x3068, size 96 (0x60)
+	__declspec(align(1)) bool m_bRankCalibrated[24];// 0x30c8, size 24 (0x18)
+	__declspec(align(1)) bool m_bTextChatBanned[24];// 0x30e0, size 24 (0x18)
+	__declspec(align(1)) bool m_bLowPriority[24];// 0x30f8, size 24 (0x18)
+	__declspec(align(1)) bool m_bWasHeroPickDotaPlusSuggestion[24];// 0x3110, size 24 (0x18)
+	__declspec(align(1)) bool m_bIdleInFountain[24];// 0x3128, size 24 (0x18)
+	__declspec(align(1)) bool m_bLoggedInElsewhere[24];// 0x3140, size 24 (0x18)
+	__declspec(align(1)) bool m_bPlayerLoadedCompletely[64];// 0x3158, size 64 (0x40)
+	__declspec(align(4)) int32_t m_iDisconnectionReason[64];// 0x3198, size 256 (0x100)
+	__declspec(align(8)) uint64_t m_SelectedGuide[64];// 0x3298, size 512 (0x200)
+	__declspec(align(1)) bool m_bIsUsingPlusGuide[64];// 0x3498, size 64 (0x40)
+	__declspec(align(4)) int32_t m_iCustomTeamAssignments[24];// 0x34d8, size 96 (0x60)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, float > m_vecPlayerLevelUpTimes[24];// 0x3538, size 576 (0x240)
+	__declspec(align(4)) int32_t m_iManaSpent[6][64];// 0x3778, size 1536 (0x600)
+	__declspec(align(1)) bool m_bLeaverAlreadyDetected;// 0x3d78, size 1 (0x1)
+char CDOTA_PlayerResource_041A0[0x427];
+	__declspec(align(1)) bool m_bScaledKillsCalculated;// 0x41a0, size 1 (0x1)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class TimedBalanceRecord_t > m_GameBalanceFactorList;// 0x41a8, size 24 (0x18)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class TimedKillEvent_t > m_TimedKillList;// 0x41c0, size 24 (0x18)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class TimedKillEvent_t > m_TimedAssistList;// 0x41d8, size 24 (0x18)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class TimedKillEvent_t > m_TimedDeathList;// 0x41f0, size 24 (0x18)
+	__declspec(align(4)) float m_flGameBalance;// 0x4208, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nAverageNetworthDelta;// 0x420c, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nAverageExperienceDelta;// 0x4210, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nMaxLosingTeamNetworthLead;// 0x4214, size 4 (0x4)
+	__declspec(align(4)) uint32_t m_unLastHeroPickOrder;// 0x4218, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iBountyGoldEarned[24];// 0x421c, size 96 (0x60)
+	__declspec(align(4)) int32_t m_iRangeCreepUpgradeGoldEarned[24];// 0x427c, size 96 (0x60)
+	__declspec(align(4)) float m_flScaledKills[24];// 0x42dc, size 96 (0x60)
+	__declspec(align(4)) float m_flScaledDeaths[24];// 0x433c, size 96 (0x60)
+	__declspec(align(4)) float m_flScaledAssists[24];// 0x439c, size 96 (0x60)
+char CDOTA_PlayerResource_04418[0x18];
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownAtomicType <0x4, CHandle, class CDOTA_Unit_Courier > > m_hTeamCouriers[14];// 0x4418, size 336 (0x150)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownAtomicType <0x4, CHandle, class CDOTA_Unit_Courier > > m_hPlayerCouriers[64];// 0x4568, size 1536 (0x600)
+	__declspec(align(4)) float m_flAvailableLaneGold[14];// 0x4b68, size 56 (0x38)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class DamageShareEvent_t > m_DamageShareList[24];// 0x4ba0, size 576 (0x240)
+	__declspec(align(4)) DamageShareEvent_t m_AbsorbedDamageRollup[25][24];// 0x4de0, size 7200 (0x1c20)
+	__declspec(align(4)) int32_t m_playerAbilityUpgradeOrder[25][24];// 0x6a00, size 2400 (0x960)
+	__declspec(align(4)) int32_t m_playerAbilityUpgradeTimes[25][24];// 0x7360, size 2400 (0x960)
+	__declspec(align(4)) int32_t m_playerAbilityUpgradeCount[24];// 0x7cc0, size 96 (0x60)
+char CDOTA_PlayerResource_07E20[0x100];
+	__declspec(align(4)) int32_t m_fullUpdateCount[64];// 0x7e20, size 256 (0x100)
+char CDOTA_PlayerResource_082E0[0x3C0];
+	__declspec(align(4)) int32_t m_iCouriersDeployed[24];// 0x82e0, size 96 (0x60)
+	__declspec(align(4)) int32_t m_iCouriersPotentiallyKilled[24];// 0x8340, size 96 (0x60)
+	__declspec(align(4)) int32_t m_iCommandsIssued[24];// 0x83a0, size 96 (0x60)
+	__declspec(align(4)) uint32_t m_hHeroSpawnGroup[24];// 0x8400, size 96 (0x60)
+char CDOTA_PlayerResource_088E0[0x480];
+	__declspec(align(4)) float m_fNextLaneDetectionUpdate;// 0x88e0, size 4 (0x4)
+	__declspec(align(4)) float m_fNextTimedHeroStatsUpdate;// 0x88e4, size 4 (0x4)
+char CDOTA_PlayerResource_08B88[0x2A0];
+	__declspec(align(1)) bool m_bInitializedLaneWaypoints;// 0x8b88, size 1 (0x1)
+char CDOTA_PlayerResource_09370[0x7E4];
+	__declspec(align(4)) uint32_t m_nLastWardSuggestionBuildingState;// 0x9370, size 4 (0x4)
+	__declspec(align(4)) uint32_t m_nLastWardSuggestionUpdateNum;// 0x9374, size 4 (0x4)
+	__declspec(align(1)) bool m_bLastWardSuggestionRoshanAlive;// 0x9378, size 1 (0x1)
+	__declspec(align(1)) bool bDoFinalPregameSuggestion[10];// 0x9379, size 10 (0xa)
+	__declspec(align(4)) int32_t m_hAbilitiesSuggestion[10];// 0x9384, size 40 (0x28)
+	__declspec(align(4)) int32_t m_hPregameItemsSuggestion[10];// 0x93ac, size 40 (0x28)
+	__declspec(align(4)) int32_t m_hItemsSuggestion[10];// 0x93d4, size 40 (0x28)
+	__declspec(align(4)) int32_t m_hLanesSuggestion[14];// 0x93fc, size 56 (0x38)
+	__declspec(align(4)) int32_t m_hWinProbabilitySuggestion;// 0x9434, size 4 (0x4)
+	__declspec(align(4)) int32_t m_hHeroSuggestion[10];// 0x9438, size 40 (0x28)
+	__declspec(align(4)) float m_fNextCreepDistanceUpdate;// 0x9460, size 4 (0x4)
+	__declspec(align(4)) float m_fCreepDistanceSafe[14];// 0x9464, size 56 (0x38)
+	__declspec(align(4)) float m_fCreepDistanceMid[14];// 0x949c, size 56 (0x38)
+	__declspec(align(4)) float m_fCreepDistanceOff[14];// 0x94d4, size 56 (0x38)
+char CDOTA_PlayerResource_0956C[0x60];
+	__declspec(align(4)) int32_t m_iRequestedBotSlot;// 0x956c, size 4 (0x4)
+	__declspec(align(4)) float m_fNextCombatLogLocationUpdateTime;// 0x9570, size 4 (0x4)
+	__declspec(align(4)) float m_fNextAPMUpdateTime;// 0x9574, size 4 (0x4)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, uint32_t > m_vecPendingPlayerResourceRequests;// 0x9578, size 24 (0x18)
+	__declspec(align(4)) int32_t m_iRampages[24];// 0x9590, size 96 (0x60)
+	__declspec(align(4)) int32_t m_iTripleKills[24];// 0x95f0, size 96 (0x60)
+	__declspec(align(4)) int32_t m_iCouriersKilled[24];// 0x9650, size 96 (0x60)
+	__declspec(align(4)) int32_t m_iAegisesSnatched[24];// 0x96b0, size 96 (0x60)
+	__declspec(align(4)) int32_t m_iCheesesEaten[24];// 0x9710, size 96 (0x60)
+	__declspec(align(4)) int32_t m_iRapiersPurchased[24];// 0x9770, size 96 (0x60)
+	__declspec(align(4)) float m_flPushingDamage[24];// 0x97d0, size 96 (0x60)
 public:
 	static /*Array, 64 elements*/uint64_t *&Get_s_unLobbySteamID() {return *(uint64_t **)schema::SchemaSystem::Get()->FindTypeScopeForModule("server.dll")->FindDeclaredClass("CDOTA_PlayerResource")->m_staticMembers.data[0].m_pInstance; }
 	static /*Array, 64 elements*/uint64_t *&Get_s_unLobbyPartyID() {return *(uint64_t **)schema::SchemaSystem::Get()->FindTypeScopeForModule("server.dll")->FindDeclaredClass("CDOTA_PlayerResource")->m_staticMembers.data[1].m_pInstance; }
-}; // size: 39032 (0x9878)
+}; // size: 38960 (0x9830)
 
 class CMarkupVolumeTagged_NavL4D : public CMarkupVolumeTagged
 {
@@ -70713,7 +71540,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Unit_Hero_Pudge : public CDOTA_BaseNPC_Hero
 {
@@ -70738,7 +71565,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Ability_Special_Bonus_Unique_Alchemist_3 : public CDOTABaseAbility
 {
@@ -71143,11 +71970,11 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(4)) int32_t m_nMode;// 0x5c8, size 4 (0x4)
-	__declspec(align(4)) float m_flHeight;// 0x5cc, size 4 (0x4)
-	__declspec(align(4)) float m_flNextStateTime;// 0x5d0, size 4 (0x4)
-	__declspec(align(4)) int32_t m_nUserSpecifiedHeight;// 0x5d4, size 4 (0x4)
-}; // size: 1496 (0x5d8)
+	__declspec(align(4)) int32_t m_nMode;// 0x620, size 4 (0x4)
+	__declspec(align(4)) float m_flHeight;// 0x624, size 4 (0x4)
+	__declspec(align(4)) float m_flNextStateTime;// 0x628, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nUserSpecifiedHeight;// 0x62c, size 4 (0x4)
+}; // size: 1584 (0x630)
 
 class CDOTA_Item_Recipe_Aether_Lens : public CDOTA_Item
 {
@@ -71272,7 +72099,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Unit_Hero_Spectre : public CDOTA_BaseNPC_Hero
 {
@@ -71297,7 +72124,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Ability_Nevermore_Requiem : public CDOTABaseAbility
 {
@@ -71554,7 +72381,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 5256 (0x1488)
+}; // size: 5352 (0x14e8)
 
 class CDOTA_Ability_Special_Bonus_Unique_Luna_1 : public CDOTABaseAbility
 {
@@ -72089,10 +72916,10 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszDefaultAnim;// 0x15f8, size 8 (0x8)
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vTrapTargetLocal;// 0x1600, size 12 (0xc)
-char CDOTA_BaseNPC_Trap_Ward_01610[0x4];
-}; // size: 5648 (0x1610)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_iszDefaultAnim;// 0x1658, size 8 (0x8)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vTrapTargetLocal;// 0x1660, size 12 (0xc)
+char CDOTA_BaseNPC_Trap_Ward_01670[0x4];
+}; // size: 5744 (0x1670)
 
 class CDOTA_Ability_Special_Bonus_Attack_Range_75 : public CDOTABaseAbility
 {
@@ -72214,7 +73041,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 1432 (0x598)
+}; // size: 1456 (0x5b0)
 
 class CDOTA_DataRadiant : public CDOTA_DataNonSpectator
 {
@@ -72286,7 +73113,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 1760 (0x6e0)
+}; // size: 1848 (0x738)
 
 class CDOTA_Ability_Invoker_IceWall : public CDOTA_Ability_Invoker_InvokedBase
 {
@@ -72557,7 +73384,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Ability_TemplarAssassin_SelfTrap : public CDOTABaseAbility
 {
@@ -72882,7 +73709,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 5296 (0x14b0)
+}; // size: 5392 (0x1510)
 
 class CDOTA_Ability_Special_Bonus_Unique_Dark_Seer_2 : public CDOTABaseAbility
 {
@@ -73164,24 +73991,24 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-	__declspec(align(4)) int32_t m_hLiteralControllerSlots[2];// 0x640, size 8 (0x8)
+	__declspec(align(4)) int32_t m_hLiteralControllerSlots[2];// 0x698, size 8 (0x8)
 	// m_hLiteralControllerSlots metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_hLogicalControllerSlots[2];// 0x648, size 8 (0x8)
+	__declspec(align(4)) int32_t m_hLogicalControllerSlots[2];// 0x6a0, size 8 (0x8)
 	// m_hLogicalControllerSlots metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CPropVRHand > m_hVRControllers[4];// 0x650, size 16 (0x10)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CPropVRHand > m_hVRControllers[4];// 0x6a8, size 16 (0x10)
 	// m_hVRControllers metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CPointWorldText > m_hCloseCaption;// 0x660, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CPointWorldText > m_hCloseCaption;// 0x6b8, size 4 (0x4)
 	// m_hCloseCaption metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-char CPropHMDAvatar_0668[0x4];
-}; // size: 1640 (0x668)
+char CPropHMDAvatar_06C0[0x4];
+}; // size: 1728 (0x6c0)
 
 class CDOTA_Ability_Warlock_Fatal_Bonds : public CDOTABaseAbility
 {
@@ -73387,7 +74214,7 @@ public:
 	}; // size: 296 (0x128)
 
 public:
-}; // size: 6648 (0x19f8)
+}; // size: 6728 (0x1a48)
 
 class CDOTA_Ability_Juggernaut_HealingWard : public CDOTABaseAbility
 {
@@ -73473,30 +74300,6 @@ public:
 	class CEntityInstanceEntityClass : public CDOTABaseAbility::CEntityInstanceEntityClass
 	{
 	// CDOTA_Ability_GnollAssassin_EnvenomedWeapon::CEntityInstanceEntityClass additional information
-	// Alignment: -1
-	// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
-	// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
-	// SCHEMA_CLASS_TEMP_HACK_HAS_DESTRUCTOR_LIKE_METHODS
-	// Abstract Class
-
-	public:
-	}; // size: 296 (0x128)
-
-public:
-}; // size: 1016 (0x3f8)
-
-class CDOTA_Ability_ControllerTest_SvenOverheadAttack : public CDOTABaseAbility
-{
-// CDOTA_Ability_ControllerTest_SvenOverheadAttack additional information
-// server.dll, project server
-// Alignment: -1
-// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
-// Abstract Class
-
-public: 
-	class CEntityInstanceEntityClass : public CDOTABaseAbility::CEntityInstanceEntityClass
-	{
-	// CDOTA_Ability_ControllerTest_SvenOverheadAttack::CEntityInstanceEntityClass additional information
 	// Alignment: -1
 	// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
 	// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS

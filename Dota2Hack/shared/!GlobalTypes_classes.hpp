@@ -12,6 +12,7 @@ class CBasePlayer;
 class CDOTABaseAbility;
 class CDOTA_BaseNPC;
 class CEntityInstance;
+class CPropVRHand;
 class C_BaseAnimating;
 class C_BasePlayer;
 class C_FireSmoke;
@@ -42,18 +43,18 @@ template < class... Args >
 class CWeakHandle;
 template < class... Args >
 class SchemaArray_t;
-class CParticleOperatorInstance;
-class CParticleInitializerOperatorInstance;
+class CParticleFunction;
+class CParticleFunctionInitializer;
 class CDOTA_BuffParticle;
 class CDOTA_PlayerChallengeInfo;
 class CBaseAchievement;
 class fogparams_t;
 class C_INIT_RandomColor;
-class CParticlePerFrameOperatorInstance;
+class CParticleFunctionOperator;
 class CBaseAnimMotor;
 class ParticleControlPointDriver_t;
-class SceneViewId_t;
 class C_OP_PlaneCull;
+class SceneViewId_t;
 class CAnimStateConditionBase;
 class CRenderSkeleton;
 class CPhysSurfacePropertiesSoundNames;
@@ -86,8 +87,9 @@ class EventServerPollNetworking_t;
 class C_OP_DecayMaintainCount;
 class C_INIT_RemapInitialCPDirectionToRotation;
 class InfoForResourceTypeIParticleSnapshot;
-class C_OP_SetControlPointToCenter;
+class CParticleFunctionPreEmission;
 class C_OP_PercentageBetweenCPsVector;
+class FeKelagerBend2_t;
 class InfoForResourceTypeCVMixListResource;
 class SchemaMetadataSetData_t;
 class constraint_axislimit_t;
@@ -110,7 +112,7 @@ class CAnimTagManager;
 class CGameSceneNodeHandle;
 class CountdownTimer;
 class PurchasedItem_t;
-class CParticleRenderOperatorInstance;
+class CParticleFunctionRenderer;
 class C_OP_SetControlPointPositionToTimeOfDayValue;
 class C_OP_SetChildControlPoints;
 class C_INIT_InheritFromParentParticles;
@@ -121,16 +123,16 @@ class CRMSG_Entity_Event;
 class CNetworkOriginCellCoordQuantizedVector;
 class C_INIT_CreateFromParentParticles;
 class FeSimdRodConstraint_t;
-class CSSDSMsg_EndFrame;
 class C_OP_RenderStatusEffect;
 class C_INIT_InitFromCPSnapshot;
 class C_INIT_PositionOffsetToCP;
-class CBoneMaskAnimNode;
+class CSSDSMsg_EndFrame;
+class AnimParamID;
 class SkeletonBoneBounds_t;
 class InfoForResourceTypeCVirtualVolumeTexture;
 class CConstantForceController;
 class INextBotEventResponder;
-class CBaseConstraint;
+class CBoneConstraintBase;
 class EventAdvanceTick_t;
 class C_OP_Cull;
 class C_INIT_AgeNoise;
@@ -138,8 +140,8 @@ class SeqResourceSeqDesc_t_Flag_t;
 class CEntityClass;
 class MorphData_t;
 class CVPhysXSurfacePropertiesList;
-class CParticleEmitterOperatorInstance;
-class CParticleConstraintOperatorInstance;
+class CParticleFunctionEmitter;
+class CParticleFunctionConstraint;
 class MorphSetData_t;
 class C_OP_BasicMovement;
 class FlexDesc_t;
@@ -152,7 +154,7 @@ class C_OP_OscillateScalarSimple;
 class C_INIT_InitSkinnedPositionFromCPSnapshot;
 class C_OP_SpringConstraint;
 class RnShapeDesc_t;
-class AnimParamID;
+class CAnimParameterBase;
 class VPhysXAggregateData_t;
 class C_INIT_ModelCull;
 class CAnimInputDamping;
@@ -160,6 +162,7 @@ class CEntityClassInfo;
 class SchemaEnumInfoData_t;
 class fogplayerparams_t;
 class C_OP_DistanceBetweenCPsToCP;
+class CPiecewiseCurveSchemaWrapper;
 class C_OP_ContinuousEmitter;
 class C_INIT_RandomAlpha;
 class CEffectData;
@@ -167,15 +170,16 @@ class CDOTA_AbilityDraftAbilityState;
 class CSubtractAnimNode;
 class HitBoxSet_t;
 class InfoForResourceTypeCPhysAggregateData;
+class C_OP_NoiseEmitter;
 class AnimTagID;
 class sky3dparams_t;
 class JiggleData;
 class RnSphere_t;
 class PhysSoftbodyDesc_t;
 class CDOTA_Buff;
-class VMapResourceData_t;
 class C_OP_RemapNamedModelElementOnceTimed;
 class C_INIT_RemapParticleCountToScalar;
+class VMapResourceData_t;
 class FeCtrlSoftOffset_t;
 class IBotController;
 class vehicle_controlparams_t;
@@ -186,7 +190,6 @@ class InfoForResourceTypeProcessingGraph_t;
 class SchemaEnumeratorInfoData_t;
 class DamageShareEvent_t;
 class CSimpleSimTimer;
-class C_OP_InitSetSnapshotOnCP;
 class C_INIT_RandomYawFlip;
 class C_OP_RenderCables;
 class C_INIT_Orient2DRelToCP;
@@ -203,8 +206,8 @@ class C_OP_CycleScalar;
 class C_OP_SetCPOrientationToGroundNormal;
 class C_OP_SequenceFromModel;
 class CBasePathAnimMotor;
-class IParticleEffect;
 class CResponseCriteriaSet;
+class IParticleEffect;
 class C_OP_RemapCPVisibilityToVector;
 class C_OP_RemapCPOrientationToYaw;
 class C_INIT_RemapParticleCountToNamedModelElementScalar;
@@ -222,40 +225,41 @@ class AnimResourceAnimEvent_t;
 class FlexRule_t;
 class FourQuaternions;
 class VSoundStackScript_t;
+class CSkeletalInputAnimNode;
 class SkeletonBoneBbox_t;
 class RenderInputLayoutField_t;
 class CAttributeManager;
 class Extent;
 class InfoForResourceTypeMorphSetData_t;
 class sControlGroupElem;
-class AABB_t;
 class C_INIT_GlobalScale;
+class AABB_t;
 class CDOTA_ItemStockInfo;
 class C_INIT_RandomVector;
 class AnimationDecodeDebugDumpElement_t;
-class CSSDSMsg_LayerBase;
 class C_OP_MovementPlaceOnGround;
+class CSSDSMsg_LayerBase;
 class CSosGroupActionSchema;
 class MaterialResourceData_t;
 class CNetworkedSequenceOperation;
-class BaseSceneObjectOverride_t;
 class C_OP_ConstrainDistance;
+class BaseSceneObjectOverride_t;
 class TextureDesc_t;
 class CDOTAGameManager;
 class C_OP_Noise;
 class C_INIT_NormalOffset;
-class C_INIT_CreateInHierarchy;
 class CSosGroupActionLimitSchema;
+class FeWeightedNode_t;
 class SchemaMetaModifyAdd_t;
 class CNetworkTransmitComponent;
-class LightTreeResourceData_t;
 class C_OP_MovementRigidAttachToCP;
+class LightTreeResourceData_t;
 class RnTriangle_t;
-class PerInstanceBakedLightingParamsOverride_t;
 class C_OP_RemapScalarOnceTimed;
 class C_OP_InstantaneousEmitter;
 class C_INIT_MakeShapes;
-class CAnimParameterBase;
+class PerInstanceBakedLightingParamsOverride_t;
+class CIntAnimParameter;
 class C_OP_RadiusDecay;
 class C_INIT_RemapNamedModelElementToScalar;
 class CDirectPlaybackAnimNode;
@@ -278,25 +282,26 @@ class C_OP_RemapCPtoVector;
 class C_OP_RemapScalarEndCap;
 class C_INIT_RtEnvCull;
 class FeWorldCollisionParams_t;
+class CParticleFloatInput;
 class CBaseRendererSource2;
 class EventClientAdvanceTick_t;
 class FeBandBendLimit_t;
-class MaterialOverride_t;
 class C_OP_SpinYaw;
+class MaterialOverride_t;
 class SheetFrameImage_t;
 class MaterialParam_t;
 class OnDiskBufferData_t;
 class InfoForResourceTypeCResourceManifestInternal;
-class WorldEnvironmentMaps_t;
 class C_OP_ClothMovement;
 class C_OP_RemapVectortoCP;
 class C_OP_RemapVisibilityScalar;
-class ControlPointReference_t;
+class WorldEnvironmentMaps_t;
 class Sheet_t;
 class C_OP_OscillateVector;
 class CViewAngleKeyFrame;
 class CDOTA_Modifier_Lua;
 class C_OP_EndCapTimedDecay;
+class CFollowAttachmentAnimNode;
 class CRootAnimNode;
 class C_TeamplayRules;
 class C_OP_RenderScreenShake;
@@ -309,7 +314,7 @@ class CDOTAMusicProbabilityEntry;
 class CNetworkVelocityVector;
 class C_OP_DifferencePreviousParticle;
 class CPathStatusCondition;
-class CParentConstraint;
+class CBaseConstraint;
 class BaseConstraint_t;
 class CNavVolumeVector;
 class DOTAAbilityData_t;
@@ -332,15 +337,14 @@ class CAimConstraint;
 class FeNodeIntegrator_t;
 class InGamePredictionData_t;
 class sGlaiveInfo;
-class C_OP_RenderSprites;
-class CParticleForceOperatorInstance;
+class CParticleFunctionForce;
 class C_INIT_InitialVelocityNoise;
 class FlexOp_t;
 class IntervalTimer;
-class C_OP_CalculateVectorAttribute;
+class ControlPointReference_t;
 class C_OP_RestartAfterDuration;
 class CSpinUpdateBase;
-class CAnimStateTransition;
+class CBlendCurve;
 class CovMatrix3;
 class FeFollowNode_t;
 class HandInfo_t;
@@ -361,13 +365,13 @@ class InfoForResourceTypeCWorldNode;
 class CSkeletonAnimationController;
 class C_OP_RenderFlattenGrass;
 class C_INIT_RandomScalar;
+class C_INIT_SetRigidAttachment;
 class CMorphConstraint;
 class C_OP_RampScalarSpline;
 class C_OP_ReinitializeScalarEndCap;
 class Dop26_t;
 class CGameRules;
 class C_OP_CalculateNormalsForGrid;
-class C_INIT_SetRigidAttachment;
 class cache_ragdoll_t;
 class dynpitchvol_base_t;
 class C_OP_FadeOut;
@@ -388,6 +392,7 @@ class CPathAnimMotor;
 class CConstraintTarget;
 class CPassengerSeat;
 class C_OP_RemapNamedModelSequenceOnceTimed;
+class C_OP_ExternalGenericForce;
 class C_INIT_RandomLifeTime;
 class C_INIT_SetHitboxToModel;
 class EntClassComponentOverride_t;
@@ -397,12 +402,13 @@ class C_INIT_PositionWarp;
 class CLeanMatrixAnimNode;
 class CAnimStateList;
 class IRecipientFilter;
-class PermEntityLumpData_t;
 class C_INIT_CreateSequentialPath;
-class C_OP_ConnectParentParticleToNearest;
+class PermEntityLumpData_t;
 class C_OP_StopAfterCPDuration;
+class C_OP_ConnectParentParticleToNearest;
 class CParameterValue;
 class EntOutput_t;
+class CParentConstraint;
 class CGlowOverlay;
 class CDOTA_TeamCommander;
 class ClientQuickBuyItemState;
@@ -423,6 +429,7 @@ class TransitioningLayer_t;
 class C_OP_RemapDistanceToLineSegmentBase;
 class C_OP_RotateVector;
 class ModelSkeletonData_t;
+class handposepair_t;
 class CAI_MoveMonitor;
 class C_INIT_InitFromParentKilled;
 class AnimResourceUser_t;
@@ -430,10 +437,10 @@ class AnimResourceMovement_t;
 class FeCtrlOffset_t;
 class FeTri_t;
 class CAnimationLayer;
-class CSSDSMsg_ViewRender;
 class CBaseTrailRenderer;
 class C_OP_UpdateLightSource;
 class C_INIT_LifespanFromVelocity;
+class CSSDSMsg_ViewRender;
 class CDOTA_ReconnectInfo;
 class CLocalNPCObstructionsCache;
 class IDamageHandler;
@@ -447,10 +454,11 @@ class CPointConstraint;
 class PlayerResourceBroadcasterData_t;
 class CInteractionManager;
 class C_INIT_SequenceFromCP;
-class CIntAnimParameter;
+class CBoneMaskAnimNode;
 class AnimResourceIKRuleStallFrame_t;
 class EventServerAdvanceTick_t;
 class EventSimpleLoopFrameUpdate_t;
+class FeBoxRigid_t;
 class TimedEvent;
 class C_INIT_RandomNamedModelMeshGroup;
 class CPhysSurfacePropertiesAudio;
@@ -483,10 +491,11 @@ class MaterialParamBuffer_t;
 class EventPostDataUpdate_t;
 class CModelState;
 class CTakeDamageInfo;
-class CSSDSMsg_ViewTargetList;
 class C_OP_VelocityMatchingForce;
+class CSSDSMsg_ViewTargetList;
 class FeSimdAnimStrayRadius_t;
 class C_OP_RenderBlobs;
+class CIKLockAnimNode;
 class AnimationDecodeDebugDump_t;
 class RenderSkeletonBone_t;
 class FeSpringIntegrator_t;
@@ -517,6 +526,7 @@ class AnimationKeyResourceData_t;
 class IClientAlphaProperty;
 class C_OP_RenderTreeShake;
 class C_OP_RemapVelocityToVector;
+class CBonePair;
 class MaterialParamFloat_t;
 class CEntityComponent;
 class PermModelData_t;
@@ -543,7 +553,6 @@ class C_OP_SetControlPointFromObjectScale;
 class AnimResourceFrameSegment_t;
 class WorldBuilderParams_t;
 class VPhysXDiskMesh2_t;
-class attachment_input_state_t;
 class C_OP_RemapNamedModelMeshGroupOnceTimed;
 class C_OP_FadeIn;
 class AnimResourceBoneDifference_t;
@@ -569,14 +578,15 @@ class CSchemaMetadataEntry;
 class AIHullFlags_t;
 class C_INIT_RemapSpeedToScalar;
 class CSchemaEnumInfo;
-class CSceneObjectExtraData_t;
 class ParticleChildrenInfo_t;
+class C_OP_HSVShiftToCP;
 class C_OP_SetCPOrientationToDirection;
+class CSceneObjectExtraData_t;
 class CActivityValueList;
 class CClientAlphaProperty;
-class CSceneObject;
 class C_OP_SetControlPointsToModelParticles;
 class C_OP_GlobalLight;
+class CSceneObject;
 class C_DOTAGameManager;
 class ResponseContext_t;
 class C_OP_RemapScalar;
@@ -590,28 +600,28 @@ class CMoveHeadingCondition;
 class prevent_interaction_t;
 class C_OP_SetToCP;
 class WeaponSoundData_t;
-class C_OP_NormalizeVector;
 class C_OP_SetControlPointOrientation;
+class C_OP_NormalizeVector;
 class CDampedPathAnimMotor;
 class AnimResourceDataChannel_t;
 class C_INIT_InitialRepulsionVelocity;
 class SeqResourceMultiFetch_t_Flag_t;
 class EventClientPauseSimulate_t;
 class CFireOverlay;
-class C_OP_NoiseEmitter;
 class CThrustController;
 class C_OP_RemapControlPointDirectionToVector;
 class C_INIT_RemapInitialDirectionToCPToVector;
-class CPhysSurfacePropertiesGame;
+class CPhysSurfaceProperties;
 class FeTaperedCapsuleRigid_t;
 class CDOTA_Modifier_Lua_Vertical_Motion;
 class CTurnHelperAnimNode;
 class CActivityValues;
 class PermRenderMeshData_t;
 class ConstraintSlave_t;
+class C_OP_SetCPtoVector;
 class C_OP_MovementRotateParticleAroundAxis;
-class C_INIT_GeneralCylinder;
 class C_INIT_CreateOnModel;
+class CSolveIKChainAnimNode;
 class AnimationRetargetChainData_t;
 class CHitBox;
 class CRecipientFilter;
@@ -632,8 +642,8 @@ class InfoForResourceTypeCDotaItemDefinitionResource;
 class C_OP_SetControlPointsToParticle;
 class CSound;
 class CSoundParameters;
-class CSSDSEndFrameViewInfo;
 class C_OP_NormalLock;
+class CSSDSEndFrameViewInfo;
 class CSchemaFieldMetadataOverride;
 class CDOTA_Modifier_Lua_Horizontal_Motion;
 class CTimeline;
@@ -654,6 +664,7 @@ class AnimResourceAnimDesc_t;
 class ConstraintTarget_t;
 class dynpitchvol_t;
 class C_OP_CurlNoiseForce;
+class C_OP_SpinUpdate;
 class CAnimParameterList;
 class C_DOTA_CombatLogQueryProgress;
 class CStopwatchBase;
@@ -661,6 +672,7 @@ class VPhysicsCollisionAttribute_t;
 class IBody;
 class CSequenceTransitioner2;
 class C_OP_RemapDistanceToLineSegmentToVector;
+class CParticleAnimTag;
 class CCompressorGroup;
 class CRenderBufferBinding;
 class CBasePortraitData;
@@ -668,7 +680,6 @@ class C_OP_AlphaDecay;
 class C_OP_ExternalWindForce;
 class CAnimReplayFrame;
 class CChoreoAnimNode;
-class CPhysSurfaceProperties;
 class CCopyRecipientFilter;
 class CRandSimTimer;
 class C_OP_RenderText;
@@ -682,6 +693,7 @@ class C_OP_ClampScalar;
 class C_OP_TwistAroundAxis;
 class VSoundEvent_t;
 class RnHalfEdge_t;
+class CVRHandAttachmentInput;
 class CPlayerLocalData;
 class CSceneEventInfo;
 class C_OP_ClampVector;
@@ -693,6 +705,7 @@ class C_INIT_RemapInitialVisibilityScalar;
 class TimedKillEvent_t;
 class CPhysicsShake;
 class C_OP_RenderLights;
+class CTimeCondition;
 class C_OP_RemapNamedModelSequenceEndCap;
 class EventClientProcessGameInput_t;
 class VsInputSignatureElement_t;
@@ -701,19 +714,19 @@ class C_OP_EnableChildrenFromParentParticleCount;
 class C_INIT_RandomRotationSpeed;
 class VertexPositionColor_t;
 class CFailableAchievement;
+class C_OP_CalculateVectorAttribute;
+class C_OP_SetCPOrientationToPointAtCP;
 class SceneObject_t;
 class CSSDSMsg_ViewTarget;
-class C_INIT_CreateWithinHexahedron;
-class C_OP_SetCPOrientationToPointAtCP;
-class C_OP_AttractToControlPoint;
 class PostProcessingBloomParameters_t;
 class HitBox_t;
 class CDOTA_Bot;
-class VirtualVolumeTexData_t;
 class C_OP_EndCapDecay;
+class VirtualVolumeTexData_t;
 class RnSphereDesc_t;
-class CSSDSMsg_PreLayer;
+class CBoneConstraintPoseSpaceMorph;
 class C_INIT_RemapCPtoScalar;
+class CSSDSMsg_PreLayer;
 class IServerVehicle;
 class RnSoftbodyParticle_t;
 class CPassengerSeatTransition;
@@ -724,9 +737,9 @@ class InfoForResourceTypeCRenderMesh;
 class vehiclesounds_t;
 class CSimTimer;
 class CHeroesPerPlayer;
+class C_INIT_RemapParticleCountToNamedModelBodyPartScalar;
 class BakedLightingInfo_t;
 class BoneOverride_t;
-class C_INIT_RemapParticleCountToNamedModelBodyPartScalar;
 class WeightedSuggestion_t;
 class CAI_ExpresserWithFollowup;
 class EventPostAdvanceTick_t;
@@ -760,6 +773,7 @@ class C_OP_RemapDistanceToLineSegmentToScalar;
 class InfoForResourceTypeSequenceGroupResourceData_t;
 class CSchemaMetaModifyAdd;
 class hudtextparms_t;
+class C_OP_SetControlPointToCenter;
 class C_INIT_CreationNoise;
 class CAddAnimNode;
 class CSchemaClassField;
@@ -771,8 +785,10 @@ class CWayPointHelperAnimNode;
 class SeqResourceMultiFetch_t;
 class CRMSG_Entity_Info;
 class CDOTASpectatorGraphManager;
+class C_OP_SetFloat;
 class C_OP_DistanceCull;
 class C_INIT_VelocityRadialRandom;
+class CAnimStateTransition;
 class FeCtrlOsOffset_t;
 class C_CSequenceTransitioner2;
 class ModelBoneFlexDriver_t;
@@ -793,6 +809,7 @@ class CNavVolumeAll;
 class C_INIT_RemapNamedModelBodyPartToScalar;
 class CEnumAnimParameter;
 class ragdollelement_t;
+class C_OP_RampCPLinearRandom;
 class CClothSettingsAnimTag;
 class SeqResourceAutoLayer_t;
 class AnimationSnapshot_t;
@@ -805,18 +822,21 @@ class InfoForResourceTypeIParticleSystemDefinition;
 class C_INIT_PointList;
 class C_SunGlowOverlay;
 class ragdoll_t;
+class C_OP_AttractToControlPoint;
 class C_INIT_CreateInEpitrochoid;
 class CCycleCondition;
+class CBoneConstraintPoseSpaceBone;
 class EventServerPostSimulate_t;
 class C_INIT_RemapParticleCountToNamedModelSequenceScalar;
+class C_OP_PlanarConstraint;
 class C_OP_FadeAndKill;
 class CMoverAnimNode;
 class CSceneObjectData;
 class FeTreeChildren_t;
 class CNavVolumeSphericalShell;
-class CSceneObjectReference_t;
 class C_INIT_RandomRadius;
 class C_INIT_RandomVectorComponent;
+class CSceneObjectReference_t;
 class CPostGraphIKTag;
 class CBlendAnimNode;
 class AnimResourceIKChain_t;
@@ -832,16 +852,16 @@ class CSoundPatch;
 class CParameterAnimCondition;
 class CAnimState;
 class CChoiceAnimNode;
-class WorldLighting_t;
 class C_OP_RemapNamedModelMeshGroupEndCap;
 class C_INIT_NormalAlignToCP;
+class WorldLighting_t;
 class CFootFallAnimTag;
 class EventClientOutput_t;
 class FeSoftParent_t;
 class CRMSG_Manifest_New;
 class CSchemaClassInfo;
-class C_OP_SnapshotSkinToBones;
 class C_OP_RemapBoundingVolumetoCP;
+class C_OP_SnapshotSkinToBones;
 class C_INIT_RandomNamedModelBodyPart;
 class EventClientProcessInput_t;
 class CFeNamedJiggleBone;
@@ -863,18 +883,18 @@ class IHandleEntity;
 class CAnnouncerDescriptor;
 class C_PlayerLocalData;
 class C_OP_RenderClothForce;
-class C_OP_RenderFogSprites;
+class C_OP_RenderSprites;
 class C_OP_TimeVaryingForce;
 class ConceptHistory_t;
-class C_OP_RemapDirectionToCPToVector;
 class C_OP_RemapModelVolumetoCP;
+class C_OP_RemapDirectionToCPToVector;
 class VPhysics2ShapeDef_t;
 class CResponseQueue;
 class TempViewerInfo_t;
 class CBaseAnimatingOverlayController;
 class C_OP_WorldCollideConstraint;
-class WorldNode_t;
 class C_OP_ColorInterpolate;
+class WorldNode_t;
 class CNeuralNetAnimNode;
 class ItemDropData_t;
 class CNetworkedIKContext;
@@ -886,6 +906,7 @@ class CParticleProperty;
 class VertexPositionNormal_t;
 class CTwoBoneIKAnimNode;
 class MaterialParamVector_t;
+class C_OP_RenderFogSprites;
 class C_OP_SetSingleControlPointPosition;
 class CMoveSpeedCondition;
 class CConstraintSlave;
@@ -933,6 +954,7 @@ class PointDefinition_t;
 class C_OP_ConstrainLineLength;
 class EntInput_t;
 class CRenderablePortraitData;
+class C_OP_DriveCPFromGlobalSoundFloat;
 class CSchemaMetadataSet;
 class ConstraintSoundInfo;
 class IHasAttributes;
@@ -940,20 +962,18 @@ class CFinishedCondition;
 class RemnantData_t;
 class CParticleSystemDefinition;
 class C_OP_LockToBone;
-class C_OP_SpinUpdate;
 class EventClientSimulate_t;
 class CEntityIdentity;
 class WorldEnvironmentMap_t;
 class CDOTA_AttackRecord;
 class PointDefinitionWithTimeValues_t;
 class CTwistConstraint;
-class CNewParticleEffect;
 class DOTASpecialAbility_t;
 class sSpiritDef;
+class CNewParticleEffect;
 class C_INIT_RandomRotation;
 class CAnimTagSpan;
 class CFloatAnimParameter;
-class FeKelagerBend_t;
 class CFeIndexedJiggleBone;
 class RnBlendVertex_t;
 class CDirectionalBlendAnimNode;
@@ -964,37 +984,37 @@ class CHitBoxSetList;
 class VsInputSignature_t;
 class InfoForResourceTypeCPostProcessingResource;
 class SchemaStaticFieldData_t;
-class InfoOverlayData_t;
 class C_OP_FadeInSimple;
 class C_INIT_CreateWithinBox;
+class InfoOverlayData_t;
 class C_OP_RenderScreenVelocityRotate;
 class C_INIT_RandomNamedModelSequence;
-class CVoxelVisibility;
 class C_INIT_RemapCPtoVector;
 class C_INIT_RandomModelSequence;
+class CVoxelVisibility;
 class SelectedEditItemInfo_t;
 class CAnimationGraph;
 class C_LightGlowOverlay;
-class CSSDSMsg_PostLayer;
 class IControlPointEditorData;
+class CSSDSMsg_PostLayer;
 class CSequenceAnimNode;
 class VPhysXConstraint2_t;
 class CAttributeContainer;
-class IrradVolume_t;
 class C_OP_LockPoints;
 class C_OP_RemapCPtoVelocity;
+class IrradVolume_t;
 class CBlendNodeChild;
 class EventPreDataUpdate_t;
 class Relationship_t;
-class World_t;
 class C_OP_RenderTrails;
+class World_t;
 class CVectorAnimParameter;
 class InfoForResourceTypeVBitmapFontRuntimeData_t;
 class TimedBalanceRecord_t;
 class C_OP_DistanceBetweenCPs;
-class C_OP_RampCPLinearRandom;
 class AnimResourceBone_t;
 class CHitBoxSet;
+class C_INIT_StatusEffect;
 class CControlValueCondition;
 class PostProcessingResource_t;
 class FeSimdTri_t;
@@ -1006,10 +1026,9 @@ class AttachmentData_t;
 class CRMSG_Resource_NewId;
 class PRTMatrixData_t;
 class CPVSData;
-class C_OP_PlanarConstraint;
 class CSingleplayRules;
-class NodeData_t;
 class C_OP_PercentageBetweenCPs;
+class NodeData_t;
 class CSpeedScaleAnimNode;
 class CStringAnimTag;
 class CMaterialDrawDescriptor;
@@ -1020,10 +1039,11 @@ class CMotorController;
 class CPathHelperAnimNode;
 class CLocomotionBase;
 class C_OP_RemapParticleCountOnScalarEndCap;
+class CGroundIKAnimNode;
 class NextBotGroundLocomotion;
 class CNavVolumeMarkupVolume;
-class EntityKeyValueData_t;
 class C_OP_RandomForce;
+class EntityKeyValueData_t;
 class C_OP_SetControlPointToImpactPoint;
 class CPostGraphIKChainBlendTag;
 class CTagCondition;
@@ -1051,8 +1071,8 @@ class C_OP_MaintainEmitter;
 class SeqResourceCmdLayer_t;
 class CSkeletonInstance;
 class CFourWheelServerVehicle;
-class voxel_vis_cluster_t;
 class C_OP_RemapCPOrientationToRotations;
+class voxel_vis_cluster_t;
 class CSosSoundEventGroupListSchema;
 class SeqResourcePoseSetting_t;
 class InfoForResourceTypeCNameListEvents;
@@ -1086,9 +1106,9 @@ class VPhysXJoint_t;
 class CDOTA_Tree;
 class C_INIT_RemapNamedModelMeshGroupToScalar;
 class RnMeshDesc_t;
-class CParticleOperatorInstance : public SchemaBase
+class CParticleFunction : public SchemaBase
 {
-// CParticleOperatorInstance additional information
+// CParticleFunction additional information
 // particles.dll, project particles
 // Alignment: -1
 // SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
@@ -1183,7 +1203,7 @@ public:
 	 // MAttributeName
 	 // MDefaultString
 	 // MParticleAdvancedField
-char CParticleOperatorInstance_041[0x1];
+char CParticleFunction_041[0x1];
 	__declspec(align(1)) bool m_bDisableOperator;// 0x41, size 1 (0x1)
 	// m_bDisableOperator metadata
 	 // MPropertySortPriority
@@ -1206,7 +1226,7 @@ char CParticleOperatorInstance_041[0x1];
 	 // MAttributeName
 	 // MDefaultString
 	 // MParticleAdvancedField
-char CParticleOperatorInstance_05C[0x4];
+char CParticleFunction_05C[0x4];
 	__declspec(align(4)) float m_flAttributeInputLow;// 0x5c, size 4 (0x4)
 	// m_flAttributeInputLow metadata
 	 // MPropertyGroupName
@@ -1224,12 +1244,12 @@ char CParticleOperatorInstance_05C[0x4];
 	 // MAttributeName
 	 // MDefaultString
 	 // MParticleHelpField
-char CParticleOperatorInstance_080[0x10];
+char CParticleFunction_080[0x10];
 }; // size: 128 (0x80)
 
-class CParticleInitializerOperatorInstance : public CParticleOperatorInstance
+class CParticleFunctionInitializer : public CParticleFunction
 {
-// CParticleInitializerOperatorInstance additional information
+// CParticleFunctionInitializer additional information
 // particles.dll, project particles
 // Alignment: -1
 // SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
@@ -1237,12 +1257,6 @@ class CParticleInitializerOperatorInstance : public CParticleOperatorInstance
 // Abstract Class
 
 public:
-	__declspec(align(1)) bool m_bRunForParentApplyKillList;// 0x78, size 1 (0x1)
-	// m_bRunForParentApplyKillList metadata
-	 // MAttributeName
-	 // MDefaultString
-	 // MParticleAdvancedField
-char CParticleInitializerOperatorInstance_080[0x7];
 }; // size: 128 (0x80)
 
 #pragma pack(push, 4)
@@ -1495,7 +1509,7 @@ char fogparams_t_060[0x4];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_INIT_RandomColor : public CParticleInitializerOperatorInstance
+class C_INIT_RandomColor : public CParticleFunctionInitializer
 {
 // C_INIT_RandomColor additional information
 // particles.dll, project particles
@@ -1550,9 +1564,9 @@ char C_INIT_RandomColor_098[0x18];
 }; // size: 192 (0xc0)
 #pragma pack(pop)
 
-class CParticlePerFrameOperatorInstance : public CParticleOperatorInstance
+class CParticleFunctionOperator : public CParticleFunction
 {
-// CParticlePerFrameOperatorInstance additional information
+// CParticleFunctionOperator additional information
 // particles.dll, project particles
 // Alignment: -1
 // SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
@@ -1602,23 +1616,8 @@ public:
 }; // size: 48 (0x30)
 #pragma pack(pop)
 
-#pragma pack(push, 8)
-class SceneViewId_t
-{
-// SceneViewId_t additional information
-// scenesystem.dll, project scenesystem
-// Alignment: 8
-// SCHEMA_CLASS_HAS_TRIVIAL_CONSTRUCTOR
-// SCHEMA_CLASS_HAS_TRIVIAL_DESTRUCTOR
-
-public:
-	__declspec(align(8)) uint64_t m_nViewId;// 0x0, size 8 (0x8)
-	__declspec(align(8)) uint64_t m_nFrameCount;// 0x8, size 8 (0x8)
-}; // size: 16 (0x10)
-#pragma pack(pop)
-
 #pragma pack(push, 16)
-class C_OP_PlaneCull : public CParticlePerFrameOperatorInstance
+class C_OP_PlaneCull : public CParticleFunctionOperator
 {
 // C_OP_PlaneCull additional information
 // particles.dll, project particles
@@ -1644,6 +1643,21 @@ public:
 	 // MDefaultString
 char C_OP_PlaneCull_0A0[0xC];
 }; // size: 160 (0xa0)
+#pragma pack(pop)
+
+#pragma pack(push, 8)
+class SceneViewId_t
+{
+// SceneViewId_t additional information
+// scenesystem.dll, project scenesystem
+// Alignment: 8
+// SCHEMA_CLASS_HAS_TRIVIAL_CONSTRUCTOR
+// SCHEMA_CLASS_HAS_TRIVIAL_DESTRUCTOR
+
+public:
+	__declspec(align(8)) uint64_t m_nViewId;// 0x0, size 8 (0x8)
+	__declspec(align(8)) uint64_t m_nFrameCount;// 0x8, size 8 (0x8)
+}; // size: 16 (0x10)
 #pragma pack(pop)
 
 class CAnimStateConditionBase : public SchemaBase
@@ -1689,19 +1703,15 @@ class CPhysSurfacePropertiesSoundNames
 // Alignment: 8
 
 public:
-	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_walkStepLeft;// 0x0, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_walkStepRight;// 0x8, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_runStepLeft;// 0x10, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_runStepRight;// 0x18, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_impactSoft;// 0x20, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_impactHard;// 0x28, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_scrapeSmooth;// 0x30, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_scrapeRough;// 0x38, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_bulletImpact;// 0x40, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_rolling;// 0x48, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_break;// 0x50, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_strain;// 0x58, size 8 (0x8)
-}; // size: 96 (0x60)
+	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_impactSoft;// 0x0, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_impactHard;// 0x8, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_scrapeSmooth;// 0x10, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_scrapeRough;// 0x18, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_bulletImpact;// 0x20, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_rolling;// 0x28, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_break;// 0x30, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_strain;// 0x38, size 8 (0x8)
+}; // size: 64 (0x40)
 #pragma pack(pop)
 
 #pragma pack(push, 4)
@@ -1773,14 +1783,21 @@ public:
 	__declspec(align(4)) UnknownAtomicType <0x8, CResourceArray, class FeNodeReverseOffset_t > m_ReverseOffsets;// 0x158, size 8 (0x8)
 	__declspec(align(4)) UnknownAtomicType <0x8, CResourceArray, class FeAnimStrayRadius_t > m_AnimStrayRadii;// 0x160, size 8 (0x8)
 	__declspec(align(4)) UnknownAtomicType <0x8, CResourceArray, class FeSimdAnimStrayRadius_t > m_SimdAnimStrayRadii;// 0x168, size 8 (0x8)
-	__declspec(align(4)) UnknownAtomicType <0x8, CResourceArray, class FeCtrlSoftOffset_t > m_CtrlSoftOffsets;// 0x170, size 8 (0x8)
-	__declspec(align(4)) UnknownAtomicType <0x8, CResourceArray, class CFeIndexedJiggleBone > m_JiggleBones;// 0x178, size 8 (0x8)
-	__declspec(align(4)) UnknownAtomicType <0x8, CResourceArray, uint16_t > m_SourceElems;// 0x180, size 8 (0x8)
-	__declspec(align(4)) UnknownAtomicType <0x8, CResourceArray, uint32_t > m_GoalDampedSpringIntegrators;// 0x188, size 8 (0x8)
-	__declspec(align(4)) UnknownAtomicType <0x8, CResourceArray, class FeTri_t > m_Tris;// 0x190, size 8 (0x8)
-	__declspec(align(2)) uint16_t m_nTriCount1;// 0x198, size 2 (0x2)
-	__declspec(align(2)) uint16_t m_nTriCount2;// 0x19a, size 2 (0x2)
-	__declspec(align(4)) uint32_t m_nReserved[15];// 0x19c, size 60 (0x3c)
+	__declspec(align(4)) UnknownAtomicType <0x8, CResourceArray, class FeKelagerBend2_t > m_KelagerBends;// 0x170, size 8 (0x8)
+	__declspec(align(4)) UnknownAtomicType <0x8, CResourceArray, class FeCtrlSoftOffset_t > m_CtrlSoftOffsets;// 0x178, size 8 (0x8)
+	__declspec(align(4)) UnknownAtomicType <0x8, CResourceArray, class CFeIndexedJiggleBone > m_JiggleBones;// 0x180, size 8 (0x8)
+	__declspec(align(4)) UnknownAtomicType <0x8, CResourceArray, uint16_t > m_SourceElems;// 0x188, size 8 (0x8)
+	__declspec(align(4)) UnknownAtomicType <0x8, CResourceArray, uint32_t > m_GoalDampedSpringIntegrators;// 0x190, size 8 (0x8)
+	__declspec(align(4)) UnknownAtomicType <0x8, CResourceArray, class FeTri_t > m_Tris;// 0x198, size 8 (0x8)
+	__declspec(align(2)) uint16_t m_nTriCount1;// 0x1a0, size 2 (0x2)
+	__declspec(align(2)) uint16_t m_nTriCount2;// 0x1a2, size 2 (0x2)
+	__declspec(align(1)) uint8_t m_nReservedUint8;// 0x1a4, size 1 (0x1)
+	__declspec(align(1)) uint8_t m_nExtraPressureIterations;// 0x1a5, size 1 (0x1)
+	__declspec(align(1)) uint8_t m_nExtraGoalIterations;// 0x1a6, size 1 (0x1)
+	__declspec(align(1)) uint8_t m_nExtraIterations;// 0x1a7, size 1 (0x1)
+	__declspec(align(4)) UnknownAtomicType <0x8, CResourceArray, class FeBoxRigid_t > m_BoxRigids;// 0x1a8, size 8 (0x8)
+	__declspec(align(4)) uint32_t m_nReserved[9];// 0x1b0, size 36 (0x24)
+	__declspec(align(4)) float m_flInternalPressure;// 0x1d4, size 4 (0x4)
 	__declspec(align(4)) float m_flWindage;// 0x1d8, size 4 (0x4)
 	__declspec(align(4)) float m_flWindDrag;// 0x1dc, size 4 (0x4)
 	__declspec(align(4)) float m_flDefaultSurfaceStretch;// 0x1e0, size 4 (0x4)
@@ -1834,7 +1851,7 @@ public:
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_MovementLoopInsideSphere : public CParticlePerFrameOperatorInstance
+class C_OP_MovementLoopInsideSphere : public CParticleFunctionOperator
 {
 // C_OP_MovementLoopInsideSphere additional information
 // particles.dll, project particles
@@ -1859,12 +1876,13 @@ char C_OP_MovementLoopInsideSphere_0A0[0xC];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_INIT_DistanceToCPInit : public CParticleInitializerOperatorInstance
+class C_INIT_DistanceToCPInit : public CParticleFunctionInitializer
 {
 // C_INIT_DistanceToCPInit additional information
 // particles.dll, project particles
 // Alignment: 16
 // SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+// SCHEMA_CLASS_TEMP_HACK_HAS_NOSCHEMA_MEMBERS
 
 public:
 	__declspec(align(4)) UnknownType <0x4, class ParticleAttributeIndex_t> m_nFieldOutput;// 0x80, size 4 (0x4)
@@ -1920,12 +1938,16 @@ public:
 	// m_vecDistanceScale metadata
 	 // MAttributeName
 	 // MDefaultString
-char C_INIT_DistanceToCPInit_0140[0xC];
+	__declspec(align(4)) float m_flRemapBias;// 0x134, size 4 (0x4)
+	// m_flRemapBias metadata
+	 // MAttributeName
+	 // MDefaultString
+char C_INIT_DistanceToCPInit_0140[0x8];
 }; // size: 320 (0x140)
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_RemapCPVisibilityToScalar : public CParticlePerFrameOperatorInstance
+class C_OP_RemapCPVisibilityToScalar : public CParticleFunctionOperator
 {
 // C_OP_RemapCPVisibilityToScalar additional information
 // particles.dll, project particles
@@ -2003,20 +2025,21 @@ public:
 	__declspec(align(4)) float m_flBakeLightIndexScale;// 0x70, size 4 (0x4)
 	__declspec(align(1)) bool m_bRenderDiffuse;// 0x74, size 1 (0x1)
 	__declspec(align(1)) bool m_bRenderSpecular;// 0x75, size 1 (0x1)
-	__declspec(align(4)) LightSourceShape_t m_Shape;// 0x78, size 4 (0x4)
-	__declspec(align(4)) float m_flLightSourceDim0;// 0x7c, size 4 (0x4)
-	__declspec(align(4)) float m_flLightSourceDim1;// 0x80, size 4 (0x4)
-	__declspec(align(4)) float m_flLightSourceSize0;// 0x84, size 4 (0x4)
-	__declspec(align(4)) float m_flLightSourceSize1;// 0x88, size 4 (0x4)
-	__declspec(align(4)) float m_flPrecomputedMaxRange;// 0x8c, size 4 (0x4)
-	__declspec(align(4)) float m_flFogContributionStength;// 0x90, size 4 (0x4)
-char LightDesc_t_0AC[0x18];
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecUp;// 0xac, size 12 (0xc)
-char LightDesc_t_0D4[0x1C];
-	__declspec(align(4)) int32_t m_nFogLightingMode;// 0xd4, size 4 (0x4)
-	__declspec(align(1)) bool m_bUsesIndexedBakedLighting;// 0xd8, size 1 (0x1)
-char LightDesc_t_0DC[0x3];
-}; // size: 220 (0xdc)
+	__declspec(align(4)) int32_t m_nPriority;// 0x78, size 4 (0x4)
+	__declspec(align(4)) LightSourceShape_t m_Shape;// 0x7c, size 4 (0x4)
+	__declspec(align(4)) float m_flLightSourceDim0;// 0x80, size 4 (0x4)
+	__declspec(align(4)) float m_flLightSourceDim1;// 0x84, size 4 (0x4)
+	__declspec(align(4)) float m_flLightSourceSize0;// 0x88, size 4 (0x4)
+	__declspec(align(4)) float m_flLightSourceSize1;// 0x8c, size 4 (0x4)
+	__declspec(align(4)) float m_flPrecomputedMaxRange;// 0x90, size 4 (0x4)
+	__declspec(align(4)) float m_flFogContributionStength;// 0x94, size 4 (0x4)
+char LightDesc_t_0B0[0x18];
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecUp;// 0xb0, size 12 (0xc)
+char LightDesc_t_0D8[0x1C];
+	__declspec(align(4)) int32_t m_nFogLightingMode;// 0xd8, size 4 (0x4)
+	__declspec(align(1)) bool m_bUsesIndexedBakedLighting;// 0xdc, size 1 (0x1)
+char LightDesc_t_0E0[0x3];
+}; // size: 224 (0xe0)
 #pragma pack(pop)
 
 #pragma pack(push, 1)
@@ -2121,7 +2144,7 @@ char EventSimulate_t_030[0x6];
 }; // size: 48 (0x30)
 #pragma pack(pop)
 
-class C_INIT_RandomNamedModelElement : public CParticleInitializerOperatorInstance
+class C_INIT_RandomNamedModelElement : public CParticleFunctionInitializer
 {
 // C_INIT_RandomNamedModelElement additional information
 // particles.dll, project particles
@@ -2250,7 +2273,7 @@ char EventModInitialized_t_01[0x1];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_INIT_VelocityFromCP : public CParticleInitializerOperatorInstance
+class C_INIT_VelocityFromCP : public CParticleFunctionInitializer
 {
 // C_INIT_VelocityFromCP additional information
 // particles.dll, project particles
@@ -2446,7 +2469,14 @@ public:
 	 // MAttributeName
 	 // MDefaultString
 	 // MParticleAdvancedField
-}; // size: 60 (0x3c)
+	__declspec(align(1)) bool m_bRightEye;// 0x3c, size 1 (0x1)
+	// m_bRightEye metadata
+	 // MSrc1ImportAttributeName
+	 // MAttributeName
+	 // MDefaultString
+	 // MParticleAdvancedField
+char CParticleVisibilityInputs_040[0x3];
+}; // size: 64 (0x40)
 #pragma pack(pop)
 
 #pragma pack(push, 4)
@@ -2530,7 +2560,7 @@ public:
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_DecayMaintainCount : public CParticlePerFrameOperatorInstance
+class C_OP_DecayMaintainCount : public CParticleFunctionOperator
 {
 // C_OP_DecayMaintainCount additional information
 // particles.dll, project particles
@@ -2558,7 +2588,7 @@ public:
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_INIT_RemapInitialCPDirectionToRotation : public CParticleInitializerOperatorInstance
+class C_INIT_RemapInitialCPDirectionToRotation : public CParticleFunctionInitializer
 {
 // C_INIT_RemapInitialCPDirectionToRotation additional information
 // particles.dll, project particles
@@ -2576,19 +2606,11 @@ public:
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyAttributeChoiceName
-	__declspec(align(4)) int32_t m_nAxis;// 0x88, size 4 (0x4)
-	// m_nAxis metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(4)) float m_flScale;// 0x8c, size 4 (0x4)
-	// m_flScale metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(4)) float m_flOffsetRot;// 0x90, size 4 (0x4)
+	__declspec(align(4)) float m_flOffsetRot;// 0x88, size 4 (0x4)
 	// m_flOffsetRot metadata
 	 // MAttributeName
 	 // MDefaultString
-char C_INIT_RemapInitialCPDirectionToRotation_0A0[0xC];
+char C_INIT_RemapInitialCPDirectionToRotation_0A0[0x14];
 }; // size: 160 (0xa0)
 #pragma pack(pop)
 
@@ -2606,31 +2628,20 @@ char InfoForResourceTypeIParticleSnapshot_01[0x1];
 }; // size: 1 (0x1)
 #pragma pack(pop)
 
-#pragma pack(push, 16)
-class C_OP_SetControlPointToCenter : public CParticlePerFrameOperatorInstance
+class CParticleFunctionPreEmission : public CParticleFunctionOperator
 {
-// C_OP_SetControlPointToCenter additional information
+// CParticleFunctionPreEmission additional information
 // particles.dll, project particles
-// Alignment: 16
+// Alignment: -1
 // SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+// SCHEMA_CLASS_IS_ABSTRACT
+// Abstract Class
 
 public:
-	__declspec(align(4)) int32_t m_nCP1;// 0x80, size 4 (0x4)
-	// m_nCP1 metadata
-	 // MSrc1ImportAttributeName
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecCP1Pos;// 0x84, size 12 (0xc)
-	// m_vecCP1Pos metadata
-	 // MSrc1ImportAttributeName
-	 // MAttributeName
-	 // MDefaultString
-	 // MVectorIsCoordinate
-}; // size: 144 (0x90)
-#pragma pack(pop)
+}; // size: 128 (0x80)
 
 #pragma pack(push, 16)
-class C_OP_PercentageBetweenCPsVector : public CParticlePerFrameOperatorInstance
+class C_OP_PercentageBetweenCPsVector : public CParticleFunctionOperator
 {
 // C_OP_PercentageBetweenCPsVector additional information
 // particles.dll, project particles
@@ -2688,6 +2699,23 @@ public:
 }; // size: 176 (0xb0)
 #pragma pack(pop)
 
+#pragma pack(push, 4)
+class FeKelagerBend2_t
+{
+// FeKelagerBend2_t additional information
+// resourcesystem.dll, project mathlib_extended
+// Alignment: 4
+// SCHEMA_CLASS_HAS_TRIVIAL_CONSTRUCTOR
+// SCHEMA_CLASS_HAS_TRIVIAL_DESTRUCTOR
+
+public:
+	__declspec(align(4)) float flWeight[3];// 0x0, size 12 (0xc)
+	__declspec(align(4)) float flHeight0;// 0xc, size 4 (0x4)
+	__declspec(align(2)) uint16_t nNode[3];// 0x10, size 6 (0x6)
+	__declspec(align(2)) uint16_t nReserved;// 0x16, size 2 (0x2)
+}; // size: 24 (0x18)
+#pragma pack(pop)
+
 #pragma pack(push, 1)
 class InfoForResourceTypeCVMixListResource
 {
@@ -2736,7 +2764,7 @@ public:
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_VectorNoise : public CParticlePerFrameOperatorInstance
+class C_OP_VectorNoise : public CParticleFunctionOperator
 {
 // C_OP_VectorNoise additional information
 // particles.dll, project particles
@@ -2780,7 +2808,7 @@ char C_OP_VectorNoise_0C0[0x8];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_INIT_InitialSequenceFromModel : public CParticleInitializerOperatorInstance
+class C_INIT_InitialSequenceFromModel : public CParticleFunctionInitializer
 {
 // C_INIT_InitialSequenceFromModel additional information
 // particles.dll, project particles
@@ -2842,7 +2870,7 @@ public:
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_Orient2DRelToCP : public CParticlePerFrameOperatorInstance
+class C_OP_Orient2DRelToCP : public CParticleFunctionOperator
 {
 // C_OP_Orient2DRelToCP additional information
 // particles.dll, project particles
@@ -2874,7 +2902,7 @@ public:
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_InheritFromParentParticles : public CParticlePerFrameOperatorInstance
+class C_OP_InheritFromParentParticles : public CParticleFunctionOperator
 {
 // C_OP_InheritFromParentParticles additional information
 // particles.dll, project particles
@@ -2907,7 +2935,7 @@ char C_OP_InheritFromParentParticles_090[0x3];
 }; // size: 144 (0x90)
 #pragma pack(pop)
 
-class CGeneralSpin : public CParticlePerFrameOperatorInstance
+class CGeneralSpin : public CParticleFunctionOperator
 {
 // CGeneralSpin additional information
 // particles.dll, project particles
@@ -3083,7 +3111,7 @@ char CNetworkVarChainer_018[0xE];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_MoveToHitbox : public CParticlePerFrameOperatorInstance
+class C_OP_MoveToHitbox : public CParticleFunctionOperator
 {
 // C_OP_MoveToHitbox additional information
 // particles.dll, project particles
@@ -3138,7 +3166,7 @@ public:
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_RemapCPVelocityToVector : public CParticlePerFrameOperatorInstance
+class C_OP_RemapCPVelocityToVector : public CParticleFunctionOperator
 {
 // C_OP_RemapCPVelocityToVector additional information
 // particles.dll, project particles
@@ -3243,9 +3271,9 @@ public:
 }; // size: 8 (0x8)
 #pragma pack(pop)
 
-class CParticleRenderOperatorInstance : public CParticleOperatorInstance
+class CParticleFunctionRenderer : public CParticleFunction
 {
-// CParticleRenderOperatorInstance additional information
+// CParticleFunctionRenderer additional information
 // particles.dll, project particles
 // Alignment: -1
 // SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
@@ -3253,19 +3281,19 @@ class CParticleRenderOperatorInstance : public CParticleOperatorInstance
 // Abstract Class
 
 public:
-	__declspec(align(4)) CParticleVisibilityInputs VisibilityInputs;// 0x78, size 60 (0x3c)
+	__declspec(align(4)) CParticleVisibilityInputs VisibilityInputs;// 0x80, size 64 (0x40)
 	// VisibilityInputs metadata
 	 // MParticleAdvancedField
-	__declspec(align(1)) bool m_bCannotBeRefracted;// 0xb4, size 1 (0x1)
+	__declspec(align(1)) bool m_bCannotBeRefracted;// 0xc0, size 1 (0x1)
 	// m_bCannotBeRefracted metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyGroupName
-char CParticleRenderOperatorInstance_0C0[0xB];
-}; // size: 192 (0xc0)
+char CParticleFunctionRenderer_0D0[0xF];
+}; // size: 208 (0xd0)
 
 #pragma pack(push, 16)
-class C_OP_SetControlPointPositionToTimeOfDayValue : public CParticlePerFrameOperatorInstance
+class C_OP_SetControlPointPositionToTimeOfDayValue : public CParticleFunctionPreEmission
 {
 // C_OP_SetControlPointPositionToTimeOfDayValue additional information
 // particles.dll, project particles
@@ -3294,7 +3322,7 @@ char C_OP_SetControlPointPositionToTimeOfDayValue_0120[0x10];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_SetChildControlPoints : public CParticlePerFrameOperatorInstance
+class C_OP_SetChildControlPoints : public CParticleFunctionOperator
 {
 // C_OP_SetChildControlPoints additional information
 // particles.dll, project particles
@@ -3324,24 +3352,12 @@ public:
 	// m_bSetOrientation metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(1)) bool m_bSetDensity;// 0x91, size 1 (0x1)
-	// m_bSetDensity metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(1)) bool m_bSetVelocity;// 0x92, size 1 (0x1)
-	// m_bSetVelocity metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(1)) bool m_bSetRadius;// 0x93, size 1 (0x1)
-	// m_bSetRadius metadata
-	 // MAttributeName
-	 // MDefaultString
-char C_OP_SetChildControlPoints_0A0[0xC];
+char C_OP_SetChildControlPoints_0A0[0xF];
 }; // size: 160 (0xa0)
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_INIT_InheritFromParentParticles : public CParticleInitializerOperatorInstance
+class C_INIT_InheritFromParentParticles : public CParticleFunctionInitializer
 {
 // C_INIT_InheritFromParentParticles additional information
 // particles.dll, project particles
@@ -3370,8 +3386,12 @@ public:
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
-char C_INIT_InheritFromParentParticles_090[0x3];
-}; // size: 144 (0x90)
+	__declspec(align(4)) int32_t m_nRandomSeed;// 0x90, size 4 (0x4)
+	// m_nRandomSeed metadata
+	 // MAttributeName
+	 // MDefaultString
+char C_INIT_InheritFromParentParticles_0A0[0xC];
+}; // size: 160 (0xa0)
 #pragma pack(pop)
 
 #pragma pack(push, 8)
@@ -3507,7 +3527,7 @@ char CNetworkOriginCellCoordQuantizedVector_018[0x18];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_INIT_CreateFromParentParticles : public CParticleInitializerOperatorInstance
+class C_INIT_CreateFromParentParticles : public CParticleFunctionInitializer
 {
 // C_INIT_CreateFromParentParticles additional information
 // particles.dll, project particles
@@ -3530,13 +3550,17 @@ public:
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(1)) bool m_bSubFrame;// 0x89, size 1 (0x1)
+	__declspec(align(4)) int32_t m_nRandomSeed;// 0x8c, size 4 (0x4)
+	// m_nRandomSeed metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(1)) bool m_bSubFrame;// 0x90, size 1 (0x1)
 	// m_bSubFrame metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
-char C_INIT_CreateFromParentParticles_090[0x6];
-}; // size: 144 (0x90)
+char C_INIT_CreateFromParentParticles_0A0[0xF];
+}; // size: 160 (0xa0)
 #pragma pack(pop)
 
 #pragma pack(push, 16)
@@ -3557,20 +3581,8 @@ public:
 }; // size: 80 (0x50)
 #pragma pack(pop)
 
-#pragma pack(push, 8)
-class CSSDSMsg_EndFrame
-{
-// CSSDSMsg_EndFrame additional information
-// scenesystem.dll, project scenesystem
-// Alignment: 8
-
-public:
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class CSSDSEndFrameViewInfo > m_Views;// 0x0, size 24 (0x18)
-}; // size: 24 (0x18)
-#pragma pack(pop)
-
 #pragma pack(push, 16)
-class C_OP_RenderStatusEffect : public CParticleRenderOperatorInstance
+class C_OP_RenderStatusEffect : public CParticleFunctionRenderer
 {
 // C_OP_RenderStatusEffect additional information
 // particles.dll, project particles
@@ -3579,47 +3591,40 @@ class C_OP_RenderStatusEffect : public CParticleRenderOperatorInstance
 // SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
 
 public:
-	__declspec(align(8)) UnknownAtomicType <0x8, CResourceExtReference, UnknownAtomicType <0x8, CWeakHandle, class InfoForResourceTypeCTextureBase > > m_pTextureColorWarp;// 0xc0, size 8 (0x8)
+	__declspec(align(8)) UnknownAtomicType <0x8, CResourceExtReference, UnknownAtomicType <0x8, CWeakHandle, class InfoForResourceTypeCTextureBase > > m_pTextureColorWarp;// 0xd0, size 8 (0x8)
 	// m_pTextureColorWarp metadata
 	 // MAttributeName
 	 // MPropertyAttributeEditor
-	 // MDefaultString
-	__declspec(align(8)) UnknownAtomicType <0x8, CResourceExtReference, UnknownAtomicType <0x8, CWeakHandle, class InfoForResourceTypeCTextureBase > > m_pTextureDetail2;// 0xc8, size 8 (0x8)
+	__declspec(align(8)) UnknownAtomicType <0x8, CResourceExtReference, UnknownAtomicType <0x8, CWeakHandle, class InfoForResourceTypeCTextureBase > > m_pTextureDetail2;// 0xd8, size 8 (0x8)
 	// m_pTextureDetail2 metadata
 	 // MAttributeName
 	 // MPropertyAttributeEditor
-	 // MDefaultString
-	__declspec(align(8)) UnknownAtomicType <0x8, CResourceExtReference, UnknownAtomicType <0x8, CWeakHandle, class InfoForResourceTypeCTextureBase > > m_pTextureDiffuseWarp;// 0xd0, size 8 (0x8)
+	__declspec(align(8)) UnknownAtomicType <0x8, CResourceExtReference, UnknownAtomicType <0x8, CWeakHandle, class InfoForResourceTypeCTextureBase > > m_pTextureDiffuseWarp;// 0xe0, size 8 (0x8)
 	// m_pTextureDiffuseWarp metadata
 	 // MAttributeName
 	 // MPropertyAttributeEditor
-	 // MDefaultString
-	__declspec(align(8)) UnknownAtomicType <0x8, CResourceExtReference, UnknownAtomicType <0x8, CWeakHandle, class InfoForResourceTypeCTextureBase > > m_pTextureFresnelColorWarp;// 0xd8, size 8 (0x8)
+	__declspec(align(8)) UnknownAtomicType <0x8, CResourceExtReference, UnknownAtomicType <0x8, CWeakHandle, class InfoForResourceTypeCTextureBase > > m_pTextureFresnelColorWarp;// 0xe8, size 8 (0x8)
 	// m_pTextureFresnelColorWarp metadata
 	 // MAttributeName
 	 // MPropertyAttributeEditor
-	 // MDefaultString
-	__declspec(align(8)) UnknownAtomicType <0x8, CResourceExtReference, UnknownAtomicType <0x8, CWeakHandle, class InfoForResourceTypeCTextureBase > > m_pTextureFresnelWarp;// 0xe0, size 8 (0x8)
+	__declspec(align(8)) UnknownAtomicType <0x8, CResourceExtReference, UnknownAtomicType <0x8, CWeakHandle, class InfoForResourceTypeCTextureBase > > m_pTextureFresnelWarp;// 0xf0, size 8 (0x8)
 	// m_pTextureFresnelWarp metadata
 	 // MAttributeName
 	 // MPropertyAttributeEditor
-	 // MDefaultString
-	__declspec(align(8)) UnknownAtomicType <0x8, CResourceExtReference, UnknownAtomicType <0x8, CWeakHandle, class InfoForResourceTypeCTextureBase > > m_pTextureSpecularWarp;// 0xe8, size 8 (0x8)
+	__declspec(align(8)) UnknownAtomicType <0x8, CResourceExtReference, UnknownAtomicType <0x8, CWeakHandle, class InfoForResourceTypeCTextureBase > > m_pTextureSpecularWarp;// 0xf8, size 8 (0x8)
 	// m_pTextureSpecularWarp metadata
 	 // MAttributeName
 	 // MPropertyAttributeEditor
-	 // MDefaultString
-	__declspec(align(8)) UnknownAtomicType <0x8, CResourceExtReference, UnknownAtomicType <0x8, CWeakHandle, class InfoForResourceTypeCTextureBase > > m_pTextureEnvMap;// 0xf0, size 8 (0x8)
+	__declspec(align(8)) UnknownAtomicType <0x8, CResourceExtReference, UnknownAtomicType <0x8, CWeakHandle, class InfoForResourceTypeCTextureBase > > m_pTextureEnvMap;// 0x100, size 8 (0x8)
 	// m_pTextureEnvMap metadata
 	 // MAttributeName
 	 // MPropertyAttributeEditor
-	 // MDefaultString
-char C_OP_RenderStatusEffect_0100[0x8];
-}; // size: 256 (0x100)
+char C_OP_RenderStatusEffect_0110[0x8];
+}; // size: 272 (0x110)
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_INIT_InitFromCPSnapshot : public CParticleInitializerOperatorInstance
+class C_INIT_InitFromCPSnapshot : public CParticleFunctionInitializer
 {
 // C_INIT_InitFromCPSnapshot additional information
 // particles.dll, project particles
@@ -3653,12 +3658,16 @@ public:
 	// m_bReverse metadata
 	 // MAttributeName
 	 // MDefaultString
-char C_INIT_InitFromCPSnapshot_0A0[0xE];
+	__declspec(align(4)) int32_t m_nRandomSeed;// 0x94, size 4 (0x4)
+	// m_nRandomSeed metadata
+	 // MAttributeName
+	 // MDefaultString
+char C_INIT_InitFromCPSnapshot_0A0[0x8];
 }; // size: 160 (0xa0)
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_INIT_PositionOffsetToCP : public CParticleInitializerOperatorInstance
+class C_INIT_PositionOffsetToCP : public CParticleFunctionInitializer
 {
 // C_INIT_PositionOffsetToCP additional information
 // particles.dll, project particles
@@ -3683,45 +3692,29 @@ char C_INIT_PositionOffsetToCP_090[0x7];
 #pragma pack(pop)
 
 #pragma pack(push, 8)
-class CBoneMaskAnimNode : public CAnimNodeBase
+class CSSDSMsg_EndFrame
 {
-// CBoneMaskAnimNode additional information
-// animationsystem.dll, project animationsystem
+// CSSDSMsg_EndFrame additional information
+// scenesystem.dll, project scenesystem
 // Alignment: 8
-// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
-// SCHEMA_CLASS_TEMP_HACK_HAS_NOSCHEMA_MEMBERS
+
+public:
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class CSSDSEndFrameViewInfo > m_Views;// 0x0, size 24 (0x18)
+}; // size: 24 (0x18)
+#pragma pack(pop)
+
+#pragma pack(push, 4)
+class AnimParamID
+{
+// AnimParamID additional information
+// animationsystem.dll, project animationsystem
+// Alignment: 4
+// SCHEMA_CLASS_HAS_TRIVIAL_DESTRUCTOR
 // SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
 
 public:
-	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_weightListName;// 0x38, size 8 (0x8)
-	// m_weightListName metadata
-	 // MPropertyFriendlyName
-	 // MPropertyAttributeChoiceName
-	__declspec(align(4)) AnimNodeID m_child1ID;// 0x40, size 4 (0x4)
-	// m_child1ID metadata
-	 // MPropertyHideField
-	__declspec(align(4)) AnimNodeID m_child2ID;// 0x44, size 4 (0x4)
-	// m_child2ID metadata
-	 // MPropertyHideField
-	__declspec(align(4)) BinaryNodeTiming m_timingBehavior;// 0x48, size 4 (0x4)
-	// m_timingBehavior metadata
-	 // MPropertyFriendlyName
-	__declspec(align(4)) float m_flTimingBlend;// 0x4c, size 4 (0x4)
-	// m_flTimingBlend metadata
-	 // MPropertyFriendlyName
-	 // MPropertyAttributeRange
-	__declspec(align(4)) float m_flRootMotionBlend;// 0x50, size 4 (0x4)
-	// m_flRootMotionBlend metadata
-	 // MPropertyFriendlyName
-	 // MPropertyAttributeRange
-	__declspec(align(1)) bool m_bResetChild1;// 0x54, size 1 (0x1)
-	// m_bResetChild1 metadata
-	 // MPropertyFriendlyName
-	__declspec(align(1)) bool m_bResetChild2;// 0x55, size 1 (0x1)
-	// m_bResetChild2 metadata
-	 // MPropertyFriendlyName
-char CBoneMaskAnimNode_060[0xA];
-}; // size: 96 (0x60)
+	__declspec(align(4)) uint32_t m_id;// 0x0, size 4 (0x4)
+}; // size: 4 (0x4)
 #pragma pack(pop)
 
 #pragma pack(push, 4)
@@ -3784,22 +3777,20 @@ class INextBotEventResponder : public SchemaBase
 public:
 }; // size: 8 (0x8)
 
-class CBaseConstraint : public SchemaBase
+class CBoneConstraintBase : public SchemaBase
 {
-// CBaseConstraint additional information
+// CBoneConstraintBase additional information
 // engine2.dll, project modellib
 // Alignment: -1
 // SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
 // SCHEMA_CLASS_IS_ABSTRACT
-// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
+// SCHEMA_CLASS_TEMP_HACK_HAS_NOSCHEMA_MEMBERS
+// SCHEMA_CLASS_TEMP_HACK_HAS_DESTRUCTOR_LIKE_METHODS
 // Abstract Class
 
 public:
-	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_name;// 0x8, size 8 (0x8)
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vUpVector;// 0x10, size 12 (0xc)
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class CConstraintSlave > m_slaves;// 0x20, size 24 (0x18)
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class CConstraintTarget > m_targets;// 0x38, size 24 (0x18)
-}; // size: 80 (0x50)
+char CBoneConstraintBase_028[0x20];
+}; // size: 40 (0x28)
 
 #pragma pack(push, 8)
 class EventAdvanceTick_t : public EventSimulate_t
@@ -3819,7 +3810,7 @@ char EventAdvanceTick_t_040[0x4];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_Cull : public CParticlePerFrameOperatorInstance
+class C_OP_Cull : public CParticleFunctionOperator
 {
 // C_OP_Cull additional information
 // particles.dll, project particles
@@ -3851,7 +3842,7 @@ public:
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_INIT_AgeNoise : public CParticleInitializerOperatorInstance
+class C_INIT_AgeNoise : public CParticleFunctionInitializer
 {
 // C_INIT_AgeNoise additional information
 // particles.dll, project particles
@@ -4024,9 +4015,9 @@ public:
 }; // size: 24 (0x18)
 #pragma pack(pop)
 
-class CParticleEmitterOperatorInstance : public CParticleOperatorInstance
+class CParticleFunctionEmitter : public CParticleFunction
 {
-// CParticleEmitterOperatorInstance additional information
+// CParticleFunctionEmitter additional information
 // particles.dll, project particles
 // Alignment: -1
 // SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
@@ -4036,9 +4027,9 @@ class CParticleEmitterOperatorInstance : public CParticleOperatorInstance
 public:
 }; // size: 128 (0x80)
 
-class CParticleConstraintOperatorInstance : public CParticleOperatorInstance
+class CParticleFunctionConstraint : public CParticleFunction
 {
-// CParticleConstraintOperatorInstance additional information
+// CParticleFunctionConstraint additional information
 // particles.dll, project particles
 // Alignment: -1
 // SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
@@ -4087,7 +4078,7 @@ public:
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_BasicMovement : public CParticlePerFrameOperatorInstance
+class C_OP_BasicMovement : public CParticleFunctionOperator
 {
 // C_OP_BasicMovement additional information
 // particles.dll, project particles
@@ -4251,7 +4242,7 @@ char FileWeaponInfo_t_0F8[0x48];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_RenderProjected : public CParticleRenderOperatorInstance
+class C_OP_RenderProjected : public CParticleFunctionRenderer
 {
 // C_OP_RenderProjected additional information
 // particles.dll, project particles
@@ -4259,52 +4250,52 @@ class C_OP_RenderProjected : public CParticleRenderOperatorInstance
 // SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
 
 public:
-	__declspec(align(1)) bool m_bProjectCharacter;// 0xc0, size 1 (0x1)
+	__declspec(align(1)) bool m_bProjectCharacter;// 0xd0, size 1 (0x1)
 	// m_bProjectCharacter metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(1)) bool m_bProjectWorld;// 0xc1, size 1 (0x1)
+	__declspec(align(1)) bool m_bProjectWorld;// 0xd1, size 1 (0x1)
 	// m_bProjectWorld metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(1)) bool m_bProjectWater;// 0xc2, size 1 (0x1)
+	__declspec(align(1)) bool m_bProjectWater;// 0xd2, size 1 (0x1)
 	// m_bProjectWater metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(1)) bool m_bFlipHorizontal;// 0xc3, size 1 (0x1)
+	__declspec(align(1)) bool m_bFlipHorizontal;// 0xd3, size 1 (0x1)
 	// m_bFlipHorizontal metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(1)) bool m_bEnableProjectedDepthControls;// 0xc4, size 1 (0x1)
+	__declspec(align(1)) bool m_bEnableProjectedDepthControls;// 0xd4, size 1 (0x1)
 	// m_bEnableProjectedDepthControls metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) float m_flMinProjectionDepth;// 0xc8, size 4 (0x4)
+	__declspec(align(4)) float m_flMinProjectionDepth;// 0xd8, size 4 (0x4)
 	// m_flMinProjectionDepth metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) float m_flMaxProjectionDepth;// 0xcc, size 4 (0x4)
+	__declspec(align(4)) float m_flMaxProjectionDepth;// 0xdc, size 4 (0x4)
 	// m_flMaxProjectionDepth metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(8)) UnknownAtomicType <0x8, CResourceExtReference, UnknownAtomicType <0x8, CWeakHandle, class InfoForResourceTypeIMaterial2 > > m_hProjectedMaterial;// 0xd0, size 8 (0x8)
+	__declspec(align(8)) UnknownAtomicType <0x8, CResourceExtReference, UnknownAtomicType <0x8, CWeakHandle, class InfoForResourceTypeIMaterial2 > > m_hProjectedMaterial;// 0xe0, size 8 (0x8)
 	// m_hProjectedMaterial metadata
 	 // MAttributeName
 	 // MPropertyAttributeEditor
 	 // MDefaultString
-	__declspec(align(4)) float m_flAnimationTimeScale;// 0xd8, size 4 (0x4)
+	__declspec(align(4)) float m_flAnimationTimeScale;// 0xe8, size 4 (0x4)
 	// m_flAnimationTimeScale metadata
 	 // MAttributeName
 	 // MDefaultString
-char C_OP_RenderProjected_0E0[0x4];
-}; // size: 224 (0xe0)
+char C_OP_RenderProjected_0F0[0x4];
+}; // size: 240 (0xf0)
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_OscillateScalarSimple : public CParticlePerFrameOperatorInstance
+class C_OP_OscillateScalarSimple : public CParticleFunctionOperator
 {
 // C_OP_OscillateScalarSimple additional information
 // particles.dll, project particles
@@ -4339,7 +4330,7 @@ char C_OP_OscillateScalarSimple_0C0[0x2C];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_INIT_InitSkinnedPositionFromCPSnapshot : public CParticleInitializerOperatorInstance
+class C_INIT_InitSkinnedPositionFromCPSnapshot : public CParticleFunctionInitializer
 {
 // C_INIT_InitSkinnedPositionFromCPSnapshot additional information
 // particles.dll, project particles
@@ -4359,53 +4350,56 @@ public:
 	// m_bRandom metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(1)) bool m_bRigid;// 0x89, size 1 (0x1)
+	__declspec(align(4)) int32_t m_nRandomSeed;// 0x8c, size 4 (0x4)
+	// m_nRandomSeed metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(1)) bool m_bRigid;// 0x90, size 1 (0x1)
 	// m_bRigid metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(1)) bool m_bSetNormal;// 0x8a, size 1 (0x1)
+	__declspec(align(1)) bool m_bSetNormal;// 0x91, size 1 (0x1)
 	// m_bSetNormal metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(1)) bool m_bIgnoreDt;// 0x8b, size 1 (0x1)
+	__declspec(align(1)) bool m_bIgnoreDt;// 0x92, size 1 (0x1)
 	// m_bIgnoreDt metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) float m_flMinNormalVelocity;// 0x8c, size 4 (0x4)
+	__declspec(align(4)) float m_flMinNormalVelocity;// 0x94, size 4 (0x4)
 	// m_flMinNormalVelocity metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) float m_flMaxNormalVelocity;// 0x90, size 4 (0x4)
+	__declspec(align(4)) float m_flMaxNormalVelocity;// 0x98, size 4 (0x4)
 	// m_flMaxNormalVelocity metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) float m_flIncrement;// 0x94, size 4 (0x4)
+	__declspec(align(4)) float m_flIncrement;// 0x9c, size 4 (0x4)
 	// m_flIncrement metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) int32_t m_nFullLoopIncrement;// 0x98, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nFullLoopIncrement;// 0xa0, size 4 (0x4)
 	// m_nFullLoopIncrement metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) int32_t m_nSnapShotStartPoint;// 0x9c, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nSnapShotStartPoint;// 0xa4, size 4 (0x4)
 	// m_nSnapShotStartPoint metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) float m_flBoneVelocity;// 0xa0, size 4 (0x4)
+	__declspec(align(4)) float m_flBoneVelocity;// 0xa8, size 4 (0x4)
 	// m_flBoneVelocity metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) float m_flBoneVelocityMax;// 0xa4, size 4 (0x4)
+	__declspec(align(4)) float m_flBoneVelocityMax;// 0xac, size 4 (0x4)
 	// m_flBoneVelocityMax metadata
 	 // MAttributeName
 	 // MDefaultString
-char C_INIT_InitSkinnedPositionFromCPSnapshot_0B0[0x8];
 }; // size: 176 (0xb0)
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_SpringConstraint : public CParticleConstraintOperatorInstance
+class C_OP_SpringConstraint : public CParticleFunctionConstraint
 {
 // C_OP_SpringConstraint additional information
 // particles.dll, project particles
@@ -4455,19 +4449,36 @@ public:
 }; // size: 8 (0x8)
 #pragma pack(pop)
 
-#pragma pack(push, 4)
-class AnimParamID
+class CAnimParameterBase : public SchemaBase
 {
-// AnimParamID additional information
+// CAnimParameterBase additional information
 // animationsystem.dll, project animationsystem
-// Alignment: 4
-// SCHEMA_CLASS_HAS_TRIVIAL_DESTRUCTOR
+// Alignment: -1
+// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+// SCHEMA_CLASS_IS_ABSTRACT
 // SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
+// Abstract Class
 
 public:
-	__declspec(align(4)) uint32_t m_id;// 0x0, size 4 (0x4)
-}; // size: 4 (0x4)
-#pragma pack(pop)
+char CAnimParameterBase_018[0x10];
+	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_name;// 0x18, size 8 (0x8)
+	// m_name metadata
+	 // MPropertyFriendlyName
+	 // MPropertySortPriority
+	__declspec(align(4)) AnimParamID m_id;// 0x20, size 4 (0x4)
+	// m_id metadata
+	 // MPropertyHideField
+	__declspec(align(4)) AnimParamButton_t m_previewButton;// 0x24, size 4 (0x4)
+	// m_previewButton metadata
+	 // MPropertyFriendlyName
+	__declspec(align(1)) bool m_bNetwork;// 0x28, size 1 (0x1)
+	// m_bNetwork metadata
+	 // MPropertyFriendlyName
+	__declspec(align(1)) bool m_bAutoReset;// 0x29, size 1 (0x1)
+	// m_bAutoReset metadata
+	 // MPropertyFriendlyName
+char CAnimParameterBase_030[0x6];
+}; // size: 48 (0x30)
 
 #pragma pack(push, 4)
 class VPhysXAggregateData_t
@@ -4506,7 +4517,7 @@ public:
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_INIT_ModelCull : public CParticleInitializerOperatorInstance
+class C_INIT_ModelCull : public CParticleFunctionInitializer
 {
 // C_INIT_ModelCull additional information
 // particles.dll, project particles
@@ -4637,7 +4648,7 @@ public:
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_DistanceBetweenCPsToCP : public CParticlePerFrameOperatorInstance
+class C_OP_DistanceBetweenCPsToCP : public CParticleFunctionPreEmission
 {
 // C_OP_DistanceBetweenCPsToCP additional information
 // particles.dll, project particles
@@ -4698,8 +4709,20 @@ char C_OP_DistanceBetweenCPsToCP_0130[0x7];
 }; // size: 304 (0x130)
 #pragma pack(pop)
 
+#pragma pack(push, 8)
+class CPiecewiseCurveSchemaWrapper
+{
+// CPiecewiseCurveSchemaWrapper additional information
+// particles.dll, project particleslib
+// Alignment: 8
+
+public:
+char CPiecewiseCurveSchemaWrapper_040[0x40];
+}; // size: 64 (0x40)
+#pragma pack(pop)
+
 #pragma pack(push, 16)
-class C_OP_ContinuousEmitter : public CParticleEmitterOperatorInstance
+class C_OP_ContinuousEmitter : public CParticleFunctionEmitter
 {
 // C_OP_ContinuousEmitter additional information
 // particles.dll, project particles
@@ -4727,6 +4750,7 @@ public:
 	// m_flEmissionScale metadata
 	 // MAttributeName
 	 // MDefaultString
+	 // MParticleMaxVersion
 	__declspec(align(4)) int32_t m_nScaleControlPoint;// 0x90, size 4 (0x4)
 	// m_nScaleControlPoint metadata
 	 // MAttributeName
@@ -4749,7 +4773,7 @@ char C_OP_ContinuousEmitter_0A0[0x6];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_INIT_RandomAlpha : public CParticleInitializerOperatorInstance
+class C_INIT_RandomAlpha : public CParticleFunctionInitializer
 {
 // C_INIT_RandomAlpha additional information
 // particles.dll, project particles
@@ -4983,6 +5007,83 @@ char InfoForResourceTypeCPhysAggregateData_01[0x1];
 }; // size: 1 (0x1)
 #pragma pack(pop)
 
+#pragma pack(push, 16)
+class C_OP_NoiseEmitter : public CParticleFunctionEmitter
+{
+// C_OP_NoiseEmitter additional information
+// particles.dll, project particles
+// Alignment: 16
+// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+
+public:
+	__declspec(align(4)) float m_flEmissionDuration;// 0x80, size 4 (0x4)
+	// m_flEmissionDuration metadata
+	 // MSrc1ImportAttributeName
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) float m_flStartTime;// 0x84, size 4 (0x4)
+	// m_flStartTime metadata
+	 // MSrc1ImportAttributeName
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) float m_flEmissionScale;// 0x88, size 4 (0x4)
+	// m_flEmissionScale metadata
+	 // MAttributeName
+	 // MDefaultString
+	 // MParticleMaxVersion
+	__declspec(align(4)) int32_t m_nScaleControlPoint;// 0x8c, size 4 (0x4)
+	// m_nScaleControlPoint metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) int32_t m_nScaleControlPointField;// 0x90, size 4 (0x4)
+	// m_nScaleControlPointField metadata
+	 // MAttributeName
+	 // MDefaultString
+	 // MPropertyAttributeChoiceName
+	__declspec(align(4)) int32_t m_nWorldNoisePoint;// 0x94, size 4 (0x4)
+	// m_nWorldNoisePoint metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(1)) bool m_bAbsVal;// 0x98, size 1 (0x1)
+	// m_bAbsVal metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(1)) bool m_bAbsValInv;// 0x99, size 1 (0x1)
+	// m_bAbsValInv metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) float m_flOffset;// 0x9c, size 4 (0x4)
+	// m_flOffset metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) float m_flOutputMin;// 0xa0, size 4 (0x4)
+	// m_flOutputMin metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) float m_flOutputMax;// 0xa4, size 4 (0x4)
+	// m_flOutputMax metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) float m_flNoiseScale;// 0xa8, size 4 (0x4)
+	// m_flNoiseScale metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) float m_flWorldNoiseScale;// 0xac, size 4 (0x4)
+	// m_flWorldNoiseScale metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecOffsetLoc;// 0xb0, size 12 (0xc)
+	// m_vecOffsetLoc metadata
+	 // MAttributeName
+	 // MDefaultString
+	 // MVectorIsCoordinate
+	__declspec(align(4)) float m_flWorldTimeScale;// 0xbc, size 4 (0x4)
+	// m_flWorldTimeScale metadata
+	 // MAttributeName
+	 // MDefaultString
+}; // size: 192 (0xc0)
+#pragma pack(pop)
+
 #pragma pack(push, 4)
 class AnimTagID
 {
@@ -5149,21 +5250,7 @@ char CDOTA_Buff_06C8[0x600];
 }; // size: 1744 (0x6d0)
 #pragma pack(pop)
 
-#pragma pack(push, 1)
-class VMapResourceData_t
-{
-// VMapResourceData_t additional information
-// worldrenderer.dll, project worldrenderer
-// Alignment: 1
-// SCHEMA_CLASS_HAS_TRIVIAL_CONSTRUCTOR
-// SCHEMA_CLASS_HAS_TRIVIAL_DESTRUCTOR
-
-public:
-char VMapResourceData_t_01[0x1];
-}; // size: 1 (0x1)
-#pragma pack(pop)
-
-class C_OP_RemapNamedModelElementOnceTimed : public CParticlePerFrameOperatorInstance
+class C_OP_RemapNamedModelElementOnceTimed : public CParticleFunctionOperator
 {
 // C_OP_RemapNamedModelElementOnceTimed additional information
 // particles.dll, project particles
@@ -5212,12 +5299,13 @@ public:
 }; // size: 224 (0xe0)
 
 #pragma pack(push, 16)
-class C_INIT_RemapParticleCountToScalar : public CParticleInitializerOperatorInstance
+class C_INIT_RemapParticleCountToScalar : public CParticleFunctionInitializer
 {
 // C_INIT_RemapParticleCountToScalar additional information
 // particles.dll, project particles
 // Alignment: 16
 // SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+// SCHEMA_CLASS_TEMP_HACK_HAS_NOSCHEMA_MEMBERS
 
 public:
 	__declspec(align(4)) UnknownType <0x4, class ParticleAttributeIndex_t> m_nFieldOutput;// 0x80, size 4 (0x4)
@@ -5266,7 +5354,26 @@ public:
 	// m_bWrap metadata
 	 // MAttributeName
 	 // MDefaultString
-}; // size: 160 (0xa0)
+	__declspec(align(4)) float m_flRemapBias;// 0xa0, size 4 (0x4)
+	// m_flRemapBias metadata
+	 // MAttributeName
+	 // MDefaultString
+char C_INIT_RemapParticleCountToScalar_0B0[0xC];
+}; // size: 176 (0xb0)
+#pragma pack(pop)
+
+#pragma pack(push, 1)
+class VMapResourceData_t
+{
+// VMapResourceData_t additional information
+// worldrenderer.dll, project worldrenderer
+// Alignment: 1
+// SCHEMA_CLASS_HAS_TRIVIAL_CONSTRUCTOR
+// SCHEMA_CLASS_HAS_TRIVIAL_DESTRUCTOR
+
+public:
+char VMapResourceData_t_01[0x1];
+}; // size: 1 (0x1)
 #pragma pack(pop)
 
 #pragma pack(push, 4)
@@ -5323,7 +5430,7 @@ char vehicle_controlparams_t_018[0x2];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_SetControlPointToHand : public CParticlePerFrameOperatorInstance
+class C_OP_SetControlPointToHand : public CParticleFunctionPreEmission
 {
 // C_OP_SetControlPointToHand additional information
 // particles.dll, project particles
@@ -5445,28 +5552,7 @@ public:
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_InitSetSnapshotOnCP : public CParticleInitializerOperatorInstance
-{
-// C_OP_InitSetSnapshotOnCP additional information
-// particles.dll, project particles
-// Alignment: 16
-// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
-
-public:
-	__declspec(align(4)) int32_t m_nOutControlPointNumber;// 0x80, size 4 (0x4)
-	// m_nOutControlPointNumber metadata
-	 // MAttributeName
-	 // MDefaultString
-char C_OP_InitSetSnapshotOnCP_088[0x4];
-	__declspec(align(8)) UnknownAtomicType <0x8, CStrongHandle, class InfoForResourceTypeIParticleSnapshot > m_hSnapshot;// 0x88, size 8 (0x8)
-	// m_hSnapshot metadata
-	 // MAttributeName
-	 // MPropertyAttributeEditor
-}; // size: 144 (0x90)
-#pragma pack(pop)
-
-#pragma pack(push, 16)
-class C_INIT_RandomYawFlip : public CParticleInitializerOperatorInstance
+class C_INIT_RandomYawFlip : public CParticleFunctionInitializer
 {
 // C_INIT_RandomYawFlip additional information
 // particles.dll, project particles
@@ -5484,7 +5570,7 @@ char C_INIT_RandomYawFlip_090[0xC];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_RenderCables : public CParticleRenderOperatorInstance
+class C_OP_RenderCables : public CParticleFunctionRenderer
 {
 // C_OP_RenderCables additional information
 // particles.dll, project particles
@@ -5492,43 +5578,43 @@ class C_OP_RenderCables : public CParticleRenderOperatorInstance
 // SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
 
 public:
-	__declspec(align(8)) UnknownAtomicType <0x8, CResourceExtReference, UnknownAtomicType <0x8, CWeakHandle, class InfoForResourceTypeIMaterial2 > > m_hMaterial;// 0xc0, size 8 (0x8)
+	__declspec(align(8)) UnknownAtomicType <0x8, CResourceExtReference, UnknownAtomicType <0x8, CWeakHandle, class InfoForResourceTypeIMaterial2 > > m_hMaterial;// 0xd0, size 8 (0x8)
 	// m_hMaterial metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyAttributeEditor
-	__declspec(align(4)) float m_flTextureSize;// 0xc8, size 4 (0x4)
+	__declspec(align(4)) float m_flTextureSize;// 0xd8, size 4 (0x4)
 	// m_flTextureSize metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) int32_t m_nMinTesselation;// 0xcc, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nMinTesselation;// 0xdc, size 4 (0x4)
 	// m_nMinTesselation metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) int32_t m_nMaxTesselation;// 0xd0, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nMaxTesselation;// 0xe0, size 4 (0x4)
 	// m_nMaxTesselation metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) float m_flTessScale;// 0xd4, size 4 (0x4)
+	__declspec(align(4)) float m_flTessScale;// 0xe4, size 4 (0x4)
 	// m_flTessScale metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) float m_flTextureScrollRate;// 0xd8, size 4 (0x4)
+	__declspec(align(4)) float m_flTextureScrollRate;// 0xe8, size 4 (0x4)
 	// m_flTextureScrollRate metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) float m_flNormalMapScrollRate;// 0xdc, size 4 (0x4)
+	__declspec(align(4)) float m_flNormalMapScrollRate;// 0xec, size 4 (0x4)
 	// m_flNormalMapScrollRate metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
-}; // size: 224 (0xe0)
+}; // size: 240 (0xf0)
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_INIT_Orient2DRelToCP : public CParticleInitializerOperatorInstance
+class C_INIT_Orient2DRelToCP : public CParticleFunctionInitializer
 {
 // C_INIT_Orient2DRelToCP additional information
 // particles.dll, project particles
@@ -5699,7 +5785,7 @@ public:
 }; // size: 8 (0x8)
 
 #pragma pack(push, 16)
-class C_OP_CycleScalar : public CParticlePerFrameOperatorInstance
+class C_OP_CycleScalar : public CParticleFunctionOperator
 {
 // C_OP_CycleScalar additional information
 // particles.dll, project particles
@@ -5732,12 +5818,27 @@ public:
 	// m_bSynchronizeParticles metadata
 	 // MAttributeName
 	 // MDefaultString
-char C_OP_CycleScalar_0A0[0xE];
+	__declspec(align(4)) int32_t m_nCPScale;// 0x94, size 4 (0x4)
+	// m_nCPScale metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) int32_t m_nCPFieldMin;// 0x98, size 4 (0x4)
+	// m_nCPFieldMin metadata
+	 // MSrc1ImportAttributeName
+	 // MAttributeName
+	 // MDefaultString
+	 // MPropertyAttributeChoiceName
+	__declspec(align(4)) int32_t m_nCPFieldMax;// 0x9c, size 4 (0x4)
+	// m_nCPFieldMax metadata
+	 // MSrc1ImportAttributeName
+	 // MAttributeName
+	 // MDefaultString
+	 // MPropertyAttributeChoiceName
 }; // size: 160 (0xa0)
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_SetCPOrientationToGroundNormal : public CParticlePerFrameOperatorInstance
+class C_OP_SetCPOrientationToGroundNormal : public CParticleFunctionOperator
 {
 // C_OP_SetCPOrientationToGroundNormal additional information
 // particles.dll, project particles
@@ -5784,7 +5885,7 @@ char C_OP_SetCPOrientationToGroundNormal_0120[0x3];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_SequenceFromModel : public CParticlePerFrameOperatorInstance
+class C_OP_SequenceFromModel : public CParticleFunctionOperator
 {
 // C_OP_SequenceFromModel additional information
 // particles.dll, project particles
@@ -5853,19 +5954,6 @@ public:
 char CBasePathAnimMotor_030[0x7];
 }; // size: 48 (0x30)
 
-class IParticleEffect : public SchemaBase
-{
-// IParticleEffect additional information
-// client.dll, project particleslib
-// Alignment: -1
-// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
-// SCHEMA_CLASS_IS_ABSTRACT
-// SCHEMA_CLASS_TEMP_HACK_HAS_DESTRUCTOR_LIKE_METHODS
-// Abstract Class
-
-public:
-}; // size: 8 (0x8)
-
 class CResponseCriteriaSet : public SchemaBase
 {
 // CResponseCriteriaSet additional information
@@ -5884,8 +5972,21 @@ char CResponseCriteriaSet_030[0x28];
 char CResponseCriteriaSet_038[0x3];
 }; // size: 56 (0x38)
 
+class IParticleEffect : public SchemaBase
+{
+// IParticleEffect additional information
+// particles.dll, project particleslib
+// Alignment: -1
+// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+// SCHEMA_CLASS_IS_ABSTRACT
+// SCHEMA_CLASS_TEMP_HACK_HAS_DESTRUCTOR_LIKE_METHODS
+// Abstract Class
+
+public:
+}; // size: 8 (0x8)
+
 #pragma pack(push, 16)
-class C_OP_RemapCPVisibilityToVector : public CParticlePerFrameOperatorInstance
+class C_OP_RemapCPVisibilityToVector : public CParticleFunctionOperator
 {
 // C_OP_RemapCPVisibilityToVector additional information
 // particles.dll, project particles
@@ -5932,7 +6033,7 @@ public:
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_RemapCPOrientationToYaw : public CParticlePerFrameOperatorInstance
+class C_OP_RemapCPOrientationToYaw : public CParticleFunctionOperator
 {
 // C_OP_RemapCPOrientationToYaw additional information
 // particles.dll, project particles
@@ -5972,23 +6073,23 @@ class C_INIT_RemapParticleCountToNamedModelElementScalar : public C_INIT_RemapPa
 // Abstract Class
 
 public:
-	__declspec(align(8)) UnknownAtomicType <0x8, CStrongHandle, class InfoForResourceTypeCModel > m_hModel;// 0xa0, size 8 (0x8)
+	__declspec(align(8)) UnknownAtomicType <0x8, CStrongHandle, class InfoForResourceTypeCModel > m_hModel;// 0xb0, size 8 (0x8)
 	// m_hModel metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyAttributeEditor
-	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_outputMinName;// 0xa8, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_outputMinName;// 0xb8, size 8 (0x8)
 	// m_outputMinName metadata
 	 // MAttributeName
-	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_outputMaxName;// 0xb0, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_outputMaxName;// 0xc0, size 8 (0x8)
 	// m_outputMaxName metadata
 	 // MAttributeName
-	__declspec(align(1)) bool m_bModelFromRenderer;// 0xb8, size 1 (0x1)
+	__declspec(align(1)) bool m_bModelFromRenderer;// 0xc8, size 1 (0x1)
 	// m_bModelFromRenderer metadata
 	 // MAttributeName
 	 // MDefaultString
-char C_INIT_RemapParticleCountToNamedModelElementScalar_0C0[0x7];
-}; // size: 192 (0xc0)
+char C_INIT_RemapParticleCountToNamedModelElementScalar_0D0[0x7];
+}; // size: 208 (0xd0)
 
 #pragma pack(push, 8)
 class CCycleControlAnimNode : public CAnimNodeBase
@@ -6007,7 +6108,7 @@ public:
 	__declspec(align(4)) AnimParamID m_param;// 0x3c, size 4 (0x4)
 	// m_param metadata
 	 // MPropertyFriendlyName
-	 // MPropertyChoiceProviderFn
+	 // MPropertyAttributeChoiceName
 char CCycleControlAnimNode_048[0x8];
 }; // size: 72 (0x48)
 #pragma pack(pop)
@@ -6254,7 +6355,7 @@ public:
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_RemapCPtoCP : public CParticlePerFrameOperatorInstance
+class C_OP_RemapCPtoCP : public CParticleFunctionPreEmission
 {
 // C_OP_RemapCPtoCP additional information
 // particles.dll, project particles
@@ -6300,7 +6401,7 @@ public:
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_LerpScalar : public CParticlePerFrameOperatorInstance
+class C_OP_LerpScalar : public CParticleFunctionOperator
 {
 // C_OP_LerpScalar additional information
 // particles.dll, project particles
@@ -6389,6 +6490,34 @@ public:
 }; // size: 8 (0x8)
 #pragma pack(pop)
 
+#pragma pack(push, 8)
+class CSkeletalInputAnimNode : public CAnimNodeBase
+{
+// CSkeletalInputAnimNode additional information
+// animationsystem.dll, project animationsystem
+// Alignment: 8
+// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+// SCHEMA_CLASS_TEMP_HACK_HAS_NOSCHEMA_MEMBERS
+// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
+
+public:
+char CSkeletalInputAnimNode_03C[0x4];
+	__declspec(align(4)) AnimVRHand_t m_hand;// 0x3c, size 4 (0x4)
+	// m_hand metadata
+	 // MPropertyFriendlyName
+	__declspec(align(4)) AnimVRHandMotionRange_t m_motionRange;// 0x40, size 4 (0x4)
+	// m_motionRange metadata
+	 // MPropertyFriendlyName
+	__declspec(align(1)) bool m_bAdditive;// 0x44, size 1 (0x1)
+	// m_bAdditive metadata
+	 // MPropertyFriendlyName
+char CSkeletalInputAnimNode_048[0x3];
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class CBonePair > m_boneMap;// 0x48, size 24 (0x18)
+	// m_boneMap metadata
+	 // MPropertyFriendlyName
+}; // size: 96 (0x60)
+#pragma pack(pop)
+
 #pragma pack(push, 4)
 class SkeletonBoneBbox_t
 {
@@ -6409,7 +6538,7 @@ public:
 class RenderInputLayoutField_t
 {
 // RenderInputLayoutField_t additional information
-// rendersystemdx9.dll, project rendersystemdx9
+// rendersystemdx11.dll, project rendersystemdx11
 // Alignment: 4
 // SCHEMA_CLASS_HAS_TRIVIAL_CONSTRUCTOR
 // SCHEMA_CLASS_HAS_TRIVIAL_DESTRUCTOR
@@ -6521,23 +6650,8 @@ char sControlGroupElem_0318[0x3];
 }; // size: 792 (0x318)
 #pragma pack(pop)
 
-#pragma pack(push, 4)
-class AABB_t
-{
-// AABB_t additional information
-// resourcesystem.dll, project mathlib_extended
-// Alignment: 4
-// SCHEMA_CLASS_HAS_TRIVIAL_DESTRUCTOR
-// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
-
-public:
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vMinBounds;// 0x0, size 12 (0xc)
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vMaxBounds;// 0xc, size 12 (0xc)
-}; // size: 24 (0x18)
-#pragma pack(pop)
-
 #pragma pack(push, 16)
-class C_INIT_GlobalScale : public CParticleInitializerOperatorInstance
+class C_INIT_GlobalScale : public CParticleFunctionInitializer
 {
 // C_INIT_GlobalScale additional information
 // particles.dll, project particles
@@ -6571,6 +6685,21 @@ public:
 	 // MDefaultString
 char C_INIT_GlobalScale_090[0x1];
 }; // size: 144 (0x90)
+#pragma pack(pop)
+
+#pragma pack(push, 4)
+class AABB_t
+{
+// AABB_t additional information
+// resourcesystem.dll, project mathlib_extended
+// Alignment: 4
+// SCHEMA_CLASS_HAS_TRIVIAL_DESTRUCTOR
+// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
+
+public:
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vMinBounds;// 0x0, size 12 (0xc)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vMaxBounds;// 0xc, size 12 (0xc)
+}; // size: 24 (0x18)
 #pragma pack(pop)
 
 #pragma pack(push, 8)
@@ -6621,7 +6750,7 @@ char CDOTA_ItemStockInfo_038[0x4];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_INIT_RandomVector : public CParticleInitializerOperatorInstance
+class C_INIT_RandomVector : public CParticleFunctionInitializer
 {
 // C_INIT_RandomVector additional information
 // particles.dll, project particles
@@ -6665,25 +6794,8 @@ public:
 }; // size: 112 (0x70)
 #pragma pack(pop)
 
-#pragma pack(push, 8)
-class CSSDSMsg_LayerBase
-{
-// CSSDSMsg_LayerBase additional information
-// scenesystem.dll, project scenesystem
-// Alignment: 8
-
-public:
-	__declspec(align(8)) SceneViewId_t m_viewId;// 0x0, size 16 (0x10)
-	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_ViewName;// 0x10, size 8 (0x8)
-	__declspec(align(4)) int32_t m_nLayerIndex;// 0x18, size 4 (0x4)
-	__declspec(align(8)) uint64_t m_nLayerId;// 0x20, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_LayerName;// 0x28, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_displayText;// 0x30, size 8 (0x8)
-}; // size: 56 (0x38)
-#pragma pack(pop)
-
 #pragma pack(push, 16)
-class C_OP_MovementPlaceOnGround : public CParticlePerFrameOperatorInstance
+class C_OP_MovementPlaceOnGround : public CParticleFunctionOperator
 {
 // C_OP_MovementPlaceOnGround additional information
 // particles.dll, project particles
@@ -6748,6 +6860,23 @@ char C_OP_MovementPlaceOnGround_0128[0x2];
 	 // MDefaultString
 char C_OP_MovementPlaceOnGround_0130[0x6];
 }; // size: 304 (0x130)
+#pragma pack(pop)
+
+#pragma pack(push, 8)
+class CSSDSMsg_LayerBase
+{
+// CSSDSMsg_LayerBase additional information
+// scenesystem.dll, project scenesystem
+// Alignment: 8
+
+public:
+	__declspec(align(8)) SceneViewId_t m_viewId;// 0x0, size 16 (0x10)
+	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_ViewName;// 0x10, size 8 (0x8)
+	__declspec(align(4)) int32_t m_nLayerIndex;// 0x18, size 4 (0x4)
+	__declspec(align(8)) uint64_t m_nLayerId;// 0x20, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_LayerName;// 0x28, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_displayText;// 0x30, size 8 (0x8)
+}; // size: 56 (0x38)
 #pragma pack(pop)
 
 #pragma pack(push, 8)
@@ -6863,22 +6992,8 @@ char CNetworkedSequenceOperation_040[0x4];
 }; // size: 64 (0x40)
 #pragma pack(pop)
 
-#pragma pack(push, 4)
-class BaseSceneObjectOverride_t
-{
-// BaseSceneObjectOverride_t additional information
-// worldrenderer.dll, project worldrenderer
-// Alignment: 4
-// SCHEMA_CLASS_HAS_TRIVIAL_CONSTRUCTOR
-// SCHEMA_CLASS_HAS_TRIVIAL_DESTRUCTOR
-
-public:
-	__declspec(align(4)) uint32_t m_nSceneObjectIndex;// 0x0, size 4 (0x4)
-}; // size: 4 (0x4)
-#pragma pack(pop)
-
 #pragma pack(push, 16)
-class C_OP_ConstrainDistance : public CParticleConstraintOperatorInstance
+class C_OP_ConstrainDistance : public CParticleFunctionConstraint
 {
 // C_OP_ConstrainDistance additional information
 // particles.dll, project particles
@@ -6916,10 +7031,24 @@ char C_OP_ConstrainDistance_0A0[0x3];
 #pragma pack(pop)
 
 #pragma pack(push, 4)
+class BaseSceneObjectOverride_t
+{
+// BaseSceneObjectOverride_t additional information
+// worldrenderer.dll, project worldrenderer
+// Alignment: 4
+// SCHEMA_CLASS_HAS_TRIVIAL_CONSTRUCTOR
+// SCHEMA_CLASS_HAS_TRIVIAL_DESTRUCTOR
+
+public:
+	__declspec(align(4)) uint32_t m_nSceneObjectIndex;// 0x0, size 4 (0x4)
+}; // size: 4 (0x4)
+#pragma pack(pop)
+
+#pragma pack(push, 4)
 class TextureDesc_t
 {
 // TextureDesc_t additional information
-// rendersystemdx9.dll, project rendersystemdx9
+// rendersystemdx11.dll, project rendersystemdx11
 // Alignment: 4
 // SCHEMA_CLASS_HAS_TRIVIAL_CONSTRUCTOR
 // SCHEMA_CLASS_HAS_TRIVIAL_DESTRUCTOR
@@ -6954,55 +7083,55 @@ char CDOTAGameManager_090[0x48];
 	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pkvHeroes;// 0x90, size 8 (0x8)
 	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pkvUnits;// 0x98, size 8 (0x8)
 	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pkvAbilities;// 0xa0, size 8 (0x8)
-char CDOTAGameManager_0290[0x1E8];
-	__declspec(align(1)) bool m_bCustomGame;// 0x290, size 1 (0x1)
-	__declspec(align(1)) bool m_bEventGame;// 0x291, size 1 (0x1)
-	__declspec(align(1)) char m_szAddOnGame[128];// 0x292, size 128 (0x80)
-	__declspec(align(1)) char m_szAddOnMap[128];// 0x312, size 128 (0x80)
-char CDOTAGameManager_03A8[0x10];
-	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pkvAddOnHeroes;// 0x3a8, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pkvAddOnUnits;// 0x3b0, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pkvAddOnAbilities;// 0x3b8, size 8 (0x8)
-char CDOTAGameManager_0608[0x248];
-	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pTutorialLessonKeyValues;// 0x608, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pTutorialTipKeyValues;// 0x610, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pDivisionKeyValues;// 0x618, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pMatchGroupsKeyValues;// 0x620, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pEmoticonsKeyValues;// 0x628, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pPortraitsLightPreselects;// 0x630, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pAnimationStatues;// 0x638, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pAddonInfoKeyValues;// 0x640, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pBotScriptsDedicatedServer;// 0x648, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pkvWardPlacementLocations;// 0x650, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pRegionKeyValues;// 0x658, size 8 (0x8)
-char CDOTAGameManager_0688[0x28];
-	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pCountryKeyValues;// 0x688, size 8 (0x8)
-char CDOTAGameManager_06C0[0x30];
-	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pSurveyQuestionData;// 0x6c0, size 8 (0x8)
-char CDOTAGameManager_0700[0x38];
-	__declspec(align(4)) int32_t m_nNumLoadingPlayers;// 0x700, size 4 (0x4)
-	__declspec(align(4)) int32_t m_iDefeatedParticle;// 0x704, size 4 (0x4)
-char CDOTAGameManager_0770[0x68];
-	__declspec(align(1)) bool m_StableHeroAvailable[256];// 0x770, size 256 (0x100)
+char CDOTAGameManager_0298[0x1F0];
+	__declspec(align(1)) bool m_bCustomGame;// 0x298, size 1 (0x1)
+	__declspec(align(1)) bool m_bEventGame;// 0x299, size 1 (0x1)
+	__declspec(align(1)) char m_szAddOnGame[128];// 0x29a, size 128 (0x80)
+	__declspec(align(1)) char m_szAddOnMap[128];// 0x31a, size 128 (0x80)
+char CDOTAGameManager_03B0[0x10];
+	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pkvAddOnHeroes;// 0x3b0, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pkvAddOnUnits;// 0x3b8, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pkvAddOnAbilities;// 0x3c0, size 8 (0x8)
+char CDOTAGameManager_0618[0x250];
+	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pTutorialLessonKeyValues;// 0x618, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pTutorialTipKeyValues;// 0x620, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pDivisionKeyValues;// 0x628, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pMatchGroupsKeyValues;// 0x630, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pEmoticonsKeyValues;// 0x638, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pPortraitsLightPreselects;// 0x640, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pAnimationStatues;// 0x648, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pAddonInfoKeyValues;// 0x650, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pBotScriptsDedicatedServer;// 0x658, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pkvWardPlacementLocations;// 0x660, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pRegionKeyValues;// 0x668, size 8 (0x8)
+char CDOTAGameManager_0698[0x28];
+	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pCountryKeyValues;// 0x698, size 8 (0x8)
+char CDOTAGameManager_06D0[0x30];
+	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pSurveyQuestionData;// 0x6d0, size 8 (0x8)
+char CDOTAGameManager_0710[0x38];
+	__declspec(align(4)) int32_t m_nNumLoadingPlayers;// 0x710, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iDefeatedParticle;// 0x714, size 4 (0x4)
+char CDOTAGameManager_0780[0x68];
+	__declspec(align(1)) bool m_StableHeroAvailable[256];// 0x780, size 256 (0x100)
 	// m_StableHeroAvailable metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_CurrentHeroAvailable[256];// 0x870, size 256 (0x100)
+	__declspec(align(1)) bool m_CurrentHeroAvailable[256];// 0x880, size 256 (0x100)
 	// m_CurrentHeroAvailable metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_CulledHeroes[256];// 0x970, size 256 (0x100)
+	__declspec(align(1)) bool m_CulledHeroes[256];// 0x980, size 256 (0x100)
 	// m_CulledHeroes metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_BonusHeroes[256];// 0xa70, size 256 (0x100)
+	__declspec(align(1)) bool m_BonusHeroes[256];// 0xa80, size 256 (0x100)
 	// m_BonusHeroes metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-}; // size: 2928 (0xb70)
+}; // size: 2944 (0xb80)
 
 #pragma pack(push, 16)
-class C_OP_Noise : public CParticlePerFrameOperatorInstance
+class C_OP_Noise : public CParticleFunctionOperator
 {
 // C_OP_Noise additional information
 // particles.dll, project particles
@@ -7040,7 +7169,7 @@ char C_OP_Noise_0B0[0x8];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_INIT_NormalOffset : public CParticleInitializerOperatorInstance
+class C_INIT_NormalOffset : public CParticleFunctionInitializer
 {
 // C_INIT_NormalOffset additional information
 // particles.dll, project particles
@@ -7075,64 +7204,6 @@ char C_INIT_NormalOffset_0A0[0x2];
 }; // size: 160 (0xa0)
 #pragma pack(pop)
 
-#pragma pack(push, 16)
-class C_INIT_CreateInHierarchy : public CParticleInitializerOperatorInstance
-{
-// C_INIT_CreateInHierarchy additional information
-// particles.dll, project particles
-// Alignment: 16
-// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
-// SCHEMA_CLASS_TEMP_HACK_HAS_NOSCHEMA_MEMBERS
-
-public:
-	__declspec(align(4)) float m_fMaxDistance;// 0x80, size 4 (0x4)
-	// m_fMaxDistance metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(4)) float m_flGrowthTime;// 0x84, size 4 (0x4)
-	// m_flGrowthTime metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(4)) float m_flDesiredMidPoint;// 0x88, size 4 (0x4)
-	// m_flDesiredMidPoint metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(4)) int32_t m_nOrientation;// 0x8c, size 4 (0x4)
-	// m_nOrientation metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(4)) float m_flBulgeFactor;// 0x90, size 4 (0x4)
-	// m_flBulgeFactor metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(4)) int32_t m_nDesiredEndPoint;// 0x94, size 4 (0x4)
-	// m_nDesiredEndPoint metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(4)) int32_t m_nDesiredStartPoint;// 0x98, size 4 (0x4)
-	// m_nDesiredStartPoint metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(1)) bool m_bUseHighestEndCP;// 0x9c, size 1 (0x1)
-	// m_bUseHighestEndCP metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecDistanceBias;// 0xa0, size 12 (0xc)
-	// m_vecDistanceBias metadata
-	 // MSrc1ImportAttributeName
-	 // MAttributeName
-	 // MDefaultString
-	 // MVectorIsCoordinate
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecDistanceBiasAbs;// 0xac, size 12 (0xc)
-	// m_vecDistanceBiasAbs metadata
-	 // MSrc1ImportAttributeName
-	 // MAttributeName
-	 // MDefaultString
-	 // MVectorIsCoordinate
-char C_INIT_CreateInHierarchy_0C0[0x8];
-}; // size: 192 (0xc0)
-#pragma pack(pop)
-
 #pragma pack(push, 8)
 class CSosGroupActionLimitSchema : public CSosGroupActionSchema
 {
@@ -7156,6 +7227,21 @@ public:
 	 // MPropertyFriendlyName
 char CSosGroupActionLimitSchema_028[0x4];
 }; // size: 40 (0x28)
+#pragma pack(pop)
+
+#pragma pack(push, 2)
+class FeWeightedNode_t
+{
+// FeWeightedNode_t additional information
+// resourcesystem.dll, project mathlib_extended
+// Alignment: 2
+// SCHEMA_CLASS_HAS_TRIVIAL_CONSTRUCTOR
+// SCHEMA_CLASS_HAS_TRIVIAL_DESTRUCTOR
+
+public:
+	__declspec(align(2)) uint16_t nNode;// 0x0, size 2 (0x2)
+	__declspec(align(2)) uint16_t nWeight;// 0x2, size 2 (0x2)
+}; // size: 4 (0x4)
 #pragma pack(pop)
 
 #pragma pack(push, 8)
@@ -7196,23 +7282,8 @@ public:
 	static bool &Get_s_bNetworkVarValidate() {return *(bool *)schema::SchemaSystem::Get()->FindTypeScopeForModule("!GlobalTypes")->FindDeclaredClass("CNetworkTransmitComponent")->m_staticMembers.data[3].m_pInstance; }
 }; // size: 80 (0x50)
 
-#pragma pack(push, 4)
-class LightTreeResourceData_t
-{
-// LightTreeResourceData_t additional information
-// worldrenderer.dll, project worldrenderer
-// Alignment: 4
-// SCHEMA_CLASS_HAS_TRIVIAL_DESTRUCTOR
-
-public:
-	__declspec(align(4)) UnknownAtomicType <0x8, CResourceArray, uint8_t > m_SerializedOctree;// 0x0, size 8 (0x8)
-	__declspec(align(4)) UnknownAtomicType <0x8, CResourceArray, uint16_t > m_IrradValues;// 0x8, size 8 (0x8)
-	__declspec(align(4)) UnknownAtomicType <0x8, CResourceArray, uint16_t > m_ImageVertices;// 0x10, size 8 (0x8)
-}; // size: 24 (0x18)
-#pragma pack(pop)
-
 #pragma pack(push, 16)
-class C_OP_MovementRigidAttachToCP : public CParticlePerFrameOperatorInstance
+class C_OP_MovementRigidAttachToCP : public CParticleFunctionOperator
 {
 // C_OP_MovementRigidAttachToCP additional information
 // particles.dll, project particles
@@ -7253,6 +7324,21 @@ char C_OP_MovementRigidAttachToCP_0A0[0xB];
 #pragma pack(pop)
 
 #pragma pack(push, 4)
+class LightTreeResourceData_t
+{
+// LightTreeResourceData_t additional information
+// worldrenderer.dll, project worldrenderer
+// Alignment: 4
+// SCHEMA_CLASS_HAS_TRIVIAL_DESTRUCTOR
+
+public:
+	__declspec(align(4)) UnknownAtomicType <0x8, CResourceArray, uint8_t > m_SerializedOctree;// 0x0, size 8 (0x8)
+	__declspec(align(4)) UnknownAtomicType <0x8, CResourceArray, uint16_t > m_IrradValues;// 0x8, size 8 (0x8)
+	__declspec(align(4)) UnknownAtomicType <0x8, CResourceArray, uint16_t > m_ImageVertices;// 0x10, size 8 (0x8)
+}; // size: 24 (0x18)
+#pragma pack(pop)
+
+#pragma pack(push, 4)
 class RnTriangle_t
 {
 // RnTriangle_t additional information
@@ -7266,28 +7352,8 @@ public:
 }; // size: 12 (0xc)
 #pragma pack(pop)
 
-#pragma pack(push, 4)
-class PerInstanceBakedLightingParamsOverride_t : public BaseSceneObjectOverride_t
-{
-// PerInstanceBakedLightingParamsOverride_t additional information
-// worldrenderer.dll, project worldrenderer
-// Alignment: 4
-// SCHEMA_CLASS_HAS_TRIVIAL_CONSTRUCTOR
-// SCHEMA_CLASS_HAS_TRIVIAL_DESTRUCTOR
-
-public:
-	__declspec(align(4)) uint32_t m_nSubSceneObject;// 0x4, size 4 (0x4)
-	__declspec(align(4)) uint32_t m_nDrawCallIndex;// 0x8, size 4 (0x4)
-	__declspec(align(1)) bool m_bHasBakedLightingFromVertexStream;// 0xc, size 1 (0x1)
-	__declspec(align(1)) bool m_bHasBakedLightingFromLightmap;// 0xd, size 1 (0x1)
-	__declspec(align(1)) bool m_bHasBakedLightingBasisInVertex;// 0xe, size 1 (0x1)
-	__declspec(align(1)) bool m_bHasPerInstanceBakedLightingData;// 0xf, size 1 (0x1)
-	__declspec(align(4)) uint32_t m_nPerVertexLightingOffsetInVertices;// 0x10, size 4 (0x4)
-}; // size: 20 (0x14)
-#pragma pack(pop)
-
 #pragma pack(push, 16)
-class C_OP_RemapScalarOnceTimed : public CParticlePerFrameOperatorInstance
+class C_OP_RemapScalarOnceTimed : public CParticleFunctionOperator
 {
 // C_OP_RemapScalarOnceTimed additional information
 // particles.dll, project particles
@@ -7333,7 +7399,7 @@ public:
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_InstantaneousEmitter : public CParticleEmitterOperatorInstance
+class C_OP_InstantaneousEmitter : public CParticleFunctionEmitter
 {
 // C_OP_InstantaneousEmitter additional information
 // particles.dll, project particles
@@ -7388,7 +7454,7 @@ char C_OP_InstantaneousEmitter_0B0[0xC];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_INIT_MakeShapes : public CParticleInitializerOperatorInstance
+class C_INIT_MakeShapes : public CParticleFunctionInitializer
 {
 // C_INIT_MakeShapes additional information
 // particles.dll, project particles
@@ -7408,39 +7474,51 @@ char C_INIT_MakeShapes_090[0x8];
 }; // size: 144 (0x90)
 #pragma pack(pop)
 
-class CAnimParameterBase : public SchemaBase
+#pragma pack(push, 4)
+class PerInstanceBakedLightingParamsOverride_t : public BaseSceneObjectOverride_t
 {
-// CAnimParameterBase additional information
-// animationsystem.dll, project animationsystem
-// Alignment: -1
-// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
-// SCHEMA_CLASS_IS_ABSTRACT
-// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
-// Abstract Class
+// PerInstanceBakedLightingParamsOverride_t additional information
+// worldrenderer.dll, project worldrenderer
+// Alignment: 4
+// SCHEMA_CLASS_HAS_TRIVIAL_CONSTRUCTOR
+// SCHEMA_CLASS_HAS_TRIVIAL_DESTRUCTOR
 
 public:
-char CAnimParameterBase_018[0x10];
-	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_name;// 0x18, size 8 (0x8)
-	// m_name metadata
+	__declspec(align(4)) uint32_t m_nSubSceneObject;// 0x4, size 4 (0x4)
+	__declspec(align(4)) uint32_t m_nDrawCallIndex;// 0x8, size 4 (0x4)
+	__declspec(align(1)) bool m_bHasBakedLightingFromVertexStream;// 0xc, size 1 (0x1)
+	__declspec(align(1)) bool m_bHasBakedLightingFromLightmap;// 0xd, size 1 (0x1)
+	__declspec(align(1)) bool m_bHasBakedLightingBasisInVertex;// 0xe, size 1 (0x1)
+	__declspec(align(1)) bool m_bHasPerInstanceBakedLightingData;// 0xf, size 1 (0x1)
+	__declspec(align(4)) uint32_t m_nPerVertexLightingOffsetInVertices;// 0x10, size 4 (0x4)
+}; // size: 20 (0x14)
+#pragma pack(pop)
+
+#pragma pack(push, 8)
+class CIntAnimParameter : public CAnimParameterBase
+{
+// CIntAnimParameter additional information
+// animationsystem.dll, project animationsystem
+// Alignment: 8
+// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
+
+public:
+	__declspec(align(4)) int32_t m_defaultValue;// 0x30, size 4 (0x4)
+	// m_defaultValue metadata
 	 // MPropertyFriendlyName
-	 // MPropertySortPriority
-	__declspec(align(4)) AnimParamID m_id;// 0x20, size 4 (0x4)
-	// m_id metadata
-	 // MPropertyHideField
-	__declspec(align(4)) AnimParamButton_t m_previewButton;// 0x24, size 4 (0x4)
-	// m_previewButton metadata
+	__declspec(align(4)) int32_t m_minValue;// 0x34, size 4 (0x4)
+	// m_minValue metadata
 	 // MPropertyFriendlyName
-	__declspec(align(1)) bool m_bNetwork;// 0x28, size 1 (0x1)
-	// m_bNetwork metadata
+	__declspec(align(4)) int32_t m_maxValue;// 0x38, size 4 (0x4)
+	// m_maxValue metadata
 	 // MPropertyFriendlyName
-	__declspec(align(1)) bool m_bAutoReset;// 0x29, size 1 (0x1)
-	// m_bAutoReset metadata
-	 // MPropertyFriendlyName
-char CAnimParameterBase_030[0x6];
-}; // size: 48 (0x30)
+char CIntAnimParameter_040[0x4];
+}; // size: 64 (0x40)
+#pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_RadiusDecay : public CParticlePerFrameOperatorInstance
+class C_OP_RadiusDecay : public CParticleFunctionOperator
 {
 // C_OP_RadiusDecay additional information
 // particles.dll, project particles
@@ -7456,7 +7534,7 @@ char C_OP_RadiusDecay_090[0xC];
 }; // size: 144 (0x90)
 #pragma pack(pop)
 
-class C_INIT_RemapNamedModelElementToScalar : public CParticleInitializerOperatorInstance
+class C_INIT_RemapNamedModelElementToScalar : public CParticleFunctionInitializer
 {
 // C_INIT_RemapNamedModelElementToScalar additional information
 // particles.dll, project particles
@@ -7516,7 +7594,10 @@ char CDirectPlaybackAnimNode_040[0x4];
 	__declspec(align(1)) bool m_bFinishEarly;// 0x40, size 1 (0x1)
 	// m_bFinishEarly metadata
 	 // MPropertyFriendlyName
-char CDirectPlaybackAnimNode_048[0x7];
+	__declspec(align(1)) bool m_bResetOnFinish;// 0x41, size 1 (0x1)
+	// m_bResetOnFinish metadata
+	 // MPropertyFriendlyName
+char CDirectPlaybackAnimNode_048[0x6];
 }; // size: 72 (0x48)
 #pragma pack(pop)
 
@@ -7591,7 +7672,7 @@ char ModelReference_t_010[0x4];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_LockToPointList : public CParticlePerFrameOperatorInstance
+class C_OP_LockToPointList : public CParticleFunctionOperator
 {
 // C_OP_LockToPointList additional information
 // particles.dll, project particles
@@ -7758,7 +7839,7 @@ char InfoForResourceTypeCDOTAPatchNotesList_01[0x1];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_SetRandomControlPointPosition : public CParticlePerFrameOperatorInstance
+class C_OP_SetRandomControlPointPosition : public CParticleFunctionPreEmission
 {
 // C_OP_SetRandomControlPointPosition additional information
 // particles.dll, project particles
@@ -7820,7 +7901,7 @@ char ParticlePreviewBodyGroup_t_010[0x4];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_RenderSound : public CParticleRenderOperatorInstance
+class C_OP_RenderSound : public CParticleFunctionRenderer
 {
 // C_OP_RenderSound additional information
 // particles.dll, project particles
@@ -7828,62 +7909,62 @@ class C_OP_RenderSound : public CParticleRenderOperatorInstance
 // SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
 
 public:
-	__declspec(align(4)) float m_flDurationScale;// 0xc0, size 4 (0x4)
+	__declspec(align(4)) float m_flDurationScale;// 0xd0, size 4 (0x4)
 	// m_flDurationScale metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) float m_flSndLvlScale;// 0xc4, size 4 (0x4)
+	__declspec(align(4)) float m_flSndLvlScale;// 0xd4, size 4 (0x4)
 	// m_flSndLvlScale metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) float m_flPitchScale;// 0xc8, size 4 (0x4)
+	__declspec(align(4)) float m_flPitchScale;// 0xd8, size 4 (0x4)
 	// m_flPitchScale metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) float m_flVolumeScale;// 0xcc, size 4 (0x4)
+	__declspec(align(4)) float m_flVolumeScale;// 0xdc, size 4 (0x4)
 	// m_flVolumeScale metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) UnknownType <0x4, class ParticleAttributeIndex_t> m_nSndLvlField;// 0xd0, size 4 (0x4)
+	__declspec(align(4)) UnknownType <0x4, class ParticleAttributeIndex_t> m_nSndLvlField;// 0xe0, size 4 (0x4)
 	// m_nSndLvlField metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyAttributeChoiceName
-	__declspec(align(4)) UnknownType <0x4, class ParticleAttributeIndex_t> m_nDurationField;// 0xd4, size 4 (0x4)
+	__declspec(align(4)) UnknownType <0x4, class ParticleAttributeIndex_t> m_nDurationField;// 0xe4, size 4 (0x4)
 	// m_nDurationField metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyAttributeChoiceName
-	__declspec(align(4)) UnknownType <0x4, class ParticleAttributeIndex_t> m_nPitchField;// 0xd8, size 4 (0x4)
+	__declspec(align(4)) UnknownType <0x4, class ParticleAttributeIndex_t> m_nPitchField;// 0xe8, size 4 (0x4)
 	// m_nPitchField metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyAttributeChoiceName
-	__declspec(align(4)) UnknownType <0x4, class ParticleAttributeIndex_t> m_nVolumeField;// 0xdc, size 4 (0x4)
+	__declspec(align(4)) UnknownType <0x4, class ParticleAttributeIndex_t> m_nVolumeField;// 0xec, size 4 (0x4)
 	// m_nVolumeField metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyAttributeChoiceName
-	__declspec(align(4)) int32_t m_nChannel;// 0xe0, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nChannel;// 0xf0, size 4 (0x4)
 	// m_nChannel metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyAttributeChoiceName
-	__declspec(align(4)) int32_t m_nCPReference;// 0xe4, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nCPReference;// 0xf4, size 4 (0x4)
 	// m_nCPReference metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(1)) char m_pszSoundName[256];// 0xe8, size 256 (0x100)
+	__declspec(align(1)) char m_pszSoundName[256];// 0xf8, size 256 (0x100)
 	// m_pszSoundName metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyAttributeEditor
-char C_OP_RenderSound_01F0[0x8];
-}; // size: 496 (0x1f0)
+char C_OP_RenderSound_0200[0x8];
+}; // size: 512 (0x200)
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_RemapCPtoVector : public CParticlePerFrameOperatorInstance
+class C_OP_RemapCPtoVector : public CParticleFunctionOperator
 {
 // C_OP_RemapCPtoVector additional information
 // particles.dll, project particles
@@ -7957,7 +8038,7 @@ char C_OP_RemapCPtoVector_0D0[0x4];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_RemapScalarEndCap : public CParticlePerFrameOperatorInstance
+class C_OP_RemapScalarEndCap : public CParticleFunctionOperator
 {
 // C_OP_RemapScalarEndCap additional information
 // particles.dll, project particles
@@ -7996,7 +8077,7 @@ char C_OP_RemapScalarEndCap_0A0[0x8];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_INIT_RtEnvCull : public CParticleInitializerOperatorInstance
+class C_INIT_RtEnvCull : public CParticleFunctionInitializer
 {
 // C_INIT_RtEnvCull additional information
 // particles.dll, project particles
@@ -8051,7 +8132,56 @@ public:
 }; // size: 12 (0xc)
 #pragma pack(pop)
 
-class CBaseRendererSource2 : public CParticleRenderOperatorInstance
+#pragma pack(push, 8)
+class CParticleFloatInput
+{
+// CParticleFloatInput additional information
+// particles.dll, project particleslib
+// Alignment: 8
+// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
+
+public:
+	__declspec(align(4)) ParticleFloatType_t m_nType;// 0x0, size 4 (0x4)
+	// m_nType metadata
+	 // MDefaultString
+	__declspec(align(4)) ParticleFloatMapType_t m_nMapType;// 0x4, size 4 (0x4)
+	// m_nMapType metadata
+	 // MDefaultString
+	__declspec(align(4)) float m_flLiteralValue;// 0x8, size 4 (0x4)
+	// m_flLiteralValue metadata
+	 // MDefaultString
+	__declspec(align(4)) int32_t m_nControlPoint;// 0xc, size 4 (0x4)
+	// m_nControlPoint metadata
+	 // MDefaultString
+	__declspec(align(4)) UnknownType <0x4, class ParticleAttributeIndex_t> m_nScalarAttribute;// 0x10, size 4 (0x4)
+	// m_nScalarAttribute metadata
+	 // MDefaultString
+	__declspec(align(4)) UnknownType <0x4, class ParticleAttributeIndex_t> m_nVectorAttribute;// 0x14, size 4 (0x4)
+	// m_nVectorAttribute metadata
+	 // MDefaultString
+	__declspec(align(4)) int32_t m_nVectorComponent;// 0x18, size 4 (0x4)
+	// m_nVectorComponent metadata
+	 // MDefaultString
+	__declspec(align(4)) float m_flMultFactor;// 0x1c, size 4 (0x4)
+	// m_flMultFactor metadata
+	 // MDefaultString
+	__declspec(align(4)) float m_flInput0;// 0x20, size 4 (0x4)
+	// m_flInput0 metadata
+	 // MDefaultString
+	__declspec(align(4)) float m_flInput1;// 0x24, size 4 (0x4)
+	// m_flInput1 metadata
+	 // MDefaultString
+	__declspec(align(4)) float m_flOutput0;// 0x28, size 4 (0x4)
+	// m_flOutput0 metadata
+	 // MDefaultString
+	__declspec(align(4)) float m_flOutput1;// 0x2c, size 4 (0x4)
+	// m_flOutput1 metadata
+	 // MDefaultString
+	__declspec(align(8)) CPiecewiseCurveSchemaWrapper m_Curve;// 0x30, size 64 (0x40)
+}; // size: 112 (0x70)
+#pragma pack(pop)
+
+class CBaseRendererSource2 : public CParticleFunctionRenderer
 {
 // CBaseRendererSource2 additional information
 // particles.dll, project particles
@@ -8064,256 +8194,265 @@ class CBaseRendererSource2 : public CParticleRenderOperatorInstance
 // Abstract Class
 
 public:
-	__declspec(align(4)) float m_flAnimationRate;// 0xc0, size 4 (0x4)
+	__declspec(align(4)) float m_flAnimationRate;// 0xd0, size 4 (0x4)
 	// m_flAnimationRate metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyAttributeRange
-	__declspec(align(1)) bool m_bFitCycleToLifetime;// 0xc4, size 1 (0x1)
+	__declspec(align(1)) bool m_bFitCycleToLifetime;// 0xd4, size 1 (0x1)
 	// m_bFitCycleToLifetime metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(1)) bool m_bAnimateInFPS;// 0xc5, size 1 (0x1)
+	__declspec(align(1)) bool m_bAnimateInFPS;// 0xd5, size 1 (0x1)
 	// m_bAnimateInFPS metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(1)) bool m_bPerVertexLighting;// 0xc6, size 1 (0x1)
+	__declspec(align(1)) bool m_bPerVertexLighting;// 0xd6, size 1 (0x1)
 	// m_bPerVertexLighting metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) float m_flSelfIllumAmount;// 0xc8, size 4 (0x4)
+	__declspec(align(4)) float m_flSelfIllumAmount;// 0xd8, size 4 (0x4)
 	// m_flSelfIllumAmount metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyAttributeRange
-	__declspec(align(4)) float m_flDiffuseAmount;// 0xcc, size 4 (0x4)
+	__declspec(align(4)) float m_flDiffuseAmount;// 0xdc, size 4 (0x4)
 	// m_flDiffuseAmount metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyAttributeRange
-	__declspec(align(4)) float m_flSourceAlphaValueToMapToZero;// 0xd0, size 4 (0x4)
+	__declspec(align(4)) UnknownType <0x4, class ParticleAttributeIndex_t> m_nSelfIllumPerParticle;// 0xe0, size 4 (0x4)
+	// m_nSelfIllumPerParticle metadata
+	 // MAttributeName
+	 // MDefaultString
+	 // MPropertyAttributeChoiceName
+	__declspec(align(4)) float m_flSourceAlphaValueToMapToZero;// 0xe4, size 4 (0x4)
 	// m_flSourceAlphaValueToMapToZero metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyAttributeRange
 	 // MPropertyGroupName
-	__declspec(align(4)) float m_flSourceAlphaValueToMapToOne;// 0xd4, size 4 (0x4)
+	__declspec(align(4)) float m_flSourceAlphaValueToMapToOne;// 0xe8, size 4 (0x4)
 	// m_flSourceAlphaValueToMapToOne metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyAttributeRange
 	 // MPropertyGroupName
-	__declspec(align(1)) bool m_bGammaCorrectVertexColors;// 0xd8, size 1 (0x1)
+	__declspec(align(1)) bool m_bGammaCorrectVertexColors;// 0xec, size 1 (0x1)
 	// m_bGammaCorrectVertexColors metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyGroupName
-	__declspec(align(1)) bool m_bSaturateColorPreAlphaBlend;// 0xd9, size 1 (0x1)
+	__declspec(align(1)) bool m_bSaturateColorPreAlphaBlend;// 0xed, size 1 (0x1)
 	// m_bSaturateColorPreAlphaBlend metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyGroupName
-	__declspec(align(4)) SequenceCombineMode_t m_nSequenceCombineMode;// 0xdc, size 4 (0x4)
+	__declspec(align(4)) SequenceCombineMode_t m_nSequenceCombineMode;// 0xf0, size 4 (0x4)
 	// m_nSequenceCombineMode metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyGroupName
-	__declspec(align(4)) float m_flAnimationRate2;// 0xe0, size 4 (0x4)
+	__declspec(align(4)) float m_flAnimationRate2;// 0xf4, size 4 (0x4)
 	// m_flAnimationRate2 metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyAttributeRange
 	 // MPropertyGroupName
-	__declspec(align(4)) float m_flSequence0RGBWeight;// 0xe4, size 4 (0x4)
+	__declspec(align(4)) float m_flSequence0RGBWeight;// 0xf8, size 4 (0x4)
 	// m_flSequence0RGBWeight metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyAttributeRange
 	 // MPropertyGroupName
-	__declspec(align(4)) float m_flSequence0AlphaWeight;// 0xe8, size 4 (0x4)
+	__declspec(align(4)) float m_flSequence0AlphaWeight;// 0xfc, size 4 (0x4)
 	// m_flSequence0AlphaWeight metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyAttributeRange
 	 // MPropertyGroupName
-	__declspec(align(4)) float m_flSequence1RGBWeight;// 0xec, size 4 (0x4)
+	__declspec(align(4)) float m_flSequence1RGBWeight;// 0x100, size 4 (0x4)
 	// m_flSequence1RGBWeight metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyAttributeRange
 	 // MPropertyGroupName
-	__declspec(align(4)) float m_flSequence1AlphaWeight;// 0xf0, size 4 (0x4)
+	__declspec(align(4)) float m_flSequence1AlphaWeight;// 0x104, size 4 (0x4)
 	// m_flSequence1AlphaWeight metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyAttributeRange
 	 // MPropertyGroupName
-	__declspec(align(4)) float m_flAddSelfAmount;// 0xf4, size 4 (0x4)
+	__declspec(align(4)) float m_flAddSelfAmount;// 0x108, size 4 (0x4)
 	// m_flAddSelfAmount metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyGroupName
-	__declspec(align(1)) bool m_bAdditive;// 0xf8, size 1 (0x1)
+	__declspec(align(1)) bool m_bAdditive;// 0x10c, size 1 (0x1)
 	// m_bAdditive metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyGroupName
-	__declspec(align(1)) bool m_bMod2X;// 0xf9, size 1 (0x1)
+	__declspec(align(1)) bool m_bMod2X;// 0x10d, size 1 (0x1)
 	// m_bMod2X metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyGroupName
-	__declspec(align(1)) bool m_bLightenMode;// 0xfa, size 1 (0x1)
+	__declspec(align(1)) bool m_bLightenMode;// 0x10e, size 1 (0x1)
 	// m_bLightenMode metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyGroupName
-	__declspec(align(1)) bool m_bMaxLuminanceBlendingSequence0;// 0xfb, size 1 (0x1)
+	__declspec(align(1)) bool m_bMaxLuminanceBlendingSequence0;// 0x10f, size 1 (0x1)
 	// m_bMaxLuminanceBlendingSequence0 metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(1)) bool m_bMaxLuminanceBlendingSequence1;// 0xfc, size 1 (0x1)
+	__declspec(align(1)) bool m_bMaxLuminanceBlendingSequence1;// 0x110, size 1 (0x1)
 	// m_bMaxLuminanceBlendingSequence1 metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(1)) bool m_bRefract;// 0xfd, size 1 (0x1)
+	__declspec(align(1)) bool m_bRefract;// 0x111, size 1 (0x1)
 	// m_bRefract metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyGroupName
-	__declspec(align(4)) float m_flRefractAmount;// 0x100, size 4 (0x4)
+	__declspec(align(4)) float m_flRefractAmount;// 0x114, size 4 (0x4)
 	// m_flRefractAmount metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyAttributeRange
 	 // MPropertyGroupName
-	__declspec(align(4)) int32_t m_nRefractBlurRadius;// 0x104, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nRefractBlurRadius;// 0x118, size 4 (0x4)
 	// m_nRefractBlurRadius metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyGroupName
-	__declspec(align(4)) BlurFilterType_t m_nRefractBlurType;// 0x108, size 4 (0x4)
+	__declspec(align(4)) BlurFilterType_t m_nRefractBlurType;// 0x11c, size 4 (0x4)
 	// m_nRefractBlurType metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyGroupName
-	__declspec(align(1)) char m_stencilTestID[128];// 0x10c, size 128 (0x80)
+	__declspec(align(1)) char m_stencilTestID[128];// 0x120, size 128 (0x80)
 	// m_stencilTestID metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyGroupName
-	__declspec(align(1)) char m_stencilWriteID[128];// 0x18c, size 128 (0x80)
+	__declspec(align(1)) char m_stencilWriteID[128];// 0x1a0, size 128 (0x80)
 	// m_stencilWriteID metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyGroupName
-	__declspec(align(1)) bool m_bWriteStencilOnDepthPass;// 0x20c, size 1 (0x1)
+	__declspec(align(1)) bool m_bWriteStencilOnDepthPass;// 0x220, size 1 (0x1)
 	// m_bWriteStencilOnDepthPass metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyGroupName
-	__declspec(align(1)) bool m_bWriteStencilOnDepthFail;// 0x20d, size 1 (0x1)
+	__declspec(align(1)) bool m_bWriteStencilOnDepthFail;// 0x221, size 1 (0x1)
 	// m_bWriteStencilOnDepthFail metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyGroupName
-	__declspec(align(1)) bool m_bReverseZBuffering;// 0x20e, size 1 (0x1)
+	__declspec(align(1)) bool m_bReverseZBuffering;// 0x222, size 1 (0x1)
 	// m_bReverseZBuffering metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyGroupName
-	__declspec(align(1)) bool m_bDisableZBuffering;// 0x20f, size 1 (0x1)
+	__declspec(align(1)) bool m_bDisableZBuffering;// 0x223, size 1 (0x1)
 	// m_bDisableZBuffering metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyGroupName
-	__declspec(align(1)) bool m_bParticleFeathering;// 0x210, size 1 (0x1)
+	__declspec(align(1)) bool m_bParticleFeathering;// 0x224, size 1 (0x1)
 	// m_bParticleFeathering metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyGroupName
-	__declspec(align(4)) float m_flFeatheringMinDist;// 0x214, size 4 (0x4)
+	__declspec(align(4)) float m_flFeatheringMinDist;// 0x228, size 4 (0x4)
 	// m_flFeatheringMinDist metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyGroupName
-	__declspec(align(4)) float m_flFeatheringMaxDist;// 0x218, size 4 (0x4)
+	__declspec(align(4)) float m_flFeatheringMaxDist;// 0x22c, size 4 (0x4)
 	// m_flFeatheringMaxDist metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyGroupName
-	__declspec(align(4)) float m_flOverbrightFactor;// 0x21c, size 4 (0x4)
+	__declspec(align(4)) float m_flOverbrightFactor;// 0x230, size 4 (0x4)
 	// m_flOverbrightFactor metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyGroupName
-	__declspec(align(1)) bool m_bTintByFOW;// 0x220, size 1 (0x1)
+	__declspec(align(1)) bool m_bTintByFOW;// 0x234, size 1 (0x1)
 	// m_bTintByFOW metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyGroupName
-	__declspec(align(1)) bool m_bFogParticles;// 0x221, size 1 (0x1)
+	__declspec(align(1)) bool m_bFogParticles;// 0x235, size 1 (0x1)
 	// m_bFogParticles metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyGroupName
-	__declspec(align(1)) bool m_bTintByGlobalLight;// 0x222, size 1 (0x1)
+	__declspec(align(1)) bool m_bTintByGlobalLight;// 0x236, size 1 (0x1)
 	// m_bTintByGlobalLight metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyGroupName
-	__declspec(align(8)) UnknownAtomicType <0x8, CResourceExtReference, UnknownAtomicType <0x8, CWeakHandle, class InfoForResourceTypeCTextureBase > > m_hTexture;// 0x228, size 8 (0x8)
+	__declspec(align(8)) UnknownAtomicType <0x8, CResourceExtReference, UnknownAtomicType <0x8, CWeakHandle, class InfoForResourceTypeCTextureBase > > m_hTexture;// 0x238, size 8 (0x8)
 	// m_hTexture metadata
 	 // MAttributeName
 	 // MPropertyAttributeEditor
 	 // MDefaultString
-	__declspec(align(1)) bool m_bMotionVectors;// 0x230, size 1 (0x1)
+	__declspec(align(1)) bool m_bMotionVectors;// 0x240, size 1 (0x1)
 	// m_bMotionVectors metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyGroupName
-	__declspec(align(8)) UnknownAtomicType <0x8, CResourceExtReference, UnknownAtomicType <0x8, CWeakHandle, class InfoForResourceTypeCTextureBase > > m_hMotionVectorsTexture;// 0x238, size 8 (0x8)
+	__declspec(align(8)) UnknownAtomicType <0x8, CResourceExtReference, UnknownAtomicType <0x8, CWeakHandle, class InfoForResourceTypeCTextureBase > > m_hMotionVectorsTexture;// 0x248, size 8 (0x8)
 	// m_hMotionVectorsTexture metadata
 	 // MAttributeName
 	 // MPropertyAttributeEditor
 	 // MPropertyGroupName
-	__declspec(align(1)) bool m_bBlendFramesSeq0;// 0x240, size 1 (0x1)
+	__declspec(align(1)) bool m_bBlendFramesSeq0;// 0x250, size 1 (0x1)
 	// m_bBlendFramesSeq0 metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) int32_t m_nFirstSequenceOffsetForRightEye;// 0x244, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nFirstSequenceOffsetForRightEye;// 0x254, size 4 (0x4)
 	// m_nFirstSequenceOffsetForRightEye metadata
 	 // MAttributeName
 	 // MDefaultString
-char CBaseRendererSource2_0280[0x38];
-}; // size: 640 (0x280)
+	__declspec(align(4)) int32_t m_nHSVShiftControlPoint;// 0x258, size 4 (0x4)
+	// m_nHSVShiftControlPoint metadata
+	 // MAttributeName
+	 // MDefaultString
+char CBaseRendererSource2_0290[0x34];
+}; // size: 656 (0x290)
 
 #pragma pack(push, 8)
 class EventClientAdvanceTick_t : public EventAdvanceTick_t
@@ -8344,6 +8483,18 @@ public:
 }; // size: 20 (0x14)
 #pragma pack(pop)
 
+#pragma pack(push, 16)
+class C_OP_SpinYaw : public CGeneralSpin
+{
+// C_OP_SpinYaw additional information
+// particles.dll, project particles
+// Alignment: 16
+// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+
+public:
+}; // size: 160 (0xa0)
+#pragma pack(pop)
+
 #pragma pack(push, 8)
 class MaterialOverride_t : public BaseSceneObjectOverride_t
 {
@@ -8360,23 +8511,11 @@ char MaterialOverride_t_010[0x4];
 }; // size: 24 (0x18)
 #pragma pack(pop)
 
-#pragma pack(push, 16)
-class C_OP_SpinYaw : public CGeneralSpin
-{
-// C_OP_SpinYaw additional information
-// particles.dll, project particles
-// Alignment: 16
-// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
-
-public:
-}; // size: 160 (0xa0)
-#pragma pack(pop)
-
 #pragma pack(push, 4)
 class SheetFrameImage_t
 {
 // SheetFrameImage_t additional information
-// rendersystemdx9.dll, project rendersystemdx9
+// rendersystemdx11.dll, project rendersystemdx11
 // Alignment: 4
 // SCHEMA_CLASS_HAS_TRIVIAL_DESTRUCTOR
 
@@ -8429,21 +8568,8 @@ char InfoForResourceTypeCResourceManifestInternal_01[0x1];
 }; // size: 1 (0x1)
 #pragma pack(pop)
 
-#pragma pack(push, 4)
-class WorldEnvironmentMaps_t
-{
-// WorldEnvironmentMaps_t additional information
-// worldrenderer.dll, project worldrenderer
-// Alignment: 4
-// SCHEMA_CLASS_HAS_TRIVIAL_DESTRUCTOR
-
-public:
-	__declspec(align(4)) UnknownAtomicType <0x8, CResourceArray, class WorldEnvironmentMap_t > m_environmentMaps;// 0x0, size 8 (0x8)
-}; // size: 8 (0x8)
-#pragma pack(pop)
-
 #pragma pack(push, 16)
-class C_OP_ClothMovement : public CParticlePerFrameOperatorInstance
+class C_OP_ClothMovement : public CParticleFunctionOperator
 {
 // C_OP_ClothMovement additional information
 // particles.dll, project particles
@@ -8539,7 +8665,7 @@ public:
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_RemapVectortoCP : public CParticlePerFrameOperatorInstance
+class C_OP_RemapVectortoCP : public CParticleFunctionOperator
 {
 // C_OP_RemapVectortoCP additional information
 // particles.dll, project particles
@@ -8565,7 +8691,7 @@ char C_OP_RemapVectortoCP_090[0x4];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_RemapVisibilityScalar : public CParticlePerFrameOperatorInstance
+class C_OP_RemapVisibilityScalar : public CParticleFunctionOperator
 {
 // C_OP_RemapVisibilityScalar additional information
 // particles.dll, project particles
@@ -8607,37 +8733,24 @@ char C_OP_RemapVisibilityScalar_0A0[0x4];
 }; // size: 160 (0xa0)
 #pragma pack(pop)
 
-#pragma pack(push, 8)
-class ControlPointReference_t
+#pragma pack(push, 4)
+class WorldEnvironmentMaps_t
 {
-// ControlPointReference_t additional information
-// particles.dll, project particles
-// Alignment: 8
-// SCHEMA_CLASS_TEMP_HACK_HAS_NOSCHEMA_MEMBERS
-// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
+// WorldEnvironmentMaps_t additional information
+// worldrenderer.dll, project worldrenderer
+// Alignment: 4
+// SCHEMA_CLASS_HAS_TRIVIAL_DESTRUCTOR
 
 public:
-	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_controlPointNameString;// 0x0, size 8 (0x8)
-	// m_controlPointNameString metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vOffsetFromControlPoint;// 0x8, size 12 (0xc)
-	// m_vOffsetFromControlPoint metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(1)) bool m_bOffsetInLocalSpace;// 0x14, size 1 (0x1)
-	// m_bOffsetInLocalSpace metadata
-	 // MAttributeName
-	 // MDefaultString
-char ControlPointReference_t_020[0xB];
-}; // size: 32 (0x20)
+	__declspec(align(4)) UnknownAtomicType <0x8, CResourceArray, class WorldEnvironmentMap_t > m_environmentMaps;// 0x0, size 8 (0x8)
+}; // size: 8 (0x8)
 #pragma pack(pop)
 
 #pragma pack(push, 4)
 class Sheet_t
 {
 // Sheet_t additional information
-// rendersystemdx9.dll, project rendersystemdx9
+// rendersystemdx11.dll, project rendersystemdx11
 // Alignment: 4
 // SCHEMA_CLASS_HAS_TRIVIAL_DESTRUCTOR
 
@@ -8647,7 +8760,7 @@ public:
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_OscillateVector : public CParticlePerFrameOperatorInstance
+class C_OP_OscillateVector : public CParticleFunctionOperator
 {
 // C_OP_OscillateVector additional information
 // particles.dll, project particles
@@ -8751,7 +8864,7 @@ char CDOTA_Modifier_Lua_0788[0xB8];
 }; // size: 1928 (0x788)
 
 #pragma pack(push, 16)
-class C_OP_EndCapTimedDecay : public CParticlePerFrameOperatorInstance
+class C_OP_EndCapTimedDecay : public CParticleFunctionOperator
 {
 // C_OP_EndCapTimedDecay additional information
 // particles.dll, project particles
@@ -8766,6 +8879,38 @@ public:
 	 // MDefaultString
 char C_OP_EndCapTimedDecay_090[0xC];
 }; // size: 144 (0x90)
+#pragma pack(pop)
+
+#pragma pack(push, 8)
+class CFollowAttachmentAnimNode : public CAnimNodeBase
+{
+// CFollowAttachmentAnimNode additional information
+// animationsystem.dll, project animationsystem
+// Alignment: 8
+// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+// SCHEMA_CLASS_TEMP_HACK_HAS_NOSCHEMA_MEMBERS
+// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
+
+public:
+	__declspec(align(4)) AnimNodeID m_childID;// 0x38, size 4 (0x4)
+	// m_childID metadata
+	 // MPropertyHideField
+	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_boneName;// 0x40, size 8 (0x8)
+	// m_boneName metadata
+	 // MPropertyFriendlyName
+	 // MPropertyAttributeChoiceName
+	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_attachmentName;// 0x48, size 8 (0x8)
+	// m_attachmentName metadata
+	 // MPropertyFriendlyName
+	 // MPropertyAttributeChoiceName
+	__declspec(align(1)) bool m_bMatchTranslation;// 0x50, size 1 (0x1)
+	// m_bMatchTranslation metadata
+	 // MPropertyFriendlyName
+	__declspec(align(1)) bool m_bMatchRotation;// 0x51, size 1 (0x1)
+	// m_bMatchRotation metadata
+	 // MPropertyFriendlyName
+char CFollowAttachmentAnimNode_058[0x6];
+}; // size: 88 (0x58)
 #pragma pack(pop)
 
 #pragma pack(push, 8)
@@ -8799,7 +8944,7 @@ public:
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_RenderScreenShake : public CParticleRenderOperatorInstance
+class C_OP_RenderScreenShake : public CParticleFunctionRenderer
 {
 // C_OP_RenderScreenShake additional information
 // particles.dll, project particles
@@ -8807,49 +8952,49 @@ class C_OP_RenderScreenShake : public CParticleRenderOperatorInstance
 // SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
 
 public:
-	__declspec(align(4)) float m_flDurationScale;// 0xc0, size 4 (0x4)
+	__declspec(align(4)) float m_flDurationScale;// 0xd0, size 4 (0x4)
 	// m_flDurationScale metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) float m_flRadiusScale;// 0xc4, size 4 (0x4)
+	__declspec(align(4)) float m_flRadiusScale;// 0xd4, size 4 (0x4)
 	// m_flRadiusScale metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) float m_flFrequencyScale;// 0xc8, size 4 (0x4)
+	__declspec(align(4)) float m_flFrequencyScale;// 0xd8, size 4 (0x4)
 	// m_flFrequencyScale metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) float m_flAmplitudeScale;// 0xcc, size 4 (0x4)
+	__declspec(align(4)) float m_flAmplitudeScale;// 0xdc, size 4 (0x4)
 	// m_flAmplitudeScale metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) UnknownType <0x4, class ParticleAttributeIndex_t> m_nRadiusField;// 0xd0, size 4 (0x4)
+	__declspec(align(4)) UnknownType <0x4, class ParticleAttributeIndex_t> m_nRadiusField;// 0xe0, size 4 (0x4)
 	// m_nRadiusField metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyAttributeChoiceName
-	__declspec(align(4)) UnknownType <0x4, class ParticleAttributeIndex_t> m_nDurationField;// 0xd4, size 4 (0x4)
+	__declspec(align(4)) UnknownType <0x4, class ParticleAttributeIndex_t> m_nDurationField;// 0xe4, size 4 (0x4)
 	// m_nDurationField metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyAttributeChoiceName
-	__declspec(align(4)) UnknownType <0x4, class ParticleAttributeIndex_t> m_nFrequencyField;// 0xd8, size 4 (0x4)
+	__declspec(align(4)) UnknownType <0x4, class ParticleAttributeIndex_t> m_nFrequencyField;// 0xe8, size 4 (0x4)
 	// m_nFrequencyField metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyAttributeChoiceName
-	__declspec(align(4)) UnknownType <0x4, class ParticleAttributeIndex_t> m_nAmplitudeField;// 0xdc, size 4 (0x4)
+	__declspec(align(4)) UnknownType <0x4, class ParticleAttributeIndex_t> m_nAmplitudeField;// 0xec, size 4 (0x4)
 	// m_nAmplitudeField metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyAttributeChoiceName
-	__declspec(align(4)) int32_t m_nFilterCP;// 0xe0, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nFilterCP;// 0xf0, size 4 (0x4)
 	// m_nFilterCP metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
-char C_OP_RenderScreenShake_0F0[0xC];
-}; // size: 240 (0xf0)
+char C_OP_RenderScreenShake_0100[0xC];
+}; // size: 256 (0x100)
 #pragma pack(pop)
 
 class C_DOTASpectatorGraphManager : public SchemaBase
@@ -9043,7 +9188,7 @@ char CNetworkVelocityVector_018[0x18];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_DifferencePreviousParticle : public CParticlePerFrameOperatorInstance
+class C_OP_DifferencePreviousParticle : public CParticleFunctionOperator
 {
 // C_OP_DifferencePreviousParticle additional information
 // particles.dll, project particles
@@ -9110,17 +9255,22 @@ char CPathStatusCondition_038[0xB];
 }; // size: 56 (0x38)
 #pragma pack(pop)
 
-#pragma pack(push, 8)
-class CParentConstraint : public CBaseConstraint
+class CBaseConstraint : public CBoneConstraintBase
 {
-// CParentConstraint additional information
+// CBaseConstraint additional information
 // engine2.dll, project modellib
-// Alignment: 8
+// Alignment: -1
 // SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+// SCHEMA_CLASS_IS_ABSTRACT
+// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
+// Abstract Class
 
 public:
-}; // size: 80 (0x50)
-#pragma pack(pop)
+	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_name;// 0x28, size 8 (0x8)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vUpVector;// 0x30, size 12 (0xc)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class CConstraintSlave > m_slaves;// 0x40, size 24 (0x18)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class CConstraintTarget > m_targets;// 0x58, size 24 (0x18)
+}; // size: 112 (0x70)
 
 #pragma pack(push, 4)
 class BaseConstraint_t
@@ -9283,7 +9433,7 @@ char CSpeechBubbleInfo_0128[0x2];
 }; // size: 296 (0x128)
 
 #pragma pack(push, 16)
-class C_OP_ModelCull : public CParticlePerFrameOperatorInstance
+class C_OP_ModelCull : public CParticleFunctionOperator
 {
 // C_OP_ModelCull additional information
 // particles.dll, project particles
@@ -9443,7 +9593,7 @@ char ResponseParams_018[0x3];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_SetControlPointFieldToWater : public CParticlePerFrameOperatorInstance
+class C_OP_SetControlPointFieldToWater : public CParticleFunctionPreEmission
 {
 // C_OP_SetControlPointFieldToWater additional information
 // particles.dll, project particles
@@ -9469,7 +9619,7 @@ char C_OP_SetControlPointFieldToWater_090[0x4];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_INIT_PositionOffset : public CParticleInitializerOperatorInstance
+class C_INIT_PositionOffset : public CParticleFunctionInitializer
 {
 // C_INIT_PositionOffset additional information
 // particles.dll, project particles
@@ -9573,7 +9723,7 @@ public:
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_INIT_CreateSpiralSphere : public CParticleInitializerOperatorInstance
+class C_INIT_CreateSpiralSphere : public CParticleFunctionInitializer
 {
 // C_INIT_CreateSpiralSphere additional information
 // particles.dll, project particles
@@ -9643,10 +9793,10 @@ class CAimConstraint : public CBaseConstraint
 // SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
 
 public:
-	__declspec(align(4)) UnknownType <0x10, class Quaternion> m_qAimOffset;// 0x50, size 16 (0x10)
-	__declspec(align(4)) uint32_t m_nUpType;// 0x60, size 4 (0x4)
-char CAimConstraint_068[0x4];
-}; // size: 104 (0x68)
+	__declspec(align(4)) UnknownType <0x10, class Quaternion> m_qAimOffset;// 0x70, size 16 (0x10)
+	__declspec(align(4)) uint32_t m_nUpType;// 0x80, size 4 (0x4)
+char CAimConstraint_088[0x4];
+}; // size: 136 (0x88)
 #pragma pack(pop)
 
 #pragma pack(push, 4)
@@ -9714,203 +9864,9 @@ public:
 }; // size: 32 (0x20)
 #pragma pack(pop)
 
-#pragma pack(push, 16)
-class C_OP_RenderSprites : public CBaseRendererSource2
+class CParticleFunctionForce : public CParticleFunction
 {
-// C_OP_RenderSprites additional information
-// particles.dll, project particles
-// Alignment: 16
-// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
-// SCHEMA_CLASS_TEMP_HACK_HAS_NOSCHEMA_MEMBERS
-// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
-
-public:
-	__declspec(align(4)) int32_t m_nSequenceOverride;// 0x280, size 4 (0x4)
-	// m_nSequenceOverride metadata
-	 // MSrc1ImportAttributeName
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(4)) int32_t m_nOrientationType;// 0x284, size 4 (0x4)
-	// m_nOrientationType metadata
-	 // MSrc1ImportAttributeName
-	 // MAttributeName
-	 // MPropertyAttributeChoiceEnumName
-	 // MDefaultString
-	__declspec(align(4)) int32_t m_nOrientationControlPoint;// 0x288, size 4 (0x4)
-	// m_nOrientationControlPoint metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(4)) float m_flMinSize;// 0x28c, size 4 (0x4)
-	// m_flMinSize metadata
-	 // MAttributeName
-	 // MDefaultString
-	 // MPropertyGroupName
-	__declspec(align(4)) float m_flMaxSize;// 0x290, size 4 (0x4)
-	// m_flMaxSize metadata
-	 // MAttributeName
-	 // MDefaultString
-	 // MPropertyGroupName
-	__declspec(align(4)) float m_flAlphaAdjustWithSizeAdjust;// 0x294, size 4 (0x4)
-	// m_flAlphaAdjustWithSizeAdjust metadata
-	 // MAttributeName
-	 // MDefaultString
-	 // MPropertyGroupName
-	__declspec(align(4)) float m_flStartFadeSize;// 0x298, size 4 (0x4)
-	// m_flStartFadeSize metadata
-	 // MAttributeName
-	 // MDefaultString
-	 // MPropertyGroupName
-	__declspec(align(4)) float m_flEndFadeSize;// 0x29c, size 4 (0x4)
-	// m_flEndFadeSize metadata
-	 // MAttributeName
-	 // MDefaultString
-	 // MPropertyGroupName
-	__declspec(align(4)) float m_flStartFadeDot;// 0x2a0, size 4 (0x4)
-	// m_flStartFadeDot metadata
-	 // MSrc1ImportAttributeName
-	 // MAttributeName
-	 // MDefaultString
-	 // MPropertyGroupName
-	__declspec(align(4)) float m_flEndFadeDot;// 0x2a4, size 4 (0x4)
-	// m_flEndFadeDot metadata
-	 // MSrc1ImportAttributeName
-	 // MAttributeName
-	 // MDefaultString
-	 // MPropertyGroupName
-	__declspec(align(4)) float m_flDepthBias;// 0x2a8, size 4 (0x4)
-	// m_flDepthBias metadata
-	 // MSrc1ImportAttributeName
-	 // MAttributeName
-	 // MDefaultString
-	 // MPropertyGroupName
-	__declspec(align(4)) float m_flFinalTextureScaleU;// 0x2ac, size 4 (0x4)
-	// m_flFinalTextureScaleU metadata
-	 // MAttributeName
-	 // MDefaultString
-	 // MPropertyGroupName
-	__declspec(align(4)) float m_flFinalTextureScaleV;// 0x2b0, size 4 (0x4)
-	// m_flFinalTextureScaleV metadata
-	 // MAttributeName
-	 // MDefaultString
-	 // MPropertyGroupName
-	__declspec(align(4)) float m_flFinalTextureOffsetU;// 0x2b4, size 4 (0x4)
-	// m_flFinalTextureOffsetU metadata
-	 // MAttributeName
-	 // MDefaultString
-	 // MPropertyGroupName
-	__declspec(align(4)) float m_flFinalTextureOffsetV;// 0x2b8, size 4 (0x4)
-	// m_flFinalTextureOffsetV metadata
-	 // MAttributeName
-	 // MDefaultString
-	 // MPropertyGroupName
-	__declspec(align(4)) float m_flCenterXOffset;// 0x2bc, size 4 (0x4)
-	// m_flCenterXOffset metadata
-	 // MAttributeName
-	 // MDefaultString
-	 // MPropertyGroupName
-	__declspec(align(4)) float m_flCenterYOffset;// 0x2c0, size 4 (0x4)
-	// m_flCenterYOffset metadata
-	 // MAttributeName
-	 // MDefaultString
-	 // MPropertyGroupName
-	__declspec(align(4)) float m_flZoomAmount0;// 0x2c4, size 4 (0x4)
-	// m_flZoomAmount0 metadata
-	 // MSrc1ImportAttributeName
-	 // MAttributeName
-	 // MDefaultString
-	 // MPropertyGroupName
-	__declspec(align(4)) float m_flZoomAmount1;// 0x2c8, size 4 (0x4)
-	// m_flZoomAmount1 metadata
-	 // MSrc1ImportAttributeName
-	 // MAttributeName
-	 // MDefaultString
-	 // MPropertyGroupName
-	__declspec(align(1)) bool m_bDistanceAlpha;// 0x2cc, size 1 (0x1)
-	// m_bDistanceAlpha metadata
-	 // MSrc1ImportAttributeName
-	 // MAttributeName
-	 // MDefaultString
-	 // MPropertyGroupName
-	__declspec(align(1)) bool m_bSoftEdges;// 0x2cd, size 1 (0x1)
-	// m_bSoftEdges metadata
-	 // MSrc1ImportAttributeName
-	 // MAttributeName
-	 // MDefaultString
-	 // MPropertyGroupName
-	__declspec(align(4)) float m_flEdgeSoftnessStart;// 0x2d0, size 4 (0x4)
-	// m_flEdgeSoftnessStart metadata
-	 // MAttributeName
-	 // MDefaultString
-	 // MPropertyGroupName
-	__declspec(align(4)) float m_flEdgeSoftnessEnd;// 0x2d4, size 4 (0x4)
-	// m_flEdgeSoftnessEnd metadata
-	 // MAttributeName
-	 // MDefaultString
-	 // MPropertyGroupName
-	__declspec(align(1)) bool m_bOutline;// 0x2d8, size 1 (0x1)
-	// m_bOutline metadata
-	 // MSrc1ImportAttributeName
-	 // MAttributeName
-	 // MDefaultString
-	 // MPropertyGroupName
-	__declspec(align(1)) UnknownType <0x4, class Color> m_OutlineColor;// 0x2d9, size 4 (0x4)
-	// m_OutlineColor metadata
-	 // MAttributeName
-	 // MDefaultString
-	 // MPropertyGroupName
-	__declspec(align(4)) int32_t m_nOutlineAlpha;// 0x2e0, size 4 (0x4)
-	// m_nOutlineAlpha metadata
-	 // MAttributeName
-	 // MDefaultString
-	 // MPropertyAttributeRange
-	 // MPropertyGroupName
-	__declspec(align(4)) float m_flOutlineStart0;// 0x2e4, size 4 (0x4)
-	// m_flOutlineStart0 metadata
-	 // MSrc1ImportAttributeName
-	 // MAttributeName
-	 // MDefaultString
-	 // MPropertyGroupName
-	__declspec(align(4)) float m_flOutlineStart1;// 0x2e8, size 4 (0x4)
-	// m_flOutlineStart1 metadata
-	 // MSrc1ImportAttributeName
-	 // MAttributeName
-	 // MDefaultString
-	 // MPropertyGroupName
-	__declspec(align(4)) float m_flOutlineEnd0;// 0x2ec, size 4 (0x4)
-	// m_flOutlineEnd0 metadata
-	 // MSrc1ImportAttributeName
-	 // MAttributeName
-	 // MDefaultString
-	 // MPropertyGroupName
-	__declspec(align(4)) float m_flOutlineEnd1;// 0x2f0, size 4 (0x4)
-	// m_flOutlineEnd1 metadata
-	 // MSrc1ImportAttributeName
-	 // MAttributeName
-	 // MDefaultString
-	 // MPropertyGroupName
-	__declspec(align(1)) bool m_bUseYawWithNormalAligned;// 0x2f4, size 1 (0x1)
-	// m_bUseYawWithNormalAligned metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(1)) bool m_bNormalMap;// 0x2f5, size 1 (0x1)
-	// m_bNormalMap metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(4)) float m_flBumpStrength;// 0x2f8, size 4 (0x4)
-	// m_flBumpStrength metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(8)) UnknownAtomicType <0x8, CResourceExtReference, UnknownAtomicType <0x8, CWeakHandle, class InfoForResourceTypeCTextureBase > > m_hNormalTexture;// 0x300, size 8 (0x8)
-	// m_hNormalTexture metadata
-	 // MAttributeName
-	 // MPropertyAttributeEditor
-char C_OP_RenderSprites_0310[0x8];
-}; // size: 784 (0x310)
-#pragma pack(pop)
-
-class CParticleForceOperatorInstance : public CParticleOperatorInstance
-{
-// CParticleForceOperatorInstance additional information
+// CParticleFunctionForce additional information
 // particles.dll, project particles
 // Alignment: -1
 // SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
@@ -9921,7 +9877,7 @@ public:
 }; // size: 128 (0x80)
 
 #pragma pack(push, 16)
-class C_INIT_InitialVelocityNoise : public CParticleInitializerOperatorInstance
+class C_INIT_InitialVelocityNoise : public CParticleFunctionInitializer
 {
 // C_INIT_InitialVelocityNoise additional information
 // particles.dll, project particles
@@ -10023,66 +9979,33 @@ char IntervalTimer_010[0x4];
 }; // size: 16 (0x10)
 #pragma pack(pop)
 
-#pragma pack(push, 16)
-class C_OP_CalculateVectorAttribute : public CParticlePerFrameOperatorInstance
+#pragma pack(push, 4)
+class ControlPointReference_t
 {
-// C_OP_CalculateVectorAttribute additional information
+// ControlPointReference_t additional information
 // particles.dll, project particles
-// Alignment: 16
-// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+// Alignment: 4
+// SCHEMA_CLASS_HAS_TRIVIAL_DESTRUCTOR
 
 public:
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vStartValue;// 0x80, size 12 (0xc)
-	// m_vStartValue metadata
+	__declspec(align(4)) int32_t m_controlPointNameString;// 0x0, size 4 (0x4)
+	// m_controlPointNameString metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) UnknownType <0x4, class ParticleAttributeIndex_t> m_nFieldInput1;// 0x8c, size 4 (0x4)
-	// m_nFieldInput1 metadata
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vOffsetFromControlPoint;// 0x4, size 12 (0xc)
+	// m_vOffsetFromControlPoint metadata
 	 // MAttributeName
 	 // MDefaultString
-	 // MPropertyAttributeChoiceName
-	__declspec(align(4)) float m_flInputScale1;// 0x90, size 4 (0x4)
-	// m_flInputScale1 metadata
+	__declspec(align(1)) bool m_bOffsetInLocalSpace;// 0x10, size 1 (0x1)
+	// m_bOffsetInLocalSpace metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) UnknownType <0x4, class ParticleAttributeIndex_t> m_nFieldInput2;// 0x94, size 4 (0x4)
-	// m_nFieldInput2 metadata
-	 // MAttributeName
-	 // MDefaultString
-	 // MPropertyAttributeChoiceName
-	__declspec(align(4)) float m_flInputScale2;// 0x98, size 4 (0x4)
-	// m_flInputScale2 metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(8)) ControlPointReference_t m_nControlPointInput1;// 0xa0, size 32 (0x20)
-	// m_nControlPointInput1 metadata
-	 // MAttributeName
-	__declspec(align(4)) float m_flControlPointScale1;// 0xc0, size 4 (0x4)
-	// m_flControlPointScale1 metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(8)) ControlPointReference_t m_nControlPointInput2;// 0xc8, size 32 (0x20)
-	// m_nControlPointInput2 metadata
-	 // MAttributeName
-	__declspec(align(4)) float m_flControlPointScale2;// 0xe8, size 4 (0x4)
-	// m_flControlPointScale2 metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(4)) UnknownType <0x4, class ParticleAttributeIndex_t> m_nFieldOutput;// 0xec, size 4 (0x4)
-	// m_nFieldOutput metadata
-	 // MAttributeName
-	 // MDefaultString
-	 // MPropertyAttributeChoiceName
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vFinalOutputScale;// 0xf0, size 12 (0xc)
-	// m_vFinalOutputScale metadata
-	 // MAttributeName
-	 // MDefaultString
-char C_OP_CalculateVectorAttribute_0100[0x4];
-}; // size: 256 (0x100)
+char ControlPointReference_t_014[0x3];
+}; // size: 20 (0x14)
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_RestartAfterDuration : public CParticlePerFrameOperatorInstance
+class C_OP_RestartAfterDuration : public CParticleFunctionOperator
 {
 // C_OP_RestartAfterDuration additional information
 // particles.dll, project particles
@@ -10125,7 +10048,7 @@ char C_OP_RestartAfterDuration_0A0[0xB];
 }; // size: 160 (0xa0)
 #pragma pack(pop)
 
-class CSpinUpdateBase : public CParticlePerFrameOperatorInstance
+class CSpinUpdateBase : public CParticleFunctionOperator
 {
 // CSpinUpdateBase additional information
 // particles.dll, project particles
@@ -10137,38 +10060,19 @@ class CSpinUpdateBase : public CParticlePerFrameOperatorInstance
 public:
 }; // size: 128 (0x80)
 
-#pragma pack(push, 8)
-class CAnimStateTransition : public SchemaBase
+#pragma pack(push, 4)
+class CBlendCurve
 {
-// CAnimStateTransition additional information
+// CBlendCurve additional information
 // animationsystem.dll, project animationsystem
-// Alignment: 8
-// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
-// SCHEMA_CLASS_TEMP_HACK_HAS_NOSCHEMA_MEMBERS
+// Alignment: 4
+// SCHEMA_CLASS_HAS_TRIVIAL_DESTRUCTOR
 // SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
 
 public:
-char CAnimStateTransition_020[0x18];
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownAtomicType <0x8, CSmartPtr, class CAnimStateConditionBase > > m_conditions;// 0x20, size 24 (0x18)
-	// m_conditions metadata
-	 // MPropertySuppressField
-	__declspec(align(4)) float m_blendDuration;// 0x38, size 4 (0x4)
-	// m_blendDuration metadata
-	 // MPropertyFriendlyName
-	__declspec(align(4)) AnimStateID m_destState;// 0x3c, size 4 (0x4)
-	// m_destState metadata
-	 // MPropertyHideField
-	__declspec(align(1)) bool m_bReset;// 0x40, size 1 (0x1)
-	// m_bReset metadata
-	 // MPropertyFriendlyName
-	__declspec(align(4)) ResetCycleOption m_resetCycleOption;// 0x44, size 4 (0x4)
-	// m_resetCycleOption metadata
-	 // MPropertyFriendlyName
-	__declspec(align(4)) float m_flFixedCycleValue;// 0x48, size 4 (0x4)
-	// m_flFixedCycleValue metadata
-	 // MPropertyFriendlyName
-char CAnimStateTransition_050[0x4];
-}; // size: 80 (0x50)
+	__declspec(align(4)) UnknownType <0x8, class Vector2D> m_vControlPoint1;// 0x0, size 8 (0x8)
+	__declspec(align(4)) UnknownType <0x8, class Vector2D> m_vControlPoint2;// 0x8, size 8 (0x8)
+}; // size: 16 (0x10)
 #pragma pack(pop)
 
 #pragma pack(push, 4)
@@ -10229,44 +10133,43 @@ char HandInfo_t_0C[0xC];
 	__declspec(align(4)) UnknownType <0xc, class Vector> m_vFilteredVelocity;// 0x3c, size 12 (0xc)
 	// m_vFilteredVelocity metadata
 	 // MNetworkEnable
-	__declspec(align(4)) UnknownType <0x10, class Quaternion> m_FilteredAngularVel;// 0x48, size 16 (0x10)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_FilteredAngularVel;// 0x48, size 12 (0xc)
 	// m_FilteredAngularVel metadata
 	 // MNetworkEnable
-	__declspec(align(4)) float m_flTriggerAnalogValue;// 0x58, size 4 (0x4)
+	__declspec(align(4)) float m_flTriggerAnalogValue;// 0x54, size 4 (0x4)
 	// m_flTriggerAnalogValue metadata
 	 // MNetworkEnable
-	__declspec(align(4)) float m_flGripAnalogValue;// 0x5c, size 4 (0x4)
+	__declspec(align(4)) float m_flGripAnalogValue;// 0x58, size 4 (0x4)
 	// m_flGripAnalogValue metadata
 	 // MNetworkEnable
-	__declspec(align(4)) float m_flFinger0;// 0x60, size 4 (0x4)
+	__declspec(align(4)) float m_flFinger0;// 0x5c, size 4 (0x4)
 	// m_flFinger0 metadata
 	 // MNetworkEnable
-	__declspec(align(4)) float m_flFinger1;// 0x64, size 4 (0x4)
+	__declspec(align(4)) float m_flFinger1;// 0x60, size 4 (0x4)
 	// m_flFinger1 metadata
 	 // MNetworkEnable
-	__declspec(align(4)) float m_flFinger2;// 0x68, size 4 (0x4)
+	__declspec(align(4)) float m_flFinger2;// 0x64, size 4 (0x4)
 	// m_flFinger2 metadata
 	 // MNetworkEnable
-	__declspec(align(4)) float m_flFinger3;// 0x6c, size 4 (0x4)
+	__declspec(align(4)) float m_flFinger3;// 0x68, size 4 (0x4)
 	// m_flFinger3 metadata
 	 // MNetworkEnable
-	__declspec(align(4)) float m_flFinger4;// 0x70, size 4 (0x4)
+	__declspec(align(4)) float m_flFinger4;// 0x6c, size 4 (0x4)
 	// m_flFinger4 metadata
 	 // MNetworkEnable
-	__declspec(align(4)) float m_flTrackpadAnalogValueX;// 0x74, size 4 (0x4)
+	__declspec(align(4)) float m_flTrackpadAnalogValueX;// 0x70, size 4 (0x4)
 	// m_flTrackpadAnalogValueX metadata
 	 // MNetworkEnable
-	__declspec(align(4)) float m_flTrackpadAnalogValueY;// 0x78, size 4 (0x4)
+	__declspec(align(4)) float m_flTrackpadAnalogValueY;// 0x74, size 4 (0x4)
 	// m_flTrackpadAnalogValueY metadata
 	 // MNetworkEnable
-	__declspec(align(4)) float m_flJoystickAnalogValueX;// 0x7c, size 4 (0x4)
+	__declspec(align(4)) float m_flJoystickAnalogValueX;// 0x78, size 4 (0x4)
 	// m_flJoystickAnalogValueX metadata
 	 // MNetworkEnable
-	__declspec(align(4)) float m_flJoystickAnalogValueY;// 0x80, size 4 (0x4)
+	__declspec(align(4)) float m_flJoystickAnalogValueY;// 0x7c, size 4 (0x4)
 	// m_flJoystickAnalogValueY metadata
 	 // MNetworkEnable
-char HandInfo_t_088[0x4];
-}; // size: 136 (0x88)
+}; // size: 128 (0x80)
 #pragma pack(pop)
 
 class INextBotComponent : public INextBotEventResponder
@@ -10458,7 +10361,7 @@ char CAttributeList_050[0x30];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_Callback : public CParticleRenderOperatorInstance
+class C_OP_Callback : public CParticleFunctionRenderer
 {
 // C_OP_Callback additional information
 // particles.dll, project particles
@@ -10466,11 +10369,11 @@ class C_OP_Callback : public CParticleRenderOperatorInstance
 // SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
 
 public:
-}; // size: 192 (0xc0)
+}; // size: 208 (0xd0)
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_INIT_RandomSecondSequence : public CParticleInitializerOperatorInstance
+class C_INIT_RandomSecondSequence : public CParticleFunctionInitializer
 {
 // C_INIT_RandomSecondSequence additional information
 // particles.dll, project particles
@@ -10495,7 +10398,7 @@ char C_INIT_RandomSecondSequence_090[0x8];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_INIT_RandomSequence : public CParticleInitializerOperatorInstance
+class C_INIT_RandomSequence : public CParticleFunctionInitializer
 {
 // C_INIT_RandomSequence additional information
 // particles.dll, project particles
@@ -10527,7 +10430,7 @@ char C_INIT_RandomSequence_090[0x6];
 }; // size: 144 (0x90)
 #pragma pack(pop)
 
-class CGeneralRandomRotation : public CParticleInitializerOperatorInstance
+class CGeneralRandomRotation : public CParticleFunctionInitializer
 {
 // CGeneralRandomRotation additional information
 // particles.dll, project particles
@@ -10627,7 +10530,7 @@ public:
 }; // size: 16 (0x10)
 
 #pragma pack(push, 16)
-class C_OP_RenderFlattenGrass : public CParticleRenderOperatorInstance
+class C_OP_RenderFlattenGrass : public CParticleFunctionRenderer
 {
 // C_OP_RenderFlattenGrass additional information
 // particles.dll, project particles
@@ -10636,25 +10539,25 @@ class C_OP_RenderFlattenGrass : public CParticleRenderOperatorInstance
 // SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
 
 public:
-	__declspec(align(4)) float m_flFlattenStrength;// 0xc0, size 4 (0x4)
+	__declspec(align(4)) float m_flFlattenStrength;// 0xd0, size 4 (0x4)
 	// m_flFlattenStrength metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) UnknownType <0x4, class ParticleAttributeIndex_t> m_nStrengthFieldOverride;// 0xc4, size 4 (0x4)
+	__declspec(align(4)) UnknownType <0x4, class ParticleAttributeIndex_t> m_nStrengthFieldOverride;// 0xd4, size 4 (0x4)
 	// m_nStrengthFieldOverride metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyAttributeChoiceName
-	__declspec(align(4)) float m_flRadiusScale;// 0xc8, size 4 (0x4)
+	__declspec(align(4)) float m_flRadiusScale;// 0xd8, size 4 (0x4)
 	// m_flRadiusScale metadata
 	 // MAttributeName
 	 // MDefaultString
-char C_OP_RenderFlattenGrass_0D0[0x4];
-}; // size: 208 (0xd0)
+char C_OP_RenderFlattenGrass_0E0[0x4];
+}; // size: 224 (0xe0)
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_INIT_RandomScalar : public CParticleInitializerOperatorInstance
+class C_INIT_RandomScalar : public CParticleFunctionInitializer
 {
 // C_INIT_RandomScalar additional information
 // particles.dll, project particles
@@ -10682,6 +10585,38 @@ public:
 }; // size: 144 (0x90)
 #pragma pack(pop)
 
+#pragma pack(push, 16)
+class C_INIT_SetRigidAttachment : public CParticleFunctionInitializer
+{
+// C_INIT_SetRigidAttachment additional information
+// particles.dll, project particles
+// Alignment: 16
+// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+
+public:
+	__declspec(align(4)) int32_t m_nControlPointNumber;// 0x80, size 4 (0x4)
+	// m_nControlPointNumber metadata
+	 // MSrc1ImportAttributeName
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) UnknownType <0x4, class ParticleAttributeIndex_t> m_nFieldInput;// 0x84, size 4 (0x4)
+	// m_nFieldInput metadata
+	 // MAttributeName
+	 // MDefaultString
+	 // MPropertyAttributeChoiceName
+	__declspec(align(4)) UnknownType <0x4, class ParticleAttributeIndex_t> m_nFieldOutput;// 0x88, size 4 (0x4)
+	// m_nFieldOutput metadata
+	 // MAttributeName
+	 // MDefaultString
+	 // MPropertyAttributeChoiceName
+	__declspec(align(1)) bool m_bLocalSpace;// 0x8c, size 1 (0x1)
+	// m_bLocalSpace metadata
+	 // MAttributeName
+	 // MDefaultString
+char C_INIT_SetRigidAttachment_090[0x3];
+}; // size: 144 (0x90)
+#pragma pack(pop)
+
 #pragma pack(push, 8)
 class CMorphConstraint : public CBaseConstraint
 {
@@ -10693,18 +10628,18 @@ class CMorphConstraint : public CBaseConstraint
 // SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
 
 public:
-	__declspec(align(1)) bool m_bCacheAttempted;// 0x50, size 1 (0x1)
-	__declspec(align(1)) bool m_bCacheOk;// 0x51, size 1 (0x1)
-	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_sTargetMorph;// 0x58, size 8 (0x8)
-	__declspec(align(4)) int32_t m_nSlaveChannel;// 0x60, size 4 (0x4)
-	__declspec(align(4)) float m_flMin;// 0x64, size 4 (0x4)
-	__declspec(align(4)) float m_flMax;// 0x68, size 4 (0x4)
-char CMorphConstraint_090[0x24];
-}; // size: 144 (0x90)
+	__declspec(align(1)) bool m_bCacheAttempted;// 0x70, size 1 (0x1)
+	__declspec(align(1)) bool m_bCacheOk;// 0x71, size 1 (0x1)
+	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_sTargetMorph;// 0x78, size 8 (0x8)
+	__declspec(align(4)) int32_t m_nSlaveChannel;// 0x80, size 4 (0x4)
+	__declspec(align(4)) float m_flMin;// 0x84, size 4 (0x4)
+	__declspec(align(4)) float m_flMax;// 0x88, size 4 (0x4)
+char CMorphConstraint_0B0[0x24];
+}; // size: 176 (0xb0)
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_RampScalarSpline : public CParticlePerFrameOperatorInstance
+class C_OP_RampScalarSpline : public CParticleFunctionOperator
 {
 // C_OP_RampScalarSpline additional information
 // particles.dll, project particles
@@ -10760,7 +10695,7 @@ char C_OP_RampScalarSpline_0D0[0xA];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_ReinitializeScalarEndCap : public CParticlePerFrameOperatorInstance
+class C_OP_ReinitializeScalarEndCap : public CParticleFunctionOperator
 {
 // C_OP_ReinitializeScalarEndCap additional information
 // particles.dll, project particles
@@ -10817,7 +10752,7 @@ char CGameRules_090[0x4];
 }; // size: 144 (0x90)
 
 #pragma pack(push, 16)
-class C_OP_CalculateNormalsForGrid : public CParticlePerFrameOperatorInstance
+class C_OP_CalculateNormalsForGrid : public CParticleFunctionOperator
 {
 // C_OP_CalculateNormalsForGrid additional information
 // particles.dll, project particles
@@ -10826,38 +10761,6 @@ class C_OP_CalculateNormalsForGrid : public CParticlePerFrameOperatorInstance
 
 public:
 }; // size: 128 (0x80)
-#pragma pack(pop)
-
-#pragma pack(push, 16)
-class C_INIT_SetRigidAttachment : public CParticleInitializerOperatorInstance
-{
-// C_INIT_SetRigidAttachment additional information
-// particles.dll, project particles
-// Alignment: 16
-// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
-
-public:
-	__declspec(align(4)) int32_t m_nControlPointNumber;// 0x80, size 4 (0x4)
-	// m_nControlPointNumber metadata
-	 // MSrc1ImportAttributeName
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(4)) UnknownType <0x4, class ParticleAttributeIndex_t> m_nFieldInput;// 0x84, size 4 (0x4)
-	// m_nFieldInput metadata
-	 // MAttributeName
-	 // MDefaultString
-	 // MPropertyAttributeChoiceName
-	__declspec(align(4)) UnknownType <0x4, class ParticleAttributeIndex_t> m_nFieldOutput;// 0x88, size 4 (0x4)
-	// m_nFieldOutput metadata
-	 // MAttributeName
-	 // MDefaultString
-	 // MPropertyAttributeChoiceName
-	__declspec(align(1)) bool m_bLocalSpace;// 0x8c, size 1 (0x1)
-	// m_bLocalSpace metadata
-	 // MAttributeName
-	 // MDefaultString
-char C_INIT_SetRigidAttachment_090[0x3];
-}; // size: 144 (0x90)
 #pragma pack(pop)
 
 #pragma pack(push, 2)
@@ -10914,7 +10817,7 @@ public:
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_FadeOut : public CParticlePerFrameOperatorInstance
+class C_OP_FadeOut : public CParticleFunctionOperator
 {
 // C_OP_FadeOut additional information
 // particles.dll, project particles
@@ -10971,12 +10874,13 @@ char C_PlayerState_0C[0x2];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_INIT_RemapScalarToVector : public CParticleInitializerOperatorInstance
+class C_INIT_RemapScalarToVector : public CParticleFunctionInitializer
 {
 // C_INIT_RemapScalarToVector additional information
 // particles.dll, project particles
 // Alignment: 16
 // SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+// SCHEMA_CLASS_TEMP_HACK_HAS_NOSCHEMA_MEMBERS
 
 public:
 	__declspec(align(4)) UnknownType <0x4, class ParticleAttributeIndex_t> m_nFieldInput;// 0x80, size 4 (0x4)
@@ -11028,12 +10932,16 @@ public:
 	// m_bLocalCoords metadata
 	 // MAttributeName
 	 // MDefaultString
-char C_INIT_RemapScalarToVector_0C0[0x7];
-}; // size: 192 (0xc0)
+	__declspec(align(4)) float m_flRemapBias;// 0xbc, size 4 (0x4)
+	// m_flRemapBias metadata
+	 // MAttributeName
+	 // MDefaultString
+char C_INIT_RemapScalarToVector_0D0[0x10];
+}; // size: 208 (0xd0)
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_ConstrainDistanceToUserSpecifiedPath : public CParticleConstraintOperatorInstance
+class C_OP_ConstrainDistanceToUserSpecifiedPath : public CParticleFunctionConstraint
 {
 // C_OP_ConstrainDistanceToUserSpecifiedPath additional information
 // particles.dll, project particles
@@ -11102,7 +11010,7 @@ public:
 }; // size: 96 (0x60)
 #pragma pack(pop)
 
-class C_OP_RemapNamedModelElementEndCap : public CParticlePerFrameOperatorInstance
+class C_OP_RemapNamedModelElementEndCap : public CParticleFunctionOperator
 {
 // C_OP_RemapNamedModelElementEndCap additional information
 // particles.dll, project particles
@@ -11163,7 +11071,7 @@ char FeFitMatrix_t_040[0xC];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_RenderDeferredLight : public CParticleRenderOperatorInstance
+class C_OP_RenderDeferredLight : public CParticleFunctionRenderer
 {
 // C_OP_RenderDeferredLight additional information
 // particles.dll, project particles
@@ -11172,65 +11080,65 @@ class C_OP_RenderDeferredLight : public CParticleRenderOperatorInstance
 // SCHEMA_CLASS_TEMP_HACK_HAS_NOSCHEMA_MEMBERS
 
 public:
-	__declspec(align(1)) bool m_bUseAlphaTestWindow;// 0xc0, size 1 (0x1)
+	__declspec(align(1)) bool m_bUseAlphaTestWindow;// 0xd0, size 1 (0x1)
 	// m_bUseAlphaTestWindow metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(1)) bool m_bUseTexture;// 0xc1, size 1 (0x1)
+	__declspec(align(1)) bool m_bUseTexture;// 0xd1, size 1 (0x1)
 	// m_bUseTexture metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) float m_flRadiusScale;// 0xc4, size 4 (0x4)
+	__declspec(align(4)) float m_flRadiusScale;// 0xd4, size 4 (0x4)
 	// m_flRadiusScale metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) float m_flAlphaScale;// 0xc8, size 4 (0x4)
+	__declspec(align(4)) float m_flAlphaScale;// 0xd8, size 4 (0x4)
 	// m_flAlphaScale metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) float m_flLightDistance;// 0xcc, size 4 (0x4)
+	__declspec(align(4)) float m_flLightDistance;// 0xdc, size 4 (0x4)
 	// m_flLightDistance metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) float m_flStartFalloff;// 0xd0, size 4 (0x4)
+	__declspec(align(4)) float m_flStartFalloff;// 0xe0, size 4 (0x4)
 	// m_flStartFalloff metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) float m_flDistanceFalloff;// 0xd4, size 4 (0x4)
+	__declspec(align(4)) float m_flDistanceFalloff;// 0xe4, size 4 (0x4)
 	// m_flDistanceFalloff metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) float m_flSpotFoV;// 0xd8, size 4 (0x4)
+	__declspec(align(4)) float m_flSpotFoV;// 0xe8, size 4 (0x4)
 	// m_flSpotFoV metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(1)) UnknownType <0x4, class Color> m_ColorScale;// 0xdc, size 4 (0x4)
+	__declspec(align(1)) UnknownType <0x4, class Color> m_ColorScale;// 0xec, size 4 (0x4)
 	// m_ColorScale metadata
 	 // MAttributeName
 	 // MPropertyColorWithNoAlpha
 	 // MDefaultString
-char C_OP_RenderDeferredLight_0EC[0xC];
-	__declspec(align(4)) UnknownType <0x4, class ParticleAttributeIndex_t> m_nAlphaTestPointField;// 0xec, size 4 (0x4)
+char C_OP_RenderDeferredLight_0FC[0xC];
+	__declspec(align(4)) UnknownType <0x4, class ParticleAttributeIndex_t> m_nAlphaTestPointField;// 0xfc, size 4 (0x4)
 	// m_nAlphaTestPointField metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyAttributeChoiceName
-	__declspec(align(4)) UnknownType <0x4, class ParticleAttributeIndex_t> m_nAlphaTestRangeField;// 0xf0, size 4 (0x4)
+	__declspec(align(4)) UnknownType <0x4, class ParticleAttributeIndex_t> m_nAlphaTestRangeField;// 0x100, size 4 (0x4)
 	// m_nAlphaTestRangeField metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyAttributeChoiceName
-	__declspec(align(4)) UnknownType <0x4, class ParticleAttributeIndex_t> m_nAlphaTestSharpnessField;// 0xf4, size 4 (0x4)
+	__declspec(align(4)) UnknownType <0x4, class ParticleAttributeIndex_t> m_nAlphaTestSharpnessField;// 0x104, size 4 (0x4)
 	// m_nAlphaTestSharpnessField metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyAttributeChoiceName
-	__declspec(align(8)) UnknownAtomicType <0x8, CResourceExtReference, UnknownAtomicType <0x8, CWeakHandle, class InfoForResourceTypeCTextureBase > > m_hTexture;// 0xf8, size 8 (0x8)
+	__declspec(align(8)) UnknownAtomicType <0x8, CResourceExtReference, UnknownAtomicType <0x8, CWeakHandle, class InfoForResourceTypeCTextureBase > > m_hTexture;// 0x108, size 8 (0x8)
 	// m_hTexture metadata
 	 // MAttributeName
 	 // MPropertyAttributeEditor
 	 // MDefaultString
-}; // size: 256 (0x100)
+}; // size: 272 (0x110)
 #pragma pack(pop)
 
 #pragma pack(push, 16)
@@ -11288,7 +11196,7 @@ char CDeferredLightBase_0190[0x54];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_SetControlPointToHMD : public CParticlePerFrameOperatorInstance
+class C_OP_SetControlPointToHMD : public CParticleFunctionPreEmission
 {
 // C_OP_SetControlPointToHMD additional information
 // particles.dll, project particles
@@ -11316,7 +11224,7 @@ char C_OP_SetControlPointToHMD_0A0[0xF];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_LerpEndCapScalar : public CParticlePerFrameOperatorInstance
+class C_OP_LerpEndCapScalar : public CParticleFunctionOperator
 {
 // C_OP_LerpEndCapScalar additional information
 // particles.dll, project particles
@@ -11342,7 +11250,7 @@ char C_OP_LerpEndCapScalar_090[0x4];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_SpringForce : public CParticleForceOperatorInstance
+class C_OP_SpringForce : public CParticleFunctionForce
 {
 // C_OP_SpringForce additional information
 // particles.dll, project particles
@@ -11375,7 +11283,7 @@ char C_OP_SpringForce_0A0[0xF];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_ForceBasedOnDistanceToPlane : public CParticleForceOperatorInstance
+class C_OP_ForceBasedOnDistanceToPlane : public CParticleFunctionForce
 {
 // C_OP_ForceBasedOnDistanceToPlane additional information
 // particles.dll, project particles
@@ -11438,13 +11346,13 @@ public:
 }; // size: 48 (0x30)
 #pragma pack(pop)
 
-#pragma pack(push, 4)
+#pragma pack(push, 8)
 class CConstraintTarget
 {
 // CConstraintTarget additional information
 // engine2.dll, project modellib
-// Alignment: 4
-// SCHEMA_CLASS_HAS_TRIVIAL_DESTRUCTOR
+// Alignment: 8
+// SCHEMA_CLASS_TEMP_HACK_HAS_NOSCHEMA_MEMBERS
 
 public:
 	__declspec(align(4)) uint32_t m_nBoneHash;// 0x0, size 4 (0x4)
@@ -11452,8 +11360,9 @@ public:
 	__declspec(align(4)) UnknownType <0xc, class Vector> m_vOffset;// 0x8, size 12 (0xc)
 	__declspec(align(4)) UnknownType <0x10, class Quaternion> m_qOffset;// 0x14, size 16 (0x10)
 	__declspec(align(1)) bool m_bIsAttachment;// 0x24, size 1 (0x1)
-char CConstraintTarget_028[0x3];
-}; // size: 40 (0x28)
+	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_sName;// 0x28, size 8 (0x8)
+char CConstraintTarget_050[0x20];
+}; // size: 80 (0x50)
 #pragma pack(pop)
 
 #pragma pack(push, 8)
@@ -11485,7 +11394,40 @@ public:
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_INIT_RandomLifeTime : public CParticleInitializerOperatorInstance
+class C_OP_ExternalGenericForce : public CParticleFunctionForce
+{
+// C_OP_ExternalGenericForce additional information
+// particles.dll, project particles
+// Alignment: 16
+// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+
+public:
+	__declspec(align(4)) float m_flStrength;// 0x80, size 4 (0x4)
+	// m_flStrength metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) float m_flCurlStrength;// 0x84, size 4 (0x4)
+	// m_flCurlStrength metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) float m_flLinearStrength;// 0x88, size 4 (0x4)
+	// m_flLinearStrength metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) float m_flRadialStrength;// 0x8c, size 4 (0x4)
+	// m_flRadialStrength metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) float m_flRotationStrength;// 0x90, size 4 (0x4)
+	// m_flRotationStrength metadata
+	 // MAttributeName
+	 // MDefaultString
+char C_OP_ExternalGenericForce_0A0[0xC];
+}; // size: 160 (0xa0)
+#pragma pack(pop)
+
+#pragma pack(push, 16)
+class C_INIT_RandomLifeTime : public CParticleFunctionInitializer
 {
 // C_INIT_RandomLifeTime additional information
 // particles.dll, project particles
@@ -11515,7 +11457,7 @@ char C_INIT_RandomLifeTime_090[0x4];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_INIT_SetHitboxToModel : public CParticleInitializerOperatorInstance
+class C_INIT_SetHitboxToModel : public CParticleFunctionInitializer
 {
 // C_INIT_SetHitboxToModel additional information
 // particles.dll, project particles
@@ -11589,11 +11531,12 @@ public:
 	__declspec(align(4)) int32_t nKillerPlayerID;// 0x0, size 4 (0x4)
 	__declspec(align(4)) int32_t nVictimPlayerID;// 0x4, size 4 (0x4)
 	__declspec(align(4)) float fTime;// 0x8, size 4 (0x4)
-}; // size: 12 (0xc)
+	__declspec(align(4)) float fTimeRespawn;// 0xc, size 4 (0x4)
+}; // size: 16 (0x10)
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_INIT_OffsetVectorToVector : public CParticleInitializerOperatorInstance
+class C_INIT_OffsetVectorToVector : public CParticleFunctionInitializer
 {
 // C_INIT_OffsetVectorToVector additional information
 // particles.dll, project particles
@@ -11625,7 +11568,7 @@ public:
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_INIT_PositionWarp : public CParticleInitializerOperatorInstance
+class C_INIT_PositionWarp : public CParticleFunctionInitializer
 {
 // C_INIT_PositionWarp additional information
 // particles.dll, project particles
@@ -11705,7 +11648,7 @@ char CLeanMatrixAnimNode_040[0x8];
 	__declspec(align(4)) AnimParamID m_param;// 0x50, size 4 (0x4)
 	// m_param metadata
 	 // MPropertyFriendlyName
-	 // MPropertyChoiceProviderFn
+	 // MPropertyAttributeChoiceName
 	__declspec(align(4)) UnknownType <0xc, class Vector> m_verticalAxisDirection;// 0x54, size 12 (0xc)
 	// m_verticalAxisDirection metadata
 	 // MPropertyFriendlyName
@@ -11747,25 +11690,8 @@ class IRecipientFilter : public SchemaBase
 public:
 }; // size: 8 (0x8)
 
-#pragma pack(push, 4)
-class PermEntityLumpData_t
-{
-// PermEntityLumpData_t additional information
-// worldrenderer.dll, project worldrenderer
-// Alignment: 4
-// SCHEMA_CLASS_HAS_TRIVIAL_DESTRUCTOR
-
-public:
-	__declspec(align(4)) UnknownType <0x4, class CResourceString> m_name;// 0x0, size 4 (0x4)
-	__declspec(align(4)) EntityLumpFlags_t m_flags;// 0x4, size 4 (0x4)
-	__declspec(align(4)) UnknownType <0x4, class CResourceString> m_manifestName;// 0x8, size 4 (0x4)
-	__declspec(align(4)) UnknownAtomicType <0x8, CResourceArray, UnknownAtomicType <0x8, CResourceExtReference, UnknownAtomicType <0x8, CWeakHandle, class InfoForResourceTypeCEntityLump > > > m_childLumps;// 0xc, size 8 (0x8)
-	__declspec(align(4)) UnknownAtomicType <0x8, CResourceArray, class EntityKeyValueData_t > m_entityKeyValues;// 0x14, size 8 (0x8)
-}; // size: 28 (0x1c)
-#pragma pack(pop)
-
 #pragma pack(push, 16)
-class C_INIT_CreateSequentialPath : public CParticleInitializerOperatorInstance
+class C_INIT_CreateSequentialPath : public CParticleFunctionInitializer
 {
 // C_INIT_CreateSequentialPath additional information
 // particles.dll, project particles
@@ -11800,29 +11726,25 @@ char C_INIT_CreateSequentialPath_090[0x5];
 }; // size: 208 (0xd0)
 #pragma pack(pop)
 
-#pragma pack(push, 16)
-class C_OP_ConnectParentParticleToNearest : public CParticlePerFrameOperatorInstance
+#pragma pack(push, 4)
+class PermEntityLumpData_t
 {
-// C_OP_ConnectParentParticleToNearest additional information
-// particles.dll, project particles
-// Alignment: 16
-// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+// PermEntityLumpData_t additional information
+// worldrenderer.dll, project worldrenderer
+// Alignment: 4
+// SCHEMA_CLASS_HAS_TRIVIAL_DESTRUCTOR
 
 public:
-	__declspec(align(4)) int32_t m_nFirstControlPoint;// 0x80, size 4 (0x4)
-	// m_nFirstControlPoint metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(4)) int32_t m_nSecondControlPoint;// 0x84, size 4 (0x4)
-	// m_nSecondControlPoint metadata
-	 // MAttributeName
-	 // MDefaultString
-char C_OP_ConnectParentParticleToNearest_090[0x8];
-}; // size: 144 (0x90)
+	__declspec(align(4)) UnknownType <0x4, class CResourceString> m_name;// 0x0, size 4 (0x4)
+	__declspec(align(4)) EntityLumpFlags_t m_flags;// 0x4, size 4 (0x4)
+	__declspec(align(4)) UnknownType <0x4, class CResourceString> m_manifestName;// 0x8, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x8, CResourceArray, UnknownAtomicType <0x8, CResourceExtReference, UnknownAtomicType <0x8, CWeakHandle, class InfoForResourceTypeCEntityLump > > > m_childLumps;// 0xc, size 8 (0x8)
+	__declspec(align(4)) UnknownAtomicType <0x8, CResourceArray, class EntityKeyValueData_t > m_entityKeyValues;// 0x14, size 8 (0x8)
+}; // size: 28 (0x1c)
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_StopAfterCPDuration : public CParticlePerFrameOperatorInstance
+class C_OP_StopAfterCPDuration : public CParticleFunctionPreEmission
 {
 // C_OP_StopAfterCPDuration additional information
 // particles.dll, project particles
@@ -11860,6 +11782,27 @@ char C_OP_StopAfterCPDuration_090[0x2];
 }; // size: 144 (0x90)
 #pragma pack(pop)
 
+#pragma pack(push, 16)
+class C_OP_ConnectParentParticleToNearest : public CParticleFunctionOperator
+{
+// C_OP_ConnectParentParticleToNearest additional information
+// particles.dll, project particles
+// Alignment: 16
+// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+
+public:
+	__declspec(align(4)) int32_t m_nFirstControlPoint;// 0x80, size 4 (0x4)
+	// m_nFirstControlPoint metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) int32_t m_nSecondControlPoint;// 0x84, size 4 (0x4)
+	// m_nSecondControlPoint metadata
+	 // MAttributeName
+	 // MDefaultString
+char C_OP_ConnectParentParticleToNearest_090[0x8];
+}; // size: 144 (0x90)
+#pragma pack(pop)
+
 #pragma pack(push, 8)
 class CParameterValue : public SchemaBase
 {
@@ -11890,6 +11833,18 @@ class EntOutput_t
 public:
 char EntOutput_t_010[0x10];
 }; // size: 16 (0x10)
+#pragma pack(pop)
+
+#pragma pack(push, 8)
+class CParentConstraint : public CBaseConstraint
+{
+// CParentConstraint additional information
+// engine2.dll, project modellib
+// Alignment: 8
+// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+
+public:
+}; // size: 112 (0x70)
 #pragma pack(pop)
 
 #pragma pack(push, 8)
@@ -11998,27 +11953,28 @@ char CDOTA_TeamCommander_0D18[0x18];
 	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownAtomicType <0x4, CHandle, class CBaseEntity > > m_AllEnemyOther;// 0xe48, size 24 (0x18)
 	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownAtomicType <0x4, CHandle, class CBaseEntity > > m_AllNeutralCreeps;// 0xe60, size 24 (0x18)
 	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownAtomicType <0x4, CHandle, class CBaseEntity > > m_ThinkerUnits;// 0xe78, size 24 (0x18)
-char CDOTA_TeamCommander_0EC0[0x30];
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownAtomicType <0x4, CHandle, class CBaseEntity > > m_hCouriers;// 0xec0, size 24 (0x18)
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownAtomicType <0x4, CHandle, class CBaseEntity > > m_hDisabledBots;// 0xed8, size 24 (0x18)
-	__declspec(align(1)) bool m_bCreatedLobbyBots;// 0xef0, size 1 (0x1)
-char CDOTA_TeamCommander_01238[0x344];
-	__declspec(align(4)) float m_fGoodLuckFlavorTextTime;// 0x1238, size 4 (0x4)
-	__declspec(align(4)) float m_fTeamfightFlavorTextTime;// 0x123c, size 4 (0x4)
-	__declspec(align(4)) float m_fCongratulateHeroFlavorTextTime;// 0x1240, size 4 (0x4)
-	__declspec(align(4)) float m_fLastAliveHeroHistorySnapshotTime;// 0x1244, size 4 (0x4)
-	__declspec(align(4)) int32_t m_iAliveHeroHistoryIndex;// 0x1248, size 4 (0x4)
-	__declspec(align(4)) int32_t m_iAliveHeroHistory[5];// 0x124c, size 20 (0x14)
-char CDOTA_TeamCommander_01268[0x8];
-	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_sScriptDirectory;// 0x1268, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x8, class HSCRIPT> m_hHeroSelectionScriptScope;// 0x1270, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x8, class HSCRIPT> m_hTeamLevelDesiresScriptScope;// 0x1278, size 8 (0x8)
-char CDOTA_TeamCommander_012E8[0x68];
-	__declspec(align(4)) int32_t m_nScriptPathAvoidanceUpdateTick;// 0x12e8, size 4 (0x4)
-	__declspec(align(4)) float m_fExecutionTime[30];// 0x12ec, size 120 (0x78)
-	__declspec(align(4)) int32_t m_iCurExecutionTime;// 0x1364, size 4 (0x4)
-char CDOTA_TeamCommander_01408[0xA0];
-}; // size: 5128 (0x1408)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownAtomicType <0x4, CHandle, class CBaseEntity > > m_AllUnitsIncludingDead;// 0xe90, size 24 (0x18)
+char CDOTA_TeamCommander_0ED8[0x30];
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownAtomicType <0x4, CHandle, class CBaseEntity > > m_hCouriers;// 0xed8, size 24 (0x18)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownAtomicType <0x4, CHandle, class CBaseEntity > > m_hDisabledBots;// 0xef0, size 24 (0x18)
+	__declspec(align(1)) bool m_bCreatedLobbyBots;// 0xf08, size 1 (0x1)
+char CDOTA_TeamCommander_01250[0x344];
+	__declspec(align(4)) float m_fGoodLuckFlavorTextTime;// 0x1250, size 4 (0x4)
+	__declspec(align(4)) float m_fTeamfightFlavorTextTime;// 0x1254, size 4 (0x4)
+	__declspec(align(4)) float m_fCongratulateHeroFlavorTextTime;// 0x1258, size 4 (0x4)
+	__declspec(align(4)) float m_fLastAliveHeroHistorySnapshotTime;// 0x125c, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iAliveHeroHistoryIndex;// 0x1260, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iAliveHeroHistory[5];// 0x1264, size 20 (0x14)
+char CDOTA_TeamCommander_01280[0x8];
+	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_sScriptDirectory;// 0x1280, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class HSCRIPT> m_hHeroSelectionScriptScope;// 0x1288, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class HSCRIPT> m_hTeamLevelDesiresScriptScope;// 0x1290, size 8 (0x8)
+char CDOTA_TeamCommander_01300[0x68];
+	__declspec(align(4)) int32_t m_nScriptPathAvoidanceUpdateTick;// 0x1300, size 4 (0x4)
+	__declspec(align(4)) float m_fExecutionTime[30];// 0x1304, size 120 (0x78)
+	__declspec(align(4)) int32_t m_iCurExecutionTime;// 0x137c, size 4 (0x4)
+char CDOTA_TeamCommander_01420[0xA0];
+}; // size: 5152 (0x1420)
 
 #pragma pack(push, 8)
 class ClientQuickBuyItemState : public SchemaBase
@@ -12044,7 +12000,7 @@ char ClientQuickBuyItemState_018[0x3];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_RampScalarLinearSimple : public CParticlePerFrameOperatorInstance
+class C_OP_RampScalarLinearSimple : public CParticleFunctionOperator
 {
 // C_OP_RampScalarLinearSimple additional information
 // particles.dll, project particles
@@ -12077,7 +12033,7 @@ char C_OP_RampScalarLinearSimple_0C0[0xC];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_LerpEndCapVector : public CParticlePerFrameOperatorInstance
+class C_OP_LerpEndCapVector : public CParticleFunctionOperator
 {
 // C_OP_LerpEndCapVector additional information
 // particles.dll, project particles
@@ -12156,7 +12112,7 @@ char CNetworkOriginQuantizedVector_018[0x18];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_INIT_InitialVelocityFromHitbox : public CParticleInitializerOperatorInstance
+class C_INIT_InitialVelocityFromHitbox : public CParticleFunctionInitializer
 {
 // C_INIT_InitialVelocityFromHitbox additional information
 // particles.dll, project particles
@@ -12223,7 +12179,7 @@ char CVariantDefaultAllocator_01[0x1];
 class TextureHeader_t : public TextureDesc_t
 {
 // TextureHeader_t additional information
-// rendersystemdx9.dll, project rendersystemdx9
+// rendersystemdx11.dll, project rendersystemdx11
 // Alignment: 4
 // SCHEMA_CLASS_HAS_TRIVIAL_DESTRUCTOR
 // SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
@@ -12270,12 +12226,13 @@ char InfoForResourceTypeWorldLighting_t_01[0x1];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_INIT_RemapScalar : public CParticleInitializerOperatorInstance
+class C_INIT_RemapScalar : public CParticleFunctionInitializer
 {
 // C_INIT_RemapScalar additional information
 // particles.dll, project particles
 // Alignment: 16
 // SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+// SCHEMA_CLASS_TEMP_HACK_HAS_NOSCHEMA_MEMBERS
 
 public:
 	__declspec(align(4)) UnknownType <0x4, class ParticleAttributeIndex_t> m_nFieldInput;// 0x80, size 4 (0x4)
@@ -12320,7 +12277,11 @@ public:
 	// m_bActiveRange metadata
 	 // MAttributeName
 	 // MDefaultString
-char C_INIT_RemapScalar_0B0[0xE];
+	__declspec(align(4)) float m_flRemapBias;// 0xa4, size 4 (0x4)
+	// m_flRemapBias metadata
+	 // MAttributeName
+	 // MDefaultString
+char C_INIT_RemapScalar_0B0[0x8];
 }; // size: 176 (0xb0)
 #pragma pack(pop)
 
@@ -12376,7 +12337,7 @@ public:
 }; // size: 96 (0x60)
 #pragma pack(pop)
 
-class C_OP_RemapDistanceToLineSegmentBase : public CParticlePerFrameOperatorInstance
+class C_OP_RemapDistanceToLineSegmentBase : public CParticleFunctionOperator
 {
 // C_OP_RemapDistanceToLineSegmentBase additional information
 // particles.dll, project particles
@@ -12413,7 +12374,7 @@ char C_OP_RemapDistanceToLineSegmentBase_0A0[0xF];
 }; // size: 160 (0xa0)
 
 #pragma pack(push, 16)
-class C_OP_RotateVector : public CParticlePerFrameOperatorInstance
+class C_OP_RotateVector : public CParticleFunctionOperator
 {
 // C_OP_RotateVector additional information
 // particles.dll, project particles
@@ -12503,6 +12464,25 @@ public:
 }; // size: 48 (0x30)
 #pragma pack(pop)
 
+#pragma pack(push, 8)
+class handposepair_t
+{
+// handposepair_t additional information
+// server.dll, project server
+// Alignment: 8
+// SCHEMA_CLASS_HAS_TRIVIAL_DESTRUCTOR
+
+public:
+	__declspec(align(4)) UnknownType <0x30, class matrix3x4_t> m_matHandPoseOffset[2];// 0x0, size 96 (0x60)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vExtentOrigin[2];// 0x60, size 24 (0x18)
+	__declspec(align(4)) float m_flHandPoseParams[5][2];// 0x78, size 40 (0x28)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_poseSequenceName;// 0xa0, size 8 (0x8)
+	__declspec(align(4)) int32_t m_nUseRange;// 0xa8, size 4 (0x4)
+	__declspec(align(1)) bool m_bHasExtent;// 0xac, size 1 (0x1)
+char handposepair_t_0B0[0x3];
+}; // size: 176 (0xb0)
+#pragma pack(pop)
+
 #pragma pack(push, 4)
 class CAI_MoveMonitor
 {
@@ -12519,7 +12499,7 @@ public:
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_INIT_InitFromParentKilled : public CParticleInitializerOperatorInstance
+class C_INIT_InitFromParentKilled : public CParticleFunctionInitializer
 {
 // C_INIT_InitFromParentKilled additional information
 // particles.dll, project particles
@@ -12683,19 +12663,6 @@ char CAnimationLayer_0B0[0x8];
 }; // size: 176 (0xb0)
 #pragma pack(pop)
 
-#pragma pack(push, 8)
-class CSSDSMsg_ViewRender
-{
-// CSSDSMsg_ViewRender additional information
-// scenesystem.dll, project scenesystem
-// Alignment: 8
-
-public:
-	__declspec(align(8)) SceneViewId_t m_viewId;// 0x0, size 16 (0x10)
-	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_ViewName;// 0x10, size 8 (0x8)
-}; // size: 24 (0x18)
-#pragma pack(pop)
-
 class CBaseTrailRenderer : public CBaseRendererSource2
 {
 // CBaseTrailRenderer additional information
@@ -12706,71 +12673,71 @@ class CBaseTrailRenderer : public CBaseRendererSource2
 // Abstract Class
 
 public:
-	__declspec(align(4)) int32_t m_nOrientationType;// 0x280, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nOrientationType;// 0x290, size 4 (0x4)
 	// m_nOrientationType metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyAttributeChoiceEnumName
-	__declspec(align(4)) int32_t m_nOrientationControlPoint;// 0x284, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nOrientationControlPoint;// 0x294, size 4 (0x4)
 	// m_nOrientationControlPoint metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) float m_flMinSize;// 0x288, size 4 (0x4)
+	__declspec(align(4)) float m_flMinSize;// 0x298, size 4 (0x4)
 	// m_flMinSize metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyGroupName
-	__declspec(align(4)) float m_flMaxSize;// 0x28c, size 4 (0x4)
+	__declspec(align(4)) float m_flMaxSize;// 0x29c, size 4 (0x4)
 	// m_flMaxSize metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyGroupName
-	__declspec(align(4)) float m_flStartFadeSize;// 0x290, size 4 (0x4)
+	__declspec(align(4)) float m_flStartFadeSize;// 0x2a0, size 4 (0x4)
 	// m_flStartFadeSize metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyGroupName
-	__declspec(align(4)) float m_flEndFadeSize;// 0x294, size 4 (0x4)
+	__declspec(align(4)) float m_flEndFadeSize;// 0x2a4, size 4 (0x4)
 	// m_flEndFadeSize metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyGroupName
-	__declspec(align(4)) float m_flDepthBias;// 0x298, size 4 (0x4)
+	__declspec(align(4)) float m_flDepthBias;// 0x2a8, size 4 (0x4)
 	// m_flDepthBias metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyGroupName
-	__declspec(align(4)) float m_flRadiusScale;// 0x29c, size 4 (0x4)
+	__declspec(align(4)) float m_flRadiusScale;// 0x2ac, size 4 (0x4)
 	// m_flRadiusScale metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(1)) bool m_bClampV;// 0x2a0, size 1 (0x1)
+	__declspec(align(1)) bool m_bClampV;// 0x2b0, size 1 (0x1)
 	// m_bClampV metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) float m_flFinalTextureScaleU;// 0x2a4, size 4 (0x4)
+	__declspec(align(4)) float m_flFinalTextureScaleU;// 0x2b4, size 4 (0x4)
 	// m_flFinalTextureScaleU metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) float m_flFinalTextureScaleV;// 0x2a8, size 4 (0x4)
+	__declspec(align(4)) float m_flFinalTextureScaleV;// 0x2b8, size 4 (0x4)
 	// m_flFinalTextureScaleV metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) float m_flFinalTextureOffsetU;// 0x2ac, size 4 (0x4)
+	__declspec(align(4)) float m_flFinalTextureOffsetU;// 0x2bc, size 4 (0x4)
 	// m_flFinalTextureOffsetU metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) float m_flFinalTextureOffsetV;// 0x2b0, size 4 (0x4)
+	__declspec(align(4)) float m_flFinalTextureOffsetV;// 0x2c0, size 4 (0x4)
 	// m_flFinalTextureOffsetV metadata
 	 // MAttributeName
 	 // MDefaultString
-char CBaseTrailRenderer_02C0[0xC];
-}; // size: 704 (0x2c0)
+char CBaseTrailRenderer_02D0[0xC];
+}; // size: 720 (0x2d0)
 
 #pragma pack(push, 16)
-class C_OP_UpdateLightSource : public CParticlePerFrameOperatorInstance
+class C_OP_UpdateLightSource : public CParticleFunctionOperator
 {
 // C_OP_UpdateLightSource additional information
 // particles.dll, project particles
@@ -12812,7 +12779,7 @@ char C_OP_UpdateLightSource_0A0[0x8];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_INIT_LifespanFromVelocity : public CParticleInitializerOperatorInstance
+class C_INIT_LifespanFromVelocity : public CParticleFunctionInitializer
 {
 // C_INIT_LifespanFromVelocity additional information
 // particles.dll, project particles
@@ -12854,6 +12821,19 @@ char C_INIT_LifespanFromVelocity_0124[0x4];
 	 // MDefaultString
 char C_INIT_LifespanFromVelocity_0130[0xB];
 }; // size: 304 (0x130)
+#pragma pack(pop)
+
+#pragma pack(push, 8)
+class CSSDSMsg_ViewRender
+{
+// CSSDSMsg_ViewRender additional information
+// scenesystem.dll, project scenesystem
+// Alignment: 8
+
+public:
+	__declspec(align(8)) SceneViewId_t m_viewId;// 0x0, size 16 (0x10)
+	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_ViewName;// 0x10, size 8 (0x8)
+}; // size: 24 (0x18)
 #pragma pack(pop)
 
 #pragma pack(push, 8)
@@ -13091,475 +13071,483 @@ public:
 	// m_flCustomVictoryMessageDuration metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bCustomGameSetupAutoLaunchEnabled;// 0x1d8, size 1 (0x1)
+	__declspec(align(4)) float m_flHeroSelectPenaltyTime;// 0x1d8, size 4 (0x4)
+	// m_flHeroSelectPenaltyTime metadata
+	 // MNetworkEnable
+	 // MNetworkEnable
+	__declspec(align(1)) bool m_bCustomGameSetupAutoLaunchEnabled;// 0x1dc, size 1 (0x1)
 	// m_bCustomGameSetupAutoLaunchEnabled metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bCustomGameTeamSelectionLocked;// 0x1d9, size 1 (0x1)
+	__declspec(align(1)) bool m_bCustomGameTeamSelectionLocked;// 0x1dd, size 1 (0x1)
 	// m_bCustomGameTeamSelectionLocked metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bCustomGameAllowHeroPickMusic;// 0x1da, size 1 (0x1)
+	__declspec(align(1)) bool m_bCustomGameEnablePickRules;// 0x1de, size 1 (0x1)
+	// m_bCustomGameEnablePickRules metadata
+	 // MNetworkEnable
+	 // MNetworkEnable
+	__declspec(align(1)) bool m_bCustomGameAllowHeroPickMusic;// 0x1df, size 1 (0x1)
 	// m_bCustomGameAllowHeroPickMusic metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bCustomGameAllowMusicAtGameStart;// 0x1db, size 1 (0x1)
+	__declspec(align(1)) bool m_bCustomGameAllowMusicAtGameStart;// 0x1e0, size 1 (0x1)
 	// m_bCustomGameAllowMusicAtGameStart metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bCustomGameAllowBattleMusic;// 0x1dc, size 1 (0x1)
+	__declspec(align(1)) bool m_bCustomGameAllowBattleMusic;// 0x1e1, size 1 (0x1)
 	// m_bCustomGameAllowBattleMusic metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_iCMModePickBanOrder;// 0x1e0, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iCMModePickBanOrder;// 0x1e4, size 4 (0x4)
 	// m_iCMModePickBanOrder metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_iCDModePickBanOrder;// 0x1e4, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iCDModePickBanOrder;// 0x1e8, size 4 (0x4)
 	// m_iCDModePickBanOrder metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_iPauseTeam;// 0x1e8, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iPauseTeam;// 0x1ec, size 4 (0x4)
 	// m_iPauseTeam metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_nGGTeam;// 0x1ec, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nGGTeam;// 0x1f0, size 4 (0x4)
 	// m_nGGTeam metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) float m_flGGEndsAtTime;// 0x1f0, size 4 (0x4)
+	__declspec(align(4)) float m_flGGEndsAtTime;// 0x1f4, size 4 (0x4)
 	// m_flGGEndsAtTime metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bWhiteListEnabled;// 0x1f4, size 1 (0x1)
+	__declspec(align(1)) bool m_bWhiteListEnabled;// 0x1f8, size 1 (0x1)
 	// m_bWhiteListEnabled metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(8)) uint64_t m_bItemWhiteList[4];// 0x1f8, size 32 (0x20)
+	__declspec(align(8)) uint64_t m_bItemWhiteList[4];// 0x200, size 32 (0x20)
 	// m_bItemWhiteList metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkEncoder
 	 // MNetworkChangeCallback
-	__declspec(align(4)) int32_t m_nLastHitUIMode;// 0x218, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nLastHitUIMode;// 0x220, size 4 (0x4)
 	// m_nLastHitUIMode metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkBitCount
-	__declspec(align(1)) bool m_bHUDTimerTutorialMode;// 0x21c, size 1 (0x1)
+	__declspec(align(1)) bool m_bHUDTimerTutorialMode;// 0x224, size 1 (0x1)
 	// m_bHUDTimerTutorialMode metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(8)) CountdownTimer m_HeroPickMiscTimer;// 0x220, size 24 (0x18)
-	__declspec(align(8)) CountdownTimer m_ExtraTimeTimer;// 0x238, size 24 (0x18)
-	__declspec(align(4)) float m_fExtraTimeRemaining[2];// 0x250, size 8 (0x8)
+	__declspec(align(8)) CountdownTimer m_HeroPickMiscTimer;// 0x228, size 24 (0x18)
+	__declspec(align(8)) CountdownTimer m_ExtraTimeTimer;// 0x240, size 24 (0x18)
+	__declspec(align(4)) float m_fExtraTimeRemaining[2];// 0x258, size 8 (0x8)
 	// m_fExtraTimeRemaining metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bRDFirstThink;// 0x258, size 1 (0x1)
-	__declspec(align(1)) bool m_RDMessageSent[64];// 0x259, size 64 (0x40)
-	__declspec(align(1)) bool m_bHeroRespawnEnabled;// 0x299, size 1 (0x1)
+	__declspec(align(1)) bool m_bRDFirstThink;// 0x260, size 1 (0x1)
+	__declspec(align(1)) bool m_RDMessageSent[64];// 0x261, size 64 (0x40)
+	__declspec(align(1)) bool m_bHeroRespawnEnabled;// 0x2a1, size 1 (0x1)
 	// m_bHeroRespawnEnabled metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bIsRandomingEnabled;// 0x29a, size 1 (0x1)
+	__declspec(align(1)) bool m_bIsRandomingEnabled;// 0x2a2, size 1 (0x1)
 	// m_bIsRandomingEnabled metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_iCaptainPlayerIDs[2];// 0x29c, size 8 (0x8)
+	__declspec(align(4)) int32_t m_iCaptainPlayerIDs[2];// 0x2a4, size 8 (0x8)
 	// m_iCaptainPlayerIDs metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_BannedHeroes[12];// 0x2a4, size 48 (0x30)
+	__declspec(align(4)) int32_t m_BannedHeroes[24];// 0x2ac, size 96 (0x60)
 	// m_BannedHeroes metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_SelectedHeroes[10];// 0x2d4, size 40 (0x28)
+	__declspec(align(4)) int32_t m_SelectedHeroes[24];// 0x30c, size 96 (0x60)
 	// m_SelectedHeroes metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_iActiveTeam;// 0x2fc, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iActiveTeam;// 0x36c, size 4 (0x4)
 	// m_iActiveTeam metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_iStartingTeam;// 0x300, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iStartingTeam;// 0x370, size 4 (0x4)
 	// m_iStartingTeam metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_iPenaltyLevelRadiant;// 0x304, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iPenaltyLevelRadiant;// 0x374, size 4 (0x4)
 	// m_iPenaltyLevelRadiant metadata
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_iPenaltyLevelDire;// 0x308, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iPenaltyLevelDire;// 0x378, size 4 (0x4)
 	// m_iPenaltyLevelDire metadata
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bTier3TowerDestroyed;// 0x30c, size 1 (0x1)
+	__declspec(align(1)) bool m_bTier3TowerDestroyed;// 0x37c, size 1 (0x1)
 	// m_bTier3TowerDestroyed metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_nSeriesType;// 0x310, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nSeriesType;// 0x380, size 4 (0x4)
 	// m_nSeriesType metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkBitCount
-	__declspec(align(4)) int32_t m_nRadiantSeriesWins;// 0x314, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nRadiantSeriesWins;// 0x384, size 4 (0x4)
 	// m_nRadiantSeriesWins metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkBitCount
-	__declspec(align(4)) int32_t m_nDireSeriesWins;// 0x318, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nDireSeriesWins;// 0x388, size 4 (0x4)
 	// m_nDireSeriesWins metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkBitCount
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class CHeroesPerPlayer > m_vecAvailableHerosPerPlayerID;// 0x320, size 24 (0x18)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class CHeroesPerPlayer > m_vecAvailableHerosPerPlayerID;// 0x390, size 24 (0x18)
 	// m_vecAvailableHerosPerPlayerID metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-char C_DOTAGamerules_0368[0x30];
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class CHeroesPerPlayer > m_vecLockedHerosByPlayerID;// 0x368, size 24 (0x18)
+char C_DOTAGamerules_03D8[0x30];
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class CHeroesPerPlayer > m_vecLockedHerosByPlayerID;// 0x3d8, size 24 (0x18)
 	// m_vecLockedHerosByPlayerID metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-char C_DOTAGamerules_03B0[0x30];
-	__declspec(align(4)) int32_t m_CustomGameForceSelectHero[24];// 0x3b0, size 96 (0x60)
-	__declspec(align(4)) float m_flGoldTime;// 0x410, size 4 (0x4)
-	__declspec(align(4)) float m_flXPTime;// 0x414, size 4 (0x4)
-	__declspec(align(4)) float m_flCreepSpawntime;// 0x418, size 4 (0x4)
-	__declspec(align(4)) float m_flAnnounceStartTime;// 0x41c, size 4 (0x4)
-	__declspec(align(4)) int32_t m_iGoodTomeCount;// 0x420, size 4 (0x4)
+char C_DOTAGamerules_0420[0x30];
+	__declspec(align(4)) int32_t m_CustomGameForceSelectHero[24];// 0x420, size 96 (0x60)
+	__declspec(align(4)) float m_flGoldTime;// 0x480, size 4 (0x4)
+	__declspec(align(4)) float m_flXPTime;// 0x484, size 4 (0x4)
+	__declspec(align(4)) float m_flCreepSpawntime;// 0x488, size 4 (0x4)
+	__declspec(align(4)) float m_flAnnounceStartTime;// 0x48c, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iGoodTomeCount;// 0x490, size 4 (0x4)
 	// m_iGoodTomeCount metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_iBadTomeCount;// 0x424, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iBadTomeCount;// 0x494, size 4 (0x4)
 	// m_iBadTomeCount metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) float m_flPreGameStartTime;// 0x428, size 4 (0x4)
+	__declspec(align(4)) float m_flPreGameStartTime;// 0x498, size 4 (0x4)
 	// m_flPreGameStartTime metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) float m_flGameStartTime;// 0x42c, size 4 (0x4)
+	__declspec(align(4)) float m_flGameStartTime;// 0x49c, size 4 (0x4)
 	// m_flGameStartTime metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) float m_flGameEndTime;// 0x430, size 4 (0x4)
+	__declspec(align(4)) float m_flGameEndTime;// 0x4a0, size 4 (0x4)
 	// m_flGameEndTime metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) float m_flGameLoadTime;// 0x434, size 4 (0x4)
+	__declspec(align(4)) float m_flGameLoadTime;// 0x4a4, size 4 (0x4)
 	// m_flGameLoadTime metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_iCustomGameScore[2];// 0x438, size 8 (0x8)
+	__declspec(align(4)) int32_t m_iCustomGameScore[2];// 0x4a8, size 8 (0x8)
 	// m_iCustomGameScore metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_nCustomGameDifficulty;// 0x440, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nCustomGameDifficulty;// 0x4b0, size 4 (0x4)
 	// m_nCustomGameDifficulty metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bEnemyModifiersEnabled;// 0x444, size 1 (0x1)
-	__declspec(align(4)) int32_t m_iWaves;// 0x448, size 4 (0x4)
-	__declspec(align(4)) int32_t m_iCreepUpgradeState;// 0x44c, size 4 (0x4)
-	__declspec(align(4)) float m_fGoodGlyphCooldown;// 0x450, size 4 (0x4)
+	__declspec(align(1)) bool m_bEnemyModifiersEnabled;// 0x4b4, size 1 (0x1)
+	__declspec(align(4)) int32_t m_iWaves;// 0x4b8, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iCreepUpgradeState;// 0x4bc, size 4 (0x4)
+	__declspec(align(4)) float m_fGoodGlyphCooldown;// 0x4c0, size 4 (0x4)
 	// m_fGoodGlyphCooldown metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) float m_fBadGlyphCooldown;// 0x454, size 4 (0x4)
+	__declspec(align(4)) float m_fBadGlyphCooldown;// 0x4c4, size 4 (0x4)
 	// m_fBadGlyphCooldown metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) float m_flGlyphCooldowns[14];// 0x458, size 56 (0x38)
+	__declspec(align(4)) float m_flGlyphCooldowns[14];// 0x4c8, size 56 (0x38)
 	// m_flGlyphCooldowns metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) float m_fGoodRadarCooldown;// 0x490, size 4 (0x4)
+	__declspec(align(4)) float m_fGoodRadarCooldown;// 0x500, size 4 (0x4)
 	// m_fGoodRadarCooldown metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) float m_fBadRadarCooldown;// 0x494, size 4 (0x4)
+	__declspec(align(4)) float m_fBadRadarCooldown;// 0x504, size 4 (0x4)
 	// m_fBadRadarCooldown metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) float m_flRadarCooldowns[14];// 0x498, size 56 (0x38)
+	__declspec(align(4)) float m_flRadarCooldowns[14];// 0x508, size 56 (0x38)
 	// m_flRadarCooldowns metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bIsNightstalkerNight;// 0x4d0, size 1 (0x1)
+	__declspec(align(1)) bool m_bIsNightstalkerNight;// 0x540, size 1 (0x1)
 	// m_bIsNightstalkerNight metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bIsTemporaryNight;// 0x4d1, size 1 (0x1)
+	__declspec(align(1)) bool m_bIsTemporaryNight;// 0x541, size 1 (0x1)
 	// m_bIsTemporaryNight metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bIsTemporaryDay;// 0x4d2, size 1 (0x1)
+	__declspec(align(1)) bool m_bIsTemporaryDay;// 0x542, size 1 (0x1)
 	// m_bIsTemporaryDay metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_nRiverType;// 0x4d4, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nRiverType;// 0x544, size 4 (0x4)
 	// m_nRiverType metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) float m_flGoldRedistributeTime;// 0x4d8, size 4 (0x4)
-	__declspec(align(4)) int32_t m_nGoldToRedistribute[2];// 0x4dc, size 8 (0x8)
-	__declspec(align(4)) float m_flNextPreGameThink;// 0x4e4, size 4 (0x4)
-	__declspec(align(4)) float m_flNextAllDraftGoldThink;// 0x4e8, size 4 (0x4)
-	__declspec(align(8)) double m_flTimeEnteredState;// 0x4f0, size 8 (0x8)
-	__declspec(align(4)) uint32_t m_unRiverAccountID;// 0x4f8, size 4 (0x4)
-	__declspec(align(8)) uint64_t m_ulRiverItemID;// 0x500, size 8 (0x8)
-char C_DOTAGamerules_0548[0x40];
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class CDOTA_ItemStockInfo > m_vecItemStockInfo;// 0x548, size 24 (0x18)
+	__declspec(align(4)) float m_flGoldRedistributeTime;// 0x548, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nGoldToRedistribute[2];// 0x54c, size 8 (0x8)
+	__declspec(align(4)) float m_flNextPreGameThink;// 0x554, size 4 (0x4)
+	__declspec(align(4)) float m_flNextAllDraftGoldThink;// 0x558, size 4 (0x4)
+	__declspec(align(8)) double m_flTimeEnteredState;// 0x560, size 8 (0x8)
+	__declspec(align(4)) uint32_t m_unRiverAccountID;// 0x568, size 4 (0x4)
+	__declspec(align(8)) uint64_t m_ulRiverItemID;// 0x570, size 8 (0x8)
+char C_DOTAGamerules_05B8[0x40];
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class CDOTA_ItemStockInfo > m_vecItemStockInfo;// 0x5b8, size 24 (0x18)
 	// m_vecItemStockInfo metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-char C_DOTAGamerules_0590[0x30];
-	__declspec(align(8)) DOTA_AssassinMinigameNetworkState m_AssassinMiniGameNetData;// 0x590, size 16 (0x10)
+char C_DOTAGamerules_0600[0x30];
+	__declspec(align(8)) DOTA_AssassinMinigameNetworkState m_AssassinMiniGameNetData;// 0x600, size 16 (0x10)
 	// m_AssassinMiniGameNetData metadata
 	 // MNetworkEnable
 	 // MNetworkVarEmbeddedUnderlyingType
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_nGameWinner;// 0x5a0, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nGameWinner;// 0x610, size 4 (0x4)
 	// m_nGameWinner metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(8)) uint64_t m_unMatchID64;// 0x5a8, size 8 (0x8)
+	__declspec(align(8)) uint64_t m_unMatchID64;// 0x618, size 8 (0x8)
 	// m_unMatchID64 metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bMatchSignoutComplete;// 0x5b0, size 1 (0x1)
+	__declspec(align(1)) bool m_bMatchSignoutComplete;// 0x620, size 1 (0x1)
 	// m_bMatchSignoutComplete metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class C_BaseEntity > m_hSideShop1;// 0x5b4, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class C_BaseEntity > m_hSideShop1;// 0x624, size 4 (0x4)
 	// m_hSideShop1 metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class C_BaseEntity > m_hSideShop2;// 0x5b8, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class C_BaseEntity > m_hSideShop2;// 0x628, size 4 (0x4)
 	// m_hSideShop2 metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class C_BaseEntity > m_hSecretShop1;// 0x5bc, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class C_BaseEntity > m_hSecretShop1;// 0x62c, size 4 (0x4)
 	// m_hSecretShop1 metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class C_BaseEntity > m_hSecretShop2;// 0x5c0, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class C_BaseEntity > m_hSecretShop2;// 0x630, size 4 (0x4)
 	// m_hSecretShop2 metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class C_BaseEntity > m_hTeamFountains[14];// 0x5c4, size 56 (0x38)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class C_BaseEntity > m_hTeamFountains[14];// 0x634, size 56 (0x38)
 	// m_hTeamFountains metadata
 	 // MNetworkEnable
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class C_BaseEntity > m_hTeamForts[14];// 0x5fc, size 56 (0x38)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class C_BaseEntity > m_hTeamForts[14];// 0x66c, size 56 (0x38)
 	// m_hTeamForts metadata
 	 // MNetworkEnable
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class C_BaseEntity > m_hTeamShops[14];// 0x634, size 56 (0x38)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class C_BaseEntity > m_hTeamShops[14];// 0x6a4, size 56 (0x38)
 	// m_hTeamShops metadata
 	 // MNetworkEnable
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class C_BaseEntity > m_hAnnouncerGood;// 0x66c, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class C_BaseEntity > m_hAnnouncerGood;// 0x6dc, size 4 (0x4)
 	// m_hAnnouncerGood metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class C_BaseEntity > m_hAnnouncerBad;// 0x670, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class C_BaseEntity > m_hAnnouncerBad;// 0x6e0, size 4 (0x4)
 	// m_hAnnouncerBad metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class C_BaseEntity > m_hAnnouncerSpectator;// 0x674, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class C_BaseEntity > m_hAnnouncerSpectator;// 0x6e4, size 4 (0x4)
 	// m_hAnnouncerSpectator metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class C_BaseEntity > m_hAnnouncerGood_KillingSpree;// 0x678, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class C_BaseEntity > m_hAnnouncerGood_KillingSpree;// 0x6e8, size 4 (0x4)
 	// m_hAnnouncerGood_KillingSpree metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class C_BaseEntity > m_hAnnouncerBad_KillingSpree;// 0x67c, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class C_BaseEntity > m_hAnnouncerBad_KillingSpree;// 0x6ec, size 4 (0x4)
 	// m_hAnnouncerBad_KillingSpree metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class C_BaseEntity > m_hAnnouncerSpectator_KillingSpree;// 0x680, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class C_BaseEntity > m_hAnnouncerSpectator_KillingSpree;// 0x6f0, size 4 (0x4)
 	// m_hAnnouncerSpectator_KillingSpree metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) float m_fGameTime;// 0x684, size 4 (0x4)
+	__declspec(align(4)) float m_fGameTime;// 0x6f4, size 4 (0x4)
 	// m_fGameTime metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkPriority
-	__declspec(align(4)) float m_fTimeOfDay;// 0x688, size 4 (0x4)
-	__declspec(align(4)) int32_t m_iNetTimeOfDay;// 0x68c, size 4 (0x4)
+	__declspec(align(4)) float m_fTimeOfDay;// 0x6f8, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iNetTimeOfDay;// 0x6fc, size 4 (0x4)
 	// m_iNetTimeOfDay metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkBitCount
 	 // MNetworkPriority
-	__declspec(align(4)) int32_t m_nLoadedPlayers;// 0x690, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nLoadedPlayers;// 0x700, size 4 (0x4)
 	// m_nLoadedPlayers metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_nExpectedPlayers;// 0x694, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nExpectedPlayers;// 0x704, size 4 (0x4)
 	// m_nExpectedPlayers metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-char C_DOTAGamerules_06A0[0x8];
-	__declspec(align(4)) int32_t m_iMinimapDebugGridState;// 0x6a0, size 4 (0x4)
+char C_DOTAGamerules_0710[0x8];
+	__declspec(align(4)) int32_t m_iMinimapDebugGridState;// 0x710, size 4 (0x4)
 	// m_iMinimapDebugGridState metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-char C_DOTAGamerules_0718[0x74];
-	__declspec(align(4)) int32_t m_iFoWFrameNumber;// 0x718, size 4 (0x4)
+char C_DOTAGamerules_0788[0x74];
+	__declspec(align(4)) int32_t m_iFoWFrameNumber;// 0x788, size 4 (0x4)
 	// m_iFoWFrameNumber metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkBitCount
 	 // MNetworkPriority
-	__declspec(align(1)) bool m_bIsStableMode;// 0x71c, size 1 (0x1)
+	__declspec(align(1)) bool m_bIsStableMode;// 0x78c, size 1 (0x1)
 	// m_bIsStableMode metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkChangeCallback
-	__declspec(align(1)) bool m_bGamePaused;// 0x71d, size 1 (0x1)
+	__declspec(align(1)) bool m_bGamePaused;// 0x78d, size 1 (0x1)
 	// m_bGamePaused metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) float m_fPauseRawTime;// 0x720, size 4 (0x4)
-	__declspec(align(4)) float m_fPauseCurTime;// 0x724, size 4 (0x4)
-	__declspec(align(4)) float m_fUnpauseRawTime;// 0x728, size 4 (0x4)
-	__declspec(align(4)) float m_fUnpauseCurTime;// 0x72c, size 4 (0x4)
-	__declspec(align(4)) int32_t m_nCustomGameFowTeamCount;// 0x730, size 4 (0x4)
-	__declspec(align(1)) bool m_bUseAlternateABRules;// 0x734, size 1 (0x1)
-	__declspec(align(1)) bool m_bLobbyIsAssociatedWithGame;// 0x735, size 1 (0x1)
-	__declspec(align(8)) CountdownTimer m_BotDebugTimer;// 0x738, size 24 (0x18)
-	__declspec(align(1)) uint8_t m_BotDebugPushLane[18];// 0x750, size 18 (0x12)
+	__declspec(align(4)) float m_fPauseRawTime;// 0x790, size 4 (0x4)
+	__declspec(align(4)) float m_fPauseCurTime;// 0x794, size 4 (0x4)
+	__declspec(align(4)) float m_fUnpauseRawTime;// 0x798, size 4 (0x4)
+	__declspec(align(4)) float m_fUnpauseCurTime;// 0x79c, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nCustomGameFowTeamCount;// 0x7a0, size 4 (0x4)
+	__declspec(align(1)) bool m_bUseAlternateABRules;// 0x7a4, size 1 (0x1)
+	__declspec(align(1)) bool m_bLobbyIsAssociatedWithGame;// 0x7a5, size 1 (0x1)
+	__declspec(align(8)) CountdownTimer m_BotDebugTimer;// 0x7a8, size 24 (0x18)
+	__declspec(align(1)) uint8_t m_BotDebugPushLane[18];// 0x7c0, size 18 (0x12)
 	// m_BotDebugPushLane metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkPriority
-	__declspec(align(1)) uint8_t m_BotDebugDefendLane[18];// 0x762, size 18 (0x12)
+	__declspec(align(1)) uint8_t m_BotDebugDefendLane[18];// 0x7d2, size 18 (0x12)
 	// m_BotDebugDefendLane metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) uint8_t m_BotDebugFarmLane[6];// 0x774, size 6 (0x6)
+	__declspec(align(1)) uint8_t m_BotDebugFarmLane[6];// 0x7e4, size 6 (0x6)
 	// m_BotDebugFarmLane metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) uint8_t m_BotDebugRoam[8];// 0x77a, size 8 (0x8)
+	__declspec(align(1)) uint8_t m_BotDebugRoam[8];// 0x7ea, size 8 (0x8)
 	// m_BotDebugRoam metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class C_BaseEntity > m_hBotDebugRoamTarget[2];// 0x784, size 8 (0x8)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class C_BaseEntity > m_hBotDebugRoamTarget[2];// 0x7f4, size 8 (0x8)
 	// m_hBotDebugRoamTarget metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) uint8_t m_BotDebugRoshan[2];// 0x78c, size 2 (0x2)
+	__declspec(align(1)) uint8_t m_BotDebugRoshan[2];// 0x7fc, size 2 (0x2)
 	// m_BotDebugRoshan metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) ERoshanSpawnPhase m_nRoshanRespawnPhase;// 0x790, size 4 (0x4)
+	__declspec(align(4)) ERoshanSpawnPhase m_nRoshanRespawnPhase;// 0x800, size 4 (0x4)
 	// m_nRoshanRespawnPhase metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) float m_flRoshanRespawnPhaseEndTime;// 0x794, size 4 (0x4)
+	__declspec(align(4)) float m_flRoshanRespawnPhaseEndTime;// 0x804, size 4 (0x4)
 	// m_flRoshanRespawnPhaseEndTime metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class CDOTA_AbilityDraftAbilityState > m_AbilityDraftAbilities;// 0x798, size 24 (0x18)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class CDOTA_AbilityDraftAbilityState > m_AbilityDraftAbilities;// 0x808, size 24 (0x18)
 	// m_AbilityDraftAbilities metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkTypeAlias
-char C_DOTAGamerules_07E0[0x30];
-	__declspec(align(1)) bool m_bAbilityDraftCurrentPlayerHasPicked;// 0x7e0, size 1 (0x1)
+char C_DOTAGamerules_0850[0x30];
+	__declspec(align(1)) bool m_bAbilityDraftCurrentPlayerHasPicked;// 0x850, size 1 (0x1)
 	// m_bAbilityDraftCurrentPlayerHasPicked metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_nAbilityDraftPlayerTracker;// 0x7e4, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nAbilityDraftPlayerTracker;// 0x854, size 4 (0x4)
 	// m_nAbilityDraftPlayerTracker metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_nAbilityDraftRoundNumber;// 0x7e8, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nAbilityDraftRoundNumber;// 0x858, size 4 (0x4)
 	// m_nAbilityDraftRoundNumber metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_nAbilityDraftAdvanceSteps;// 0x7ec, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nAbilityDraftAdvanceSteps;// 0x85c, size 4 (0x4)
 	// m_nAbilityDraftAdvanceSteps metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_nAbilityDraftPhase;// 0x7f0, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nAbilityDraftPhase;// 0x860, size 4 (0x4)
 	// m_nAbilityDraftPhase metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_nAbilityDraftHeroesChosen[13];// 0x7f4, size 52 (0x34)
+	__declspec(align(4)) int32_t m_nAbilityDraftHeroesChosen[13];// 0x864, size 52 (0x34)
 	// m_nAbilityDraftHeroesChosen metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkChangeCallback
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownType <0x1, class KeyValues> *> m_vecARDMHeroes[2];// 0x828, size 48 (0x30)
-	__declspec(align(4)) int32_t m_nARDMHeroesPrecached;// 0x858, size 4 (0x4)
-	__declspec(align(4)) float m_fLastARDMPrecache;// 0x85c, size 4 (0x4)
-	__declspec(align(4)) int32_t m_nAllDraftPhase;// 0x860, size 4 (0x4)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownType <0x1, class KeyValues> *> m_vecARDMHeroes[2];// 0x898, size 48 (0x30)
+	__declspec(align(4)) int32_t m_nARDMHeroesPrecached;// 0x8c8, size 4 (0x4)
+	__declspec(align(4)) float m_fLastARDMPrecache;// 0x8cc, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nAllDraftPhase;// 0x8d0, size 4 (0x4)
 	// m_nAllDraftPhase metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bAllDraftRadiantFirst;// 0x864, size 1 (0x1)
+	__declspec(align(1)) bool m_bAllDraftRadiantFirst;// 0x8d4, size 1 (0x1)
 	// m_bAllDraftRadiantFirst metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bAllowOverrideVPK;// 0x865, size 1 (0x1)
+	__declspec(align(1)) bool m_bAllowOverrideVPK;// 0x8d5, size 1 (0x1)
 	// m_bAllowOverrideVPK metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_nARDMHeroesRemaining[2];// 0x868, size 8 (0x8)
+	__declspec(align(4)) int32_t m_nARDMHeroesRemaining[2];// 0x8d8, size 8 (0x8)
 	// m_nARDMHeroesRemaining metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_BAbilityDraftHeroesChosenChanged;// 0x870, size 1 (0x1)
-	__declspec(align(1)) bool m_bUpdateHeroStatues;// 0x871, size 1 (0x1)
-char C_DOTAGamerules_08C8[0x50];
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, int32_t > m_vecPlayerMMR;// 0x8c8, size 24 (0x18)
-	__declspec(align(4)) uint32_t m_lobbyType;// 0x8e0, size 4 (0x4)
+	__declspec(align(1)) bool m_BAbilityDraftHeroesChosenChanged;// 0x8e0, size 1 (0x1)
+	__declspec(align(1)) bool m_bUpdateHeroStatues;// 0x8e1, size 1 (0x1)
+char C_DOTAGamerules_0938[0x50];
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, int32_t > m_vecPlayerMMR;// 0x938, size 24 (0x18)
+	__declspec(align(4)) uint32_t m_lobbyType;// 0x950, size 4 (0x4)
 	// m_lobbyType metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) uint32_t m_lobbyLeagueID;// 0x8e4, size 4 (0x4)
+	__declspec(align(4)) uint32_t m_lobbyLeagueID;// 0x954, size 4 (0x4)
 	// m_lobbyLeagueID metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkBitCount
-	__declspec(align(1)) char m_lobbyGameName[256];// 0x8e8, size 256 (0x100)
+	__declspec(align(1)) char m_lobbyGameName[256];// 0x958, size 256 (0x100)
 	// m_lobbyGameName metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class CHeroStatueLiked > m_vecHeroStatueLiked;// 0x9e8, size 24 (0x18)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class CHeroStatueLiked > m_vecHeroStatueLiked;// 0xa58, size 24 (0x18)
 	// m_vecHeroStatueLiked metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkChangeCallback
-char C_DOTAGamerules_0A30[0x30];
-	__declspec(align(4)) int32_t m_CustomGameTeamMaxPlayers[14];// 0xa30, size 56 (0x38)
+char C_DOTAGamerules_0AA0[0x30];
+	__declspec(align(4)) int32_t m_CustomGameTeamMaxPlayers[14];// 0xaa0, size 56 (0x38)
 	// m_CustomGameTeamMaxPlayers metadata
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_iMutations[5];// 0xa68, size 20 (0x14)
+	__declspec(align(4)) int32_t m_iMutations[5];// 0xad8, size 20 (0x14)
 	// m_iMutations metadata
 	 // MNetworkEnable
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownAtomicType <0x4, CHandle, class C_IngameEvent_Base > > m_vecIngameEvents;// 0xa80, size 24 (0x18)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownAtomicType <0x4, CHandle, class C_IngameEvent_Base > > m_vecIngameEvents;// 0xaf0, size 24 (0x18)
 	// m_vecIngameEvents metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) int8_t m_nPrimaryIngameEventIndex;// 0xa98, size 1 (0x1)
+	__declspec(align(1)) int8_t m_nPrimaryIngameEventIndex;// 0xb08, size 1 (0x1)
 	// m_nPrimaryIngameEventIndex metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class C_IngameEvent_Base > m_hObsoleteIngameEvent;// 0xa9c, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class C_IngameEvent_Base > m_hObsoleteIngameEvent;// 0xb0c, size 4 (0x4)
 	// m_hObsoleteIngameEvent metadata
 	 // MNetworkEnable
 	 // MNetworkChangeCallback
 	 // MNetworkAlias
-char C_DOTAGamerules_0AD0[0x30];
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class AABB_t > m_NeutralSpawnBoxes;// 0xad0, size 24 (0x18)
+char C_DOTAGamerules_0B40[0x30];
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class AABB_t > m_NeutralSpawnBoxes;// 0xb40, size 24 (0x18)
 	// m_NeutralSpawnBoxes metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-}; // size: 2792 (0xae8)
+}; // size: 2904 (0xb58)
 
 #pragma pack(push, 8)
 class CEntityIOOutput : public SchemaBase
@@ -13609,7 +13597,7 @@ public:
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_INIT_CreateWithinSphere : public CParticleInitializerOperatorInstance
+class C_INIT_CreateWithinSphere : public CParticleFunctionInitializer
 {
 // C_INIT_CreateWithinSphere additional information
 // particles.dll, project particles
@@ -13675,6 +13663,7 @@ char C_INIT_CreateWithinSphere_0B6[0x1];
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
+	 // MParticleMaxVersion
 	__declspec(align(4)) float m_flEndCPGrowthTime;// 0xb8, size 4 (0x4)
 	// m_flEndCPGrowthTime metadata
 	 // MAttributeName
@@ -13709,7 +13698,7 @@ class CPointConstraint : public CBaseConstraint
 // SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
 
 public:
-}; // size: 80 (0x50)
+}; // size: 112 (0x70)
 #pragma pack(pop)
 
 #pragma pack(push, 8)
@@ -13764,7 +13753,7 @@ char CInteractionManager_0C0[0x5];
 }; // size: 216 (0xd8)
 
 #pragma pack(push, 16)
-class C_INIT_SequenceFromCP : public CParticleInitializerOperatorInstance
+class C_INIT_SequenceFromCP : public CParticleFunctionInitializer
 {
 // C_INIT_SequenceFromCP additional information
 // particles.dll, project particles
@@ -13794,26 +13783,58 @@ char C_INIT_SequenceFromCP_0A0[0xC];
 #pragma pack(pop)
 
 #pragma pack(push, 8)
-class CIntAnimParameter : public CAnimParameterBase
+class CBoneMaskAnimNode : public CAnimNodeBase
 {
-// CIntAnimParameter additional information
+// CBoneMaskAnimNode additional information
 // animationsystem.dll, project animationsystem
 // Alignment: 8
 // SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+// SCHEMA_CLASS_TEMP_HACK_HAS_NOSCHEMA_MEMBERS
 // SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
 
 public:
-	__declspec(align(4)) int32_t m_defaultValue;// 0x30, size 4 (0x4)
-	// m_defaultValue metadata
+	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_weightListName;// 0x38, size 8 (0x8)
+	// m_weightListName metadata
 	 // MPropertyFriendlyName
-	__declspec(align(4)) int32_t m_minValue;// 0x34, size 4 (0x4)
-	// m_minValue metadata
+	 // MPropertyAttributeChoiceName
+	__declspec(align(4)) AnimNodeID m_child1ID;// 0x40, size 4 (0x4)
+	// m_child1ID metadata
+	 // MPropertyHideField
+	__declspec(align(4)) AnimNodeID m_child2ID;// 0x44, size 4 (0x4)
+	// m_child2ID metadata
+	 // MPropertyHideField
+	__declspec(align(4)) BoneMaskBlendSpace m_blendSpace;// 0x48, size 4 (0x4)
+	// m_blendSpace metadata
 	 // MPropertyFriendlyName
-	__declspec(align(4)) int32_t m_maxValue;// 0x38, size 4 (0x4)
-	// m_maxValue metadata
+	__declspec(align(1)) bool m_bUseBlendScale;// 0x4c, size 1 (0x1)
+	// m_bUseBlendScale metadata
 	 // MPropertyFriendlyName
-char CIntAnimParameter_040[0x4];
-}; // size: 64 (0x40)
+	__declspec(align(4)) AnimValueSource m_blendValueSource;// 0x50, size 4 (0x4)
+	// m_blendValueSource metadata
+	 // MPropertyFriendlyName
+	__declspec(align(4)) AnimParamID m_blendParameter;// 0x54, size 4 (0x4)
+	// m_blendParameter metadata
+	 // MPropertyFriendlyName
+	 // MPropertyAttributeChoiceName
+	__declspec(align(4)) BinaryNodeTiming m_timingBehavior;// 0x58, size 4 (0x4)
+	// m_timingBehavior metadata
+	 // MPropertyFriendlyName
+	__declspec(align(4)) float m_flTimingBlend;// 0x5c, size 4 (0x4)
+	// m_flTimingBlend metadata
+	 // MPropertyFriendlyName
+	 // MPropertyAttributeRange
+	__declspec(align(4)) float m_flRootMotionBlend;// 0x60, size 4 (0x4)
+	// m_flRootMotionBlend metadata
+	 // MPropertyFriendlyName
+	 // MPropertyAttributeRange
+	__declspec(align(1)) bool m_bResetChild1;// 0x64, size 1 (0x1)
+	// m_bResetChild1 metadata
+	 // MPropertyFriendlyName
+	__declspec(align(1)) bool m_bResetChild2;// 0x65, size 1 (0x1)
+	// m_bResetChild2 metadata
+	 // MPropertyFriendlyName
+char CBoneMaskAnimNode_070[0xA];
+}; // size: 112 (0x70)
 #pragma pack(pop)
 
 #pragma pack(push, 4)
@@ -13862,6 +13883,24 @@ public:
 	__declspec(align(4)) float m_flRealTime;// 0x28, size 4 (0x4)
 	__declspec(align(4)) float m_flFrameTime;// 0x2c, size 4 (0x4)
 }; // size: 48 (0x30)
+#pragma pack(pop)
+
+#pragma pack(push, 16)
+class FeBoxRigid_t
+{
+// FeBoxRigid_t additional information
+// resourcesystem.dll, project mathlib_extended
+// Alignment: 16
+// SCHEMA_CLASS_HAS_TRIVIAL_DESTRUCTOR
+
+public:
+	__declspec(align(2)) uint16_t nNode;// 0x0, size 2 (0x2)
+	__declspec(align(2)) uint16_t nCollisionMask;// 0x2, size 2 (0x2)
+	__declspec(align(4)) UnknownType <0xc, class Vector> vSize;// 0x4, size 12 (0xc)
+	__declspec(align(4)) float flStickiness;// 0x10, size 4 (0x4)
+	__declspec(align(4)) float flReserved[3];// 0x14, size 12 (0xc)
+	__declspec(align(16)) UnknownType <0x30, class matrix3x4a_t> tmFrame;// 0x20, size 48 (0x30)
+}; // size: 80 (0x50)
 #pragma pack(pop)
 
 #pragma pack(push, 4)
@@ -14047,7 +14086,7 @@ public:
 class SheetSequence_t
 {
 // SheetSequence_t additional information
-// rendersystemdx9.dll, project rendersystemdx9
+// rendersystemdx11.dll, project rendersystemdx11
 // Alignment: 4
 // SCHEMA_CLASS_HAS_TRIVIAL_DESTRUCTOR
 
@@ -14068,7 +14107,7 @@ public:
 class SequenceFloatParam_t
 {
 // SequenceFloatParam_t additional information
-// rendersystemdx9.dll, project rendersystemdx9
+// rendersystemdx11.dll, project rendersystemdx11
 // Alignment: 4
 // SCHEMA_CLASS_HAS_TRIVIAL_DESTRUCTOR
 
@@ -14126,17 +14165,20 @@ public:
 char CFlashlightEffect_018[0xF];
 	__declspec(align(1)) bool m_bMuzzleFlashEnabled;// 0x18, size 1 (0x1)
 	__declspec(align(4)) float m_flMuzzleFlashBrightness;// 0x1c, size 4 (0x4)
-	__declspec(align(4)) float m_flFov;// 0x20, size 4 (0x4)
-	__declspec(align(4)) float m_flFarZ;// 0x24, size 4 (0x4)
-	__declspec(align(4)) float m_flLinearAtten;// 0x28, size 4 (0x4)
-	__declspec(align(1)) bool m_bCastsShadows;// 0x2c, size 1 (0x1)
-	__declspec(align(4)) float m_flCurrentPullBackDist;// 0x30, size 4 (0x4)
-	__declspec(align(8)) UnknownAtomicType <0x8, CStrongHandle, class InfoForResourceTypeCTextureBase > m_FlashlightTexture;// 0x38, size 8 (0x8)
-	__declspec(align(8)) UnknownAtomicType <0x8, CStrongHandle, class InfoForResourceTypeCTextureBase > m_MuzzleFlashTexture;// 0x40, size 8 (0x8)
-	__declspec(align(8)) UnknownAtomicType <0x8, CWeakHandle, class InfoForResourceTypeCTextureBase > m_hCurrentFlashlightTexture;// 0x48, size 8 (0x8)
-	__declspec(align(1)) char m_textureName[64];// 0x50, size 64 (0x40)
-char CFlashlightEffect_02B0[0x220];
-}; // size: 688 (0x2b0)
+	__declspec(align(4)) UnknownType <0x10, class Quaternion> m_quatMuzzleFlashOrientation;// 0x20, size 16 (0x10)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecMuzzleFlashOrigin;// 0x30, size 12 (0xc)
+	__declspec(align(4)) float m_flDT;// 0x3c, size 4 (0x4)
+	__declspec(align(4)) float m_flFov;// 0x40, size 4 (0x4)
+	__declspec(align(4)) float m_flFarZ;// 0x44, size 4 (0x4)
+	__declspec(align(4)) float m_flLinearAtten;// 0x48, size 4 (0x4)
+	__declspec(align(1)) bool m_bCastsShadows;// 0x4c, size 1 (0x1)
+	__declspec(align(4)) float m_flCurrentPullBackDist;// 0x50, size 4 (0x4)
+	__declspec(align(8)) UnknownAtomicType <0x8, CStrongHandle, class InfoForResourceTypeCTextureBase > m_FlashlightTexture;// 0x58, size 8 (0x8)
+	__declspec(align(8)) UnknownAtomicType <0x8, CStrongHandle, class InfoForResourceTypeCTextureBase > m_MuzzleFlashTexture;// 0x60, size 8 (0x8)
+	__declspec(align(8)) UnknownAtomicType <0x8, CWeakHandle, class InfoForResourceTypeCTextureBase > m_hCurrentFlashlightTexture;// 0x68, size 8 (0x8)
+	__declspec(align(1)) char m_textureName[64];// 0x70, size 64 (0x40)
+char CFlashlightEffect_02E0[0x230];
+}; // size: 736 (0x2e0)
 
 #pragma pack(push, 8)
 class CLookAtAnimNode : public CAnimNodeBase
@@ -14159,11 +14201,11 @@ char CLookAtAnimNode_03C[0x4];
 	__declspec(align(4)) AnimParamID m_param;// 0x44, size 4 (0x4)
 	// m_param metadata
 	 // MPropertyFriendlyName
-	 // MPropertyChoiceProviderFn
+	 // MPropertyAttributeChoiceName
 	__declspec(align(4)) AnimParamID m_weightParam;// 0x48, size 4 (0x4)
 	// m_weightParam metadata
 	 // MPropertyFriendlyName
-	 // MPropertyChoiceProviderFn
+	 // MPropertyAttributeChoiceName
 	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_lookatChainName;// 0x50, size 8 (0x8)
 	// m_lookatChainName metadata
 	 // MPropertyFriendlyName
@@ -14332,7 +14374,7 @@ public:
 }; // size: 40 (0x28)
 
 #pragma pack(push, 16)
-class C_OP_MaxVelocity : public CParticlePerFrameOperatorInstance
+class C_OP_MaxVelocity : public CParticleFunctionOperator
 {
 // C_OP_MaxVelocity additional information
 // particles.dll, project particles
@@ -14360,7 +14402,7 @@ char C_OP_MaxVelocity_090[0x4];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_OscillateVectorSimple : public CParticlePerFrameOperatorInstance
+class C_OP_OscillateVectorSimple : public CParticleFunctionOperator
 {
 // C_OP_OscillateVectorSimple additional information
 // particles.dll, project particles
@@ -14556,22 +14598,8 @@ char CTakeDamageInfo_088[0x2];
 }; // size: 144 (0x90)
 #pragma pack(pop)
 
-#pragma pack(push, 8)
-class CSSDSMsg_ViewTargetList
-{
-// CSSDSMsg_ViewTargetList additional information
-// scenesystem.dll, project scenesystem
-// Alignment: 8
-
-public:
-	__declspec(align(8)) SceneViewId_t m_viewId;// 0x0, size 16 (0x10)
-	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_ViewName;// 0x10, size 8 (0x8)
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class CSSDSMsg_ViewTarget > m_Targets;// 0x18, size 24 (0x18)
-}; // size: 48 (0x30)
-#pragma pack(pop)
-
 #pragma pack(push, 16)
-class C_OP_VelocityMatchingForce : public CParticlePerFrameOperatorInstance
+class C_OP_VelocityMatchingForce : public CParticleFunctionOperator
 {
 // C_OP_VelocityMatchingForce additional information
 // particles.dll, project particles
@@ -14598,6 +14626,20 @@ char C_OP_VelocityMatchingForce_090[0x4];
 }; // size: 144 (0x90)
 #pragma pack(pop)
 
+#pragma pack(push, 8)
+class CSSDSMsg_ViewTargetList
+{
+// CSSDSMsg_ViewTargetList additional information
+// scenesystem.dll, project scenesystem
+// Alignment: 8
+
+public:
+	__declspec(align(8)) SceneViewId_t m_viewId;// 0x0, size 16 (0x10)
+	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_ViewName;// 0x10, size 8 (0x8)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class CSSDSMsg_ViewTarget > m_Targets;// 0x18, size 24 (0x18)
+}; // size: 48 (0x30)
+#pragma pack(pop)
+
 #pragma pack(push, 16)
 class FeSimdAnimStrayRadius_t
 {
@@ -14615,7 +14657,7 @@ public:
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_RenderBlobs : public CParticleRenderOperatorInstance
+class C_OP_RenderBlobs : public CParticleFunctionRenderer
 {
 // C_OP_RenderBlobs additional information
 // particles.dll, project particles
@@ -14623,32 +14665,57 @@ class C_OP_RenderBlobs : public CParticleRenderOperatorInstance
 // SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
 
 public:
-	__declspec(align(4)) float m_cubeWidth;// 0xc0, size 4 (0x4)
+	__declspec(align(4)) float m_cubeWidth;// 0xd0, size 4 (0x4)
 	// m_cubeWidth metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) float m_cutoffRadius;// 0xc4, size 4 (0x4)
+	__declspec(align(4)) float m_cutoffRadius;// 0xd4, size 4 (0x4)
 	// m_cutoffRadius metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) float m_renderRadius;// 0xc8, size 4 (0x4)
+	__declspec(align(4)) float m_renderRadius;// 0xd8, size 4 (0x4)
 	// m_renderRadius metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) int32_t m_nScaleCP;// 0xcc, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nScaleCP;// 0xdc, size 4 (0x4)
 	// m_nScaleCP metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(8)) UnknownAtomicType <0x8, CResourceExtReference, UnknownAtomicType <0x8, CWeakHandle, class InfoForResourceTypeIMaterial2 > > m_hMaterial;// 0xd0, size 8 (0x8)
+	__declspec(align(8)) UnknownAtomicType <0x8, CResourceExtReference, UnknownAtomicType <0x8, CWeakHandle, class InfoForResourceTypeIMaterial2 > > m_hMaterial;// 0xe0, size 8 (0x8)
 	// m_hMaterial metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyAttributeEditor
-char C_OP_RenderBlobs_0E0[0x8];
-}; // size: 224 (0xe0)
+char C_OP_RenderBlobs_0F0[0x8];
+}; // size: 240 (0xf0)
+#pragma pack(pop)
+
+#pragma pack(push, 8)
+class CIKLockAnimNode : public CAnimNodeBase
+{
+// CIKLockAnimNode additional information
+// animationsystem.dll, project animationsystem
+// Alignment: 8
+// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+// SCHEMA_CLASS_TEMP_HACK_HAS_NOSCHEMA_MEMBERS
+// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
+
+public:
+	__declspec(align(4)) AnimNodeID m_childID;// 0x38, size 4 (0x4)
+	// m_childID metadata
+	 // MPropertyHideField
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownType <0x8, class CUtlString> > m_IkChains;// 0x40, size 24 (0x18)
+	// m_IkChains metadata
+	 // MPropertyFriendlyName
+	 // MPropertyAttributeChoiceName
+	__declspec(align(1)) bool m_bDebug;// 0x58, size 1 (0x1)
+	// m_bDebug metadata
+	 // MPropertyFriendlyName
+char CIKLockAnimNode_060[0x7];
+}; // size: 96 (0x60)
 #pragma pack(pop)
 
 #pragma pack(push, 8)
@@ -14750,7 +14817,7 @@ char CDotaEntityFilterFlags_020[0x6];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_ControlpointLight : public CParticlePerFrameOperatorInstance
+class C_OP_ControlpointLight : public CParticleFunctionOperator
 {
 // C_OP_ControlpointLight additional information
 // particles.dll, project particles
@@ -14764,170 +14831,170 @@ public:
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
-char C_OP_ControlpointLight_03F4[0x370];
-	__declspec(align(4)) int32_t m_nControlPoint1;// 0x3f4, size 4 (0x4)
+char C_OP_ControlpointLight_0404[0x380];
+	__declspec(align(4)) int32_t m_nControlPoint1;// 0x404, size 4 (0x4)
 	// m_nControlPoint1 metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) int32_t m_nControlPoint2;// 0x3f8, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nControlPoint2;// 0x408, size 4 (0x4)
 	// m_nControlPoint2 metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) int32_t m_nControlPoint3;// 0x3fc, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nControlPoint3;// 0x40c, size 4 (0x4)
 	// m_nControlPoint3 metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) int32_t m_nControlPoint4;// 0x400, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nControlPoint4;// 0x410, size 4 (0x4)
 	// m_nControlPoint4 metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecCPOffset1;// 0x404, size 12 (0xc)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecCPOffset1;// 0x414, size 12 (0xc)
 	// m_vecCPOffset1 metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecCPOffset2;// 0x410, size 12 (0xc)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecCPOffset2;// 0x420, size 12 (0xc)
 	// m_vecCPOffset2 metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecCPOffset3;// 0x41c, size 12 (0xc)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecCPOffset3;// 0x42c, size 12 (0xc)
 	// m_vecCPOffset3 metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecCPOffset4;// 0x428, size 12 (0xc)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecCPOffset4;// 0x438, size 12 (0xc)
 	// m_vecCPOffset4 metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) float m_LightFiftyDist1;// 0x434, size 4 (0x4)
+	__declspec(align(4)) float m_LightFiftyDist1;// 0x444, size 4 (0x4)
 	// m_LightFiftyDist1 metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) float m_LightZeroDist1;// 0x438, size 4 (0x4)
+	__declspec(align(4)) float m_LightZeroDist1;// 0x448, size 4 (0x4)
 	// m_LightZeroDist1 metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) float m_LightFiftyDist2;// 0x43c, size 4 (0x4)
+	__declspec(align(4)) float m_LightFiftyDist2;// 0x44c, size 4 (0x4)
 	// m_LightFiftyDist2 metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) float m_LightZeroDist2;// 0x440, size 4 (0x4)
+	__declspec(align(4)) float m_LightZeroDist2;// 0x450, size 4 (0x4)
 	// m_LightZeroDist2 metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) float m_LightFiftyDist3;// 0x444, size 4 (0x4)
+	__declspec(align(4)) float m_LightFiftyDist3;// 0x454, size 4 (0x4)
 	// m_LightFiftyDist3 metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) float m_LightZeroDist3;// 0x448, size 4 (0x4)
+	__declspec(align(4)) float m_LightZeroDist3;// 0x458, size 4 (0x4)
 	// m_LightZeroDist3 metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) float m_LightFiftyDist4;// 0x44c, size 4 (0x4)
+	__declspec(align(4)) float m_LightFiftyDist4;// 0x45c, size 4 (0x4)
 	// m_LightFiftyDist4 metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) float m_LightZeroDist4;// 0x450, size 4 (0x4)
+	__declspec(align(4)) float m_LightZeroDist4;// 0x460, size 4 (0x4)
 	// m_LightZeroDist4 metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(1)) UnknownType <0x4, class Color> m_LightColor1;// 0x454, size 4 (0x4)
+	__declspec(align(1)) UnknownType <0x4, class Color> m_LightColor1;// 0x464, size 4 (0x4)
 	// m_LightColor1 metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(1)) UnknownType <0x4, class Color> m_LightColor2;// 0x458, size 4 (0x4)
+	__declspec(align(1)) UnknownType <0x4, class Color> m_LightColor2;// 0x468, size 4 (0x4)
 	// m_LightColor2 metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(1)) UnknownType <0x4, class Color> m_LightColor3;// 0x45c, size 4 (0x4)
+	__declspec(align(1)) UnknownType <0x4, class Color> m_LightColor3;// 0x46c, size 4 (0x4)
 	// m_LightColor3 metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(1)) UnknownType <0x4, class Color> m_LightColor4;// 0x460, size 4 (0x4)
+	__declspec(align(1)) UnknownType <0x4, class Color> m_LightColor4;// 0x470, size 4 (0x4)
 	// m_LightColor4 metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(1)) bool m_bLightType1;// 0x464, size 1 (0x1)
+	__declspec(align(1)) bool m_bLightType1;// 0x474, size 1 (0x1)
 	// m_bLightType1 metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(1)) bool m_bLightType2;// 0x465, size 1 (0x1)
+	__declspec(align(1)) bool m_bLightType2;// 0x475, size 1 (0x1)
 	// m_bLightType2 metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(1)) bool m_bLightType3;// 0x466, size 1 (0x1)
+	__declspec(align(1)) bool m_bLightType3;// 0x476, size 1 (0x1)
 	// m_bLightType3 metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(1)) bool m_bLightType4;// 0x467, size 1 (0x1)
+	__declspec(align(1)) bool m_bLightType4;// 0x477, size 1 (0x1)
 	// m_bLightType4 metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(1)) bool m_bLightDynamic1;// 0x468, size 1 (0x1)
+	__declspec(align(1)) bool m_bLightDynamic1;// 0x478, size 1 (0x1)
 	// m_bLightDynamic1 metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(1)) bool m_bLightDynamic2;// 0x469, size 1 (0x1)
+	__declspec(align(1)) bool m_bLightDynamic2;// 0x479, size 1 (0x1)
 	// m_bLightDynamic2 metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(1)) bool m_bLightDynamic3;// 0x46a, size 1 (0x1)
+	__declspec(align(1)) bool m_bLightDynamic3;// 0x47a, size 1 (0x1)
 	// m_bLightDynamic3 metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(1)) bool m_bLightDynamic4;// 0x46b, size 1 (0x1)
+	__declspec(align(1)) bool m_bLightDynamic4;// 0x47b, size 1 (0x1)
 	// m_bLightDynamic4 metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(1)) bool m_bUseNormal;// 0x46c, size 1 (0x1)
+	__declspec(align(1)) bool m_bUseNormal;// 0x47c, size 1 (0x1)
 	// m_bUseNormal metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(1)) bool m_bUseHLambert;// 0x46d, size 1 (0x1)
+	__declspec(align(1)) bool m_bUseHLambert;// 0x47d, size 1 (0x1)
 	// m_bUseHLambert metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
-char C_OP_ControlpointLight_0472[0x4];
-	__declspec(align(1)) bool m_bClampLowerRange;// 0x472, size 1 (0x1)
+char C_OP_ControlpointLight_0482[0x4];
+	__declspec(align(1)) bool m_bClampLowerRange;// 0x482, size 1 (0x1)
 	// m_bClampLowerRange metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(1)) bool m_bClampUpperRange;// 0x473, size 1 (0x1)
+	__declspec(align(1)) bool m_bClampUpperRange;// 0x483, size 1 (0x1)
 	// m_bClampUpperRange metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
-char C_OP_ControlpointLight_0480[0xC];
-}; // size: 1152 (0x480)
+char C_OP_ControlpointLight_0490[0xC];
+}; // size: 1168 (0x490)
 #pragma pack(pop)
 
 class CEntityComponentHelper : public SchemaBase
@@ -15219,7 +15286,7 @@ char CFourWheelVehiclePhysics_080[0x20];
 }; // size: 344 (0x158)
 
 #pragma pack(push, 16)
-class C_OP_SetControlPointToPlayer : public CParticlePerFrameOperatorInstance
+class C_OP_SetControlPointToPlayer : public CParticleFunctionPreEmission
 {
 // C_OP_SetControlPointToPlayer additional information
 // particles.dll, project particles
@@ -15248,7 +15315,7 @@ char C_OP_SetControlPointToPlayer_0A0[0xF];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_RampScalarLinear : public CParticlePerFrameOperatorInstance
+class C_OP_RampScalarLinear : public CParticleFunctionOperator
 {
 // C_OP_RampScalarLinear additional information
 // particles.dll, project particles
@@ -15296,7 +15363,7 @@ char C_OP_RampScalarLinear_0D0[0xB];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_FadeAndKillForTracers : public CParticlePerFrameOperatorInstance
+class C_OP_FadeAndKillForTracers : public CParticleFunctionOperator
 {
 // C_OP_FadeAndKillForTracers additional information
 // particles.dll, project particles
@@ -15339,7 +15406,7 @@ char C_OP_FadeAndKillForTracers_0A0[0x8];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_CodeDrivenEmitter : public CParticleEmitterOperatorInstance
+class C_OP_CodeDrivenEmitter : public CParticleFunctionEmitter
 {
 // C_OP_CodeDrivenEmitter additional information
 // particles.dll, project particles
@@ -15363,7 +15430,7 @@ public:
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_INIT_RemapQAnglesToRotation : public CParticleInitializerOperatorInstance
+class C_INIT_RemapQAnglesToRotation : public CParticleFunctionInitializer
 {
 // C_INIT_RemapQAnglesToRotation additional information
 // particles.dll, project particles
@@ -15381,7 +15448,7 @@ char C_INIT_RemapQAnglesToRotation_090[0xC];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_INIT_ChaoticAttractor : public CParticleInitializerOperatorInstance
+class C_INIT_ChaoticAttractor : public CParticleFunctionInitializer
 {
 // C_INIT_ChaoticAttractor additional information
 // particles.dll, project particles
@@ -15558,7 +15625,7 @@ public:
 }; // size: 8 (0x8)
 
 #pragma pack(push, 16)
-class C_OP_RenderTreeShake : public CParticleRenderOperatorInstance
+class C_OP_RenderTreeShake : public CParticleFunctionRenderer
 {
 // C_OP_RenderTreeShake additional information
 // particles.dll, project particles
@@ -15567,54 +15634,54 @@ class C_OP_RenderTreeShake : public CParticleRenderOperatorInstance
 // SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
 
 public:
-	__declspec(align(4)) float m_flPeakStrength;// 0xc0, size 4 (0x4)
+	__declspec(align(4)) float m_flPeakStrength;// 0xd0, size 4 (0x4)
 	// m_flPeakStrength metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) UnknownType <0x4, class ParticleAttributeIndex_t> m_nPeakStrengthFieldOverride;// 0xc4, size 4 (0x4)
+	__declspec(align(4)) UnknownType <0x4, class ParticleAttributeIndex_t> m_nPeakStrengthFieldOverride;// 0xd4, size 4 (0x4)
 	// m_nPeakStrengthFieldOverride metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyAttributeChoiceName
-	__declspec(align(4)) float m_flRadius;// 0xc8, size 4 (0x4)
+	__declspec(align(4)) float m_flRadius;// 0xd8, size 4 (0x4)
 	// m_flRadius metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) UnknownType <0x4, class ParticleAttributeIndex_t> m_nRadiusFieldOverride;// 0xcc, size 4 (0x4)
+	__declspec(align(4)) UnknownType <0x4, class ParticleAttributeIndex_t> m_nRadiusFieldOverride;// 0xdc, size 4 (0x4)
 	// m_nRadiusFieldOverride metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyAttributeChoiceName
-	__declspec(align(4)) float m_flShakeDuration;// 0xd0, size 4 (0x4)
+	__declspec(align(4)) float m_flShakeDuration;// 0xe0, size 4 (0x4)
 	// m_flShakeDuration metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) float m_flTransitionTime;// 0xd4, size 4 (0x4)
+	__declspec(align(4)) float m_flTransitionTime;// 0xe4, size 4 (0x4)
 	// m_flTransitionTime metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) float m_flTwistAmount;// 0xd8, size 4 (0x4)
+	__declspec(align(4)) float m_flTwistAmount;// 0xe8, size 4 (0x4)
 	// m_flTwistAmount metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) float m_flRadialAmount;// 0xdc, size 4 (0x4)
+	__declspec(align(4)) float m_flRadialAmount;// 0xec, size 4 (0x4)
 	// m_flRadialAmount metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) float m_flControlPointOrientationAmount;// 0xe0, size 4 (0x4)
+	__declspec(align(4)) float m_flControlPointOrientationAmount;// 0xf0, size 4 (0x4)
 	// m_flControlPointOrientationAmount metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) int32_t m_nControlPointForLinearDirection;// 0xe4, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nControlPointForLinearDirection;// 0xf4, size 4 (0x4)
 	// m_nControlPointForLinearDirection metadata
 	 // MAttributeName
 	 // MDefaultString
-char C_OP_RenderTreeShake_0F0[0x8];
-}; // size: 240 (0xf0)
+char C_OP_RenderTreeShake_0100[0x8];
+}; // size: 256 (0x100)
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_RemapVelocityToVector : public CParticlePerFrameOperatorInstance
+class C_OP_RemapVelocityToVector : public CParticleFunctionOperator
 {
 // C_OP_RemapVelocityToVector additional information
 // particles.dll, project particles
@@ -15637,6 +15704,27 @@ public:
 	 // MDefaultString
 char C_OP_RemapVelocityToVector_090[0x7];
 }; // size: 144 (0x90)
+#pragma pack(pop)
+
+#pragma pack(push, 8)
+class CBonePair
+{
+// CBonePair additional information
+// animationsystem.dll, project animationsystem
+// Alignment: 8
+
+public:
+	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_modelBone;// 0x0, size 8 (0x8)
+	// m_modelBone metadata
+	 // MPropertyFriendlyName
+	 // MPropertyAttributeChoiceName
+	__declspec(align(4)) HandSkeletonBone m_inputBone;// 0x8, size 4 (0x4)
+	// m_inputBone metadata
+	 // MPropertyFriendlyName
+	__declspec(align(1)) bool m_bMatchPosition;// 0xc, size 1 (0x1)
+	__declspec(align(1)) bool m_bMathOrientation;// 0xd, size 1 (0x1)
+char CBonePair_010[0x2];
+}; // size: 16 (0x10)
 #pragma pack(pop)
 
 #pragma pack(push, 4)
@@ -15825,7 +15913,7 @@ char InfoForResourceTypeCPanoramaStyle_01[0x1];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_OrientTo2dDirection : public CParticlePerFrameOperatorInstance
+class C_OP_OrientTo2dDirection : public CParticleFunctionOperator
 {
 // C_OP_OrientTo2dDirection additional information
 // particles.dll, project particles
@@ -15853,7 +15941,7 @@ char C_OP_OrientTo2dDirection_090[0x4];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_DistanceToCP : public CParticlePerFrameOperatorInstance
+class C_OP_DistanceToCP : public CParticleFunctionOperator
 {
 // C_OP_DistanceToCP additional information
 // particles.dll, project particles
@@ -15920,7 +16008,7 @@ char C_OP_DistanceToCP_0130[0x9];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_PercentageBetweenCPLerpCPs : public CParticlePerFrameOperatorInstance
+class C_OP_PercentageBetweenCPLerpCPs : public CParticleFunctionOperator
 {
 // C_OP_PercentageBetweenCPLerpCPs additional information
 // particles.dll, project particles
@@ -16022,7 +16110,7 @@ public:
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_MovementMaintainOffset : public CParticlePerFrameOperatorInstance
+class C_OP_MovementMaintainOffset : public CParticleFunctionOperator
 {
 // C_OP_MovementMaintainOffset additional information
 // particles.dll, project particles
@@ -16051,7 +16139,7 @@ char C_OP_MovementMaintainOffset_0A0[0xF];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_SnapshotRigidSkinToBones : public CParticlePerFrameOperatorInstance
+class C_OP_SnapshotRigidSkinToBones : public CParticleFunctionOperator
 {
 // C_OP_SnapshotRigidSkinToBones additional information
 // particles.dll, project particles
@@ -16073,7 +16161,7 @@ char C_OP_SnapshotRigidSkinToBones_090[0x8];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_BoxConstraint : public CParticleConstraintOperatorInstance
+class C_OP_BoxConstraint : public CParticleFunctionConstraint
 {
 // C_OP_BoxConstraint additional information
 // particles.dll, project particles
@@ -16214,7 +16302,7 @@ char audioparams_t_078[0x4];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_SetControlPointFromObjectScale : public CParticlePerFrameOperatorInstance
+class C_OP_SetControlPointFromObjectScale : public CParticleFunctionPreEmission
 {
 // C_OP_SetControlPointFromObjectScale additional information
 // particles.dll, project particles
@@ -16299,35 +16387,6 @@ public:
 }; // size: 28 (0x1c)
 #pragma pack(pop)
 
-#pragma pack(push, 8)
-class attachment_input_state_t
-{
-// attachment_input_state_t additional information
-// server.dll, project server
-// Alignment: 8
-// SCHEMA_CLASS_HAS_TRIVIAL_DESTRUCTOR
-// SCHEMA_CLASS_TEMP_HACK_HAS_NOSCHEMA_MEMBERS
-
-public:
-	__declspec(align(8)) uint64_t m_nButtons;// 0x0, size 8 (0x8)
-	__declspec(align(8)) uint64_t m_afButtonPressed;// 0x8, size 8 (0x8)
-	__declspec(align(8)) uint64_t m_afButtonReleased;// 0x10, size 8 (0x8)
-	__declspec(align(8)) uint64_t m_afButtonLast;// 0x18, size 8 (0x8)
-	__declspec(align(4)) float m_flTriggerAnalogValue;// 0x20, size 4 (0x4)
-	__declspec(align(4)) float m_flGripAnalogValue;// 0x24, size 4 (0x4)
-	__declspec(align(4)) float m_flFinger0;// 0x28, size 4 (0x4)
-	__declspec(align(4)) float m_flFinger1;// 0x2c, size 4 (0x4)
-	__declspec(align(4)) float m_flFinger2;// 0x30, size 4 (0x4)
-	__declspec(align(4)) float m_flFinger3;// 0x34, size 4 (0x4)
-	__declspec(align(4)) float m_flFinger4;// 0x38, size 4 (0x4)
-	__declspec(align(4)) float m_flTrackpadAnalogValueX;// 0x3c, size 4 (0x4)
-	__declspec(align(4)) float m_flTrackpadAnalogValueY;// 0x40, size 4 (0x4)
-	__declspec(align(4)) float m_flJoystickAnalogValueX;// 0x44, size 4 (0x4)
-	__declspec(align(4)) float m_flJoystickAnalogValueY;// 0x48, size 4 (0x4)
-char attachment_input_state_t_0460[0x414];
-}; // size: 1120 (0x460)
-#pragma pack(pop)
-
 #pragma pack(push, 16)
 class C_OP_RemapNamedModelMeshGroupOnceTimed : public C_OP_RemapNamedModelElementOnceTimed
 {
@@ -16341,7 +16400,7 @@ public:
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_FadeIn : public CParticlePerFrameOperatorInstance
+class C_OP_FadeIn : public CParticleFunctionOperator
 {
 // C_OP_FadeIn additional information
 // particles.dll, project particles
@@ -16397,7 +16456,7 @@ class COrientConstraint : public CBaseConstraint
 // SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
 
 public:
-}; // size: 80 (0x50)
+}; // size: 112 (0x70)
 #pragma pack(pop)
 
 #pragma pack(push, 16)
@@ -16448,7 +16507,7 @@ char InfoForResourceTypeAnimationGroupResourceData_t_01[0x1];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_RemapAverageScalarValuetoCP : public CParticlePerFrameOperatorInstance
+class C_OP_RemapAverageScalarValuetoCP : public CParticleFunctionPreEmission
 {
 // C_OP_RemapAverageScalarValuetoCP additional information
 // particles.dll, project particles
@@ -16487,7 +16546,7 @@ char C_OP_RemapAverageScalarValuetoCP_0A0[0x8];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_INIT_AddVectorToVector : public CParticleInitializerOperatorInstance
+class C_INIT_AddVectorToVector : public CParticleFunctionInitializer
 {
 // C_INIT_AddVectorToVector additional information
 // particles.dll, project particles
@@ -16549,7 +16608,7 @@ char CSosGroupBranchPattern_010[0x4];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_RemapSpeed : public CParticlePerFrameOperatorInstance
+class C_OP_RemapSpeed : public CParticleFunctionOperator
 {
 // C_OP_RemapSpeed additional information
 // particles.dll, project particles
@@ -16609,7 +16668,7 @@ public:
 char CTaskStatusAnimTag_030[0x8];
 	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_identifierString;// 0x30, size 8 (0x8)
 	// m_identifierString metadata
-	 // MPropertyFriendlyName
+	 // MPropertyHideField
 char CTaskStatusAnimTag_040[0x8];
 }; // size: 64 (0x40)
 #pragma pack(pop)
@@ -16723,10 +16782,10 @@ class CTiltTwistConstraint : public CBaseConstraint
 // SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
 
 public:
-	__declspec(align(4)) int32_t m_nTargetAxis;// 0x50, size 4 (0x4)
-	__declspec(align(4)) int32_t m_nSlaveAxis;// 0x54, size 4 (0x4)
-char CTiltTwistConstraint_088[0x30];
-}; // size: 136 (0x88)
+	__declspec(align(4)) int32_t m_nTargetAxis;// 0x70, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nSlaveAxis;// 0x74, size 4 (0x4)
+char CTiltTwistConstraint_0A0[0x28];
+}; // size: 160 (0xa0)
 #pragma pack(pop)
 
 #pragma pack(push, 1)
@@ -16794,15 +16853,15 @@ char CGlobalLightBase_010[0x8];
 	__declspec(align(4)) UnknownType <0xc, class QAngle> m_ViewAngles;// 0xd4, size 12 (0xc)
 	__declspec(align(4)) float m_flViewFoV;// 0xe0, size 4 (0x4)
 	__declspec(align(4)) UnknownType <0xc, class Vector> m_WorldPoints[8];// 0xe4, size 96 (0x60)
-char CGlobalLightBase_0498[0x354];
-	__declspec(align(4)) UnknownType <0x8, class Vector2D> m_vFogOffsetLayer0;// 0x498, size 8 (0x8)
-	__declspec(align(4)) UnknownType <0x8, class Vector2D> m_vFogOffsetLayer1;// 0x4a0, size 8 (0x8)
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class C_BaseEntity > m_hEnvWind;// 0x4a8, size 4 (0x4)
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class C_BaseEntity > m_hEnvSky;// 0x4ac, size 4 (0x4)
-	__declspec(align(4)) float m_fSmoothedAmount;// 0x4b0, size 4 (0x4)
-	__declspec(align(4)) float m_fSlowSmoothedAmount;// 0x4b4, size 4 (0x4)
-char CGlobalLightBase_0508[0x50];
-}; // size: 1288 (0x508)
+char CGlobalLightBase_04A8[0x364];
+	__declspec(align(4)) UnknownType <0x8, class Vector2D> m_vFogOffsetLayer0;// 0x4a8, size 8 (0x8)
+	__declspec(align(4)) UnknownType <0x8, class Vector2D> m_vFogOffsetLayer1;// 0x4b0, size 8 (0x8)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class C_BaseEntity > m_hEnvWind;// 0x4b8, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class C_BaseEntity > m_hEnvSky;// 0x4bc, size 4 (0x4)
+	__declspec(align(4)) float m_fSmoothedAmount;// 0x4c0, size 4 (0x4)
+	__declspec(align(4)) float m_fSlowSmoothedAmount;// 0x4c4, size 4 (0x4)
+char CGlobalLightBase_0518[0x50];
+}; // size: 1304 (0x518)
 #pragma pack(pop)
 
 #pragma pack(push, 8)
@@ -16860,7 +16919,7 @@ public:
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_INIT_RemapSpeedToScalar : public CParticleInitializerOperatorInstance
+class C_INIT_RemapSpeedToScalar : public CParticleFunctionInitializer
 {
 // C_INIT_RemapSpeedToScalar additional information
 // particles.dll, project particles
@@ -16927,6 +16986,85 @@ public:
 #pragma pack(pop)
 
 #pragma pack(push, 16)
+class ParticleChildrenInfo_t
+{
+// ParticleChildrenInfo_t additional information
+// particles.dll, project particles
+// Alignment: 16
+// SCHEMA_CLASS_TEMP_HACK_HAS_NOSCHEMA_MEMBERS
+
+public:
+	__declspec(align(8)) UnknownAtomicType <0x8, CStrongHandle, class InfoForResourceTypeIParticleSystemDefinition > m_ChildRef;// 0x0, size 8 (0x8)
+	// m_ChildRef metadata
+	 // MDefaultString
+	__declspec(align(4)) float m_flDelay;// 0x8, size 4 (0x4)
+	// m_flDelay metadata
+	 // MAttributeName
+	 // MDefaultString
+char ParticleChildrenInfo_t_0E[0x2];
+	__declspec(align(1)) bool m_bEndCap;// 0xe, size 1 (0x1)
+	// m_bEndCap metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(1)) bool m_bDisableChild;// 0xf, size 1 (0x1)
+	// m_bDisableChild metadata
+	 // MAttributeName
+	 // MDefaultString
+}; // size: 16 (0x10)
+#pragma pack(pop)
+
+#pragma pack(push, 16)
+class C_OP_HSVShiftToCP : public CParticleFunctionPreEmission
+{
+// C_OP_HSVShiftToCP additional information
+// particles.dll, project particles
+// Alignment: 16
+// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+// SCHEMA_CLASS_TEMP_HACK_HAS_NOSCHEMA_MEMBERS
+
+public:
+	__declspec(align(4)) int32_t m_nColorCP;// 0x80, size 4 (0x4)
+	// m_nColorCP metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) int32_t m_nColorGemEnableCP;// 0x84, size 4 (0x4)
+	// m_nColorGemEnableCP metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) int32_t m_nOutputCP;// 0x88, size 4 (0x4)
+	// m_nOutputCP metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(1)) UnknownType <0x4, class Color> m_DefaultHSVColor;// 0x8c, size 4 (0x4)
+	// m_DefaultHSVColor metadata
+	 // MAttributeName
+	 // MDefaultString
+char C_OP_HSVShiftToCP_0A0[0x10];
+}; // size: 160 (0xa0)
+#pragma pack(pop)
+
+#pragma pack(push, 16)
+class C_OP_SetCPOrientationToDirection : public CParticleFunctionOperator
+{
+// C_OP_SetCPOrientationToDirection additional information
+// particles.dll, project particles
+// Alignment: 16
+// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+
+public:
+	__declspec(align(4)) int32_t m_nInputControlPoint;// 0x80, size 4 (0x4)
+	// m_nInputControlPoint metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) int32_t m_nOutputControlPoint;// 0x84, size 4 (0x4)
+	// m_nOutputControlPoint metadata
+	 // MAttributeName
+	 // MDefaultString
+char C_OP_SetCPOrientationToDirection_090[0x8];
+}; // size: 144 (0x90)
+#pragma pack(pop)
+
+#pragma pack(push, 16)
 class CSceneObjectExtraData_t
 {
 // CSceneObjectExtraData_t additional information
@@ -16952,58 +17090,6 @@ char CSceneObjectExtraData_t_0418[0x8];
 	__declspec(align(4)) int32_t m_nCubeMapPrecomputedHandshake;// 0x438, size 4 (0x4)
 	__declspec(align(4)) int32_t m_nLightProbeVolumePrecomputedHandshake;// 0x43c, size 4 (0x4)
 }; // size: 1088 (0x440)
-#pragma pack(pop)
-
-#pragma pack(push, 16)
-class ParticleChildrenInfo_t
-{
-// ParticleChildrenInfo_t additional information
-// particles.dll, project particles
-// Alignment: 16
-
-public:
-	__declspec(align(8)) UnknownAtomicType <0x8, CStrongHandle, class InfoForResourceTypeIParticleSystemDefinition > m_ChildRef;// 0x0, size 8 (0x8)
-	// m_ChildRef metadata
-	 // MDefaultString
-	__declspec(align(1)) bool m_bPreventNameBasedLookup;// 0x8, size 1 (0x1)
-	// m_bPreventNameBasedLookup metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(4)) float m_flDelay;// 0xc, size 4 (0x4)
-	// m_flDelay metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(1)) bool m_bEndCap;// 0x10, size 1 (0x1)
-	// m_bEndCap metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(1)) bool m_bDisableChild;// 0x11, size 1 (0x1)
-	// m_bDisableChild metadata
-	 // MAttributeName
-	 // MDefaultString
-char ParticleChildrenInfo_t_020[0xE];
-}; // size: 32 (0x20)
-#pragma pack(pop)
-
-#pragma pack(push, 16)
-class C_OP_SetCPOrientationToDirection : public CParticlePerFrameOperatorInstance
-{
-// C_OP_SetCPOrientationToDirection additional information
-// particles.dll, project particles
-// Alignment: 16
-// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
-
-public:
-	__declspec(align(4)) int32_t m_nInputControlPoint;// 0x80, size 4 (0x4)
-	// m_nInputControlPoint metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(4)) int32_t m_nOutputControlPoint;// 0x84, size 4 (0x4)
-	// m_nOutputControlPoint metadata
-	 // MAttributeName
-	 // MDefaultString
-char C_OP_SetCPOrientationToDirection_090[0x8];
-}; // size: 144 (0x90)
 #pragma pack(pop)
 
 #pragma pack(push, 8)
@@ -17054,46 +17140,7 @@ char CClientAlphaProperty_030[0x8];
 }; // size: 48 (0x30)
 
 #pragma pack(push, 16)
-class CSceneObject : public SchemaBase
-{
-// CSceneObject additional information
-// scenesystem.dll, project scenesystem
-// Alignment: 16
-// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
-// SCHEMA_CLASS_TEMP_HACK_HAS_NOSCHEMA_MEMBERS
-// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
-// SCHEMA_CLASS_TEMP_HACK_HAS_DESTRUCTOR_LIKE_METHODS
-
-public:
-char CSceneObject_010[0x8];
-	__declspec(align(8)) UnknownType <0x1, class ISceneObjectDesc> *m_pDesc;// 0x10, size 8 (0x8)
-	__declspec(align(8)) CSceneObjectReference_t *m_pRefData;// 0x18, size 8 (0x8)
-	__declspec(align(4)) float m_flStartFadeDistanceSquared;// 0x20, size 4 (0x4)
-	__declspec(align(4)) float m_flFarCullDistanceSquared;// 0x24, size 4 (0x4)
-	__declspec(align(2)) uint16_t m_nObjectTypeFlags;// 0x28, size 2 (0x2)
-	__declspec(align(2)) uint16_t m_nGameRenderCounter;// 0x2a, size 2 (0x2)
-char CSceneObject_02F[0x3];
-	__declspec(align(1)) uint8_t m_nMeshGroupMaskSmall;// 0x2f, size 1 (0x1)
-	uint8_t m_nDebugLevel : 2;// 0x0, size 0 (0x0)
-	uint8_t m_nSizeCullBloat : 2;// 0x0, size 0 (0x0)
-	bool m_nBoundsType : 1;// 0x0, size 0 (0x0)
-	__declspec(align(1)) uint8_t m_nID;// 0x31, size 1 (0x1)
-	__declspec(align(1)) uint8_t m_nNumTransformBlocks;// 0x32, size 1 (0x1)
-	__declspec(align(1)) uint8_t m_nObjectClass;// 0x33, size 1 (0x1)
-	__declspec(align(16)) UnknownType <0x30, class matrix3x4a_t> m_transform;// 0x40, size 48 (0x30)
-	__declspec(align(8)) CPVSData *m_pPVS;// 0x70, size 8 (0x8)
-char CSceneObject_080[0x8];
-	__declspec(align(8)) uint64_t m_nOriginalRenderableFlags;// 0x80, size 8 (0x8)
-	__declspec(align(8)) uint64_t m_nRenderableFlags;// 0x88, size 8 (0x8)
-char CSceneObject_09C[0xC];
-	__declspec(align(4)) UnknownType <0x4, class CUtlStringToken> m_nLayerMatchID;// 0x9c, size 4 (0x4)
-public:
-	static /*Array, 4 elements*/float *&Get_s_flSizeCullBloatScale() {return *(float **)schema::SchemaSystem::Get()->FindTypeScopeForModule("!GlobalTypes")->FindDeclaredClass("CSceneObject")->m_staticMembers.data[0].m_pInstance; }
-}; // size: 160 (0xa0)
-#pragma pack(pop)
-
-#pragma pack(push, 16)
-class C_OP_SetControlPointsToModelParticles : public CParticlePerFrameOperatorInstance
+class C_OP_SetControlPointsToModelParticles : public CParticleFunctionOperator
 {
 // C_OP_SetControlPointsToModelParticles additional information
 // particles.dll, project particles
@@ -17134,7 +17181,7 @@ char C_OP_SetControlPointsToModelParticles_0190[0x2];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_GlobalLight : public CParticlePerFrameOperatorInstance
+class C_OP_GlobalLight : public CParticleFunctionOperator
 {
 // C_OP_GlobalLight additional information
 // particles.dll, project particles
@@ -17161,6 +17208,45 @@ char C_OP_GlobalLight_090[0xA];
 }; // size: 144 (0x90)
 #pragma pack(pop)
 
+#pragma pack(push, 16)
+class CSceneObject : public SchemaBase
+{
+// CSceneObject additional information
+// scenesystem.dll, project scenesystem
+// Alignment: 16
+// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+// SCHEMA_CLASS_TEMP_HACK_HAS_NOSCHEMA_MEMBERS
+// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
+// SCHEMA_CLASS_TEMP_HACK_HAS_DESTRUCTOR_LIKE_METHODS
+
+public:
+char CSceneObject_010[0x8];
+	__declspec(align(8)) UnknownType <0x1, class ISceneObjectDesc> *m_pDesc;// 0x10, size 8 (0x8)
+	__declspec(align(8)) CSceneObjectReference_t *m_pRefData;// 0x18, size 8 (0x8)
+	__declspec(align(4)) float m_flStartFadeDistanceSquared;// 0x20, size 4 (0x4)
+	__declspec(align(4)) float m_flFarCullDistanceSquared;// 0x24, size 4 (0x4)
+	__declspec(align(2)) uint16_t m_nObjectTypeFlags;// 0x28, size 2 (0x2)
+	__declspec(align(2)) uint16_t m_nGameRenderCounter;// 0x2a, size 2 (0x2)
+char CSceneObject_02F[0x3];
+	__declspec(align(1)) uint8_t m_nMeshGroupMaskSmall;// 0x2f, size 1 (0x1)
+	uint8_t m_nDebugLevel : 2;// 0x0, size 0 (0x0)
+	uint8_t m_nSizeCullBloat : 2;// 0x0, size 0 (0x0)
+	bool m_nBoundsType : 1;// 0x0, size 0 (0x0)
+	__declspec(align(1)) uint8_t m_nID;// 0x31, size 1 (0x1)
+	__declspec(align(1)) uint8_t m_nNumTransformBlocks;// 0x32, size 1 (0x1)
+	__declspec(align(1)) uint8_t m_nObjectClass;// 0x33, size 1 (0x1)
+	__declspec(align(16)) UnknownType <0x30, class matrix3x4a_t> m_transform;// 0x40, size 48 (0x30)
+	__declspec(align(8)) CPVSData *m_pPVS;// 0x70, size 8 (0x8)
+char CSceneObject_080[0x8];
+	__declspec(align(8)) uint64_t m_nOriginalRenderableFlags;// 0x80, size 8 (0x8)
+	__declspec(align(8)) uint64_t m_nRenderableFlags;// 0x88, size 8 (0x8)
+char CSceneObject_09C[0xC];
+	__declspec(align(4)) UnknownType <0x4, class CUtlStringToken> m_nLayerMatchID;// 0x9c, size 4 (0x4)
+public:
+	static /*Array, 4 elements*/float *&Get_s_flSizeCullBloatScale() {return *(float **)schema::SchemaSystem::Get()->FindTypeScopeForModule("!GlobalTypes")->FindDeclaredClass("CSceneObject")->m_staticMembers.data[0].m_pInstance; }
+}; // size: 160 (0xa0)
+#pragma pack(pop)
+
 class C_DOTAGameManager : public SchemaBase
 {
 // C_DOTAGameManager additional information
@@ -17181,54 +17267,54 @@ char C_DOTAGameManager_090[0x48];
 	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pkvHeroes;// 0x90, size 8 (0x8)
 	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pkvUnits;// 0x98, size 8 (0x8)
 	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pkvAbilities;// 0xa0, size 8 (0x8)
-char C_DOTAGameManager_0290[0x1E8];
-	__declspec(align(1)) bool m_bCustomGame;// 0x290, size 1 (0x1)
-	__declspec(align(1)) bool m_bEventGame;// 0x291, size 1 (0x1)
-	__declspec(align(1)) char m_szAddOnGame[128];// 0x292, size 128 (0x80)
-	__declspec(align(1)) char m_szAddOnMap[128];// 0x312, size 128 (0x80)
-char C_DOTAGameManager_03A8[0x10];
-	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pkvAddOnHeroes;// 0x3a8, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pkvAddOnUnits;// 0x3b0, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pkvAddOnAbilities;// 0x3b8, size 8 (0x8)
-char C_DOTAGameManager_0608[0x248];
-	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pTutorialLessonKeyValues;// 0x608, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pTutorialTipKeyValues;// 0x610, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pDivisionKeyValues;// 0x618, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pMatchGroupsKeyValues;// 0x620, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pEmoticonsKeyValues;// 0x628, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pPortraitsLightPreselects;// 0x630, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pAnimationStatues;// 0x638, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pAddonInfoKeyValues;// 0x640, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pBotScriptsDedicatedServer;// 0x648, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pkvWardPlacementLocations;// 0x650, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pRegionKeyValues;// 0x658, size 8 (0x8)
-char C_DOTAGameManager_0688[0x28];
-	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pCountryKeyValues;// 0x688, size 8 (0x8)
-char C_DOTAGameManager_06C0[0x30];
-	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pSurveyQuestionData;// 0x6c0, size 8 (0x8)
-char C_DOTAGameManager_0700[0x38];
-	__declspec(align(4)) int32_t m_nNumLoadingPlayers;// 0x700, size 4 (0x4)
-	__declspec(align(4)) int32_t m_iDefeatedParticle;// 0x704, size 4 (0x4)
-char C_DOTAGameManager_0A40[0x338];
-	__declspec(align(1)) bool m_bLoadedPortraits[7];// 0xa40, size 7 (0x7)
-	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pControlGroupsKeyValues;// 0xa48, size 8 (0x8)
-	__declspec(align(1)) bool m_StableHeroAvailable[256];// 0xa50, size 256 (0x100)
+char C_DOTAGameManager_0298[0x1F0];
+	__declspec(align(1)) bool m_bCustomGame;// 0x298, size 1 (0x1)
+	__declspec(align(1)) bool m_bEventGame;// 0x299, size 1 (0x1)
+	__declspec(align(1)) char m_szAddOnGame[128];// 0x29a, size 128 (0x80)
+	__declspec(align(1)) char m_szAddOnMap[128];// 0x31a, size 128 (0x80)
+char C_DOTAGameManager_03B0[0x10];
+	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pkvAddOnHeroes;// 0x3b0, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pkvAddOnUnits;// 0x3b8, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pkvAddOnAbilities;// 0x3c0, size 8 (0x8)
+char C_DOTAGameManager_0618[0x250];
+	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pTutorialLessonKeyValues;// 0x618, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pTutorialTipKeyValues;// 0x620, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pDivisionKeyValues;// 0x628, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pMatchGroupsKeyValues;// 0x630, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pEmoticonsKeyValues;// 0x638, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pPortraitsLightPreselects;// 0x640, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pAnimationStatues;// 0x648, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pAddonInfoKeyValues;// 0x650, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pBotScriptsDedicatedServer;// 0x658, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pkvWardPlacementLocations;// 0x660, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pRegionKeyValues;// 0x668, size 8 (0x8)
+char C_DOTAGameManager_0698[0x28];
+	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pCountryKeyValues;// 0x698, size 8 (0x8)
+char C_DOTAGameManager_06D0[0x30];
+	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pSurveyQuestionData;// 0x6d0, size 8 (0x8)
+char C_DOTAGameManager_0710[0x38];
+	__declspec(align(4)) int32_t m_nNumLoadingPlayers;// 0x710, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iDefeatedParticle;// 0x714, size 4 (0x4)
+char C_DOTAGameManager_0A50[0x338];
+	__declspec(align(1)) bool m_bLoadedPortraits[7];// 0xa50, size 7 (0x7)
+	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pControlGroupsKeyValues;// 0xa58, size 8 (0x8)
+	__declspec(align(1)) bool m_StableHeroAvailable[256];// 0xa60, size 256 (0x100)
 	// m_StableHeroAvailable metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_CurrentHeroAvailable[256];// 0xb50, size 256 (0x100)
+	__declspec(align(1)) bool m_CurrentHeroAvailable[256];// 0xb60, size 256 (0x100)
 	// m_CurrentHeroAvailable metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_CulledHeroes[256];// 0xc50, size 256 (0x100)
+	__declspec(align(1)) bool m_CulledHeroes[256];// 0xc60, size 256 (0x100)
 	// m_CulledHeroes metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_BonusHeroes[256];// 0xd50, size 256 (0x100)
+	__declspec(align(1)) bool m_BonusHeroes[256];// 0xd60, size 256 (0x100)
 	// m_BonusHeroes metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-}; // size: 3664 (0xe50)
+}; // size: 3680 (0xe60)
 
 #pragma pack(push, 8)
 class ResponseContext_t
@@ -17247,7 +17333,7 @@ char ResponseContext_t_018[0x4];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_RemapScalar : public CParticlePerFrameOperatorInstance
+class C_OP_RemapScalar : public CParticleFunctionOperator
 {
 // C_OP_RemapScalar additional information
 // particles.dll, project particles
@@ -17294,7 +17380,7 @@ class C_INIT_RemapParticleCountToNamedModelMeshGroupScalar : public C_INIT_Remap
 // SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
 
 public:
-}; // size: 192 (0xc0)
+}; // size: 208 (0xd0)
 #pragma pack(pop)
 
 #pragma pack(push, 8)
@@ -17323,18 +17409,24 @@ public:
 	__declspec(align(4)) float m_flTonemapMinAvgLum;// 0x18, size 4 (0x4)
 	// m_flTonemapMinAvgLum metadata
 	 // MNetworkEnable
-	__declspec(align(4)) float m_flRate;// 0x1c, size 4 (0x4)
+	__declspec(align(4)) float m_flBloomScale;// 0x1c, size 4 (0x4)
+	// m_flBloomScale metadata
+	 // MNetworkEnable
+	__declspec(align(4)) float m_flBloomStartValue;// 0x20, size 4 (0x4)
+	// m_flBloomStartValue metadata
+	 // MNetworkEnable
+	__declspec(align(4)) float m_flRate;// 0x24, size 4 (0x4)
 	// m_flRate metadata
 	 // MNetworkEnable
-	__declspec(align(4)) float m_flAccelerateExposureDown;// 0x20, size 4 (0x4)
+	__declspec(align(4)) float m_flAccelerateExposureDown;// 0x28, size 4 (0x4)
 	// m_flAccelerateExposureDown metadata
 	 // MNetworkEnable
-char TonemapParameters_t_028[0x4];
-}; // size: 40 (0x28)
+char TonemapParameters_t_030[0x4];
+}; // size: 48 (0x30)
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_SetParentControlPointsToChildCP : public CParticlePerFrameOperatorInstance
+class C_OP_SetParentControlPointsToChildCP : public CParticleFunctionPreEmission
 {
 // C_OP_SetParentControlPointsToChildCP additional information
 // particles.dll, project particles
@@ -17400,7 +17492,7 @@ public:
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_LagCompensation : public CParticlePerFrameOperatorInstance
+class C_OP_LagCompensation : public CParticleFunctionOperator
 {
 // C_OP_LagCompensation additional information
 // particles.dll, project particles
@@ -17465,7 +17557,7 @@ public:
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_SetToCP : public CParticlePerFrameOperatorInstance
+class C_OP_SetToCP : public CParticleFunctionOperator
 {
 // C_OP_SetToCP additional information
 // particles.dll, project particles
@@ -17505,29 +17597,7 @@ char WeaponSoundData_t_08[0x4];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_NormalizeVector : public CParticlePerFrameOperatorInstance
-{
-// C_OP_NormalizeVector additional information
-// particles.dll, project particles
-// Alignment: 16
-// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
-
-public:
-	__declspec(align(4)) UnknownType <0x4, class ParticleAttributeIndex_t> m_nFieldOutput;// 0x80, size 4 (0x4)
-	// m_nFieldOutput metadata
-	 // MAttributeName
-	 // MDefaultString
-	 // MPropertyAttributeChoiceName
-	__declspec(align(4)) float m_flScale;// 0x84, size 4 (0x4)
-	// m_flScale metadata
-	 // MAttributeName
-	 // MDefaultString
-char C_OP_NormalizeVector_090[0x8];
-}; // size: 144 (0x90)
-#pragma pack(pop)
-
-#pragma pack(push, 16)
-class C_OP_SetControlPointOrientation : public CParticlePerFrameOperatorInstance
+class C_OP_SetControlPointOrientation : public CParticleFunctionPreEmission
 {
 // C_OP_SetControlPointOrientation additional information
 // particles.dll, project particles
@@ -17576,6 +17646,28 @@ char C_OP_SetControlPointOrientation_0B0[0xC];
 }; // size: 176 (0xb0)
 #pragma pack(pop)
 
+#pragma pack(push, 16)
+class C_OP_NormalizeVector : public CParticleFunctionOperator
+{
+// C_OP_NormalizeVector additional information
+// particles.dll, project particles
+// Alignment: 16
+// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+
+public:
+	__declspec(align(4)) UnknownType <0x4, class ParticleAttributeIndex_t> m_nFieldOutput;// 0x80, size 4 (0x4)
+	// m_nFieldOutput metadata
+	 // MAttributeName
+	 // MDefaultString
+	 // MPropertyAttributeChoiceName
+	__declspec(align(4)) float m_flScale;// 0x84, size 4 (0x4)
+	// m_flScale metadata
+	 // MAttributeName
+	 // MDefaultString
+char C_OP_NormalizeVector_090[0x8];
+}; // size: 144 (0x90)
+#pragma pack(pop)
+
 #pragma pack(push, 8)
 class CDampedPathAnimMotor : public CBasePathAnimMotor
 {
@@ -17591,20 +17683,28 @@ char CDampedPathAnimMotor_034[0x4];
 	__declspec(align(4)) float m_flAnticipationTime;// 0x34, size 4 (0x4)
 	// m_flAnticipationTime metadata
 	 // MPropertyFriendlyName
-	__declspec(align(4)) float m_flSpringConstant;// 0x38, size 4 (0x4)
+	__declspec(align(4)) AnimParamID m_anticipationPosParam;// 0x38, size 4 (0x4)
+	// m_anticipationPosParam metadata
+	 // MPropertyFriendlyName
+	 // MPropertyAttributeChoiceName
+	__declspec(align(4)) AnimParamID m_anticipationHeadingParam;// 0x3c, size 4 (0x4)
+	// m_anticipationHeadingParam metadata
+	 // MPropertyFriendlyName
+	 // MPropertyAttributeChoiceName
+char CDampedPathAnimMotor_044[0x4];
+	__declspec(align(4)) float m_flSpringConstant;// 0x44, size 4 (0x4)
 	// m_flSpringConstant metadata
 	 // MPropertyFriendlyName
 	 // MPropertyGroupName
-	__declspec(align(4)) float m_flMinSpringTension;// 0x3c, size 4 (0x4)
+	__declspec(align(4)) float m_flMinSpringTension;// 0x48, size 4 (0x4)
 	// m_flMinSpringTension metadata
 	 // MPropertyFriendlyName
 	 // MPropertyGroupName
-	__declspec(align(4)) float m_flMaxSpringTension;// 0x40, size 4 (0x4)
+	__declspec(align(4)) float m_flMaxSpringTension;// 0x4c, size 4 (0x4)
 	// m_flMaxSpringTension metadata
 	 // MPropertyFriendlyName
 	 // MPropertyGroupName
-char CDampedPathAnimMotor_048[0x4];
-}; // size: 72 (0x48)
+}; // size: 80 (0x50)
 #pragma pack(pop)
 
 #pragma pack(push, 4)
@@ -17629,7 +17729,7 @@ public:
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_INIT_InitialRepulsionVelocity : public CParticleInitializerOperatorInstance
+class C_INIT_InitialRepulsionVelocity : public CParticleFunctionInitializer
 {
 // C_INIT_InitialRepulsionVelocity additional information
 // particles.dll, project particles
@@ -17746,82 +17846,6 @@ public:
 	__declspec(align(4)) int32_t m_nGUID;// 0x10c, size 4 (0x4)
 }; // size: 272 (0x110)
 
-#pragma pack(push, 16)
-class C_OP_NoiseEmitter : public CParticleEmitterOperatorInstance
-{
-// C_OP_NoiseEmitter additional information
-// particles.dll, project particles
-// Alignment: 16
-// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
-
-public:
-	__declspec(align(4)) float m_flEmissionDuration;// 0x80, size 4 (0x4)
-	// m_flEmissionDuration metadata
-	 // MSrc1ImportAttributeName
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(4)) float m_flStartTime;// 0x84, size 4 (0x4)
-	// m_flStartTime metadata
-	 // MSrc1ImportAttributeName
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(4)) float m_flEmissionScale;// 0x88, size 4 (0x4)
-	// m_flEmissionScale metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(4)) int32_t m_nScaleControlPoint;// 0x8c, size 4 (0x4)
-	// m_nScaleControlPoint metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(4)) int32_t m_nScaleControlPointField;// 0x90, size 4 (0x4)
-	// m_nScaleControlPointField metadata
-	 // MAttributeName
-	 // MDefaultString
-	 // MPropertyAttributeChoiceName
-	__declspec(align(4)) int32_t m_nWorldNoisePoint;// 0x94, size 4 (0x4)
-	// m_nWorldNoisePoint metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(1)) bool m_bAbsVal;// 0x98, size 1 (0x1)
-	// m_bAbsVal metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(1)) bool m_bAbsValInv;// 0x99, size 1 (0x1)
-	// m_bAbsValInv metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(4)) float m_flOffset;// 0x9c, size 4 (0x4)
-	// m_flOffset metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(4)) float m_flOutputMin;// 0xa0, size 4 (0x4)
-	// m_flOutputMin metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(4)) float m_flOutputMax;// 0xa4, size 4 (0x4)
-	// m_flOutputMax metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(4)) float m_flNoiseScale;// 0xa8, size 4 (0x4)
-	// m_flNoiseScale metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(4)) float m_flWorldNoiseScale;// 0xac, size 4 (0x4)
-	// m_flWorldNoiseScale metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecOffsetLoc;// 0xb0, size 12 (0xc)
-	// m_vecOffsetLoc metadata
-	 // MAttributeName
-	 // MDefaultString
-	 // MVectorIsCoordinate
-	__declspec(align(4)) float m_flWorldTimeScale;// 0xbc, size 4 (0x4)
-	// m_flWorldTimeScale metadata
-	 // MAttributeName
-	 // MDefaultString
-}; // size: 192 (0xc0)
-#pragma pack(pop)
-
 #pragma pack(push, 8)
 class CThrustController : public SchemaBase
 {
@@ -17840,7 +17864,7 @@ char CThrustController_028[0x4];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_RemapControlPointDirectionToVector : public CParticlePerFrameOperatorInstance
+class C_OP_RemapControlPointDirectionToVector : public CParticleFunctionOperator
 {
 // C_OP_RemapControlPointDirectionToVector additional information
 // particles.dll, project particles
@@ -17866,7 +17890,7 @@ char C_OP_RemapControlPointDirectionToVector_090[0x4];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_INIT_RemapInitialDirectionToCPToVector : public CParticleInitializerOperatorInstance
+class C_INIT_RemapInitialDirectionToCPToVector : public CParticleFunctionInitializer
 {
 // C_INIT_RemapInitialDirectionToCPToVector additional information
 // particles.dll, project particles
@@ -17904,22 +17928,25 @@ char C_INIT_RemapInitialDirectionToCPToVector_0A0[0x3];
 }; // size: 160 (0xa0)
 #pragma pack(pop)
 
-#pragma pack(push, 4)
-class CPhysSurfacePropertiesGame
+#pragma pack(push, 8)
+class CPhysSurfaceProperties
 {
-// CPhysSurfacePropertiesGame additional information
+// CPhysSurfaceProperties additional information
 // engine2.dll, project modellib
-// Alignment: 4
-// SCHEMA_CLASS_HAS_TRIVIAL_CONSTRUCTOR
-// SCHEMA_CLASS_HAS_TRIVIAL_DESTRUCTOR
+// Alignment: 8
+// SCHEMA_CLASS_TEMP_HACK_HAS_NOSCHEMA_MEMBERS
 
 public:
-	__declspec(align(4)) float m_flMaxSpeedFactor;// 0x0, size 4 (0x4)
-	__declspec(align(4)) float m_flJumpFactor;// 0x4, size 4 (0x4)
-	__declspec(align(2)) uint16_t m_nMaterial;// 0x8, size 2 (0x2)
-	__declspec(align(1)) bool m_bClimbable;// 0xa, size 1 (0x1)
-char CPhysSurfacePropertiesGame_0C[0x1];
-}; // size: 12 (0xc)
+	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_name;// 0x0, size 8 (0x8)
+	__declspec(align(4)) uint32_t m_nameHash;// 0x8, size 4 (0x4)
+	__declspec(align(4)) uint32_t m_baseNameHash;// 0xc, size 4 (0x4)
+char CPhysSurfaceProperties_018[0x8];
+	__declspec(align(1)) bool m_bHidden;// 0x18, size 1 (0x1)
+	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_description;// 0x20, size 8 (0x8)
+	__declspec(align(4)) CPhysSurfacePropertiesPhysics m_physics;// 0x28, size 20 (0x14)
+	__declspec(align(8)) CPhysSurfacePropertiesSoundNames m_audioSounds;// 0x40, size 64 (0x40)
+	__declspec(align(4)) CPhysSurfacePropertiesAudio m_audioParams;// 0x80, size 24 (0x18)
+}; // size: 152 (0x98)
 #pragma pack(pop)
 
 #pragma pack(push, 4)
@@ -18048,7 +18075,29 @@ public:
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_MovementRotateParticleAroundAxis : public CParticlePerFrameOperatorInstance
+class C_OP_SetCPtoVector : public CParticleFunctionOperator
+{
+// C_OP_SetCPtoVector additional information
+// particles.dll, project particles
+// Alignment: 16
+// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+
+public:
+	__declspec(align(4)) int32_t m_nCPInput;// 0x80, size 4 (0x4)
+	// m_nCPInput metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) UnknownType <0x4, class ParticleAttributeIndex_t> m_nFieldOutput;// 0x84, size 4 (0x4)
+	// m_nFieldOutput metadata
+	 // MAttributeName
+	 // MDefaultString
+	 // MPropertyAttributeChoiceName
+char C_OP_SetCPtoVector_090[0x8];
+}; // size: 144 (0x90)
+#pragma pack(pop)
+
+#pragma pack(push, 16)
+class C_OP_MovementRotateParticleAroundAxis : public CParticleFunctionOperator
 {
 // C_OP_MovementRotateParticleAroundAxis additional information
 // particles.dll, project particles
@@ -18082,48 +18131,7 @@ char C_OP_MovementRotateParticleAroundAxis_0A0[0xB];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_INIT_GeneralCylinder : public CParticleInitializerOperatorInstance
-{
-// C_INIT_GeneralCylinder additional information
-// particles.dll, project particles
-// Alignment: 16
-// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
-
-public:
-	__declspec(align(4)) int32_t m_nFirstControlPoint;// 0x80, size 4 (0x4)
-	// m_nFirstControlPoint metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(4)) int32_t m_nMaxControlPoint;// 0x84, size 4 (0x4)
-	// m_nMaxControlPoint metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(4)) float m_flMinVelocityScale;// 0x88, size 4 (0x4)
-	// m_flMinVelocityScale metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(4)) float m_flMaxVelocityScale;// 0x8c, size 4 (0x4)
-	// m_flMaxVelocityScale metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(4)) float m_flMinPathVel;// 0x90, size 4 (0x4)
-	// m_flMinPathVel metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(4)) float m_flMaxPathVel;// 0x94, size 4 (0x4)
-	// m_flMaxPathVel metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(1)) bool m_bClosedLoop;// 0x98, size 1 (0x1)
-	// m_bClosedLoop metadata
-	 // MAttributeName
-	 // MDefaultString
-char C_INIT_GeneralCylinder_0A0[0x7];
-}; // size: 160 (0xa0)
-#pragma pack(pop)
-
-#pragma pack(push, 16)
-class C_INIT_CreateOnModel : public CParticleInitializerOperatorInstance
+class C_INIT_CreateOnModel : public CParticleFunctionInitializer
 {
 // C_INIT_CreateOnModel additional information
 // particles.dll, project particles
@@ -18180,6 +18188,28 @@ public:
 	 // MDefaultString
 char C_INIT_CreateOnModel_0130[0x6];
 }; // size: 304 (0x130)
+#pragma pack(pop)
+
+#pragma pack(push, 8)
+class CSolveIKChainAnimNode : public CAnimNodeBase
+{
+// CSolveIKChainAnimNode additional information
+// animationsystem.dll, project animationsystem
+// Alignment: 8
+// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+// SCHEMA_CLASS_TEMP_HACK_HAS_NOSCHEMA_MEMBERS
+// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
+
+public:
+	__declspec(align(4)) AnimNodeID m_childID;// 0x38, size 4 (0x4)
+	// m_childID metadata
+	 // MPropertyHideField
+char CSolveIKChainAnimNode_040[0x4];
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownType <0x8, class CUtlString> > m_IkChains;// 0x40, size 24 (0x18)
+	// m_IkChains metadata
+	 // MPropertyFriendlyName
+	 // MPropertyAttributeChoiceName
+}; // size: 88 (0x58)
 #pragma pack(pop)
 
 #pragma pack(push, 4)
@@ -18277,7 +18307,7 @@ public:
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_RampScalarSplineSimple : public CParticlePerFrameOperatorInstance
+class C_OP_RampScalarSplineSimple : public CParticleFunctionOperator
 {
 // C_OP_RampScalarSplineSimple additional information
 // particles.dll, project particles
@@ -18475,7 +18505,7 @@ char vehicle_gear_t_018[0x4];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_INIT_VelocityFromNormal : public CParticleInitializerOperatorInstance
+class C_INIT_VelocityFromNormal : public CParticleFunctionInitializer
 {
 // C_INIT_VelocityFromNormal additional information
 // particles.dll, project particles
@@ -18539,7 +18569,7 @@ char InfoForResourceTypeCDotaItemDefinitionResource_01[0x1];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_SetControlPointsToParticle : public CParticlePerFrameOperatorInstance
+class C_OP_SetControlPointsToParticle : public CParticleFunctionOperator
 {
 // C_OP_SetControlPointsToParticle additional information
 // particles.dll, project particles
@@ -18626,21 +18656,8 @@ char CSoundParameters_040[0x4];
 }; // size: 72 (0x48)
 #pragma pack(pop)
 
-#pragma pack(push, 8)
-class CSSDSEndFrameViewInfo
-{
-// CSSDSEndFrameViewInfo additional information
-// scenesystem.dll, project scenesystem
-// Alignment: 8
-
-public:
-	__declspec(align(8)) uint64_t m_nViewId;// 0x0, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_ViewName;// 0x8, size 8 (0x8)
-}; // size: 16 (0x10)
-#pragma pack(pop)
-
 #pragma pack(push, 16)
-class C_OP_NormalLock : public CParticlePerFrameOperatorInstance
+class C_OP_NormalLock : public CParticleFunctionOperator
 {
 // C_OP_NormalLock additional information
 // particles.dll, project particles
@@ -18655,6 +18672,19 @@ public:
 	 // MDefaultString
 char C_OP_NormalLock_090[0xC];
 }; // size: 144 (0x90)
+#pragma pack(pop)
+
+#pragma pack(push, 8)
+class CSSDSEndFrameViewInfo
+{
+// CSSDSEndFrameViewInfo additional information
+// scenesystem.dll, project scenesystem
+// Alignment: 8
+
+public:
+	__declspec(align(8)) uint64_t m_nViewId;// 0x0, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_ViewName;// 0x8, size 8 (0x8)
+}; // size: 16 (0x10)
 #pragma pack(pop)
 
 #pragma pack(push, 8)
@@ -18726,7 +18756,7 @@ char CTimeline_0268[0x47];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_TurbulenceForce : public CParticleForceOperatorInstance
+class C_OP_TurbulenceForce : public CParticleFunctionForce
 {
 // C_OP_TurbulenceForce additional information
 // particles.dll, project particles
@@ -18942,7 +18972,7 @@ public:
 }; // size: 8 (0x8)
 
 #pragma pack(push, 16)
-class C_OP_RenderPoints : public CParticleRenderOperatorInstance
+class C_OP_RenderPoints : public CParticleFunctionRenderer
 {
 // C_OP_RenderPoints additional information
 // particles.dll, project particles
@@ -18950,17 +18980,17 @@ class C_OP_RenderPoints : public CParticleRenderOperatorInstance
 // SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
 
 public:
-	__declspec(align(8)) UnknownAtomicType <0x8, CResourceExtReference, UnknownAtomicType <0x8, CWeakHandle, class InfoForResourceTypeIMaterial2 > > m_hMaterial;// 0xc0, size 8 (0x8)
+	__declspec(align(8)) UnknownAtomicType <0x8, CResourceExtReference, UnknownAtomicType <0x8, CWeakHandle, class InfoForResourceTypeIMaterial2 > > m_hMaterial;// 0xd0, size 8 (0x8)
 	// m_hMaterial metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyAttributeEditor
-char C_OP_RenderPoints_0D0[0x8];
-}; // size: 208 (0xd0)
+char C_OP_RenderPoints_0E0[0x8];
+}; // size: 224 (0xe0)
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_ScreenForceFromPlayerView : public CParticleForceOperatorInstance
+class C_OP_ScreenForceFromPlayerView : public CParticleFunctionForce
 {
 // C_OP_ScreenForceFromPlayerView additional information
 // particles.dll, project particles
@@ -19026,10 +19056,10 @@ class C_CommandContext
 
 public:
 	__declspec(align(1)) bool needsprocessing;// 0x0, size 1 (0x1)
-char C_CommandContext_02A8[0x2A4];
-	__declspec(align(4)) int32_t command_number;// 0x2a8, size 4 (0x4)
-char C_CommandContext_02B0[0x4];
-}; // size: 688 (0x2b0)
+char C_CommandContext_0288[0x284];
+	__declspec(align(4)) int32_t command_number;// 0x288, size 4 (0x4)
+char C_CommandContext_0290[0x4];
+}; // size: 656 (0x290)
 #pragma pack(pop)
 
 #pragma pack(push, 8)
@@ -19147,7 +19177,7 @@ char CDOTASubChallengeInfo_014[0xC];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_INIT_MoveBetweenPoints : public CParticleInitializerOperatorInstance
+class C_INIT_MoveBetweenPoints : public CParticleFunctionInitializer
 {
 // C_INIT_MoveBetweenPoints additional information
 // particles.dll, project particles
@@ -19248,7 +19278,7 @@ public:
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_CurlNoiseForce : public CParticleForceOperatorInstance
+class C_OP_CurlNoiseForce : public CParticleFunctionForce
 {
 // C_OP_CurlNoiseForce additional information
 // particles.dll, project particles
@@ -19280,6 +19310,18 @@ public:
 	 // MVectorIsCoordinate
 char C_OP_CurlNoiseForce_0B0[0x8];
 }; // size: 176 (0xb0)
+#pragma pack(pop)
+
+#pragma pack(push, 16)
+class C_OP_SpinUpdate : public CSpinUpdateBase
+{
+// C_OP_SpinUpdate additional information
+// particles.dll, project particles
+// Alignment: 16
+// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+
+public:
+}; // size: 128 (0x80)
 #pragma pack(pop)
 
 #pragma pack(push, 8)
@@ -19468,6 +19510,34 @@ char C_OP_RemapDistanceToLineSegmentToVector_0C0[0x4];
 #pragma pack(pop)
 
 #pragma pack(push, 8)
+class CParticleAnimTag : public CAnimTagBase
+{
+// CParticleAnimTag additional information
+// animationsystem.dll, project animationsystem
+// Alignment: 8
+// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
+
+public:
+char CParticleAnimTag_030[0x8];
+	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_particleSystemName;// 0x30, size 8 (0x8)
+	// m_particleSystemName metadata
+	 // MPropertyAttributeEditor
+	 // MPropertyFriendlyName
+	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_configName;// 0x38, size 8 (0x8)
+	// m_configName metadata
+	 // MPropertyFriendlyName
+	__declspec(align(1)) bool m_bStopWhenTagEnds;// 0x40, size 1 (0x1)
+	// m_bStopWhenTagEnds metadata
+	 // MPropertyFriendlyName
+	__declspec(align(1)) bool m_bTagEndStopIsInstant;// 0x41, size 1 (0x1)
+	// m_bTagEndStopIsInstant metadata
+	 // MPropertyFriendlyName
+char CParticleAnimTag_048[0x6];
+}; // size: 72 (0x48)
+#pragma pack(pop)
+
+#pragma pack(push, 8)
 class CCompressorGroup
 {
 // CCompressorGroup additional information
@@ -19525,19 +19595,19 @@ class CBasePortraitData : public SchemaBase
 // SCHEMA_CLASS_TEMP_HACK_HAS_DESTRUCTOR_LIKE_METHODS
 
 public:
-char CBasePortraitData_0388[0x380];
-	__declspec(align(8)) UnknownAtomicType <0x8, CStrongHandle, class InfoForResourceTypeCModel > m_iModelIndex;// 0x388, size 8 (0x8)
-	__declspec(align(4)) UnknownType <0x4, class CUtlStringToken> m_skin;// 0x390, size 4 (0x4)
-char CBasePortraitData_0BF4[0x860];
-	__declspec(align(1)) bool m_bHasSetupView;// 0xbf4, size 1 (0x1)
-char CBasePortraitData_0C10[0x18];
-	__declspec(align(4)) float m_flRotation;// 0xc10, size 4 (0x4)
-char CBasePortraitData_0C20[0xC];
-}; // size: 3104 (0xc20)
+char CBasePortraitData_03A0[0x398];
+	__declspec(align(8)) UnknownAtomicType <0x8, CStrongHandle, class InfoForResourceTypeCModel > m_iModelIndex;// 0x3a0, size 8 (0x8)
+	__declspec(align(4)) UnknownType <0x4, class CUtlStringToken> m_skin;// 0x3a8, size 4 (0x4)
+char CBasePortraitData_0C04[0x858];
+	__declspec(align(1)) bool m_bHasSetupView;// 0xc04, size 1 (0x1)
+char CBasePortraitData_0C20[0x18];
+	__declspec(align(4)) float m_flRotation;// 0xc20, size 4 (0x4)
+char CBasePortraitData_0C30[0xC];
+}; // size: 3120 (0xc30)
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_AlphaDecay : public CParticlePerFrameOperatorInstance
+class C_OP_AlphaDecay : public CParticleFunctionOperator
 {
 // C_OP_AlphaDecay additional information
 // particles.dll, project particles
@@ -19554,7 +19624,7 @@ char C_OP_AlphaDecay_090[0xC];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_ExternalWindForce : public CParticleForceOperatorInstance
+class C_OP_ExternalWindForce : public CParticleFunctionForce
 {
 // C_OP_ExternalWindForce additional information
 // particles.dll, project particles
@@ -19573,12 +19643,12 @@ public:
 }; // size: 144 (0x90)
 #pragma pack(pop)
 
-#pragma pack(push, 8)
+#pragma pack(push, 16)
 class CAnimReplayFrame : public SchemaBase
 {
 // CAnimReplayFrame additional information
 // animationsystem.dll, project animationsystem
-// Alignment: 8
+// Alignment: 16
 // SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
 // SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
 
@@ -19586,11 +19656,11 @@ public:
 char CAnimReplayFrame_010[0x8];
 	__declspec(align(8)) UnknownType <0x18, class CUtlBinaryBlock> m_instanceData;// 0x10, size 24 (0x18)
 	__declspec(align(8)) UnknownType <0x18, class CUtlBinaryBlock> m_poseRecipeInstanceData;// 0x28, size 24 (0x18)
-	__declspec(align(4)) UnknownType <0x30, class matrix3x4_t> m_localToWorldMtx;// 0x40, size 48 (0x30)
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class CAnimReplayWayPoint > m_waypoints;// 0x70, size 24 (0x18)
-	__declspec(align(4)) float m_timeStamp;// 0x88, size 4 (0x4)
-char CAnimReplayFrame_090[0x4];
-}; // size: 144 (0x90)
+	__declspec(align(16)) UnknownType <0x20, class CTransform> m_localToWorldTransform;// 0x40, size 32 (0x20)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class CAnimReplayWayPoint > m_waypoints;// 0x60, size 24 (0x18)
+	__declspec(align(4)) float m_timeStamp;// 0x78, size 4 (0x4)
+char CAnimReplayFrame_080[0x4];
+}; // size: 128 (0x80)
 #pragma pack(pop)
 
 #pragma pack(push, 8)
@@ -19609,29 +19679,6 @@ public:
 	 // MPropertyHideField
 char CChoreoAnimNode_040[0x4];
 }; // size: 64 (0x40)
-#pragma pack(pop)
-
-#pragma pack(push, 8)
-class CPhysSurfaceProperties
-{
-// CPhysSurfaceProperties additional information
-// engine2.dll, project modellib
-// Alignment: 8
-// SCHEMA_CLASS_TEMP_HACK_HAS_NOSCHEMA_MEMBERS
-
-public:
-	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_name;// 0x0, size 8 (0x8)
-	__declspec(align(4)) uint32_t m_nameHash;// 0x8, size 4 (0x4)
-	__declspec(align(4)) uint32_t m_baseNameHash;// 0xc, size 4 (0x4)
-char CPhysSurfaceProperties_018[0x8];
-	__declspec(align(1)) bool m_bHidden;// 0x18, size 1 (0x1)
-	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_description;// 0x20, size 8 (0x8)
-	__declspec(align(4)) CPhysSurfacePropertiesPhysics m_physics;// 0x28, size 20 (0x14)
-	__declspec(align(8)) CPhysSurfacePropertiesSoundNames m_audioSounds;// 0x40, size 96 (0x60)
-	__declspec(align(4)) CPhysSurfacePropertiesAudio m_audioParams;// 0xa0, size 24 (0x18)
-	__declspec(align(4)) CPhysSurfacePropertiesGame m_gameProperties;// 0xb8, size 12 (0xc)
-char CPhysSurfaceProperties_0C8[0x4];
-}; // size: 200 (0xc8)
 #pragma pack(pop)
 
 #pragma pack(push, 8)
@@ -19666,7 +19713,7 @@ public:
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_RenderText : public CParticleRenderOperatorInstance
+class C_OP_RenderText : public CParticleFunctionRenderer
 {
 // C_OP_RenderText additional information
 // particles.dll, project particles
@@ -19675,15 +19722,15 @@ class C_OP_RenderText : public CParticleRenderOperatorInstance
 // SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
 
 public:
-	__declspec(align(1)) UnknownType <0x4, class Color> m_OutlineColor;// 0xc0, size 4 (0x4)
+	__declspec(align(1)) UnknownType <0x4, class Color> m_OutlineColor;// 0xd0, size 4 (0x4)
 	// m_OutlineColor metadata
 	 // MAttributeName
 	 // MDefaultString
-char C_OP_RenderText_0C8[0x4];
-	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_DefaultText;// 0xc8, size 8 (0x8)
+char C_OP_RenderText_0D8[0x4];
+	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_DefaultText;// 0xd8, size 8 (0x8)
 	// m_DefaultText metadata
 	 // MAttributeName
-}; // size: 208 (0xd0)
+}; // size: 224 (0xe0)
 #pragma pack(pop)
 
 #pragma pack(push, 8)
@@ -19741,7 +19788,7 @@ public:
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_INIT_InheritVelocity : public CParticleInitializerOperatorInstance
+class C_INIT_InheritVelocity : public CParticleFunctionInitializer
 {
 // C_INIT_InheritVelocity additional information
 // particles.dll, project particles
@@ -19817,7 +19864,7 @@ public:
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_ClampScalar : public CParticlePerFrameOperatorInstance
+class C_OP_ClampScalar : public CParticleFunctionOperator
 {
 // C_OP_ClampScalar additional information
 // particles.dll, project particles
@@ -19843,7 +19890,7 @@ char C_OP_ClampScalar_090[0x4];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_TwistAroundAxis : public CParticleForceOperatorInstance
+class C_OP_TwistAroundAxis : public CParticleFunctionForce
 {
 // C_OP_TwistAroundAxis additional information
 // particles.dll, project particles
@@ -19902,6 +19949,36 @@ public:
 	__declspec(align(1)) uint8_t m_nOrigin;// 0x2, size 1 (0x1)
 	__declspec(align(1)) uint8_t m_nFace;// 0x3, size 1 (0x1)
 }; // size: 4 (0x4)
+#pragma pack(pop)
+
+#pragma pack(push, 8)
+class CVRHandAttachmentInput
+{
+// CVRHandAttachmentInput additional information
+// server.dll, project server
+// Alignment: 8
+// SCHEMA_CLASS_HAS_TRIVIAL_DESTRUCTOR
+// SCHEMA_CLASS_TEMP_HACK_HAS_NOSCHEMA_MEMBERS
+// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
+
+public:
+	__declspec(align(8)) uint64_t m_nButtons;// 0x0, size 8 (0x8)
+	__declspec(align(8)) uint64_t m_afButtonPressed;// 0x8, size 8 (0x8)
+	__declspec(align(8)) uint64_t m_afButtonReleased;// 0x10, size 8 (0x8)
+	__declspec(align(4)) float m_flTriggerAnalogValue;// 0x18, size 4 (0x4)
+	__declspec(align(4)) float m_flGripAnalogValue;// 0x1c, size 4 (0x4)
+	__declspec(align(4)) float m_flFinger0;// 0x20, size 4 (0x4)
+	__declspec(align(4)) float m_flFinger1;// 0x24, size 4 (0x4)
+	__declspec(align(4)) float m_flFinger2;// 0x28, size 4 (0x4)
+	__declspec(align(4)) float m_flFinger3;// 0x2c, size 4 (0x4)
+	__declspec(align(4)) float m_flFinger4;// 0x30, size 4 (0x4)
+	__declspec(align(4)) float m_flTrackpadAnalogValueX;// 0x34, size 4 (0x4)
+	__declspec(align(4)) float m_flTrackpadAnalogValueY;// 0x38, size 4 (0x4)
+	__declspec(align(4)) float m_flJoystickAnalogValueX;// 0x3c, size 4 (0x4)
+	__declspec(align(4)) float m_flJoystickAnalogValueY;// 0x40, size 4 (0x4)
+char CVRHandAttachmentInput_0D8[0x94];
+	__declspec(align(8)) CPropVRHand *m_pHand;// 0xd8, size 8 (0x8)
+}; // size: 224 (0xe0)
 #pragma pack(pop)
 
 #pragma pack(push, 8)
@@ -20056,7 +20133,7 @@ char CSceneEventInfo_060[0xE];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_ClampVector : public CParticlePerFrameOperatorInstance
+class C_OP_ClampVector : public CParticleFunctionOperator
 {
 // C_OP_ClampVector additional information
 // particles.dll, project particles
@@ -20129,7 +20206,7 @@ char InfoForResourceTypeCPanoramaLayout_01[0x1];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_LockToSavedSequentialPath : public CParticlePerFrameOperatorInstance
+class C_OP_LockToSavedSequentialPath : public CParticleFunctionOperator
 {
 // C_OP_LockToSavedSequentialPath additional information
 // particles.dll, project particles
@@ -20157,7 +20234,7 @@ char C_OP_LockToSavedSequentialPath_090[0x3];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_INIT_RemapInitialVisibilityScalar : public CParticleInitializerOperatorInstance
+class C_INIT_RemapInitialVisibilityScalar : public CParticleFunctionInitializer
 {
 // C_INIT_RemapInitialVisibilityScalar additional information
 // particles.dll, project particles
@@ -20232,37 +20309,55 @@ class C_OP_RenderLights : public C_OP_RenderPoints
 // SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
 
 public:
-	__declspec(align(4)) float m_flAnimationRate;// 0xd0, size 4 (0x4)
+	__declspec(align(4)) float m_flAnimationRate;// 0xe0, size 4 (0x4)
 	// m_flAnimationRate metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(1)) bool m_bFitCycleToLifetime;// 0xd4, size 1 (0x1)
+	__declspec(align(1)) bool m_bFitCycleToLifetime;// 0xe4, size 1 (0x1)
 	// m_bFitCycleToLifetime metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(1)) bool m_bAnimateInFPS;// 0xd5, size 1 (0x1)
+	__declspec(align(1)) bool m_bAnimateInFPS;// 0xe5, size 1 (0x1)
 	// m_bAnimateInFPS metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) float m_flMinSize;// 0xd8, size 4 (0x4)
+	__declspec(align(4)) float m_flMinSize;// 0xe8, size 4 (0x4)
 	// m_flMinSize metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) float m_flMaxSize;// 0xdc, size 4 (0x4)
+	__declspec(align(4)) float m_flMaxSize;// 0xec, size 4 (0x4)
 	// m_flMaxSize metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) float m_flStartFadeSize;// 0xe0, size 4 (0x4)
+	__declspec(align(4)) float m_flStartFadeSize;// 0xf0, size 4 (0x4)
 	// m_flStartFadeSize metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) float m_flEndFadeSize;// 0xe4, size 4 (0x4)
+	__declspec(align(4)) float m_flEndFadeSize;// 0xf4, size 4 (0x4)
 	// m_flEndFadeSize metadata
 	 // MAttributeName
 	 // MDefaultString
-char C_OP_RenderLights_0F0[0x8];
-}; // size: 240 (0xf0)
+char C_OP_RenderLights_0100[0x8];
+}; // size: 256 (0x100)
+#pragma pack(pop)
+
+#pragma pack(push, 8)
+class CTimeCondition : public CAnimStateConditionBase
+{
+// CTimeCondition additional information
+// animationsystem.dll, project animationsystem
+// Alignment: 8
+// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+// SCHEMA_CLASS_TEMP_HACK_HAS_NOSCHEMA_MEMBERS
+// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
+
+public:
+	__declspec(align(4)) float m_comparisonValue;// 0x28, size 4 (0x4)
+	// m_comparisonValue metadata
+	 // MPropertyFriendlyName
+char CTimeCondition_030[0x4];
+}; // size: 48 (0x30)
 #pragma pack(pop)
 
 #pragma pack(push, 16)
@@ -20297,7 +20392,7 @@ public:
 class VsInputSignatureElement_t
 {
 // VsInputSignatureElement_t additional information
-// rendersystemdx9.dll, project rendersystemdx9
+// rendersystemdx11.dll, project rendersystemdx11
 // Alignment: 4
 // SCHEMA_CLASS_HAS_TRIVIAL_DESTRUCTOR
 // SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
@@ -20323,7 +20418,7 @@ public:
 }; // size: 1960 (0x7a8)
 
 #pragma pack(push, 16)
-class C_OP_EnableChildrenFromParentParticleCount : public CParticlePerFrameOperatorInstance
+class C_OP_EnableChildrenFromParentParticleCount : public CParticleFunctionPreEmission
 {
 // C_OP_EnableChildrenFromParentParticleCount additional information
 // particles.dll, project particles
@@ -20392,6 +20487,85 @@ public:
 char CFailableAchievement_0C8[0x6];
 }; // size: 200 (0xc8)
 
+#pragma pack(push, 16)
+class C_OP_CalculateVectorAttribute : public CParticleFunctionOperator
+{
+// C_OP_CalculateVectorAttribute additional information
+// particles.dll, project particles
+// Alignment: 16
+// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+
+public:
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vStartValue;// 0x80, size 12 (0xc)
+	// m_vStartValue metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) UnknownType <0x4, class ParticleAttributeIndex_t> m_nFieldInput1;// 0x8c, size 4 (0x4)
+	// m_nFieldInput1 metadata
+	 // MAttributeName
+	 // MDefaultString
+	 // MPropertyAttributeChoiceName
+	__declspec(align(4)) float m_flInputScale1;// 0x90, size 4 (0x4)
+	// m_flInputScale1 metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) UnknownType <0x4, class ParticleAttributeIndex_t> m_nFieldInput2;// 0x94, size 4 (0x4)
+	// m_nFieldInput2 metadata
+	 // MAttributeName
+	 // MDefaultString
+	 // MPropertyAttributeChoiceName
+	__declspec(align(4)) float m_flInputScale2;// 0x98, size 4 (0x4)
+	// m_flInputScale2 metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) ControlPointReference_t m_nControlPointInput1;// 0x9c, size 20 (0x14)
+	// m_nControlPointInput1 metadata
+	 // MAttributeName
+	__declspec(align(4)) float m_flControlPointScale1;// 0xb0, size 4 (0x4)
+	// m_flControlPointScale1 metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) ControlPointReference_t m_nControlPointInput2;// 0xb4, size 20 (0x14)
+	// m_nControlPointInput2 metadata
+	 // MAttributeName
+	__declspec(align(4)) float m_flControlPointScale2;// 0xc8, size 4 (0x4)
+	// m_flControlPointScale2 metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) UnknownType <0x4, class ParticleAttributeIndex_t> m_nFieldOutput;// 0xcc, size 4 (0x4)
+	// m_nFieldOutput metadata
+	 // MAttributeName
+	 // MDefaultString
+	 // MPropertyAttributeChoiceName
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vFinalOutputScale;// 0xd0, size 12 (0xc)
+	// m_vFinalOutputScale metadata
+	 // MAttributeName
+	 // MDefaultString
+char C_OP_CalculateVectorAttribute_0E0[0x4];
+}; // size: 224 (0xe0)
+#pragma pack(pop)
+
+#pragma pack(push, 16)
+class C_OP_SetCPOrientationToPointAtCP : public CParticleFunctionPreEmission
+{
+// C_OP_SetCPOrientationToPointAtCP additional information
+// particles.dll, project particles
+// Alignment: 16
+// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+
+public:
+	__declspec(align(4)) int32_t m_nInputCP;// 0x80, size 4 (0x4)
+	// m_nInputCP metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) int32_t m_nOutputCP;// 0x84, size 4 (0x4)
+	// m_nOutputCP metadata
+	 // MAttributeName
+	 // MDefaultString
+char C_OP_SetCPOrientationToPointAtCP_090[0x8];
+}; // size: 144 (0x90)
+#pragma pack(pop)
+
 #pragma pack(push, 8)
 class SceneObject_t
 {
@@ -20441,117 +20615,6 @@ public:
 }; // size: 48 (0x30)
 #pragma pack(pop)
 
-#pragma pack(push, 16)
-class C_INIT_CreateWithinHexahedron : public CParticleInitializerOperatorInstance
-{
-// C_INIT_CreateWithinHexahedron additional information
-// particles.dll, project particles
-// Alignment: 16
-// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
-
-public:
-	__declspec(align(8)) ControlPointReference_t m_nControlPoint0;// 0x80, size 32 (0x20)
-	// m_nControlPoint0 metadata
-	 // MAttributeName
-	__declspec(align(8)) ControlPointReference_t m_nControlPoint1;// 0xa0, size 32 (0x20)
-	// m_nControlPoint1 metadata
-	 // MAttributeName
-	__declspec(align(8)) ControlPointReference_t m_nControlPoint2;// 0xc0, size 32 (0x20)
-	// m_nControlPoint2 metadata
-	 // MAttributeName
-	__declspec(align(8)) ControlPointReference_t m_nControlPoint3;// 0xe0, size 32 (0x20)
-	// m_nControlPoint3 metadata
-	 // MAttributeName
-	__declspec(align(8)) ControlPointReference_t m_nControlPoint4;// 0x100, size 32 (0x20)
-	// m_nControlPoint4 metadata
-	 // MAttributeName
-	__declspec(align(8)) ControlPointReference_t m_nControlPoint5;// 0x120, size 32 (0x20)
-	// m_nControlPoint5 metadata
-	 // MAttributeName
-	__declspec(align(8)) ControlPointReference_t m_nControlPoint6;// 0x140, size 32 (0x20)
-	// m_nControlPoint6 metadata
-	 // MAttributeName
-	__declspec(align(8)) ControlPointReference_t m_nControlPoint7;// 0x160, size 32 (0x20)
-	// m_nControlPoint7 metadata
-	 // MAttributeName
-}; // size: 384 (0x180)
-#pragma pack(pop)
-
-#pragma pack(push, 16)
-class C_OP_SetCPOrientationToPointAtCP : public CParticlePerFrameOperatorInstance
-{
-// C_OP_SetCPOrientationToPointAtCP additional information
-// particles.dll, project particles
-// Alignment: 16
-// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
-
-public:
-	__declspec(align(4)) int32_t m_nInputCP;// 0x80, size 4 (0x4)
-	// m_nInputCP metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(4)) int32_t m_nOutputCP;// 0x84, size 4 (0x4)
-	// m_nOutputCP metadata
-	 // MAttributeName
-	 // MDefaultString
-char C_OP_SetCPOrientationToPointAtCP_090[0x8];
-}; // size: 144 (0x90)
-#pragma pack(pop)
-
-#pragma pack(push, 16)
-class C_OP_AttractToControlPoint : public CParticleForceOperatorInstance
-{
-// C_OP_AttractToControlPoint additional information
-// particles.dll, project particles
-// Alignment: 16
-// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
-
-public:
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecComponentScale;// 0x80, size 12 (0xc)
-	// m_vecComponentScale metadata
-	 // MAttributeName
-	 // MDefaultString
-	 // MVectorIsCoordinate
-	__declspec(align(4)) float m_fForceAmount;// 0x8c, size 4 (0x4)
-	// m_fForceAmount metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(4)) float m_fFalloffPower;// 0x90, size 4 (0x4)
-	// m_fFalloffPower metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(4)) int32_t m_nControlPointNumber;// 0x94, size 4 (0x4)
-	// m_nControlPointNumber metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(4)) int32_t m_nScaleCP;// 0x98, size 4 (0x4)
-	// m_nScaleCP metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(4)) int32_t m_nScaleCPField;// 0x9c, size 4 (0x4)
-	// m_nScaleCPField metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(1)) bool m_bScaleLocal;// 0xa0, size 1 (0x1)
-	// m_bScaleLocal metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(1)) bool m_bRemapPullForceToLife;// 0xa1, size 1 (0x1)
-	// m_bRemapPullForceToLife metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(4)) float m_fForceAmountMin;// 0xa4, size 4 (0x4)
-	// m_fForceAmountMin metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(4)) float m_fLifespanScaleExp;// 0xa8, size 4 (0x4)
-	// m_fLifespanScaleExp metadata
-	 // MAttributeName
-	 // MDefaultString
-char C_OP_AttractToControlPoint_0B0[0x4];
-}; // size: 176 (0xb0)
-#pragma pack(pop)
-
 #pragma pack(push, 4)
 class PostProcessingBloomParameters_t
 {
@@ -20569,11 +20632,12 @@ public:
 	__declspec(align(4)) float m_flBloomThreshold;// 0x10, size 4 (0x4)
 	__declspec(align(4)) float m_flBloomThresholdWidth;// 0x14, size 4 (0x4)
 	__declspec(align(4)) float m_flSkyboxBloomStrength;// 0x18, size 4 (0x4)
-	__declspec(align(4)) float m_flBlurWeight[5];// 0x1c, size 20 (0x14)
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vBlurTint[5];// 0x30, size 60 (0x3c)
-	__declspec(align(1)) bool m_bHDRMode;// 0x6c, size 1 (0x1)
-char PostProcessingBloomParameters_t_070[0x3];
-}; // size: 112 (0x70)
+	__declspec(align(4)) float m_flBloomStartValue;// 0x1c, size 4 (0x4)
+	__declspec(align(4)) float m_flBlurWeight[5];// 0x20, size 20 (0x14)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vBlurTint[5];// 0x34, size 60 (0x3c)
+	__declspec(align(1)) bool m_bHDRMode;// 0x70, size 1 (0x1)
+char PostProcessingBloomParameters_t_074[0x3];
+}; // size: 116 (0x74)
 #pragma pack(pop)
 
 #pragma pack(push, 4)
@@ -20684,6 +20748,18 @@ char CDOTA_Bot_086F8[0x34];
 char CDOTA_Bot_08708[0x4];
 }; // size: 34568 (0x8708)
 
+#pragma pack(push, 16)
+class C_OP_EndCapDecay : public CParticleFunctionOperator
+{
+// C_OP_EndCapDecay additional information
+// particles.dll, project particles
+// Alignment: 16
+// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+
+public:
+}; // size: 128 (0x80)
+#pragma pack(pop)
+
 #pragma pack(push, 8)
 class VirtualVolumeTexData_t
 {
@@ -20711,18 +20787,6 @@ public:
 }; // size: 144 (0x90)
 #pragma pack(pop)
 
-#pragma pack(push, 16)
-class C_OP_EndCapDecay : public CParticlePerFrameOperatorInstance
-{
-// C_OP_EndCapDecay additional information
-// particles.dll, project particles
-// Alignment: 16
-// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
-
-public:
-}; // size: 128 (0x80)
-#pragma pack(pop)
-
 #pragma pack(push, 4)
 class RnSphereDesc_t : public RnShapeDesc_t
 {
@@ -20737,23 +20801,47 @@ public:
 #pragma pack(pop)
 
 #pragma pack(push, 8)
-class CSSDSMsg_PreLayer : public CSSDSMsg_LayerBase
+class CBoneConstraintPoseSpaceMorph : public CBoneConstraintBase
 {
-// CSSDSMsg_PreLayer additional information
-// scenesystem.dll, project scenesystem
+// CBoneConstraintPoseSpaceMorph additional information
+// engine2.dll, project modellib
 // Alignment: 8
+// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+// SCHEMA_CLASS_TEMP_HACK_HAS_NOSCHEMA_MEMBERS
+// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
+// SCHEMA_CLASS_TEMP_HACK_HAS_DESTRUCTOR_LIKE_METHODS
+
+public: 
+	#pragma pack(push, 8)
+	class Input_t
+	{
+	// CBoneConstraintPoseSpaceMorph::Input_t additional information
+	// Alignment: 8
+
+	public:
+		__declspec(align(4)) UnknownType <0xc, class Vector> m_inputValue;// 0x0, size 12 (0xc)
+char Input_t_010[0x4];
+		__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, float > m_outputWeightList;// 0x10, size 24 (0x18)
+	}; // size: 40 (0x28)
+	#pragma pack(pop)
 
 public:
-}; // size: 56 (0x38)
+	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_sBoneName;// 0x28, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_sAttachmentName;// 0x30, size 8 (0x8)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownType <0x8, class CUtlString> > m_outputMorph;// 0x38, size 24 (0x18)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class CBoneConstraintPoseSpaceMorph::Input_t > m_inputList;// 0x50, size 24 (0x18)
+char CBoneConstraintPoseSpaceMorph_098[0x30];
+}; // size: 152 (0x98)
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_INIT_RemapCPtoScalar : public CParticleInitializerOperatorInstance
+class C_INIT_RemapCPtoScalar : public CParticleFunctionInitializer
 {
 // C_INIT_RemapCPtoScalar additional information
 // particles.dll, project particles
 // Alignment: 16
 // SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+// SCHEMA_CLASS_TEMP_HACK_HAS_NOSCHEMA_MEMBERS
 
 public:
 	__declspec(align(4)) int32_t m_nCPInput;// 0x80, size 4 (0x4)
@@ -20798,8 +20886,23 @@ public:
 	// m_bScaleInitialRange metadata
 	 // MAttributeName
 	 // MDefaultString
-char C_INIT_RemapCPtoScalar_0B0[0xB];
+	__declspec(align(4)) float m_flRemapBias;// 0xa8, size 4 (0x4)
+	// m_flRemapBias metadata
+	 // MAttributeName
+	 // MDefaultString
+char C_INIT_RemapCPtoScalar_0B0[0x4];
 }; // size: 176 (0xb0)
+#pragma pack(pop)
+
+#pragma pack(push, 8)
+class CSSDSMsg_PreLayer : public CSSDSMsg_LayerBase
+{
+// CSSDSMsg_PreLayer additional information
+// scenesystem.dll, project scenesystem
+// Alignment: 8
+
+public:
+}; // size: 56 (0x38)
 #pragma pack(pop)
 
 class IServerVehicle : public IVehicle
@@ -20975,6 +21078,18 @@ char CHeroesPerPlayer_018[0x10];
 }; // size: 48 (0x30)
 #pragma pack(pop)
 
+#pragma pack(push, 16)
+class C_INIT_RemapParticleCountToNamedModelBodyPartScalar : public C_INIT_RemapParticleCountToNamedModelElementScalar
+{
+// C_INIT_RemapParticleCountToNamedModelBodyPartScalar additional information
+// particles.dll, project particles
+// Alignment: 16
+// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+
+public:
+}; // size: 208 (0xd0)
+#pragma pack(pop)
+
 #pragma pack(push, 4)
 class BakedLightingInfo_t
 {
@@ -21007,18 +21122,6 @@ public:
 	__declspec(align(4)) UnknownAtomicType <0x8, CResourceArray, uint32_t > m_boneHashes;// 0x4, size 8 (0x8)
 	__declspec(align(4)) UnknownAtomicType <0x8, CResourceArray, UnknownType <0x30, class matrix3x4_t> > m_boneTransforms;// 0xc, size 8 (0x8)
 }; // size: 20 (0x14)
-#pragma pack(pop)
-
-#pragma pack(push, 16)
-class C_INIT_RemapParticleCountToNamedModelBodyPartScalar : public C_INIT_RemapParticleCountToNamedModelElementScalar
-{
-// C_INIT_RemapParticleCountToNamedModelBodyPartScalar additional information
-// particles.dll, project particles
-// Alignment: 16
-// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
-
-public:
-}; // size: 192 (0xc0)
 #pragma pack(pop)
 
 #pragma pack(push, 4)
@@ -21086,7 +21189,7 @@ public:
 }; // size: 8 (0x8)
 
 #pragma pack(push, 16)
-class C_OP_RemapSpeedtoCP : public CParticlePerFrameOperatorInstance
+class C_OP_RemapSpeedtoCP : public CParticleFunctionPreEmission
 {
 // C_OP_RemapSpeedtoCP additional information
 // particles.dll, project particles
@@ -21128,7 +21231,7 @@ char C_OP_RemapSpeedtoCP_0A0[0x4];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_WindForce : public CParticleForceOperatorInstance
+class C_OP_WindForce : public CParticleFunctionForce
 {
 // C_OP_WindForce additional information
 // particles.dll, project particles
@@ -21211,7 +21314,7 @@ public:
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_DampenToCP : public CParticlePerFrameOperatorInstance
+class C_OP_DampenToCP : public CParticleFunctionOperator
 {
 // C_OP_DampenToCP additional information
 // particles.dll, project particles
@@ -21237,7 +21340,7 @@ char C_OP_DampenToCP_090[0x4];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_PositionLock : public CParticlePerFrameOperatorInstance
+class C_OP_PositionLock : public CParticleFunctionOperator
 {
 // C_OP_PositionLock additional information
 // particles.dll, project particles
@@ -21365,7 +21468,7 @@ public:
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_RemapCPtoScalar : public CParticlePerFrameOperatorInstance
+class C_OP_RemapCPtoScalar : public CParticleFunctionOperator
 {
 // C_OP_RemapCPtoScalar additional information
 // particles.dll, project particles
@@ -21508,7 +21611,7 @@ public:
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_INIT_CreateFromCPs : public CParticleInitializerOperatorInstance
+class C_INIT_CreateFromCPs : public CParticleFunctionInitializer
 {
 // C_INIT_CreateFromCPs additional information
 // particles.dll, project particles
@@ -21516,21 +21619,21 @@ class C_INIT_CreateFromCPs : public CParticleInitializerOperatorInstance
 // SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
 
 public:
-	__declspec(align(1)) bool m_bRandomDistribution;// 0x80, size 1 (0x1)
-	// m_bRandomDistribution metadata
-	 // MSrc1ImportAttributeName
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(4)) int32_t m_nIncrement;// 0x84, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nIncrement;// 0x80, size 4 (0x4)
 	// m_nIncrement metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) int32_t m_nMinCP;// 0x88, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nMinCP;// 0x84, size 4 (0x4)
 	// m_nMinCP metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
+	__declspec(align(4)) int32_t m_nMaxCP;// 0x88, size 4 (0x4)
+	// m_nMaxCP metadata
+	 // MAttributeName
+	 // MDefaultString
+	 // MParticleMinVersion
 char C_INIT_CreateFromCPs_090[0x4];
 }; // size: 144 (0x90)
 #pragma pack(pop)
@@ -21853,7 +21956,30 @@ public:
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_INIT_CreationNoise : public CParticleInitializerOperatorInstance
+class C_OP_SetControlPointToCenter : public CParticleFunctionPreEmission
+{
+// C_OP_SetControlPointToCenter additional information
+// particles.dll, project particles
+// Alignment: 16
+// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+
+public:
+	__declspec(align(4)) int32_t m_nCP1;// 0x80, size 4 (0x4)
+	// m_nCP1 metadata
+	 // MSrc1ImportAttributeName
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecCP1Pos;// 0x84, size 12 (0xc)
+	// m_vecCP1Pos metadata
+	 // MSrc1ImportAttributeName
+	 // MAttributeName
+	 // MDefaultString
+	 // MVectorIsCoordinate
+}; // size: 144 (0x90)
+#pragma pack(pop)
+
+#pragma pack(push, 16)
+class C_INIT_CreationNoise : public CParticleFunctionInitializer
 {
 // C_INIT_CreationNoise additional information
 // particles.dll, project particles
@@ -22024,7 +22150,7 @@ char ParticlePreviewState_t_060[0x3];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_SetControlPointPositions : public CParticlePerFrameOperatorInstance
+class C_OP_SetControlPointPositions : public CParticleFunctionPreEmission
 {
 // C_OP_SetControlPointPositions additional information
 // particles.dll, project particles
@@ -22052,72 +22178,52 @@ public:
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) int32_t m_nCP1Parent;// 0x88, size 4 (0x4)
-	// m_nCP1Parent metadata
-	 // MSrc1ImportAttributeName
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(4)) int32_t m_nCP2;// 0x8c, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nCP2;// 0x88, size 4 (0x4)
 	// m_nCP2 metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) int32_t m_nCP2Parent;// 0x90, size 4 (0x4)
-	// m_nCP2Parent metadata
-	 // MSrc1ImportAttributeName
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(4)) int32_t m_nCP3;// 0x94, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nCP3;// 0x8c, size 4 (0x4)
 	// m_nCP3 metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) int32_t m_nCP3Parent;// 0x98, size 4 (0x4)
-	// m_nCP3Parent metadata
-	 // MSrc1ImportAttributeName
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(4)) int32_t m_nCP4;// 0x9c, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nCP4;// 0x90, size 4 (0x4)
 	// m_nCP4 metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) int32_t m_nCP4Parent;// 0xa0, size 4 (0x4)
-	// m_nCP4Parent metadata
-	 // MSrc1ImportAttributeName
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecCP1Pos;// 0xa4, size 12 (0xc)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecCP1Pos;// 0x94, size 12 (0xc)
 	// m_vecCP1Pos metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
 	 // MVectorIsCoordinate
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecCP2Pos;// 0xb0, size 12 (0xc)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecCP2Pos;// 0xa0, size 12 (0xc)
 	// m_vecCP2Pos metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
 	 // MVectorIsCoordinate
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecCP3Pos;// 0xbc, size 12 (0xc)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecCP3Pos;// 0xac, size 12 (0xc)
 	// m_vecCP3Pos metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
 	 // MVectorIsCoordinate
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecCP4Pos;// 0xc8, size 12 (0xc)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecCP4Pos;// 0xb8, size 12 (0xc)
 	// m_vecCP4Pos metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
 	 // MVectorIsCoordinate
-	__declspec(align(4)) int32_t m_nHeadLocation;// 0xd4, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nHeadLocation;// 0xc4, size 4 (0x4)
 	// m_nHeadLocation metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
-char C_OP_SetControlPointPositions_0E0[0x8];
-}; // size: 224 (0xe0)
+char C_OP_SetControlPointPositions_0D0[0x8];
+}; // size: 208 (0xd0)
 #pragma pack(pop)
 
 #pragma pack(push, 8)
@@ -22271,7 +22377,28 @@ char CDOTASpectatorGraphManager_0A60[0x4];
 }; // size: 2656 (0xa60)
 
 #pragma pack(push, 16)
-class C_OP_DistanceCull : public CParticlePerFrameOperatorInstance
+class C_OP_SetFloat : public CParticleFunctionOperator
+{
+// C_OP_SetFloat additional information
+// particles.dll, project particles
+// Alignment: 16
+// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+
+public:
+	__declspec(align(8)) CParticleFloatInput m_InputValue;// 0x80, size 112 (0x70)
+	// m_InputValue metadata
+	 // MAttributeName
+	__declspec(align(4)) UnknownType <0x4, class ParticleAttributeIndex_t> m_nOutputField;// 0xf0, size 4 (0x4)
+	// m_nOutputField metadata
+	 // MAttributeName
+	 // MDefaultString
+	 // MPropertyAttributeChoiceName
+char C_OP_SetFloat_0100[0xC];
+}; // size: 256 (0x100)
+#pragma pack(pop)
+
+#pragma pack(push, 16)
+class C_OP_DistanceCull : public CParticleFunctionOperator
 {
 // C_OP_DistanceCull additional information
 // particles.dll, project particles
@@ -22305,7 +22432,7 @@ char C_OP_DistanceCull_0A0[0xB];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_INIT_VelocityRadialRandom : public CParticleInitializerOperatorInstance
+class C_INIT_VelocityRadialRandom : public CParticleFunctionInitializer
 {
 // C_INIT_VelocityRadialRandom additional information
 // particles.dll, project particles
@@ -22340,6 +22467,43 @@ char C_INIT_VelocityRadialRandom_099[0x1];
 	 // MDefaultString
 char C_INIT_VelocityRadialRandom_0A0[0x6];
 }; // size: 160 (0xa0)
+#pragma pack(pop)
+
+#pragma pack(push, 8)
+class CAnimStateTransition : public SchemaBase
+{
+// CAnimStateTransition additional information
+// animationsystem.dll, project animationsystem
+// Alignment: 8
+// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+// SCHEMA_CLASS_TEMP_HACK_HAS_NOSCHEMA_MEMBERS
+// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
+
+public:
+char CAnimStateTransition_020[0x18];
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownAtomicType <0x8, CSmartPtr, class CAnimStateConditionBase > > m_conditions;// 0x20, size 24 (0x18)
+	// m_conditions metadata
+	 // MPropertySuppressField
+	__declspec(align(4)) float m_blendDuration;// 0x38, size 4 (0x4)
+	// m_blendDuration metadata
+	 // MPropertyFriendlyName
+	__declspec(align(4)) AnimStateID m_destState;// 0x3c, size 4 (0x4)
+	// m_destState metadata
+	 // MPropertyHideField
+	__declspec(align(1)) bool m_bReset;// 0x40, size 1 (0x1)
+	// m_bReset metadata
+	 // MPropertyFriendlyName
+	__declspec(align(4)) ResetCycleOption m_resetCycleOption;// 0x44, size 4 (0x4)
+	// m_resetCycleOption metadata
+	 // MPropertyFriendlyName
+	__declspec(align(4)) float m_flFixedCycleValue;// 0x48, size 4 (0x4)
+	// m_flFixedCycleValue metadata
+	 // MPropertyFriendlyName
+	__declspec(align(4)) CBlendCurve m_blendCurve;// 0x4c, size 16 (0x10)
+	// m_blendCurve metadata
+	 // MPropertySuppressField
+char CAnimStateTransition_060[0x4];
+}; // size: 96 (0x60)
 #pragma pack(pop)
 
 #pragma pack(push, 4)
@@ -22493,7 +22657,7 @@ char WeaponTextureData_t_030[0x4];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_LocalAccelerationForce : public CParticleForceOperatorInstance
+class C_OP_LocalAccelerationForce : public CParticleFunctionForce
 {
 // C_OP_LocalAccelerationForce additional information
 // particles.dll, project particles
@@ -22703,6 +22867,31 @@ char ragdollelement_t_020[0x14];
 }; // size: 40 (0x28)
 #pragma pack(pop)
 
+#pragma pack(push, 16)
+class C_OP_RampCPLinearRandom : public CParticleFunctionPreEmission
+{
+// C_OP_RampCPLinearRandom additional information
+// particles.dll, project particles
+// Alignment: 16
+// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+
+public:
+	__declspec(align(4)) int32_t m_nOutControlPointNumber;// 0x80, size 4 (0x4)
+	// m_nOutControlPointNumber metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecRateMin;// 0x84, size 12 (0xc)
+	// m_vecRateMin metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecRateMax;// 0x90, size 12 (0xc)
+	// m_vecRateMax metadata
+	 // MAttributeName
+	 // MDefaultString
+char C_OP_RampCPLinearRandom_0A0[0x4];
+}; // size: 160 (0xa0)
+#pragma pack(pop)
+
 #pragma pack(push, 8)
 class CClothSettingsAnimTag : public CAnimTagBase
 {
@@ -22785,7 +22974,7 @@ public:
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_OscillateScalar : public CParticlePerFrameOperatorInstance
+class C_OP_OscillateScalar : public CParticleFunctionOperator
 {
 // C_OP_OscillateScalar additional information
 // particles.dll, project particles
@@ -22881,7 +23070,7 @@ public:
 class SheetSequenceFrame_t
 {
 // SheetSequenceFrame_t additional information
-// rendersystemdx9.dll, project rendersystemdx9
+// rendersystemdx11.dll, project rendersystemdx11
 // Alignment: 4
 // SCHEMA_CLASS_HAS_TRIVIAL_DESTRUCTOR
 
@@ -22906,7 +23095,7 @@ char InfoForResourceTypeIParticleSystemDefinition_01[0x1];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_INIT_PointList : public CParticleInitializerOperatorInstance
+class C_INIT_PointList : public CParticleFunctionInitializer
 {
 // C_INIT_PointList additional information
 // particles.dll, project particles
@@ -22969,7 +23158,61 @@ char ragdoll_t_038[0x6];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_INIT_CreateInEpitrochoid : public CParticleInitializerOperatorInstance
+class C_OP_AttractToControlPoint : public CParticleFunctionForce
+{
+// C_OP_AttractToControlPoint additional information
+// particles.dll, project particles
+// Alignment: 16
+// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+
+public:
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecComponentScale;// 0x80, size 12 (0xc)
+	// m_vecComponentScale metadata
+	 // MAttributeName
+	 // MDefaultString
+	 // MVectorIsCoordinate
+	__declspec(align(4)) float m_fForceAmount;// 0x8c, size 4 (0x4)
+	// m_fForceAmount metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) float m_fFalloffPower;// 0x90, size 4 (0x4)
+	// m_fFalloffPower metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) int32_t m_nControlPointNumber;// 0x94, size 4 (0x4)
+	// m_nControlPointNumber metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) int32_t m_nScaleCP;// 0x98, size 4 (0x4)
+	// m_nScaleCP metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) int32_t m_nScaleCPField;// 0x9c, size 4 (0x4)
+	// m_nScaleCPField metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(1)) bool m_bScaleLocal;// 0xa0, size 1 (0x1)
+	// m_bScaleLocal metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(1)) bool m_bRemapPullForceToLife;// 0xa1, size 1 (0x1)
+	// m_bRemapPullForceToLife metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) float m_fForceAmountMin;// 0xa4, size 4 (0x4)
+	// m_fForceAmountMin metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) float m_fLifespanScaleExp;// 0xa8, size 4 (0x4)
+	// m_fLifespanScaleExp metadata
+	 // MAttributeName
+	 // MDefaultString
+char C_OP_AttractToControlPoint_0B0[0x4];
+}; // size: 176 (0xb0)
+#pragma pack(pop)
+
+#pragma pack(push, 16)
+class C_INIT_CreateInEpitrochoid : public CParticleFunctionInitializer
 {
 // C_INIT_CreateInEpitrochoid additional information
 // particles.dll, project particles
@@ -23047,6 +23290,37 @@ char CCycleCondition_030[0x4];
 #pragma pack(pop)
 
 #pragma pack(push, 8)
+class CBoneConstraintPoseSpaceBone : public CBaseConstraint
+{
+// CBoneConstraintPoseSpaceBone additional information
+// engine2.dll, project modellib
+// Alignment: 8
+// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+// SCHEMA_CLASS_TEMP_HACK_HAS_NOSCHEMA_MEMBERS
+// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
+// SCHEMA_CLASS_TEMP_HACK_HAS_DESTRUCTOR_LIKE_METHODS
+
+public: 
+	#pragma pack(push, 8)
+	class Input_t
+	{
+	// CBoneConstraintPoseSpaceBone::Input_t additional information
+	// Alignment: 8
+
+	public:
+		__declspec(align(4)) UnknownType <0xc, class Vector> m_inputValue;// 0x0, size 12 (0xc)
+char Input_t_010[0x4];
+		__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownType <0x20, class CTransform> > m_outputTransformList;// 0x10, size 24 (0x18)
+	}; // size: 40 (0x28)
+	#pragma pack(pop)
+
+public:
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class CBoneConstraintPoseSpaceBone::Input_t > m_inputList;// 0x70, size 24 (0x18)
+char CBoneConstraintPoseSpaceBone_098[0x10];
+}; // size: 152 (0x98)
+#pragma pack(pop)
+
+#pragma pack(push, 8)
 class EventServerPostSimulate_t : public EventSimulate_t
 {
 // EventServerPostSimulate_t additional information
@@ -23068,11 +23342,45 @@ class C_INIT_RemapParticleCountToNamedModelSequenceScalar : public C_INIT_RemapP
 // SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
 
 public:
-}; // size: 192 (0xc0)
+}; // size: 208 (0xd0)
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_FadeAndKill : public CParticlePerFrameOperatorInstance
+class C_OP_PlanarConstraint : public CParticleFunctionConstraint
+{
+// C_OP_PlanarConstraint additional information
+// particles.dll, project particles
+// Alignment: 16
+// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+
+public:
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_PointOnPlane;// 0x80, size 12 (0xc)
+	// m_PointOnPlane metadata
+	 // MAttributeName
+	 // MDefaultString
+	 // MVectorIsCoordinate
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_PlaneNormal;// 0x8c, size 12 (0xc)
+	// m_PlaneNormal metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) int32_t m_nControlPointNumber;// 0x98, size 4 (0x4)
+	// m_nControlPointNumber metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(1)) bool m_bGlobalOrigin;// 0x9c, size 1 (0x1)
+	// m_bGlobalOrigin metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(1)) bool m_bGlobalNormal;// 0x9d, size 1 (0x1)
+	// m_bGlobalNormal metadata
+	 // MAttributeName
+	 // MDefaultString
+char C_OP_PlanarConstraint_0A0[0x2];
+}; // size: 160 (0xa0)
+#pragma pack(pop)
+
+#pragma pack(push, 16)
+class C_OP_FadeAndKill : public CParticleFunctionOperator
 {
 // C_OP_FadeAndKill additional information
 // particles.dll, project particles
@@ -23208,23 +23516,7 @@ char CNavVolumeSphericalShell_098[0x4];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class CSceneObjectReference_t
-{
-// CSceneObjectReference_t additional information
-// scenesystem.dll, project scenesystem
-// Alignment: 16
-// SCHEMA_CLASS_HAS_TRIVIAL_DESTRUCTOR
-
-public:
-	__declspec(align(16)) UnknownType <0x10, class VectorAligned> m_vecAABBMins;// 0x0, size 16 (0x10)
-	__declspec(align(16)) UnknownType <0x10, class VectorAligned> m_vecAABBMaxes;// 0x10, size 16 (0x10)
-	__declspec(align(8)) uint64_t m_nRenderableFlags;// 0x20, size 8 (0x8)
-	__declspec(align(8)) CSceneObject *m_pObject;// 0x28, size 8 (0x8)
-}; // size: 48 (0x30)
-#pragma pack(pop)
-
-#pragma pack(push, 16)
-class C_INIT_RandomRadius : public CParticleInitializerOperatorInstance
+class C_INIT_RandomRadius : public CParticleFunctionInitializer
 {
 // C_INIT_RandomRadius additional information
 // particles.dll, project particles
@@ -23255,7 +23547,7 @@ char C_INIT_RandomRadius_090[0x4];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_INIT_RandomVectorComponent : public CParticleInitializerOperatorInstance
+class C_INIT_RandomVectorComponent : public CParticleFunctionInitializer
 {
 // C_INIT_RandomVectorComponent additional information
 // particles.dll, project particles
@@ -23283,6 +23575,22 @@ public:
 	 // MPropertyAttributeChoiceName
 	 // MVectorIsSometimesCoordinate
 }; // size: 144 (0x90)
+#pragma pack(pop)
+
+#pragma pack(push, 16)
+class CSceneObjectReference_t
+{
+// CSceneObjectReference_t additional information
+// scenesystem.dll, project scenesystem
+// Alignment: 16
+// SCHEMA_CLASS_HAS_TRIVIAL_DESTRUCTOR
+
+public:
+	__declspec(align(16)) UnknownType <0x10, class VectorAligned> m_vecAABBMins;// 0x0, size 16 (0x10)
+	__declspec(align(16)) UnknownType <0x10, class VectorAligned> m_vecAABBMaxes;// 0x10, size 16 (0x10)
+	__declspec(align(8)) uint64_t m_nRenderableFlags;// 0x20, size 8 (0x8)
+	__declspec(align(8)) CSceneObject *m_pObject;// 0x28, size 8 (0x8)
+}; // size: 48 (0x30)
 #pragma pack(pop)
 
 #pragma pack(push, 8)
@@ -23325,7 +23633,7 @@ char CBlendAnimNode_040[0x8];
 	__declspec(align(4)) AnimParamID m_param;// 0x5c, size 4 (0x4)
 	// m_param metadata
 	 // MPropertyFriendlyName
-	 // MPropertyChoiceProviderFn
+	 // MPropertyAttributeChoiceName
 	__declspec(align(4)) BlendKeyType m_blendKeyType;// 0x60, size 4 (0x4)
 	// m_blendKeyType metadata
 	 // MPropertyFriendlyName
@@ -23334,6 +23642,9 @@ char CBlendAnimNode_040[0x8];
 	 // MPropertyFriendlyName
 	__declspec(align(1)) bool m_bSyncCycles;// 0x65, size 1 (0x1)
 	// m_bSyncCycles metadata
+	 // MPropertyFriendlyName
+	__declspec(align(1)) bool m_bLoop;// 0x66, size 1 (0x1)
+	// m_bLoop metadata
 	 // MPropertyFriendlyName
 	__declspec(align(8)) CAnimInputDamping m_damping;// 0x68, size 24 (0x18)
 	// m_damping metadata
@@ -23385,7 +23696,7 @@ public:
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_INIT_RandomAlphaWindowThreshold : public CParticleInitializerOperatorInstance
+class C_INIT_RandomAlphaWindowThreshold : public CParticleFunctionInitializer
 {
 // C_INIT_RandomAlphaWindowThreshold additional information
 // particles.dll, project particles
@@ -23410,7 +23721,7 @@ char C_INIT_RandomAlphaWindowThreshold_090[0x4];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_INIT_VelocityRandom : public CParticleInitializerOperatorInstance
+class C_INIT_VelocityRandom : public CParticleFunctionInitializer
 {
 // C_INIT_VelocityRandom additional information
 // particles.dll, project particles
@@ -23730,7 +24041,7 @@ public:
 	__declspec(align(4)) AnimParamID m_paramID;// 0x28, size 4 (0x4)
 	// m_paramID metadata
 	 // MPropertyFriendlyName
-	 // MPropertyChoiceProviderFn
+	 // MPropertyAttributeChoiceName
 	__declspec(align(1)) UnknownType <0xd, class CAnimVariant> m_comparisonValue;// 0x2c, size 13 (0xd)
 	// m_comparisonValue metadata
 	 // MPropertyFriendlyName
@@ -23824,20 +24135,6 @@ char CChoiceAnimNode_070[0x3];
 }; // size: 112 (0x70)
 #pragma pack(pop)
 
-#pragma pack(push, 4)
-class WorldLighting_t
-{
-// WorldLighting_t additional information
-// worldrenderer.dll, project worldrenderer
-// Alignment: 4
-// SCHEMA_CLASS_HAS_TRIVIAL_DESTRUCTOR
-
-public:
-	__declspec(align(4)) GlobalIlluminationMethod_t m_globalIlluminationMethod;// 0x0, size 4 (0x4)
-	__declspec(align(4)) UnknownAtomicType <0x8, CResourceArray, class IrradVolume_t > m_irradVolumes;// 0x4, size 8 (0x8)
-}; // size: 12 (0xc)
-#pragma pack(pop)
-
 #pragma pack(push, 16)
 class C_OP_RemapNamedModelMeshGroupEndCap : public C_OP_RemapNamedModelElementEndCap
 {
@@ -23851,7 +24148,7 @@ public:
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_INIT_NormalAlignToCP : public CParticleInitializerOperatorInstance
+class C_INIT_NormalAlignToCP : public CParticleFunctionInitializer
 {
 // C_INIT_NormalAlignToCP additional information
 // particles.dll, project particles
@@ -23866,6 +24163,20 @@ public:
 	 // MDefaultString
 char C_INIT_NormalAlignToCP_090[0xC];
 }; // size: 144 (0x90)
+#pragma pack(pop)
+
+#pragma pack(push, 4)
+class WorldLighting_t
+{
+// WorldLighting_t additional information
+// worldrenderer.dll, project worldrenderer
+// Alignment: 4
+// SCHEMA_CLASS_HAS_TRIVIAL_DESTRUCTOR
+
+public:
+	__declspec(align(4)) GlobalIlluminationMethod_t m_globalIlluminationMethod;// 0x0, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x8, CResourceArray, class IrradVolume_t > m_irradVolumes;// 0x4, size 8 (0x8)
+}; // size: 12 (0xc)
 #pragma pack(pop)
 
 #pragma pack(push, 8)
@@ -23946,7 +24257,40 @@ public:
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_SnapshotSkinToBones : public CParticlePerFrameOperatorInstance
+class C_OP_RemapBoundingVolumetoCP : public CParticleFunctionPreEmission
+{
+// C_OP_RemapBoundingVolumetoCP additional information
+// particles.dll, project particles
+// Alignment: 16
+// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+
+public:
+	__declspec(align(4)) int32_t m_nOutControlPointNumber;// 0x80, size 4 (0x4)
+	// m_nOutControlPointNumber metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) float m_flInputMin;// 0x84, size 4 (0x4)
+	// m_flInputMin metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) float m_flInputMax;// 0x88, size 4 (0x4)
+	// m_flInputMax metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) float m_flOutputMin;// 0x8c, size 4 (0x4)
+	// m_flOutputMin metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) float m_flOutputMax;// 0x90, size 4 (0x4)
+	// m_flOutputMax metadata
+	 // MAttributeName
+	 // MDefaultString
+char C_OP_RemapBoundingVolumetoCP_0A0[0xC];
+}; // size: 160 (0xa0)
+#pragma pack(pop)
+
+#pragma pack(push, 16)
+class C_OP_SnapshotSkinToBones : public CParticleFunctionOperator
 {
 // C_OP_SnapshotSkinToBones additional information
 // particles.dll, project particles
@@ -23980,39 +24324,6 @@ public:
 	 // MAttributeName
 	 // MDefaultString
 char C_OP_SnapshotSkinToBones_0A0[0x8];
-}; // size: 160 (0xa0)
-#pragma pack(pop)
-
-#pragma pack(push, 16)
-class C_OP_RemapBoundingVolumetoCP : public CParticlePerFrameOperatorInstance
-{
-// C_OP_RemapBoundingVolumetoCP additional information
-// particles.dll, project particles
-// Alignment: 16
-// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
-
-public:
-	__declspec(align(4)) int32_t m_nOutControlPointNumber;// 0x80, size 4 (0x4)
-	// m_nOutControlPointNumber metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(4)) float m_flInputMin;// 0x84, size 4 (0x4)
-	// m_flInputMin metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(4)) float m_flInputMax;// 0x88, size 4 (0x4)
-	// m_flInputMax metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(4)) float m_flOutputMin;// 0x8c, size 4 (0x4)
-	// m_flOutputMin metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(4)) float m_flOutputMax;// 0x90, size 4 (0x4)
-	// m_flOutputMax metadata
-	 // MAttributeName
-	 // MDefaultString
-char C_OP_RemapBoundingVolumetoCP_0A0[0xC];
 }; // size: 160 (0xa0)
 #pragma pack(pop)
 
@@ -24139,12 +24450,16 @@ char PlayerResourcePlayerData_t_012[0xA];
 	// m_eCoachTeam metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bIsPlusSubscriber;// 0x44, size 1 (0x1)
+	__declspec(align(4)) DOTATeam_t m_eLiveSpectatorTeam;// 0x44, size 4 (0x4)
+	// m_eLiveSpectatorTeam metadata
+	 // MNetworkEnable
+	 // MNetworkEnable
+	__declspec(align(1)) bool m_bIsPlusSubscriber;// 0x48, size 1 (0x1)
 	// m_bIsPlusSubscriber metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-char PlayerResourcePlayerData_t_048[0x3];
-}; // size: 72 (0x48)
+char PlayerResourcePlayerData_t_050[0x7];
+}; // size: 80 (0x50)
 #pragma pack(pop)
 
 #pragma pack(push, 16)
@@ -24158,170 +24473,175 @@ class C_OP_RenderRopes : public CBaseRendererSource2
 // SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
 
 public:
-	__declspec(align(1)) bool m_bEnableFadingAndClamping;// 0x280, size 1 (0x1)
+	__declspec(align(1)) bool m_bEnableFadingAndClamping;// 0x290, size 1 (0x1)
 	// m_bEnableFadingAndClamping metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyGroupName
-	__declspec(align(4)) float m_flMinSize;// 0x284, size 4 (0x4)
+	__declspec(align(4)) float m_flMinSize;// 0x294, size 4 (0x4)
 	// m_flMinSize metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyGroupName
-	__declspec(align(4)) float m_flMaxSize;// 0x288, size 4 (0x4)
+	__declspec(align(4)) float m_flMaxSize;// 0x298, size 4 (0x4)
 	// m_flMaxSize metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyGroupName
-	__declspec(align(4)) float m_flStartFadeSize;// 0x28c, size 4 (0x4)
+	__declspec(align(4)) float m_flStartFadeSize;// 0x29c, size 4 (0x4)
 	// m_flStartFadeSize metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyGroupName
-	__declspec(align(4)) float m_flEndFadeSize;// 0x290, size 4 (0x4)
+	__declspec(align(4)) float m_flEndFadeSize;// 0x2a0, size 4 (0x4)
 	// m_flEndFadeSize metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyGroupName
-	__declspec(align(4)) float m_flRadiusTaper;// 0x294, size 4 (0x4)
+	__declspec(align(4)) float m_flRadiusTaper;// 0x2a4, size 4 (0x4)
 	// m_flRadiusTaper metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) int32_t m_nMinTesselation;// 0x298, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nMinTesselation;// 0x2a8, size 4 (0x4)
 	// m_nMinTesselation metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) int32_t m_nMaxTesselation;// 0x29c, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nMaxTesselation;// 0x2ac, size 4 (0x4)
 	// m_nMaxTesselation metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) float m_flTessScale;// 0x2a0, size 4 (0x4)
+	__declspec(align(4)) float m_flTessScale;// 0x2b0, size 4 (0x4)
 	// m_flTessScale metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) float m_flTextureVWorldSize;// 0x2a4, size 4 (0x4)
+	__declspec(align(4)) float m_flTextureVWorldSize;// 0x2b4, size 4 (0x4)
 	// m_flTextureVWorldSize metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyGroupName
-	__declspec(align(4)) float m_flTextureVScrollRate;// 0x2a8, size 4 (0x4)
+	__declspec(align(4)) float m_flTextureVScrollRate;// 0x2b8, size 4 (0x4)
 	// m_flTextureVScrollRate metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyGroupName
-	__declspec(align(4)) float m_flTextureVOffset;// 0x2ac, size 4 (0x4)
+	__declspec(align(4)) float m_flTextureVOffset;// 0x2bc, size 4 (0x4)
 	// m_flTextureVOffset metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyGroupName
-	__declspec(align(4)) float m_flFinalTextureScaleU;// 0x2b0, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nTextureVParamsCP;// 0x2c0, size 4 (0x4)
+	// m_nTextureVParamsCP metadata
+	 // MAttributeName
+	 // MDefaultString
+	 // MPropertyGroupName
+	__declspec(align(4)) float m_flFinalTextureScaleU;// 0x2c4, size 4 (0x4)
 	// m_flFinalTextureScaleU metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyGroupName
-	__declspec(align(4)) float m_flFinalTextureScaleV;// 0x2b4, size 4 (0x4)
+	__declspec(align(4)) float m_flFinalTextureScaleV;// 0x2c8, size 4 (0x4)
 	// m_flFinalTextureScaleV metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyGroupName
-	__declspec(align(4)) float m_flFinalTextureOffsetU;// 0x2b8, size 4 (0x4)
+	__declspec(align(4)) float m_flFinalTextureOffsetU;// 0x2cc, size 4 (0x4)
 	// m_flFinalTextureOffsetU metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyGroupName
-	__declspec(align(4)) float m_flFinalTextureOffsetV;// 0x2bc, size 4 (0x4)
+	__declspec(align(4)) float m_flFinalTextureOffsetV;// 0x2d0, size 4 (0x4)
 	// m_flFinalTextureOffsetV metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyGroupName
-	__declspec(align(1)) bool m_bClampV;// 0x2c0, size 1 (0x1)
+	__declspec(align(1)) bool m_bClampV;// 0x2d4, size 1 (0x1)
 	// m_bClampV metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyGroupName
-	__declspec(align(4)) int32_t m_nScaleCP1;// 0x2c4, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nScaleCP1;// 0x2d8, size 4 (0x4)
 	// m_nScaleCP1 metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyGroupName
-	__declspec(align(4)) int32_t m_nScaleCP2;// 0x2c8, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nScaleCP2;// 0x2dc, size 4 (0x4)
 	// m_nScaleCP2 metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyGroupName
-	__declspec(align(4)) float m_flScaleVSizeByControlPointDistance;// 0x2cc, size 4 (0x4)
+	__declspec(align(4)) float m_flScaleVSizeByControlPointDistance;// 0x2e0, size 4 (0x4)
 	// m_flScaleVSizeByControlPointDistance metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyGroupName
-	__declspec(align(4)) float m_flScaleVScrollByControlPointDistance;// 0x2d0, size 4 (0x4)
+	__declspec(align(4)) float m_flScaleVScrollByControlPointDistance;// 0x2e4, size 4 (0x4)
 	// m_flScaleVScrollByControlPointDistance metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyGroupName
-	__declspec(align(4)) float m_flScaleVOffsetByControlPointDistance;// 0x2d4, size 4 (0x4)
+	__declspec(align(4)) float m_flScaleVOffsetByControlPointDistance;// 0x2e8, size 4 (0x4)
 	// m_flScaleVOffsetByControlPointDistance metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyGroupName
-char C_OP_RenderRopes_02D9[0x1];
-	__declspec(align(1)) bool m_bUseScalarForTextureCoordinate;// 0x2d9, size 1 (0x1)
+char C_OP_RenderRopes_02ED[0x1];
+	__declspec(align(1)) bool m_bUseScalarForTextureCoordinate;// 0x2ed, size 1 (0x1)
 	// m_bUseScalarForTextureCoordinate metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyGroupName
-	__declspec(align(4)) UnknownType <0x4, class ParticleAttributeIndex_t> m_nScalarFieldForTextureCoordinate;// 0x2dc, size 4 (0x4)
+	__declspec(align(4)) UnknownType <0x4, class ParticleAttributeIndex_t> m_nScalarFieldForTextureCoordinate;// 0x2f0, size 4 (0x4)
 	// m_nScalarFieldForTextureCoordinate metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyAttributeChoiceName
 	 // MPropertyGroupName
-	__declspec(align(4)) float m_flScalarAttributeTextureCoordScale;// 0x2e0, size 4 (0x4)
+	__declspec(align(4)) float m_flScalarAttributeTextureCoordScale;// 0x2f4, size 4 (0x4)
 	// m_flScalarAttributeTextureCoordScale metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyGroupName
-	__declspec(align(4)) int32_t m_nOrientationType;// 0x2e4, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nOrientationType;// 0x2f8, size 4 (0x4)
 	// m_nOrientationType metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyAttributeChoiceEnumName
-	__declspec(align(1)) bool m_bDrawAsOpaque;// 0x2e8, size 1 (0x1)
+	__declspec(align(1)) bool m_bDrawAsOpaque;// 0x2fc, size 1 (0x1)
 	// m_bDrawAsOpaque metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(1)) bool m_bGenerateNormals;// 0x2e9, size 1 (0x1)
+	__declspec(align(1)) bool m_bGenerateNormals;// 0x2fd, size 1 (0x1)
 	// m_bGenerateNormals metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(1)) bool m_bReverseOrder;// 0x2ea, size 1 (0x1)
+	__declspec(align(1)) bool m_bReverseOrder;// 0x2fe, size 1 (0x1)
 	// m_bReverseOrder metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) float m_flRadiusScale;// 0x2ec, size 4 (0x4)
+	__declspec(align(4)) float m_flRadiusScale;// 0x300, size 4 (0x4)
 	// m_flRadiusScale metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(1)) bool m_bClosedLoop;// 0x2f0, size 1 (0x1)
+	__declspec(align(1)) bool m_bClosedLoop;// 0x304, size 1 (0x1)
 	// m_bClosedLoop metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) float m_flDepthBias;// 0x2f4, size 4 (0x4)
+	__declspec(align(4)) float m_flDepthBias;// 0x308, size 4 (0x4)
 	// m_flDepthBias metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyGroupName
-char C_OP_RenderRopes_0300[0x8];
-}; // size: 768 (0x300)
+char C_OP_RenderRopes_0310[0x4];
+}; // size: 784 (0x310)
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_INIT_RadiusFromCPObject : public CParticleInitializerOperatorInstance
+class C_INIT_RadiusFromCPObject : public CParticleFunctionInitializer
 {
 // C_INIT_RadiusFromCPObject additional information
 // particles.dll, project particles
@@ -24338,7 +24658,7 @@ char C_INIT_RadiusFromCPObject_090[0xC];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_INIT_SequenceLifeTime : public CParticleInitializerOperatorInstance
+class C_INIT_SequenceLifeTime : public CParticleFunctionInitializer
 {
 // C_INIT_SequenceLifeTime additional information
 // particles.dll, project particles
@@ -24518,7 +24838,7 @@ char CRMSG_Resource_Event_020[0x4];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_RenderAsModels : public CParticleRenderOperatorInstance
+class C_OP_RenderAsModels : public CParticleFunctionRenderer
 {
 // C_OP_RenderAsModels additional information
 // particles.dll, project particles
@@ -24527,55 +24847,55 @@ class C_OP_RenderAsModels : public CParticleRenderOperatorInstance
 // SCHEMA_CLASS_TEMP_HACK_HAS_NOSCHEMA_MEMBERS
 
 public:
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class ModelReference_t > m_ModelList;// 0xc0, size 24 (0x18)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class ModelReference_t > m_ModelList;// 0xd0, size 24 (0x18)
 	// m_ModelList metadata
 	 // MAttributeName
-char C_OP_RenderAsModels_0DC[0x4];
-	__declspec(align(4)) float m_flModelScale;// 0xdc, size 4 (0x4)
+char C_OP_RenderAsModels_0EC[0x4];
+	__declspec(align(4)) float m_flModelScale;// 0xec, size 4 (0x4)
 	// m_flModelScale metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(1)) bool m_bFitToModelSize;// 0xe0, size 1 (0x1)
+	__declspec(align(1)) bool m_bFitToModelSize;// 0xf0, size 1 (0x1)
 	// m_bFitToModelSize metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(1)) bool m_bNonUniformScaling;// 0xe1, size 1 (0x1)
+	__declspec(align(1)) bool m_bNonUniformScaling;// 0xf1, size 1 (0x1)
 	// m_bNonUniformScaling metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) UnknownType <0x4, class ParticleAttributeIndex_t> m_nXAxisScalingAttribute;// 0xe4, size 4 (0x4)
+	__declspec(align(4)) UnknownType <0x4, class ParticleAttributeIndex_t> m_nXAxisScalingAttribute;// 0xf4, size 4 (0x4)
 	// m_nXAxisScalingAttribute metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyAttributeChoiceName
-	__declspec(align(4)) UnknownType <0x4, class ParticleAttributeIndex_t> m_nYAxisScalingAttribute;// 0xe8, size 4 (0x4)
+	__declspec(align(4)) UnknownType <0x4, class ParticleAttributeIndex_t> m_nYAxisScalingAttribute;// 0xf8, size 4 (0x4)
 	// m_nYAxisScalingAttribute metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyAttributeChoiceName
-	__declspec(align(4)) UnknownType <0x4, class ParticleAttributeIndex_t> m_nZAxisScalingAttribute;// 0xec, size 4 (0x4)
+	__declspec(align(4)) UnknownType <0x4, class ParticleAttributeIndex_t> m_nZAxisScalingAttribute;// 0xfc, size 4 (0x4)
 	// m_nZAxisScalingAttribute metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyAttributeChoiceName
-	__declspec(align(4)) int32_t m_nSizeCullBloat;// 0xf0, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nSizeCullBloat;// 0x100, size 4 (0x4)
 	// m_nSizeCullBloat metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyAttributeChoiceName
-char C_OP_RenderAsModels_0100[0xC];
-}; // size: 256 (0x100)
+char C_OP_RenderAsModels_0110[0xC];
+}; // size: 272 (0x110)
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_InterpolateRadius : public CParticlePerFrameOperatorInstance
+class C_OP_InterpolateRadius : public CParticleFunctionOperator
 {
 // C_OP_InterpolateRadius additional information
 // particles.dll, project particles
@@ -24619,7 +24939,7 @@ char C_OP_InterpolateRadius_0B0[0x18];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_INIT_PositionPlaceOnGround : public CParticleInitializerOperatorInstance
+class C_INIT_PositionPlaceOnGround : public CParticleFunctionInitializer
 {
 // C_INIT_PositionPlaceOnGround additional information
 // particles.dll, project particles
@@ -24869,7 +25189,7 @@ char C_PlayerLocalData_0198[0x4];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_RenderClothForce : public CParticleRenderOperatorInstance
+class C_OP_RenderClothForce : public CParticleFunctionRenderer
 {
 // C_OP_RenderClothForce additional information
 // particles.dll, project particles
@@ -24877,27 +25197,205 @@ class C_OP_RenderClothForce : public CParticleRenderOperatorInstance
 // SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
 
 public:
-}; // size: 192 (0xc0)
+}; // size: 208 (0xd0)
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_RenderFogSprites : public C_OP_RenderSprites
+class C_OP_RenderSprites : public CBaseRendererSource2
 {
-// C_OP_RenderFogSprites additional information
+// C_OP_RenderSprites additional information
 // particles.dll, project particles
 // Alignment: 16
 // SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+// SCHEMA_CLASS_TEMP_HACK_HAS_NOSCHEMA_MEMBERS
+// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
 
 public:
-	__declspec(align(8)) UnknownAtomicType <0x8, CResourceExtReference, UnknownAtomicType <0x8, CWeakHandle, class InfoForResourceTypeIMaterial2 > > m_hMaterial;// 0x310, size 8 (0x8)
-	// m_hMaterial metadata
+	__declspec(align(4)) int32_t m_nSequenceOverride;// 0x290, size 4 (0x4)
+	// m_nSequenceOverride metadata
+	 // MSrc1ImportAttributeName
 	 // MAttributeName
-char C_OP_RenderFogSprites_0320[0x8];
+	 // MDefaultString
+	__declspec(align(4)) int32_t m_nOrientationType;// 0x294, size 4 (0x4)
+	// m_nOrientationType metadata
+	 // MSrc1ImportAttributeName
+	 // MAttributeName
+	 // MPropertyAttributeChoiceEnumName
+	 // MDefaultString
+	__declspec(align(4)) int32_t m_nOrientationControlPoint;// 0x298, size 4 (0x4)
+	// m_nOrientationControlPoint metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) float m_flMinSize;// 0x29c, size 4 (0x4)
+	// m_flMinSize metadata
+	 // MAttributeName
+	 // MDefaultString
+	 // MPropertyGroupName
+	__declspec(align(4)) float m_flMaxSize;// 0x2a0, size 4 (0x4)
+	// m_flMaxSize metadata
+	 // MAttributeName
+	 // MDefaultString
+	 // MPropertyGroupName
+	__declspec(align(4)) float m_flAlphaAdjustWithSizeAdjust;// 0x2a4, size 4 (0x4)
+	// m_flAlphaAdjustWithSizeAdjust metadata
+	 // MAttributeName
+	 // MDefaultString
+	 // MPropertyGroupName
+	__declspec(align(4)) float m_flStartFadeSize;// 0x2a8, size 4 (0x4)
+	// m_flStartFadeSize metadata
+	 // MAttributeName
+	 // MDefaultString
+	 // MPropertyGroupName
+	__declspec(align(4)) float m_flEndFadeSize;// 0x2ac, size 4 (0x4)
+	// m_flEndFadeSize metadata
+	 // MAttributeName
+	 // MDefaultString
+	 // MPropertyGroupName
+	__declspec(align(4)) float m_flStartFadeDot;// 0x2b0, size 4 (0x4)
+	// m_flStartFadeDot metadata
+	 // MSrc1ImportAttributeName
+	 // MAttributeName
+	 // MDefaultString
+	 // MPropertyGroupName
+	__declspec(align(4)) float m_flEndFadeDot;// 0x2b4, size 4 (0x4)
+	// m_flEndFadeDot metadata
+	 // MSrc1ImportAttributeName
+	 // MAttributeName
+	 // MDefaultString
+	 // MPropertyGroupName
+	__declspec(align(4)) float m_flDepthBias;// 0x2b8, size 4 (0x4)
+	// m_flDepthBias metadata
+	 // MSrc1ImportAttributeName
+	 // MAttributeName
+	 // MDefaultString
+	 // MPropertyGroupName
+	__declspec(align(4)) float m_flFinalTextureScaleU;// 0x2bc, size 4 (0x4)
+	// m_flFinalTextureScaleU metadata
+	 // MAttributeName
+	 // MDefaultString
+	 // MPropertyGroupName
+	__declspec(align(4)) float m_flFinalTextureScaleV;// 0x2c0, size 4 (0x4)
+	// m_flFinalTextureScaleV metadata
+	 // MAttributeName
+	 // MDefaultString
+	 // MPropertyGroupName
+	__declspec(align(4)) float m_flFinalTextureOffsetU;// 0x2c4, size 4 (0x4)
+	// m_flFinalTextureOffsetU metadata
+	 // MAttributeName
+	 // MDefaultString
+	 // MPropertyGroupName
+	__declspec(align(4)) float m_flFinalTextureOffsetV;// 0x2c8, size 4 (0x4)
+	// m_flFinalTextureOffsetV metadata
+	 // MAttributeName
+	 // MDefaultString
+	 // MPropertyGroupName
+	__declspec(align(4)) float m_flCenterXOffset;// 0x2cc, size 4 (0x4)
+	// m_flCenterXOffset metadata
+	 // MAttributeName
+	 // MDefaultString
+	 // MPropertyGroupName
+	__declspec(align(4)) float m_flCenterYOffset;// 0x2d0, size 4 (0x4)
+	// m_flCenterYOffset metadata
+	 // MAttributeName
+	 // MDefaultString
+	 // MPropertyGroupName
+	__declspec(align(4)) float m_flZoomAmount0;// 0x2d4, size 4 (0x4)
+	// m_flZoomAmount0 metadata
+	 // MSrc1ImportAttributeName
+	 // MAttributeName
+	 // MDefaultString
+	 // MPropertyGroupName
+	__declspec(align(4)) float m_flZoomAmount1;// 0x2d8, size 4 (0x4)
+	// m_flZoomAmount1 metadata
+	 // MSrc1ImportAttributeName
+	 // MAttributeName
+	 // MDefaultString
+	 // MPropertyGroupName
+	__declspec(align(1)) bool m_bDistanceAlpha;// 0x2dc, size 1 (0x1)
+	// m_bDistanceAlpha metadata
+	 // MSrc1ImportAttributeName
+	 // MAttributeName
+	 // MDefaultString
+	 // MPropertyGroupName
+	__declspec(align(1)) bool m_bSoftEdges;// 0x2dd, size 1 (0x1)
+	// m_bSoftEdges metadata
+	 // MSrc1ImportAttributeName
+	 // MAttributeName
+	 // MDefaultString
+	 // MPropertyGroupName
+	__declspec(align(4)) float m_flEdgeSoftnessStart;// 0x2e0, size 4 (0x4)
+	// m_flEdgeSoftnessStart metadata
+	 // MAttributeName
+	 // MDefaultString
+	 // MPropertyGroupName
+	__declspec(align(4)) float m_flEdgeSoftnessEnd;// 0x2e4, size 4 (0x4)
+	// m_flEdgeSoftnessEnd metadata
+	 // MAttributeName
+	 // MDefaultString
+	 // MPropertyGroupName
+	__declspec(align(1)) bool m_bOutline;// 0x2e8, size 1 (0x1)
+	// m_bOutline metadata
+	 // MSrc1ImportAttributeName
+	 // MAttributeName
+	 // MDefaultString
+	 // MPropertyGroupName
+	__declspec(align(1)) UnknownType <0x4, class Color> m_OutlineColor;// 0x2e9, size 4 (0x4)
+	// m_OutlineColor metadata
+	 // MAttributeName
+	 // MDefaultString
+	 // MPropertyGroupName
+	__declspec(align(4)) int32_t m_nOutlineAlpha;// 0x2f0, size 4 (0x4)
+	// m_nOutlineAlpha metadata
+	 // MAttributeName
+	 // MDefaultString
+	 // MPropertyAttributeRange
+	 // MPropertyGroupName
+	__declspec(align(4)) float m_flOutlineStart0;// 0x2f4, size 4 (0x4)
+	// m_flOutlineStart0 metadata
+	 // MSrc1ImportAttributeName
+	 // MAttributeName
+	 // MDefaultString
+	 // MPropertyGroupName
+	__declspec(align(4)) float m_flOutlineStart1;// 0x2f8, size 4 (0x4)
+	// m_flOutlineStart1 metadata
+	 // MSrc1ImportAttributeName
+	 // MAttributeName
+	 // MDefaultString
+	 // MPropertyGroupName
+	__declspec(align(4)) float m_flOutlineEnd0;// 0x2fc, size 4 (0x4)
+	// m_flOutlineEnd0 metadata
+	 // MSrc1ImportAttributeName
+	 // MAttributeName
+	 // MDefaultString
+	 // MPropertyGroupName
+	__declspec(align(4)) float m_flOutlineEnd1;// 0x300, size 4 (0x4)
+	// m_flOutlineEnd1 metadata
+	 // MSrc1ImportAttributeName
+	 // MAttributeName
+	 // MDefaultString
+	 // MPropertyGroupName
+	__declspec(align(1)) bool m_bUseYawWithNormalAligned;// 0x304, size 1 (0x1)
+	// m_bUseYawWithNormalAligned metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(1)) bool m_bNormalMap;// 0x305, size 1 (0x1)
+	// m_bNormalMap metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) float m_flBumpStrength;// 0x308, size 4 (0x4)
+	// m_flBumpStrength metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(8)) UnknownAtomicType <0x8, CResourceExtReference, UnknownAtomicType <0x8, CWeakHandle, class InfoForResourceTypeCTextureBase > > m_hNormalTexture;// 0x310, size 8 (0x8)
+	// m_hNormalTexture metadata
+	 // MAttributeName
+	 // MPropertyAttributeEditor
+char C_OP_RenderSprites_0320[0x8];
 }; // size: 800 (0x320)
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_TimeVaryingForce : public CParticleForceOperatorInstance
+class C_OP_TimeVaryingForce : public CParticleFunctionForce
 {
 // C_OP_TimeVaryingForce additional information
 // particles.dll, project particles
@@ -24943,7 +25441,44 @@ char ConceptHistory_t_08[0x4];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_RemapDirectionToCPToVector : public CParticlePerFrameOperatorInstance
+class C_OP_RemapModelVolumetoCP : public CParticleFunctionPreEmission
+{
+// C_OP_RemapModelVolumetoCP additional information
+// particles.dll, project particles
+// Alignment: 16
+// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+
+public:
+	__declspec(align(4)) int32_t m_nInControlPointNumber;// 0x80, size 4 (0x4)
+	// m_nInControlPointNumber metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) int32_t m_nOutControlPointNumber;// 0x84, size 4 (0x4)
+	// m_nOutControlPointNumber metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) float m_flInputMin;// 0x88, size 4 (0x4)
+	// m_flInputMin metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) float m_flInputMax;// 0x8c, size 4 (0x4)
+	// m_flInputMax metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) float m_flOutputMin;// 0x90, size 4 (0x4)
+	// m_flOutputMin metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) float m_flOutputMax;// 0x94, size 4 (0x4)
+	// m_flOutputMax metadata
+	 // MAttributeName
+	 // MDefaultString
+char C_OP_RemapModelVolumetoCP_0A0[0x8];
+}; // size: 160 (0xa0)
+#pragma pack(pop)
+
+#pragma pack(push, 16)
+class C_OP_RemapDirectionToCPToVector : public CParticleFunctionOperator
 {
 // C_OP_RemapDirectionToCPToVector additional information
 // particles.dll, project particles
@@ -24978,43 +25513,6 @@ public:
 	 // MAttributeName
 	 // MDefaultString
 char C_OP_RemapDirectionToCPToVector_0A0[0x3];
-}; // size: 160 (0xa0)
-#pragma pack(pop)
-
-#pragma pack(push, 16)
-class C_OP_RemapModelVolumetoCP : public CParticlePerFrameOperatorInstance
-{
-// C_OP_RemapModelVolumetoCP additional information
-// particles.dll, project particles
-// Alignment: 16
-// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
-
-public:
-	__declspec(align(4)) int32_t m_nInControlPointNumber;// 0x80, size 4 (0x4)
-	// m_nInControlPointNumber metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(4)) int32_t m_nOutControlPointNumber;// 0x84, size 4 (0x4)
-	// m_nOutControlPointNumber metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(4)) float m_flInputMin;// 0x88, size 4 (0x4)
-	// m_flInputMin metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(4)) float m_flInputMax;// 0x8c, size 4 (0x4)
-	// m_flInputMax metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(4)) float m_flOutputMin;// 0x90, size 4 (0x4)
-	// m_flOutputMin metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(4)) float m_flOutputMax;// 0x94, size 4 (0x4)
-	// m_flOutputMax metadata
-	 // MAttributeName
-	 // MDefaultString
-char C_OP_RemapModelVolumetoCP_0A0[0x8];
 }; // size: 160 (0xa0)
 #pragma pack(pop)
 
@@ -25146,7 +25644,7 @@ char CBaseAnimatingOverlayController_0510[0x38];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_WorldCollideConstraint : public CParticleConstraintOperatorInstance
+class C_OP_WorldCollideConstraint : public CParticleFunctionConstraint
 {
 // C_OP_WorldCollideConstraint additional information
 // particles.dll, project particles
@@ -25157,32 +25655,8 @@ public:
 }; // size: 128 (0x80)
 #pragma pack(pop)
 
-#pragma pack(push, 4)
-class WorldNode_t
-{
-// WorldNode_t additional information
-// worldrenderer.dll, project worldrenderer
-// Alignment: 4
-// SCHEMA_CLASS_HAS_TRIVIAL_DESTRUCTOR
-
-public:
-	__declspec(align(4)) UnknownAtomicType <0x8, CResourceArray, class SceneObject_t > m_sceneObjects;// 0x0, size 8 (0x8)
-	__declspec(align(4)) UnknownAtomicType <0x8, CResourceArray, class InfoOverlayData_t > m_infoOverlays;// 0x8, size 8 (0x8)
-	__declspec(align(4)) UnknownAtomicType <0x8, CResourceArray, class BoneOverride_t > m_boneOverrides;// 0x10, size 8 (0x8)
-	__declspec(align(4)) UnknownAtomicType <0x8, CResourceArray, class ExtraVertexStreamOverride_t > m_extraVertexStreamOverrides;// 0x18, size 8 (0x8)
-	__declspec(align(4)) UnknownAtomicType <0x8, CResourceArray, class MaterialOverride_t > m_materialOverrides;// 0x20, size 8 (0x8)
-	__declspec(align(4)) UnknownAtomicType <0x8, CResourceArray, class PerInstanceBakedLightingParamsOverride_t > m_lightmapInstanceDataOverrides;// 0x28, size 8 (0x8)
-	__declspec(align(4)) UnknownAtomicType <0x8, CResourceArray, class OnDiskBufferData_t > m_extraVertexStreams;// 0x30, size 8 (0x8)
-	__declspec(align(4)) UnknownAtomicType <0x8, CResourceArray, UnknownType <0x4, class CResourceString> > m_layerNames;// 0x38, size 8 (0x8)
-	__declspec(align(4)) UnknownAtomicType <0x8, CResourceArray, uint8_t > m_sceneObjectLayerIndices;// 0x40, size 8 (0x8)
-	__declspec(align(4)) UnknownAtomicType <0x8, CResourceArray, uint8_t > m_overlayLayerIndices;// 0x48, size 8 (0x8)
-	__declspec(align(4)) UnknownType <0x4, class CResourceString> m_grassFileName;// 0x50, size 4 (0x4)
-	__declspec(align(4)) BakedLightingInfo_t m_nodeLightingInfo;// 0x54, size 36 (0x24)
-}; // size: 120 (0x78)
-#pragma pack(pop)
-
 #pragma pack(push, 16)
-class C_OP_ColorInterpolate : public CParticlePerFrameOperatorInstance
+class C_OP_ColorInterpolate : public CParticleFunctionOperator
 {
 // C_OP_ColorInterpolate additional information
 // particles.dll, project particles
@@ -25219,6 +25693,30 @@ char C_OP_ColorInterpolate_090[0xC];
 	 // MDefaultString
 char C_OP_ColorInterpolate_0A0[0x3];
 }; // size: 160 (0xa0)
+#pragma pack(pop)
+
+#pragma pack(push, 4)
+class WorldNode_t
+{
+// WorldNode_t additional information
+// worldrenderer.dll, project worldrenderer
+// Alignment: 4
+// SCHEMA_CLASS_HAS_TRIVIAL_DESTRUCTOR
+
+public:
+	__declspec(align(4)) UnknownAtomicType <0x8, CResourceArray, class SceneObject_t > m_sceneObjects;// 0x0, size 8 (0x8)
+	__declspec(align(4)) UnknownAtomicType <0x8, CResourceArray, class InfoOverlayData_t > m_infoOverlays;// 0x8, size 8 (0x8)
+	__declspec(align(4)) UnknownAtomicType <0x8, CResourceArray, class BoneOverride_t > m_boneOverrides;// 0x10, size 8 (0x8)
+	__declspec(align(4)) UnknownAtomicType <0x8, CResourceArray, class ExtraVertexStreamOverride_t > m_extraVertexStreamOverrides;// 0x18, size 8 (0x8)
+	__declspec(align(4)) UnknownAtomicType <0x8, CResourceArray, class MaterialOverride_t > m_materialOverrides;// 0x20, size 8 (0x8)
+	__declspec(align(4)) UnknownAtomicType <0x8, CResourceArray, class PerInstanceBakedLightingParamsOverride_t > m_lightmapInstanceDataOverrides;// 0x28, size 8 (0x8)
+	__declspec(align(4)) UnknownAtomicType <0x8, CResourceArray, class OnDiskBufferData_t > m_extraVertexStreams;// 0x30, size 8 (0x8)
+	__declspec(align(4)) UnknownAtomicType <0x8, CResourceArray, UnknownType <0x4, class CResourceString> > m_layerNames;// 0x38, size 8 (0x8)
+	__declspec(align(4)) UnknownAtomicType <0x8, CResourceArray, uint8_t > m_sceneObjectLayerIndices;// 0x40, size 8 (0x8)
+	__declspec(align(4)) UnknownAtomicType <0x8, CResourceArray, uint8_t > m_overlayLayerIndices;// 0x48, size 8 (0x8)
+	__declspec(align(4)) UnknownType <0x4, class CResourceString> m_grassFileName;// 0x50, size 4 (0x4)
+	__declspec(align(4)) BakedLightingInfo_t m_nodeLightingInfo;// 0x54, size 36 (0x24)
+}; // size: 120 (0x78)
 #pragma pack(pop)
 
 #pragma pack(push, 8)
@@ -25298,7 +25796,7 @@ char IParticleCollection_010[0x8];
 }; // size: 16 (0x10)
 
 #pragma pack(push, 16)
-class C_INIT_CodeDriven : public CParticleInitializerOperatorInstance
+class C_INIT_CodeDriven : public CParticleFunctionInitializer
 {
 // C_INIT_CodeDriven additional information
 // particles.dll, project particles
@@ -25382,7 +25880,7 @@ char InfoForResourceTypeCEntityLump_01[0x1];
 class CParticleProperty
 {
 // CParticleProperty additional information
-// client.dll, project particleslib
+// particles.dll, project particleslib
 // Alignment: 8
 // SCHEMA_CLASS_TEMP_HACK_HAS_NOSCHEMA_MEMBERS
 // SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
@@ -25450,7 +25948,23 @@ public:
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_SetSingleControlPointPosition : public CParticlePerFrameOperatorInstance
+class C_OP_RenderFogSprites : public C_OP_RenderSprites
+{
+// C_OP_RenderFogSprites additional information
+// particles.dll, project particles
+// Alignment: 16
+// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+
+public:
+	__declspec(align(8)) UnknownAtomicType <0x8, CResourceExtReference, UnknownAtomicType <0x8, CWeakHandle, class InfoForResourceTypeIMaterial2 > > m_hMaterial;// 0x320, size 8 (0x8)
+	// m_hMaterial metadata
+	 // MAttributeName
+char C_OP_RenderFogSprites_0330[0x8];
+}; // size: 816 (0x330)
+#pragma pack(pop)
+
+#pragma pack(push, 16)
+class C_OP_SetSingleControlPointPosition : public CParticleFunctionPreEmission
 {
 // C_OP_SetSingleControlPointPosition additional information
 // particles.dll, project particles
@@ -25505,20 +26019,22 @@ char CMoveSpeedCondition_02C[0x4];
 }; // size: 48 (0x30)
 #pragma pack(pop)
 
-#pragma pack(push, 4)
+#pragma pack(push, 8)
 class CConstraintSlave
 {
 // CConstraintSlave additional information
 // engine2.dll, project modellib
-// Alignment: 4
-// SCHEMA_CLASS_HAS_TRIVIAL_DESTRUCTOR
+// Alignment: 8
+// SCHEMA_CLASS_TEMP_HACK_HAS_NOSCHEMA_MEMBERS
 
 public:
 	__declspec(align(4)) uint32_t m_nBoneHash;// 0x0, size 4 (0x4)
 	__declspec(align(4)) float m_flWeight;// 0x4, size 4 (0x4)
 	__declspec(align(4)) UnknownType <0xc, class Vector> m_vBasePosition;// 0x8, size 12 (0xc)
 	__declspec(align(4)) UnknownType <0x10, class Quaternion> m_qBaseOrientation;// 0x14, size 16 (0x10)
-}; // size: 36 (0x24)
+	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_sName;// 0x28, size 8 (0x8)
+char CConstraintSlave_058[0x28];
+}; // size: 88 (0x58)
 #pragma pack(pop)
 
 class C_CEnvWindShared : public SchemaBase
@@ -25711,7 +26227,7 @@ public:
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_VelocityDecay : public CParticlePerFrameOperatorInstance
+class C_OP_VelocityDecay : public CParticleFunctionOperator
 {
 // C_OP_VelocityDecay additional information
 // particles.dll, project particles
@@ -25728,7 +26244,7 @@ char C_OP_VelocityDecay_090[0xC];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_LerpVector : public CParticlePerFrameOperatorInstance
+class C_OP_LerpVector : public CParticleFunctionOperator
 {
 // C_OP_LerpVector additional information
 // particles.dll, project particles
@@ -25763,7 +26279,7 @@ char C_OP_LerpVector_0A0[0x7];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_INIT_RemapCPOrientationToRotations : public CParticleInitializerOperatorInstance
+class C_INIT_RemapCPOrientationToRotations : public CParticleFunctionInitializer
 {
 // C_INIT_RemapCPOrientationToRotations additional information
 // particles.dll, project particles
@@ -25917,7 +26433,7 @@ public:
 }; // size: 24 (0x18)
 
 #pragma pack(push, 16)
-class C_OP_RenderModels : public CParticleRenderOperatorInstance
+class C_OP_RenderModels : public CParticleFunctionRenderer
 {
 // C_OP_RenderModels additional information
 // particles.dll, project particles
@@ -25927,125 +26443,125 @@ class C_OP_RenderModels : public CParticleRenderOperatorInstance
 // SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
 
 public:
-	__declspec(align(1)) char m_ActivityName[256];// 0xc0, size 256 (0x100)
+	__declspec(align(1)) char m_ActivityName[256];// 0xd0, size 256 (0x100)
 	// m_ActivityName metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(1)) char m_EconSlotName[256];// 0x1c0, size 256 (0x100)
+	__declspec(align(1)) char m_EconSlotName[256];// 0x1d0, size 256 (0x100)
 	// m_EconSlotName metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class ModelReference_t > m_ModelList;// 0x2c0, size 24 (0x18)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class ModelReference_t > m_ModelList;// 0x2d0, size 24 (0x18)
 	// m_ModelList metadata
 	 // MAttributeName
-char C_OP_RenderModels_02DC[0x4];
-	__declspec(align(1)) bool m_bIgnoreNormal;// 0x2dc, size 1 (0x1)
+char C_OP_RenderModels_02EC[0x4];
+	__declspec(align(1)) bool m_bIgnoreNormal;// 0x2ec, size 1 (0x1)
 	// m_bIgnoreNormal metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(1)) bool m_bOrientZ;// 0x2dd, size 1 (0x1)
+	__declspec(align(1)) bool m_bOrientZ;// 0x2ed, size 1 (0x1)
 	// m_bOrientZ metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(1)) bool m_bScaleAnimationRate;// 0x2de, size 1 (0x1)
+	__declspec(align(1)) bool m_bScaleAnimationRate;// 0x2ee, size 1 (0x1)
 	// m_bScaleAnimationRate metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(1)) bool m_bResetAnimOnStop;// 0x2df, size 1 (0x1)
+	__declspec(align(1)) bool m_bResetAnimOnStop;// 0x2ef, size 1 (0x1)
 	// m_bResetAnimOnStop metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(1)) bool m_bManualAnimFrame;// 0x2e0, size 1 (0x1)
+	__declspec(align(1)) bool m_bManualAnimFrame;// 0x2f0, size 1 (0x1)
 	// m_bManualAnimFrame metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) UnknownType <0x4, class ParticleAttributeIndex_t> m_nAnimationScaleField;// 0x2e4, size 4 (0x4)
+	__declspec(align(4)) UnknownType <0x4, class ParticleAttributeIndex_t> m_nAnimationScaleField;// 0x2f4, size 4 (0x4)
 	// m_nAnimationScaleField metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyAttributeChoiceName
-	__declspec(align(4)) int32_t m_nSkin;// 0x2e8, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nSkin;// 0x2f8, size 4 (0x4)
 	// m_nSkin metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) UnknownType <0x4, class ParticleAttributeIndex_t> m_nBodyGroupField;// 0x2ec, size 4 (0x4)
+	__declspec(align(4)) UnknownType <0x4, class ParticleAttributeIndex_t> m_nBodyGroupField;// 0x2fc, size 4 (0x4)
 	// m_nBodyGroupField metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyAttributeChoiceName
-	__declspec(align(4)) UnknownType <0x4, class ParticleAttributeIndex_t> m_nSubModelField;// 0x2f0, size 4 (0x4)
+	__declspec(align(4)) UnknownType <0x4, class ParticleAttributeIndex_t> m_nSubModelField;// 0x300, size 4 (0x4)
 	// m_nSubModelField metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyAttributeChoiceName
-	__declspec(align(4)) UnknownType <0x4, class ParticleAttributeIndex_t> m_nAnimationField;// 0x2f4, size 4 (0x4)
+	__declspec(align(4)) UnknownType <0x4, class ParticleAttributeIndex_t> m_nAnimationField;// 0x304, size 4 (0x4)
 	// m_nAnimationField metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyAttributeChoiceName
-	__declspec(align(4)) UnknownType <0x4, class ParticleAttributeIndex_t> m_nManualFrameField;// 0x2f8, size 4 (0x4)
+	__declspec(align(4)) UnknownType <0x4, class ParticleAttributeIndex_t> m_nManualFrameField;// 0x308, size 4 (0x4)
 	// m_nManualFrameField metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyAttributeChoiceName
-	__declspec(align(4)) int32_t m_nLOD;// 0x2fc, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nLOD;// 0x30c, size 4 (0x4)
 	// m_nLOD metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(8)) UnknownAtomicType <0x8, CStrongHandle, class InfoForResourceTypeIMaterial2 > m_hOverrideMaterial;// 0x300, size 8 (0x8)
+	__declspec(align(8)) UnknownAtomicType <0x8, CStrongHandle, class InfoForResourceTypeIMaterial2 > m_hOverrideMaterial;// 0x310, size 8 (0x8)
 	// m_hOverrideMaterial metadata
 	 // MAttributeName
 	 // MPropertyAttributeEditor
-	__declspec(align(1)) bool m_bOverrideTranslucentMaterials;// 0x308, size 1 (0x1)
+	__declspec(align(1)) bool m_bOverrideTranslucentMaterials;// 0x318, size 1 (0x1)
 	// m_bOverrideTranslucentMaterials metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) int32_t m_nSkinCP;// 0x30c, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nSkinCP;// 0x31c, size 4 (0x4)
 	// m_nSkinCP metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) int32_t m_nModelCP;// 0x310, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nModelCP;// 0x320, size 4 (0x4)
 	// m_nModelCP metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) int32_t m_nModelScaleCP;// 0x314, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nModelScaleCP;// 0x324, size 4 (0x4)
 	// m_nModelScaleCP metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) float m_flAnimationRate;// 0x318, size 4 (0x4)
+	__declspec(align(4)) float m_flAnimationRate;// 0x328, size 4 (0x4)
 	// m_flAnimationRate metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(1)) bool m_bAnimated;// 0x31c, size 1 (0x1)
+	__declspec(align(1)) bool m_bAnimated;// 0x32c, size 1 (0x1)
 	// m_bAnimated metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(1)) bool m_bForceDrawInterlevedWithSiblings;// 0x31d, size 1 (0x1)
+	__declspec(align(1)) bool m_bForceDrawInterlevedWithSiblings;// 0x32d, size 1 (0x1)
 	// m_bForceDrawInterlevedWithSiblings metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(1)) bool m_bOriginalModel;// 0x31e, size 1 (0x1)
+	__declspec(align(1)) bool m_bOriginalModel;// 0x32e, size 1 (0x1)
 	// m_bOriginalModel metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(1)) bool m_bSuppressTint;// 0x31f, size 1 (0x1)
+	__declspec(align(1)) bool m_bSuppressTint;// 0x32f, size 1 (0x1)
 	// m_bSuppressTint metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(1)) bool m_bUseRawMeshGroup;// 0x320, size 1 (0x1)
+	__declspec(align(1)) bool m_bUseRawMeshGroup;// 0x330, size 1 (0x1)
 	// m_bUseRawMeshGroup metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(1)) bool m_bDisableShadows;// 0x321, size 1 (0x1)
+	__declspec(align(1)) bool m_bDisableShadows;// 0x331, size 1 (0x1)
 	// m_bDisableShadows metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(1)) char m_szRenderAttribute[260];// 0x322, size 260 (0x104)
+	__declspec(align(1)) char m_szRenderAttribute[260];// 0x332, size 260 (0x104)
 	// m_szRenderAttribute metadata
 	 // MAttributeName
 	 // MDefaultString
-char C_OP_RenderModels_0430[0xA];
-}; // size: 1072 (0x430)
+char C_OP_RenderModels_0440[0xA];
+}; // size: 1088 (0x440)
 #pragma pack(pop)
 
 #pragma pack(push, 8)
@@ -26261,11 +26777,14 @@ char CGameSceneNode_0140[0xC];
 	__declspec(align(4)) float m_flZOffset;// 0x144, size 4 (0x4)
 	// m_flZOffset metadata
 	 // MNetworkDisable
-char CGameSceneNode_0150[0x8];
-}; // size: 336 (0x150)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vRenderOrigin;// 0x148, size 12 (0xc)
+	// m_vRenderOrigin metadata
+	 // MNetworkDisable
+char CGameSceneNode_0160[0xC];
+}; // size: 352 (0x160)
 
 #pragma pack(push, 16)
-class C_OP_ConstantForce : public CParticleForceOperatorInstance
+class C_OP_ConstantForce : public CParticleFunctionForce
 {
 // C_OP_ConstantForce additional information
 // particles.dll, project particles
@@ -26459,7 +26978,7 @@ char CStopwatch_018[0x4];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_WorldTraceConstraint : public CParticleConstraintOperatorInstance
+class C_OP_WorldTraceConstraint : public CParticleFunctionConstraint
 {
 // C_OP_WorldTraceConstraint additional information
 // particles.dll, project particles
@@ -26489,39 +27008,42 @@ public:
 	// m_flRadiusScale metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) float m_flCpMovementTolerance;// 0x9c, size 4 (0x4)
+	__declspec(align(4)) float m_flRandomDirScale;// 0x9c, size 4 (0x4)
+	// m_flRandomDirScale metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) float m_flCpMovementTolerance;// 0xa0, size 4 (0x4)
 	// m_flCpMovementTolerance metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) float m_flTraceTolerance;// 0xa0, size 4 (0x4)
+	__declspec(align(4)) float m_flTraceTolerance;// 0xa4, size 4 (0x4)
 	// m_flTraceTolerance metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) float m_flMinSpeed;// 0xa4, size 4 (0x4)
+	__declspec(align(4)) float m_flMinSpeed;// 0xa8, size 4 (0x4)
 	// m_flMinSpeed metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(1)) bool m_bDecayBounce;// 0xa8, size 1 (0x1)
+	__declspec(align(1)) bool m_bDecayBounce;// 0xac, size 1 (0x1)
 	// m_bDecayBounce metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(1)) bool m_bKillonContact;// 0xa9, size 1 (0x1)
+	__declspec(align(1)) bool m_bKillonContact;// 0xad, size 1 (0x1)
 	// m_bKillonContact metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(1)) bool m_bConfirmCollision;// 0xaa, size 1 (0x1)
+	__declspec(align(1)) bool m_bConfirmCollision;// 0xae, size 1 (0x1)
 	// m_bConfirmCollision metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(1)) char m_CollisionGroupName[128];// 0xab, size 128 (0x80)
+	__declspec(align(1)) char m_CollisionGroupName[128];// 0xaf, size 128 (0x80)
 	// m_CollisionGroupName metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(1)) bool m_bBrushOnly;// 0x12b, size 1 (0x1)
+	__declspec(align(1)) bool m_bBrushOnly;// 0x12f, size 1 (0x1)
 	// m_bBrushOnly metadata
 	 // MAttributeName
 	 // MDefaultString
-char C_OP_WorldTraceConstraint_0130[0x4];
 }; // size: 304 (0x130)
 #pragma pack(pop)
 
@@ -26553,7 +27075,10 @@ public:
 	__declspec(align(4)) float m_flInertiaScale;// 0x3c, size 4 (0x4)
 	__declspec(align(4)) float m_flLinearDamping;// 0x40, size 4 (0x4)
 	__declspec(align(4)) float m_flAngularDamping;// 0x44, size 4 (0x4)
-}; // size: 72 (0x48)
+	__declspec(align(1)) bool m_bOverrideMassCenter;// 0x48, size 1 (0x1)
+char VPhysXBodyPart_t_04C[0x3];
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vMassCenterOverride;// 0x4c, size 12 (0xc)
+}; // size: 88 (0x58)
 #pragma pack(pop)
 
 #pragma pack(push, 16)
@@ -26568,10 +27093,10 @@ class CPortraitData : public CBasePortraitData
 // SCHEMA_CLASS_TEMP_HACK_HAS_DESTRUCTOR_LIKE_METHODS
 
 public:
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownAtomicType <0x4, CHandle, class C_BaseEntity > > m_RenderList;// 0xc20, size 24 (0x18)
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class C_BaseEntity > m_hHero;// 0xc38, size 4 (0x4)
-char CPortraitData_0C50[0x14];
-}; // size: 3152 (0xc50)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownAtomicType <0x4, CHandle, class C_BaseEntity > > m_RenderList;// 0xc30, size 24 (0x18)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class C_BaseEntity > m_hHero;// 0xc48, size 4 (0x4)
+char CPortraitData_0C60[0x14];
+}; // size: 3168 (0xc60)
 #pragma pack(pop)
 
 #pragma pack(push, 8)
@@ -26630,7 +27155,7 @@ public:
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_INIT_CreateFromPlaneCache : public CParticleInitializerOperatorInstance
+class C_INIT_CreateFromPlaneCache : public CParticleFunctionInitializer
 {
 // C_INIT_CreateFromPlaneCache additional information
 // particles.dll, project particles
@@ -26763,7 +27288,7 @@ char PointDefinition_t_08[0x3];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_ConstrainLineLength : public CParticleConstraintOperatorInstance
+class C_OP_ConstrainLineLength : public CParticleFunctionConstraint
 {
 // C_OP_ConstrainLineLength additional information
 // particles.dll, project particles
@@ -26809,18 +27334,66 @@ class CRenderablePortraitData : public CBasePortraitData
 // SCHEMA_CLASS_TEMP_HACK_HAS_DESTRUCTOR_LIKE_METHODS
 
 public:
-char CRenderablePortraitData_0E50[0x230];
-	__declspec(align(4)) int32_t m_nCurrentHeroID;// 0xe50, size 4 (0x4)
-char CRenderablePortraitData_0E58[0x4];
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class C_PortraitCallbackHandler > m_hCallbackHandler;// 0xe58, size 4 (0x4)
-char CRenderablePortraitData_0EDC[0x80];
-	__declspec(align(1)) bool m_bHasHero;// 0xedc, size 1 (0x1)
-	__declspec(align(1)) bool m_bRotateBackgroundWithHero;// 0xedd, size 1 (0x1)
-	__declspec(align(1)) bool m_bTransparentBG;// 0xede, size 1 (0x1)
-	__declspec(align(1)) bool m_bUseModelForParticles;// 0xedf, size 1 (0x1)
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class C_PortraitHero > m_hPortraitHero;// 0xee0, size 4 (0x4)
-char CRenderablePortraitData_0EF0[0xC];
-}; // size: 3824 (0xef0)
+char CRenderablePortraitData_0E60[0x230];
+	__declspec(align(4)) int32_t m_nCurrentHeroID;// 0xe60, size 4 (0x4)
+char CRenderablePortraitData_0E68[0x4];
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class C_PortraitCallbackHandler > m_hCallbackHandler;// 0xe68, size 4 (0x4)
+char CRenderablePortraitData_0EEC[0x80];
+	__declspec(align(1)) bool m_bHasHero;// 0xeec, size 1 (0x1)
+	__declspec(align(1)) bool m_bRotateBackgroundWithHero;// 0xeed, size 1 (0x1)
+	__declspec(align(1)) bool m_bTransparentBG;// 0xeee, size 1 (0x1)
+	__declspec(align(1)) bool m_bUseModelForParticles;// 0xeef, size 1 (0x1)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class C_PortraitHero > m_hPortraitHero;// 0xef0, size 4 (0x4)
+char CRenderablePortraitData_0F00[0xC];
+}; // size: 3840 (0xf00)
+#pragma pack(pop)
+
+#pragma pack(push, 16)
+class C_OP_DriveCPFromGlobalSoundFloat : public CParticleFunctionPreEmission
+{
+// C_OP_DriveCPFromGlobalSoundFloat additional information
+// particles.dll, project particles
+// Alignment: 16
+// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+// SCHEMA_CLASS_TEMP_HACK_HAS_NOSCHEMA_MEMBERS
+
+public:
+	__declspec(align(4)) int32_t m_nOutputControlPoint;// 0x80, size 4 (0x4)
+	// m_nOutputControlPoint metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) int32_t m_nOutputField;// 0x84, size 4 (0x4)
+	// m_nOutputField metadata
+	 // MAttributeName
+	 // MDefaultString
+	 // MPropertyAttributeChoiceName
+	__declspec(align(4)) float m_flInputMin;// 0x88, size 4 (0x4)
+	// m_flInputMin metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) float m_flInputMax;// 0x8c, size 4 (0x4)
+	// m_flInputMax metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) float m_flOutputMin;// 0x90, size 4 (0x4)
+	// m_flOutputMin metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) float m_flOutputMax;// 0x94, size 4 (0x4)
+	// m_flOutputMax metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_StackName;// 0x98, size 8 (0x8)
+	// m_StackName metadata
+	 // MAttributeName
+	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_OperatorName;// 0xa0, size 8 (0x8)
+	// m_OperatorName metadata
+	 // MAttributeName
+	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_FieldName;// 0xa8, size 8 (0x8)
+	// m_FieldName metadata
+	 // MAttributeName
+char C_OP_DriveCPFromGlobalSoundFloat_0C0[0x10];
+}; // size: 192 (0xc0)
 #pragma pack(pop)
 
 #pragma pack(push, 8)
@@ -26917,279 +27490,283 @@ class CParticleSystemDefinition : public IParticleSystemDefinition
 // SCHEMA_CLASS_TEMP_HACK_HAS_DESTRUCTOR_LIKE_METHODS
 
 public:
-	__declspec(align(4)) int32_t m_nInitialParticles;// 0x8, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nBehaviorVersion;// 0x8, size 4 (0x4)
+	// m_nBehaviorVersion metadata
+	 // MAttributeName
+	 // MDefaultString
+	 // MPropertySuppressField
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, CParticleFunctionPreEmission *> m_PreEmissionOperators;// 0x10, size 24 (0x18)
+	// m_PreEmissionOperators metadata
+	 // MAttributeName
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, CParticleFunctionEmitter *> m_Emitters;// 0x28, size 24 (0x18)
+	// m_Emitters metadata
+	 // MAttributeName
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, CParticleFunctionInitializer *> m_Initializers;// 0x40, size 24 (0x18)
+	// m_Initializers metadata
+	 // MAttributeName
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, CParticleFunctionOperator *> m_Operators;// 0x58, size 24 (0x18)
+	// m_Operators metadata
+	 // MAttributeName
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, CParticleFunctionForce *> m_ForceGenerators;// 0x70, size 24 (0x18)
+	// m_ForceGenerators metadata
+	 // MAttributeName
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, CParticleFunctionConstraint *> m_Constraints;// 0x88, size 24 (0x18)
+	// m_Constraints metadata
+	 // MAttributeName
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, CParticleFunctionRenderer *> m_Renderers;// 0xa0, size 24 (0x18)
+	// m_Renderers metadata
+	 // MAttributeName
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class ParticleChildrenInfo_t > m_Children;// 0xb8, size 24 (0x18)
+	// m_Children metadata
+	 // MPropertySuppressField
+char CParticleSystemDefinition_0178[0xA8];
+	__declspec(align(4)) int32_t m_nFirstMultipleOverride_BackwardCompat;// 0x178, size 4 (0x4)
+	// m_nFirstMultipleOverride_BackwardCompat metadata
+	 // MPropertySuppressField
+	 // MDefaultString
+	__declspec(align(4)) int32_t m_nInitialParticles;// 0x17c, size 4 (0x4)
 	// m_nInitialParticles metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
-char CParticleSystemDefinition_048[0x3C];
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_BoundingBoxMin;// 0x48, size 12 (0xc)
+	__declspec(align(4)) int32_t m_nMaxParticles;// 0x180, size 4 (0x4)
+	// m_nMaxParticles metadata
+	 // MSrc1ImportAttributeName
+	 // MAttributeName
+	 // MDefaultString
+char CParticleSystemDefinition_01C0[0x3C];
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_BoundingBoxMin;// 0x1c0, size 12 (0xc)
 	// m_BoundingBoxMin metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
 	 // MVectorIsCoordinate
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_BoundingBoxMax;// 0x54, size 12 (0xc)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_BoundingBoxMax;// 0x1cc, size 12 (0xc)
 	// m_BoundingBoxMax metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
 	 // MVectorIsCoordinate
-	__declspec(align(4)) int32_t m_nSnapshotControlPoint;// 0x60, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nSnapshotControlPoint;// 0x1d8, size 4 (0x4)
 	// m_nSnapshotControlPoint metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(8)) UnknownAtomicType <0x8, CStrongHandle, class InfoForResourceTypeIParticleSnapshot > m_hSnapshot;// 0x68, size 8 (0x8)
+	__declspec(align(8)) UnknownAtomicType <0x8, CStrongHandle, class InfoForResourceTypeIParticleSnapshot > m_hSnapshot;// 0x1e0, size 8 (0x8)
 	// m_hSnapshot metadata
 	 // MAttributeName
 	 // MPropertyAttributeEditor
-	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_pszTargetLayerID;// 0x70, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlSymbolLarge> m_pszTargetLayerID;// 0x1e8, size 8 (0x8)
 	// m_pszTargetLayerID metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) ParticleTopology_t m_nTopology;// 0x78, size 4 (0x4)
+	__declspec(align(4)) ParticleTopology_t m_nTopology;// 0x1f0, size 4 (0x4)
 	// m_nTopology metadata
 	 // MAttributeName
 	 // MDefaultString
-char CParticleSystemDefinition_098[0x18];
-	__declspec(align(8)) UnknownAtomicType <0x8, CStrongHandle, class InfoForResourceTypeIParticleSystemDefinition > m_hReferenceReplacement;// 0x98, size 8 (0x8)
+char CParticleSystemDefinition_0210[0x18];
+	__declspec(align(8)) UnknownAtomicType <0x8, CStrongHandle, class InfoForResourceTypeIParticleSystemDefinition > m_hReferenceReplacement;// 0x210, size 8 (0x8)
 	// m_hReferenceReplacement metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MParticleAdvancedField
-	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_pszCullReplacementName;// 0xa0, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_pszCullReplacementName;// 0x218, size 8 (0x8)
 	// m_pszCullReplacementName metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
 	 // MParticleAdvancedField
-	__declspec(align(4)) float m_flCullRadius;// 0xa8, size 4 (0x4)
+	__declspec(align(4)) float m_flCullRadius;// 0x220, size 4 (0x4)
 	// m_flCullRadius metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
 	 // MParticleAdvancedField
-	__declspec(align(4)) float m_flCullFillCost;// 0xac, size 4 (0x4)
+	__declspec(align(4)) float m_flCullFillCost;// 0x224, size 4 (0x4)
 	// m_flCullFillCost metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
 	 // MParticleAdvancedField
-	__declspec(align(4)) int32_t m_nCullControlPoint;// 0xb0, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nCullControlPoint;// 0x228, size 4 (0x4)
 	// m_nCullControlPoint metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
 	 // MParticleAdvancedField
-char CParticleSystemDefinition_0C4[0x10];
-	__declspec(align(4)) float m_flMaxRecreationTime;// 0xc4, size 4 (0x4)
-	// m_flMaxRecreationTime metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(8)) UnknownAtomicType <0x8, CStrongHandle, class InfoForResourceTypeIParticleSystemDefinition > m_hFallback;// 0xc8, size 8 (0x8)
+char CParticleSystemDefinition_0238[0x8];
+	__declspec(align(8)) UnknownAtomicType <0x8, CStrongHandle, class InfoForResourceTypeIParticleSystemDefinition > m_hFallback;// 0x238, size 8 (0x8)
 	// m_hFallback metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MParticleAdvancedField
-	__declspec(align(4)) int32_t m_nFallbackMaxCount;// 0xd0, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nFallbackMaxCount;// 0x240, size 4 (0x4)
 	// m_nFallbackMaxCount metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MParticleAdvancedField
-	__declspec(align(8)) UnknownAtomicType <0x8, CStrongHandle, class InfoForResourceTypeIParticleSystemDefinition > m_hLowViolenceDef;// 0xd8, size 8 (0x8)
+	__declspec(align(8)) UnknownAtomicType <0x8, CStrongHandle, class InfoForResourceTypeIParticleSystemDefinition > m_hLowViolenceDef;// 0x248, size 8 (0x8)
 	// m_hLowViolenceDef metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MParticleAdvancedField
-	__declspec(align(1)) UnknownType <0x4, class Color> m_ConstantColor;// 0xe0, size 4 (0x4)
+	__declspec(align(1)) UnknownType <0x4, class Color> m_ConstantColor;// 0x250, size 4 (0x4)
 	// m_ConstantColor metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_ConstantNormal;// 0xe4, size 12 (0xc)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_ConstantNormal;// 0x254, size 12 (0xc)
 	// m_ConstantNormal metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MVectorIsCoordinate
-	__declspec(align(4)) float m_flConstantRadius;// 0xf0, size 4 (0x4)
+	__declspec(align(4)) float m_flConstantRadius;// 0x260, size 4 (0x4)
 	// m_flConstantRadius metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyAttributeRange
-	__declspec(align(4)) float m_flConstantRotation;// 0xf4, size 4 (0x4)
+	__declspec(align(4)) float m_flConstantRotation;// 0x264, size 4 (0x4)
 	// m_flConstantRotation metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) float m_flConstantRotationSpeed;// 0xf8, size 4 (0x4)
+	__declspec(align(4)) float m_flConstantRotationSpeed;// 0x268, size 4 (0x4)
 	// m_flConstantRotationSpeed metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) float m_flConstantLifespan;// 0xfc, size 4 (0x4)
+	__declspec(align(4)) float m_flConstantLifespan;// 0x26c, size 4 (0x4)
 	// m_flConstantLifespan metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) int32_t m_nConstantSequenceNumber;// 0x100, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nConstantSequenceNumber;// 0x270, size 4 (0x4)
 	// m_nConstantSequenceNumber metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyAttributeEditor
-	__declspec(align(4)) int32_t m_nConstantSequenceNumber1;// 0x104, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nConstantSequenceNumber1;// 0x274, size 4 (0x4)
 	// m_nConstantSequenceNumber1 metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyAttributeEditor
-	__declspec(align(4)) int32_t m_nGroupID;// 0x108, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nGroupID;// 0x278, size 4 (0x4)
 	// m_nGroupID metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MParticleAdvancedField
-	__declspec(align(4)) float m_flMaximumTimeStep;// 0x10c, size 4 (0x4)
+	__declspec(align(4)) float m_flMaximumTimeStep;// 0x27c, size 4 (0x4)
 	// m_flMaximumTimeStep metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MParticleAdvancedField
-	__declspec(align(4)) float m_flMaximumSimTime;// 0x110, size 4 (0x4)
+	__declspec(align(4)) float m_flMaximumSimTime;// 0x280, size 4 (0x4)
 	// m_flMaximumSimTime metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MParticleAdvancedField
-	__declspec(align(4)) float m_flMinimumSimTime;// 0x114, size 4 (0x4)
+	__declspec(align(4)) float m_flMinimumSimTime;// 0x284, size 4 (0x4)
 	// m_flMinimumSimTime metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MParticleAdvancedField
-	__declspec(align(4)) float m_flMinimumTimeStep;// 0x118, size 4 (0x4)
+	__declspec(align(4)) float m_flMinimumTimeStep;// 0x288, size 4 (0x4)
 	// m_flMinimumTimeStep metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MParticleAdvancedField
-	__declspec(align(4)) int32_t m_nMinimumFrames;// 0x11c, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nMinimumFrames;// 0x28c, size 4 (0x4)
 	// m_nMinimumFrames metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MParticleAdvancedField
-	__declspec(align(4)) int32_t m_nMinCPULevel;// 0x120, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nMinCPULevel;// 0x290, size 4 (0x4)
 	// m_nMinCPULevel metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MParticleAdvancedField
-	__declspec(align(4)) int32_t m_nMinGPULevel;// 0x124, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nMinGPULevel;// 0x294, size 4 (0x4)
 	// m_nMinGPULevel metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MParticleAdvancedField
-	__declspec(align(1)) bool m_bViewModelEffect;// 0x128, size 1 (0x1)
+	__declspec(align(1)) bool m_bViewModelEffect;// 0x298, size 1 (0x1)
 	// m_bViewModelEffect metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MParticleAdvancedField
-	__declspec(align(1)) bool m_bScreenSpaceEffect;// 0x129, size 1 (0x1)
+	__declspec(align(1)) bool m_bScreenSpaceEffect;// 0x299, size 1 (0x1)
 	// m_bScreenSpaceEffect metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MParticleAdvancedField
-char CParticleSystemDefinition_0248[0x118];
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class ParticleControlPointConfiguration_t > m_controlPointConfigurations;// 0x248, size 24 (0x18)
-	__declspec(align(4)) float m_flMaxDrawDistance;// 0x260, size 4 (0x4)
-	// m_flMaxDrawDistance metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(4)) float m_flStartFadeDistance;// 0x264, size 4 (0x4)
-	// m_flStartFadeDistance metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(4)) float m_flNoDrawTimeToGoToSleep;// 0x268, size 4 (0x4)
+char CParticleSystemDefinition_02B0[0x10];
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class ParticleControlPointConfiguration_t > m_controlPointConfigurations;// 0x2b0, size 24 (0x18)
+	__declspec(align(4)) float m_flNoDrawTimeToGoToSleep;// 0x2c8, size 4 (0x4)
 	// m_flNoDrawTimeToGoToSleep metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) int32_t m_nMaxParticles;// 0x26c, size 4 (0x4)
-	// m_nMaxParticles metadata
-	 // MSrc1ImportAttributeName
+	__declspec(align(4)) float m_flMaxDrawDistance;// 0x2cc, size 4 (0x4)
+	// m_flMaxDrawDistance metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) int32_t m_nSkipRenderControlPoint;// 0x270, size 4 (0x4)
+	__declspec(align(4)) float m_flStartFadeDistance;// 0x2d0, size 4 (0x4)
+	// m_flStartFadeDistance metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) int32_t m_nSkipRenderControlPoint;// 0x2d4, size 4 (0x4)
 	// m_nSkipRenderControlPoint metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MParticleAdvancedField
-	__declspec(align(4)) int32_t m_nAllowRenderControlPoint;// 0x274, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nAllowRenderControlPoint;// 0x2d8, size 4 (0x4)
 	// m_nAllowRenderControlPoint metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MParticleAdvancedField
-	__declspec(align(4)) int32_t m_nAggregationMinAvailableParticles;// 0x278, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nAggregationMinAvailableParticles;// 0x2dc, size 4 (0x4)
 	// m_nAggregationMinAvailableParticles metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MParticleAdvancedField
-	__declspec(align(4)) float m_flAggregateRadius;// 0x27c, size 4 (0x4)
+	__declspec(align(4)) float m_flAggregateRadius;// 0x2e0, size 4 (0x4)
 	// m_flAggregateRadius metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MParticleAdvancedField
-	__declspec(align(4)) float m_flStopSimulationAfterTime;// 0x280, size 4 (0x4)
+	__declspec(align(4)) float m_flStopSimulationAfterTime;// 0x2e4, size 4 (0x4)
 	// m_flStopSimulationAfterTime metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MParticleAdvancedField
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vControlPoint1DefaultOffsetRelativeToControlPoint0;// 0x284, size 12 (0xc)
-	// m_vControlPoint1DefaultOffsetRelativeToControlPoint0 metadata
-	 // MSrc1ImportAttributeName
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, CParticleOperatorInstance *> m_Operators;// 0x290, size 24 (0x18)
-	// m_Operators metadata
-	 // MAttributeName
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, CParticleOperatorInstance *> m_Renderers;// 0x2a8, size 24 (0x18)
-	// m_Renderers metadata
-	 // MAttributeName
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, CParticleOperatorInstance *> m_Initializers;// 0x2c0, size 24 (0x18)
-	// m_Initializers metadata
-	 // MAttributeName
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, CParticleOperatorInstance *> m_Emitters;// 0x2d8, size 24 (0x18)
-	// m_Emitters metadata
-	 // MAttributeName
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, CParticleOperatorInstance *> m_ForceGenerators;// 0x2f0, size 24 (0x18)
-	// m_ForceGenerators metadata
-	 // MAttributeName
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, CParticleOperatorInstance *> m_Constraints;// 0x308, size 24 (0x18)
-	// m_Constraints metadata
-	 // MAttributeName
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class ParticleChildrenInfo_t > m_Children;// 0x320, size 24 (0x18)
-	// m_Children metadata
-	 // MPropertySuppressField
-char CParticleSystemDefinition_0408[0xD0];
-	__declspec(align(1)) bool m_bShouldSort;// 0x408, size 1 (0x1)
+char CParticleSystemDefinition_0324[0x3C];
+	__declspec(align(1)) bool m_bShouldSort;// 0x324, size 1 (0x1)
 	// m_bShouldSort metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(1)) bool m_bShouldBatch;// 0x409, size 1 (0x1)
+	__declspec(align(1)) bool m_bShouldBatch;// 0x325, size 1 (0x1)
 	// m_bShouldBatch metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MParticleAdvancedField
-	__declspec(align(4)) float m_flDepthSortBias;// 0x40c, size 4 (0x4)
+	__declspec(align(4)) float m_flDepthSortBias;// 0x328, size 4 (0x4)
 	// m_flDepthSortBias metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
-char CParticleSystemDefinition_0412[0x2];
-	__declspec(align(1)) bool m_bShouldHitboxesFallbackToRenderBounds;// 0x412, size 1 (0x1)
+char CParticleSystemDefinition_032D[0x1];
+	__declspec(align(1)) bool m_bShouldHitboxesFallbackToRenderBounds;// 0x32d, size 1 (0x1)
 	// m_bShouldHitboxesFallbackToRenderBounds metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MParticleAdvancedField
-char CParticleSystemDefinition_0420[0xD];
-}; // size: 1056 (0x420)
+char CParticleSystemDefinition_0340[0x12];
+}; // size: 832 (0x340)
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_LockToBone : public CParticlePerFrameOperatorInstance
+class C_OP_LockToBone : public CParticleFunctionOperator
 {
 // C_OP_LockToBone additional information
 // particles.dll, project particles
@@ -27233,18 +27810,6 @@ char C_OP_LockToBone_0120[0xA];
 }; // size: 288 (0x120)
 #pragma pack(pop)
 
-#pragma pack(push, 16)
-class C_OP_SpinUpdate : public CSpinUpdateBase
-{
-// C_OP_SpinUpdate additional information
-// particles.dll, project particles
-// Alignment: 16
-// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
-
-public:
-}; // size: 128 (0x80)
-#pragma pack(pop)
-
 #pragma pack(push, 8)
 class EventClientSimulate_t : public EventSimulate_t
 {
@@ -27270,7 +27835,7 @@ class CEntityIdentity
 
 public:
 char CEntityIdentity_014[0x10];
-	__declspec(align(4)) int32_t Index;// 0x10, size 4 (0x4)
+	__declspec(align(4)) int32_t Index;// 0x10, size 4 (0x4) --> NEW ENTITY INDEX
 	__declspec(align(4)) int32_t m_nameStringableIndex;// 0x14, size 4 (0x4)
 	// m_nameStringableIndex metadata
 	 // MNetworkEnable
@@ -27352,6 +27917,7 @@ char CDOTA_AttackRecord_08[0x8];
 	bool m_bUseProjectile : 1;// 0x0, size 0 (0x0)
 	bool m_bUseCastAttackOrb : 1;// 0x0, size 0 (0x0)
 	bool m_bAutoCastAttack : 1;// 0x0, size 0 (0x0)
+	bool m_bIgnoreObstructions : 1;// 0x0, size 0 (0x0)
 	__declspec(align(4)) int32_t m_nBashSource;// 0x64, size 4 (0x4)
 	__declspec(align(4)) float m_flAttackHeight;// 0x68, size 4 (0x4)
 	__declspec(align(4)) float m_flCriticalBonus;// 0x6c, size 4 (0x4)
@@ -27393,54 +27959,12 @@ class CTwistConstraint : public CBaseConstraint
 // SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
 
 public:
-	__declspec(align(1)) bool m_bInverse;// 0x50, size 1 (0x1)
-	__declspec(align(4)) UnknownType <0x10, class Quaternion> m_qParentBindRotation;// 0x54, size 16 (0x10)
-	__declspec(align(4)) UnknownType <0x10, class Quaternion> m_qChildBindRotation;// 0x64, size 16 (0x10)
-char CTwistConstraint_078[0x4];
-}; // size: 120 (0x78)
+	__declspec(align(1)) bool m_bInverse;// 0x70, size 1 (0x1)
+	__declspec(align(4)) UnknownType <0x10, class Quaternion> m_qParentBindRotation;// 0x74, size 16 (0x10)
+	__declspec(align(4)) UnknownType <0x10, class Quaternion> m_qChildBindRotation;// 0x84, size 16 (0x10)
+char CTwistConstraint_098[0x4];
+}; // size: 152 (0x98)
 #pragma pack(pop)
-
-class CNewParticleEffect : public IParticleEffect
-{
-// CNewParticleEffect additional information
-// client.dll, project particleslib
-// Alignment: -1
-// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
-// SCHEMA_CLASS_TEMP_HACK_HAS_NOSCHEMA_MEMBERS
-// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
-// SCHEMA_CLASS_TEMP_HACK_HAS_DESTRUCTOR_LIKE_METHODS
-// Abstract Class
-
-public:
-char CNewParticleEffect_010[0x8];
-	__declspec(align(8)) CNewParticleEffect *m_pNext;// 0x10, size 8 (0x8)
-	__declspec(align(8)) CNewParticleEffect *m_pPrev;// 0x18, size 8 (0x8)
-	__declspec(align(8)) IParticleCollection *m_pParticles;// 0x20, size 8 (0x8)
-	__declspec(align(8)) char* m_pDebugName;// 0x28, size 8 (0x8)
-	bool m_bDontRemove : 1;// 0x0, size 0 (0x0)
-	bool m_bRemove : 1;// 0x0, size 0 (0x0)
-	bool m_bNeedsBBoxUpdate : 1;// 0x0, size 0 (0x0)
-	bool m_bIsFirstFrame : 1;// 0x0, size 0 (0x0)
-	bool m_bAutoUpdateBBox : 1;// 0x0, size 0 (0x0)
-	bool m_bAllocated : 1;// 0x0, size 0 (0x0)
-	bool m_bSimulate : 1;// 0x0, size 0 (0x0)
-	bool m_bShouldPerformCullCheck : 1;// 0x0, size 0 (0x0)
-	bool m_bForceNoDraw : 1;// 0x0, size 0 (0x0)
-	bool m_bDisableAggregation : 1;// 0x0, size 0 (0x0)
-	bool m_bShouldSimulateDuringGamePaused : 1;// 0x0, size 0 (0x0)
-	bool m_bShouldCheckFoW : 1;// 0x0, size 0 (0x0)
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vSortOrigin;// 0x34, size 12 (0xc)
-	__declspec(align(8)) UnknownType <0x1, class PARTICLE_EHANDLE__> *m_hOwner;// 0x40, size 8 (0x8)
-	__declspec(align(8)) CParticleProperty *m_pOwningParticleProperty;// 0x48, size 8 (0x8)
-char CNewParticleEffect_060[0x10];
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_LastMin;// 0x60, size 12 (0xc)
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_LastMax;// 0x6c, size 12 (0xc)
-	__declspec(align(4)) UnknownType <0x4, class CSplitScreenSlot> m_nSplitScreenUser;// 0x78, size 4 (0x4)
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecAggregationCenter;// 0x7c, size 12 (0xc)
-char CNewParticleEffect_0A0[0x18];
-	__declspec(align(4)) int32_t m_RefCount;// 0xa0, size 4 (0x4)
-char CNewParticleEffect_0A8[0x4];
-}; // size: 168 (0xa8)
 
 #pragma pack(push, 8)
 class DOTASpecialAbility_t
@@ -27481,6 +28005,48 @@ public:
 	__declspec(align(4)) int32_t nSpiritState;// 0xc, size 4 (0x4)
 }; // size: 16 (0x10)
 #pragma pack(pop)
+
+class CNewParticleEffect : public IParticleEffect
+{
+// CNewParticleEffect additional information
+// particles.dll, project particleslib
+// Alignment: -1
+// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+// SCHEMA_CLASS_TEMP_HACK_HAS_NOSCHEMA_MEMBERS
+// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
+// SCHEMA_CLASS_TEMP_HACK_HAS_DESTRUCTOR_LIKE_METHODS
+// Abstract Class
+
+public:
+char CNewParticleEffect_010[0x8];
+	__declspec(align(8)) CNewParticleEffect *m_pNext;// 0x10, size 8 (0x8)
+	__declspec(align(8)) CNewParticleEffect *m_pPrev;// 0x18, size 8 (0x8)
+	__declspec(align(8)) IParticleCollection *m_pParticles;// 0x20, size 8 (0x8)
+	__declspec(align(8)) char* m_pDebugName;// 0x28, size 8 (0x8)
+	bool m_bDontRemove : 1;// 0x0, size 0 (0x0)
+	bool m_bRemove : 1;// 0x0, size 0 (0x0)
+	bool m_bNeedsBBoxUpdate : 1;// 0x0, size 0 (0x0)
+	bool m_bIsFirstFrame : 1;// 0x0, size 0 (0x0)
+	bool m_bAutoUpdateBBox : 1;// 0x0, size 0 (0x0)
+	bool m_bAllocated : 1;// 0x0, size 0 (0x0)
+	bool m_bSimulate : 1;// 0x0, size 0 (0x0)
+	bool m_bShouldPerformCullCheck : 1;// 0x0, size 0 (0x0)
+	bool m_bForceNoDraw : 1;// 0x0, size 0 (0x0)
+	bool m_bDisableAggregation : 1;// 0x0, size 0 (0x0)
+	bool m_bShouldSimulateDuringGamePaused : 1;// 0x0, size 0 (0x0)
+	bool m_bShouldCheckFoW : 1;// 0x0, size 0 (0x0)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vSortOrigin;// 0x34, size 12 (0xc)
+	__declspec(align(8)) UnknownType <0x1, class PARTICLE_EHANDLE__> *m_hOwner;// 0x40, size 8 (0x8)
+	__declspec(align(8)) CParticleProperty *m_pOwningParticleProperty;// 0x48, size 8 (0x8)
+char CNewParticleEffect_060[0x10];
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_LastMin;// 0x60, size 12 (0xc)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_LastMax;// 0x6c, size 12 (0xc)
+	__declspec(align(4)) UnknownType <0x4, class CSplitScreenSlot> m_nSplitScreenUser;// 0x78, size 4 (0x4)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecAggregationCenter;// 0x7c, size 12 (0xc)
+char CNewParticleEffect_0A0[0x18];
+	__declspec(align(4)) int32_t m_RefCount;// 0xa0, size 4 (0x4)
+char CNewParticleEffect_0A8[0x4];
+}; // size: 168 (0xa8)
 
 #pragma pack(push, 16)
 class C_INIT_RandomRotation : public CGeneralRandomRotation
@@ -27540,22 +28106,6 @@ char CFloatAnimParameter_040[0x3];
 #pragma pack(pop)
 
 #pragma pack(push, 4)
-class FeKelagerBend_t
-{
-// FeKelagerBend_t additional information
-// resourcesystem.dll, project mathlib_extended
-// Alignment: 4
-// SCHEMA_CLASS_HAS_TRIVIAL_CONSTRUCTOR
-// SCHEMA_CLASS_HAS_TRIVIAL_DESTRUCTOR
-
-public:
-	__declspec(align(4)) float flHeight0;// 0x0, size 4 (0x4)
-	__declspec(align(2)) uint16_t m_nNode[3];// 0x4, size 6 (0x6)
-	__declspec(align(2)) uint16_t m_nFlags;// 0xa, size 2 (0x2)
-}; // size: 12 (0xc)
-#pragma pack(pop)
-
-#pragma pack(push, 4)
 class CFeIndexedJiggleBone
 {
 // CFeIndexedJiggleBone additional information
@@ -27611,7 +28161,7 @@ public:
 	__declspec(align(4)) AnimParamID m_param;// 0x44, size 4 (0x4)
 	// m_param metadata
 	 // MPropertyFriendlyName
-	 // MPropertyChoiceProviderFn
+	 // MPropertyAttributeChoiceName
 	__declspec(align(1)) bool m_bLoop;// 0x48, size 1 (0x1)
 	// m_bLoop metadata
 	 // MPropertyFriendlyName
@@ -27700,7 +28250,7 @@ public:
 class VsInputSignature_t
 {
 // VsInputSignature_t additional information
-// rendersystemdx9.dll, project rendersystemdx9
+// rendersystemdx11.dll, project rendersystemdx11
 // Alignment: 8
 
 public:
@@ -27739,31 +28289,8 @@ public:
 }; // size: 64 (0x40)
 #pragma pack(pop)
 
-#pragma pack(push, 8)
-class InfoOverlayData_t
-{
-// InfoOverlayData_t additional information
-// worldrenderer.dll, project worldrenderer
-// Alignment: 8
-// SCHEMA_CLASS_HAS_TRIVIAL_DESTRUCTOR
-// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
-
-public:
-	__declspec(align(4)) UnknownType <0x30, class matrix3x4_t> m_transform;// 0x0, size 48 (0x30)
-	__declspec(align(4)) float m_flWidth;// 0x30, size 4 (0x4)
-	__declspec(align(4)) float m_flHeight;// 0x34, size 4 (0x4)
-	__declspec(align(4)) float m_flDepth;// 0x38, size 4 (0x4)
-	__declspec(align(4)) UnknownType <0x8, class Vector2D> m_vUVStart;// 0x3c, size 8 (0x8)
-	__declspec(align(4)) UnknownType <0x8, class Vector2D> m_vUVEnd;// 0x44, size 8 (0x8)
-	__declspec(align(8)) UnknownAtomicType <0x8, CResourceExtReference, UnknownAtomicType <0x8, CWeakHandle, class InfoForResourceTypeIMaterial2 > > m_pMaterial;// 0x50, size 8 (0x8)
-	__declspec(align(4)) int32_t m_nRenderOrder;// 0x58, size 4 (0x4)
-	__declspec(align(4)) UnknownType <0x10, class Vector4D> m_vTintColor;// 0x5c, size 16 (0x10)
-	__declspec(align(4)) int32_t m_nSequenceOverride;// 0x6c, size 4 (0x4)
-}; // size: 112 (0x70)
-#pragma pack(pop)
-
 #pragma pack(push, 16)
-class C_OP_FadeInSimple : public CParticlePerFrameOperatorInstance
+class C_OP_FadeInSimple : public CParticleFunctionOperator
 {
 // C_OP_FadeInSimple additional information
 // particles.dll, project particles
@@ -27785,7 +28312,7 @@ char C_OP_FadeInSimple_090[0x8];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_INIT_CreateWithinBox : public CParticleInitializerOperatorInstance
+class C_INIT_CreateWithinBox : public CParticleFunctionInitializer
 {
 // C_INIT_CreateWithinBox additional information
 // particles.dll, project particles
@@ -27815,8 +28342,31 @@ char C_INIT_CreateWithinBox_0A0[0x3];
 }; // size: 160 (0xa0)
 #pragma pack(pop)
 
+#pragma pack(push, 8)
+class InfoOverlayData_t
+{
+// InfoOverlayData_t additional information
+// worldrenderer.dll, project worldrenderer
+// Alignment: 8
+// SCHEMA_CLASS_HAS_TRIVIAL_DESTRUCTOR
+// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
+
+public:
+	__declspec(align(4)) UnknownType <0x30, class matrix3x4_t> m_transform;// 0x0, size 48 (0x30)
+	__declspec(align(4)) float m_flWidth;// 0x30, size 4 (0x4)
+	__declspec(align(4)) float m_flHeight;// 0x34, size 4 (0x4)
+	__declspec(align(4)) float m_flDepth;// 0x38, size 4 (0x4)
+	__declspec(align(4)) UnknownType <0x8, class Vector2D> m_vUVStart;// 0x3c, size 8 (0x8)
+	__declspec(align(4)) UnknownType <0x8, class Vector2D> m_vUVEnd;// 0x44, size 8 (0x8)
+	__declspec(align(8)) UnknownAtomicType <0x8, CResourceExtReference, UnknownAtomicType <0x8, CWeakHandle, class InfoForResourceTypeIMaterial2 > > m_pMaterial;// 0x50, size 8 (0x8)
+	__declspec(align(4)) int32_t m_nRenderOrder;// 0x58, size 4 (0x4)
+	__declspec(align(4)) UnknownType <0x10, class Vector4D> m_vTintColor;// 0x5c, size 16 (0x10)
+	__declspec(align(4)) int32_t m_nSequenceOverride;// 0x6c, size 4 (0x4)
+}; // size: 112 (0x70)
+#pragma pack(pop)
+
 #pragma pack(push, 16)
-class C_OP_RenderScreenVelocityRotate : public CParticleRenderOperatorInstance
+class C_OP_RenderScreenVelocityRotate : public CParticleFunctionRenderer
 {
 // C_OP_RenderScreenVelocityRotate additional information
 // particles.dll, project particles
@@ -27824,18 +28374,18 @@ class C_OP_RenderScreenVelocityRotate : public CParticleRenderOperatorInstance
 // SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
 
 public:
-	__declspec(align(4)) float m_flRotateRateDegrees;// 0xc0, size 4 (0x4)
+	__declspec(align(4)) float m_flRotateRateDegrees;// 0xd0, size 4 (0x4)
 	// m_flRotateRateDegrees metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) float m_flForwardDegrees;// 0xc4, size 4 (0x4)
+	__declspec(align(4)) float m_flForwardDegrees;// 0xd4, size 4 (0x4)
 	// m_flForwardDegrees metadata
 	 // MSrc1ImportAttributeName
 	 // MAttributeName
 	 // MDefaultString
-char C_OP_RenderScreenVelocityRotate_0D0[0x8];
-}; // size: 208 (0xd0)
+char C_OP_RenderScreenVelocityRotate_0E0[0x8];
+}; // size: 224 (0xe0)
 #pragma pack(pop)
 
 #pragma pack(push, 16)
@@ -27850,35 +28400,14 @@ public:
 }; // size: 176 (0xb0)
 #pragma pack(pop)
 
-class CVoxelVisibility
-{
-// CVoxelVisibility additional information
-// worldrenderer.dll, project worldrenderer
-// Alignment: -1
-// SCHEMA_CLASS_TEMP_HACK_HAS_NOSCHEMA_MEMBERS
-// Abstract Class
-
-public:
-char CVoxelVisibility_030[0x30];
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, uint32_t > m_blockOffset;// 0x30, size 24 (0x18)
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class voxel_vis_cluster_t > m_clusters;// 0x48, size 24 (0x18)
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vMinBounds;// 0x60, size 12 (0xc)
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vMaxBounds;// 0x6c, size 12 (0xc)
-	__declspec(align(4)) float m_flGridSize;// 0x78, size 4 (0x4)
-	__declspec(align(4)) int32_t m_nNodeCount;// 0x7c, size 4 (0x4)
-	__declspec(align(4)) int32_t m_nRegionCount;// 0x80, size 4 (0x4)
-	__declspec(align(4)) voxel_vis_compression_t m_nPVSCompression;// 0x84, size 4 (0x4)
-	__declspec(align(4)) uint32_t m_nTreeSize;// 0x88, size 4 (0x4)
-	__declspec(align(4)) uint32_t m_nPVSSizeCompressed;// 0x8c, size 4 (0x4)
-}; // size: 144 (0x90)
-
 #pragma pack(push, 16)
-class C_INIT_RemapCPtoVector : public CParticleInitializerOperatorInstance
+class C_INIT_RemapCPtoVector : public CParticleFunctionInitializer
 {
 // C_INIT_RemapCPtoVector additional information
 // particles.dll, project particles
 // Alignment: 16
 // SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+// SCHEMA_CLASS_TEMP_HACK_HAS_NOSCHEMA_MEMBERS
 
 public:
 	__declspec(align(4)) int32_t m_nCPInput;// 0x80, size 4 (0x4)
@@ -27934,12 +28463,16 @@ public:
 	// m_nLocalSpaceCP metadata
 	 // MAttributeName
 	 // MDefaultString
-char C_INIT_RemapCPtoVector_0D0[0x8];
+	__declspec(align(4)) float m_flRemapBias;// 0xc8, size 4 (0x4)
+	// m_flRemapBias metadata
+	 // MAttributeName
+	 // MDefaultString
+char C_INIT_RemapCPtoVector_0D0[0x4];
 }; // size: 208 (0xd0)
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_INIT_RandomModelSequence : public CParticleInitializerOperatorInstance
+class C_INIT_RandomModelSequence : public CParticleFunctionInitializer
 {
 // C_INIT_RandomModelSequence additional information
 // particles.dll, project particles
@@ -27958,6 +28491,28 @@ public:
 char C_INIT_RandomModelSequence_0190[0x8];
 }; // size: 400 (0x190)
 #pragma pack(pop)
+
+class CVoxelVisibility
+{
+// CVoxelVisibility additional information
+// worldrenderer.dll, project worldrenderer
+// Alignment: -1
+// SCHEMA_CLASS_TEMP_HACK_HAS_NOSCHEMA_MEMBERS
+// Abstract Class
+
+public:
+char CVoxelVisibility_030[0x30];
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, uint32_t > m_blockOffset;// 0x30, size 24 (0x18)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class voxel_vis_cluster_t > m_clusters;// 0x48, size 24 (0x18)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vMinBounds;// 0x60, size 12 (0xc)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vMaxBounds;// 0x6c, size 12 (0xc)
+	__declspec(align(4)) float m_flGridSize;// 0x78, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nNodeCount;// 0x7c, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nRegionCount;// 0x80, size 4 (0x4)
+	__declspec(align(4)) voxel_vis_compression_t m_nPVSCompression;// 0x84, size 4 (0x4)
+	__declspec(align(4)) uint32_t m_nTreeSize;// 0x88, size 4 (0x4)
+	__declspec(align(4)) uint32_t m_nPVSSizeCompressed;// 0x8c, size 4 (0x4)
+}; // size: 144 (0x90)
 
 #pragma pack(push, 8)
 class SelectedEditItemInfo_t
@@ -27982,14 +28537,14 @@ class CAnimationGraph : public SchemaBase
 // SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
 
 public:
-char CAnimationGraph_030[0x28];
-	__declspec(align(8)) CAnimMotorList m_motorList;// 0x30, size 144 (0x90)
-	__declspec(align(8)) UnknownAtomicType <0x8, CSmartPtr, class CAnimParameterList > m_pParameterList;// 0xc0, size 8 (0x8)
-	__declspec(align(8)) UnknownAtomicType <0x8, CSmartPtr, class CAnimTagManager > m_pTagManager;// 0xc8, size 8 (0x8)
-	__declspec(align(8)) UnknownAtomicType <0x8, CSmartPtr, class CActivityValueList > m_pActivityValuesList;// 0xd0, size 8 (0x8)
-	__declspec(align(4)) AnimNodeID m_rootNodeID;// 0xd8, size 4 (0x4)
-char CAnimationGraph_0178[0x9C];
-}; // size: 376 (0x178)
+char CAnimationGraph_038[0x30];
+	__declspec(align(8)) CAnimMotorList m_motorList;// 0x38, size 144 (0x90)
+	__declspec(align(8)) UnknownAtomicType <0x8, CSmartPtr, class CAnimParameterList > m_pParameterList;// 0xc8, size 8 (0x8)
+	__declspec(align(8)) UnknownAtomicType <0x8, CSmartPtr, class CAnimTagManager > m_pTagManager;// 0xd0, size 8 (0x8)
+	__declspec(align(8)) UnknownAtomicType <0x8, CSmartPtr, class CActivityValueList > m_pActivityValuesList;// 0xd8, size 8 (0x8)
+	__declspec(align(4)) AnimNodeID m_rootNodeID;// 0xe0, size 4 (0x4)
+char CAnimationGraph_0180[0x9C];
+}; // size: 384 (0x180)
 #pragma pack(pop)
 
 #pragma pack(push, 8)
@@ -28012,17 +28567,6 @@ char C_LightGlowOverlay_0F8[0x2];
 }; // size: 248 (0xf8)
 #pragma pack(pop)
 
-#pragma pack(push, 8)
-class CSSDSMsg_PostLayer : public CSSDSMsg_LayerBase
-{
-// CSSDSMsg_PostLayer additional information
-// scenesystem.dll, project scenesystem
-// Alignment: 8
-
-public:
-}; // size: 56 (0x38)
-#pragma pack(pop)
-
 class IControlPointEditorData : public SchemaBase
 {
 // IControlPointEditorData additional information
@@ -28035,6 +28579,17 @@ class IControlPointEditorData : public SchemaBase
 
 public:
 }; // size: 8 (0x8)
+
+#pragma pack(push, 8)
+class CSSDSMsg_PostLayer : public CSSDSMsg_LayerBase
+{
+// CSSDSMsg_PostLayer additional information
+// scenesystem.dll, project scenesystem
+// Alignment: 8
+
+public:
+}; // size: 56 (0x38)
+#pragma pack(pop)
 
 #pragma pack(push, 8)
 class CSequenceAnimNode : public CAnimNodeBase
@@ -28099,32 +28654,8 @@ public:
 }; // size: 320 (0x140)
 #pragma pack(pop)
 
-#pragma pack(push, 8)
-class IrradVolume_t
-{
-// IrradVolume_t additional information
-// worldrenderer.dll, project worldrenderer
-// Alignment: 8
-// SCHEMA_CLASS_HAS_TRIVIAL_DESTRUCTOR
-
-public:
-	__declspec(align(4)) UnknownType <0x40, class VMatrix> m_transform;// 0x0, size 64 (0x40)
-	__declspec(align(4)) float m_flFadeMinDist;// 0x40, size 4 (0x4)
-	__declspec(align(4)) float m_flFadeMaxDist;// 0x44, size 4 (0x4)
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vMinBounds;// 0x48, size 12 (0xc)
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vMaxBounds;// 0x54, size 12 (0xc)
-	__declspec(align(4)) IrradVolumeFlags_t m_nFlags;// 0x60, size 4 (0x4)
-	__declspec(align(4)) uint32_t m_nSortKey;// 0x64, size 4 (0x4)
-	__declspec(align(4)) uint32_t m_nPlanes;// 0x68, size 4 (0x4)
-	__declspec(align(4)) UnknownType <0x10, class Vector4D> m_planes[16];// 0x6c, size 256 (0x100)
-	__declspec(align(8)) UnknownAtomicType <0x8, CResourceExtReference, UnknownAtomicType <0x8, CWeakHandle, class InfoForResourceTypeCTextureBase > > m_texture;// 0x170, size 8 (0x8)
-	__declspec(align(8)) UnknownAtomicType <0x8, CResourceExtReference, UnknownAtomicType <0x8, CWeakHandle, class InfoForResourceTypeCLightTree > > m_lightTree;// 0x178, size 8 (0x8)
-	__declspec(align(8)) UnknownAtomicType <0x8, CResourceExtReference, UnknownAtomicType <0x8, CWeakHandle, class InfoForResourceTypePRTMatrixData_t > > m_prtMatrix;// 0x180, size 8 (0x8)
-}; // size: 392 (0x188)
-#pragma pack(pop)
-
 #pragma pack(push, 16)
-class C_OP_LockPoints : public CParticlePerFrameOperatorInstance
+class C_OP_LockPoints : public CParticleFunctionOperator
 {
 // C_OP_LockPoints additional information
 // particles.dll, project particles
@@ -28163,7 +28694,7 @@ char C_OP_LockPoints_0A0[0x8];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_RemapCPtoVelocity : public CParticlePerFrameOperatorInstance
+class C_OP_RemapCPtoVelocity : public CParticleFunctionOperator
 {
 // C_OP_RemapCPtoVelocity additional information
 // particles.dll, project particles
@@ -28178,6 +28709,30 @@ public:
 	__declspec(align(1)) bool m_bScaleCurrent;// 0x84, size 1 (0x1)
 char C_OP_RemapCPtoVelocity_090[0xB];
 }; // size: 144 (0x90)
+#pragma pack(pop)
+
+#pragma pack(push, 8)
+class IrradVolume_t
+{
+// IrradVolume_t additional information
+// worldrenderer.dll, project worldrenderer
+// Alignment: 8
+// SCHEMA_CLASS_HAS_TRIVIAL_DESTRUCTOR
+
+public:
+	__declspec(align(4)) UnknownType <0x40, class VMatrix> m_transform;// 0x0, size 64 (0x40)
+	__declspec(align(4)) float m_flFadeMinDist;// 0x40, size 4 (0x4)
+	__declspec(align(4)) float m_flFadeMaxDist;// 0x44, size 4 (0x4)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vMinBounds;// 0x48, size 12 (0xc)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vMaxBounds;// 0x54, size 12 (0xc)
+	__declspec(align(4)) IrradVolumeFlags_t m_nFlags;// 0x60, size 4 (0x4)
+	__declspec(align(4)) uint32_t m_nSortKey;// 0x64, size 4 (0x4)
+	__declspec(align(4)) uint32_t m_nPlanes;// 0x68, size 4 (0x4)
+	__declspec(align(4)) UnknownType <0x10, class Vector4D> m_planes[16];// 0x6c, size 256 (0x100)
+	__declspec(align(8)) UnknownAtomicType <0x8, CResourceExtReference, UnknownAtomicType <0x8, CWeakHandle, class InfoForResourceTypeCTextureBase > > m_texture;// 0x170, size 8 (0x8)
+	__declspec(align(8)) UnknownAtomicType <0x8, CResourceExtReference, UnknownAtomicType <0x8, CWeakHandle, class InfoForResourceTypeCLightTree > > m_lightTree;// 0x178, size 8 (0x8)
+	__declspec(align(8)) UnknownAtomicType <0x8, CResourceExtReference, UnknownAtomicType <0x8, CWeakHandle, class InfoForResourceTypePRTMatrixData_t > > m_prtMatrix;// 0x180, size 8 (0x8)
+}; // size: 392 (0x188)
 #pragma pack(pop)
 
 #pragma pack(push, 8)
@@ -28236,6 +28791,85 @@ public:
 }; // size: 20 (0x14)
 #pragma pack(pop)
 
+#pragma pack(push, 16)
+class C_OP_RenderTrails : public CBaseTrailRenderer
+{
+// C_OP_RenderTrails additional information
+// particles.dll, project particles
+// Alignment: 16
+// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
+
+public:
+	__declspec(align(1)) bool m_bEnableFadingAndClamping;// 0x2d0, size 1 (0x1)
+	// m_bEnableFadingAndClamping metadata
+	 // MAttributeName
+	 // MDefaultString
+	 // MPropertyGroupName
+	__declspec(align(4)) float m_flMaxLength;// 0x2d4, size 4 (0x4)
+	// m_flMaxLength metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) float m_flMinLength;// 0x2d8, size 4 (0x4)
+	// m_flMinLength metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(1)) bool m_bIgnoreDT;// 0x2dc, size 1 (0x1)
+	// m_bIgnoreDT metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) float m_flConstrainRadiusToLengthRatio;// 0x2e0, size 4 (0x4)
+	// m_flConstrainRadiusToLengthRatio metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) float m_flLengthScale;// 0x2e4, size 4 (0x4)
+	// m_flLengthScale metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) float m_flRadiusTaper;// 0x2e8, size 4 (0x4)
+	// m_flRadiusTaper metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) float m_flLengthFadeInTime;// 0x2ec, size 4 (0x4)
+	// m_flLengthFadeInTime metadata
+	 // MAttributeName
+	 // MAlternateAttributeName
+	 // MDefaultString
+	__declspec(align(4)) UnknownType <0x10, class Vector4D> m_vEndTrailTintFactor;// 0x2f0, size 16 (0x10)
+	// m_vEndTrailTintFactor metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) UnknownType <0x4, class ParticleAttributeIndex_t> m_nHorizCropField;// 0x300, size 4 (0x4)
+	// m_nHorizCropField metadata
+	 // MAttributeName
+	 // MDefaultString
+	 // MPropertyAttributeChoiceName
+	__declspec(align(4)) UnknownType <0x4, class ParticleAttributeIndex_t> m_nVertCropField;// 0x304, size 4 (0x4)
+	// m_nVertCropField metadata
+	 // MAttributeName
+	 // MDefaultString
+	 // MPropertyAttributeChoiceName
+	__declspec(align(4)) float m_flForwardShift;// 0x308, size 4 (0x4)
+	// m_flForwardShift metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(1)) bool m_bFlipUVBasedOnPitchYaw;// 0x30c, size 1 (0x1)
+	// m_bFlipUVBasedOnPitchYaw metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) UnknownType <0x4, class ParticleAttributeIndex_t> m_nPrevPntSource;// 0x310, size 4 (0x4)
+	// m_nPrevPntSource metadata
+	 // MAttributeName
+	 // MDefaultString
+	 // MPropertyAttributeChoiceName
+	__declspec(align(1)) bool m_bUseTopology;// 0x314, size 1 (0x1)
+	// m_bUseTopology metadata
+	 // MAttributeName
+	 // MDefaultString
+char C_OP_RenderTrails_0320[0xB];
+}; // size: 800 (0x320)
+#pragma pack(pop)
+
 #pragma pack(push, 4)
 class World_t
 {
@@ -28250,85 +28884,6 @@ public:
 	__declspec(align(4)) BakedLightingInfo_t m_worldLightingInfo;// 0x54, size 36 (0x24)
 	__declspec(align(4)) UnknownAtomicType <0x8, CResourceArray, UnknownAtomicType <0x8, CResourceExtReference, UnknownAtomicType <0x8, CWeakHandle, class InfoForResourceTypeCEntityLump > > > m_entityLumps;// 0x78, size 8 (0x8)
 }; // size: 128 (0x80)
-#pragma pack(pop)
-
-#pragma pack(push, 16)
-class C_OP_RenderTrails : public CBaseTrailRenderer
-{
-// C_OP_RenderTrails additional information
-// particles.dll, project particles
-// Alignment: 16
-// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
-// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
-
-public:
-	__declspec(align(1)) bool m_bEnableFadingAndClamping;// 0x2c0, size 1 (0x1)
-	// m_bEnableFadingAndClamping metadata
-	 // MAttributeName
-	 // MDefaultString
-	 // MPropertyGroupName
-	__declspec(align(4)) float m_flMaxLength;// 0x2c4, size 4 (0x4)
-	// m_flMaxLength metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(4)) float m_flMinLength;// 0x2c8, size 4 (0x4)
-	// m_flMinLength metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(1)) bool m_bIgnoreDT;// 0x2cc, size 1 (0x1)
-	// m_bIgnoreDT metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(4)) float m_flConstrainRadiusToLengthRatio;// 0x2d0, size 4 (0x4)
-	// m_flConstrainRadiusToLengthRatio metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(4)) float m_flLengthScale;// 0x2d4, size 4 (0x4)
-	// m_flLengthScale metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(4)) float m_flRadiusTaper;// 0x2d8, size 4 (0x4)
-	// m_flRadiusTaper metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(4)) float m_flLengthFadeInTime;// 0x2dc, size 4 (0x4)
-	// m_flLengthFadeInTime metadata
-	 // MAttributeName
-	 // MAlternateAttributeName
-	 // MDefaultString
-	__declspec(align(4)) UnknownType <0x10, class Vector4D> m_vEndTrailTintFactor;// 0x2e0, size 16 (0x10)
-	// m_vEndTrailTintFactor metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(4)) UnknownType <0x4, class ParticleAttributeIndex_t> m_nHorizCropField;// 0x2f0, size 4 (0x4)
-	// m_nHorizCropField metadata
-	 // MAttributeName
-	 // MDefaultString
-	 // MPropertyAttributeChoiceName
-	__declspec(align(4)) UnknownType <0x4, class ParticleAttributeIndex_t> m_nVertCropField;// 0x2f4, size 4 (0x4)
-	// m_nVertCropField metadata
-	 // MAttributeName
-	 // MDefaultString
-	 // MPropertyAttributeChoiceName
-	__declspec(align(4)) float m_flForwardShift;// 0x2f8, size 4 (0x4)
-	// m_flForwardShift metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(1)) bool m_bFlipUVBasedOnPitchYaw;// 0x2fc, size 1 (0x1)
-	// m_bFlipUVBasedOnPitchYaw metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(4)) UnknownType <0x4, class ParticleAttributeIndex_t> m_nPrevPntSource;// 0x300, size 4 (0x4)
-	// m_nPrevPntSource metadata
-	 // MAttributeName
-	 // MDefaultString
-	 // MPropertyAttributeChoiceName
-	__declspec(align(1)) bool m_bUseTopology;// 0x304, size 1 (0x1)
-	// m_bUseTopology metadata
-	 // MAttributeName
-	 // MDefaultString
-char C_OP_RenderTrails_0310[0xB];
-}; // size: 784 (0x310)
 #pragma pack(pop)
 
 #pragma pack(push, 8)
@@ -28384,7 +28939,7 @@ public:
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_DistanceBetweenCPs : public CParticlePerFrameOperatorInstance
+class C_OP_DistanceBetweenCPs : public CParticleFunctionOperator
 {
 // C_OP_DistanceBetweenCPs additional information
 // particles.dll, project particles
@@ -28450,31 +29005,6 @@ char C_OP_DistanceBetweenCPs_0130[0x9];
 }; // size: 304 (0x130)
 #pragma pack(pop)
 
-#pragma pack(push, 16)
-class C_OP_RampCPLinearRandom : public CParticlePerFrameOperatorInstance
-{
-// C_OP_RampCPLinearRandom additional information
-// particles.dll, project particles
-// Alignment: 16
-// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
-
-public:
-	__declspec(align(4)) int32_t m_nOutControlPointNumber;// 0x80, size 4 (0x4)
-	// m_nOutControlPointNumber metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecRateMin;// 0x84, size 12 (0xc)
-	// m_vecRateMin metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vecRateMax;// 0x90, size 12 (0xc)
-	// m_vecRateMax metadata
-	 // MAttributeName
-	 // MDefaultString
-char C_OP_RampCPLinearRandom_0A0[0x4];
-}; // size: 160 (0xa0)
-#pragma pack(pop)
-
 #pragma pack(push, 4)
 class AnimResourceBone_t
 {
@@ -28510,6 +29040,92 @@ public:
 }; // size: 48 (0x30)
 #pragma pack(pop)
 
+#pragma pack(push, 16)
+class C_INIT_StatusEffect : public CParticleFunctionInitializer
+{
+// C_INIT_StatusEffect additional information
+// particles.dll, project particles
+// Alignment: 16
+// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+// SCHEMA_CLASS_TEMP_HACK_HAS_NOSCHEMA_MEMBERS
+
+public:
+	__declspec(align(4)) Detail2Combo_t m_nDetail2Combo;// 0x80, size 4 (0x4)
+	// m_nDetail2Combo metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) float m_flDetail2Rotation;// 0x84, size 4 (0x4)
+	// m_flDetail2Rotation metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) float m_flDetail2Scale;// 0x88, size 4 (0x4)
+	// m_flDetail2Scale metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) float m_flDetail2BlendFactor;// 0x8c, size 4 (0x4)
+	// m_flDetail2BlendFactor metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) float m_flColorWarpIntensity;// 0x90, size 4 (0x4)
+	// m_flColorWarpIntensity metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) float m_flDiffuseWarpBlendToFull;// 0x94, size 4 (0x4)
+	// m_flDiffuseWarpBlendToFull metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) float m_flEnvMapIntensity;// 0x98, size 4 (0x4)
+	// m_flEnvMapIntensity metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) float m_flAmbientScale;// 0x9c, size 4 (0x4)
+	// m_flAmbientScale metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(1)) UnknownType <0x4, class Color> m_specularColor;// 0xa0, size 4 (0x4)
+	// m_specularColor metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) float m_flSpecularScale;// 0xa4, size 4 (0x4)
+	// m_flSpecularScale metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) float m_flSpecularExponent;// 0xa8, size 4 (0x4)
+	// m_flSpecularExponent metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) float m_flSpecularExponentBlendToFull;// 0xac, size 4 (0x4)
+	// m_flSpecularExponentBlendToFull metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) float m_flSpecularBlendToFull;// 0xb0, size 4 (0x4)
+	// m_flSpecularBlendToFull metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(1)) UnknownType <0x4, class Color> m_rimLightColor;// 0xb4, size 4 (0x4)
+	// m_rimLightColor metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) float m_flRimLightScale;// 0xb8, size 4 (0x4)
+	// m_flRimLightScale metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) float m_flReflectionsTintByBaseBlendToNone;// 0xbc, size 4 (0x4)
+	// m_flReflectionsTintByBaseBlendToNone metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) float m_flMetalnessBlendToFull;// 0xc0, size 4 (0x4)
+	// m_flMetalnessBlendToFull metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) float m_flSelfIllumBlendToFull;// 0xc4, size 4 (0x4)
+	// m_flSelfIllumBlendToFull metadata
+	 // MAttributeName
+	 // MDefaultString
+char C_INIT_StatusEffect_0E0[0x18];
+}; // size: 224 (0xe0)
+#pragma pack(pop)
+
 #pragma pack(push, 8)
 class CControlValueCondition : public CAnimStateConditionBase
 {
@@ -28542,12 +29158,12 @@ public:
 	__declspec(align(1)) bool m_bHasTonemapParams;// 0x0, size 1 (0x1)
 	__declspec(align(4)) PostProcessingTonemapParameters_t m_toneMapParams;// 0x4, size 32 (0x20)
 	__declspec(align(1)) bool m_bHasBloomParams;// 0x24, size 1 (0x1)
-	__declspec(align(4)) PostProcessingBloomParameters_t m_bloomParams;// 0x28, size 112 (0x70)
-	__declspec(align(1)) bool m_bHasVignetteParams;// 0x98, size 1 (0x1)
-	__declspec(align(4)) PostProcessingVignetteParameters_t m_vignetteParams;// 0x9c, size 36 (0x24)
-	__declspec(align(4)) int32_t m_nColorCorrectionVolumeDim;// 0xc0, size 4 (0x4)
-	__declspec(align(4)) UnknownAtomicType <0x8, CResourceArray, UnknownType <0x4, class Color> > m_colorCorrectionVolumeData;// 0xc4, size 8 (0x8)
-}; // size: 204 (0xcc)
+	__declspec(align(4)) PostProcessingBloomParameters_t m_bloomParams;// 0x28, size 116 (0x74)
+	__declspec(align(1)) bool m_bHasVignetteParams;// 0x9c, size 1 (0x1)
+	__declspec(align(4)) PostProcessingVignetteParameters_t m_vignetteParams;// 0xa0, size 36 (0x24)
+	__declspec(align(4)) int32_t m_nColorCorrectionVolumeDim;// 0xc4, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x8, CResourceArray, UnknownType <0x4, class Color> > m_colorCorrectionVolumeData;// 0xc8, size 8 (0x8)
+}; // size: 208 (0xd0)
 #pragma pack(pop)
 
 #pragma pack(push, 16)
@@ -28578,7 +29194,7 @@ class CHeadlightEffect : public CFlashlightEffect
 // Abstract Class
 
 public:
-}; // size: 688 (0x2b0)
+}; // size: 736 (0x2e0)
 
 #pragma pack(push, 8)
 class CDOTA_CombatLogQueryProgress
@@ -28613,28 +29229,27 @@ char CDOTA_CombatLogQueryProgress_0C[0xC];
 }; // size: 288 (0x120)
 #pragma pack(pop)
 
-#pragma pack(push, 8)
+#pragma pack(push, 4)
 class sSpiritInfo
 {
 // sSpiritInfo additional information
 // server.dll, project server
-// Alignment: 8
+// Alignment: 4
 // SCHEMA_CLASS_TEMP_HACK_HAS_NOSCHEMA_MEMBERS
 // SCHEMA_CLASS_TEMP_HACK_HAS_DESTRUCTOR_LIKE_METHODS
 
 public:
-char sSpiritInfo_08[0x8];
-	__declspec(align(4)) UnknownType <0xc, class Vector> vTargetLoc;// 0x8, size 12 (0xc)
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > hTarget;// 0x14, size 4 (0x4)
-	__declspec(align(1)) bool bHit;// 0x18, size 1 (0x1)
-	__declspec(align(4)) int32_t iHealAmount;// 0x1c, size 4 (0x4)
-	__declspec(align(4)) int32_t nFXAmbientIndex;// 0x20, size 4 (0x4)
-char sSpiritInfo_028[0x4];
-}; // size: 40 (0x28)
+char sSpiritInfo_04[0x4];
+	__declspec(align(4)) UnknownType <0xc, class Vector> vTargetLoc;// 0x4, size 12 (0xc)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > hTarget;// 0x10, size 4 (0x4)
+	__declspec(align(1)) bool bHit;// 0x14, size 1 (0x1)
+	__declspec(align(4)) int32_t iHealAmount;// 0x18, size 4 (0x4)
+	__declspec(align(4)) int32_t nFXAmbientIndex;// 0x1c, size 4 (0x4)
+}; // size: 32 (0x20)
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_SetControlPointRotation : public CParticlePerFrameOperatorInstance
+class C_OP_SetControlPointRotation : public CParticleFunctionPreEmission
 {
 // C_OP_SetControlPointRotation additional information
 // particles.dll, project particles
@@ -28777,40 +29392,6 @@ char CPVSData_048[0x4];
 }; // size: 72 (0x48)
 #pragma pack(pop)
 
-#pragma pack(push, 16)
-class C_OP_PlanarConstraint : public CParticleConstraintOperatorInstance
-{
-// C_OP_PlanarConstraint additional information
-// particles.dll, project particles
-// Alignment: 16
-// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
-
-public:
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_PointOnPlane;// 0x80, size 12 (0xc)
-	// m_PointOnPlane metadata
-	 // MAttributeName
-	 // MDefaultString
-	 // MVectorIsCoordinate
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_PlaneNormal;// 0x8c, size 12 (0xc)
-	// m_PlaneNormal metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(4)) int32_t m_nControlPointNumber;// 0x98, size 4 (0x4)
-	// m_nControlPointNumber metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(1)) bool m_bGlobalOrigin;// 0x9c, size 1 (0x1)
-	// m_bGlobalOrigin metadata
-	 // MAttributeName
-	 // MDefaultString
-	__declspec(align(1)) bool m_bGlobalNormal;// 0x9d, size 1 (0x1)
-	// m_bGlobalNormal metadata
-	 // MAttributeName
-	 // MDefaultString
-char C_OP_PlanarConstraint_0A0[0x2];
-}; // size: 160 (0xa0)
-#pragma pack(pop)
-
 class CSingleplayRules : public CGameRules
 {
 // CSingleplayRules additional information
@@ -28825,28 +29406,8 @@ class CSingleplayRules : public CGameRules
 public:
 }; // size: 144 (0x90)
 
-#pragma pack(push, 4)
-class NodeData_t
-{
-// NodeData_t additional information
-// worldrenderer.dll, project worldrenderer
-// Alignment: 4
-// SCHEMA_CLASS_HAS_TRIVIAL_DESTRUCTOR
-
-public:
-	__declspec(align(4)) int32_t m_Flags;// 0x0, size 4 (0x4)
-	__declspec(align(4)) int32_t m_nParent;// 0x4, size 4 (0x4)
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vOrigin;// 0x8, size 12 (0xc)
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vMinBounds;// 0x14, size 12 (0xc)
-	__declspec(align(4)) UnknownType <0xc, class Vector> m_vMaxBounds;// 0x20, size 12 (0xc)
-	__declspec(align(4)) float m_flMinimumDistance;// 0x2c, size 4 (0x4)
-	__declspec(align(4)) UnknownAtomicType <0x8, CResourceArray, int32_t > m_ChildNodeIndices;// 0x30, size 8 (0x8)
-	__declspec(align(4)) UnknownType <0x4, class CResourceString> m_worldNodePrefix;// 0x38, size 4 (0x4)
-}; // size: 60 (0x3c)
-#pragma pack(pop)
-
 #pragma pack(push, 16)
-class C_OP_PercentageBetweenCPs : public CParticlePerFrameOperatorInstance
+class C_OP_PercentageBetweenCPs : public CParticleFunctionOperator
 {
 // C_OP_PercentageBetweenCPs additional information
 // particles.dll, project particles
@@ -28902,6 +29463,26 @@ public:
 }; // size: 160 (0xa0)
 #pragma pack(pop)
 
+#pragma pack(push, 4)
+class NodeData_t
+{
+// NodeData_t additional information
+// worldrenderer.dll, project worldrenderer
+// Alignment: 4
+// SCHEMA_CLASS_HAS_TRIVIAL_DESTRUCTOR
+
+public:
+	__declspec(align(4)) int32_t m_Flags;// 0x0, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nParent;// 0x4, size 4 (0x4)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vOrigin;// 0x8, size 12 (0xc)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vMinBounds;// 0x14, size 12 (0xc)
+	__declspec(align(4)) UnknownType <0xc, class Vector> m_vMaxBounds;// 0x20, size 12 (0xc)
+	__declspec(align(4)) float m_flMinimumDistance;// 0x2c, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x8, CResourceArray, int32_t > m_ChildNodeIndices;// 0x30, size 8 (0x8)
+	__declspec(align(4)) UnknownType <0x4, class CResourceString> m_worldNodePrefix;// 0x38, size 4 (0x4)
+}; // size: 60 (0x3c)
+#pragma pack(pop)
+
 #pragma pack(push, 8)
 class CSpeedScaleAnimNode : public CAnimNodeBase
 {
@@ -28919,7 +29500,7 @@ public:
 	__declspec(align(4)) AnimParamID m_param;// 0x3c, size 4 (0x4)
 	// m_param metadata
 	 // MPropertyFriendlyName
-	 // MPropertyChoiceProviderFn
+	 // MPropertyAttributeChoiceName
 char CSpeedScaleAnimNode_048[0x8];
 }; // size: 72 (0x48)
 #pragma pack(pop)
@@ -28935,10 +29516,7 @@ class CStringAnimTag : public CAnimTagBase
 
 public:
 char CStringAnimTag_030[0x8];
-	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_value;// 0x30, size 8 (0x8)
-	// m_value metadata
-	 // MPropertyFriendlyName
-}; // size: 56 (0x38)
+}; // size: 48 (0x30)
 #pragma pack(pop)
 
 #pragma pack(push, 8)
@@ -29076,7 +29654,7 @@ char CLocomotionBase_090[0x70];
 }; // size: 144 (0x90)
 
 #pragma pack(push, 16)
-class C_OP_RemapParticleCountOnScalarEndCap : public CParticlePerFrameOperatorInstance
+class C_OP_RemapParticleCountOnScalarEndCap : public CParticleFunctionOperator
 {
 // C_OP_RemapParticleCountOnScalarEndCap additional information
 // particles.dll, project particles
@@ -29119,6 +29697,34 @@ public:
 	 // MDefaultString
 char C_OP_RemapParticleCountOnScalarEndCap_0A0[0x9];
 }; // size: 160 (0xa0)
+#pragma pack(pop)
+
+#pragma pack(push, 8)
+class CGroundIKAnimNode : public CAnimNodeBase
+{
+// CGroundIKAnimNode additional information
+// animationsystem.dll, project animationsystem
+// Alignment: 8
+// SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
+// SCHEMA_CLASS_TEMP_HACK_HAS_NOSCHEMA_MEMBERS
+// SCHEMA_CLASS_TEMP_HACK_HAS_CONSTRUCTOR_LIKE_METHODS
+
+public:
+	__declspec(align(4)) AnimNodeID m_childID;// 0x38, size 4 (0x4)
+	// m_childID metadata
+	 // MPropertyHideField
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownType <0x8, class CUtlString> > m_IkChains;// 0x40, size 24 (0x18)
+	// m_IkChains metadata
+	 // MPropertyFriendlyName
+	 // MPropertyAttributeChoiceName
+	__declspec(align(1)) bool m_bApplyTilt;// 0x58, size 1 (0x1)
+	// m_bApplyTilt metadata
+	 // MPropertyFriendlyName
+	__declspec(align(1)) bool m_bDebug;// 0x59, size 1 (0x1)
+	// m_bDebug metadata
+	 // MPropertyFriendlyName
+char CGroundIKAnimNode_060[0x6];
+}; // size: 96 (0x60)
 #pragma pack(pop)
 
 class NextBotGroundLocomotion : public CLocomotionBase
@@ -29180,22 +29786,8 @@ char CNavVolumeMarkupVolume_0E8[0x68];
 }; // size: 232 (0xe8)
 #pragma pack(pop)
 
-#pragma pack(push, 4)
-class EntityKeyValueData_t
-{
-// EntityKeyValueData_t additional information
-// worldrenderer.dll, project worldrenderer
-// Alignment: 4
-// SCHEMA_CLASS_HAS_TRIVIAL_DESTRUCTOR
-
-public:
-	__declspec(align(4)) UnknownAtomicType <0x8, CResourceArray, uint8_t > m_keyValuesData;// 0x0, size 8 (0x8)
-	__declspec(align(4)) UnknownAtomicType <0x8, CResourceArray, class EntityIOConnectionData_t > m_connections;// 0x8, size 8 (0x8)
-}; // size: 16 (0x10)
-#pragma pack(pop)
-
 #pragma pack(push, 16)
-class C_OP_RandomForce : public CParticleForceOperatorInstance
+class C_OP_RandomForce : public CParticleFunctionForce
 {
 // C_OP_RandomForce additional information
 // particles.dll, project particles
@@ -29218,8 +29810,22 @@ char C_OP_RandomForce_0A0[0x8];
 }; // size: 160 (0xa0)
 #pragma pack(pop)
 
+#pragma pack(push, 4)
+class EntityKeyValueData_t
+{
+// EntityKeyValueData_t additional information
+// worldrenderer.dll, project worldrenderer
+// Alignment: 4
+// SCHEMA_CLASS_HAS_TRIVIAL_DESTRUCTOR
+
+public:
+	__declspec(align(4)) UnknownAtomicType <0x8, CResourceArray, uint8_t > m_keyValuesData;// 0x0, size 8 (0x8)
+	__declspec(align(4)) UnknownAtomicType <0x8, CResourceArray, class EntityIOConnectionData_t > m_connections;// 0x8, size 8 (0x8)
+}; // size: 16 (0x10)
+#pragma pack(pop)
+
 #pragma pack(push, 16)
-class C_OP_SetControlPointToImpactPoint : public CParticlePerFrameOperatorInstance
+class C_OP_SetControlPointToImpactPoint : public CParticleFunctionPreEmission
 {
 // C_OP_SetControlPointToImpactPoint additional information
 // particles.dll, project particles
@@ -29262,7 +29868,12 @@ public:
 	// m_CollisionGroupName metadata
 	 // MAttributeName
 	 // MDefaultString
-}; // size: 288 (0x120)
+	__declspec(align(1)) bool m_bSetToEndpoint;// 0x120, size 1 (0x1)
+	// m_bSetToEndpoint metadata
+	 // MAttributeName
+	 // MDefaultString
+char C_OP_SetControlPointToImpactPoint_0130[0xF];
+}; // size: 304 (0x130)
 #pragma pack(pop)
 
 #pragma pack(push, 8)
@@ -29520,559 +30131,567 @@ char CDOTAGamerules_0388[0x18];
 	// m_flCustomVictoryMessageDuration metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bCustomGameSetupAutoLaunchEnabled;// 0x500, size 1 (0x1)
+	__declspec(align(4)) float m_flHeroSelectPenaltyTime;// 0x500, size 4 (0x4)
+	// m_flHeroSelectPenaltyTime metadata
+	 // MNetworkEnable
+	 // MNetworkEnable
+	__declspec(align(1)) bool m_bCustomGameSetupAutoLaunchEnabled;// 0x504, size 1 (0x1)
 	// m_bCustomGameSetupAutoLaunchEnabled metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bCustomGameTeamSelectionLocked;// 0x501, size 1 (0x1)
+	__declspec(align(1)) bool m_bCustomGameTeamSelectionLocked;// 0x505, size 1 (0x1)
 	// m_bCustomGameTeamSelectionLocked metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bCustomGameAllowHeroPickMusic;// 0x502, size 1 (0x1)
+	__declspec(align(1)) bool m_bCustomGameEnablePickRules;// 0x506, size 1 (0x1)
+	// m_bCustomGameEnablePickRules metadata
+	 // MNetworkEnable
+	 // MNetworkEnable
+	__declspec(align(1)) bool m_bCustomGameAllowHeroPickMusic;// 0x507, size 1 (0x1)
 	// m_bCustomGameAllowHeroPickMusic metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bCustomGameAllowMusicAtGameStart;// 0x503, size 1 (0x1)
+	__declspec(align(1)) bool m_bCustomGameAllowMusicAtGameStart;// 0x508, size 1 (0x1)
 	// m_bCustomGameAllowMusicAtGameStart metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bCustomGameAllowBattleMusic;// 0x504, size 1 (0x1)
+	__declspec(align(1)) bool m_bCustomGameAllowBattleMusic;// 0x509, size 1 (0x1)
 	// m_bCustomGameAllowBattleMusic metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_iCMModePickBanOrder;// 0x508, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iCMModePickBanOrder;// 0x50c, size 4 (0x4)
 	// m_iCMModePickBanOrder metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_iCDModePickBanOrder;// 0x50c, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iCDModePickBanOrder;// 0x510, size 4 (0x4)
 	// m_iCDModePickBanOrder metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_iPauseTeam;// 0x510, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iPauseTeam;// 0x514, size 4 (0x4)
 	// m_iPauseTeam metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_nGGTeam;// 0x514, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nGGTeam;// 0x518, size 4 (0x4)
 	// m_nGGTeam metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) float m_flGGEndsAtTime;// 0x518, size 4 (0x4)
+	__declspec(align(4)) float m_flGGEndsAtTime;// 0x51c, size 4 (0x4)
 	// m_flGGEndsAtTime metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bWhiteListEnabled;// 0x51c, size 1 (0x1)
+	__declspec(align(1)) bool m_bWhiteListEnabled;// 0x520, size 1 (0x1)
 	// m_bWhiteListEnabled metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(8)) uint64_t m_bItemWhiteList[4];// 0x520, size 32 (0x20)
+	__declspec(align(8)) uint64_t m_bItemWhiteList[4];// 0x528, size 32 (0x20)
 	// m_bItemWhiteList metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkEncoder
 	 // MNetworkChangeCallback
-	__declspec(align(4)) int32_t m_nLastHitUIMode;// 0x540, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nLastHitUIMode;// 0x548, size 4 (0x4)
 	// m_nLastHitUIMode metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkBitCount
-	__declspec(align(1)) bool m_bHUDTimerTutorialMode;// 0x544, size 1 (0x1)
+	__declspec(align(1)) bool m_bHUDTimerTutorialMode;// 0x54c, size 1 (0x1)
 	// m_bHUDTimerTutorialMode metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(8)) CountdownTimer m_HeroPickMiscTimer;// 0x548, size 24 (0x18)
-	__declspec(align(8)) CountdownTimer m_ExtraTimeTimer;// 0x560, size 24 (0x18)
-	__declspec(align(4)) float m_fExtraTimeRemaining[2];// 0x578, size 8 (0x8)
+	__declspec(align(8)) CountdownTimer m_HeroPickMiscTimer;// 0x550, size 24 (0x18)
+	__declspec(align(8)) CountdownTimer m_ExtraTimeTimer;// 0x568, size 24 (0x18)
+	__declspec(align(4)) float m_fExtraTimeRemaining[2];// 0x580, size 8 (0x8)
 	// m_fExtraTimeRemaining metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bRDFirstThink;// 0x580, size 1 (0x1)
-	__declspec(align(1)) bool m_RDMessageSent[64];// 0x581, size 64 (0x40)
-	__declspec(align(1)) bool m_bHeroRespawnEnabled;// 0x5c1, size 1 (0x1)
+	__declspec(align(1)) bool m_bRDFirstThink;// 0x588, size 1 (0x1)
+	__declspec(align(1)) bool m_RDMessageSent[64];// 0x589, size 64 (0x40)
+	__declspec(align(1)) bool m_bHeroRespawnEnabled;// 0x5c9, size 1 (0x1)
 	// m_bHeroRespawnEnabled metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bIsRandomingEnabled;// 0x5c2, size 1 (0x1)
+	__declspec(align(1)) bool m_bIsRandomingEnabled;// 0x5ca, size 1 (0x1)
 	// m_bIsRandomingEnabled metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, int32_t > m_HeroPickPhaseBitfield;// 0x5c8, size 24 (0x18)
-	__declspec(align(1)) bool m_bHasSwapped[64];// 0x5e0, size 64 (0x40)
-	__declspec(align(4)) int32_t m_iCaptainPlayerIDs[2];// 0x620, size 8 (0x8)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, int32_t > m_HeroPickPhaseBitfield;// 0x5d0, size 24 (0x18)
+	__declspec(align(1)) bool m_bHasSwapped[64];// 0x5e8, size 64 (0x40)
+	__declspec(align(4)) int32_t m_iCaptainPlayerIDs[2];// 0x628, size 8 (0x8)
 	// m_iCaptainPlayerIDs metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_BannedHeroes[12];// 0x628, size 48 (0x30)
+	__declspec(align(4)) int32_t m_BannedHeroes[24];// 0x630, size 96 (0x60)
 	// m_BannedHeroes metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_SelectedHeroes[10];// 0x658, size 40 (0x28)
+	__declspec(align(4)) int32_t m_SelectedHeroes[24];// 0x690, size 96 (0x60)
 	// m_SelectedHeroes metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_iActiveTeam;// 0x680, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iActiveTeam;// 0x6f0, size 4 (0x4)
 	// m_iActiveTeam metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_iStartingTeam;// 0x684, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iStartingTeam;// 0x6f4, size 4 (0x4)
 	// m_iStartingTeam metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_iPenaltyLevelRadiant;// 0x688, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iPenaltyLevelRadiant;// 0x6f8, size 4 (0x4)
 	// m_iPenaltyLevelRadiant metadata
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_iPenaltyLevelDire;// 0x68c, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iPenaltyLevelDire;// 0x6fc, size 4 (0x4)
 	// m_iPenaltyLevelDire metadata
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bTier3TowerDestroyed;// 0x690, size 1 (0x1)
+	__declspec(align(1)) bool m_bTier3TowerDestroyed;// 0x700, size 1 (0x1)
 	// m_bTier3TowerDestroyed metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_nSeriesType;// 0x694, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nSeriesType;// 0x704, size 4 (0x4)
 	// m_nSeriesType metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkBitCount
-	__declspec(align(4)) int32_t m_nRadiantSeriesWins;// 0x698, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nRadiantSeriesWins;// 0x708, size 4 (0x4)
 	// m_nRadiantSeriesWins metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkBitCount
-	__declspec(align(4)) int32_t m_nDireSeriesWins;// 0x69c, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nDireSeriesWins;// 0x70c, size 4 (0x4)
 	// m_nDireSeriesWins metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkBitCount
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class CHeroesPerPlayer > m_vecAvailableHerosPerPlayerID;// 0x6a0, size 24 (0x18)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class CHeroesPerPlayer > m_vecAvailableHerosPerPlayerID;// 0x710, size 24 (0x18)
 	// m_vecAvailableHerosPerPlayerID metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-char CDOTAGamerules_0700[0x48];
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class CHeroesPerPlayer > m_vecLockedHerosByPlayerID;// 0x700, size 24 (0x18)
+char CDOTAGamerules_0770[0x48];
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class CHeroesPerPlayer > m_vecLockedHerosByPlayerID;// 0x770, size 24 (0x18)
 	// m_vecLockedHerosByPlayerID metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-char CDOTAGamerules_0760[0x48];
-	__declspec(align(4)) int32_t m_CustomGameForceSelectHero[24];// 0x760, size 96 (0x60)
-	__declspec(align(4)) float m_flGoldTime;// 0x7c0, size 4 (0x4)
-	__declspec(align(4)) float m_flXPTime;// 0x7c4, size 4 (0x4)
-	__declspec(align(4)) float m_flCreepSpawntime;// 0x7c8, size 4 (0x4)
-	__declspec(align(4)) float m_flAnnounceStartTime;// 0x7cc, size 4 (0x4)
-	__declspec(align(4)) int32_t m_iGoodTomeCount;// 0x7d0, size 4 (0x4)
+char CDOTAGamerules_07D0[0x48];
+	__declspec(align(4)) int32_t m_CustomGameForceSelectHero[24];// 0x7d0, size 96 (0x60)
+	__declspec(align(4)) float m_flGoldTime;// 0x830, size 4 (0x4)
+	__declspec(align(4)) float m_flXPTime;// 0x834, size 4 (0x4)
+	__declspec(align(4)) float m_flCreepSpawntime;// 0x838, size 4 (0x4)
+	__declspec(align(4)) float m_flAnnounceStartTime;// 0x83c, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iGoodTomeCount;// 0x840, size 4 (0x4)
 	// m_iGoodTomeCount metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_iBadTomeCount;// 0x7d4, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iBadTomeCount;// 0x844, size 4 (0x4)
 	// m_iBadTomeCount metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) float m_flPreGameStartTime;// 0x7d8, size 4 (0x4)
+	__declspec(align(4)) float m_flPreGameStartTime;// 0x848, size 4 (0x4)
 	// m_flPreGameStartTime metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) float m_flGameStartTime;// 0x7dc, size 4 (0x4)
+	__declspec(align(4)) float m_flGameStartTime;// 0x84c, size 4 (0x4)
 	// m_flGameStartTime metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) float m_flGameEndTime;// 0x7e0, size 4 (0x4)
+	__declspec(align(4)) float m_flGameEndTime;// 0x850, size 4 (0x4)
 	// m_flGameEndTime metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) float m_flGameLoadTime;// 0x7e4, size 4 (0x4)
+	__declspec(align(4)) float m_flGameLoadTime;// 0x854, size 4 (0x4)
 	// m_flGameLoadTime metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_iCustomGameScore[2];// 0x7e8, size 8 (0x8)
+	__declspec(align(4)) int32_t m_iCustomGameScore[2];// 0x858, size 8 (0x8)
 	// m_iCustomGameScore metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_nCustomGameDifficulty;// 0x7f0, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nCustomGameDifficulty;// 0x860, size 4 (0x4)
 	// m_nCustomGameDifficulty metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bEnemyModifiersEnabled;// 0x7f4, size 1 (0x1)
-	__declspec(align(4)) int32_t m_iWaves;// 0x7f8, size 4 (0x4)
-	__declspec(align(4)) int32_t m_iCreepUpgradeState;// 0x7fc, size 4 (0x4)
-	__declspec(align(4)) float m_fGoodGlyphCooldown;// 0x800, size 4 (0x4)
+	__declspec(align(1)) bool m_bEnemyModifiersEnabled;// 0x864, size 1 (0x1)
+	__declspec(align(4)) int32_t m_iWaves;// 0x868, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iCreepUpgradeState;// 0x86c, size 4 (0x4)
+	__declspec(align(4)) float m_fGoodGlyphCooldown;// 0x870, size 4 (0x4)
 	// m_fGoodGlyphCooldown metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) float m_fBadGlyphCooldown;// 0x804, size 4 (0x4)
+	__declspec(align(4)) float m_fBadGlyphCooldown;// 0x874, size 4 (0x4)
 	// m_fBadGlyphCooldown metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) float m_flGlyphCooldowns[14];// 0x808, size 56 (0x38)
+	__declspec(align(4)) float m_flGlyphCooldowns[14];// 0x878, size 56 (0x38)
 	// m_flGlyphCooldowns metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) float m_fGoodRadarCooldown;// 0x840, size 4 (0x4)
+	__declspec(align(4)) float m_fGoodRadarCooldown;// 0x8b0, size 4 (0x4)
 	// m_fGoodRadarCooldown metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) float m_fBadRadarCooldown;// 0x844, size 4 (0x4)
+	__declspec(align(4)) float m_fBadRadarCooldown;// 0x8b4, size 4 (0x4)
 	// m_fBadRadarCooldown metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) float m_flRadarCooldowns[14];// 0x848, size 56 (0x38)
+	__declspec(align(4)) float m_flRadarCooldowns[14];// 0x8b8, size 56 (0x38)
 	// m_flRadarCooldowns metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bIsNightstalkerNight;// 0x880, size 1 (0x1)
+	__declspec(align(1)) bool m_bIsNightstalkerNight;// 0x8f0, size 1 (0x1)
 	// m_bIsNightstalkerNight metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bIsTemporaryNight;// 0x881, size 1 (0x1)
+	__declspec(align(1)) bool m_bIsTemporaryNight;// 0x8f1, size 1 (0x1)
 	// m_bIsTemporaryNight metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bIsTemporaryDay;// 0x882, size 1 (0x1)
+	__declspec(align(1)) bool m_bIsTemporaryDay;// 0x8f2, size 1 (0x1)
 	// m_bIsTemporaryDay metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_nRiverType;// 0x884, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nRiverType;// 0x8f4, size 4 (0x4)
 	// m_nRiverType metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) float m_flGoldRedistributeTime;// 0x888, size 4 (0x4)
-	__declspec(align(4)) int32_t m_nGoldToRedistribute[2];// 0x88c, size 8 (0x8)
-	__declspec(align(4)) float m_flNextPreGameThink;// 0x894, size 4 (0x4)
-	__declspec(align(4)) float m_flNextAllDraftGoldThink;// 0x898, size 4 (0x4)
-	__declspec(align(8)) double m_flTimeEnteredState;// 0x8a0, size 8 (0x8)
-	__declspec(align(4)) uint32_t m_unRiverAccountID;// 0x8a8, size 4 (0x4)
-	__declspec(align(8)) uint64_t m_ulRiverItemID;// 0x8b0, size 8 (0x8)
-char CDOTAGamerules_08F8[0x40];
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class CDOTA_ItemStockInfo > m_vecItemStockInfo;// 0x8f8, size 24 (0x18)
+	__declspec(align(4)) float m_flGoldRedistributeTime;// 0x8f8, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nGoldToRedistribute[2];// 0x8fc, size 8 (0x8)
+	__declspec(align(4)) float m_flNextPreGameThink;// 0x904, size 4 (0x4)
+	__declspec(align(4)) float m_flNextAllDraftGoldThink;// 0x908, size 4 (0x4)
+	__declspec(align(8)) double m_flTimeEnteredState;// 0x910, size 8 (0x8)
+	__declspec(align(4)) uint32_t m_unRiverAccountID;// 0x918, size 4 (0x4)
+	__declspec(align(8)) uint64_t m_ulRiverItemID;// 0x920, size 8 (0x8)
+char CDOTAGamerules_0968[0x40];
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class CDOTA_ItemStockInfo > m_vecItemStockInfo;// 0x968, size 24 (0x18)
 	// m_vecItemStockInfo metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-char CDOTAGamerules_0958[0x48];
-	__declspec(align(8)) DOTA_AssassinMinigameNetworkState m_AssassinMiniGameNetData;// 0x958, size 16 (0x10)
+char CDOTAGamerules_09C8[0x48];
+	__declspec(align(8)) DOTA_AssassinMinigameNetworkState m_AssassinMiniGameNetData;// 0x9c8, size 16 (0x10)
 	// m_AssassinMiniGameNetData metadata
 	 // MNetworkEnable
 	 // MNetworkVarEmbeddedUnderlyingType
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_nGameWinner;// 0x968, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nGameWinner;// 0x9d8, size 4 (0x4)
 	// m_nGameWinner metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(8)) uint64_t m_unMatchID64;// 0x970, size 8 (0x8)
+	__declspec(align(8)) uint64_t m_unMatchID64;// 0x9e0, size 8 (0x8)
 	// m_unMatchID64 metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bMatchSignoutComplete;// 0x978, size 1 (0x1)
+	__declspec(align(1)) bool m_bMatchSignoutComplete;// 0x9e8, size 1 (0x1)
 	// m_bMatchSignoutComplete metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hSideShop1;// 0x97c, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hSideShop1;// 0x9ec, size 4 (0x4)
 	// m_hSideShop1 metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hSideShop2;// 0x980, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hSideShop2;// 0x9f0, size 4 (0x4)
 	// m_hSideShop2 metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hSecretShop1;// 0x984, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hSecretShop1;// 0x9f4, size 4 (0x4)
 	// m_hSecretShop1 metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hSecretShop2;// 0x988, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hSecretShop2;// 0x9f8, size 4 (0x4)
 	// m_hSecretShop2 metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hTeamFountains[14];// 0x98c, size 56 (0x38)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hTeamFountains[14];// 0x9fc, size 56 (0x38)
 	// m_hTeamFountains metadata
 	 // MNetworkEnable
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hTeamForts[14];// 0x9c4, size 56 (0x38)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hTeamForts[14];// 0xa34, size 56 (0x38)
 	// m_hTeamForts metadata
 	 // MNetworkEnable
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hTeamShops[14];// 0x9fc, size 56 (0x38)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hTeamShops[14];// 0xa6c, size 56 (0x38)
 	// m_hTeamShops metadata
 	 // MNetworkEnable
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hAnnouncerGood;// 0xa34, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hAnnouncerGood;// 0xaa4, size 4 (0x4)
 	// m_hAnnouncerGood metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hAnnouncerBad;// 0xa38, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hAnnouncerBad;// 0xaa8, size 4 (0x4)
 	// m_hAnnouncerBad metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hAnnouncerSpectator;// 0xa3c, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hAnnouncerSpectator;// 0xaac, size 4 (0x4)
 	// m_hAnnouncerSpectator metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hAnnouncerGood_KillingSpree;// 0xa40, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hAnnouncerGood_KillingSpree;// 0xab0, size 4 (0x4)
 	// m_hAnnouncerGood_KillingSpree metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hAnnouncerBad_KillingSpree;// 0xa44, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hAnnouncerBad_KillingSpree;// 0xab4, size 4 (0x4)
 	// m_hAnnouncerBad_KillingSpree metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hAnnouncerSpectator_KillingSpree;// 0xa48, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hAnnouncerSpectator_KillingSpree;// 0xab8, size 4 (0x4)
 	// m_hAnnouncerSpectator_KillingSpree metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) float m_fGameTime;// 0xa4c, size 4 (0x4)
+	__declspec(align(4)) float m_fGameTime;// 0xabc, size 4 (0x4)
 	// m_fGameTime metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkPriority
-	__declspec(align(4)) float m_fTimeOfDay;// 0xa50, size 4 (0x4)
-	__declspec(align(4)) int32_t m_iNetTimeOfDay;// 0xa54, size 4 (0x4)
+	__declspec(align(4)) float m_fTimeOfDay;// 0xac0, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iNetTimeOfDay;// 0xac4, size 4 (0x4)
 	// m_iNetTimeOfDay metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkBitCount
 	 // MNetworkPriority
-	__declspec(align(4)) int32_t m_nLoadedPlayers;// 0xa58, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nLoadedPlayers;// 0xac8, size 4 (0x4)
 	// m_nLoadedPlayers metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_nExpectedPlayers;// 0xa5c, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nExpectedPlayers;// 0xacc, size 4 (0x4)
 	// m_nExpectedPlayers metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-char CDOTAGamerules_0A68[0x8];
-	__declspec(align(4)) int32_t m_iMinimapDebugGridState;// 0xa68, size 4 (0x4)
+char CDOTAGamerules_0AD8[0x8];
+	__declspec(align(4)) int32_t m_iMinimapDebugGridState;// 0xad8, size 4 (0x4)
 	// m_iMinimapDebugGridState metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-char CDOTAGamerules_0AE0[0x74];
-	__declspec(align(4)) int32_t m_iFoWFrameNumber;// 0xae0, size 4 (0x4)
+char CDOTAGamerules_0B50[0x74];
+	__declspec(align(4)) int32_t m_iFoWFrameNumber;// 0xb50, size 4 (0x4)
 	// m_iFoWFrameNumber metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkBitCount
 	 // MNetworkPriority
-	__declspec(align(1)) bool m_bIsStableMode;// 0xae4, size 1 (0x1)
+	__declspec(align(1)) bool m_bIsStableMode;// 0xb54, size 1 (0x1)
 	// m_bIsStableMode metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkChangeCallback
-	__declspec(align(1)) bool m_bGamePaused;// 0xae5, size 1 (0x1)
+	__declspec(align(1)) bool m_bGamePaused;// 0xb55, size 1 (0x1)
 	// m_bGamePaused metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) float m_fPauseRawTime;// 0xae8, size 4 (0x4)
-	__declspec(align(4)) float m_fPauseCurTime;// 0xaec, size 4 (0x4)
-	__declspec(align(4)) float m_fUnpauseRawTime;// 0xaf0, size 4 (0x4)
-	__declspec(align(4)) float m_fUnpauseCurTime;// 0xaf4, size 4 (0x4)
-	__declspec(align(1)) bool m_bGameTimeFrozen;// 0xaf8, size 1 (0x1)
-	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pKVEventMatchMetadata;// 0xb00, size 8 (0x8)
-	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pKVEventSignout;// 0xb08, size 8 (0x8)
-char CDOTAGamerules_0B68[0x58];
-	__declspec(align(4)) int32_t m_nCustomGameFowTeamCount;// 0xb68, size 4 (0x4)
-	__declspec(align(1)) bool m_bUseAlternateABRules;// 0xb6c, size 1 (0x1)
-	__declspec(align(1)) bool m_bLobbyIsAssociatedWithGame;// 0xb6d, size 1 (0x1)
-	__declspec(align(8)) CountdownTimer m_BotDebugTimer;// 0xb70, size 24 (0x18)
-	__declspec(align(1)) uint8_t m_BotDebugPushLane[18];// 0xb88, size 18 (0x12)
+	__declspec(align(4)) float m_fPauseRawTime;// 0xb58, size 4 (0x4)
+	__declspec(align(4)) float m_fPauseCurTime;// 0xb5c, size 4 (0x4)
+	__declspec(align(4)) float m_fUnpauseRawTime;// 0xb60, size 4 (0x4)
+	__declspec(align(4)) float m_fUnpauseCurTime;// 0xb64, size 4 (0x4)
+	__declspec(align(1)) bool m_bGameTimeFrozen;// 0xb68, size 1 (0x1)
+	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pKVEventMatchMetadata;// 0xb70, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x1, class KeyValues> *m_pKVEventSignout;// 0xb78, size 8 (0x8)
+char CDOTAGamerules_0BD8[0x58];
+	__declspec(align(4)) int32_t m_nCustomGameFowTeamCount;// 0xbd8, size 4 (0x4)
+	__declspec(align(1)) bool m_bUseAlternateABRules;// 0xbdc, size 1 (0x1)
+	__declspec(align(1)) bool m_bLobbyIsAssociatedWithGame;// 0xbdd, size 1 (0x1)
+	__declspec(align(8)) CountdownTimer m_BotDebugTimer;// 0xbe0, size 24 (0x18)
+	__declspec(align(1)) uint8_t m_BotDebugPushLane[18];// 0xbf8, size 18 (0x12)
 	// m_BotDebugPushLane metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkPriority
-	__declspec(align(1)) uint8_t m_BotDebugDefendLane[18];// 0xb9a, size 18 (0x12)
+	__declspec(align(1)) uint8_t m_BotDebugDefendLane[18];// 0xc0a, size 18 (0x12)
 	// m_BotDebugDefendLane metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) uint8_t m_BotDebugFarmLane[6];// 0xbac, size 6 (0x6)
+	__declspec(align(1)) uint8_t m_BotDebugFarmLane[6];// 0xc1c, size 6 (0x6)
 	// m_BotDebugFarmLane metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) uint8_t m_BotDebugRoam[8];// 0xbb2, size 8 (0x8)
+	__declspec(align(1)) uint8_t m_BotDebugRoam[8];// 0xc22, size 8 (0x8)
 	// m_BotDebugRoam metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hBotDebugRoamTarget[2];// 0xbbc, size 8 (0x8)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hBotDebugRoamTarget[2];// 0xc2c, size 8 (0x8)
 	// m_hBotDebugRoamTarget metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) uint8_t m_BotDebugRoshan[2];// 0xbc4, size 2 (0x2)
+	__declspec(align(1)) uint8_t m_BotDebugRoshan[2];// 0xc34, size 2 (0x2)
 	// m_BotDebugRoshan metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) ERoshanSpawnPhase m_nRoshanRespawnPhase;// 0xbc8, size 4 (0x4)
+	__declspec(align(4)) ERoshanSpawnPhase m_nRoshanRespawnPhase;// 0xc38, size 4 (0x4)
 	// m_nRoshanRespawnPhase metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) float m_flRoshanRespawnPhaseEndTime;// 0xbcc, size 4 (0x4)
+	__declspec(align(4)) float m_flRoshanRespawnPhaseEndTime;// 0xc3c, size 4 (0x4)
 	// m_flRoshanRespawnPhaseEndTime metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class CDOTA_AbilityDraftAbilityState > m_AbilityDraftAbilities;// 0xbd0, size 24 (0x18)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class CDOTA_AbilityDraftAbilityState > m_AbilityDraftAbilities;// 0xc40, size 24 (0x18)
 	// m_AbilityDraftAbilities metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkTypeAlias
-char CDOTAGamerules_0C30[0x48];
-	__declspec(align(1)) bool m_bAbilityDraftCurrentPlayerHasPicked;// 0xc30, size 1 (0x1)
+char CDOTAGamerules_0CA0[0x48];
+	__declspec(align(1)) bool m_bAbilityDraftCurrentPlayerHasPicked;// 0xca0, size 1 (0x1)
 	// m_bAbilityDraftCurrentPlayerHasPicked metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_nAbilityDraftPlayerTracker;// 0xc34, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nAbilityDraftPlayerTracker;// 0xca4, size 4 (0x4)
 	// m_nAbilityDraftPlayerTracker metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_nAbilityDraftRoundNumber;// 0xc38, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nAbilityDraftRoundNumber;// 0xca8, size 4 (0x4)
 	// m_nAbilityDraftRoundNumber metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_nAbilityDraftAdvanceSteps;// 0xc3c, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nAbilityDraftAdvanceSteps;// 0xcac, size 4 (0x4)
 	// m_nAbilityDraftAdvanceSteps metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_nAbilityDraftPhase;// 0xc40, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nAbilityDraftPhase;// 0xcb0, size 4 (0x4)
 	// m_nAbilityDraftPhase metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_nAbilityDraftHeroesChosen[13];// 0xc44, size 52 (0x34)
+	__declspec(align(4)) int32_t m_nAbilityDraftHeroesChosen[13];// 0xcb4, size 52 (0x34)
 	// m_nAbilityDraftHeroesChosen metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkChangeCallback
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownType <0x1, class KeyValues> *> m_vecARDMHeroes[2];// 0xc78, size 48 (0x30)
-	__declspec(align(4)) int32_t m_nARDMHeroesPrecached;// 0xca8, size 4 (0x4)
-	__declspec(align(4)) float m_fLastARDMPrecache;// 0xcac, size 4 (0x4)
-	__declspec(align(4)) int32_t m_nAllDraftPhase;// 0xcb0, size 4 (0x4)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownType <0x1, class KeyValues> *> m_vecARDMHeroes[2];// 0xce8, size 48 (0x30)
+	__declspec(align(4)) int32_t m_nARDMHeroesPrecached;// 0xd18, size 4 (0x4)
+	__declspec(align(4)) float m_fLastARDMPrecache;// 0xd1c, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nAllDraftPhase;// 0xd20, size 4 (0x4)
 	// m_nAllDraftPhase metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bAllDraftRadiantFirst;// 0xcb4, size 1 (0x1)
+	__declspec(align(1)) bool m_bAllDraftRadiantFirst;// 0xd24, size 1 (0x1)
 	// m_bAllDraftRadiantFirst metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) bool m_bAllowOverrideVPK;// 0xcb5, size 1 (0x1)
+	__declspec(align(1)) bool m_bAllowOverrideVPK;// 0xd25, size 1 (0x1)
 	// m_bAllowOverrideVPK metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) int32_t m_nARDMHeroesRemaining[2];// 0xcb8, size 8 (0x8)
+	__declspec(align(4)) int32_t m_nARDMHeroesRemaining[2];// 0xd28, size 8 (0x8)
 	// m_nARDMHeroesRemaining metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownAtomicType <0x4, CHandle, class CDOTA_BaseNPC_Pet > > m_hGlobalPetList;// 0xcc0, size 24 (0x18)
-char CDOTAGamerules_0D00[0x28];
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class HeroPickRecord_t > m_vecHeroPickRecord;// 0xd00, size 24 (0x18)
-char CDOTAGamerules_0D40[0x28];
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class HeroDeathRecord_t > m_vecHeroDeathRecord;// 0xd40, size 24 (0x18)
-char CDOTAGamerules_0D70[0x18];
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownAtomicType <0x4, CHandle, class CBaseEntity > > m_BadResultPositionTriggers;// 0xd70, size 24 (0x18)
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownAtomicType <0x4, CHandle, class CBaseEntity > > m_RoshanPositionTriggers;// 0xd88, size 24 (0x18)
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownAtomicType <0x4, CHandle, class CBaseEntity > > m_hRuneSpawners;// 0xda0, size 24 (0x18)
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownAtomicType <0x4, CHandle, class CBaseEntity > > m_hBountyRuneSpawners;// 0xdb8, size 24 (0x18)
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownAtomicType <0x4, CHandle, class CBaseEntity > > m_hNeutralSpawners[2];// 0xdd0, size 48 (0x30)
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownAtomicType <0x4, CHandle, class CBaseEntity > > m_hAncientSpawners[2];// 0xe00, size 48 (0x30)
-	__declspec(align(4)) int32_t m_iPreviousRune1;// 0xe30, size 4 (0x4)
-	__declspec(align(4)) int32_t m_iPreviousRune2;// 0xe34, size 4 (0x4)
-	__declspec(align(4)) int32_t m_iAllStarMatchReady;// 0xe38, size 4 (0x4)
-	__declspec(align(4)) float m_fNextPowerupRuneSpawnTime;// 0xe3c, size 4 (0x4)
-	__declspec(align(4)) float m_fNextBountyRuneSpawnTime;// 0xe40, size 4 (0x4)
-	__declspec(align(4)) float m_fNextBountyRunePrepTime;// 0xe44, size 4 (0x4)
-	__declspec(align(1)) bool m_bFirstPowerupRune;// 0xe48, size 1 (0x1)
-	__declspec(align(1)) bool m_bFirstBountyRune;// 0xe49, size 1 (0x1)
-	__declspec(align(1)) bool m_bBountyRuneLocation_1;// 0xe4a, size 1 (0x1)
-	__declspec(align(1)) bool m_bBountyRuneLocation_2;// 0xe4b, size 1 (0x1)
-	__declspec(align(1)) bool m_bBountyRuneLocation_3;// 0xe4c, size 1 (0x1)
-	__declspec(align(1)) bool m_bBountyRuneLocation_4;// 0xe4d, size 1 (0x1)
-	__declspec(align(4)) float m_fNextSnapshotTime;// 0xe50, size 4 (0x4)
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hRoshanSpawner;// 0xe54, size 4 (0x4)
-	__declspec(align(4)) int32_t m_iPreviousSpectators;// 0xe58, size 4 (0x4)
-	__declspec(align(1)) bool m_bTeammateEvaluationMatch;// 0xe5c, size 1 (0x1)
-	__declspec(align(4)) int32_t m_rgAssignedPlayerID[24];// 0xe60, size 96 (0x60)
-	__declspec(align(4)) uint32_t m_nMaxSpectators;// 0xec0, size 4 (0x4)
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownAtomicType <0x4, CHandle, class CBaseEntity > > m_hDroppedItems;// 0xec8, size 24 (0x18)
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownAtomicType <0x4, CHandle, class CBaseEntity > > m_hWards;// 0xee0, size 24 (0x18)
-	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hGameEvents;// 0xef8, size 4 (0x4)
-char CDOTAGamerules_0F18[0x18];
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownAtomicType <0x4, CHandle, class CBaseEntity > > m_Towers;// 0xf18, size 24 (0x18)
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownAtomicType <0x4, CHandle, class CDOTA_BaseNPC_Tower > > m_TeamTowers[10];// 0xf30, size 240 (0xf0)
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownType <0xc, class Vector> > m_TeamTowerPositions[10];// 0x1020, size 240 (0xf0)
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, int32_t > m_TeamTowerLevels[10];// 0x1110, size 240 (0xf0)
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, int32_t > m_TeamTowerLanes[10];// 0x1200, size 240 (0xf0)
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownAtomicType <0x4, CHandle, class CDOTA_BaseNPC_Building > > m_TeamBarracks[10];// 0x12f0, size 240 (0xf0)
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownAtomicType <0x4, CHandle, class CDOTA_BaseNPC_Building > > m_TeamShrines[10];// 0x13e0, size 240 (0xf0)
-	__declspec(align(8)) CountdownTimer m_TempDayTimer;// 0x14d0, size 24 (0x18)
-	__declspec(align(8)) CountdownTimer m_TempNightTimer;// 0x14e8, size 24 (0x18)
-	__declspec(align(8)) CountdownTimer m_NightstalkerNightTimer;// 0x1500, size 24 (0x18)
-	__declspec(align(8)) CountdownTimer m_TempRiverTimer;// 0x1518, size 24 (0x18)
-	__declspec(align(1)) bool m_bUseLenientAFK[2];// 0x1530, size 2 (0x2)
-	__declspec(align(1)) bool m_bFirstBlood;// 0x1532, size 1 (0x1)
-	__declspec(align(4)) int32_t m_nFirstBloodTime;// 0x1534, size 4 (0x4)
-	__declspec(align(8)) CountdownTimer m_CheckIdleTimer;// 0x1538, size 24 (0x18)
-	__declspec(align(4)) int32_t m_nAnnounceHeroPickRadiantPlayerID;// 0x1550, size 4 (0x4)
-	__declspec(align(4)) int32_t m_nAnnounceHeroPickDirePlayerID;// 0x1554, size 4 (0x4)
-	__declspec(align(4)) int32_t m_nRecordBalanceTime;// 0x1558, size 4 (0x4)
-	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_pszLastUsedAbility[64];// 0x1560, size 512 (0x200)
-	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_pszLastUsedActiveAbility[64];// 0x1760, size 512 (0x200)
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class CDOTA_ReconnectInfo > m_reconnectinfos;// 0x1960, size 24 (0x18)
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownAtomicType <0x4, CHandle, class CBaseEntity > > m_hEnemyCreepsInBase[10];// 0x1978, size 240 (0xf0)
-	__declspec(align(1)) bool m_bTeamHasAbandonedPlayer[10];// 0x1a68, size 10 (0xa)
-	__declspec(align(1)) bool m_bLobbyHasLeaverDetected;// 0x1a72, size 1 (0x1)
-	__declspec(align(1)) bool m_bGameIsForcedSafeToLeave;// 0x1a73, size 1 (0x1)
-	__declspec(align(1)) bool m_bLobbyHasDicardMatchResults;// 0x1a74, size 1 (0x1)
-	__declspec(align(4)) uint32_t m_nTeamRoshanKills[10];// 0x1a78, size 40 (0x28)
-	__declspec(align(4)) int32_t m_iGameEndReason;// 0x1aa0, size 4 (0x4)
-	__declspec(align(4)) float m_flPauseTime;// 0x1aa4, size 4 (0x4)
-	__declspec(align(4)) int32_t m_pausingPlayerId;// 0x1aa8, size 4 (0x4)
-	__declspec(align(4)) int32_t m_unpausingPlayerId;// 0x1aac, size 4 (0x4)
-	__declspec(align(4)) int32_t m_nPausesRemaining[64];// 0x1ab0, size 256 (0x100)
-	__declspec(align(4)) float m_nLastPauseTime[64];// 0x1bb0, size 256 (0x100)
-	__declspec(align(1)) bool m_bNotifiedPlayerLeaverStatus[64];// 0x1cb0, size 64 (0x40)
-	__declspec(align(1)) bool m_bUploadedReplay;// 0x1cf0, size 1 (0x1)
-	__declspec(align(4)) float m_flLobbyWaitTime;// 0x1cf4, size 4 (0x4)
-	__declspec(align(1)) bool m_bGameWasLoaded;// 0x1cf8, size 1 (0x1)
-	__declspec(align(4)) int32_t m_nLoadPauseFrameCount;// 0x1cfc, size 4 (0x4)
-char CDOTAGamerules_01D08[0x8];
-	__declspec(align(8)) double m_flStateFallbackTransitionTime;// 0x1d08, size 8 (0x8)
-	__declspec(align(8)) CountdownTimer m_timerFinishReplay;// 0x1d10, size 24 (0x18)
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class GameChatLogEntry_t > m_vecChatLog;// 0x1d28, size 24 (0x18)
-char CDOTAGamerules_035A0[0x1860];
-	__declspec(align(1)) bool m_bFatalErrorAbortGame;// 0x35a0, size 1 (0x1)
-	__declspec(align(1)) bool m_bFillEmptySlotsWithBots;// 0x35a1, size 1 (0x1)
-	__declspec(align(4)) uint32_t m_dotaMapSpawnGroup;// 0x35a4, size 4 (0x4)
-	__declspec(align(4)) uint32_t m_lobbyType;// 0x35a8, size 4 (0x4)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownAtomicType <0x4, CHandle, class CDOTA_BaseNPC_Pet > > m_hGlobalPetList;// 0xd30, size 24 (0x18)
+char CDOTAGamerules_0D70[0x28];
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class HeroPickRecord_t > m_vecHeroPickRecord;// 0xd70, size 24 (0x18)
+char CDOTAGamerules_0DB0[0x28];
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class HeroDeathRecord_t > m_vecHeroDeathRecord;// 0xdb0, size 24 (0x18)
+char CDOTAGamerules_0DE0[0x18];
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownAtomicType <0x4, CHandle, class CBaseEntity > > m_BadResultPositionTriggers;// 0xde0, size 24 (0x18)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownAtomicType <0x4, CHandle, class CBaseEntity > > m_RoshanPositionTriggers;// 0xdf8, size 24 (0x18)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownAtomicType <0x4, CHandle, class CBaseEntity > > m_hRuneSpawners;// 0xe10, size 24 (0x18)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownAtomicType <0x4, CHandle, class CBaseEntity > > m_hBountyRuneSpawners;// 0xe28, size 24 (0x18)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownAtomicType <0x4, CHandle, class CBaseEntity > > m_hNeutralSpawners[2];// 0xe40, size 48 (0x30)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownAtomicType <0x4, CHandle, class CBaseEntity > > m_hAncientSpawners[2];// 0xe70, size 48 (0x30)
+	__declspec(align(4)) int32_t m_iPreviousRune1;// 0xea0, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iPreviousRune2;// 0xea4, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iAllStarMatchReady;// 0xea8, size 4 (0x4)
+	__declspec(align(4)) float m_fNextPowerupRuneSpawnTime;// 0xeac, size 4 (0x4)
+	__declspec(align(4)) float m_fNextBountyRuneSpawnTime;// 0xeb0, size 4 (0x4)
+	__declspec(align(4)) float m_fNextBountyRunePrepTime;// 0xeb4, size 4 (0x4)
+	__declspec(align(1)) bool m_bFirstPowerupRune;// 0xeb8, size 1 (0x1)
+	__declspec(align(1)) bool m_bFirstBountyRune;// 0xeb9, size 1 (0x1)
+	__declspec(align(1)) bool m_bBountyRuneLocation_1;// 0xeba, size 1 (0x1)
+	__declspec(align(1)) bool m_bBountyRuneLocation_2;// 0xebb, size 1 (0x1)
+	__declspec(align(1)) bool m_bBountyRuneLocation_3;// 0xebc, size 1 (0x1)
+	__declspec(align(1)) bool m_bBountyRuneLocation_4;// 0xebd, size 1 (0x1)
+	__declspec(align(4)) float m_fNextSnapshotTime;// 0xec0, size 4 (0x4)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hRoshanSpawner;// 0xec4, size 4 (0x4)
+	__declspec(align(4)) int32_t m_iPreviousSpectators;// 0xec8, size 4 (0x4)
+	__declspec(align(1)) bool m_bTeammateEvaluationMatch;// 0xecc, size 1 (0x1)
+	__declspec(align(4)) int32_t m_rgAssignedPlayerID[24];// 0xed0, size 96 (0x60)
+	__declspec(align(4)) uint32_t m_nMaxSpectators;// 0xf30, size 4 (0x4)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownAtomicType <0x4, CHandle, class CBaseEntity > > m_hDroppedItems;// 0xf38, size 24 (0x18)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownAtomicType <0x4, CHandle, class CBaseEntity > > m_hWards;// 0xf50, size 24 (0x18)
+	__declspec(align(4)) UnknownAtomicType <0x4, CHandle, class CBaseEntity > m_hGameEvents;// 0xf68, size 4 (0x4)
+char CDOTAGamerules_0F88[0x18];
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownAtomicType <0x4, CHandle, class CBaseEntity > > m_Towers;// 0xf88, size 24 (0x18)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownAtomicType <0x4, CHandle, class CDOTA_BaseNPC_Tower > > m_TeamTowers[10];// 0xfa0, size 240 (0xf0)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownType <0xc, class Vector> > m_TeamTowerPositions[10];// 0x1090, size 240 (0xf0)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, int32_t > m_TeamTowerLevels[10];// 0x1180, size 240 (0xf0)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, int32_t > m_TeamTowerLanes[10];// 0x1270, size 240 (0xf0)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownAtomicType <0x4, CHandle, class CDOTA_BaseNPC_Building > > m_TeamBarracks[10];// 0x1360, size 240 (0xf0)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownAtomicType <0x4, CHandle, class CDOTA_BaseNPC_Building > > m_TeamShrines[10];// 0x1450, size 240 (0xf0)
+	__declspec(align(8)) CountdownTimer m_TempDayTimer;// 0x1540, size 24 (0x18)
+	__declspec(align(8)) CountdownTimer m_TempNightTimer;// 0x1558, size 24 (0x18)
+	__declspec(align(8)) CountdownTimer m_NightstalkerNightTimer;// 0x1570, size 24 (0x18)
+	__declspec(align(8)) CountdownTimer m_TempRiverTimer;// 0x1588, size 24 (0x18)
+	__declspec(align(1)) bool m_bUseLenientAFK[2];// 0x15a0, size 2 (0x2)
+	__declspec(align(1)) bool m_bFirstBlood;// 0x15a2, size 1 (0x1)
+	__declspec(align(4)) int32_t m_nFirstBloodTime;// 0x15a4, size 4 (0x4)
+	__declspec(align(8)) CountdownTimer m_CheckIdleTimer;// 0x15a8, size 24 (0x18)
+	__declspec(align(4)) int32_t m_nAnnounceHeroPickRadiantPlayerID;// 0x15c0, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nAnnounceHeroPickDirePlayerID;// 0x15c4, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nRecordBalanceTime;// 0x15c8, size 4 (0x4)
+	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_pszLastUsedAbility[64];// 0x15d0, size 512 (0x200)
+	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_pszLastUsedActiveAbility[64];// 0x17d0, size 512 (0x200)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class CDOTA_ReconnectInfo > m_reconnectinfos;// 0x19d0, size 24 (0x18)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownAtomicType <0x4, CHandle, class CBaseEntity > > m_hEnemyCreepsInBase[10];// 0x19e8, size 240 (0xf0)
+	__declspec(align(1)) bool m_bTeamHasAbandonedPlayer[10];// 0x1ad8, size 10 (0xa)
+	__declspec(align(1)) bool m_bLobbyHasLeaverDetected;// 0x1ae2, size 1 (0x1)
+	__declspec(align(1)) bool m_bGameIsForcedSafeToLeave;// 0x1ae3, size 1 (0x1)
+	__declspec(align(1)) bool m_bLobbyHasDicardMatchResults;// 0x1ae4, size 1 (0x1)
+	__declspec(align(4)) uint32_t m_nTeamRoshanKills[10];// 0x1ae8, size 40 (0x28)
+	__declspec(align(4)) int32_t m_iGameEndReason;// 0x1b10, size 4 (0x4)
+	__declspec(align(4)) float m_flPauseTime;// 0x1b14, size 4 (0x4)
+	__declspec(align(4)) int32_t m_pausingPlayerId;// 0x1b18, size 4 (0x4)
+	__declspec(align(4)) int32_t m_unpausingPlayerId;// 0x1b1c, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nPausesRemaining[64];// 0x1b20, size 256 (0x100)
+	__declspec(align(4)) float m_nLastPauseTime[64];// 0x1c20, size 256 (0x100)
+	__declspec(align(1)) bool m_bNotifiedPlayerLeaverStatus[64];// 0x1d20, size 64 (0x40)
+	__declspec(align(1)) bool m_bUploadedReplay;// 0x1d60, size 1 (0x1)
+	__declspec(align(4)) float m_flLobbyWaitTime;// 0x1d64, size 4 (0x4)
+	__declspec(align(1)) bool m_bGameWasLoaded;// 0x1d68, size 1 (0x1)
+	__declspec(align(4)) int32_t m_nLoadPauseFrameCount;// 0x1d6c, size 4 (0x4)
+char CDOTAGamerules_01D78[0x8];
+	__declspec(align(8)) double m_flStateFallbackTransitionTime;// 0x1d78, size 8 (0x8)
+	__declspec(align(8)) CountdownTimer m_timerFinishReplay;// 0x1d80, size 24 (0x18)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class GameChatLogEntry_t > m_vecChatLog;// 0x1d98, size 24 (0x18)
+char CDOTAGamerules_03610[0x1860];
+	__declspec(align(1)) bool m_bFatalErrorAbortGame;// 0x3610, size 1 (0x1)
+	__declspec(align(1)) bool m_bFillEmptySlotsWithBots;// 0x3611, size 1 (0x1)
+	__declspec(align(4)) uint32_t m_dotaMapSpawnGroup;// 0x3614, size 4 (0x4)
+	__declspec(align(4)) uint32_t m_lobbyType;// 0x3618, size 4 (0x4)
 	// m_lobbyType metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) uint32_t m_lobbyLeagueID;// 0x35ac, size 4 (0x4)
+	__declspec(align(4)) uint32_t m_lobbyLeagueID;// 0x361c, size 4 (0x4)
 	// m_lobbyLeagueID metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkBitCount
-	__declspec(align(1)) char m_lobbyGameName[256];// 0x35b0, size 256 (0x100)
+	__declspec(align(1)) char m_lobbyGameName[256];// 0x3620, size 256 (0x100)
 	// m_lobbyGameName metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class CHeroStatueLiked > m_vecHeroStatueLiked;// 0x36b0, size 24 (0x18)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class CHeroStatueLiked > m_vecHeroStatueLiked;// 0x3720, size 24 (0x18)
 	// m_vecHeroStatueLiked metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkChangeCallback
-char CDOTAGamerules_03710[0x48];
-	__declspec(align(4)) int32_t m_CustomGameTeamMaxPlayers[14];// 0x3710, size 56 (0x38)
+char CDOTAGamerules_03780[0x48];
+	__declspec(align(4)) int32_t m_CustomGameTeamMaxPlayers[14];// 0x3780, size 56 (0x38)
 	// m_CustomGameTeamMaxPlayers metadata
 	 // MNetworkEnable
-char CDOTAGamerules_03788[0x40];
-	__declspec(align(4)) int32_t m_iMutations[5];// 0x3788, size 20 (0x14)
+char CDOTAGamerules_037F8[0x40];
+	__declspec(align(4)) int32_t m_iMutations[5];// 0x37f8, size 20 (0x14)
 	// m_iMutations metadata
 	 // MNetworkEnable
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownAtomicType <0x4, CHandle, class CIngameEvent_Base > > m_vecIngameEvents;// 0x37a0, size 24 (0x18)
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, UnknownAtomicType <0x4, CHandle, class CIngameEvent_Base > > m_vecIngameEvents;// 0x3810, size 24 (0x18)
 	// m_vecIngameEvents metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(1)) int8_t m_nPrimaryIngameEventIndex;// 0x37b8, size 1 (0x1)
+	__declspec(align(1)) int8_t m_nPrimaryIngameEventIndex;// 0x3828, size 1 (0x1)
 	// m_nPrimaryIngameEventIndex metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-char CDOTAGamerules_037D8[0x18];
-	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class AABB_t > m_NeutralSpawnBoxes;// 0x37d8, size 24 (0x18)
+char CDOTAGamerules_03848[0x18];
+	__declspec(align(8)) UnknownAtomicType <0x18, CUtlVector, class AABB_t > m_NeutralSpawnBoxes;// 0x3848, size 24 (0x18)
 	// m_NeutralSpawnBoxes metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(4)) float m_flLastItemSuggestionRequestTime[14];// 0x37f0, size 56 (0x38)
+	__declspec(align(4)) float m_flLastItemSuggestionRequestTime[14];// 0x3860, size 56 (0x38)
 public:
 	static int32_t &Get_s_GameStateTransitionsIndex() {return *(int32_t *)schema::SchemaSystem::Get()->FindTypeScopeForModule("!GlobalTypes")->FindDeclaredClass("CDOTAGamerules")->m_staticMembers.data[0].m_pInstance; }
-}; // size: 14376 (0x3828)
+}; // size: 14488 (0x3898)
 
 #pragma pack(push, 16)
-class C_OP_RenderGrid : public CParticleRenderOperatorInstance
+class C_OP_RenderGrid : public CParticleFunctionRenderer
 {
 // C_OP_RenderGrid additional information
 // particles.dll, project particles
@@ -30080,17 +30699,17 @@ class C_OP_RenderGrid : public CParticleRenderOperatorInstance
 // SCHEMA_CLASS_HAS_VIRTUAL_MEMBERS
 
 public:
-	__declspec(align(8)) UnknownAtomicType <0x8, CResourceExtReference, UnknownAtomicType <0x8, CWeakHandle, class InfoForResourceTypeIMaterial2 > > m_hMaterial;// 0xc0, size 8 (0x8)
+	__declspec(align(8)) UnknownAtomicType <0x8, CResourceExtReference, UnknownAtomicType <0x8, CWeakHandle, class InfoForResourceTypeIMaterial2 > > m_hMaterial;// 0xd0, size 8 (0x8)
 	// m_hMaterial metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyAttributeEditor
-char C_OP_RenderGrid_0D0[0x8];
-}; // size: 208 (0xd0)
+char C_OP_RenderGrid_0E0[0x8];
+}; // size: 224 (0xe0)
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_INIT_RandomTrailLength : public CParticleInitializerOperatorInstance
+class C_INIT_RandomTrailLength : public CParticleFunctionInitializer
 {
 // C_INIT_RandomTrailLength additional information
 // particles.dll, project particles
@@ -30118,7 +30737,7 @@ char C_INIT_RandomTrailLength_090[0x4];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_ConstrainDistanceToPath : public CParticleConstraintOperatorInstance
+class C_OP_ConstrainDistanceToPath : public CParticleFunctionConstraint
 {
 // C_OP_ConstrainDistanceToPath additional information
 // particles.dll, project particles
@@ -30226,7 +30845,7 @@ public:
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_INIT_CreateAlongPath : public CParticleInitializerOperatorInstance
+class C_INIT_CreateAlongPath : public CParticleFunctionInitializer
 {
 // C_INIT_CreateAlongPath additional information
 // particles.dll, project particles
@@ -30243,13 +30862,18 @@ public:
 	// m_bUseRandomCPs metadata
 	 // MAttributeName
 	 // MDefaultString
-char C_INIT_CreateAlongPath_0D4[0x3];
 	__declspec(align(4)) UnknownType <0xc, class Vector> m_vEndOffset;// 0xd4, size 12 (0xc)
 	// m_vEndOffset metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MVectorIsCoordinate
-}; // size: 224 (0xe0)
+	__declspec(align(1)) bool m_bSaveOffset;// 0xe0, size 1 (0x1)
+	// m_bSaveOffset metadata
+	 // MSrc1ImportAttributeName
+	 // MAttributeName
+	 // MDefaultString
+char C_INIT_CreateAlongPath_0F0[0xF];
+}; // size: 240 (0xf0)
 #pragma pack(pop)
 
 #pragma pack(push, 8)
@@ -30266,6 +30890,7 @@ char CAudioAnimTag_030[0x8];
 	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_clipName;// 0x30, size 8 (0x8)
 	// m_clipName metadata
 	 // MPropertyFriendlyName
+	 // MPropertyAttributeEditor
 }; // size: 56 (0x38)
 #pragma pack(pop)
 
@@ -30367,7 +30992,7 @@ char C_BaseAnimatingOverlayController_0640[0x50];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_RenderStandardLight : public CParticleRenderOperatorInstance
+class C_OP_RenderStandardLight : public CParticleFunctionRenderer
 {
 // C_OP_RenderStandardLight additional information
 // particles.dll, project particles
@@ -30376,57 +31001,57 @@ class C_OP_RenderStandardLight : public CParticleRenderOperatorInstance
 // SCHEMA_CLASS_TEMP_HACK_HAS_NOSCHEMA_MEMBERS
 
 public:
-	__declspec(align(4)) int32_t m_nLightType;// 0xc0, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nLightType;// 0xd0, size 4 (0x4)
 	// m_nLightType metadata
 	 // MAttributeName
 	 // MDefaultString
 	 // MPropertyAttributeChoiceEnumName
-	__declspec(align(1)) UnknownType <0x4, class Color> m_Color;// 0xc4, size 4 (0x4)
+	__declspec(align(1)) UnknownType <0x4, class Color> m_Color;// 0xd4, size 4 (0x4)
 	// m_Color metadata
 	 // MAttributeName
 	 // MPropertyColorWithNoAlpha
 	 // MDefaultString
-	__declspec(align(4)) float m_flIntensity;// 0xc8, size 4 (0x4)
+	__declspec(align(4)) float m_flIntensity;// 0xd8, size 4 (0x4)
 	// m_flIntensity metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(1)) bool m_bCastShadows;// 0xcc, size 1 (0x1)
+	__declspec(align(1)) bool m_bCastShadows;// 0xdc, size 1 (0x1)
 	// m_bCastShadows metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) float m_flTheta;// 0xd0, size 4 (0x4)
+	__declspec(align(4)) float m_flTheta;// 0xe0, size 4 (0x4)
 	// m_flTheta metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) float m_flPhi;// 0xd4, size 4 (0x4)
+	__declspec(align(4)) float m_flPhi;// 0xe4, size 4 (0x4)
 	// m_flPhi metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) float m_flRadiusMultiplier;// 0xd8, size 4 (0x4)
+	__declspec(align(4)) float m_flRadiusMultiplier;// 0xe8, size 4 (0x4)
 	// m_flRadiusMultiplier metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) float m_flFalloffLinearity;// 0xdc, size 4 (0x4)
+	__declspec(align(4)) float m_flFalloffLinearity;// 0xec, size 4 (0x4)
 	// m_flFalloffLinearity metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(1)) bool m_bRenderDiffuse;// 0xe0, size 1 (0x1)
+	__declspec(align(1)) bool m_bRenderDiffuse;// 0xf0, size 1 (0x1)
 	// m_bRenderDiffuse metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(1)) bool m_bRenderSpecular;// 0xe1, size 1 (0x1)
+	__declspec(align(1)) bool m_bRenderSpecular;// 0xf1, size 1 (0x1)
 	// m_bRenderSpecular metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_lightCookie;// 0xe8, size 8 (0x8)
+	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_lightCookie;// 0xf8, size 8 (0x8)
 	// m_lightCookie metadata
 	 // MAttributeName
-char C_OP_RenderStandardLight_0100[0x10];
-}; // size: 256 (0x100)
+char C_OP_RenderStandardLight_0110[0x10];
+}; // size: 272 (0x110)
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_CPOffsetToPercentageBetweenCPs : public CParticlePerFrameOperatorInstance
+class C_OP_CPOffsetToPercentageBetweenCPs : public CParticleFunctionOperator
 {
 // C_OP_CPOffsetToPercentageBetweenCPs additional information
 // particles.dll, project particles
@@ -30484,7 +31109,7 @@ char C_OP_CPOffsetToPercentageBetweenCPs_0A4[0x2];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_ColorInterpolateRandom : public CParticlePerFrameOperatorInstance
+class C_OP_ColorInterpolateRandom : public CParticleFunctionOperator
 {
 // C_OP_ColorInterpolateRandom additional information
 // particles.dll, project particles
@@ -30530,7 +31155,7 @@ char C_OP_ColorInterpolateRandom_0C0[0x7];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_ParentVortices : public CParticleForceOperatorInstance
+class C_OP_ParentVortices : public CParticleFunctionForce
 {
 // C_OP_ParentVortices additional information
 // particles.dll, project particles
@@ -30556,7 +31181,7 @@ char C_OP_ParentVortices_0A0[0xF];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_MaintainEmitter : public CParticleEmitterOperatorInstance
+class C_OP_MaintainEmitter : public CParticleFunctionEmitter
 {
 // C_OP_MaintainEmitter additional information
 // particles.dll, project particles
@@ -30580,11 +31205,15 @@ public:
 	// m_nScaleControlPointField metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) int32_t m_nSnapshotControlPoint;// 0x90, size 4 (0x4)
+	__declspec(align(4)) float m_flEmissionRate;// 0x90, size 4 (0x4)
+	// m_flEmissionRate metadata
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) int32_t m_nSnapshotControlPoint;// 0x94, size 4 (0x4)
 	// m_nSnapshotControlPoint metadata
 	 // MAttributeName
 	 // MDefaultString
-char C_OP_MaintainEmitter_0A0[0xC];
+char C_OP_MaintainEmitter_0A0[0x8];
 }; // size: 160 (0xa0)
 #pragma pack(pop)
 
@@ -30623,16 +31252,16 @@ class CSkeletonInstance : public CGameSceneNode
 // Abstract Class
 
 public:
-char CSkeletonInstance_0160[0x10];
-	__declspec(align(1)) CModelState m_modelState;// 0x160, size 512 (0x200)
+char CSkeletonInstance_0170[0x10];
+	__declspec(align(1)) CModelState m_modelState;// 0x170, size 512 (0x200)
 	// m_modelState metadata
 	 // MNetworkEnable
 	 // MNetworkVarEmbeddedUnderlyingType
-	__declspec(align(1)) bool m_bIsRenderingEnabled;// 0x360, size 1 (0x1)
+	__declspec(align(1)) bool m_bIsRenderingEnabled;// 0x370, size 1 (0x1)
 	// m_bIsRenderingEnabled metadata
 	 // MNetworkEnable
 	 // MNetworkChangeCallback
-	__declspec(align(1)) bool m_bIsAnimationEnabled;// 0x361, size 1 (0x1)
+	__declspec(align(1)) bool m_bIsAnimationEnabled;// 0x371, size 1 (0x1)
 	// m_bIsAnimationEnabled metadata
 	 // MNetworkEnable
 	bool m_bDisableSolidCollisionsForHierarchy : 1;// 0x0, size 0 (0x0)
@@ -30644,31 +31273,30 @@ char CSkeletonInstance_0160[0x10];
 	bool m_bIsGeneratingLatchedParentSpaceState : 1;// 0x0, size 0 (0x0)
 	// m_bIsGeneratingLatchedParentSpaceState metadata
 	 // MNetworkDisable
-	__declspec(align(4)) UnknownType <0x4, class CUtlStringToken> m_materialGroup;// 0x364, size 4 (0x4)
+	__declspec(align(4)) UnknownType <0x4, class CUtlStringToken> m_materialGroup;// 0x374, size 4 (0x4)
 	// m_materialGroup metadata
 	 // MNetworkEnable
 	 // MNetworkChangeCallback
-	__declspec(align(1)) uint8_t m_nHitboxSet;// 0x368, size 1 (0x1)
+	__declspec(align(1)) uint8_t m_nHitboxSet;// 0x378, size 1 (0x1)
 	// m_nHitboxSet metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
 	 // MNetworkBitCount
-char CSkeletonInstance_03A0[0x37];
-	__declspec(align(1)) bool m_bEnableIK;// 0x3a0, size 1 (0x1)
+char CSkeletonInstance_03B8[0x3F];
+	__declspec(align(1)) bool m_bEnableIK;// 0x3b8, size 1 (0x1)
 	// m_bEnableIK metadata
 	 // MNetworkDisable
-	__declspec(align(4)) float m_flIkMasterBlendValueCache;// 0x3a4, size 4 (0x4)
+	__declspec(align(4)) float m_flIkMasterBlendValueCache;// 0x3bc, size 4 (0x4)
 	// m_flIkMasterBlendValueCache metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-	__declspec(align(8)) CNetworkedIKContext m_NetworkedIKContext;// 0x3a8, size 80 (0x50)
+	__declspec(align(8)) CNetworkedIKContext m_NetworkedIKContext;// 0x3c0, size 80 (0x50)
 	// m_NetworkedIKContext metadata
 	 // MNetworkEnable
 	 // MNetworkVarEmbeddedUnderlyingType
 	 // MNetworkEnable
-	 // MNetworkChangeCallback
-char CSkeletonInstance_0450[0x58];
-}; // size: 1104 (0x450)
+char CSkeletonInstance_0460[0x50];
+}; // size: 1120 (0x460)
 
 #pragma pack(push, 8)
 class CFourWheelServerVehicle : public CBaseServerVehicle
@@ -30685,23 +31313,8 @@ public:
 }; // size: 720 (0x2d0)
 #pragma pack(pop)
 
-#pragma pack(push, 4)
-class voxel_vis_cluster_t
-{
-// voxel_vis_cluster_t additional information
-// worldrenderer.dll, project worldrenderer
-// Alignment: 4
-// SCHEMA_CLASS_HAS_TRIVIAL_CONSTRUCTOR
-// SCHEMA_CLASS_HAS_TRIVIAL_DESTRUCTOR
-
-public:
-	__declspec(align(4)) uint32_t m_nBlockIndex;// 0x0, size 4 (0x4)
-	__declspec(align(4)) uint32_t m_nOffsetIntoBlock;// 0x4, size 4 (0x4)
-}; // size: 8 (0x8)
-#pragma pack(pop)
-
 #pragma pack(push, 16)
-class C_OP_RemapCPOrientationToRotations : public CParticlePerFrameOperatorInstance
+class C_OP_RemapCPOrientationToRotations : public CParticleFunctionOperator
 {
 // C_OP_RemapCPOrientationToRotations additional information
 // particles.dll, project particles
@@ -30727,6 +31340,21 @@ public:
 	 // MDefaultString
 char C_OP_RemapCPOrientationToRotations_0A0[0xE];
 }; // size: 160 (0xa0)
+#pragma pack(pop)
+
+#pragma pack(push, 4)
+class voxel_vis_cluster_t
+{
+// voxel_vis_cluster_t additional information
+// worldrenderer.dll, project worldrenderer
+// Alignment: 4
+// SCHEMA_CLASS_HAS_TRIVIAL_CONSTRUCTOR
+// SCHEMA_CLASS_HAS_TRIVIAL_DESTRUCTOR
+
+public:
+	__declspec(align(4)) uint32_t m_nBlockIndex;// 0x0, size 4 (0x4)
+	__declspec(align(4)) uint32_t m_nOffsetIntoBlock;// 0x4, size 4 (0x4)
+}; // size: 8 (0x8)
 #pragma pack(pop)
 
 #pragma pack(push, 8)
@@ -30818,7 +31446,7 @@ public:
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_INIT_CreateGrid : public CParticleInitializerOperatorInstance
+class C_INIT_CreateGrid : public CParticleFunctionInitializer
 {
 // C_INIT_CreateGrid additional information
 // particles.dll, project particles
@@ -30931,7 +31559,7 @@ char CNavVolumeBreadthFirstSearch_0C8[0x8];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_RemapDotProductToScalar : public CParticlePerFrameOperatorInstance
+class C_OP_RemapDotProductToScalar : public CParticleFunctionOperator
 {
 // C_OP_RemapDotProductToScalar additional information
 // particles.dll, project particles
@@ -30988,7 +31616,7 @@ public:
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_SetPerChildControlPoint : public CParticlePerFrameOperatorInstance
+class C_OP_SetPerChildControlPoint : public CParticleFunctionOperator
 {
 // C_OP_SetPerChildControlPoint additional information
 // particles.dll, project particles
@@ -31009,19 +31637,24 @@ public:
 	// m_nNumControlPoints metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(4)) int32_t m_nFirstSourcePoint;// 0x8c, size 4 (0x4)
+	__declspec(align(4)) int32_t m_nParticleIncrement;// 0x8c, size 4 (0x4)
+	// m_nParticleIncrement metadata
+	 // MSrc1ImportAttributeName
+	 // MAttributeName
+	 // MDefaultString
+	__declspec(align(4)) int32_t m_nFirstSourcePoint;// 0x90, size 4 (0x4)
 	// m_nFirstSourcePoint metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(1)) bool m_bSetOrientation;// 0x90, size 1 (0x1)
+	__declspec(align(1)) bool m_bSetOrientation;// 0x94, size 1 (0x1)
 	// m_bSetOrientation metadata
 	 // MAttributeName
 	 // MDefaultString
-	__declspec(align(1)) bool m_bNumBasedOnParticleCount;// 0x91, size 1 (0x1)
+	__declspec(align(1)) bool m_bNumBasedOnParticleCount;// 0x95, size 1 (0x1)
 	// m_bNumBasedOnParticleCount metadata
 	 // MAttributeName
 	 // MDefaultString
-char C_OP_SetPerChildControlPoint_0A0[0xE];
+char C_OP_SetPerChildControlPoint_0A0[0xA];
 }; // size: 160 (0xa0)
 #pragma pack(pop)
 
@@ -31046,7 +31679,7 @@ public:
 }; // size: 24 (0x18)
 
 #pragma pack(push, 16)
-class C_OP_MaintainSequentialPath : public CParticlePerFrameOperatorInstance
+class C_OP_MaintainSequentialPath : public CParticleFunctionOperator
 {
 // C_OP_MaintainSequentialPath additional information
 // particles.dll, project particles
@@ -31111,7 +31744,7 @@ char CAimMatrixAnimNode_03C[0x4];
 	__declspec(align(4)) AnimParamID m_param;// 0x50, size 4 (0x4)
 	// m_param metadata
 	 // MPropertyFriendlyName
-	 // MPropertyChoiceProviderFn
+	 // MPropertyAttributeChoiceName
 	__declspec(align(8)) UnknownType <0x8, class CUtlString> m_attachmentName;// 0x58, size 8 (0x8)
 	// m_attachmentName metadata
 	 // MPropertyFriendlyName
@@ -31164,7 +31797,7 @@ char C_CSequenceTransitioner_028[0x4];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_Decay : public CParticlePerFrameOperatorInstance
+class C_OP_Decay : public CParticleFunctionOperator
 {
 // C_OP_Decay additional information
 // particles.dll, project particles
@@ -31241,8 +31874,16 @@ char PlayerResourcePlayerEventData_t_014[0xC];
 	// m_bIsEventOwned metadata
 	 // MNetworkEnable
 	 // MNetworkEnable
-char PlayerResourcePlayerEventData_t_040[0x7];
-}; // size: 64 (0x40)
+	__declspec(align(4)) uint32_t m_iFavoriteTeam;// 0x3c, size 4 (0x4)
+	// m_iFavoriteTeam metadata
+	 // MNetworkEnable
+	 // MNetworkEnable
+	__declspec(align(2)) uint16_t m_iFavoriteTeamQuality;// 0x40, size 2 (0x2)
+	// m_iFavoriteTeamQuality metadata
+	 // MNetworkEnable
+	 // MNetworkEnable
+char PlayerResourcePlayerEventData_t_048[0x6];
+}; // size: 72 (0x48)
 #pragma pack(pop)
 
 #pragma pack(push, 8)
@@ -31288,7 +31929,7 @@ char locksound_t_040[0x6];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_INIT_ColorLitPerParticle : public CParticleInitializerOperatorInstance
+class C_INIT_ColorLitPerParticle : public CParticleFunctionInitializer
 {
 // C_INIT_ColorLitPerParticle additional information
 // particles.dll, project particles
@@ -31331,7 +31972,7 @@ char C_INIT_ColorLitPerParticle_0C0[0xC];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_INIT_CreatePhyllotaxis : public CParticleInitializerOperatorInstance
+class C_INIT_CreatePhyllotaxis : public CParticleFunctionInitializer
 {
 // C_INIT_CreatePhyllotaxis additional information
 // particles.dll, project particles
@@ -31430,7 +32071,7 @@ public:
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_TeleportBeam : public CParticlePerFrameOperatorInstance
+class C_OP_TeleportBeam : public CParticleFunctionOperator
 {
 // C_OP_TeleportBeam additional information
 // particles.dll, project particles
@@ -31487,7 +32128,7 @@ char C_OP_TeleportBeam_0C0[0xC];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_OP_FadeOutSimple : public CParticlePerFrameOperatorInstance
+class C_OP_FadeOutSimple : public CParticleFunctionOperator
 {
 // C_OP_FadeOutSimple additional information
 // particles.dll, project particles
@@ -31509,7 +32150,7 @@ char C_OP_FadeOutSimple_090[0x8];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_INIT_SetHitboxToClosest : public CParticleInitializerOperatorInstance
+class C_INIT_SetHitboxToClosest : public CParticleFunctionInitializer
 {
 // C_INIT_SetHitboxToClosest additional information
 // particles.dll, project particles
@@ -31543,7 +32184,7 @@ char C_INIT_SetHitboxToClosest_0110[0x3];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_INIT_CreateOnModelAtHeight : public CParticleInitializerOperatorInstance
+class C_INIT_CreateOnModelAtHeight : public CParticleFunctionInitializer
 {
 // C_INIT_CreateOnModelAtHeight additional information
 // particles.dll, project particles
@@ -31589,7 +32230,7 @@ char C_INIT_CreateOnModelAtHeight_0120[0x8];
 #pragma pack(pop)
 
 #pragma pack(push, 16)
-class C_INIT_RingWave : public CParticleInitializerOperatorInstance
+class C_INIT_RingWave : public CParticleFunctionInitializer
 {
 // C_INIT_RingWave additional information
 // particles.dll, project particles
@@ -31662,6 +32303,13 @@ class VPhysXJoint_t
 // engine2.dll, project modellib
 // Alignment: 16
 // SCHEMA_CLASS_HAS_TRIVIAL_DESTRUCTOR
+
+public: 
+	enum class Flags_t : uint32_t
+	{
+		JOINT_FLAGS_NONE = 0,
+		JOINT_FLAGS_BODY1_FIXED = 1,
+	};
 
 public:
 	__declspec(align(2)) uint16_t m_nType;// 0x0, size 2 (0x2)

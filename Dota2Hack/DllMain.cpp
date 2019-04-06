@@ -113,9 +113,44 @@ DWORD WINAPI CheatEntry( LPVOID lpThreadParameter )
 
 				if ( pEntity )
 				{
-					const char* EntityClass = pEntity->Schema_DynamicBinding()->GetBindingName();
+					auto pEntitySchema = pEntity->Schema_DynamicBinding();
 
-					AddLog( "[+] pEntity: %p , %i , %s\n" , pEntity , EntityIndex , EntityClass );
+					if ( pEntitySchema )
+					{
+						const char* EntityClass = pEntitySchema->GetBindingName();
+
+						AddLog( "[C_BaseEntity] pEntity: %p , %i , %s , %s\n" , pEntity , EntityIndex , EntityClass , pEntitySchema->m_classInfo->m_Description );
+
+						if ( strstr( EntityClass , "C_FogController" ) )
+						{
+							C_FogController* FogController = (C_FogController*)pEntity;
+
+							FogController->m_bIsBlurred = false;
+
+							FogController->m_fog.enable = false;
+							FogController->m_fog.blend = false;
+							FogController->m_fog.maxdensity = 0.f;		
+						}
+
+						if ( strstr( EntityClass , "C_DOTAPlayer" ) )
+						{
+							C_DOTAPlayer* DOTAPlayer = (C_DOTAPlayer*)pEntity;
+
+							AddLog( "[C_DOTAPlayer] pEntity: %p , %i\n" , pEntity , DOTAPlayer->m_iPlayerID );
+						}
+
+						if ( pEntity->m_pEntity )
+						{
+							auto CEntityIdentity = pEntity->m_pEntity;
+
+							CUtlSymbolLarge* Name = (CUtlSymbolLarge*)&CEntityIdentity->m_name;
+							CUtlSymbolLarge* DesingerName = (CUtlSymbolLarge*)&CEntityIdentity->m_designerName;
+
+							int Index = ( CEntityIdentity->Index & ( MAX_ENTITIES_IN_LIST - 1 ) );
+
+							AddLog( "[CEntityIdentity] pEntity: %p , %i , %s , %s\n" , CEntityIdentity , Index , Name->String() , DesingerName->String() );
+						}
+					}
 				}
 			}
 		}
@@ -123,11 +158,11 @@ DWORD WINAPI CheatEntry( LPVOID lpThreadParameter )
 
 	if ( DoIncludeScript )
 	{
-		AddLog( "[+] DoIncludeScript: %p\n" , DoIncludeScript );
+		//AddLog( "[+] DoIncludeScript: %p\n" , DoIncludeScript );
 		
-		MessageBoxA( 0 , "ok to include" , "success" , MB_ICONINFORMATION );
+		//MessageBoxA( 0 , "ok to include" , "success" , MB_ICONINFORMATION );
 		
-		DoIncludeScript( "cheat" , 0 );
+		//DoIncludeScript( "cheat" , 0 );
 	}
 
 	return 0;

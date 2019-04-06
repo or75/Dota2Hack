@@ -17,12 +17,6 @@ enum class AbilityLearnResult_t : uint32_t
 	ABILITY_NOT_LEARNABLE = 4,
 };
 
-enum class ActionType_t : uint32_t
-{
-	SOS_ACTION_NONE = 0,
-	SOS_ACTION_LIMITER = 1,
-};
-
 enum class AimMatrixBlendMode : uint32_t
 {
 	AimMatrixBlendMode_Additive = 0,
@@ -52,6 +46,18 @@ enum class AnimParamButton_t : uint32_t
 	ANIMPARAM_BUTTON_RTRIGGER = 12,
 };
 
+enum class AnimVRHandMotionRange_t : uint32_t
+{
+	MotionRange_WithController = 0,
+	MotionRange_WithoutController = 1,
+};
+
+enum class AnimVRHand_t : uint32_t
+{
+	AnimVRHand_Left = 0,
+	AnimVRHand_Right = 1,
+};
+
 enum class AnimValueSource : uint32_t
 {
 	MoveHeading = 0,
@@ -72,6 +78,9 @@ enum class AnimValueSource : uint32_t
 	GoalDistance = 15,
 	AccelerationLeftRight = 16,
 	AccelerationFrontBack = 17,
+	RootMotionSpeed = 18,
+	RootMotionTurnSpeed = 19,
+	MoveHeadingRelativeToLookHeading = 20,
 };
 
 enum class AnimVectorSource : uint32_t
@@ -1131,6 +1140,9 @@ enum class BaseActivity_t : uint32_t
 	ACT_VR_SHOTGUN_SLIDE_FORWARD = 981,
 	ACT_VR_PISTOL_LONG_CLIP_IN_CHAMBERED = 982,
 	ACT_VR_PISTOL_LONG_CLIP_IN_SLIDE_BACK = 983,
+	ACT_VR_PISTOL_BURST_TOGGLE = 984,
+	ACT_VR_PISTOL_LOW_KICK = 985,
+	ACT_VR_PISTOL_BURST_ATTACK = 986,
 };
 
 enum class BeamClipStyle_t : uint32_t
@@ -1164,6 +1176,7 @@ enum class BlendKeyType : uint32_t
 	BlendKey_UserValue = 0,
 	BlendKey_Velocity = 1,
 	BlendKey_Distance = 2,
+	BlendKey_RemainingDistance = 3,
 };
 
 enum class BloomBlendMode_t : uint32_t
@@ -1177,6 +1190,13 @@ enum class BlurFilterType_t : uint32_t
 {
 	BLURFILTER_GAUSSIAN = 0,
 	BLURFILTER_BOX = 1,
+};
+
+enum class BoneMaskBlendSpace : uint32_t
+{
+	BlendSpace_Parent = 0,
+	BlendSpace_Model = 1,
+	BlendSpace_Model_RotationOnly = 2,
 };
 
 enum class BrushSolidities_e : uint32_t
@@ -1249,7 +1269,9 @@ enum class ConstraintType_t : uint32_t
 	CONSTRAINT_TYPE_TILT_TWIST = 9,
 	CONSTRAINT_TYPE_MORPH = 10,
 	CONSTRAINT_TYPE_PARENT = 11,
-	CONSTRAINT_TYPE_MAX = 12,
+	CONSTRAINT_TYPE_POSE_SPACE_MORPH = 12,
+	CONSTRAINT_TYPE_POSE_SPACE_BONE = 13,
+	CONSTRAINT_TYPE_MAX = 14,
 };
 
 enum class ControlValue : uint32_t
@@ -1278,7 +1300,10 @@ enum class ControlValue : uint32_t
 	ControlValue_GoalDistance = 21,
 	ControlValue_AccelerationLeftRight = 22,
 	ControlValue_AccelerationFrontBack = 23,
-	ControlValue_Count = 24,
+	ControlValue_RootMotionSpeed = 24,
+	ControlValue_RootMotionTurnSpeed = 25,
+	ControlValue_MoveHeadingRelativeToLookHeading = 26,
+	ControlValue_Count = 27,
 	ControlValue_Invalid = 255,
 };
 
@@ -1325,6 +1350,12 @@ enum class DOTAAbilitySpeakTrigger_t : uint32_t
 {
 	DOTA_ABILITY_SPEAK_START_ACTION_PHASE = 0,
 	DOTA_ABILITY_SPEAK_CAST = 1,
+};
+
+enum class DOTACustomHeroPickRulesPhase_t : uint32_t
+{
+	PHASE_Ban = 0,
+	PHASE_Pick = 1,
 };
 
 enum class DOTADamageFlag_t : uint32_t
@@ -1707,61 +1738,6 @@ enum class DOTAScriptInventorySlot_t : uint32_t
 	DOTA_STASH_SLOT_6 = 14,
 };
 
-enum class DOTASlotType_t : uint32_t
-{
-	DOTA_LOADOUT_TYPE_INVALID = 4294967295,
-	DOTA_LOADOUT_TYPE_WEAPON = 0,
-	DOTA_LOADOUT_TYPE_OFFHAND_WEAPON = 1,
-	DOTA_LOADOUT_TYPE_WEAPON2 = 2,
-	DOTA_LOADOUT_TYPE_OFFHAND_WEAPON2 = 3,
-	DOTA_LOADOUT_TYPE_HEAD = 4,
-	DOTA_LOADOUT_TYPE_SHOULDER = 5,
-	DOTA_LOADOUT_TYPE_ARMS = 6,
-	DOTA_LOADOUT_TYPE_ARMOR = 7,
-	DOTA_LOADOUT_TYPE_BELT = 8,
-	DOTA_LOADOUT_TYPE_NECK = 9,
-	DOTA_LOADOUT_TYPE_BACK = 10,
-	DOTA_LOADOUT_TYPE_LEGS = 11,
-	DOTA_LOADOUT_TYPE_GLOVES = 12,
-	DOTA_LOADOUT_TYPE_TAIL = 13,
-	DOTA_LOADOUT_TYPE_MISC = 14,
-	DOTA_LOADOUT_TYPE_BODY_HEAD = 15,
-	DOTA_LOADOUT_TYPE_MOUNT = 16,
-	DOTA_LOADOUT_TYPE_SUMMON = 17,
-	DOTA_LOADOUT_TYPE_SHAPESHIFT = 18,
-	DOTA_LOADOUT_TYPE_TAUNT = 19,
-	DOTA_LOADOUT_TYPE_AMBIENT_EFFECTS = 20,
-	DOTA_LOADOUT_TYPE_ABILITY_ATTACK = 21,
-	DOTA_LOADOUT_TYPE_ABILITY1 = 22,
-	DOTA_LOADOUT_TYPE_ABILITY2 = 23,
-	DOTA_LOADOUT_TYPE_ABILITY3 = 24,
-	DOTA_LOADOUT_TYPE_ABILITY4 = 25,
-	DOTA_LOADOUT_TYPE_ABILITY_ULTIMATE = 26,
-	DOTA_LOADOUT_TYPE_VOICE = 27,
-	DOTA_LOADOUT_TYPE_ACTION_ITEM = 28,
-	DOTA_LOADOUT_TYPE_COURIER = 29,
-	DOTA_LOADOUT_TYPE_ANNOUNCER = 30,
-	DOTA_LOADOUT_TYPE_MEGA_KILLS = 31,
-	DOTA_LOADOUT_TYPE_MUSIC = 32,
-	DOTA_LOADOUT_TYPE_WARD = 33,
-	DOTA_LOADOUT_TYPE_HUD_SKIN = 34,
-	DOTA_LOADOUT_TYPE_LOADING_SCREEN = 35,
-	DOTA_LOADOUT_TYPE_WEATHER = 36,
-	DOTA_LOADOUT_TYPE_HEROIC_STATUE = 37,
-	DOTA_LOADOUT_TYPE_MULTIKILL_BANNER = 38,
-	DOTA_LOADOUT_TYPE_CURSOR_PACK = 39,
-	DOTA_LOADOUT_TYPE_TELEPORT_EFFECT = 40,
-	DOTA_LOADOUT_TYPE_BLINK_EFFECT = 41,
-	DOTA_LOADOUT_TYPE_EMBLEM = 42,
-	DOTA_LOADOUT_TYPE_TERRAIN = 43,
-	DOTA_LOADOUT_TYPE_RADIANT_CREEPS = 44,
-	DOTA_LOADOUT_TYPE_DIRE_CREEPS = 45,
-	DOTA_PLAYER_LOADOUT_START = 28,
-	DOTA_PLAYER_LOADOUT_END = 45,
-	DOTA_LOADOUT_TYPE_NONE = 46,
-	DOTA_LOADOUT_TYPE_COUNT = 47,
-};
-
 enum class DOTASpeechType_t : uint32_t
 {
 	DOTA_SPEECH_USER_INVALID = 0,
@@ -1797,12 +1773,6 @@ enum class DOTATeam_t : uint32_t
 	DOTA_TEAM_CUSTOM_COUNT = 8,
 };
 
-enum class DOTATurboHeroPickRulesPhase_t : uint32_t
-{
-	PHASE_Ban = 0,
-	PHASE_Pick = 1,
-};
-
 enum class DOTAUnitAttackCapability_t : uint32_t
 {
 	DOTA_UNIT_CAP_NO_ATTACK = 0,
@@ -1810,13 +1780,6 @@ enum class DOTAUnitAttackCapability_t : uint32_t
 	DOTA_UNIT_CAP_RANGED_ATTACK = 2,
 	DOTA_UNIT_CAP_RANGED_ATTACK_DIRECTIONAL = 4,
 	DOTA_UNIT_ATTACK_CAPABILITY_BIT_COUNT = 3,
-};
-
-enum class DOTAUnitMoveCapability_t : uint32_t
-{
-	DOTA_UNIT_CAP_MOVE_NONE = 0,
-	DOTA_UNIT_CAP_MOVE_GROUND = 1,
-	DOTA_UNIT_CAP_MOVE_FLY = 2,
 };
 
 enum class DOTA_ABILITY_BEHAVIOR : uint64_t
@@ -2089,6 +2052,17 @@ enum class DampingSpeedFunction : uint32_t
 	Spring = 2,
 };
 
+enum class Detail2Combo_t : uint32_t
+{
+	DETAIL_2_COMBO_UNINITIALIZED = 4294967295,
+	DETAIL_2_COMBO_OFF = 0,
+	DETAIL_2_COMBO_ADD = 1,
+	DETAIL_2_COMBO_ADD_SELF_ILLUM = 2,
+	DETAIL_2_COMBO_MOD2X = 3,
+	DETAIL_2_COMBO_MUL = 4,
+	DETAIL_2_COMBO_CROSSFADE = 5,
+};
+
 enum class Disposition_t : uint32_t
 {
 	D_ER = 0,
@@ -2165,41 +2139,12 @@ enum class EDOTASpecialBonusOperation : uint8_t
 	SPECIAL_BONUS_SUBTRACT = 2,
 };
 
-enum class EDOTA_ModifyGold_Reason : uint32_t
-{
-	DOTA_ModifyGold_Unspecified = 0,
-	DOTA_ModifyGold_Death = 1,
-	DOTA_ModifyGold_Buyback = 2,
-	DOTA_ModifyGold_PurchaseConsumable = 3,
-	DOTA_ModifyGold_PurchaseItem = 4,
-	DOTA_ModifyGold_AbandonedRedistribute = 5,
-	DOTA_ModifyGold_SellItem = 6,
-	DOTA_ModifyGold_AbilityCost = 7,
-	DOTA_ModifyGold_CheatCommand = 8,
-	DOTA_ModifyGold_SelectionPenalty = 9,
-	DOTA_ModifyGold_GameTick = 10,
-	DOTA_ModifyGold_Building = 11,
-	DOTA_ModifyGold_HeroKill = 12,
-	DOTA_ModifyGold_CreepKill = 13,
-	DOTA_ModifyGold_RoshanKill = 14,
-	DOTA_ModifyGold_CourierKill = 15,
-	DOTA_ModifyGold_SharedGold = 16,
-};
-
 enum class EDOTA_ModifyXP_Reason : uint32_t
 {
 	DOTA_ModifyXP_Unspecified = 0,
 	DOTA_ModifyXP_HeroKill = 1,
 	DOTA_ModifyXP_CreepKill = 2,
 	DOTA_ModifyXP_RoshanKill = 3,
-};
-
-enum class ERenderDepthMode : uint32_t
-{
-	DEPTH_MODE_NORMAL = 0,
-	DEPTH_MODE_SHADOW = 1,
-	DEPTH_MODE_SSA0 = 2,
-	DEPTH_MODE_MAX = 3,
 };
 
 enum class ERoshanSpawnPhase : uint32_t
@@ -2268,18 +2213,6 @@ enum class Explosions : uint32_t
 	expRandom = 0,
 	expDirected = 1,
 	expUsePrecise = 2,
-};
-
-enum class FootFallTagFoot_t : uint32_t
-{
-	FOOT1 = 0,
-	FOOT2 = 1,
-	FOOT3 = 2,
-	FOOT4 = 3,
-	FOOT5 = 4,
-	FOOT6 = 5,
-	FOOT7 = 6,
-	FOOT8 = 7,
 };
 
 enum class FuncDoorSpawnPos_t : uint32_t
@@ -2520,6 +2453,7 @@ enum class GameActivity_t : uint32_t
 	ACT_DOTA_SLIDE_LOOP = 1727,
 	ACT_DOTA_GENERIC_CHANNEL_1 = 1728,
 	ACT_DOTA_GS_SOUL_CHAIN = 1729,
+	ACT_DOTA_GS_INK_CREATURE = 1730,
 };
 
 enum class GlobalIlluminationMethod_t : uint32_t
@@ -2528,6 +2462,42 @@ enum class GlobalIlluminationMethod_t : uint32_t
 	GLOBAL_ILLUMINATION_BAKE = 1,
 	GLOBAL_ILLUMINATION_AMBIENT_OCCLUSION = 2,
 	GLOBAL_ILLUMINATION_REALTIME_RADIOSITY = 3,
+};
+
+enum class HandSkeletonBone : uint32_t
+{
+	eBone_Root = 0,
+	eBone_Wrist = 1,
+	eBone_Thumb0 = 2,
+	eBone_Thumb1 = 3,
+	eBone_Thumb2 = 4,
+	eBone_Thumb3 = 5,
+	eBone_IndexFinger0 = 6,
+	eBone_IndexFinger1 = 7,
+	eBone_IndexFinger2 = 8,
+	eBone_IndexFinger3 = 9,
+	eBone_IndexFinger4 = 10,
+	eBone_MiddleFinger0 = 11,
+	eBone_MiddleFinger1 = 12,
+	eBone_MiddleFinger2 = 13,
+	eBone_MiddleFinger3 = 14,
+	eBone_MiddleFinger4 = 15,
+	eBone_RingFinger0 = 16,
+	eBone_RingFinger1 = 17,
+	eBone_RingFinger2 = 18,
+	eBone_RingFinger3 = 19,
+	eBone_RingFinger4 = 20,
+	eBone_PinkyFinger0 = 21,
+	eBone_PinkyFinger1 = 22,
+	eBone_PinkyFinger2 = 23,
+	eBone_PinkyFinger3 = 24,
+	eBone_PinkyFinger4 = 25,
+	eBone_Aux_Thumb = 26,
+	eBone_Aux_IndexFinger = 27,
+	eBone_Aux_MiddleFinger = 28,
+	eBone_Aux_RingFinger = 29,
+	eBone_Aux_PinkyFinger = 30,
+	eBone_Count = 31,
 };
 
 enum class HeroPickType : uint32_t
@@ -2554,6 +2524,370 @@ enum class HorizJustification_e : uint32_t
 	HORIZ_JUSTIFICATION_NONE = 3,
 };
 
+enum class ItemQuality_t : uint32_t
+{
+	DOTA_ITEM_QUALITY_CONSUMABLE = 0,
+	DOTA_ITEM_QUALITY_PLAIN = 1,
+	DOTA_ITEM_QUALITY_COMMON = 2,
+	DOTA_ITEM_QUALITY_RARE = 3,
+	DOTA_ITEM_QUALITY_EPIC = 4,
+	DOTA_ITEM_QUALITY_ARTIFACT = 5,
+	DOTA_ITEM_QUALITY_SECRET_SHOP = 6,
+	NUM_ITEM_QUALITY_LEVELS = 7,
+};
+
+enum class JointMotion_t : uint32_t
+{
+	JOINT_MOTION_FREE = 0,
+	JOINT_MOTION_LOCKED = 1,
+	JOINT_MOTION_COUNT = 2,
+};
+
+enum class LuaModifierType : uint32_t
+{
+	LUA_MODIFIER_MOTION_NONE = 0,
+	LUA_MODIFIER_MOTION_HORIZONTAL = 1,
+	LUA_MODIFIER_MOTION_VERTICAL = 2,
+	LUA_MODIFIER_MOTION_BOTH = 3,
+	LUA_MODIFIER_INVALID = 4,
+};
+
+enum class MoveCollide_t : uint8_t
+{
+	MOVECOLLIDE_DEFAULT = 0,
+	MOVECOLLIDE_FLY_BOUNCE = 1,
+	MOVECOLLIDE_FLY_CUSTOM = 2,
+	MOVECOLLIDE_FLY_SLIDE = 3,
+	MOVECOLLIDE_COUNT = 4,
+	MOVECOLLIDE_MAX_BITS = 3,
+};
+
+enum class NavDirType : uint32_t
+{
+	NORTH = 0,
+	EAST = 1,
+	SOUTH = 2,
+	WEST = 3,
+	NUM_DIRECTIONS = 4,
+};
+
+enum class ObjectTypeFlags_t : uint32_t
+{
+	OBJECT_TYPE_IMAGE_LOD = 1,
+	OBJECT_TYPE_GEOMETRY_LOD = 2,
+	OBJECT_TYPE_DECAL = 4,
+	OBJECT_TYPE_MODEL = 8,
+	OBJECT_TYPE_BLOCK_LIGHT = 16,
+	OBJECT_TYPE_NO_SHADOWS = 32,
+	OBJECT_TYPE_WORLDSPACE_TEXURE_BLEND = 64,
+	OBJECT_TYPE_DISABLED_IN_LOW_QUALITY = 128,
+	OBJECT_TYPE_NO_SUN_SHADOWS = 256,
+	OBJECT_TYPE_EXCLUDE_FROM_IMPOSTORS = 512,
+};
+
+enum class ObstructionRelationshipClass_t : uint32_t
+{
+	DOTA_OBSTRUCTION_RELATIONSHIP_NONE = 0,
+	DOTA_OBSTRUCTION_RELATIONSHIP_BUILDING = 1,
+	DOTA_OBSTRUCTION_RELATIONSHIP_PLAYER_CONTROLLED = 2,
+	DOTA_OBSTRUCTION_RELATIONSHIP_NPC = 3,
+	DOTA_OBSTRUCTION_RELATIONSHIP_LAST = 4,
+};
+
+enum class OrderQueueBehavior_t : uint32_t
+{
+	DOTA_ORDER_QUEUE_DEFAULT = 0,
+	DOTA_ORDER_QUEUE_NEVER = 1,
+	DOTA_ORDER_QUEUE_ALWAYS = 2,
+};
+
+enum class PlayerConnectedState : uint32_t
+{
+	PlayerConnected = 0,
+	PlayerDisconnecting = 1,
+	PlayerDisconnected = 2,
+};
+
+enum class PointTemplateOwnerSpawnGroupType_t : uint32_t
+{
+	INSERT_INTO_POINT_TEMPLATE_SPAWN_GROUP = 0,
+	INSERT_INTO_CURRENTLY_ACTIVE_SPAWN_GROUP = 1,
+	INSERT_INTO_NEWLY_CREATED_SPAWN_GROUP = 2,
+};
+
+enum class PointWorldTextJustifyVertical_t : uint32_t
+{
+	POINT_WORLD_TEXT_JUSTIFY_VERTICAL_BOTTOM = 0,
+	POINT_WORLD_TEXT_JUSTIFY_VERTICAL_CENTER = 1,
+	POINT_WORLD_TEXT_JUSTIFY_VERTICAL_TOP = 2,
+};
+
+enum class PortraitScale_t : uint32_t
+{
+	PORTRAIT_SCALE_INVALID = 4294967295,
+	PORTRAIT_SCALE_LOADOUT = 0,
+	PORTRAIT_SCALE_ALTERNATE_LOADOUT = 1,
+	PORTRAIT_SCALE_WORLD = 2,
+	PORTRAIT_SCALE_SPECTATOR_LOADOUT = 3,
+};
+
+enum class RenderFx_t : uint8_t
+{
+	kRenderFxNone = 0,
+	kRenderFxPulseSlow = 1,
+	kRenderFxPulseFast = 2,
+	kRenderFxPulseSlowWide = 3,
+	kRenderFxPulseFastWide = 4,
+	kRenderFxFadeSlow = 5,
+	kRenderFxFadeFast = 6,
+	kRenderFxSolidSlow = 7,
+	kRenderFxSolidFast = 8,
+	kRenderFxStrobeSlow = 9,
+	kRenderFxStrobeFast = 10,
+	kRenderFxStrobeFaster = 11,
+	kRenderFxFlickerSlow = 12,
+	kRenderFxFlickerFast = 13,
+	kRenderFxNoDissipation = 14,
+	kRenderFxFadeOut = 15,
+	kRenderFxFadeIn = 16,
+	kRenderFxPulseFastWider = 17,
+	kRenderFxGlowShell = 18,
+	kRenderFxMax = 19,
+};
+
+enum class RenderPrimitiveType_t : uint32_t
+{
+	RENDER_PRIM_POINTS = 0,
+	RENDER_PRIM_LINES = 1,
+	RENDER_PRIM_LINES_WITH_ADJACENCY = 2,
+	RENDER_PRIM_LINE_STRIP = 3,
+	RENDER_PRIM_LINE_STRIP_WITH_ADJACENCY = 4,
+	RENDER_PRIM_TRIANGLES = 5,
+	RENDER_PRIM_TRIANGLES_WITH_ADJACENCY = 6,
+	RENDER_PRIM_TRIANGLE_STRIP = 7,
+	RENDER_PRIM_TRIANGLE_STRIP_WITH_ADJACENCY = 8,
+	RENDER_PRIM_INSTANCED_QUADS = 9,
+	RENDER_PRIM_HETEROGENOUS = 10,
+	RENDER_PRIM_1_CONTROL_POINT_PATCHLIST = 11,
+	RENDER_PRIM_2_CONTROL_POINT_PATCHLIST = 12,
+	RENDER_PRIM_3_CONTROL_POINT_PATCHLIST = 13,
+	RENDER_PRIM_4_CONTROL_POINT_PATCHLIST = 14,
+	RENDER_PRIM_5_CONTROL_POINT_PATCHLIST = 15,
+	RENDER_PRIM_6_CONTROL_POINT_PATCHLIST = 16,
+	RENDER_PRIM_7_CONTROL_POINT_PATCHLIST = 17,
+	RENDER_PRIM_8_CONTROL_POINT_PATCHLIST = 18,
+	RENDER_PRIM_9_CONTROL_POINT_PATCHLIST = 19,
+	RENDER_PRIM_10_CONTROL_POINT_PATCHLIST = 20,
+	RENDER_PRIM_11_CONTROL_POINT_PATCHLIST = 21,
+	RENDER_PRIM_12_CONTROL_POINT_PATCHLIST = 22,
+	RENDER_PRIM_13_CONTROL_POINT_PATCHLIST = 23,
+	RENDER_PRIM_14_CONTROL_POINT_PATCHLIST = 24,
+	RENDER_PRIM_15_CONTROL_POINT_PATCHLIST = 25,
+	RENDER_PRIM_16_CONTROL_POINT_PATCHLIST = 26,
+	RENDER_PRIM_17_CONTROL_POINT_PATCHLIST = 27,
+	RENDER_PRIM_18_CONTROL_POINT_PATCHLIST = 28,
+	RENDER_PRIM_19_CONTROL_POINT_PATCHLIST = 29,
+	RENDER_PRIM_20_CONTROL_POINT_PATCHLIST = 30,
+	RENDER_PRIM_21_CONTROL_POINT_PATCHLIST = 31,
+	RENDER_PRIM_22_CONTROL_POINT_PATCHLIST = 32,
+	RENDER_PRIM_23_CONTROL_POINT_PATCHLIST = 33,
+	RENDER_PRIM_24_CONTROL_POINT_PATCHLIST = 34,
+	RENDER_PRIM_25_CONTROL_POINT_PATCHLIST = 35,
+	RENDER_PRIM_26_CONTROL_POINT_PATCHLIST = 36,
+	RENDER_PRIM_27_CONTROL_POINT_PATCHLIST = 37,
+	RENDER_PRIM_28_CONTROL_POINT_PATCHLIST = 38,
+	RENDER_PRIM_29_CONTROL_POINT_PATCHLIST = 39,
+	RENDER_PRIM_30_CONTROL_POINT_PATCHLIST = 40,
+	RENDER_PRIM_31_CONTROL_POINT_PATCHLIST = 41,
+	RENDER_PRIM_32_CONTROL_POINT_PATCHLIST = 42,
+	RENDER_PRIM_COMPUTE_SHADER = 43,
+	RENDER_PRIM_TYPE_COUNT = 44,
+};
+
+enum class SpeechPriorityType : uint32_t
+{
+	SPEECH_PRIORITY_LOW = 0,
+	SPEECH_PRIORITY_NORMAL = 1,
+	SPEECH_PRIORITY_MANUAL = 2,
+	SPEECH_PRIORITY_UNINTERRUPTABLE = 3,
+};
+
+enum class SteamUGCQuery : uint32_t
+{
+	RankedByVote = 0,
+	RankedByPublicationDate = 1,
+	AcceptedForGameRankedByAcceptanceDate = 2,
+	RankedByTrend = 3,
+	FavoritedByFriendsRankedByPublicationDate = 4,
+	CreatedByFriendsRankedByPublicationDate = 5,
+	RankedByNumTimesReported = 6,
+	CreatedByFollowedUsersRankedByPublicationDate = 7,
+	NotYetRated = 8,
+	RankedByTotalVotesAsc = 9,
+	RankedByVotesUp = 10,
+	RankedByTextSearch = 11,
+	RankedByTotalUniqueSubscriptions = 12,
+	RankedByPlaytimeTrend = 13,
+	RankedByTotalPlaytime = 14,
+	RankedByAveragePlaytimeTrend = 15,
+	RankedByLifetimeAveragePlaytime = 16,
+	RankedByPlaytimeSessionsTrend = 17,
+	RankedByLifetimePlaytimeSessions = 18,
+};
+
+enum class TOGGLE_STATE : uint32_t
+{
+	TS_AT_TOP = 0,
+	TS_AT_BOTTOM = 1,
+	TS_GOING_UP = 2,
+	TS_GOING_DOWN = 3,
+	DOOR_OPEN = 0,
+	DOOR_CLOSED = 1,
+	DOOR_OPENING = 2,
+	DOOR_CLOSING = 3,
+};
+
+enum class sound_states : uint32_t
+{
+	SS_NONE = 0,
+	SS_SHUTDOWN = 1,
+	SS_SHUTDOWN_WATER = 2,
+	SS_START_WATER = 3,
+	SS_START_IDLE = 4,
+	SS_IDLE = 5,
+	SS_GEAR_0 = 6,
+	SS_GEAR_1 = 7,
+	SS_GEAR_2 = 8,
+	SS_GEAR_3 = 9,
+	SS_GEAR_4 = 10,
+	SS_SLOWDOWN = 11,
+	SS_SLOWDOWN_HIGHSPEED = 12,
+	SS_GEAR_0_RESUME = 13,
+	SS_GEAR_1_RESUME = 14,
+	SS_GEAR_2_RESUME = 15,
+	SS_GEAR_3_RESUME = 16,
+	SS_GEAR_4_RESUME = 17,
+	SS_TURBO = 18,
+	SS_REVERSE = 19,
+	SS_NUM_STATES = 20,
+};
+
+enum class ActionType_t : uint32_t
+{
+	SOS_ACTION_NONE = 0,
+	SOS_ACTION_LIMITER = 1,
+};
+
+enum class ParticleLightTypeChoiceList_t : uint32_t
+{
+	PARTICLE_LIGHT_TYPE_POINT = 0,
+	PARTICLE_LIGHT_TYPE_SPOT = 1,
+};
+
+enum class DOTAUnitMoveCapability_t : uint32_t
+{
+	DOTA_UNIT_CAP_MOVE_NONE = 0,
+	DOTA_UNIT_CAP_MOVE_GROUND = 1,
+	DOTA_UNIT_CAP_MOVE_FLY = 2,
+};
+
+enum class ShatterSurface_t : uint32_t
+{
+	SHATTERSURFACE_GLASS = 0,
+	SHATTERSURFACE_TILE = 1,
+};
+
+enum class FootFallTagFoot_t : uint32_t
+{
+	FOOT1 = 0,
+	FOOT2 = 1,
+	FOOT3 = 2,
+	FOOT4 = 3,
+	FOOT5 = 4,
+	FOOT6 = 5,
+	FOOT7 = 6,
+	FOOT8 = 7,
+};
+
+enum class DOTASlotType_t : uint32_t
+{
+	DOTA_LOADOUT_TYPE_INVALID = 4294967295,
+	DOTA_LOADOUT_TYPE_WEAPON = 0,
+	DOTA_LOADOUT_TYPE_OFFHAND_WEAPON = 1,
+	DOTA_LOADOUT_TYPE_WEAPON2 = 2,
+	DOTA_LOADOUT_TYPE_OFFHAND_WEAPON2 = 3,
+	DOTA_LOADOUT_TYPE_HEAD = 4,
+	DOTA_LOADOUT_TYPE_SHOULDER = 5,
+	DOTA_LOADOUT_TYPE_ARMS = 6,
+	DOTA_LOADOUT_TYPE_ARMOR = 7,
+	DOTA_LOADOUT_TYPE_BELT = 8,
+	DOTA_LOADOUT_TYPE_NECK = 9,
+	DOTA_LOADOUT_TYPE_BACK = 10,
+	DOTA_LOADOUT_TYPE_LEGS = 11,
+	DOTA_LOADOUT_TYPE_GLOVES = 12,
+	DOTA_LOADOUT_TYPE_TAIL = 13,
+	DOTA_LOADOUT_TYPE_MISC = 14,
+	DOTA_LOADOUT_TYPE_BODY_HEAD = 15,
+	DOTA_LOADOUT_TYPE_MOUNT = 16,
+	DOTA_LOADOUT_TYPE_SUMMON = 17,
+	DOTA_LOADOUT_TYPE_SHAPESHIFT = 18,
+	DOTA_LOADOUT_TYPE_TAUNT = 19,
+	DOTA_LOADOUT_TYPE_AMBIENT_EFFECTS = 20,
+	DOTA_LOADOUT_TYPE_ABILITY_ATTACK = 21,
+	DOTA_LOADOUT_TYPE_ABILITY1 = 22,
+	DOTA_LOADOUT_TYPE_ABILITY2 = 23,
+	DOTA_LOADOUT_TYPE_ABILITY3 = 24,
+	DOTA_LOADOUT_TYPE_ABILITY4 = 25,
+	DOTA_LOADOUT_TYPE_ABILITY_ULTIMATE = 26,
+	DOTA_LOADOUT_TYPE_VOICE = 27,
+	DOTA_LOADOUT_TYPE_ACTION_ITEM = 28,
+	DOTA_LOADOUT_TYPE_COURIER = 29,
+	DOTA_LOADOUT_TYPE_ANNOUNCER = 30,
+	DOTA_LOADOUT_TYPE_MEGA_KILLS = 31,
+	DOTA_LOADOUT_TYPE_MUSIC = 32,
+	DOTA_LOADOUT_TYPE_WARD = 33,
+	DOTA_LOADOUT_TYPE_HUD_SKIN = 34,
+	DOTA_LOADOUT_TYPE_LOADING_SCREEN = 35,
+	DOTA_LOADOUT_TYPE_WEATHER = 36,
+	DOTA_LOADOUT_TYPE_HEROIC_STATUE = 37,
+	DOTA_LOADOUT_TYPE_MULTIKILL_BANNER = 38,
+	DOTA_LOADOUT_TYPE_CURSOR_PACK = 39,
+	DOTA_LOADOUT_TYPE_TELEPORT_EFFECT = 40,
+	DOTA_LOADOUT_TYPE_BLINK_EFFECT = 41,
+	DOTA_LOADOUT_TYPE_EMBLEM = 42,
+	DOTA_LOADOUT_TYPE_TERRAIN = 43,
+	DOTA_LOADOUT_TYPE_RADIANT_CREEPS = 44,
+	DOTA_LOADOUT_TYPE_DIRE_CREEPS = 45,
+	DOTA_PLAYER_LOADOUT_START = 28,
+	DOTA_PLAYER_LOADOUT_END = 45,
+	DOTA_LOADOUT_TYPE_NONE = 46,
+	DOTA_LOADOUT_TYPE_COUNT = 47,
+};
+
+enum class Materials : uint32_t
+{
+	matGlass = 0,
+	matWood = 1,
+	matMetal = 2,
+	matFlesh = 3,
+	matCinderBlock = 4,
+	matCeilingTile = 5,
+	matComputer = 6,
+	matUnbreakableGlass = 7,
+	matRocks = 8,
+	matWeb = 9,
+	matNone = 10,
+	matLastMaterial = 11,
+};
+
+enum class JointAxis_t : uint32_t
+{
+	JOINT_AXIS_X = 0,
+	JOINT_AXIS_Y = 1,
+	JOINT_AXIS_Z = 2,
+	JOINT_AXIS_COUNT = 3,
+};
+
 enum class Hull_t : uint32_t
 {
 	HULL_HUMAN = 0,
@@ -2567,6 +2901,27 @@ enum class Hull_t : uint32_t
 	HULL_MEDIUM_TALL = 8,
 	NUM_HULLS = 9,
 	HULL_NONE = 10,
+};
+
+enum class EDOTA_ModifyGold_Reason : uint32_t
+{
+	DOTA_ModifyGold_Unspecified = 0,
+	DOTA_ModifyGold_Death = 1,
+	DOTA_ModifyGold_Buyback = 2,
+	DOTA_ModifyGold_PurchaseConsumable = 3,
+	DOTA_ModifyGold_PurchaseItem = 4,
+	DOTA_ModifyGold_AbandonedRedistribute = 5,
+	DOTA_ModifyGold_SellItem = 6,
+	DOTA_ModifyGold_AbilityCost = 7,
+	DOTA_ModifyGold_CheatCommand = 8,
+	DOTA_ModifyGold_SelectionPenalty = 9,
+	DOTA_ModifyGold_GameTick = 10,
+	DOTA_ModifyGold_Building = 11,
+	DOTA_ModifyGold_HeroKill = 12,
+	DOTA_ModifyGold_CreepKill = 13,
+	DOTA_ModifyGold_RoshanKill = 14,
+	DOTA_ModifyGold_CourierKill = 15,
+	DOTA_ModifyGold_SharedGold = 16,
 };
 
 enum class IGE_AssassinationState : uint32_t
@@ -2592,33 +2947,6 @@ enum class IrradVolumeFlags_t : uint32_t
 {
 	IRRADVOLUME_FLAGS_NONE = 0,
 	IRRADVOLUME_FLAG_AUTO_GENERATED = 1,
-};
-
-enum class ItemQuality_t : uint32_t
-{
-	DOTA_ITEM_QUALITY_CONSUMABLE = 0,
-	DOTA_ITEM_QUALITY_PLAIN = 1,
-	DOTA_ITEM_QUALITY_COMMON = 2,
-	DOTA_ITEM_QUALITY_RARE = 3,
-	DOTA_ITEM_QUALITY_EPIC = 4,
-	DOTA_ITEM_QUALITY_ARTIFACT = 5,
-	DOTA_ITEM_QUALITY_SECRET_SHOP = 6,
-	NUM_ITEM_QUALITY_LEVELS = 7,
-};
-
-enum class JointAxis_t : uint32_t
-{
-	JOINT_AXIS_X = 0,
-	JOINT_AXIS_Y = 1,
-	JOINT_AXIS_Z = 2,
-	JOINT_AXIS_COUNT = 3,
-};
-
-enum class JointMotion_t : uint32_t
-{
-	JOINT_MOTION_FREE = 0,
-	JOINT_MOTION_LOCKED = 1,
-	JOINT_MOTION_COUNT = 2,
 };
 
 enum class LatchDirtyPermission_t : uint32_t
@@ -2669,37 +2997,12 @@ enum class LightType_t : uint32_t
 	MATERIAL_LIGHT_ENVIRONMENT_PROBE = 5,
 };
 
-enum class LuaModifierType : uint32_t
-{
-	LUA_MODIFIER_MOTION_NONE = 0,
-	LUA_MODIFIER_MOTION_HORIZONTAL = 1,
-	LUA_MODIFIER_MOTION_VERTICAL = 2,
-	LUA_MODIFIER_MOTION_BOTH = 3,
-	LUA_MODIFIER_INVALID = 4,
-};
-
 enum class MaterialModifyMode_t : uint32_t
 {
 	MATERIAL_MODIFY_MODE_NONE = 0,
 	MATERIAL_MODIFY_MODE_SETVAR = 1,
 	MATERIAL_MODIFY_MODE_ANIM_SEQUENCE = 2,
 	MATERIAL_MODIFY_MODE_FLOAT_LERP = 3,
-};
-
-enum class Materials : uint32_t
-{
-	matGlass = 0,
-	matWood = 1,
-	matMetal = 2,
-	matFlesh = 3,
-	matCinderBlock = 4,
-	matCeilingTile = 5,
-	matComputer = 6,
-	matUnbreakableGlass = 7,
-	matRocks = 8,
-	matWeb = 9,
-	matNone = 10,
-	matLastMaterial = 11,
 };
 
 enum class MeshDrawPrimitiveFlags_t : uint32_t
@@ -2729,16 +3032,6 @@ enum class ModelBoneFlexComponent_t : uint32_t
 	MODEL_BONE_FLEX_TX = 0,
 	MODEL_BONE_FLEX_TY = 1,
 	MODEL_BONE_FLEX_TZ = 2,
-};
-
-enum class MoveCollide_t : uint8_t
-{
-	MOVECOLLIDE_DEFAULT = 0,
-	MOVECOLLIDE_FLY_BOUNCE = 1,
-	MOVECOLLIDE_FLY_CUSTOM = 2,
-	MOVECOLLIDE_FLY_SLIDE = 3,
-	MOVECOLLIDE_COUNT = 4,
-	MOVECOLLIDE_MAX_BITS = 3,
 };
 
 enum class MoveType_t : uint8_t
@@ -2785,51 +3078,12 @@ enum class NavAttributeEnum : uint64_t
 	NAV_MESH_CLIFF = 32768,
 };
 
-enum class NavDirType : uint32_t
-{
-	NORTH = 0,
-	EAST = 1,
-	SOUTH = 2,
-	WEST = 3,
-	NUM_DIRECTIONS = 4,
-};
-
 enum class NetChannelBufType_t : uint32_t
 {
 	BUF_DEFAULT = 4294967295,
 	BUF_UNRELIABLE = 0,
 	BUF_RELIABLE = 1,
 	BUF_VOICE = 2,
-};
-
-enum class ObjectTypeFlags_t : uint32_t
-{
-	OBJECT_TYPE_IMAGE_LOD = 1,
-	OBJECT_TYPE_GEOMETRY_LOD = 2,
-	OBJECT_TYPE_DECAL = 4,
-	OBJECT_TYPE_MODEL = 8,
-	OBJECT_TYPE_BLOCK_LIGHT = 16,
-	OBJECT_TYPE_NO_SHADOWS = 32,
-	OBJECT_TYPE_WORLDSPACE_TEXURE_BLEND = 64,
-	OBJECT_TYPE_DISABLED_IN_LOW_QUALITY = 128,
-	OBJECT_TYPE_NO_SUN_SHADOWS = 256,
-	OBJECT_TYPE_EXCLUDE_FROM_IMPOSTORS = 512,
-};
-
-enum class ObstructionRelationshipClass_t : uint32_t
-{
-	DOTA_OBSTRUCTION_RELATIONSHIP_NONE = 0,
-	DOTA_OBSTRUCTION_RELATIONSHIP_BUILDING = 1,
-	DOTA_OBSTRUCTION_RELATIONSHIP_PLAYER_CONTROLLED = 2,
-	DOTA_OBSTRUCTION_RELATIONSHIP_NPC = 3,
-	DOTA_OBSTRUCTION_RELATIONSHIP_LAST = 4,
-};
-
-enum class OrderQueueBehavior_t : uint32_t
-{
-	DOTA_ORDER_QUEUE_DEFAULT = 0,
-	DOTA_ORDER_QUEUE_NEVER = 1,
-	DOTA_ORDER_QUEUE_ALWAYS = 2,
 };
 
 enum class ParticleAttachment_t : uint32_t
@@ -2861,10 +3115,28 @@ enum class ParticleColorBlendMode_t : uint32_t
 	PARTICLEBLEND_MULTIPLY = 4,
 };
 
-enum class ParticleLightTypeChoiceList_t : uint32_t
+enum class ParticleFloatMapType_t : uint32_t
 {
-	PARTICLE_LIGHT_TYPE_POINT = 0,
-	PARTICLE_LIGHT_TYPE_SPOT = 1,
+	PF_MAP_TYPE_INVALID = 4294967295,
+	PF_MAP_TYPE_DIRECT = 0,
+	PF_MAP_TYPE_MULT = 1,
+	PF_MAP_TYPE_REMAP = 2,
+	PF_MAP_TYPE_CURVE = 3,
+	PF_MAP_TYPE_COUNT = 4,
+};
+
+enum class ParticleFloatType_t : uint32_t
+{
+	PF_TYPE_INVALID = 4294967295,
+	PF_TYPE_LITERAL = 0,
+	PF_TYPE_PARTICLE_AGE = 1,
+	PF_TYPE_PARTICLE_AGE_NORMALIZED = 2,
+	PF_TYPE_COLLECTION_AGE = 3,
+	PF_TYPE_CONTROL_POINT_COMPONENT = 4,
+	PF_TYPE_PARTICLE_FLOAT = 5,
+	PF_TYPE_PARTICLE_VECTOR_COMPONENT = 6,
+	PF_TYPE_PARTICLE_SPEED = 7,
+	PF_TYPE_COUNT = 8,
 };
 
 enum class ParticleOrientationChoiceList_t : uint32_t
@@ -2874,6 +3146,7 @@ enum class ParticleOrientationChoiceList_t : uint32_t
 	PARTICLE_ORIENTATION_WORLD_Z_ALIGNED = 2,
 	PARTICLE_ORIENTATION_ALIGN_TO_PARTICLE_NORMAL = 3,
 	PARTICLE_ORIENTATION_SCREENALIGN_TO_PARTICLE_NORMAL = 4,
+	PARTICLE_ORIENTATION_FULL_3AXIS_ROTATION = 5,
 };
 
 enum class ParticleTopology_t : uint32_t
@@ -2917,13 +3190,6 @@ enum class PetGroundType_t : uint32_t
 	PET_GROUND_PLANE = 2,
 };
 
-enum class PlayerConnectedState : uint32_t
-{
-	PlayerConnected = 0,
-	PlayerDisconnecting = 1,
-	PlayerDisconnected = 2,
-};
-
 enum class PlayerOrderIssuer_t : uint32_t
 {
 	DOTA_ORDER_ISSUER_SELECTED_UNITS = 0,
@@ -2946,25 +3212,11 @@ enum class PointTemplateClientOnlyEntityBehavior_t : uint32_t
 	CREATE_FOR_CLIENTS_WHO_CONNECT_LATER = 1,
 };
 
-enum class PointTemplateOwnerSpawnGroupType_t : uint32_t
-{
-	INSERT_INTO_POINT_TEMPLATE_SPAWN_GROUP = 0,
-	INSERT_INTO_CURRENTLY_ACTIVE_SPAWN_GROUP = 1,
-	INSERT_INTO_NEWLY_CREATED_SPAWN_GROUP = 2,
-};
-
 enum class PointWorldTextJustifyHorizontal_t : uint32_t
 {
 	POINT_WORLD_TEXT_JUSTIFY_HORIZONTAL_LEFT = 0,
 	POINT_WORLD_TEXT_JUSTIFY_HORIZONTAL_CENTER = 1,
 	POINT_WORLD_TEXT_JUSTIFY_HORIZONTAL_RIGHT = 2,
-};
-
-enum class PointWorldTextJustifyVertical_t : uint32_t
-{
-	POINT_WORLD_TEXT_JUSTIFY_VERTICAL_BOTTOM = 0,
-	POINT_WORLD_TEXT_JUSTIFY_VERTICAL_CENTER = 1,
-	POINT_WORLD_TEXT_JUSTIFY_VERTICAL_TOP = 2,
 };
 
 enum class PointWorldTextReorientMode_t : uint32_t
@@ -2980,15 +3232,6 @@ enum class PortraitDisplayMode_t : uint32_t
 	PORTRAIT_DISPLAY_MODE_LOADOUT_DIRE = 1,
 	PORTRAIT_DISPLAY_MODE_LOADOUT_SMALL = 2,
 	PORTRAIT_DISPLAY_MODE_TREASURE_SMALL = 3,
-};
-
-enum class PortraitScale_t : uint32_t
-{
-	PORTRAIT_SCALE_INVALID = 4294967295,
-	PORTRAIT_SCALE_LOADOUT = 0,
-	PORTRAIT_SCALE_ALTERNATE_LOADOUT = 1,
-	PORTRAIT_SCALE_WORLD = 2,
-	PORTRAIT_SCALE_SPECTATOR_LOADOUT = 3,
 };
 
 enum class PortraitSoundMode_t : uint32_t
@@ -3039,7 +3282,9 @@ enum class PrecipitationType_t : uint32_t
 	PRECIPITATION_TYPE_PARTICLEBUGS = 7,
 	PRECIPITATION_TYPE_PARTICLESMOKE = 8,
 	PRECIPITATION_TYPE_PARTICLESNOW = 9,
-	NUM_PRECIPITATION_TYPES = 10,
+	PRECIPITATION_TYPE_PARTICLEXENSPORES = 10,
+	PRECIPITATION_TYPE_DUSTMOTES = 11,
+	NUM_PRECIPITATION_TYPES = 12,
 };
 
 enum class PropDoorRotatingOpenDirection_e : uint32_t
@@ -3117,30 +3362,6 @@ enum class RenderBufferFlags_t : uint32_t
 	RENDER_BUFFER_UAV_COUNTER = 128,
 };
 
-enum class RenderFx_t : uint8_t
-{
-	kRenderFxNone = 0,
-	kRenderFxPulseSlow = 1,
-	kRenderFxPulseFast = 2,
-	kRenderFxPulseSlowWide = 3,
-	kRenderFxPulseFastWide = 4,
-	kRenderFxFadeSlow = 5,
-	kRenderFxFadeFast = 6,
-	kRenderFxSolidSlow = 7,
-	kRenderFxSolidFast = 8,
-	kRenderFxStrobeSlow = 9,
-	kRenderFxStrobeFast = 10,
-	kRenderFxStrobeFaster = 11,
-	kRenderFxFlickerSlow = 12,
-	kRenderFxFlickerFast = 13,
-	kRenderFxNoDissipation = 14,
-	kRenderFxFadeOut = 15,
-	kRenderFxFadeIn = 16,
-	kRenderFxPulseFastWider = 17,
-	kRenderFxGlowShell = 18,
-	kRenderFxMax = 19,
-};
-
 enum class RenderMeshFlexControllerRemapType_t : uint32_t
 {
 	FLEXCONTROLLER_REMAP_PASSTHRU = 0,
@@ -3176,55 +3397,6 @@ enum class RenderMultisampleType_t : uint32_t
 	RENDER_MULTISAMPLE_8X = 4,
 	RENDER_MULTISAMPLE_16X = 5,
 	RENDER_MULTISAMPLE_TYPE_COUNT = 6,
-};
-
-enum class RenderPrimitiveType_t : uint32_t
-{
-	RENDER_PRIM_POINTS = 0,
-	RENDER_PRIM_LINES = 1,
-	RENDER_PRIM_LINES_WITH_ADJACENCY = 2,
-	RENDER_PRIM_LINE_STRIP = 3,
-	RENDER_PRIM_LINE_STRIP_WITH_ADJACENCY = 4,
-	RENDER_PRIM_TRIANGLES = 5,
-	RENDER_PRIM_TRIANGLES_WITH_ADJACENCY = 6,
-	RENDER_PRIM_TRIANGLE_STRIP = 7,
-	RENDER_PRIM_TRIANGLE_STRIP_WITH_ADJACENCY = 8,
-	RENDER_PRIM_INSTANCED_QUADS = 9,
-	RENDER_PRIM_HETEROGENOUS = 10,
-	RENDER_PRIM_1_CONTROL_POINT_PATCHLIST = 11,
-	RENDER_PRIM_2_CONTROL_POINT_PATCHLIST = 12,
-	RENDER_PRIM_3_CONTROL_POINT_PATCHLIST = 13,
-	RENDER_PRIM_4_CONTROL_POINT_PATCHLIST = 14,
-	RENDER_PRIM_5_CONTROL_POINT_PATCHLIST = 15,
-	RENDER_PRIM_6_CONTROL_POINT_PATCHLIST = 16,
-	RENDER_PRIM_7_CONTROL_POINT_PATCHLIST = 17,
-	RENDER_PRIM_8_CONTROL_POINT_PATCHLIST = 18,
-	RENDER_PRIM_9_CONTROL_POINT_PATCHLIST = 19,
-	RENDER_PRIM_10_CONTROL_POINT_PATCHLIST = 20,
-	RENDER_PRIM_11_CONTROL_POINT_PATCHLIST = 21,
-	RENDER_PRIM_12_CONTROL_POINT_PATCHLIST = 22,
-	RENDER_PRIM_13_CONTROL_POINT_PATCHLIST = 23,
-	RENDER_PRIM_14_CONTROL_POINT_PATCHLIST = 24,
-	RENDER_PRIM_15_CONTROL_POINT_PATCHLIST = 25,
-	RENDER_PRIM_16_CONTROL_POINT_PATCHLIST = 26,
-	RENDER_PRIM_17_CONTROL_POINT_PATCHLIST = 27,
-	RENDER_PRIM_18_CONTROL_POINT_PATCHLIST = 28,
-	RENDER_PRIM_19_CONTROL_POINT_PATCHLIST = 29,
-	RENDER_PRIM_20_CONTROL_POINT_PATCHLIST = 30,
-	RENDER_PRIM_21_CONTROL_POINT_PATCHLIST = 31,
-	RENDER_PRIM_22_CONTROL_POINT_PATCHLIST = 32,
-	RENDER_PRIM_23_CONTROL_POINT_PATCHLIST = 33,
-	RENDER_PRIM_24_CONTROL_POINT_PATCHLIST = 34,
-	RENDER_PRIM_25_CONTROL_POINT_PATCHLIST = 35,
-	RENDER_PRIM_26_CONTROL_POINT_PATCHLIST = 36,
-	RENDER_PRIM_27_CONTROL_POINT_PATCHLIST = 37,
-	RENDER_PRIM_28_CONTROL_POINT_PATCHLIST = 38,
-	RENDER_PRIM_29_CONTROL_POINT_PATCHLIST = 39,
-	RENDER_PRIM_30_CONTROL_POINT_PATCHLIST = 40,
-	RENDER_PRIM_31_CONTROL_POINT_PATCHLIST = 41,
-	RENDER_PRIM_32_CONTROL_POINT_PATCHLIST = 42,
-	RENDER_PRIM_COMPUTE_SHADER = 43,
-	RENDER_PRIM_TYPE_COUNT = 44,
 };
 
 enum class RenderSlotType_t : uint32_t
@@ -3351,12 +3523,6 @@ enum class ShakeCommand_t : uint32_t
 	SHAKE_START_NORUMBLE = 5,
 };
 
-enum class ShatterSurface_t : uint32_t
-{
-	SHATTERSURFACE_GLASS = 0,
-	SHATTERSURFACE_TILE = 1,
-};
-
 enum class ShopItemViewMode_t : uint32_t
 {
 	SHOP_VIEW_MODE_LIST = 0,
@@ -3416,14 +3582,6 @@ enum class SosGroupType_t : uint32_t
 	SOS_GROUPTYPE_STATIC = 1,
 };
 
-enum class SpeechPriorityType : uint32_t
-{
-	SPEECH_PRIORITY_LOW = 0,
-	SPEECH_PRIORITY_NORMAL = 1,
-	SPEECH_PRIORITY_MANUAL = 2,
-	SPEECH_PRIORITY_UNINTERRUPTABLE = 3,
-};
-
 enum class StartupBehavior_t : uint32_t
 {
 	UNIT_STARTUP_BEHAVIOR_DEFAULT = 0,
@@ -3448,29 +3606,6 @@ enum class SteamUGCMatchingUGCType : uint32_t
 	All = 4294967295,
 };
 
-enum class SteamUGCQuery : uint32_t
-{
-	RankedByVote = 0,
-	RankedByPublicationDate = 1,
-	AcceptedForGameRankedByAcceptanceDate = 2,
-	RankedByTrend = 3,
-	FavoritedByFriendsRankedByPublicationDate = 4,
-	CreatedByFriendsRankedByPublicationDate = 5,
-	RankedByNumTimesReported = 6,
-	CreatedByFollowedUsersRankedByPublicationDate = 7,
-	NotYetRated = 8,
-	RankedByTotalVotesAsc = 9,
-	RankedByVotesUp = 10,
-	RankedByTextSearch = 11,
-	RankedByTotalUniqueSubscriptions = 12,
-	RankedByPlaytimeTrend = 13,
-	RankedByTotalPlaytime = 14,
-	RankedByAveragePlaytimeTrend = 15,
-	RankedByLifetimeAveragePlaytime = 16,
-	RankedByPlaytimeSessionsTrend = 17,
-	RankedByLifetimePlaytimeSessions = 18,
-};
-
 enum class SteamUniverse : uint32_t
 {
 	Invalid = 0,
@@ -3491,18 +3626,6 @@ enum class SurroundingBoundsType_t : uint8_t
 	USE_COLLISION_BOUNDS_NEVER_VPHYSICS = 6,
 	USE_ROTATION_EXPANDED_SEQUENCE_BOUNDS = 7,
 	SURROUNDING_TYPE_BIT_COUNT = 3,
-};
-
-enum class TOGGLE_STATE : uint32_t
-{
-	TS_AT_TOP = 0,
-	TS_AT_BOTTOM = 1,
-	TS_GOING_UP = 2,
-	TS_GOING_DOWN = 3,
-	DOOR_OPEN = 0,
-	DOOR_CLOSED = 1,
-	DOOR_OPENING = 2,
-	DOOR_CLOSING = 3,
 };
 
 enum class TRAIN_CODE : uint32_t
@@ -4214,7 +4337,8 @@ enum class modifierstate : uint32_t
 	MODIFIER_STATE_FLYING_FOR_PATHING_PURPOSES_ONLY = 33,
 	MODIFIER_STATE_TRUESIGHT_IMMUNE = 34,
 	MODIFIER_STATE_UNTARGETABLE = 35,
-	MODIFIER_STATE_LAST = 36,
+	MODIFIER_STATE_IGNORING_MOVE_AND_ATTACK_ORDERS = 36,
+	MODIFIER_STATE_LAST = 37,
 };
 
 enum class navproperties_t : uint32_t
@@ -4238,31 +4362,6 @@ enum class quest_text_replace_values_t : uint32_t
 	QUEST_TEXT_REPLACE_VALUE_ROUND = 2,
 	QUEST_TEXT_REPLACE_VALUE_REWARD = 3,
 	QUEST_NUM_TEXT_REPLACE_VALUES = 4,
-};
-
-enum class sound_states : uint32_t
-{
-	SS_NONE = 0,
-	SS_SHUTDOWN = 1,
-	SS_SHUTDOWN_WATER = 2,
-	SS_START_WATER = 3,
-	SS_START_IDLE = 4,
-	SS_IDLE = 5,
-	SS_GEAR_0 = 6,
-	SS_GEAR_1 = 7,
-	SS_GEAR_2 = 8,
-	SS_GEAR_3 = 9,
-	SS_GEAR_4 = 10,
-	SS_SLOWDOWN = 11,
-	SS_SLOWDOWN_HIGHSPEED = 12,
-	SS_GEAR_0_RESUME = 13,
-	SS_GEAR_1_RESUME = 14,
-	SS_GEAR_2_RESUME = 15,
-	SS_GEAR_3_RESUME = 16,
-	SS_GEAR_4_RESUME = 17,
-	SS_TURBO = 18,
-	SS_REVERSE = 19,
-	SS_NUM_STATES = 20,
 };
 
 enum class soundlevel_t : uint32_t
